@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import pytest
 
-from research_notes import laplacian_variance
+from research_notes import laplacian_variance, tenengrad_energy
 
 
 def make_checkerboard(size: int = 128, cell_size: int = 8) -> np.ndarray:
@@ -19,6 +19,12 @@ def test_constant_image_has_zero_laplacian_variance() -> None:
     image = np.full((64, 64), 127, dtype=np.uint8)
 
     assert laplacian_variance(image) == pytest.approx(0.0)
+
+
+def test_constant_image_has_zero_tenengrad_energy() -> None:
+    image = np.full((64, 64), 127, dtype=np.uint8)
+
+    assert tenengrad_energy(image) == pytest.approx(0.0)
 
 
 def test_noiseless_blur_produces_strictly_decreasing_scores() -> None:
@@ -39,6 +45,24 @@ def test_noiseless_blur_produces_strictly_decreasing_scores() -> None:
     assert all(left > right for left, right in zip(scores, scores[1:]))
 
 
+def test_noiseless_blur_produces_strictly_decreasing_tenengrad() -> None:
+    sharp = make_checkerboard()
+    images = [sharp]
+    images.extend(
+        cv2.GaussianBlur(
+            sharp,
+            (0, 0),
+            sigmaX=float(sigma),
+            sigmaY=float(sigma),
+            borderType=cv2.BORDER_REFLECT_101,
+        )
+        for sigma in (1, 2, 3)
+    )
+    scores = [tenengrad_energy(image) for image in images]
+
+    assert all(left > right for left, right in zip(scores, scores[1:]))
+
+
 def test_noise_can_raise_score_for_a_blurred_image() -> None:
     sharp = make_checkerboard()
     blurred = cv2.GaussianBlur(sharp, (0, 0), sigmaX=3.0, sigmaY=3.0)
@@ -51,11 +75,24 @@ def test_noise_can_raise_score_for_a_blurred_image() -> None:
     assert laplacian_variance(noisy_blurred) > laplacian_variance(blurred)
 
 
+def test_noise_can_raise_tenengrad_for_a_blurred_image() -> None:
+    sharp = make_checkerboard()
+    blurred = cv2.GaussianBlur(sharp, (0, 0), sigmaX=3.0, sigmaY=3.0)
+    generator = np.random.default_rng(20260820)
+    noise = generator.normal(0.0, 15.0, blurred.shape)
+    noisy_blurred = np.clip(blurred.astype(np.float64) + noise, 0, 255).astype(
+        np.uint8
+    )
+
+    assert tenengrad_energy(noisy_blurred) > tenengrad_energy(blurred)
+
+
 def test_bgr_and_grayscale_inputs_agree() -> None:
     grayscale = make_checkerboard()
     bgr = cv2.cvtColor(grayscale, cv2.COLOR_GRAY2BGR)
 
     assert laplacian_variance(bgr) == pytest.approx(laplacian_variance(grayscale))
+    assert tenengrad_energy(bgr) == pytest.approx(tenengrad_energy(grayscale))
 
 
 def test_invalid_shape_is_rejected() -> None:

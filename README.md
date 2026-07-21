@@ -12,9 +12,9 @@ synthetic data, committed reference results, tests, and continuous integration.
 It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
-The v0.1.0 study evaluates Laplacian variance as a blur heuristic. It tests the
-expected response to Gaussian blur and a known confounder: high-frequency
-Gaussian noise.
+The v0.1.0 study evaluates Laplacian variance as a blur heuristic. The v0.2.0
+study extends the same controls to an area-normalized Tenengrad comparison,
+repeated noise trials, horizontal motion blur, and resize sensitivity.
 
 ## Research Workflow
 
@@ -33,6 +33,8 @@ Every published note should make that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Laplacian Variance vs. Tenengrad Under Blur and
+  Noise](notes/laplacian-vs-tenengrad.md) — v0.2.0
 - [Laplacian Variance as a Blur Heuristic: Controlled Evaluation and
   Limitations](notes/laplacian-variance-blur.md) — v0.1.0
 
@@ -50,6 +52,7 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[test]"
 python -m pytest
 python experiments/run_laplacian_variance.py
+python experiments/run_focus_metric_comparison.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -59,44 +62,54 @@ PNG under `results/`.
 
 ## Evaluation
 
-The v0.1.0 experiment covers three synthetic spatial patterns, Gaussian blur
+The v0.2.0 experiment retains three synthetic spatial patterns, Gaussian blur
 sigma values 0, 1, 2, and 3, and Gaussian noise standard deviations 0, 5, and
-15. The evaluation checks relative relationships:
+15. It adds an area-normalized Tenengrad measure and 20 seeded trials per
+condition, producing 720 raw observations. The evaluation checks relative
+relationships:
 
-- without added noise, stronger Gaussian blur should reduce Laplacian variance
-  for each controlled pattern;
-- added noise can increase Laplacian variance, including for an already blurred
-  image;
+- without added noise, stronger Gaussian blur should reduce both metrics for
+  each controlled pattern;
+- added noise can increase both metrics for an already blurred image;
 - repeated runs with the declared environment and seeds should reproduce the
-  committed CSV.
+  committed CSV files.
 
-Across the three patterns, the mean noise-free score falls from 11788.257772 at
-blur sigma 0 to 41.224080 at sigma 3. At sigma 3, adding noise with standard
-deviation 15 raises the mean to 4354.484975. These are experiment-specific
-observations, not transferable quality thresholds.
+At Gaussian sigma 3, the mean within-pattern ratio to the no-blur baseline is
+0.003073 for Laplacian variance and 0.137201 for Tenengrad energy. Adding noise
+with standard deviation 15 produces median inflation ratios of 96.679135 and
+1.173198 respectively, relative to each metric's noise-free sigma-3 baseline.
+These are experiment-specific observations, not transferable quality
+thresholds or proof of universal metric superiority.
 
 No fixed Laplacian-variance threshold is presented as a universal quality bar.
 
 ## Limitations
 
-The experiment isolates Gaussian blur and additive Gaussian noise on small,
-8-bit synthetic grayscale images. It does not establish behavior for motion
-blur, defocus point-spread functions, compression artifacts, demosaicing,
-resizing, color pipelines, local blur, natural-scene content, or human quality
-judgments. Scores remain dependent on texture, contrast, resolution, border
-handling, and implementation details.
+The studies use small, 8-bit synthetic grayscale images. v0.2.0 adds one
+horizontal-motion direction and one resize round trip, but does not establish
+behavior for other motion angles, defocus point-spread functions, compression,
+demosaicing, sharpening, color pipelines, local blur, natural scenes, or human
+quality judgments. Scores remain dependent on texture, contrast, resolution,
+border handling, and implementation details.
 
 ## Project Structure
 
 ```text
 .
 ├── .github/workflows/ci.yml
+├── experiments/run_focus_metric_comparison.py
 ├── experiments/run_laplacian_variance.py
+├── notes/laplacian-vs-tenengrad.md
 ├── notes/laplacian-variance-blur.md
 ├── results/
 │   ├── README.md
+│   ├── focus_metric_comparison.png
+│   ├── focus_metric_summary.csv
+│   ├── focus_metric_trials.csv
 │   ├── laplacian_variance_summary.csv
-│   └── laplacian_variance.png
+│   ├── laplacian_variance.png
+│   ├── motion_blur_summary.csv
+│   └── resize_sensitivity_summary.csv
 ├── src/research_notes/
 │   ├── __init__.py
 │   └── blur_metrics.py
@@ -108,10 +121,9 @@ handling, and implementation details.
 
 ## Roadmap
 
-- Compare Laplacian variance with a first-derivative focus measure under the
-  same controls.
-- Add controlled motion blur and spatially localized blur.
-- Study the effect of resizing and image resolution on metric comparability.
+- Add spatially localized blur and regional evaluation.
+- Extend motion sensitivity to multiple directions and a defocus model.
+- Replicate selected controls on a traceable public image set with labels.
 
 The roadmap is exploratory and does not represent completed work.
 
