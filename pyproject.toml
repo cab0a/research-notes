@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-notes"
+version = "0.1.0"
+description = "Reproducible technical research notes and controlled experiments"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "matplotlib==3.11.1",
+    "numpy==2.4.6",
+    "opencv-python-headless==4.13.0.92",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e ".[test]"
+
+      - name: Run unit tests
+        run: python -m pytest
+
+      - name: Regenerate reference results
+        run: python experiments/run_laplacian_variance.py --output-dir regenerated-results
+
+      - name: Verify reference data and chart generation
+        run: |
+          diff -u results/laplacian_variance_summary.csv regenerated-results/laplacian_variance_summary.csv
+          test -s regenerated-results/laplacian_variance.png
