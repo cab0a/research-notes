@@ -51,6 +51,20 @@ images by the versioned experiment scripts.
 - `window_geometry_robustness.png` summarizes geometry, ranking, noise, and
   low-texture controls.
 
+## v0.5.0
+
+- `preprocessing_trials.csv` contains 9,360 blur, noise, pipeline, and metric
+  observations.
+- `preprocessing_response_summary.csv` contains 312 score-scale summaries.
+- `preprocessing_calibration_anchors.csv` records the six clean identity
+  anchors and their per-pattern midpoint rules.
+- `preprocessing_calibration_summary.csv` contains 78 fixed-calibration and
+  blur-order summaries.
+- `preprocessing_examples.png` shows synthetic inputs after selected pipeline
+  operations.
+- `preprocessing_calibration_drift.png` compares score response and calibration
+  transfer for both metrics.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -58,6 +72,7 @@ python experiments/run_laplacian_variance.py
 python experiments/run_focus_metric_comparison.py
 python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
+python experiments/run_preprocessing_sensitivity.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

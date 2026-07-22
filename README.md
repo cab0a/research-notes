@@ -13,9 +13,9 @@ It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
 The studies progress from one global blur heuristic to comparative robustness,
-spatial aggregation, and window geometry. v0.4.0 evaluates aligned and off-grid
-local blur with overlapping and multiscale windows, repeated noise trials, and
-a deliberate low-texture counterexample.
+spatial aggregation, window geometry, and preprocessing sensitivity. v0.5.0
+evaluates calibration transfer after JPEG compression, resize interpolation,
+Gaussian denoising, unsharp masking, and changes in operation order.
 
 ## Research Workflow
 
@@ -34,6 +34,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Preprocessing Sensitivity and Calibration Drift](notes/preprocessing-sensitivity-calibration-drift.md)
+  — v0.5.0
 - [Window Geometry and Robustness for Local Blur Detection](notes/window-geometry-robustness.md)
   — v0.4.0
 - [Local Blur and Spatial Aggregation](notes/local-blur-spatial-aggregation.md)
@@ -60,6 +62,7 @@ python experiments/run_laplacian_variance.py
 python experiments/run_focus_metric_comparison.py
 python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
+python experiments/run_preprocessing_sensitivity.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -84,21 +87,28 @@ proposing a fixed quality threshold:
   coverage. In repeated sigma-3 trials, noise standard deviation 15 raises the
   mean minimum Laplacian ratio from 0.005765 to 0.200820 on the 64/32 grid even
   though localization ranking remains unchanged.
+- v0.5.0 shows preprocessing calibration drift over 9,360 observations. For
+  clean sharp inputs, resize and Gaussian denoising lower mean Laplacian ratios
+  to 0.091416 and 0.048873, causing the unchanged synthetic midpoint rule to
+  fall to balanced accuracy 0.5. JPEG quality 50 raises the sigma-3 Laplacian
+  response to 1.853677 times the same uncompressed input, while unsharp masking
+  under noise 15 produces a blurred miss rate of 0.666667.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic grayscale images. v0.4.0 adds off-grid
-square Gaussian-blur masks, four regular window geometries, clipped Gaussian
-noise, and a constant-patch failure control. It still does not establish
-behavior for natural scenes, learned blur maps, unknown masks, optical defocus,
-multiple motion directions, compression, demosaicing, sharpening, color
-pipelines, or human quality judgments. Scores remain dependent on texture,
-contrast, resolution, window geometry, border handling, and implementation
-details. Matched sharp references and known region masks are experimental
-controls that are usually unavailable in blind inspection.
+The studies use small, 8-bit synthetic grayscale images. v0.5.0 adds three JPEG
+quality values, one resize scale, two interpolation pairs, one Gaussian
+denoising strength, two unsharp amounts, and bounded order controls. It still
+does not establish behavior for natural scenes, repeated recompression, color
+conversion, camera pipelines, learned restoration, optical defocus, multiple
+motion directions, or human quality judgments. Scores remain dependent on
+texture, contrast, resolution, codec implementation, preprocessing order,
+window geometry, border handling, and metric details. Known pattern identities,
+matched sharp references, and synthetic anchors are controls that are usually
+unavailable in blind inspection.
 
 ## Project Structure
 
@@ -109,11 +119,13 @@ controls that are usually unavailable in blind inspection.
 |   |-- run_focus_metric_comparison.py
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
+|   |-- run_preprocessing_sensitivity.py
 |   `-- run_window_geometry_evaluation.py
 |-- notes/
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
 |   |-- local-blur-spatial-aggregation.md
+|   |-- preprocessing-sensitivity-calibration-drift.md
 |   `-- window-geometry-robustness.md
 |-- results/
 |   |-- README.md
@@ -121,7 +133,8 @@ controls that are usually unavailable in blind inspection.
 |   `-- *.png
 |-- src/research_notes/
 |   |-- __init__.py
-|   `-- blur_metrics.py
+|   |-- blur_metrics.py
+|   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
 |-- LICENSE
 |-- README.md
@@ -130,9 +143,10 @@ controls that are usually unavailable in blind inspection.
 
 ## Roadmap
 
-- Measure compression, sharpening, and preprocessing interactions.
 - Extend motion sensitivity to multiple directions and an optical defocus
   model.
+- Test photometric normalization, repeated recompression, and color conversion
+  as explicit pipeline factors.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Replicate selected controls on a traceable public image set with labels.

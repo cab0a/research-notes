@@ -1,0 +1,313 @@
+pipeline,pipeline_description,noise_std,blur_sigma,metric,observations,same_input_ratio_mean,same_input_ratio_sample_std,same_input_ratio_p10,same_input_ratio_median,same_input_ratio_p90,sharp_anchor_ratio_mean,sharp_anchor_ratio_sample_std
+identity,No preprocessing,0,0,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,1.000000,0.000000
+identity,No preprocessing,0,0,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,1.000000,0.000000
+identity,No preprocessing,0,1,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.048873,0.012095
+identity,No preprocessing,0,1,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.472182,0.042579
+identity,No preprocessing,0,2,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.008616,0.001655
+identity,No preprocessing,0,2,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.185510,0.055228
+identity,No preprocessing,0,3,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.002566,0.001657
+identity,No preprocessing,0,3,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.060143,0.044078
+identity,No preprocessing,5,0,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.989251,0.018794
+identity,No preprocessing,5,0,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.980592,0.015927
+identity,No preprocessing,5,1,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.065640,0.015339
+identity,No preprocessing,5,1,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.471692,0.043171
+identity,No preprocessing,5,2,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.028391,0.009936
+identity,No preprocessing,5,2,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.187621,0.055409
+identity,No preprocessing,5,3,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.022509,0.010166
+identity,No preprocessing,5,3,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.062287,0.044221
+identity,No preprocessing,15,0,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,1.025913,0.074510
+identity,No preprocessing,15,0,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.948640,0.049461
+identity,No preprocessing,15,1,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.183849,0.041723
+identity,No preprocessing,15,1,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.476168,0.049135
+identity,No preprocessing,15,2,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.177610,0.065150
+identity,No preprocessing,15,2,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.202726,0.055039
+identity,No preprocessing,15,3,laplacian_variance,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.180558,0.076904
+identity,No preprocessing,15,3,tenengrad_energy,30,1.000000,0.000000,1.000000,1.000000,1.000000,0.079213,0.045437
+jpeg_q95,JPEG quality 95 round trip,0,0,laplacian_variance,30,1.001641,0.002360,1.000000,1.000000,1.004922,1.001641,0.002360
+jpeg_q95,JPEG quality 95 round trip,0,0,tenengrad_energy,30,1.000495,0.000712,1.000000,1.000000,1.001486,1.000495,0.000712
+jpeg_q95,JPEG quality 95 round trip,0,1,laplacian_variance,30,1.013672,0.009926,1.000759,1.015909,1.024348,0.049433,0.011831
+jpeg_q95,JPEG quality 95 round trip,0,1,tenengrad_energy,30,0.999922,0.000615,0.999069,1.000295,1.000403,0.472171,0.042848
+jpeg_q95,JPEG quality 95 round trip,0,2,laplacian_variance,30,1.030676,0.021494,1.001093,1.041790,1.049145,0.008847,0.001504
+jpeg_q95,JPEG quality 95 round trip,0,2,tenengrad_energy,30,1.000903,0.000650,1.000364,1.000545,1.001801,0.185653,0.055185
+jpeg_q95,JPEG quality 95 round trip,0,3,laplacian_variance,30,1.070669,0.050468,1.002459,1.090500,1.119048,0.002673,0.001597
+jpeg_q95,JPEG quality 95 round trip,0,3,tenengrad_energy,30,1.003846,0.003727,1.000131,1.002574,1.008832,0.060266,0.044006
+jpeg_q95,JPEG quality 95 round trip,5,0,laplacian_variance,30,0.998555,0.005414,0.994269,0.995264,1.006110,0.987917,0.024076
+jpeg_q95,JPEG quality 95 round trip,5,0,tenengrad_energy,30,0.996875,0.002900,0.994801,0.994909,1.000937,0.977572,0.018752
+jpeg_q95,JPEG quality 95 round trip,5,1,laplacian_variance,30,1.052151,0.017756,1.037727,1.040742,1.077480,0.068862,0.015337
+jpeg_q95,JPEG quality 95 round trip,5,1,tenengrad_energy,30,0.999359,0.001242,0.998174,0.998822,1.001061,0.471409,0.043361
+jpeg_q95,JPEG quality 95 round trip,5,2,laplacian_variance,30,1.163346,0.010003,1.151478,1.163646,1.177977,0.033107,0.011840
+jpeg_q95,JPEG quality 95 round trip,5,2,tenengrad_energy,30,1.001498,0.000582,1.000869,1.001353,1.002300,0.187882,0.055402
+jpeg_q95,JPEG quality 95 round trip,5,3,laplacian_variance,30,1.215230,0.009705,1.199854,1.215755,1.227515,0.027292,0.012165
+jpeg_q95,JPEG quality 95 round trip,5,3,tenengrad_energy,30,1.005177,0.002995,1.001853,1.004610,1.009078,0.062506,0.044230
+jpeg_q95,JPEG quality 95 round trip,15,0,laplacian_variance,30,0.998301,0.004114,0.995291,0.995617,1.004247,1.024448,0.078528
+jpeg_q95,JPEG quality 95 round trip,15,0,tenengrad_energy,30,0.995537,0.003270,0.993216,0.993307,1.000095,0.944563,0.052452
+jpeg_q95,JPEG quality 95 round trip,15,1,laplacian_variance,30,1.016930,0.006662,1.010541,1.013879,1.026414,0.186857,0.041794
+jpeg_q95,JPEG quality 95 round trip,15,1,tenengrad_energy,30,0.998168,0.001919,0.996366,0.997296,1.000794,0.475347,0.049585
+jpeg_q95,JPEG quality 95 round trip,15,2,laplacian_variance,30,1.028729,0.003601,1.023443,1.029587,1.032968,0.182535,0.066383
+jpeg_q95,JPEG quality 95 round trip,15,2,tenengrad_energy,30,1.000923,0.001318,0.999190,1.001137,1.002481,0.202858,0.054828
+jpeg_q95,JPEG quality 95 round trip,15,3,laplacian_variance,30,1.032541,0.001877,1.030448,1.032339,1.034864,0.186446,0.079440
+jpeg_q95,JPEG quality 95 round trip,15,3,tenengrad_energy,30,1.004691,0.002069,1.002177,1.004579,1.007247,0.079509,0.045456
+jpeg_q75,JPEG quality 75 round trip,0,0,laplacian_variance,30,1.031602,0.045456,1.000000,1.000000,1.094807,1.031602,0.045456
+jpeg_q75,JPEG quality 75 round trip,0,0,tenengrad_energy,30,1.000877,0.001261,1.000000,1.000000,1.002630,1.000877,0.001261
+jpeg_q75,JPEG quality 75 round trip,0,1,laplacian_variance,30,1.113605,0.073529,1.036134,1.094563,1.210117,0.054312,0.013155
+jpeg_q75,JPEG quality 75 round trip,0,1,tenengrad_energy,30,0.998841,0.006234,0.990248,1.002153,1.004123,0.471889,0.045259
+jpeg_q75,JPEG quality 75 round trip,0,2,laplacian_variance,30,1.182536,0.063920,1.118105,1.161734,1.267768,0.010125,0.001603
+jpeg_q75,JPEG quality 75 round trip,0,2,tenengrad_energy,30,0.996705,0.005959,0.989290,0.997209,1.003615,0.184966,0.055230
+jpeg_q75,JPEG quality 75 round trip,0,3,laplacian_variance,30,1.517602,0.189208,1.374558,1.397910,1.780339,0.003800,0.002231
+jpeg_q75,JPEG quality 75 round trip,0,3,tenengrad_energy,30,1.010076,0.007840,0.999480,1.013157,1.017592,0.060969,0.045013
+jpeg_q75,JPEG quality 75 round trip,5,0,laplacian_variance,30,1.021976,0.046541,0.986480,0.992647,1.087472,1.011818,0.065558
+jpeg_q75,JPEG quality 75 round trip,5,0,tenengrad_energy,30,1.000075,0.002888,0.997716,0.998321,1.004276,0.980709,0.018776
+jpeg_q75,JPEG quality 75 round trip,5,1,laplacian_variance,30,0.883753,0.090561,0.797480,0.846596,1.006607,0.057602,0.012206
+jpeg_q75,JPEG quality 75 round trip,5,1,tenengrad_energy,30,0.998415,0.002624,0.994634,0.999627,1.000931,0.471053,0.044252
+jpeg_q75,JPEG quality 75 round trip,5,2,laplacian_variance,30,0.511841,0.075994,0.429009,0.493565,0.613245,0.013931,0.003073
+jpeg_q75,JPEG quality 75 round trip,5,2,tenengrad_energy,30,1.000116,0.000735,0.999254,0.999939,1.001243,0.187626,0.055357
+jpeg_q75,JPEG quality 75 round trip,5,3,laplacian_variance,30,0.306801,0.040995,0.250683,0.328423,0.343060,0.007023,0.003589
+jpeg_q75,JPEG quality 75 round trip,5,3,tenengrad_energy,30,0.996011,0.004198,0.989919,0.998137,0.999789,0.062115,0.044200
+jpeg_q75,JPEG quality 75 round trip,15,0,laplacian_variance,30,0.983974,0.056792,0.929560,0.961287,1.061822,1.012935,0.129399
+jpeg_q75,JPEG quality 75 round trip,15,0,tenengrad_energy,30,0.989778,0.004349,0.986512,0.987005,0.996019,0.939151,0.053210
+jpeg_q75,JPEG quality 75 round trip,15,1,laplacian_variance,30,0.933846,0.126256,0.778671,0.937528,1.085637,0.168003,0.024515
+jpeg_q75,JPEG quality 75 round trip,15,1,tenengrad_energy,30,0.994928,0.006556,0.990010,0.990711,1.004158,0.473965,0.051085
+jpeg_q75,JPEG quality 75 round trip,15,2,laplacian_variance,30,1.065259,0.050864,0.992284,1.089227,1.115582,0.186255,0.058972
+jpeg_q75,JPEG quality 75 round trip,15,2,tenengrad_energy,30,1.007876,0.007216,0.998858,1.008534,1.016410,0.204031,0.054093
+jpeg_q75,JPEG quality 75 round trip,15,3,laplacian_variance,30,1.105764,0.011127,1.093841,1.107638,1.116444,0.199337,0.084061
+jpeg_q75,JPEG quality 75 round trip,15,3,tenengrad_energy,30,1.035845,0.015863,1.016786,1.036092,1.056478,0.081476,0.045578
+jpeg_q50,JPEG quality 50 round trip,0,0,laplacian_variance,30,1.015323,0.022041,1.000000,1.000000,1.045970,1.015323,0.022041
+jpeg_q50,JPEG quality 50 round trip,0,0,tenengrad_energy,30,1.000708,0.001018,1.000000,1.000000,1.002124,1.000708,0.001018
+jpeg_q50,JPEG quality 50 round trip,0,1,laplacian_variance,30,1.099575,0.089315,0.981033,1.126786,1.190905,0.053202,0.011622
+jpeg_q50,JPEG quality 50 round trip,0,1,tenengrad_energy,30,0.995586,0.003936,0.990139,0.997844,0.998774,0.470034,0.041744
+jpeg_q50,JPEG quality 50 round trip,0,2,laplacian_variance,30,1.536157,0.293458,1.321887,1.342564,1.944019,0.013076,0.002582
+jpeg_q50,JPEG quality 50 round trip,0,2,tenengrad_energy,30,1.006092,0.006401,1.001425,1.001863,1.014988,0.186980,0.056977
+jpeg_q50,JPEG quality 50 round trip,0,3,laplacian_variance,30,1.853677,0.428805,1.424956,1.709199,2.426876,0.004343,0.002074
+jpeg_q50,JPEG quality 50 round trip,0,3,tenengrad_energy,30,1.011845,0.009308,1.005063,1.005690,1.024783,0.060653,0.044200
+jpeg_q50,JPEG quality 50 round trip,5,0,laplacian_variance,30,1.012365,0.034908,0.984639,0.991386,1.062427,1.002100,0.053674
+jpeg_q50,JPEG quality 50 round trip,5,0,tenengrad_energy,30,0.997777,0.003189,0.995334,0.995855,1.002711,0.978461,0.019026
+jpeg_q50,JPEG quality 50 round trip,5,1,laplacian_variance,30,0.876154,0.114218,0.770769,0.826152,1.033336,0.057037,0.012442
+jpeg_q50,JPEG quality 50 round trip,5,1,tenengrad_energy,30,0.998029,0.003288,0.993564,0.998744,1.001652,0.470664,0.042067
+jpeg_q50,JPEG quality 50 round trip,5,2,laplacian_variance,30,0.540391,0.109259,0.442864,0.486990,0.691763,0.014620,0.003274
+jpeg_q50,JPEG quality 50 round trip,5,2,tenengrad_energy,30,0.998793,0.001502,0.997038,0.998589,1.000836,0.187347,0.055127
+jpeg_q50,JPEG quality 50 round trip,5,3,laplacian_variance,30,0.245209,0.047849,0.182739,0.250258,0.300623,0.005521,0.002680
+jpeg_q50,JPEG quality 50 round trip,5,3,tenengrad_energy,30,0.986922,0.006750,0.979197,0.985263,0.995612,0.061741,0.044220
+jpeg_q50,JPEG quality 50 round trip,15,0,laplacian_variance,30,0.972140,0.066227,0.904249,0.951690,1.062508,1.001184,0.136892
+jpeg_q50,JPEG quality 50 round trip,15,0,tenengrad_energy,30,0.989659,0.002323,0.986163,0.990236,0.992125,0.938727,0.046819
+jpeg_q50,JPEG quality 50 round trip,15,1,laplacian_variance,30,0.549808,0.088715,0.447119,0.539811,0.663170,0.097717,0.007249
+jpeg_q50,JPEG quality 50 round trip,15,1,tenengrad_energy,30,0.994943,0.004228,0.991098,0.993038,1.000998,0.473877,0.050114
+jpeg_q50,JPEG quality 50 round trip,15,2,laplacian_variance,30,0.415226,0.031161,0.377237,0.416633,0.454068,0.071977,0.021189
+jpeg_q50,JPEG quality 50 round trip,15,2,tenengrad_energy,30,0.998608,0.002861,0.995116,0.999197,1.001788,0.202301,0.054345
+jpeg_q50,JPEG quality 50 round trip,15,3,laplacian_variance,30,0.395261,0.006621,0.386937,0.395178,0.403877,0.071462,0.030746
+jpeg_q50,JPEG quality 50 round trip,15,3,tenengrad_energy,30,0.997815,0.002747,0.993190,0.998231,1.000760,0.079067,0.045412
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,0,laplacian_variance,30,0.091416,0.036553,0.041351,0.108869,0.124029,0.091416,0.036553
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,0,tenengrad_energy,30,0.567999,0.043670,0.519706,0.560268,0.624022,0.567999,0.043670
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,1,laplacian_variance,30,0.494807,0.036645,0.454930,0.487278,0.542214,0.023854,0.005022
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,1,tenengrad_energy,30,0.689526,0.048267,0.651406,0.660752,0.756421,0.326682,0.045789
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,2,laplacian_variance,30,0.768175,0.058522,0.722697,0.732477,0.849351,0.006712,0.001838
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,2,tenengrad_energy,30,0.761164,0.069015,0.693646,0.735869,0.853977,0.144588,0.056682
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,3,laplacian_variance,30,0.784906,0.054237,0.737191,0.758189,0.859338,0.002097,0.001496
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",0,3,tenengrad_energy,30,0.780719,0.059291,0.728003,0.752185,0.861968,0.049461,0.039707
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,0,laplacian_variance,30,0.091428,0.036714,0.041039,0.109384,0.123856,0.089811,0.035161
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,0,tenengrad_energy,30,0.568039,0.044526,0.518068,0.561305,0.624718,0.556465,0.036908
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,1,laplacian_variance,30,0.372208,0.002913,0.368288,0.373918,0.375033,0.024396,0.005529
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,1,tenengrad_energy,30,0.685209,0.048534,0.644193,0.659247,0.752211,0.324320,0.045791
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,2,laplacian_variance,30,0.249594,0.024068,0.228426,0.237269,0.283211,0.006930,0.001968
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,2,tenengrad_energy,30,0.755501,0.069378,0.684764,0.734028,0.847715,0.145084,0.056516
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,3,laplacian_variance,30,0.093512,0.026827,0.059475,0.096974,0.124151,0.002308,0.001613
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",5,3,tenengrad_energy,30,0.750696,0.072933,0.677392,0.726128,0.848246,0.049783,0.039716
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,0,laplacian_variance,30,0.085746,0.034678,0.037742,0.105546,0.114009,0.085697,0.031683
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,0,tenengrad_energy,30,0.563878,0.045742,0.510998,0.559482,0.621136,0.533142,0.026019
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,1,laplacian_variance,30,0.140604,0.024679,0.112430,0.137428,0.171983,0.025512,0.005867
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,1,tenengrad_energy,30,0.665185,0.046770,0.626624,0.639064,0.729874,0.317529,0.044611
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,2,laplacian_variance,30,0.047155,0.005520,0.042701,0.043981,0.054959,0.008139,0.002378
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,2,tenengrad_energy,30,0.705105,0.075814,0.622721,0.688650,0.803637,0.146274,0.055118
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,3,laplacian_variance,30,0.018930,0.003594,0.014337,0.019326,0.023145,0.003621,0.002156
+resize_area_linear,"0.5x INTER_AREA down, INTER_LINEAR up",15,3,tenengrad_energy,30,0.597125,0.123761,0.460003,0.575133,0.755973,0.052198,0.039826
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,0,laplacian_variance,30,0.091416,0.036553,0.041351,0.108869,0.124029,0.091416,0.036553
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,0,tenengrad_energy,30,0.567999,0.043670,0.519706,0.560268,0.624022,0.567999,0.043670
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,1,laplacian_variance,30,0.494807,0.036645,0.454930,0.487278,0.542214,0.023854,0.005022
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,1,tenengrad_energy,30,0.689526,0.048267,0.651406,0.660752,0.756421,0.326682,0.045789
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,2,laplacian_variance,30,0.768175,0.058522,0.722697,0.732477,0.849351,0.006712,0.001838
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,2,tenengrad_energy,30,0.761164,0.069015,0.693646,0.735869,0.853977,0.144588,0.056682
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,3,laplacian_variance,30,0.784906,0.054237,0.737191,0.758189,0.859338,0.002097,0.001496
+resize_linear_linear,0.5x INTER_LINEAR down and up,0,3,tenengrad_energy,30,0.780719,0.059291,0.728003,0.752185,0.861968,0.049461,0.039707
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,0,laplacian_variance,30,0.091428,0.036714,0.041039,0.109384,0.123856,0.089811,0.035161
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,0,tenengrad_energy,30,0.568039,0.044526,0.518068,0.561305,0.624718,0.556465,0.036908
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,1,laplacian_variance,30,0.372208,0.002913,0.368288,0.373918,0.375033,0.024396,0.005529
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,1,tenengrad_energy,30,0.685209,0.048534,0.644193,0.659247,0.752211,0.324320,0.045791
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,2,laplacian_variance,30,0.249594,0.024068,0.228426,0.237269,0.283211,0.006930,0.001968
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,2,tenengrad_energy,30,0.755501,0.069378,0.684764,0.734028,0.847715,0.145084,0.056516
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,3,laplacian_variance,30,0.093512,0.026827,0.059475,0.096974,0.124151,0.002308,0.001613
+resize_linear_linear,0.5x INTER_LINEAR down and up,5,3,tenengrad_energy,30,0.750696,0.072933,0.677392,0.726128,0.848246,0.049783,0.039716
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,0,laplacian_variance,30,0.085746,0.034678,0.037742,0.105546,0.114009,0.085697,0.031683
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,0,tenengrad_energy,30,0.563878,0.045742,0.510998,0.559482,0.621136,0.533142,0.026019
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,1,laplacian_variance,30,0.140604,0.024679,0.112430,0.137428,0.171983,0.025512,0.005867
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,1,tenengrad_energy,30,0.665185,0.046770,0.626624,0.639064,0.729874,0.317529,0.044611
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,2,laplacian_variance,30,0.047155,0.005520,0.042701,0.043981,0.054959,0.008139,0.002378
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,2,tenengrad_energy,30,0.705105,0.075814,0.622721,0.688650,0.803637,0.146274,0.055118
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,3,laplacian_variance,30,0.018930,0.003594,0.014337,0.019326,0.023145,0.003621,0.002156
+resize_linear_linear,0.5x INTER_LINEAR down and up,15,3,tenengrad_energy,30,0.597125,0.123761,0.460003,0.575133,0.755973,0.052198,0.039826
+gaussian_denoise,Gaussian low-pass sigma 1,0,0,laplacian_variance,30,0.048873,0.012095,0.032910,0.052272,0.061438,0.048873,0.012095
+gaussian_denoise,Gaussian low-pass sigma 1,0,0,tenengrad_energy,30,0.472182,0.042579,0.412987,0.500900,0.502660,0.472182,0.042579
+gaussian_denoise,Gaussian low-pass sigma 1,0,1,laplacian_variance,30,0.416223,0.060926,0.373103,0.374634,0.500932,0.019664,0.002673
+gaussian_denoise,Gaussian low-pass sigma 1,0,1,tenengrad_energy,30,0.683022,0.046671,0.638906,0.663866,0.746295,0.323793,0.046211
+gaussian_denoise,Gaussian low-pass sigma 1,0,2,laplacian_variance,30,0.735548,0.057462,0.678763,0.715264,0.812617,0.006429,0.001765
+gaussian_denoise,Gaussian low-pass sigma 1,0,2,tenengrad_energy,30,0.763891,0.066754,0.697635,0.740725,0.853312,0.144962,0.056287
+gaussian_denoise,Gaussian low-pass sigma 1,0,3,laplacian_variance,30,0.752515,0.048214,0.711662,0.726910,0.818973,0.002008,0.001421
+gaussian_denoise,Gaussian low-pass sigma 1,0,3,tenengrad_energy,30,0.777558,0.055671,0.728115,0.750700,0.853859,0.049119,0.039246
+gaussian_denoise,Gaussian low-pass sigma 1,5,0,laplacian_variance,30,0.048862,0.012320,0.032575,0.052350,0.061646,0.048138,0.011516
+gaussian_denoise,Gaussian low-pass sigma 1,5,0,tenengrad_energy,30,0.472353,0.042216,0.413640,0.501625,0.501771,0.463516,0.045515
+gaussian_denoise,Gaussian low-pass sigma 1,5,1,laplacian_variance,30,0.311865,0.025289,0.282955,0.308971,0.344266,0.020101,0.003122
+gaussian_denoise,Gaussian low-pass sigma 1,5,1,tenengrad_energy,30,0.678352,0.046193,0.633770,0.660553,0.740754,0.321209,0.045682
+gaussian_denoise,Gaussian low-pass sigma 1,5,2,laplacian_variance,30,0.237731,0.026452,0.217089,0.221181,0.275003,0.006595,0.001879
+gaussian_denoise,Gaussian low-pass sigma 1,5,2,tenengrad_energy,30,0.757186,0.069138,0.686972,0.735380,0.849206,0.145395,0.056576
+gaussian_denoise,Gaussian low-pass sigma 1,5,3,laplacian_variance,30,0.087949,0.026295,0.054070,0.092651,0.117237,0.002172,0.001529
+gaussian_denoise,Gaussian low-pass sigma 1,5,3,tenengrad_energy,30,0.749815,0.073185,0.676220,0.725740,0.847533,0.049733,0.039688
+gaussian_denoise,Gaussian low-pass sigma 1,15,0,laplacian_variance,30,0.045747,0.011713,0.029854,0.050556,0.056889,0.046214,0.009869
+gaussian_denoise,Gaussian low-pass sigma 1,15,0,tenengrad_energy,30,0.468431,0.040393,0.412254,0.494368,0.498715,0.445315,0.053255
+gaussian_denoise,Gaussian low-pass sigma 1,15,1,laplacian_variance,30,0.114517,0.017489,0.101841,0.102819,0.139074,0.020568,0.003148
+gaussian_denoise,Gaussian low-pass sigma 1,15,1,tenengrad_energy,30,0.656426,0.043871,0.614368,0.639020,0.716017,0.313546,0.044771
+gaussian_denoise,Gaussian low-pass sigma 1,15,2,laplacian_variance,30,0.042973,0.005876,0.038616,0.039172,0.051328,0.007398,0.002144
+gaussian_denoise,Gaussian low-pass sigma 1,15,2,tenengrad_energy,30,0.703713,0.076363,0.620879,0.687458,0.802844,0.146012,0.055154
+gaussian_denoise,Gaussian low-pass sigma 1,15,3,laplacian_variance,30,0.015800,0.003516,0.011277,0.016335,0.019794,0.003045,0.001887
+gaussian_denoise,Gaussian low-pass sigma 1,15,3,tenengrad_energy,30,0.587077,0.127808,0.444071,0.566023,0.750648,0.051543,0.039748
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,0,laplacian_variance,30,1.260936,0.375328,1.000000,1.000000,1.782808,1.260936,0.375328
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,0,tenengrad_energy,30,1.115055,0.165493,1.000000,1.000000,1.345164,1.115055,0.165493
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,1,laplacian_variance,30,1.510546,0.078658,1.401586,1.556834,1.573217,0.074720,0.021521
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,1,tenengrad_energy,30,1.192116,0.028420,1.154800,1.199511,1.222036,0.562024,0.042475
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,2,laplacian_variance,30,1.167247,0.035876,1.119472,1.178709,1.203561,0.010000,0.001592
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,2,tenengrad_energy,30,1.132882,0.040462,1.079014,1.145760,1.173873,0.208209,0.054326
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,3,laplacian_variance,30,1.203362,0.069358,1.117150,1.209041,1.283896,0.002982,0.001768
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",0,3,tenengrad_energy,30,1.124495,0.034379,1.077812,1.138933,1.156741,0.066188,0.046523
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,0,laplacian_variance,30,1.273722,0.345657,1.031616,1.035125,1.755180,1.266239,0.370077
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,0,tenengrad_energy,30,1.129619,0.144516,1.028334,1.029781,1.330531,1.109919,0.161299
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,1,laplacian_variance,30,1.587788,0.047222,1.544586,1.564178,1.653549,0.103593,0.021685
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,1,tenengrad_energy,30,1.187949,0.030570,1.145509,1.205497,1.212744,0.559678,0.046216
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,2,laplacian_variance,30,1.852419,0.029744,1.813184,1.859305,1.884344,0.052660,0.018621
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,2,tenengrad_energy,30,1.139970,0.043975,1.081868,1.152486,1.185622,0.211788,0.054265
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,3,laplacian_variance,30,2.095170,0.035746,2.056541,2.087106,2.142518,0.046906,0.020509
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",5,3,tenengrad_energy,30,1.158909,0.054085,1.088845,1.170101,1.217787,0.070005,0.046567
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,0,laplacian_variance,30,1.283691,0.231756,1.104428,1.141396,1.606341,1.333059,0.341380
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,0,tenengrad_energy,30,1.129243,0.093452,1.060771,1.067604,1.259320,1.075704,0.147648
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,1,laplacian_variance,30,1.741552,0.120926,1.650534,1.664400,1.910392,0.318685,0.065706
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,1,tenengrad_energy,30,1.169164,0.037748,1.119523,1.178630,1.209324,0.556876,0.062783
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,2,laplacian_variance,30,2.051516,0.086816,1.939616,2.064299,2.149316,0.359751,0.116992
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,2,tenengrad_energy,30,1.185606,0.069456,1.098741,1.192484,1.265962,0.237491,0.052455
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,3,laplacian_variance,30,2.179968,0.017281,2.156304,2.187590,2.196111,0.392390,0.163767
+unsharp_0_5,"Unsharp amount 0.5, sigma 1",15,3,tenengrad_energy,30,1.346914,0.126744,1.188969,1.357280,1.494586,0.101850,0.048851
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,0,laplacian_variance,30,1.233627,0.336047,1.000000,1.000000,1.700881,1.233627,0.336047
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,0,tenengrad_energy,30,1.156136,0.224584,1.000000,1.000000,1.468408,1.156136,0.224584
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,1,laplacian_variance,30,2.069773,0.132685,1.885512,2.153942,2.169866,0.102603,0.030203
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,1,tenengrad_energy,30,1.354001,0.069636,1.261644,1.375000,1.425359,0.638762,0.061902
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,2,laplacian_variance,30,1.342743,0.077353,1.238761,1.370923,1.418544,0.011446,0.001484
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,2,tenengrad_energy,30,1.274879,0.085059,1.161564,1.302201,1.360871,0.232395,0.053298
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,3,laplacian_variance,30,1.384920,0.111000,1.246798,1.394340,1.513623,0.003384,0.001932
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",0,3,tenengrad_energy,30,1.255226,0.070869,1.158607,1.286775,1.320297,0.072510,0.049032
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,0,laplacian_variance,30,1.263800,0.329787,1.031386,1.037557,1.723308,1.256143,0.353995
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,0,tenengrad_energy,30,1.171460,0.201468,1.031195,1.031579,1.451866,1.151825,0.218443
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,1,laplacian_variance,30,2.221484,0.198324,2.038303,2.130198,2.493192,0.143134,0.022770
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,1,tenengrad_energy,30,1.350141,0.076490,1.250329,1.367627,1.432511,0.636556,0.067440
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,2,laplacian_variance,30,2.955791,0.096651,2.881574,2.894080,3.090200,0.083481,0.027709
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,2,tenengrad_energy,30,1.289655,0.096630,1.162199,1.316400,1.390355,0.237375,0.052324
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,3,laplacian_variance,30,3.603244,0.087307,3.507918,3.585051,3.716455,0.080478,0.034679
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",5,3,tenengrad_energy,30,1.339598,0.119551,1.185665,1.361720,1.471083,0.078648,0.048965
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,0,laplacian_variance,30,1.347880,0.278159,1.115404,1.196559,1.732906,1.402395,0.395914
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,0,tenengrad_energy,30,1.170529,0.138170,1.071923,1.076802,1.363266,1.117009,0.193667
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,1,laplacian_variance,30,2.585546,0.216279,2.423753,2.443843,2.887174,0.472745,0.097014
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,1,tenengrad_energy,30,1.317252,0.074279,1.222652,1.328238,1.401475,0.627812,0.080953
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,2,laplacian_variance,30,3.390094,0.262485,3.060646,3.406886,3.698297,0.588712,0.173229
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,2,tenengrad_energy,30,1.385806,0.157600,1.193724,1.390586,1.574113,0.274715,0.051123
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,3,laplacian_variance,30,3.780483,0.089191,3.655354,3.827437,3.856952,0.676162,0.270398
+unsharp_1_0,"Unsharp amount 1.0, sigma 1",15,3,tenengrad_energy,30,1.779827,0.302211,1.403442,1.804492,2.131200,0.129441,0.051819
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,0,laplacian_variance,30,0.102603,0.030203,0.062052,0.113423,0.132334,0.102603,0.030203
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,0,tenengrad_energy,30,0.638762,0.061902,0.567858,0.631957,0.716471,0.638762,0.061902
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,1,laplacian_variance,30,0.667242,0.047927,0.633041,0.634811,0.733874,0.032076,0.006172
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,1,tenengrad_energy,30,0.891642,0.026241,0.857431,0.897762,0.919733,0.422037,0.049134
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,2,laplacian_variance,30,0.956509,0.012026,0.940525,0.960249,0.968754,0.008253,0.001661
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,2,tenengrad_energy,30,0.962573,0.016932,0.944168,0.959061,0.984490,0.179350,0.056550
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,3,laplacian_variance,30,1.027088,0.062340,0.957381,1.017323,1.106561,0.002547,0.001518
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,0,3,tenengrad_energy,30,0.964473,0.011251,0.951420,0.963531,0.978468,0.058445,0.043424
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,0,laplacian_variance,30,0.102391,0.030122,0.061762,0.113777,0.131623,0.100786,0.028403
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,0,tenengrad_energy,30,0.648765,0.055609,0.582061,0.648146,0.716064,0.636923,0.064120
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,1,laplacian_variance,30,0.500584,0.021111,0.473160,0.505395,0.523257,0.032640,0.006608
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,1,tenengrad_energy,30,0.891477,0.024354,0.858705,0.900466,0.915311,0.421502,0.049161
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,2,laplacian_variance,30,0.321192,0.041879,0.271599,0.318580,0.373581,0.008765,0.001963
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,2,tenengrad_energy,30,0.954238,0.020339,0.931158,0.951558,0.980012,0.179943,0.056868
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,3,laplacian_variance,30,0.127413,0.026944,0.090928,0.137397,0.154030,0.003038,0.001871
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,5,3,tenengrad_energy,30,0.933519,0.034105,0.892735,0.932848,0.974996,0.059442,0.044052
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,0,laplacian_variance,30,0.095857,0.028249,0.057130,0.109438,0.121106,0.096555,0.024416
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,0,tenengrad_energy,30,0.658484,0.043731,0.602468,0.666025,0.707175,0.626368,0.071352
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,1,laplacian_variance,30,0.190141,0.035742,0.155149,0.176847,0.238605,0.034233,0.006761
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,1,tenengrad_energy,30,0.869733,0.020719,0.841337,0.879092,0.888827,0.415120,0.052045
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,2,laplacian_variance,30,0.064960,0.008564,0.055951,0.062683,0.076484,0.011085,0.002798
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,2,tenengrad_energy,30,0.894054,0.034143,0.851286,0.896899,0.933870,0.182498,0.055479
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,3,laplacian_variance,30,0.029473,0.003676,0.024430,0.030697,0.033232,0.005497,0.002889
+denoise_then_unsharp,Gaussian denoise then unsharp amount 1.0,15,3,tenengrad_energy,30,0.751311,0.105253,0.623901,0.752167,0.877836,0.063379,0.044247
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,0,laplacian_variance,30,0.054091,0.005503,0.048564,0.052272,0.061438,0.054091,0.005503
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,0,tenengrad_energy,30,0.519790,0.097490,0.412987,0.500900,0.645484,0.519790,0.097490
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,1,laplacian_variance,30,0.614393,0.079456,0.555437,0.562954,0.724787,0.029158,0.004458
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,1,tenengrad_energy,30,0.849623,0.055830,0.783018,0.848393,0.917458,0.403169,0.059323
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,2,laplacian_variance,30,0.946661,0.015316,0.933565,0.938666,0.967752,0.008180,0.001714
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,2,tenengrad_energy,30,0.962143,0.018009,0.941388,0.960387,0.984653,0.179279,0.056601
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,3,laplacian_variance,30,0.943729,0.014307,0.924103,0.950727,0.956357,0.002433,0.001597
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,0,3,tenengrad_energy,30,0.967895,0.015713,0.956678,0.957267,0.989741,0.058882,0.044087
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,0,laplacian_variance,30,0.055271,0.007023,0.047379,0.054207,0.064239,0.054587,0.006287
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,0,tenengrad_energy,30,0.522571,0.090980,0.421323,0.507400,0.638975,0.513722,0.097670
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,1,laplacian_variance,30,0.454303,0.038262,0.408164,0.454038,0.501295,0.029256,0.004403
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,1,tenengrad_energy,30,0.841006,0.057850,0.774561,0.834815,0.913584,0.398778,0.060447
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,2,laplacian_variance,30,0.311627,0.043154,0.260031,0.309780,0.365284,0.008479,0.001820
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,2,tenengrad_energy,30,0.949845,0.015776,0.930921,0.949538,0.969093,0.178875,0.055579
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,3,laplacian_variance,30,0.115901,0.027283,0.078881,0.126006,0.142753,0.002781,0.001763
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,5,3,tenengrad_energy,30,0.932861,0.034159,0.891806,0.932471,0.974228,0.059399,0.044018
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,0,laplacian_variance,30,0.052748,0.009287,0.040575,0.054963,0.062697,0.053595,0.007290
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,0,tenengrad_energy,30,0.506249,0.068097,0.424968,0.504664,0.589325,0.483140,0.089048
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,1,laplacian_variance,30,0.160894,0.025095,0.142667,0.144245,0.196262,0.028851,0.004177
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,1,tenengrad_energy,30,0.777525,0.047199,0.720898,0.776738,0.834993,0.372395,0.059568
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,2,laplacian_variance,30,0.061197,0.008907,0.050569,0.060984,0.072243,0.010353,0.002288
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,2,tenengrad_energy,30,0.858939,0.009829,0.847049,0.858741,0.870944,0.174513,0.049130
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,3,laplacian_variance,30,0.027744,0.003396,0.023013,0.029233,0.031005,0.005156,0.002668
+unsharp_then_denoise,Unsharp amount 1.0 then Gaussian denoise,15,3,tenengrad_energy,30,0.746142,0.100452,0.623204,0.750321,0.865428,0.062737,0.043422
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,0,laplacian_variance,30,0.091273,0.036755,0.040922,0.108869,0.124029,0.091273,0.036755
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,0,tenengrad_energy,30,0.566926,0.044907,0.516489,0.560268,0.624022,0.566926,0.044907
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,1,laplacian_variance,30,0.502150,0.037996,0.454692,0.505777,0.545982,0.024270,0.005454
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,1,tenengrad_energy,30,0.690829,0.050224,0.646350,0.666445,0.759692,0.327486,0.047476
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,2,laplacian_variance,30,0.768727,0.053218,0.731620,0.731837,0.842724,0.006707,0.001786
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,2,tenengrad_energy,30,0.763535,0.063115,0.699777,0.743190,0.847637,0.144693,0.055415
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,3,laplacian_variance,30,0.815154,0.068253,0.757937,0.778192,0.909333,0.002197,0.001597
+jpeg_then_resize,JPEG quality 75 then area-linear resize,0,3,tenengrad_energy,30,0.794273,0.064058,0.737426,0.763314,0.882078,0.050479,0.040732
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,0,laplacian_variance,30,0.091220,0.036637,0.040946,0.109147,0.123558,0.089607,0.035088
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,0,tenengrad_energy,30,0.567257,0.044219,0.517689,0.560437,0.623726,0.555703,0.036633
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,1,laplacian_variance,30,0.372929,0.001523,0.371235,0.372908,0.375103,0.024459,0.005630
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,1,tenengrad_energy,30,0.683913,0.048901,0.639884,0.660894,0.750916,0.323802,0.046397
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,2,laplacian_variance,30,0.250339,0.023960,0.228789,0.238654,0.283639,0.006948,0.001965
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,2,tenengrad_energy,30,0.757245,0.067526,0.687929,0.736980,0.846813,0.145313,0.056188
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,3,laplacian_variance,30,0.093926,0.026954,0.059542,0.097682,0.124594,0.002317,0.001617
+jpeg_then_resize,JPEG quality 75 then area-linear resize,5,3,tenengrad_energy,30,0.754968,0.071991,0.681893,0.732348,0.850926,0.049997,0.039791
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,0,laplacian_variance,30,0.084700,0.034076,0.037517,0.104163,0.112503,0.084664,0.031104
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,0,tenengrad_energy,30,0.557877,0.044116,0.507573,0.552674,0.613558,0.527532,0.025250
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,1,laplacian_variance,30,0.140997,0.024514,0.112919,0.137974,0.172102,0.025592,0.005901
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,1,tenengrad_energy,30,0.658605,0.044828,0.617273,0.638733,0.719833,0.314536,0.044776
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,2,laplacian_variance,30,0.047673,0.005585,0.042853,0.044706,0.055529,0.008218,0.002363
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,2,tenengrad_energy,30,0.703711,0.072633,0.624305,0.688141,0.797990,0.145846,0.054319
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,3,laplacian_variance,30,0.019640,0.003585,0.015055,0.020066,0.023868,0.003747,0.002205
+jpeg_then_resize,JPEG quality 75 then area-linear resize,15,3,tenengrad_energy,30,0.600139,0.122213,0.464361,0.578422,0.757201,0.052378,0.039808
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,0,laplacian_variance,30,0.095619,0.036504,0.044903,0.119223,0.122730,0.095619,0.036504
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,0,tenengrad_energy,30,0.562867,0.041525,0.521053,0.549292,0.618256,0.562867,0.041525
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,1,laplacian_variance,30,0.528346,0.035339,0.494590,0.514302,0.576147,0.025411,0.004861
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,1,tenengrad_energy,30,0.690401,0.048970,0.649970,0.663171,0.758063,0.327164,0.046422
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,2,laplacian_variance,30,0.946259,0.087836,0.825222,0.992649,1.020906,0.008254,0.002190
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,2,tenengrad_energy,30,0.766155,0.070970,0.696095,0.741003,0.861367,0.145596,0.057337
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,3,laplacian_variance,30,1.108079,0.062168,1.023564,1.134617,1.166055,0.002888,0.001910
+resize_then_jpeg,Area-linear resize then JPEG quality 75,0,3,tenengrad_energy,30,0.786892,0.056629,0.736123,0.760154,0.864400,0.049718,0.039735
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,0,laplacian_variance,30,0.097987,0.038815,0.044438,0.118846,0.130690,0.096256,0.037135
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,0,tenengrad_energy,30,0.565773,0.046072,0.517610,0.553157,0.626480,0.554264,0.038939
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,1,laplacian_variance,30,0.396854,0.022733,0.368403,0.399128,0.423583,0.025839,0.005095
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,1,tenengrad_energy,30,0.684796,0.047990,0.644003,0.659350,0.751037,0.324122,0.045614
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,2,laplacian_variance,30,0.314831,0.046174,0.272013,0.294191,0.378337,0.008767,0.002718
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,2,tenengrad_energy,30,0.756847,0.068767,0.686852,0.735235,0.848329,0.145313,0.056478
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,3,laplacian_variance,30,0.129744,0.035844,0.080489,0.146794,0.162341,0.003124,0.002035
+resize_then_jpeg,Area-linear resize then JPEG quality 75,5,3,tenengrad_energy,30,0.753667,0.071305,0.684144,0.726464,0.849862,0.049923,0.039758
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,0,laplacian_variance,30,0.091386,0.036506,0.040689,0.113754,0.119900,0.091329,0.033162
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,0,tenengrad_energy,30,0.562950,0.047062,0.510486,0.555196,0.623121,0.532277,0.028214
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,1,laplacian_variance,30,0.151344,0.031942,0.120250,0.139019,0.194877,0.027166,0.005444
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,1,tenengrad_energy,30,0.664566,0.046361,0.625973,0.639263,0.728610,0.317245,0.044561
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,2,laplacian_variance,30,0.058330,0.009719,0.049758,0.053476,0.071887,0.010062,0.003118
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,2,tenengrad_energy,30,0.705960,0.075869,0.623671,0.689476,0.804740,0.146451,0.055180
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,3,laplacian_variance,30,0.025078,0.005183,0.017958,0.027598,0.029859,0.004741,0.002734
+resize_then_jpeg,Area-linear resize then JPEG quality 75,15,3,tenengrad_energy,30,0.597125,0.123936,0.460327,0.574454,0.756758,0.052218,0.039871

@@ -1,0 +1,7 @@
+pattern,metric,source_pipeline,source_noise_std,sharp_blur_sigma,blurred_blur_sigma,sharp_score,blurred_score,midpoint_threshold
+checkerboard,laplacian_variance,identity,0,0,3,39124.539185,68.022705,19596.280945
+checkerboard,tenengrad_energy,identity,0,0,3,412407.092285,13135.357910,212771.225098
+vertical_bars,laplacian_variance,identity,0,0,3,15748.242188,76.257812,7912.250000
+vertical_bars,tenengrad_energy,identity,0,0,3,251971.875000,30582.625000,141277.250000
+concentric_tiles,laplacian_variance,identity,0,0,3,32910.146713,36.775009,16473.460861
+concentric_tiles,tenengrad_energy,identity,0,0,3,231406.250000,6295.973267,118851.111633

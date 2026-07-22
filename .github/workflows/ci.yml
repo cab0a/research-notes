@@ -32,6 +32,7 @@ jobs:
           python experiments/run_focus_metric_comparison.py --output-dir regenerated-results
           python experiments/run_local_blur_evaluation.py --output-dir regenerated-results
           python experiments/run_window_geometry_evaluation.py --output-dir regenerated-results
+          python experiments/run_preprocessing_sensitivity.py --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -48,9 +49,15 @@ jobs:
           diff -u results/window_noise_trials.csv regenerated-results/window_noise_trials.csv
           diff -u results/window_noise_summary.csv regenerated-results/window_noise_summary.csv
           diff -u results/low_texture_confounds.csv regenerated-results/low_texture_confounds.csv
+          diff -u results/preprocessing_trials.csv regenerated-results/preprocessing_trials.csv
+          diff -u results/preprocessing_response_summary.csv regenerated-results/preprocessing_response_summary.csv
+          diff -u results/preprocessing_calibration_anchors.csv regenerated-results/preprocessing_calibration_anchors.csv
+          diff -u results/preprocessing_calibration_summary.csv regenerated-results/preprocessing_calibration_summary.csv
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
           test -s regenerated-results/local_blur_spatial_aggregation.png
           test -s regenerated-results/window_geometry_example.png
           test -s regenerated-results/window_geometry_robustness.png
+          test -s regenerated-results/preprocessing_examples.png
+          test -s regenerated-results/preprocessing_calibration_drift.png
