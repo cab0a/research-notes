@@ -34,6 +34,7 @@ jobs:
           python experiments/run_window_geometry_evaluation.py --output-dir regenerated-results
           python experiments/run_preprocessing_sensitivity.py --output-dir regenerated-results
           python experiments/run_optical_blur_models.py --output-dir regenerated-results
+          python experiments/run_photometric_recompression.py --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -58,6 +59,10 @@ jobs:
           diff -u results/optical_blur_trials.csv regenerated-results/optical_blur_trials.csv
           diff -u results/optical_blur_summary.csv regenerated-results/optical_blur_summary.csv
           diff -u results/motion_direction_summary.csv regenerated-results/motion_direction_summary.csv
+          diff -u results/photometric_recompression_trials.csv regenerated-results/photometric_recompression_trials.csv
+          diff -u results/photometric_recompression_response_summary.csv regenerated-results/photometric_recompression_response_summary.csv
+          diff -u results/photometric_recompression_calibration_anchors.csv regenerated-results/photometric_recompression_calibration_anchors.csv
+          diff -u results/photometric_recompression_calibration_summary.csv regenerated-results/photometric_recompression_calibration_summary.csv
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -68,3 +73,5 @@ jobs:
           test -s regenerated-results/preprocessing_calibration_drift.png
           test -s regenerated-results/optical_blur_examples.png
           test -s regenerated-results/optical_blur_directional_sensitivity.png
+          test -s regenerated-results/photometric_recompression_examples.png
+          test -s regenerated-results/photometric_recompression_drift.png

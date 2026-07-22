@@ -1,0 +1,97 @@
+pipeline,pipeline_description,noise_std,metric,calibration_source,anchor_observations,balanced_accuracy,sharp_false_blur_count,sharp_false_blur_rate,blurred_miss_count,blurred_miss_rate,adjacent_pair_count,adjacent_order_violation_count,adjacent_order_violation_rate,sequence_count,fully_ordered_sequence_rate
+identity,BGR-to-grayscale conversion only,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+identity,BGR-to-grayscale conversion only,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+identity,BGR-to-grayscale conversion only,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,4,0.044444,30,0.866667
+identity,BGR-to-grayscale conversion only,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+identity,BGR-to-grayscale conversion only,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,17,0.188889,30,0.533333
+identity,BGR-to-grayscale conversion only,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+brightness_minus_30,Grayscale linear transform with beta -30,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_minus_30,Grayscale linear transform with beta -30,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_minus_30,Grayscale linear transform with beta -30,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,4,0.044444,30,0.866667
+brightness_minus_30,Grayscale linear transform with beta -30,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_minus_30,Grayscale linear transform with beta -30,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,17,0.188889,30,0.533333
+brightness_minus_30,Grayscale linear transform with beta -30,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+brightness_plus_30,Grayscale linear transform with beta +30,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_plus_30,Grayscale linear transform with beta +30,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_plus_30,Grayscale linear transform with beta +30,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,4,0.044444,30,0.866667
+brightness_plus_30,Grayscale linear transform with beta +30,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+brightness_plus_30,Grayscale linear transform with beta +30,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,17,0.188889,30,0.533333
+brightness_plus_30,Grayscale linear transform with beta +30,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+contrast_0_5,Grayscale linear transform with alpha 0.50,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.500000,30,1.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_0_5,Grayscale linear transform with alpha 0.50,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.500000,30,1.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_0_5,Grayscale linear transform with alpha 0.50,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.516667,29,0.966667,0,0.000000,90,6,0.066667,30,0.800000
+contrast_0_5,Grayscale linear transform with alpha 0.50,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.500000,30,1.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_0_5,Grayscale linear transform with alpha 0.50,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,10,0.333333,10,0.333333,90,18,0.200000,30,0.533333
+contrast_0_5,Grayscale linear transform with alpha 0.50,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.550000,27,0.900000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_1_25,Grayscale linear transform with alpha 1.25,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_1_25,Grayscale linear transform with alpha 1.25,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_1_25,Grayscale linear transform with alpha 1.25,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,8,0.088889,30,0.733333
+contrast_1_25,Grayscale linear transform with alpha 1.25,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+contrast_1_25,Grayscale linear transform with alpha 1.25,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,23,0.255556,30,0.400000
+contrast_1_25,Grayscale linear transform with alpha 1.25,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gamma_0_7,Grayscale power-law transform with gamma 0.7,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7,Grayscale power-law transform with gamma 0.7,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7,Grayscale power-law transform with gamma 0.7,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,3,0.033333,30,0.900000
+gamma_0_7,Grayscale power-law transform with gamma 0.7,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7,Grayscale power-law transform with gamma 0.7,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,13,0.144444,30,0.633333
+gamma_0_7,Grayscale power-law transform with gamma 0.7,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gamma_1_4,Grayscale power-law transform with gamma 1.4,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_1_4,Grayscale power-law transform with gamma 1.4,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_1_4,Grayscale power-law transform with gamma 1.4,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,4,0.044444,30,0.866667
+gamma_1_4,Grayscale power-law transform with gamma 1.4,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_1_4,Grayscale power-law transform with gamma 1.4,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,17,0.188889,30,0.533333
+gamma_1_4,Grayscale power-law transform with gamma 1.4,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+minmax_normalize,Grayscale global min-max normalization,0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+minmax_normalize,Grayscale global min-max normalization,0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+minmax_normalize,Grayscale global min-max normalization,5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,13,0.144444,30,0.600000
+minmax_normalize,Grayscale global min-max normalization,5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+minmax_normalize,Grayscale global min-max normalization,15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,37,0.411111,30,0.033333
+minmax_normalize,Grayscale global min-max normalization,15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,2,0.022222,30,0.933333
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+gray_jpeg_q75_r1,"Grayscale JPEG quality 75, one round",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+gray_jpeg_q75_r2,"Grayscale JPEG quality 75, two rounds",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+gray_jpeg_q75_r5,"Grayscale JPEG quality 75, five rounds",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+color_jpeg_q75_r1_then_gray,"BGR JPEG quality 75, one round, then grayscale",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+color_jpeg_q75_r2_then_gray,"BGR JPEG quality 75, two rounds, then grayscale",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,19,0.211111,30,0.500000
+color_jpeg_q75_r5_then_gray,"BGR JPEG quality 75, five rounds, then grayscale",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,10,0.333333,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,13,0.144444,30,0.666667
+gamma_0_7_then_gray_jpeg_q75_r2,"Grayscale gamma 0.7, then JPEG quality 75 twice",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",0,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",0,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",5,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",5,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,1.000000,0,0.000000,0,0.000000,90,0,0.000000,30,1.000000
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",15,laplacian_variance,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.666667,0,0.000000,20,0.666667,90,15,0.166667,30,0.633333
+gray_jpeg_q75_r2_then_gamma_0_7,"Grayscale JPEG quality 75 twice, then gamma 0.7",15,tenengrad_energy,per-pattern identity noise-0 sigma-0/sigma-3 midpoint,60,0.833333,0,0.000000,10,0.333333,90,0,0.000000,30,1.000000

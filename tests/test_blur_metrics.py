@@ -8,13 +8,18 @@ from research_notes import (
     apply_psf,
     disk_psf,
     gaussian_denoise,
+    gamma_transform,
     jpeg_round_trip,
     laplacian_variance,
+    linear_intensity_transform,
     linear_motion_psf,
+    minmax_normalize,
+    repeated_jpeg_round_trip,
     resize_round_trip,
     sliding_metric_map,
     tenengrad_energy,
     tiled_metric_map,
+    to_grayscale,
     unsharp_mask,
 )
 
@@ -291,3 +296,85 @@ def test_blur_model_parameters_are_validated() -> None:
         linear_motion_psf(length=5, angle_degrees=float("nan"))
     with pytest.raises(ValueError, match="sum to one"):
         apply_psf(image, np.ones((3, 3), dtype=np.float64))
+
+
+def test_linear_intensity_transform_rounds_and_clips() -> None:
+    image = np.array([[0, 32, 128, 240]], dtype=np.uint8)
+
+    transformed = linear_intensity_transform(image, alpha=1.25, beta=-20)
+
+    assert np.array_equal(
+        transformed,
+        np.array([[0, 20, 140, 255]], dtype=np.uint8),
+    )
+
+
+def test_gamma_transform_preserves_endpoints_and_is_monotonic() -> None:
+    image = np.arange(256, dtype=np.uint8).reshape(16, 16)
+
+    transformed = gamma_transform(image, gamma=0.7)
+
+    assert transformed[0, 0] == 0
+    assert transformed[-1, -1] == 255
+    assert np.all(np.diff(transformed.ravel().astype(np.int16)) >= 0)
+
+
+def test_minmax_normalize_uses_observed_range() -> None:
+    image = np.array([[20, 40], [60, 80]], dtype=np.uint8)
+
+    normalized = minmax_normalize(image)
+
+    assert normalized.min() == 0
+    assert normalized.max() == 255
+    assert np.array_equal(
+        minmax_normalize(np.full((4, 4), 7, np.uint8)),
+        np.zeros((4, 4), np.uint8),
+    )
+
+
+def test_repeated_jpeg_is_deterministic_and_zero_rounds_are_identity() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+
+    first = repeated_jpeg_round_trip(color, quality=75, rounds=2)
+    second = repeated_jpeg_round_trip(color, quality=75, rounds=2)
+
+    assert np.array_equal(first, second)
+    assert first.shape == color.shape
+    assert first.dtype == np.uint8
+    assert np.array_equal(
+        repeated_jpeg_round_trip(grayscale, quality=75, rounds=0), grayscale
+    )
+
+
+def test_recompression_and_color_conversion_order_can_change_scores() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    one_round = repeated_jpeg_round_trip(grayscale, quality=75, rounds=1)
+    five_rounds = repeated_jpeg_round_trip(grayscale, quality=75, rounds=5)
+    gray_then_jpeg = repeated_jpeg_round_trip(
+        to_grayscale(color), quality=75, rounds=2
+    )
+    jpeg_then_gray = to_grayscale(
+        repeated_jpeg_round_trip(color, quality=75, rounds=2)
+    )
+
+    assert laplacian_variance(one_round) != pytest.approx(
+        laplacian_variance(five_rounds)
+    )
+    assert tenengrad_energy(gray_then_jpeg) != pytest.approx(
+        tenengrad_energy(jpeg_then_gray)
+    )
+
+
+def test_photometric_parameters_are_validated() -> None:
+    image = make_checkerboard()
+
+    with pytest.raises(ValueError, match="positive and finite"):
+        linear_intensity_transform(image, alpha=0.0, beta=0.0)
+    with pytest.raises(ValueError, match="positive and finite"):
+        gamma_transform(image, gamma=float("nan"))
+    with pytest.raises(ValueError, match=r"\[1, 100\]"):
+        repeated_jpeg_round_trip(image, quality=0, rounds=1)
+    with pytest.raises(ValueError, match="not be negative"):
+        repeated_jpeg_round_trip(image, quality=75, rounds=-1)

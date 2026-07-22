@@ -78,6 +78,21 @@ images by the versioned experiment scripts.
 - `optical_blur_directional_sensitivity.png` summarizes motion direction,
   defocus radius, and noise sensitivity.
 
+## v0.7.0
+
+- `photometric_recompression_trials.csv` contains 11,520 paired metric
+  observations across photometric, recompression, blur, and noise controls.
+- `photometric_recompression_response_summary.csv` contains 384 score-scale
+  and clipped-endpoint summaries.
+- `photometric_recompression_calibration_anchors.csv` records the six clean
+  identity midpoint anchors.
+- `photometric_recompression_calibration_summary.csv` contains 96 fixed-rule
+  transfer and blur-order summaries.
+- `photometric_recompression_examples.png` shows BGR, grayscale, tone-mapped,
+  normalized, and recompressed synthetic examples.
+- `photometric_recompression_drift.png` compares photometric scale,
+  recompression trajectories, and fixed-calibration transfer.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -87,6 +102,7 @@ python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
+python experiments/run_photometric_recompression.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

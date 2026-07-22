@@ -1,0 +1,7 @@
+pattern,metric,source_pipeline,source_noise_std,sharp_blur_sigma,blurred_blur_sigma,sharp_score,blurred_score,midpoint_threshold
+achromatic_checkerboard,laplacian_variance,identity,0,0,3,22180.500000,38.305969,11109.402985
+achromatic_checkerboard,tenengrad_energy,identity,0,0,3,233802.000000,7385.552124,120593.776062
+chromatic_stripes,laplacian_variance,identity,0,0,3,1773.184296,9.365143,891.274719
+chromatic_stripes,tenengrad_energy,identity,0,0,3,27895.674194,3552.298035,15723.986115
+colored_targets,laplacian_variance,identity,0,0,3,234.844406,1.738037,118.291222
+colored_targets,tenengrad_energy,identity,0,0,3,1692.574982,328.491150,1010.533066

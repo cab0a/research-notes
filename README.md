@@ -13,9 +13,10 @@ It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
 The studies progress from one global blur heuristic to comparative robustness,
-spatial aggregation, window geometry, preprocessing sensitivity, and optical
-blur models. v0.6.0 evaluates circular disk defocus and directional linear
-motion under controlled orientation, extent, and noise conditions.
+spatial aggregation, window geometry, preprocessing sensitivity, optical blur
+models, and photometric pipeline drift. v0.7.0 evaluates tone transforms,
+global min-max normalization, repeated JPEG recompression, color-conversion
+order, and fixed-calibration transfer.
 
 ## Research Workflow
 
@@ -34,6 +35,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Photometric Normalization and Recompression Drift](notes/photometric-normalization-recompression-drift.md)
+  — v0.7.0
 - [Optical Blur Models and Directional Motion Sensitivity](notes/optical-blur-models-directional-motion.md)
   — v0.6.0
 - [Preprocessing Sensitivity and Calibration Drift](notes/preprocessing-sensitivity-calibration-drift.md)
@@ -66,6 +69,7 @@ python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
+python experiments/run_photometric_recompression.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -102,18 +106,26 @@ proposing a fixed quality threshold:
   0.024429 for Tenengrad. At noise standard deviation 15, the Laplacian ratio
   reaches 1.008207, showing that noise can erase and slightly reverse the
   directional contrast in this controlled setting.
+- v0.7.0 records 11,520 metric observations across 16 photometric and JPEG
+  pipelines. Contrast gain 0.50 lowers clean sharp responses to 0.250919 for
+  Laplacian variance and 0.250680 for Tenengrad, reducing the unchanged
+  midpoint calibration to balanced accuracy 0.5 for both metrics. A first
+  grayscale JPEG quality-75 round trip lowers the clean sharp Laplacian ratio
+  to 0.930825 but raises the sigma-3 ratio to 1.637515; rounds 2 and 5 converge
+  to the same six-decimal aggregate values in this bounded setting.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic grayscale images. v0.6.0 adds one
-discrete disk approximation, one rasterized uniform-line model, four motion
-angles, three motion lengths, four disk radii, one grating frequency, and three
-noise levels. It does not establish behavior for natural scenes, measured
-camera PSFs, color pipelines, diffraction, aberrations, spatially varying
-defocus, non-uniform motion, rolling shutter, or human quality judgments.
+The studies use small, 8-bit synthetic images. v0.7.0 adds three synthetic BGR
+patterns, one grayscale conversion, two brightness biases, two contrast gains,
+two gamma values, one global min-max rule, one JPEG quality, and aligned
+same-quality recompression. It does not establish behavior for natural scenes,
+measured camera response or PSFs, explicit chroma sampling factors, mismatched
+JPEG qualities, shifted block grids, color profiles, demosaicing, HDR tone
+mapping, diffraction, aberrations, rolling shutter, or human quality judgments.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
 preprocessing order, window geometry, PSF rasterization, border handling, and
 metric details. Known pattern identities, matched sharp references, and
@@ -130,6 +142,7 @@ inspection.
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
 |   |-- run_optical_blur_models.py
+|   |-- run_photometric_recompression.py
 |   |-- run_preprocessing_sensitivity.py
 |   `-- run_window_geometry_evaluation.py
 |-- notes/
@@ -137,6 +150,7 @@ inspection.
 |   |-- laplacian-vs-tenengrad.md
 |   |-- local-blur-spatial-aggregation.md
 |   |-- optical-blur-models-directional-motion.md
+|   |-- photometric-normalization-recompression-drift.md
 |   |-- preprocessing-sensitivity-calibration-drift.md
 |   `-- window-geometry-robustness.md
 |-- results/
@@ -147,6 +161,7 @@ inspection.
 |   |-- __init__.py
 |   |-- blur_models.py
 |   |-- blur_metrics.py
+|   |-- photometric.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
 |-- LICENSE
@@ -156,8 +171,8 @@ inspection.
 
 ## Roadmap
 
-- Test photometric normalization, repeated recompression, and color conversion
-  as explicit pipeline factors.
+- Extend compression-history controls across primary and secondary quality
+  pairs, shifted block grids, explicit sampling factors, and codec builds.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform
