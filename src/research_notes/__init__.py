@@ -25,6 +25,12 @@ from research_notes.jpeg_codec import (
     encode_jpeg_pillow,
     parse_jpeg_structure,
 )
+from research_notes.jpeg_contracts import (
+    PixelDifference,
+    classify_decoded_pixel_contract,
+    compare_decoded_pixels,
+    pixel_array_sha256,
+)
 from research_notes.preprocessing import (
     gaussian_denoise,
     jpeg_round_trip,
@@ -41,6 +47,9 @@ __all__ = [
     "JPEGComponent",
     "JPEGQuantizationTable",
     "JPEGStructure",
+    "PixelDifference",
+    "classify_decoded_pixel_contract",
+    "compare_decoded_pixels",
     "decode_jpeg_opencv",
     "decode_jpeg_pillow",
     "encode_jpeg_opencv",
@@ -51,6 +60,7 @@ __all__ = [
     "linear_motion_psf",
     "minmax_normalize",
     "parse_jpeg_structure",
+    "pixel_array_sha256",
     "repeated_jpeg_round_trip",
     "resize_round_trip",
     "sliding_metric_map",

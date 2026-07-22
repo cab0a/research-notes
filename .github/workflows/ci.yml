@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   test-and-reproduce:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -37,6 +37,8 @@ jobs:
           python experiments/run_photometric_recompression.py --output-dir regenerated-results
           python experiments/run_jpeg_compression_history.py --output-dir regenerated-results
           python experiments/run_jpeg_codec_portability.py --output-dir regenerated-results
+          python experiments/run_cross_platform_codec_contracts.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_cross_platform_codec_contracts.py --fixture-dir regenerated-fixtures/jpeg-decoder-contracts --output-dir regenerated-fixture-results --platform-label linux-x64-reference --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -76,6 +78,11 @@ jobs:
           diff -u results/jpeg_encoder_agreement.csv regenerated-results/jpeg_encoder_agreement.csv
           diff -u results/jpeg_decoder_agreement.csv regenerated-results/jpeg_decoder_agreement.csv
           diff -u results/jpeg_codec_portability_summary.csv regenerated-results/jpeg_codec_portability_summary.csv
+          diff -u results/jpeg_platform_codec_manifest.csv regenerated-results/jpeg_platform_codec_manifest.csv
+          diff -u results/jpeg_decoded_pixel_observations.csv regenerated-results/jpeg_decoded_pixel_observations.csv
+          diff -u results/jpeg_decoder_pair_observations.csv regenerated-results/jpeg_decoder_pair_observations.csv
+          diff -u results/jpeg_decoded_pixel_summary.csv regenerated-results/jpeg_decoded_pixel_summary.csv
+          diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -92,3 +99,84 @@ jobs:
           test -s regenerated-results/jpeg_history_sensitivity.png
           test -s regenerated-results/jpeg_quantization_tables.png
           test -s regenerated-results/jpeg_codec_portability.png
+          test -s regenerated-results/jpeg_decoded_pixel_contracts.png
+
+  jpeg-decoder-contracts:
+    name: JPEG contracts (${{ matrix.label }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: ubuntu-x64-default
+            os: ubuntu-24.04
+            jsimd_forcenone: "0"
+          - label: ubuntu-x64-scalar
+            os: ubuntu-24.04
+            jsimd_forcenone: "1"
+          - label: windows-x64-default
+            os: windows-2025
+            jsimd_forcenone: "0"
+          - label: macos-arm64-default
+            os: macos-15
+            jsimd_forcenone: "0"
+          - label: macos-x64-default
+            os: macos-15-intel
+            jsimd_forcenone: "0"
+    runs-on: ${{ matrix.os }}
+    env:
+      JSIMD_FORCENONE: ${{ matrix.jsimd_forcenone }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e "."
+
+      - name: Observe decoded-pixel contracts
+        run: python experiments/run_cross_platform_codec_contracts.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+
+      - name: Upload platform observations
+        uses: actions/upload-artifact@v7
+        with:
+          name: jpeg-contract-${{ matrix.label }}
+          path: platform-results
+          retention-days: 30
+
+  aggregate-jpeg-contracts:
+    name: Aggregate JPEG contract matrix
+    needs: jpeg-decoder-contracts
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e "."
+
+      - name: Download platform observations
+        uses: actions/download-artifact@v6
+        with:
+          pattern: jpeg-contract-*
+          path: platform-artifacts
+
+      - name: Aggregate cross-platform contracts
+        run: python experiments/summarize_cross_platform_codec_contracts.py --input-dir platform-artifacts --output-dir cross-platform-results --expected-platform-count 5
+
+      - name: Upload cross-platform report
+        uses: actions/upload-artifact@v7
+        with:
+          name: jpeg-contract-cross-platform-summary
+          path: cross-platform-results
+          retention-days: 30

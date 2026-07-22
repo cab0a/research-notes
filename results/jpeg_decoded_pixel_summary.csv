@@ -1,0 +1,9 @@
+platform_label,decoder,quality_control,chroma_sampling,observations,exact_reference_rate,within_one_code_value_rate,mean_absolute_error_max,maximum_absolute_error_max,changed_sample_fraction_max
+linux-x64-reference,opencv,50,444,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,opencv,50,420,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,opencv,95,444,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,opencv,95,420,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,pillow,50,444,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,pillow,50,420,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,pillow,95,444,3,1.000000,1.000000,0.000000000,0,0.000000000
+linux-x64-reference,pillow,95,420,3,1.000000,1.000000,0.000000000,0,0.000000000

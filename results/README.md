@@ -127,6 +127,33 @@ images by the versioned experiment scripts.
 - `jpeg_codec_portability.png` separates DQT, byte, decoded-pixel, size, and
   derivative-response behavior.
 
+## v0.10.0
+
+- `fixtures/jpeg-decoder-contracts/manifest.csv` records the source, JPEG,
+  reference-pixel, DQT, and component-sampling identities for 12 generated
+  baseline JPEG streams and their lossless BGR decode references.
+- `jpeg_platform_codec_manifest.csv` records the local reference wrappers,
+  JPEG backends, platform, architecture, Python version, and SIMD policy.
+- `jpeg_decoded_pixel_observations.csv` contains 24 local decoder observations
+  with separate structure, shape, dtype, exact-pixel, and within-one contracts.
+- `jpeg_decoder_pair_observations.csv` contains 12 direct local
+  OpenCV-versus-Pillow decoded-pixel comparisons.
+- `jpeg_decoded_pixel_summary.csv` summarizes the local observations by
+  decoder, numeric quality control, and chroma sampling.
+- `jpeg_decoded_pixel_contracts.png` visualizes local exact-reference rates and
+  maximum code-value errors.
+- `jpeg_cross_platform_codec_manifest.csv` records the ten wrapper/backend rows
+  from the five-profile release matrix.
+- `jpeg_cross_platform_observations.csv` combines 120 decoder observations from
+  Ubuntu x64 default and forced-scalar, Windows x64, macOS arm64, and macOS
+  Intel x64 profiles.
+- `jpeg_cross_platform_decoder_pairs.csv` combines 60 within-profile
+  OpenCV-versus-Pillow comparisons.
+- `jpeg_cross_platform_contract_summary.csv` reports hash multiplicity and
+  exact and bounded contracts for each fixture and decoder.
+- `jpeg_cross_platform_contracts.png` visualizes exact, bounded, maximum-error,
+  and decoded-hash behavior across the release matrix.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -139,6 +166,7 @@ python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
+python experiments/run_cross_platform_codec_contracts.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

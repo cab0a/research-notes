@@ -1,0 +1,3 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,simd_policy,decoder,wrapper,wrapper_version,jpeg_backend
+linux-x64-reference,Linux,x86_64,3.12,not_recorded,not_recorded,runtime_default,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+linux-x64-reference,Linux,x86_64,3.12,not_recorded,not_recorded,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1

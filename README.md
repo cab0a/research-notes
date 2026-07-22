@@ -15,9 +15,9 @@ experiment automatically generalizes to production imagery.
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
 models, photometric pipeline drift, JPEG compression history, and codec
-portability. v0.9.0 extracts DQT and SOF marker data and separates numeric
-quality, table, byte-stream, decoded-pixel, and metric-level agreement across
-the pinned OpenCV and Pillow paths.
+portability. v0.10.0 fixes a synthetic JPEG corpus and evaluates marker,
+array-interface, exact-pixel, and bounded numerical contracts across five
+GitHub-hosted platform profiles and two pinned decoder wrappers.
 
 ## Research Workflow
 
@@ -36,6 +36,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Cross-Platform Codec Builds and Decoded-Pixel Contracts](notes/cross-platform-codec-builds-decoded-pixel-contracts.md)
+  — v0.10.0
 - [JPEG Quantization Tables and Codec Portability](notes/jpeg-quantization-codec-portability.md)
   — v0.9.0
 - [JPEG Compression History: Quality Order, Grid Alignment, and Chroma Sampling](notes/jpeg-compression-history.md)
@@ -77,12 +79,17 @@ python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
+python experiments/run_cross_platform_codec_contracts.py
 ```
 
 On Windows PowerShell, activate the environment with
 `.venv\Scripts\Activate.ps1`. The experiments use only programmatically
 generated images and deterministic random seeds. Each experiment writes its
 CSV and PNG artifacts under `results/`.
+
+The v0.10.0 workflow also runs a five-profile GitHub Actions matrix and shares
+each platform observation through workflow artifacts before producing the
+combined cross-platform report.
 
 ## Evaluation
 
@@ -135,18 +142,26 @@ proposing a fixed quality threshold:
   explicitly also reproduces all 72 files byte for byte. Huffman optimization
   preserves every DQT and decoded pixel array while changing every file and
   reducing encoded size to a mean ratio of 0.708379.
+- v0.10.0 commits 12 synthetic baseline JPEG streams and their declared BGR
+  decode references. The Linux x64 reference and forced-scalar controls each
+  produce 24 exact decoder observations. The release CI expands the same
+  corpus to five platform profiles, keeps structural and numerical contracts
+  separate, and records exact hashes as evidence rather than a perceptual
+  quality score.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.9.0 compares pinned OpenCV
-and Pillow wrappers backed by different releases of the same libjpeg-turbo
-codec family. It extracts exact quantization tables but does not establish
-behavior for IJG libjpeg, mozjpeg, hardware or camera encoders, other operating
-systems, progressive or malformed streams, arbitrary color management,
-measured camera response or PSFs, or human quality judgments.
+The studies use small, 8-bit synthetic images. v0.10.0 adds operating-system
+and architecture coverage, but its OpenCV and Pillow wheels still use the same
+libjpeg-turbo codec family. Its 12 fixed files do not establish behavior for
+IJG libjpeg, mozjpeg, hardware or camera codecs, progressive or malformed
+streams, CMYK/YCCK, arbitrary color management, measured camera response or
+PSFs, or human quality judgments. GitHub-hosted runner observations are
+snapshots of the recorded runner images rather than guarantees for every
+machine with the same operating-system label.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
 preprocessing order, window geometry, PSF rasterization, border handling, and
 metric details. Known pattern identities, matched sharp references, and
@@ -159,6 +174,7 @@ inspection.
 .
 |-- .github/workflows/ci.yml
 |-- experiments/
+|   |-- run_cross_platform_codec_contracts.py
 |   |-- run_focus_metric_comparison.py
 |   |-- run_jpeg_compression_history.py
 |   |-- run_jpeg_codec_portability.py
@@ -167,8 +183,14 @@ inspection.
 |   |-- run_optical_blur_models.py
 |   |-- run_photometric_recompression.py
 |   |-- run_preprocessing_sensitivity.py
-|   `-- run_window_geometry_evaluation.py
+|   |-- run_window_geometry_evaluation.py
+|   `-- summarize_cross_platform_codec_contracts.py
+|-- fixtures/jpeg-decoder-contracts/
+|   |-- manifest.csv
+|   |-- *.jpg
+|   `-- *.reference.png
 |-- notes/
+|   |-- cross-platform-codec-builds-decoded-pixel-contracts.md
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
 |   |-- jpeg-compression-history.md
@@ -187,6 +209,7 @@ inspection.
 |   |-- blur_models.py
 |   |-- blur_metrics.py
 |   |-- jpeg_codec.py
+|   |-- jpeg_contracts.py
 |   |-- photometric.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
@@ -197,8 +220,8 @@ inspection.
 
 ## Roadmap
 
-- Extend the codec audit across platform wheels or independent encoder families
-  while keeping byte, table, decoded-pixel, and metric contracts separate.
+- Add an independent codec family and progressive, CMYK, and restart-marker
+  fixtures while keeping byte, marker, pixel, and perceptual claims separate.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform

@@ -6,6 +6,8 @@ import pytest
 
 from research_notes import (
     apply_psf,
+    classify_decoded_pixel_contract,
+    compare_decoded_pixels,
     disk_psf,
     decode_jpeg_opencv,
     decode_jpeg_pillow,
@@ -20,6 +22,7 @@ from research_notes import (
     linear_motion_psf,
     minmax_normalize,
     parse_jpeg_structure,
+    pixel_array_sha256,
     repeated_jpeg_round_trip,
     resize_round_trip,
     sliding_metric_map,
@@ -493,6 +496,38 @@ def test_jpeg_codec_controls_and_marker_data_are_validated() -> None:
         parse_jpeg_structure(
             b"\xff\xd8\xff\xdb\x00\x0d\x00" + b"\x01" * 10
         )
+
+
+def test_decoded_pixel_contracts_separate_exact_and_bounded_results() -> None:
+    reference = np.zeros((4, 4, 3), dtype=np.uint8)
+    exact = compare_decoded_pixels(reference, reference.copy())
+    one_step = reference.copy()
+    one_step[1, 2, 0] = 1
+    bounded = compare_decoded_pixels(reference, one_step)
+    outside = reference.copy()
+    outside[1, 2, 0] = 2
+    outside_difference = compare_decoded_pixels(reference, outside)
+
+    assert exact.exact
+    assert classify_decoded_pixel_contract(exact) == "exact"
+    assert bounded.maximum_absolute_error == 1
+    assert bounded.changed_sample_fraction == pytest.approx(1 / 48)
+    assert bounded.changed_pixel_fraction == pytest.approx(1 / 16)
+    assert classify_decoded_pixel_contract(bounded) == "within_one"
+    assert classify_decoded_pixel_contract(outside_difference) == (
+        "outside_contract"
+    )
+
+
+def test_pixel_hash_includes_shape_and_validates_inputs() -> None:
+    flat = np.arange(16, dtype=np.uint8).reshape(4, 4)
+    reshaped = flat.reshape(2, 8)
+
+    assert pixel_array_sha256(flat) != pixel_array_sha256(reshaped)
+    with pytest.raises(ValueError, match="identical shapes"):
+        compare_decoded_pixels(flat, reshaped)
+    with pytest.raises(TypeError, match="uint8"):
+        pixel_array_sha256(flat.astype(np.float32))
 
 
 def test_recompression_and_color_conversion_order_can_change_scores() -> None:
