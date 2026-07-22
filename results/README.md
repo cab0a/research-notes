@@ -65,6 +65,19 @@ images by the versioned experiment scripts.
 - `preprocessing_calibration_drift.png` compares score response and calibration
   transfer for both metrics.
 
+## v0.6.0
+
+- `optical_blur_kernels.csv` audits all 17 identity, disk-defocus, and
+  linear-motion PSFs.
+- `optical_blur_trials.csv` contains 5,100 paired-noise metric observations.
+- `optical_blur_summary.csv` contains 510 pattern-condition summaries.
+- `motion_direction_summary.csv` contains 72 aligned, oblique, and
+  perpendicular motion comparisons.
+- `optical_blur_examples.png` shows controlled grating responses to disk and
+  directional blur.
+- `optical_blur_directional_sensitivity.png` summarizes motion direction,
+  defocus radius, and noise sensitivity.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -73,6 +86,7 @@ python experiments/run_focus_metric_comparison.py
 python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
+python experiments/run_optical_blur_models.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

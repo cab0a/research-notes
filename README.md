@@ -13,9 +13,9 @@ It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
 The studies progress from one global blur heuristic to comparative robustness,
-spatial aggregation, window geometry, and preprocessing sensitivity. v0.5.0
-evaluates calibration transfer after JPEG compression, resize interpolation,
-Gaussian denoising, unsharp masking, and changes in operation order.
+spatial aggregation, window geometry, preprocessing sensitivity, and optical
+blur models. v0.6.0 evaluates circular disk defocus and directional linear
+motion under controlled orientation, extent, and noise conditions.
 
 ## Research Workflow
 
@@ -34,6 +34,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Optical Blur Models and Directional Motion Sensitivity](notes/optical-blur-models-directional-motion.md)
+  — v0.6.0
 - [Preprocessing Sensitivity and Calibration Drift](notes/preprocessing-sensitivity-calibration-drift.md)
   — v0.5.0
 - [Window Geometry and Robustness for Local Blur Detection](notes/window-geometry-robustness.md)
@@ -63,6 +65,7 @@ python experiments/run_focus_metric_comparison.py
 python experiments/run_local_blur_evaluation.py
 python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
+python experiments/run_optical_blur_models.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -93,22 +96,29 @@ proposing a fixed quality threshold:
   fall to balanced accuracy 0.5. JPEG quality 50 raises the sigma-3 Laplacian
   response to 1.853677 times the same uncompressed input, while unsharp masking
   under noise 15 produces a blurred miss rate of 0.666667.
+- v0.6.0 compares 17 identity, disk-defocus, and directional-motion conditions
+  over 5,100 metric observations. At motion length 15 without noise, mean
+  aligned-to-perpendicular ratios are 0.066796 for Laplacian variance and
+  0.024429 for Tenengrad. At noise standard deviation 15, the Laplacian ratio
+  reaches 1.008207, showing that noise can erase and slightly reverse the
+  directional contrast in this controlled setting.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic grayscale images. v0.5.0 adds three JPEG
-quality values, one resize scale, two interpolation pairs, one Gaussian
-denoising strength, two unsharp amounts, and bounded order controls. It still
-does not establish behavior for natural scenes, repeated recompression, color
-conversion, camera pipelines, learned restoration, optical defocus, multiple
-motion directions, or human quality judgments. Scores remain dependent on
-texture, contrast, resolution, codec implementation, preprocessing order,
-window geometry, border handling, and metric details. Known pattern identities,
-matched sharp references, and synthetic anchors are controls that are usually
-unavailable in blind inspection.
+The studies use small, 8-bit synthetic grayscale images. v0.6.0 adds one
+discrete disk approximation, one rasterized uniform-line model, four motion
+angles, three motion lengths, four disk radii, one grating frequency, and three
+noise levels. It does not establish behavior for natural scenes, measured
+camera PSFs, color pipelines, diffraction, aberrations, spatially varying
+defocus, non-uniform motion, rolling shutter, or human quality judgments.
+Scores remain dependent on texture, contrast, resolution, codec implementation,
+preprocessing order, window geometry, PSF rasterization, border handling, and
+metric details. Known pattern identities, matched sharp references, and
+synthetic anchors are controls that are usually unavailable in blind
+inspection.
 
 ## Project Structure
 
@@ -119,12 +129,14 @@ unavailable in blind inspection.
 |   |-- run_focus_metric_comparison.py
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
+|   |-- run_optical_blur_models.py
 |   |-- run_preprocessing_sensitivity.py
 |   `-- run_window_geometry_evaluation.py
 |-- notes/
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
 |   |-- local-blur-spatial-aggregation.md
+|   |-- optical-blur-models-directional-motion.md
 |   |-- preprocessing-sensitivity-calibration-drift.md
 |   `-- window-geometry-robustness.md
 |-- results/
@@ -133,6 +145,7 @@ unavailable in blind inspection.
 |   `-- *.png
 |-- src/research_notes/
 |   |-- __init__.py
+|   |-- blur_models.py
 |   |-- blur_metrics.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
@@ -143,12 +156,12 @@ unavailable in blind inspection.
 
 ## Roadmap
 
-- Extend motion sensitivity to multiple directions and an optical defocus
-  model.
 - Test photometric normalization, repeated recompression, and color conversion
   as explicit pipeline factors.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
+- Extend the global PSF controls to spatially varying defocus and non-uniform
+  motion without treating synthetic labels as measured camera truth.
 - Replicate selected controls on a traceable public image set with labels.
 
 The roadmap is exploratory and does not represent completed work.

@@ -1,13 +1,16 @@
-"""Tests for the Laplacian-variance implementation and its relative behavior."""
+"""Tests for focus metrics, preprocessing, and controlled blur models."""
 
 import cv2
 import numpy as np
 import pytest
 
 from research_notes import (
+    apply_psf,
+    disk_psf,
     gaussian_denoise,
     jpeg_round_trip,
     laplacian_variance,
+    linear_motion_psf,
     resize_round_trip,
     sliding_metric_map,
     tenengrad_energy,
@@ -22,6 +25,17 @@ def make_checkerboard(size: int = 128, cell_size: int = 8) -> np.ndarray:
     return (((rows // cell_size + columns // cell_size) % 2) * 255).astype(
         np.uint8
     )
+
+
+def make_grating(
+    angle_degrees: float, size: int = 128, period: float = 16.0
+) -> np.ndarray:
+    """Return a sinusoidal grating whose gradient axis has a known angle."""
+    rows, columns = np.indices((size, size), dtype=np.float64)
+    angle_radians = np.deg2rad(angle_degrees)
+    phase = columns * np.cos(angle_radians) + rows * np.sin(angle_radians)
+    values = 127.5 + 110.0 * np.cos(2.0 * np.pi * phase / period)
+    return np.clip(np.rint(values), 0, 255).astype(np.uint8)
 
 
 def test_constant_image_has_zero_laplacian_variance() -> None:
@@ -227,3 +241,53 @@ def test_preprocessing_parameters_are_validated() -> None:
         gaussian_denoise(image, sigma=0.0)
     with pytest.raises(ValueError, match="not be negative"):
         unsharp_mask(image, amount=-0.1, sigma=1.0)
+
+
+def test_disk_psf_is_normalized_and_centrosymmetric() -> None:
+    kernel = disk_psf(radius=3)
+
+    assert kernel.shape == (7, 7)
+    assert np.sum(kernel) == pytest.approx(1.0)
+    assert kernel == pytest.approx(np.flip(kernel))
+
+
+def test_linear_motion_psf_is_normalized_and_centrosymmetric() -> None:
+    kernel = linear_motion_psf(length=15, angle_degrees=45)
+
+    assert kernel.shape == (15, 15)
+    assert np.sum(kernel) == pytest.approx(1.0)
+    assert kernel == pytest.approx(np.flip(kernel), abs=1e-12)
+
+
+def test_identity_psf_preserves_an_image() -> None:
+    image = make_checkerboard()
+
+    assert np.array_equal(apply_psf(image, disk_psf(radius=0)), image)
+    assert np.array_equal(
+        apply_psf(image, linear_motion_psf(length=1, angle_degrees=37)),
+        image,
+    )
+
+
+def test_aligned_motion_reduces_grating_more_than_perpendicular() -> None:
+    image = make_grating(angle_degrees=0)
+    aligned = apply_psf(image, linear_motion_psf(15, angle_degrees=0))
+    perpendicular = apply_psf(
+        image, linear_motion_psf(15, angle_degrees=90)
+    )
+
+    assert laplacian_variance(aligned) < laplacian_variance(perpendicular)
+    assert tenengrad_energy(aligned) < tenengrad_energy(perpendicular)
+
+
+def test_blur_model_parameters_are_validated() -> None:
+    image = make_checkerboard()
+
+    with pytest.raises(ValueError, match="not be negative"):
+        disk_psf(radius=-1)
+    with pytest.raises(ValueError, match="positive odd"):
+        linear_motion_psf(length=4, angle_degrees=0)
+    with pytest.raises(ValueError, match="finite"):
+        linear_motion_psf(length=5, angle_degrees=float("nan"))
+    with pytest.raises(ValueError, match="sum to one"):
+        apply_psf(image, np.ones((3, 3), dtype=np.float64))
