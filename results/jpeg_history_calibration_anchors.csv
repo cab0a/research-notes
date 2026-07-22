@@ -1,0 +1,13 @@
+pattern,alignment,crop_offset,metric,source_pipeline,source_noise_std,sharp_blur_sigma,blurred_blur_sigma,sharp_score,blurred_score,midpoint_threshold
+achromatic_checkerboard,aligned,0,laplacian_variance,uncompressed grayscale crop,0,0,3,22180.500000,40.883240,11110.691620
+achromatic_checkerboard,aligned,0,tenengrad_energy,uncompressed grayscale crop,0,0,3,233802.000000,6975.238281,120388.619141
+achromatic_checkerboard,shifted_4x4,4,laplacian_variance,uncompressed grayscale crop,0,0,3,23040.000000,41.584717,11540.792358
+achromatic_checkerboard,shifted_4x4,4,tenengrad_energy,uncompressed grayscale crop,0,0,3,239616.000000,6771.737549,123193.868774
+chromatic_stripes,aligned,0,laplacian_variance,uncompressed grayscale crop,0,0,3,1773.184296,11.135332,892.159814
+chromatic_stripes,aligned,0,tenengrad_energy,uncompressed grayscale crop,0,0,3,27895.674194,3556.165070,15725.919632
+chromatic_stripes,shifted_4x4,4,laplacian_variance,uncompressed grayscale crop,0,0,3,1839.839661,10.815153,925.327407
+chromatic_stripes,shifted_4x4,4,tenengrad_energy,uncompressed grayscale crop,0,0,3,28862.127197,3636.036438,16249.081818
+colored_targets,aligned,0,laplacian_variance,uncompressed grayscale crop,0,0,3,239.165436,1.759231,120.462334
+colored_targets,aligned,0,tenengrad_energy,uncompressed grayscale crop,0,0,3,1721.488403,334.596558,1028.042480
+colored_targets,shifted_4x4,4,laplacian_variance,uncompressed grayscale crop,0,0,3,239.163666,1.771973,120.467819
+colored_targets,shifted_4x4,4,tenengrad_energy,uncompressed grayscale crop,0,0,3,1721.486572,334.619324,1028.052948

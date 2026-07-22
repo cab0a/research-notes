@@ -14,9 +14,9 @@ experiment automatically generalizes to production imagery.
 
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
-models, and photometric pipeline drift. v0.7.0 evaluates tone transforms,
-global min-max normalization, repeated JPEG recompression, color-conversion
-order, and fixed-calibration transfer.
+models, photometric pipeline drift, and JPEG compression history. v0.8.0
+evaluates primary-to-secondary quality order, aligned and shifted block grids,
+explicit 4:4:4 and 4:2:0 sampling paths, and fixed-calibration transfer.
 
 ## Research Workflow
 
@@ -35,6 +35,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [JPEG Compression History: Quality Order, Grid Alignment, and Chroma Sampling](notes/jpeg-compression-history.md)
+  — v0.8.0
 - [Photometric Normalization and Recompression Drift](notes/photometric-normalization-recompression-drift.md)
   — v0.7.0
 - [Optical Blur Models and Directional Motion Sensitivity](notes/optical-blur-models-directional-motion.md)
@@ -70,6 +72,7 @@ python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
+python experiments/run_jpeg_compression_history.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -113,19 +116,27 @@ proposing a fixed quality threshold:
   grayscale JPEG quality-75 round trip lowers the clean sharp Laplacian ratio
   to 0.930825 but raises the sigma-3 ratio to 1.637515; rounds 2 and 5 converge
   to the same six-decimal aggregate values in this bounded setting.
+- v0.8.0 records 4,320 metric observations across nine two-stage JPEG
+  histories. An aligned grayscale quality-75 second round remains at a
+  six-decimal final-to-primary ratio of 1.000000, while a 4 x 4 grid shift
+  changes the sigma-3 Laplacian ratio to 0.805242. Reversing quality 95 -> 75
+  to 75 -> 95 changes the clean sharp Laplacian ratio from 0.920521 to
+  1.003831. At noise standard deviation 15, the unchanged uncompressed midpoint
+  rule falls to balanced accuracy 0.666667 for Laplacian variance and 0.833333
+  for Tenengrad on the shifted quality-75 path.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.7.0 adds three synthetic BGR
-patterns, one grayscale conversion, two brightness biases, two contrast gains,
-two gamma values, one global min-max rule, one JPEG quality, and aligned
-same-quality recompression. It does not establish behavior for natural scenes,
-measured camera response or PSFs, explicit chroma sampling factors, mismatched
-JPEG qualities, shifted block grids, color profiles, demosaicing, HDR tone
-mapping, diffraction, aberrations, rolling shutter, or human quality judgments.
+The studies use small, 8-bit synthetic images. v0.8.0 adds five grayscale
+quality orders, four explicit BGR sampling paths, and aligned or 4 x 4-shifted
+two-stage JPEG grids under one pinned OpenCV build. It does not establish
+behavior for natural scenes, measured camera response or PSFs, explicit
+quantization-table equivalence, arbitrary grid shifts, codec-build variation,
+progressive JPEG, color profiles, demosaicing, HDR tone mapping, diffraction,
+aberrations, rolling shutter, or human quality judgments.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
 preprocessing order, window geometry, PSF rasterization, border handling, and
 metric details. Known pattern identities, matched sharp references, and
@@ -139,6 +150,7 @@ inspection.
 |-- .github/workflows/ci.yml
 |-- experiments/
 |   |-- run_focus_metric_comparison.py
+|   |-- run_jpeg_compression_history.py
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
 |   |-- run_optical_blur_models.py
@@ -148,6 +160,7 @@ inspection.
 |-- notes/
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
+|   |-- jpeg-compression-history.md
 |   |-- local-blur-spatial-aggregation.md
 |   |-- optical-blur-models-directional-motion.md
 |   |-- photometric-normalization-recompression-drift.md
@@ -171,8 +184,8 @@ inspection.
 
 ## Roadmap
 
-- Extend compression-history controls across primary and secondary quality
-  pairs, shifted block grids, explicit sampling factors, and codec builds.
+- Compare explicit JPEG quantization tables and codec builds without treating
+  nominal quality values as portable equivalents.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform

@@ -7,6 +7,12 @@ import numpy as np
 from numpy.typing import NDArray
 
 
+JPEG_SAMPLING_FACTORS = {
+    "444": cv2.IMWRITE_JPEG_SAMPLING_FACTOR_444,
+    "420": cv2.IMWRITE_JPEG_SAMPLING_FACTOR_420,
+}
+
+
 def _validate_uint8_image(
     image: NDArray[np.generic],
 ) -> NDArray[np.uint8]:
@@ -92,17 +98,43 @@ def repeated_jpeg_round_trip(
     if rounds < 0:
         raise ValueError("rounds must not be negative")
 
-    decode_flag = cv2.IMREAD_GRAYSCALE if current.ndim == 2 else cv2.IMREAD_COLOR
     for _ in range(rounds):
-        succeeded, encoded = cv2.imencode(
-            ".jpg",
-            current,
-            [cv2.IMWRITE_JPEG_QUALITY, quality],
-        )
-        if not succeeded:
-            raise RuntimeError("JPEG encoding failed")
-        decoded = cv2.imdecode(encoded, decode_flag)
-        if decoded is None or decoded.shape != current.shape:
-            raise RuntimeError("JPEG decoding failed or changed image dimensions")
-        current = decoded
+        current = jpeg_encode_decode(current, quality=quality)
     return current
+
+
+def jpeg_encode_decode(
+    image: NDArray[np.generic],
+    quality: int,
+    chroma_sampling: str | None = None,
+) -> NDArray[np.uint8]:
+    """Apply one JPEG round trip with an optional BGR chroma-sampling mode."""
+    validated = _validate_uint8_image(image)
+    if not isinstance(quality, int) or isinstance(quality, bool):
+        raise TypeError("quality must be an integer")
+    if not 1 <= quality <= 100:
+        raise ValueError("quality must be in the interval [1, 100]")
+    if chroma_sampling is not None and chroma_sampling not in JPEG_SAMPLING_FACTORS:
+        supported = ", ".join(sorted(JPEG_SAMPLING_FACTORS))
+        raise ValueError(f"chroma_sampling must be one of: {supported}")
+    if validated.ndim == 2 and chroma_sampling is not None:
+        raise ValueError("chroma_sampling applies only to BGR images")
+
+    parameters = [cv2.IMWRITE_JPEG_QUALITY, quality]
+    if chroma_sampling is not None:
+        parameters.extend(
+            [
+                cv2.IMWRITE_JPEG_SAMPLING_FACTOR,
+                JPEG_SAMPLING_FACTORS[chroma_sampling],
+            ]
+        )
+    succeeded, encoded = cv2.imencode(".jpg", validated, parameters)
+    if not succeeded:
+        raise RuntimeError("JPEG encoding failed")
+    decode_flag = (
+        cv2.IMREAD_GRAYSCALE if validated.ndim == 2 else cv2.IMREAD_COLOR
+    )
+    decoded = cv2.imdecode(encoded, decode_flag)
+    if decoded is None or decoded.shape != validated.shape:
+        raise RuntimeError("JPEG decoding failed or changed image dimensions")
+    return decoded

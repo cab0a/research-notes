@@ -93,6 +93,21 @@ images by the versioned experiment scripts.
 - `photometric_recompression_drift.png` compares photometric scale,
   recompression trajectories, and fixed-calibration transfer.
 
+## v0.8.0
+
+- `jpeg_history_trials.csv` contains 4,320 paired observations across nine
+  two-stage JPEG histories, two block-grid alignments, blur, and noise controls.
+- `jpeg_history_response_summary.csv` contains 288 matched primary-only and
+  uncompressed response summaries.
+- `jpeg_history_calibration_anchors.csv` records 12 uncompressed same-crop
+  midpoint anchors.
+- `jpeg_history_calibration_summary.csv` contains 72 fixed-rule transfer and
+  blur-order summaries.
+- `jpeg_history_examples.png` shows aligned, shifted, 4:4:4, and 4:2:0 synthetic
+  decoded controls.
+- `jpeg_history_sensitivity.png` compares quality order, block-grid alignment,
+  chroma sampling, and calibration transfer.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -103,6 +118,7 @@ python experiments/run_window_geometry_evaluation.py
 python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
+python experiments/run_jpeg_compression_history.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

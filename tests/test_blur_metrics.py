@@ -9,6 +9,7 @@ from research_notes import (
     disk_psf,
     gaussian_denoise,
     gamma_transform,
+    jpeg_encode_decode,
     jpeg_round_trip,
     laplacian_variance,
     linear_intensity_transform,
@@ -347,6 +348,48 @@ def test_repeated_jpeg_is_deterministic_and_zero_rounds_are_identity() -> None:
     )
 
 
+def test_explicit_jpeg_sampling_is_deterministic_and_preserves_shape() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+
+    first = jpeg_encode_decode(color, quality=75, chroma_sampling="420")
+    second = jpeg_encode_decode(color, quality=75, chroma_sampling="420")
+
+    assert np.array_equal(first, second)
+    assert first.shape == color.shape
+    assert first.dtype == np.uint8
+
+
+def test_chroma_sampling_can_change_a_chromatic_metric_response() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    sampling_444 = to_grayscale(
+        jpeg_encode_decode(color, quality=75, chroma_sampling="444")
+    )
+    sampling_420 = to_grayscale(
+        jpeg_encode_decode(color, quality=75, chroma_sampling="420")
+    )
+
+    assert laplacian_variance(sampling_444) != pytest.approx(
+        laplacian_variance(sampling_420)
+    )
+
+
+def test_jpeg_quality_order_can_change_recompression_response() -> None:
+    image = make_checkerboard(cell_size=7)
+    high_then_low = jpeg_encode_decode(
+        jpeg_encode_decode(image, quality=95), quality=50
+    )
+    low_then_high = jpeg_encode_decode(
+        jpeg_encode_decode(image, quality=50), quality=95
+    )
+
+    assert not np.array_equal(high_then_low, low_then_high)
+    assert tenengrad_energy(high_then_low) != pytest.approx(
+        tenengrad_energy(low_then_high)
+    )
+
+
 def test_recompression_and_color_conversion_order_can_change_scores() -> None:
     grayscale = make_checkerboard(cell_size=7)
     color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
@@ -378,3 +421,7 @@ def test_photometric_parameters_are_validated() -> None:
         repeated_jpeg_round_trip(image, quality=0, rounds=1)
     with pytest.raises(ValueError, match="not be negative"):
         repeated_jpeg_round_trip(image, quality=75, rounds=-1)
+    with pytest.raises(ValueError, match="one of"):
+        jpeg_encode_decode(image, quality=75, chroma_sampling="422")
+    with pytest.raises(ValueError, match="only to BGR"):
+        jpeg_encode_decode(image, quality=75, chroma_sampling="420")

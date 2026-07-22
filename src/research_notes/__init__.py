@@ -9,6 +9,7 @@ from research_notes.blur_metrics import (
 )
 from research_notes.photometric import (
     gamma_transform,
+    jpeg_encode_decode,
     linear_intensity_transform,
     minmax_normalize,
     repeated_jpeg_round_trip,
@@ -26,6 +27,7 @@ __all__ = [
     "disk_psf",
     "gaussian_denoise",
     "gamma_transform",
+    "jpeg_encode_decode",
     "jpeg_round_trip",
     "laplacian_variance",
     "linear_intensity_transform",
