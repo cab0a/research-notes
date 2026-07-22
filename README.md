@@ -143,11 +143,12 @@ proposing a fixed quality threshold:
   preserves every DQT and decoded pixel array while changing every file and
   reducing encoded size to a mean ratio of 0.708379.
 - v0.10.0 commits 12 synthetic baseline JPEG streams and their declared BGR
-  decode references. The Linux x64 reference and forced-scalar controls each
-  produce 24 exact decoder observations. The release CI expands the same
-  corpus to five platform profiles, keeps structural and numerical contracts
-  separate, and records exact hashes as evidence rather than a perceptual
-  quality score.
+  decode references. The five-profile release matrix produced 120 of 120 exact
+  reference decodes and 60 of 60 exact within-profile OpenCV-versus-Pillow
+  comparisons. Every fixture and decoder had one decoded hash across Ubuntu
+  x64 default and forced-scalar, Windows x64, macOS arm64, and macOS Intel x64.
+  These exact hashes are regression evidence for the fixed corpus and pinned
+  wheels, not a perceptual quality score or a codec-wide guarantee.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.

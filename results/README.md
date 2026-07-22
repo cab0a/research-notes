@@ -154,6 +154,12 @@ images by the versioned experiment scripts.
 - `jpeg_cross_platform_contracts.png` visualizes exact, bounded, maximum-error,
   and decoded-hash behavior across the release matrix.
 
+The committed cross-platform snapshot comes from the successful v0.10.0
+release matrix rather than a simulated local platform label. The aggregation
+job verifies the three stable decoded-pixel reports against the committed
+references on every CI run. Runner image identifiers remain observational
+metadata because hosted images can be updated independently of this project.
+
 Regenerate the artifacts from the repository root:
 
 ```bash

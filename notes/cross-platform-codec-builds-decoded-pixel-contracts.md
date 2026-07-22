@@ -161,11 +161,31 @@ builds. It does not establish a general rule for arbitrary JPEG files.
 
 ### Cross-platform matrix
 
-The five-profile release matrix records exact hashes, bounded differences,
-derivative-metric ratios, wrapper versions, reported JPEG backends, processor
-architecture, SIMD policy, and runner image identifiers. The committed
-cross-platform snapshot is generated from the successful release workflow so
-that reported platform claims remain tied to inspectable CI evidence.
+The [successful five-profile release matrix](https://github.com/cab0a/research-notes/actions/runs/29901525179)
+produced 120 decoder observations. All 120 matched the committed BGR reference
+arrays exactly, so all 120 also passed the within-one diagnostic and had a
+maximum absolute error of zero. All 60 within-profile OpenCV-versus-Pillow
+comparisons were exact. For every fixture and decoder, the five profiles
+produced one unique decoded-array hash. Consequently, the recorded Laplacian
+variance and Tenengrad ratios to the reference were exactly 1.0 throughout
+this matrix.
+
+The runtime manifest records the builds rather than inferring them from the
+wrapper names:
+
+| Profile | Runner image | SIMD policy |
+| --- | --- | --- |
+| Ubuntu x64 default | `ubuntu24` `20260714.240.1` | runtime default |
+| Ubuntu x64 scalar | `ubuntu24` `20260714.240.1` | forced scalar |
+| Windows x64 | `win25-vs2026` `20260714.173.1` | runtime default |
+| macOS arm64 | `macos15` `20260715.0234.1` | runtime default |
+| macOS Intel x64 | `macos15` `20260715.0340.1` | runtime default |
+
+Across those profiles, OpenCV 4.13.0 reported its build libjpeg-turbo backend
+as version 3.1.2-70, while Pillow 12.3.0 reported libjpeg-turbo 3.1.4.1. The
+jobs used Python 3.12. The committed CSV snapshot preserves the observations,
+build records, and runner identifiers that support these release-specific
+claims.
 
 ## Interpretation
 
@@ -174,10 +194,12 @@ metric identity are different assertions. A stable DQT fingerprint cannot by
 itself guarantee a pixel array. Conversely, two entropy-coded streams can
 decode identically, as v0.9.0 demonstrated.
 
-For the local reference and forced-scalar observations, the pinned wrappers
-meet the exact contract for this corpus. That result is useful evidence for a
-strict regression test, but its scope is the exact files, output color order,
-decode options, and builds recorded here.
+For the local controls and all five CI profiles, the pinned wrappers meet the
+exact contract for this corpus. The default and forced-scalar Ubuntu results
+are also identical, so the selected SIMD policy did not change these 12
+decodes in the recorded builds. That result is useful evidence for a strict
+regression test, but its scope is the exact files, output color order, decode
+options, and builds recorded here.
 
 An application should choose its contract from downstream requirements. A
 content-addressed cache may need exact array bytes. A numerical pipeline may

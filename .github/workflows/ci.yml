@@ -174,6 +174,13 @@ jobs:
       - name: Aggregate cross-platform contracts
         run: python experiments/summarize_cross_platform_codec_contracts.py --input-dir platform-artifacts --output-dir cross-platform-results --expected-platform-count 5 --emit-log-payload
 
+      - name: Verify committed cross-platform contracts
+        run: |
+          diff -u results/jpeg_cross_platform_observations.csv cross-platform-results/jpeg_cross_platform_observations.csv
+          diff -u results/jpeg_cross_platform_decoder_pairs.csv cross-platform-results/jpeg_cross_platform_decoder_pairs.csv
+          diff -u results/jpeg_cross_platform_contract_summary.csv cross-platform-results/jpeg_cross_platform_contract_summary.csv
+          test -s cross-platform-results/jpeg_cross_platform_contracts.png
+
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7
         with:

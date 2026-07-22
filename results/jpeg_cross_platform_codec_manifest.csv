@@ -1,0 +1,11 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,simd_policy,decoder,wrapper,wrapper_version,jpeg_backend
+macos-arm64-default,Darwin,arm64,3.12,macos15,20260715.0234.1,runtime_default,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+macos-arm64-default,Darwin,arm64,3.12,macos15,20260715.0234.1,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1
+macos-x64-default,Darwin,x86_64,3.12,macos15,20260715.0340.1,runtime_default,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+macos-x64-default,Darwin,x86_64,3.12,macos15,20260715.0340.1,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1
+ubuntu-x64-default,Linux,x86_64,3.12,ubuntu24,20260714.240.1,runtime_default,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+ubuntu-x64-default,Linux,x86_64,3.12,ubuntu24,20260714.240.1,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1
+ubuntu-x64-scalar,Linux,x86_64,3.12,ubuntu24,20260714.240.1,forced_scalar,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+ubuntu-x64-scalar,Linux,x86_64,3.12,ubuntu24,20260714.240.1,forced_scalar,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1
+windows-x64-default,Windows,amd64,3.12,win25-vs2026,20260714.173.1,runtime_default,opencv,OpenCV,4.13.0,build-libjpeg-turbo (ver 3.1.2-70)
+windows-x64-default,Windows,amd64,3.12,win25-vs2026,20260714.173.1,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo 3.1.4.1
