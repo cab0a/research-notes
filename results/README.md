@@ -16,15 +16,26 @@ images by the versioned experiment scripts.
   experiment.
 - `focus_metric_comparison.png` compares normalized responses across the four
   v0.2.0 evaluations.
+- `local_blur_observations.csv` contains 132 full-image and tile-aggregation
+  observations from the v0.3.0 experiment.
+- `local_blur_tiles.csv` contains all 2,112 tile-level metric observations and
+  their matched-control ratios.
+- `local_blur_aggregate.csv` averages normalized results across patterns and
+  applicable placements.
+- `local_blur_example.png` shows a synthetic partial-blur sample and its two
+  normalized tile maps.
+- `local_blur_spatial_aggregation.png` compares full-image, mean, lower-tail,
+  and minimum aggregation behavior.
 
 Regenerate the artifacts from the repository root:
 
 ```bash
 python experiments/run_laplacian_variance.py
 python experiments/run_focus_metric_comparison.py
+python experiments/run_local_blur_evaluation.py
 ```
 
 All committed CSV files are numeric reference artifacts checked by CI. CI also
-regenerates both charts and verifies that non-empty PNG files are produced. PNG
+regenerates all charts and verifies that non-empty PNG files are produced. PNG
 byte identity is not asserted because font rasterization can differ across
 operating systems.

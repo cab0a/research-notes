@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 import pytest
 
-from research_notes import laplacian_variance, tenengrad_energy
+from research_notes import laplacian_variance, tenengrad_energy, tiled_metric_map
 
 
 def make_checkerboard(size: int = 128, cell_size: int = 8) -> np.ndarray:
@@ -98,3 +98,35 @@ def test_bgr_and_grayscale_inputs_agree() -> None:
 def test_invalid_shape_is_rejected() -> None:
     with pytest.raises(ValueError, match="grayscale, BGR, or BGRA"):
         laplacian_variance(np.zeros((8, 8, 2), dtype=np.uint8))
+
+
+def test_tiled_metric_map_returns_one_score_per_tile() -> None:
+    image = make_checkerboard(size=128)
+
+    scores = tiled_metric_map(image, laplacian_variance, tile_size=64)
+
+    assert scores.shape == (2, 2)
+    assert np.all(scores > 0.0)
+    assert np.all(scores == pytest.approx(scores[0, 0]))
+
+
+def test_local_blur_reduces_only_the_selected_tile_score() -> None:
+    sharp = make_checkerboard(size=128)
+    blurred = cv2.GaussianBlur(sharp, (0, 0), sigmaX=3.0, sigmaY=3.0)
+    observed = sharp.copy()
+    observed[:64, :64] = blurred[:64, :64]
+
+    reference = tiled_metric_map(sharp, tenengrad_energy, tile_size=64)
+    ratios = tiled_metric_map(observed, tenengrad_energy, tile_size=64) / reference
+
+    assert ratios[0, 0] < 1.0
+    assert ratios[0, 1] == pytest.approx(1.0)
+    assert ratios[1, 0] == pytest.approx(1.0)
+    assert ratios[1, 1] == pytest.approx(1.0)
+
+
+def test_tiled_metric_map_rejects_non_divisible_dimensions() -> None:
+    image = np.zeros((65, 64), dtype=np.uint8)
+
+    with pytest.raises(ValueError, match="divisible"):
+        tiled_metric_map(image, laplacian_variance, tile_size=32)

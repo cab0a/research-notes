@@ -30,6 +30,7 @@ jobs:
         run: |
           python experiments/run_laplacian_variance.py --output-dir regenerated-results
           python experiments/run_focus_metric_comparison.py --output-dir regenerated-results
+          python experiments/run_local_blur_evaluation.py --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -38,5 +39,10 @@ jobs:
           diff -u results/focus_metric_summary.csv regenerated-results/focus_metric_summary.csv
           diff -u results/motion_blur_summary.csv regenerated-results/motion_blur_summary.csv
           diff -u results/resize_sensitivity_summary.csv regenerated-results/resize_sensitivity_summary.csv
+          diff -u results/local_blur_observations.csv regenerated-results/local_blur_observations.csv
+          diff -u results/local_blur_tiles.csv regenerated-results/local_blur_tiles.csv
+          diff -u results/local_blur_aggregate.csv regenerated-results/local_blur_aggregate.csv
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
+          test -s regenerated-results/local_blur_example.png
+          test -s regenerated-results/local_blur_spatial_aggregation.png

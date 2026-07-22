@@ -14,7 +14,9 @@ experiment automatically generalizes to production imagery.
 
 The v0.1.0 study evaluates Laplacian variance as a blur heuristic. The v0.2.0
 study extends the same controls to an area-normalized Tenengrad comparison,
-repeated noise trials, horizontal motion blur, and resize sensitivity.
+repeated noise trials, horizontal motion blur, and resize sensitivity. The
+v0.3.0 study evaluates how full-image scores and tile aggregation respond when
+Gaussian blur affects only a controlled part of an image.
 
 ## Research Workflow
 
@@ -33,6 +35,8 @@ Every published note should make that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Local Blur and Spatial Aggregation](notes/local-blur-spatial-aggregation.md)
+  — v0.3.0
 - [Laplacian Variance vs. Tenengrad Under Blur and
   Noise](notes/laplacian-vs-tenengrad.md) — v0.2.0
 - [Laplacian Variance as a Blur Heuristic: Controlled Evaluation and
@@ -53,6 +57,7 @@ python -m pip install -e ".[test]"
 python -m pytest
 python experiments/run_laplacian_variance.py
 python experiments/run_focus_metric_comparison.py
+python experiments/run_local_blur_evaluation.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -81,16 +86,26 @@ with standard deviation 15 produces median inflation ratios of 96.679135 and
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
-No fixed Laplacian-variance threshold is presented as a universal quality bar.
+The v0.3.0 experiment uses a 4 x 4 grid to compare full-image scores, tile
+means, the mean of the four lowest tile ratios, and minimum tile ratios. It
+contains 66 synthetic image conditions and 132 metric observations. With one
+of 16 tiles blurred at Gaussian sigma 3, the mean full-image ratios remain
+0.936866 for Laplacian variance and 0.940676 for Tenengrad, while the mean
+minimum tile ratios fall to 0.005025 and 0.062950. This demonstrates controlled
+spatial dilution, not natural-image detection accuracy.
+
+No fixed metric threshold is presented as a universal quality bar.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic grayscale images. v0.2.0 adds one
-horizontal-motion direction and one resize round trip, but does not establish
-behavior for other motion angles, defocus point-spread functions, compression,
-demosaicing, sharpening, color pipelines, local blur, natural scenes, or human
-quality judgments. Scores remain dependent on texture, contrast, resolution,
-border handling, and implementation details.
+The studies use small, 8-bit synthetic grayscale images. v0.3.0 adds
+tile-aligned local Gaussian blur without noise, using one fixed non-overlapping
+grid whose every tile contains texture. The studies do not establish behavior
+for sliding or multiscale windows, unknown blur masks, other motion angles,
+defocus point-spread functions, compression, demosaicing, sharpening, color
+pipelines, natural scenes, or human quality judgments. Scores remain dependent
+on texture, contrast, resolution, tile geometry, border handling, and
+implementation details.
 
 ## Project Structure
 
@@ -99,6 +114,8 @@ border handling, and implementation details.
 ├── .github/workflows/ci.yml
 ├── experiments/run_focus_metric_comparison.py
 ├── experiments/run_laplacian_variance.py
+├── experiments/run_local_blur_evaluation.py
+├── notes/local-blur-spatial-aggregation.md
 ├── notes/laplacian-vs-tenengrad.md
 ├── notes/laplacian-variance-blur.md
 ├── results/
@@ -108,6 +125,11 @@ border handling, and implementation details.
 │   ├── focus_metric_trials.csv
 │   ├── laplacian_variance_summary.csv
 │   ├── laplacian_variance.png
+│   ├── local_blur_aggregate.csv
+│   ├── local_blur_example.png
+│   ├── local_blur_observations.csv
+│   ├── local_blur_spatial_aggregation.png
+│   ├── local_blur_tiles.csv
 │   ├── motion_blur_summary.csv
 │   └── resize_sensitivity_summary.csv
 ├── src/research_notes/
@@ -121,8 +143,9 @@ border handling, and implementation details.
 
 ## Roadmap
 
-- Add spatially localized blur and regional evaluation.
+- Evaluate overlapping and multiscale regional policies.
 - Extend motion sensitivity to multiple directions and a defocus model.
+- Add compression and preprocessing sensitivity controls.
 - Replicate selected controls on a traceable public image set with labels.
 
 The roadmap is exploratory and does not represent completed work.
