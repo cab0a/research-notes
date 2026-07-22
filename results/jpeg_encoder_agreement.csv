@@ -1,0 +1,217 @@
+pattern,blur_sigma,quality,chroma_sampling,baseline_path,candidate_path,candidate_path_description,encoded_bytes_equal,quantization_tables_equal,component_signatures_equal,baseline_size_bytes,candidate_size_bytes,candidate_to_baseline_size_ratio,decoded_pixels_equal,decoded_pixel_mae,decoded_pixel_max_abs_error,decoded_changed_pixel_fraction,laplacian_candidate_to_baseline_ratio,tenengrad_candidate_to_baseline_ratio
+achromatic_checkerboard,0,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3658,3658,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3658,3658,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3658,1924,0.525970,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,2290,2290,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,2290,2290,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,2290,1180,0.515284,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3907,3907,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3907,3907,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3907,2048,0.524187,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,2419,2419,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,2419,2419,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,2419,1244,0.514262,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4515,4515,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4515,4515,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4515,2357,0.522038,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,2675,2675,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,2675,2675,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,0,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,2675,1373,0.513271,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,15239,15239,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,15239,15239,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,15239,8156,0.535206,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,13246,13246,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,13246,13246,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,13246,7475,0.564321,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,17972,17972,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,17972,17972,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,17972,9485,0.527765,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,16301,16301,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,16301,16301,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,16301,8735,0.535857,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,29794,29794,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,29794,29794,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,29794,15581,0.522958,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,28174,28174,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,28174,28174,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,1,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,28174,14713,0.522219,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,10827,10827,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,10827,10827,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,10827,6051,0.558881,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9563,9563,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9563,9563,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9563,5404,0.565095,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,14866,14866,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,14866,14866,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,14866,8020,0.539486,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,13529,13529,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,13529,13529,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,13529,7334,0.542095,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,24404,24404,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,24404,24404,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,24404,12444,0.509916,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,23057,23057,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,23057,23057,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,2,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,23057,11675,0.506354,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,8512,8512,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,8512,8512,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,8512,5062,0.594690,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,7365,7365,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,7365,7365,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,7365,4482,0.608554,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,10379,10379,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,10379,10379,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,10379,5899,0.568359,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9071,9071,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9071,9071,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9071,5270,0.580972,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,18873,18873,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,18873,18873,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,18873,9623,0.509882,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,17424,17424,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,17424,17424,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+achromatic_checkerboard,3,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,17424,8897,0.510618,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,5838,5838,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,5838,5838,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,5838,3547,0.607571,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,5821,5821,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,5821,5821,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,5821,3222,0.553513,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,6606,6606,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,6606,6606,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,6606,3933,0.595368,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,7460,7460,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,7460,7460,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,7460,3786,0.507507,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,8492,8492,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,8492,8492,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,8492,4751,0.559468,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9770,9770,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9770,9770,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,0,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9770,4753,0.486489,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,16712,16712,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,16712,16712,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,16712,12605,0.754248,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9557,9557,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9557,9557,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9557,7147,0.747829,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,23649,23649,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,23649,23649,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,23649,17113,0.723625,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,13992,13992,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,13992,13992,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,13992,10293,0.735635,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,44610,44610,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,44610,44610,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,44610,32894,0.737368,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,25451,25451,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,25451,25451,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,1,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,25451,19333,0.759617,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,15406,15406,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,15406,15406,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,15406,11751,0.762755,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9050,9050,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9050,9050,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9050,6998,0.773260,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,20849,20849,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,20849,20849,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,20849,16391,0.786177,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,11962,11962,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,11962,11962,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,11962,9506,0.794683,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,40282,40282,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,40282,40282,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,40282,30848,0.765801,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,24558,24558,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,24558,24558,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,2,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,24558,19494,0.793794,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,13411,13411,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,13411,13411,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,13411,10298,0.767877,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,7927,7927,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,7927,7927,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,7927,6199,0.782011,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,18802,18802,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,18802,18802,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,18802,14843,0.789437,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,11414,11414,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,11414,11414,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,11414,9125,0.799457,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,33539,33539,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,33539,33539,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,33539,25707,0.766481,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,20856,20856,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,20856,20856,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+chromatic_stripes,3,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,20856,16674,0.799482,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,5761,5761,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,5761,5761,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,5761,5009,0.869467,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3975,3975,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3975,3975,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3975,3390,0.852830,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9089,9089,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9089,9089,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9089,8341,0.917703,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,5827,5827,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,5827,5827,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,5827,5203,0.892912,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,20591,20591,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,20591,20591,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,20591,19025,0.923947,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,12839,12839,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,12839,12839,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,0,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,12839,11879,0.925228,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,5028,5028,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,5028,5028,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,5028,4220,0.839300,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3541,3541,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3541,3541,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3541,2896,0.817848,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,7397,7397,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,7397,7397,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,7397,6634,0.896850,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4969,4969,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4969,4969,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4969,4318,0.868988,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,15325,15325,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,15325,15325,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,15325,13983,0.912431,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,10464,10464,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,10464,10464,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,1,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,10464,9451,0.903192,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4750,4750,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4750,4750,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4750,3898,0.820632,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3321,3321,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3321,3321,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3321,2648,0.797350,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,6926,6926,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,6926,6926,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,6926,6184,0.892867,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4568,4568,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4568,4568,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4568,3921,0.858363,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,14008,14008,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,14008,14008,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,14008,12677,0.904983,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,9412,9412,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,9412,9412,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,2,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,9412,8454,0.898215,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4567,4567,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4567,4567,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4567,3712,0.812787,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,3195,3195,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,3195,3195,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,50,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,3195,2513,0.786541,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,6592,6592,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,6592,6592,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,6592,5837,0.885467,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,4355,4355,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,4355,4355,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,75,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,4355,3702,0.850057,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,444,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,13520,13520,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,444,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,13520,13520,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,444,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,13520,12269,0.907470,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,420,opencv_quality,pillow_quality,"Pillow numeric quality, default Huffman coding",1,1,1,8988,8988,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,420,opencv_quality,pillow_explicit_dqt,Pillow explicit OpenCV-extracted DQT tables,1,1,1,8988,8988,1.000000,1,0.000000,0,0.000000,1.000000,1.000000
+colored_targets,3,95,420,opencv_quality,pillow_optimized,"Pillow numeric quality, optimized Huffman coding",0,1,1,8988,8091,0.900200,1,0.000000,0,0.000000,1.000000,1.000000

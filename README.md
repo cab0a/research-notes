@@ -14,9 +14,10 @@ experiment automatically generalizes to production imagery.
 
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
-models, photometric pipeline drift, and JPEG compression history. v0.8.0
-evaluates primary-to-secondary quality order, aligned and shifted block grids,
-explicit 4:4:4 and 4:2:0 sampling paths, and fixed-calibration transfer.
+models, photometric pipeline drift, JPEG compression history, and codec
+portability. v0.9.0 extracts DQT and SOF marker data and separates numeric
+quality, table, byte-stream, decoded-pixel, and metric-level agreement across
+the pinned OpenCV and Pillow paths.
 
 ## Research Workflow
 
@@ -35,6 +36,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [JPEG Quantization Tables and Codec Portability](notes/jpeg-quantization-codec-portability.md)
+  — v0.9.0
 - [JPEG Compression History: Quality Order, Grid Alignment, and Chroma Sampling](notes/jpeg-compression-history.md)
   — v0.8.0
 - [Photometric Normalization and Recompression Drift](notes/photometric-normalization-recompression-drift.md)
@@ -73,6 +76,7 @@ python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
+python experiments/run_jpeg_codec_portability.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -124,19 +128,25 @@ proposing a fixed quality threshold:
   1.003831. At noise standard deviation 15, the unchanged uncompressed midpoint
   rule falls to balanced accuracy 0.666667 for Laplacian variance and 0.833333
   for Tenengrad on the shifted quality-75 path.
+- v0.9.0 audits all numeric qualities from 1 through 100 and records 1,152
+  decoded metric observations. The pinned OpenCV 4.13.0 and Pillow 12.3.0
+  default paths produce identical DQT fingerprints and JPEG bytes throughout
+  the sweep and all 72 larger image conditions. Supplying the extracted DQT
+  explicitly also reproduces all 72 files byte for byte. Huffman optimization
+  preserves every DQT and decoded pixel array while changing every file and
+  reducing encoded size to a mean ratio of 0.708379.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.8.0 adds five grayscale
-quality orders, four explicit BGR sampling paths, and aligned or 4 x 4-shifted
-two-stage JPEG grids under one pinned OpenCV build. It does not establish
-behavior for natural scenes, measured camera response or PSFs, explicit
-quantization-table equivalence, arbitrary grid shifts, codec-build variation,
-progressive JPEG, color profiles, demosaicing, HDR tone mapping, diffraction,
-aberrations, rolling shutter, or human quality judgments.
+The studies use small, 8-bit synthetic images. v0.9.0 compares pinned OpenCV
+and Pillow wrappers backed by different releases of the same libjpeg-turbo
+codec family. It extracts exact quantization tables but does not establish
+behavior for IJG libjpeg, mozjpeg, hardware or camera encoders, other operating
+systems, progressive or malformed streams, arbitrary color management,
+measured camera response or PSFs, or human quality judgments.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
 preprocessing order, window geometry, PSF rasterization, border handling, and
 metric details. Known pattern identities, matched sharp references, and
@@ -151,6 +161,7 @@ inspection.
 |-- experiments/
 |   |-- run_focus_metric_comparison.py
 |   |-- run_jpeg_compression_history.py
+|   |-- run_jpeg_codec_portability.py
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
 |   |-- run_optical_blur_models.py
@@ -161,6 +172,7 @@ inspection.
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
 |   |-- jpeg-compression-history.md
+|   |-- jpeg-quantization-codec-portability.md
 |   |-- local-blur-spatial-aggregation.md
 |   |-- optical-blur-models-directional-motion.md
 |   |-- photometric-normalization-recompression-drift.md
@@ -174,6 +186,7 @@ inspection.
 |   |-- __init__.py
 |   |-- blur_models.py
 |   |-- blur_metrics.py
+|   |-- jpeg_codec.py
 |   |-- photometric.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
@@ -184,8 +197,8 @@ inspection.
 
 ## Roadmap
 
-- Compare explicit JPEG quantization tables and codec builds without treating
-  nominal quality values as portable equivalents.
+- Extend the codec audit across platform wheels or independent encoder families
+  while keeping byte, table, decoded-pixel, and metric contracts separate.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform

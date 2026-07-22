@@ -108,6 +108,25 @@ images by the versioned experiment scripts.
 - `jpeg_history_sensitivity.png` compares quality order, block-grid alignment,
   chroma sampling, and calibration transfer.
 
+## v0.9.0
+
+- `jpeg_codec_manifest.csv` records the two wrapper and reported JPEG backend
+  versions under comparison.
+- `jpeg_quality_table_sweep.csv` audits DQT mappings and exact byte agreement
+  for numeric qualities 1 through 100.
+- `jpeg_quantization_tables.csv` expands the quality-50, 75, and 95 luma and
+  chroma tables into 384 coefficient rows.
+- `jpeg_codec_trials.csv` contains 1,152 decoded metric observations across
+  four encoder paths and two decoders.
+- `jpeg_encoder_agreement.csv` contains 216 byte, table, component, pixel, size,
+  and metric comparisons against the OpenCV default path.
+- `jpeg_decoder_agreement.csv` contains 288 cross-decoder pixel comparisons.
+- `jpeg_codec_portability_summary.csv` contains 72 encoder-path summaries.
+- `jpeg_quantization_tables.png` visualizes the selected DQT tables and numeric-
+  quality scaling.
+- `jpeg_codec_portability.png` separates DQT, byte, decoded-pixel, size, and
+  derivative-response behavior.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -119,6 +138,7 @@ python experiments/run_preprocessing_sensitivity.py
 python experiments/run_optical_blur_models.py
 python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
+python experiments/run_jpeg_codec_portability.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

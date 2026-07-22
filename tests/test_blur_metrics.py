@@ -7,6 +7,10 @@ import pytest
 from research_notes import (
     apply_psf,
     disk_psf,
+    decode_jpeg_opencv,
+    decode_jpeg_pillow,
+    encode_jpeg_opencv,
+    encode_jpeg_pillow,
     gaussian_denoise,
     gamma_transform,
     jpeg_encode_decode,
@@ -15,6 +19,7 @@ from research_notes import (
     linear_intensity_transform,
     linear_motion_psf,
     minmax_normalize,
+    parse_jpeg_structure,
     repeated_jpeg_round_trip,
     resize_round_trip,
     sliding_metric_map,
@@ -388,6 +393,106 @@ def test_jpeg_quality_order_can_change_recompression_response() -> None:
     assert tenengrad_energy(high_then_low) != pytest.approx(
         tenengrad_energy(low_then_high)
     )
+
+
+def test_jpeg_structure_exposes_dqt_and_component_sampling() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    encoded = encode_jpeg_opencv(color, quality=75, chroma_sampling="420")
+
+    structure = parse_jpeg_structure(encoded)
+
+    assert structure.width == color.shape[1]
+    assert structure.height == color.shape[0]
+    assert structure.precision_bits == 8
+    assert structure.frame_marker == 0xC0
+    assert structure.component_signature == "1:2x2:q0;2:1x1:q1;3:1x1:q1"
+    assert len(structure.quantization_tables) == 2
+    assert all(
+        len(table.values_zigzag) == 64
+        and len(table.values_natural) == 64
+        and len(table.fingerprint) == 64
+        for table in structure.quantization_tables
+    )
+
+
+def test_opencv_and_pillow_quality_paths_can_match_exactly() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+
+    opencv_bytes = encode_jpeg_opencv(
+        color, quality=75, chroma_sampling="444"
+    )
+    pillow_bytes = encode_jpeg_pillow(
+        color, quality=75, chroma_sampling="444"
+    )
+
+    assert pillow_bytes == opencv_bytes
+    assert np.array_equal(
+        decode_jpeg_opencv(opencv_bytes), decode_jpeg_pillow(opencv_bytes)
+    )
+
+
+def test_explicit_quantization_tables_reproduce_quality_path() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    quality_bytes = encode_jpeg_opencv(
+        color, quality=50, chroma_sampling="420"
+    )
+    tables = parse_jpeg_structure(quality_bytes).quantization_tables_natural()
+
+    explicit_bytes = encode_jpeg_pillow(
+        color,
+        quality=None,
+        chroma_sampling="420",
+        quantization_tables=tables,
+    )
+
+    assert explicit_bytes == quality_bytes
+
+
+def test_entropy_optimization_changes_bytes_not_decoded_pixels() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    default_bytes = encode_jpeg_pillow(
+        color, quality=75, chroma_sampling="420"
+    )
+    optimized_bytes = encode_jpeg_pillow(
+        color, quality=75, chroma_sampling="420", optimize=True
+    )
+
+    assert optimized_bytes != default_bytes
+    assert (
+        parse_jpeg_structure(optimized_bytes).quantization_fingerprint
+        == parse_jpeg_structure(default_bytes).quantization_fingerprint
+    )
+    assert np.array_equal(
+        decode_jpeg_opencv(optimized_bytes),
+        decode_jpeg_opencv(default_bytes),
+    )
+
+
+def test_jpeg_codec_controls_and_marker_data_are_validated() -> None:
+    grayscale = make_checkerboard()
+
+    with pytest.raises(ValueError, match="exactly one"):
+        encode_jpeg_pillow(
+            grayscale,
+            quality=75,
+            quantization_tables={0: (1,) * 64},
+        )
+    with pytest.raises(ValueError, match="64 values"):
+        encode_jpeg_pillow(
+            grayscale,
+            quality=None,
+            quantization_tables={0: (1,) * 63},
+        )
+    with pytest.raises(ValueError, match="SOI"):
+        parse_jpeg_structure(b"not a JPEG")
+    with pytest.raises(ValueError, match="truncated DQT"):
+        parse_jpeg_structure(
+            b"\xff\xd8\xff\xdb\x00\x0d\x00" + b"\x01" * 10
+        )
 
 
 def test_recompression_and_color_conversion_order_can_change_scores() -> None:
