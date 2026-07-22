@@ -12,11 +12,10 @@ synthetic data, committed reference results, tests, and continuous integration.
 It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
-The v0.1.0 study evaluates Laplacian variance as a blur heuristic. The v0.2.0
-study extends the same controls to an area-normalized Tenengrad comparison,
-repeated noise trials, horizontal motion blur, and resize sensitivity. The
-v0.3.0 study evaluates how full-image scores and tile aggregation respond when
-Gaussian blur affects only a controlled part of an image.
+The studies progress from one global blur heuristic to comparative robustness,
+spatial aggregation, and window geometry. v0.4.0 evaluates aligned and off-grid
+local blur with overlapping and multiscale windows, repeated noise trials, and
+a deliberate low-texture counterexample.
 
 ## Research Workflow
 
@@ -31,16 +30,18 @@ Research Question
     -> Documentation
 ```
 
-Every published note should make that chain inspectable and reproducible.
+Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Window Geometry and Robustness for Local Blur Detection](notes/window-geometry-robustness.md)
+  — v0.4.0
 - [Local Blur and Spatial Aggregation](notes/local-blur-spatial-aggregation.md)
   — v0.3.0
-- [Laplacian Variance vs. Tenengrad Under Blur and
-  Noise](notes/laplacian-vs-tenengrad.md) — v0.2.0
-- [Laplacian Variance as a Blur Heuristic: Controlled Evaluation and
-  Limitations](notes/laplacian-variance-blur.md) — v0.1.0
+- [Laplacian Variance vs. Tenengrad Under Blur and Noise](notes/laplacian-vs-tenengrad.md)
+  — v0.2.0
+- [Laplacian Variance as a Blur Heuristic: Controlled Evaluation and Limitations](notes/laplacian-variance-blur.md)
+  — v0.1.0
 
 ## Reproducibility
 
@@ -58,94 +59,82 @@ python -m pytest
 python experiments/run_laplacian_variance.py
 python experiments/run_focus_metric_comparison.py
 python experiments/run_local_blur_evaluation.py
+python experiments/run_window_geometry_evaluation.py
 ```
 
 On Windows PowerShell, activate the environment with
-`.venv\Scripts\Activate.ps1`. The experiment uses only programmatically
-generated images and deterministic random seeds. Running it writes the CSV and
-PNG under `results/`.
+`.venv\Scripts\Activate.ps1`. The experiments use only programmatically
+generated images and deterministic random seeds. Each experiment writes its
+CSV and PNG artifacts under `results/`.
 
 ## Evaluation
 
-The v0.2.0 experiment retains three synthetic spatial patterns, Gaussian blur
-sigma values 0, 1, 2, and 3, and Gaussian noise standard deviations 0, 5, and
-15. It adds an area-normalized Tenengrad measure and 20 seeded trials per
-condition, producing 720 raw observations. The evaluation checks relative
-relationships:
+The notes evaluate relative relationships under declared controls instead of
+proposing a fixed quality threshold:
 
-- without added noise, stronger Gaussian blur should reduce both metrics for
-  each controlled pattern;
-- added noise can increase both metrics for an already blurred image;
-- repeated runs with the declared environment and seeds should reproduce the
-  committed CSV files.
+- v0.1.0 confirms that noiseless Gaussian blur lowers Laplacian variance and
+  that added noise can reverse a simple interpretation.
+- v0.2.0 compares Laplacian variance with area-normalized Tenengrad over 720
+  repeated observations, plus bounded motion-blur and resize controls.
+- v0.3.0 shows spatial dilution: with one of 16 aligned tiles blurred at sigma
+  3, mean full-image ratios remain 0.936866 for Laplacian variance and 0.940676
+  for Tenengrad, while mean minimum tile ratios fall to 0.005025 and 0.062950.
+- v0.4.0 shows a window-geometry blind spot: a 64/64 grid captures at most 25%
+  of a 64-pixel region offset by 32 pixels, while a 64/32 grid recovers 100%
+  coverage. In repeated sigma-3 trials, noise standard deviation 15 raises the
+  mean minimum Laplacian ratio from 0.005765 to 0.200820 on the 64/32 grid even
+  though localization ranking remains unchanged.
 
-At Gaussian sigma 3, the mean within-pattern ratio to the no-blur baseline is
-0.003073 for Laplacian variance and 0.137201 for Tenengrad energy. Adding noise
-with standard deviation 15 produces median inflation ratios of 96.679135 and
-1.173198 respectively, relative to each metric's noise-free sigma-3 baseline.
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
-The v0.3.0 experiment uses a 4 x 4 grid to compare full-image scores, tile
-means, the mean of the four lowest tile ratios, and minimum tile ratios. It
-contains 66 synthetic image conditions and 132 metric observations. With one
-of 16 tiles blurred at Gaussian sigma 3, the mean full-image ratios remain
-0.936866 for Laplacian variance and 0.940676 for Tenengrad, while the mean
-minimum tile ratios fall to 0.005025 and 0.062950. This demonstrates controlled
-spatial dilution, not natural-image detection accuracy.
-
-No fixed metric threshold is presented as a universal quality bar.
-
 ## Limitations
 
-The studies use small, 8-bit synthetic grayscale images. v0.3.0 adds
-tile-aligned local Gaussian blur without noise, using one fixed non-overlapping
-grid whose every tile contains texture. The studies do not establish behavior
-for sliding or multiscale windows, unknown blur masks, other motion angles,
-defocus point-spread functions, compression, demosaicing, sharpening, color
-pipelines, natural scenes, or human quality judgments. Scores remain dependent
-on texture, contrast, resolution, tile geometry, border handling, and
-implementation details.
+The studies use small, 8-bit synthetic grayscale images. v0.4.0 adds off-grid
+square Gaussian-blur masks, four regular window geometries, clipped Gaussian
+noise, and a constant-patch failure control. It still does not establish
+behavior for natural scenes, learned blur maps, unknown masks, optical defocus,
+multiple motion directions, compression, demosaicing, sharpening, color
+pipelines, or human quality judgments. Scores remain dependent on texture,
+contrast, resolution, window geometry, border handling, and implementation
+details. Matched sharp references and known region masks are experimental
+controls that are usually unavailable in blind inspection.
 
 ## Project Structure
 
 ```text
 .
-├── .github/workflows/ci.yml
-├── experiments/run_focus_metric_comparison.py
-├── experiments/run_laplacian_variance.py
-├── experiments/run_local_blur_evaluation.py
-├── notes/local-blur-spatial-aggregation.md
-├── notes/laplacian-vs-tenengrad.md
-├── notes/laplacian-variance-blur.md
-├── results/
-│   ├── README.md
-│   ├── focus_metric_comparison.png
-│   ├── focus_metric_summary.csv
-│   ├── focus_metric_trials.csv
-│   ├── laplacian_variance_summary.csv
-│   ├── laplacian_variance.png
-│   ├── local_blur_aggregate.csv
-│   ├── local_blur_example.png
-│   ├── local_blur_observations.csv
-│   ├── local_blur_spatial_aggregation.png
-│   ├── local_blur_tiles.csv
-│   ├── motion_blur_summary.csv
-│   └── resize_sensitivity_summary.csv
-├── src/research_notes/
-│   ├── __init__.py
-│   └── blur_metrics.py
-├── tests/test_blur_metrics.py
-├── LICENSE
-├── README.md
-└── pyproject.toml
+|-- .github/workflows/ci.yml
+|-- experiments/
+|   |-- run_focus_metric_comparison.py
+|   |-- run_laplacian_variance.py
+|   |-- run_local_blur_evaluation.py
+|   `-- run_window_geometry_evaluation.py
+|-- notes/
+|   |-- laplacian-variance-blur.md
+|   |-- laplacian-vs-tenengrad.md
+|   |-- local-blur-spatial-aggregation.md
+|   `-- window-geometry-robustness.md
+|-- results/
+|   |-- README.md
+|   |-- *.csv
+|   `-- *.png
+|-- src/research_notes/
+|   |-- __init__.py
+|   `-- blur_metrics.py
+|-- tests/test_blur_metrics.py
+|-- LICENSE
+|-- README.md
+`-- pyproject.toml
 ```
 
 ## Roadmap
 
-- Evaluate overlapping and multiscale regional policies.
-- Extend motion sensitivity to multiple directions and a defocus model.
-- Add compression and preprocessing sensitivity controls.
+- Measure compression, sharpening, and preprocessing interactions.
+- Extend motion sensitivity to multiple directions and an optical defocus
+  model.
+- Evaluate adaptive or multiscale aggregation without treating overlapping
+  windows as independent evidence.
 - Replicate selected controls on a traceable public image set with labels.
 
 The roadmap is exploratory and does not represent completed work.

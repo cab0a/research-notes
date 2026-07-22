@@ -4,7 +4,12 @@ import cv2
 import numpy as np
 import pytest
 
-from research_notes import laplacian_variance, tenengrad_energy, tiled_metric_map
+from research_notes import (
+    laplacian_variance,
+    sliding_metric_map,
+    tenengrad_energy,
+    tiled_metric_map,
+)
 
 
 def make_checkerboard(size: int = 128, cell_size: int = 8) -> np.ndarray:
@@ -130,3 +135,32 @@ def test_tiled_metric_map_rejects_non_divisible_dimensions() -> None:
 
     with pytest.raises(ValueError, match="divisible"):
         tiled_metric_map(image, laplacian_variance, tile_size=32)
+
+
+def test_sliding_metric_map_supports_overlapping_windows() -> None:
+    image = make_checkerboard(size=128)
+
+    scores = sliding_metric_map(
+        image, laplacian_variance, window_size=64, stride=32
+    )
+
+    assert scores.shape == (3, 3)
+    assert np.all(scores > 0.0)
+
+
+def test_sliding_map_matches_tiled_map_when_stride_equals_size() -> None:
+    image = make_checkerboard(size=128)
+
+    tiled = tiled_metric_map(image, tenengrad_energy, tile_size=64)
+    sliding = sliding_metric_map(
+        image, tenengrad_energy, window_size=64, stride=64
+    )
+
+    assert sliding == pytest.approx(tiled)
+
+
+def test_sliding_metric_map_rejects_incomplete_boundary_coverage() -> None:
+    image = np.zeros((128, 128), dtype=np.uint8)
+
+    with pytest.raises(ValueError, match="end at the image boundary"):
+        sliding_metric_map(image, laplacian_variance, window_size=64, stride=48)

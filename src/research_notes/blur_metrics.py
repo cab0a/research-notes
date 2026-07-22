@@ -48,8 +48,8 @@ def laplacian_variance(image: NDArray[np.generic]) -> float:
 def tenengrad_energy(image: NDArray[np.generic]) -> float:
     """Return the area-normalized squared Sobel gradient response.
 
-    This implementation uses 3 x 3 Sobel derivatives and averages ``Gx² +
-    Gy²`` over all pixels. Dividing the conventional Tenengrad sum by the image
+    This implementation uses 3 x 3 Sobel derivatives and averages ``Gx^2 +
+    Gy^2`` over all pixels. Dividing the conventional Tenengrad sum by the image
     area avoids a purely pixel-count-driven scale change, but it does not make
     scores comparable across different content or preprocessing pipelines.
     """
@@ -97,16 +97,50 @@ def tiled_metric_map(
     if height % tile_size != 0 or width % tile_size != 0:
         raise ValueError("image dimensions must be divisible by tile_size")
 
+    return sliding_metric_map(grayscale, metric, tile_size, tile_size)
+
+
+def sliding_metric_map(
+    image: NDArray[np.generic],
+    metric: MetricFunction,
+    window_size: int,
+    stride: int,
+) -> NDArray[np.float64]:
+    """Evaluate an image metric over a regular sliding-window grid.
+
+    Every window is evaluated independently with the metric's own border
+    behavior. The grid must end exactly at the image boundary so that declared
+    geometry covers the complete image without an implicit partial window.
+    """
+    grayscale = _to_grayscale(image)
+    if not callable(metric):
+        raise TypeError("metric must be callable")
+    for name, value in (("window_size", window_size), ("stride", stride)):
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be positive")
+
+    height, width = grayscale.shape
+    if window_size > height or window_size > width:
+        raise ValueError("window_size must not exceed image dimensions")
+    if (height - window_size) % stride != 0 or (width - window_size) % stride != 0:
+        raise ValueError("window grid must end at the image boundary")
+
     scores = np.empty(
-        (height // tile_size, width // tile_size), dtype=np.float64
+        (
+            (height - window_size) // stride + 1,
+            (width - window_size) // stride + 1,
+        ),
+        dtype=np.float64,
     )
-    for tile_row in range(scores.shape[0]):
-        row_start = tile_row * tile_size
-        for tile_column in range(scores.shape[1]):
-            column_start = tile_column * tile_size
-            tile = grayscale[
-                row_start : row_start + tile_size,
-                column_start : column_start + tile_size,
+    for window_row in range(scores.shape[0]):
+        row_start = window_row * stride
+        for window_column in range(scores.shape[1]):
+            column_start = window_column * stride
+            window = grayscale[
+                row_start : row_start + window_size,
+                column_start : column_start + window_size,
             ]
-            scores[tile_row, tile_column] = metric(tile)
+            scores[window_row, window_column] = metric(window)
     return scores

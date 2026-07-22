@@ -1,0 +1,7 @@
+region,ground_truth,row_start,column_start,window_size,metric,score,ratio_to_sharp_textured,ascending_score_rank
+sharp_low_texture,sharp,0,0,64,laplacian_variance,0.000000,0.000000,1
+sharp_textured,sharp,0,128,64,laplacian_variance,34671.533203,1.000000,3
+blurred_textured,blurred,128,128,64,laplacian_variance,108.798828,0.003138,2
+sharp_low_texture,sharp,0,0,64,tenengrad_energy,0.000000,0.000000,1
+sharp_textured,sharp,0,128,64,tenengrad_energy,380497.851562,1.000000,3
+blurred_textured,blurred,128,128,64,tenengrad_energy,11225.718750,0.029503,2
