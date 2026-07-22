@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import csv
+import gzip
+import hashlib
+import json
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -22,6 +26,12 @@ COMBINED_OBSERVATIONS_NAME = "jpeg_cross_platform_observations.csv"
 COMBINED_PAIRS_NAME = "jpeg_cross_platform_decoder_pairs.csv"
 SUMMARY_NAME = "jpeg_cross_platform_contract_summary.csv"
 FIGURE_NAME = "jpeg_cross_platform_contracts.png"
+LOG_PAYLOAD_NAMES = (
+    COMBINED_MANIFEST_NAME,
+    COMBINED_OBSERVATIONS_NAME,
+    COMBINED_PAIRS_NAME,
+    SUMMARY_NAME,
+)
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -260,6 +270,33 @@ def plot_cross_platform(
     plt.close(figure)
 
 
+def emit_log_payload(output_dir: Path, chunk_size: int = 1000) -> None:
+    """Print a deterministic, compressed copy of the combined CSV reports."""
+    reports = {
+        name: (output_dir / name).read_text(encoding="utf-8")
+        for name in LOG_PAYLOAD_NAMES
+    }
+    serialized = json.dumps(
+        reports,
+        ensure_ascii=True,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+    compressed = gzip.compress(serialized, mtime=0)
+    payload = base64.b64encode(compressed).decode("ascii")
+    digest = hashlib.sha256(compressed).hexdigest()
+    chunk_count = (len(payload) + chunk_size - 1) // chunk_size
+    print(
+        "V010_RESULTS_PAYLOAD_BEGIN "
+        f"chunks={chunk_count} gzip_sha256={digest}"
+    )
+    for index in range(chunk_count):
+        start = index * chunk_size
+        chunk = payload[start : start + chunk_size]
+        print(f"V010_RESULTS_PAYLOAD_{index:04d}={chunk}")
+    print("V010_RESULTS_PAYLOAD_END")
+
+
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
@@ -282,6 +319,11 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=5,
         help="Required number of unique platform profiles.",
+    )
+    parser.add_argument(
+        "--emit-log-payload",
+        action="store_true",
+        help="Print a compressed copy of the combined CSV reports.",
     )
     return parser.parse_args()
 
@@ -331,6 +373,8 @@ def main() -> None:
         f"{len(platform_labels)} profiles, {len(observations)} observations, "
         f"{exact} exact, {bounded} within one code value."
     )
+    if args.emit_log_payload:
+        emit_log_payload(args.output_dir)
 
 
 if __name__ == "__main__":
