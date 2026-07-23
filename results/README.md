@@ -227,8 +227,12 @@ independently of the fixed decoder outputs.
 The fixed fixture corpus separates compressed component identity from APP
 metadata and rendering policy. Numerical code-value differences are diagnostic
 observations, not perceptual thresholds or device-color accuracy claims. The
-cross-platform files are produced by the successful release workflow rather
-than simulated platform labels.
+cross-platform files are produced by the successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/29971527088)
+rather than simulated platform labels. CI compares the combined raw, policy,
+control, and summary CSV files with these references on subsequent runs. The
+codec manifest remains release provenance because hosted runner image metadata
+can change independently of the fixed observations.
 
 Regenerate the artifacts from the repository root:
 

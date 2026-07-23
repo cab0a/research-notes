@@ -155,6 +155,31 @@ reference.
 The observation tables preserve the exact hashes, changed fractions, and
 shape contracts behind these summaries.
 
+### Cross-platform matrix
+
+The successful [five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/29971527088)
+produced 195 raw observations, 220 policy observations, and 155 control pairs.
+All 570 arrays satisfied their shape and dtype contracts. All 135 raw ICC and
+EXIF metadata-invariance pairs were pixel-exact, and all 160 declared OpenCV
+and Pillow orientation-policy observations matched their adapter-specific
+expected arrays.
+
+The two ICC-managed responses were identical across all five profiles: gamma
+1.0 retained mean and maximum differences of 47.907630 and 73, while gamma 2.2
+retained 2.139913 and 9. OpenCV and Pillow each produced one raw decoded hash
+per fixture across the matrix. FFmpeg produced two hashes for the eleven RGB
+metadata fixtures and the CMYK fixture: macOS arm64 returned one array and the
+other four profiles agreed on another. The YCCK FFmpeg output had one hash
+across all five profiles.
+
+OpenCV and Pillow also retained one CMYK/YCCK rendered pair across profiles,
+with mean differences of 4.514200 and 4.534322. FFmpeg's pair mean was
+53.127404 on macOS arm64 and 53.128695 on the other four profiles; every FFmpeg
+pair had maximum difference 237. This is a build-associated decoded-array
+observation, not a causal attribution to an operating system or architecture.
+
+![Cross-platform JPEG metadata interpretation results](../results/jpeg_metadata_cross_platform_interpretation.png)
+
 ## Interpretation
 
 Metadata can change application-visible pixels without changing compressed

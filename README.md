@@ -28,14 +28,14 @@ policies through structural, exact-pixel, and numerical contracts.
 
 ## Representative Result
 
-The v0.12.0 study compares 13 fixed JPEG streams across raw decoding and
-explicit interpretation policies. All 39 local raw observations, 44 policy
-observations, and 31 control pairs satisfied the array-interface contract.
-ICC transforms changed output code values despite identical compressed scans,
-all eight EXIF orientation controls normalized exactly, and the rendered
-CMYK/YCCK separation varied substantially by decoder path.
+The v0.12.0 study compares 13 fixed JPEG streams across five GitHub-hosted
+platform profiles. All 570 raw, policy, and control arrays satisfied their
+interface contracts; all 135 raw metadata-invariance pairs and all 160
+declared orientation-policy observations were pixel-exact. ICC transforms
+changed output code values despite identical compressed scans, and the
+rendered CMYK/YCCK separation varied substantially by decoder path.
 
-![JPEG metadata interpretation policies](results/jpeg_metadata_interpretation.png)
+![JPEG metadata interpretation policies across platforms](results/jpeg_metadata_cross_platform_interpretation.png)
 
 This is fixture-specific regression evidence, not a perceptual-quality result
 or a guarantee for every JPEG stream. The observation and pair tables are
@@ -67,7 +67,7 @@ git clone https://github.com/cab0a/research-notes.git
 cd research-notes
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ".[test]"
+python -m pip install -e .
 python experiments/run_laplacian_variance.py --output-dir output/quickstart
 ```
 
@@ -83,7 +83,7 @@ codec, runtime, syntax, decoded-pixel, and pair-comparison manifests. Committed
 reference files live in [`results/`](results/); fixed decoder inputs and their
 declared references live in [`fixtures/`](fixtures/).
 
-## Research Workflow
+## Technical Design
 
 ```text
 Research Question
@@ -161,7 +161,7 @@ The v0.10.0 through v0.12.0 workflows also run a five-profile GitHub Actions
 matrix and share each platform observation through workflow artifacts before
 producing the combined cross-platform reports.
 
-## Evaluation
+## Evaluation Methodology
 
 Each note declares the variable being changed, the controls held fixed, the
 number of observations, the aggregation policy, and the claim boundary. Blur
@@ -254,7 +254,11 @@ proposing a fixed quality threshold:
   outputs matched their declared normalized arrays. The CMYK/YCCK mean pair
   difference was 4.514200 for OpenCV, 4.534322 for Pillow, and 53.128695 for
   FFmpeg. These are synthetic code-value responses, not perceptual or device-
-  color accuracy claims.
+  color accuracy claims. Across five CI profiles, all 135 raw metadata-
+  invariance pairs and 160 orientation-policy observations were exact. OpenCV
+  and Pillow each retained one raw hash per fixture; FFmpeg had two hashes for
+  the eleven RGB metadata fixtures and the CMYK fixture, with macOS arm64
+  differing from the other four profiles.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.

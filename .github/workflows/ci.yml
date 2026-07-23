@@ -210,6 +210,10 @@ jobs:
           diff -u results/jpeg_advanced_cross_platform_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_summary.csv
           diff -u results/jpeg_advanced_cross_platform_pair_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_pair_summary.csv
           test -s advanced-cross-platform-results/jpeg_advanced_cross_platform_codec_families.png
+          diff -u results/jpeg_metadata_cross_platform_raw_observations.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_raw_observations.csv
+          diff -u results/jpeg_metadata_cross_platform_policy_observations.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_policy_observations.csv
+          diff -u results/jpeg_metadata_cross_platform_control_pairs.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_control_pairs.csv
+          diff -u results/jpeg_metadata_cross_platform_summary.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_summary.csv
           test -s metadata-cross-platform-results/jpeg_metadata_cross_platform_interpretation.png
 
       - name: Upload cross-platform report

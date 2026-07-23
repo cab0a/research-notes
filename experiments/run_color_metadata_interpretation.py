@@ -1055,6 +1055,12 @@ def plot_results(
         "pillow_ignore_orientation",
         "pillow_exif_transpose",
     )
+    orientation_labels = (
+        "OpenCV: ignore",
+        "OpenCV: apply",
+        "Pillow: ignore",
+        "Pillow: transpose",
+    )
     exact_rates = [
         np.mean(
             [
@@ -1069,7 +1075,7 @@ def plot_results(
         range(len(orientation_policies)), exact_rates, color="#4c956c"
     )
     axes[0, 1].set_yticks(
-        range(len(orientation_policies)), orientation_policies
+        range(len(orientation_labels)), orientation_labels
     )
     axes[0, 1].set_xlim(0, 1.05)
     axes[0, 1].set_title("EXIF orientation policy exactness")
