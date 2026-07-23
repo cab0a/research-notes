@@ -90,9 +90,9 @@ On Windows PowerShell, activate the environment with
 generated images and deterministic random seeds. Each experiment writes its
 CSV and PNG artifacts under `results/`.
 
-The v0.10.0 workflow also runs a five-profile GitHub Actions matrix and shares
-each platform observation through workflow artifacts before producing the
-combined cross-platform report.
+The v0.10.0 and v0.11.0 workflows also run a five-profile GitHub Actions matrix
+and share each platform observation through workflow artifacts before
+producing the combined cross-platform reports.
 
 ## Evaluation
 
@@ -153,13 +153,16 @@ proposing a fixed quality threshold:
   These exact hashes are regression evidence for the fixed corpus and pinned
   wheels, not a perceptual quality score or a codec-wide guarantee.
 - v0.11.0 adds ten fixed baseline, progressive, restart-marker, grayscale,
-  RGB, and CMYK streams and a native FFmpeg MJPEG path. Locally, all three
-  decoders satisfied the array interface. All 15 controlled progression and
-  restart comparisons were pixel-exact within each decoder. Relative to the
-  OpenCV BGR anchor, FFmpeg's maximum error was 3 for the 4:4:4 RGB pair and
-  79 for the 4:2:0 hard-chroma pair, while Pillow differed by at most 2 on the
-  two CMYK streams. These are fixture-specific code-value observations, not
-  perceptual acceptance limits.
+  RGB, and CMYK streams and a native FFmpeg MJPEG path. Across five CI profiles,
+  all 150 decoder observations satisfied the array interface and all 75
+  controlled progression and restart comparisons were pixel-exact. OpenCV and
+  Pillow each produced one decoded hash per fixture across platforms. FFmpeg
+  did so for six fixtures, while its four 4:2:0 RGB fixtures produced two hashes:
+  macOS arm64 returned one array and the other four profiles agreed on another.
+  Relative to the OpenCV BGR anchor, FFmpeg's maximum error was 3 for 4:4:4 RGB
+  and up to 79 for the 4:2:0 hard-chroma controls; Pillow differed by at most 2
+  on the two CMYK streams. These are fixture-specific code-value observations,
+  not perceptual acceptance limits.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.

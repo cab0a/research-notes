@@ -189,6 +189,13 @@ metadata because hosted images can be updated independently of this project.
 - `jpeg_advanced_cross_platform_codec_families.png` visualizes exact, bounded,
   maximum-error, and cross-platform hash behavior.
 
+The committed v0.11.0 cross-platform snapshot comes from the successful
+five-profile release workflow. CI compares the combined observations, decoder
+pairs, controlled syntax comparisons, and both summaries against these
+references. The codec manifest is retained as release provenance but is not
+byte-compared on future runs because hosted runner image metadata can change
+independently of the fixed decoder outputs.
+
 Regenerate the artifacts from the repository root:
 
 ```bash

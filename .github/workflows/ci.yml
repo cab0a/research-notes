@@ -193,6 +193,12 @@ jobs:
           diff -u results/jpeg_cross_platform_decoder_pairs.csv cross-platform-results/jpeg_cross_platform_decoder_pairs.csv
           diff -u results/jpeg_cross_platform_contract_summary.csv cross-platform-results/jpeg_cross_platform_contract_summary.csv
           test -s cross-platform-results/jpeg_cross_platform_contracts.png
+          diff -u results/jpeg_advanced_cross_platform_observations.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_observations.csv
+          diff -u results/jpeg_advanced_cross_platform_pairs.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_pairs.csv
+          diff -u results/jpeg_advanced_cross_platform_syntax_equivalence.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_syntax_equivalence.csv
+          diff -u results/jpeg_advanced_cross_platform_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_summary.csv
+          diff -u results/jpeg_advanced_cross_platform_pair_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_pair_summary.csv
+          test -s advanced-cross-platform-results/jpeg_advanced_cross_platform_codec_families.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7

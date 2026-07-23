@@ -156,9 +156,28 @@ differences from those two syntax controls in this corpus.
 
 The release CI executes the same fixed streams on Ubuntu x64 with default and
 forced-scalar libjpeg-turbo paths, Windows x64, macOS arm64, and macOS Intel
-x64. The aggregate snapshot records decoder hashes, pairwise errors, controlled
-syntax comparisons, codec builds, and runner image identifiers. Cross-platform
-claims are added only from the successful release workflow.
+x64. The successful [five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/29969056844)
+produced 150 decoder observations. Every observation satisfied the stream,
+shape, and dtype contracts. The exact-reference counts were 50 of 50 for
+OpenCV, 40 of 50 for Pillow, and 0 of 50 for FFmpeg. The within-one diagnostic
+counts were 50, 40, and 10 respectively. OpenCV defines the reference, so its
+count is a fixture-integrity check rather than independent evidence.
+
+All 75 cross-platform controlled syntax comparisons were pixel-exact. Each
+OpenCV and Pillow fixture also produced one decoded hash across all five
+profiles. FFmpeg produced one cross-platform hash for six fixtures and two
+hashes for the four 4:2:0 RGB fixtures. On those four fixtures, the macOS arm64
+profile produced one array while the other four profiles agreed on another.
+The arm64 output had maximum error 78, mean absolute error 3.801310, and changed
+sample fraction 0.807109 relative to the OpenCV anchor; the other output had
+corresponding values 79, 3.897746, and 0.867371.
+
+The manifest records FFmpeg 7.0.2-static on Linux and FFmpeg 7.1 variants on
+macOS and Windows, as well as separate build fingerprints. Because macOS Intel
+agreed with Linux and Windows while macOS arm64 differed, the data establish a
+build-and-architecture association, not a single-version explanation. Hosted
+runner image identifiers are preserved as observational provenance and are not
+used as stable comparison inputs in later CI runs.
 
 ## Interpretation
 
