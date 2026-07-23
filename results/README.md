@@ -196,6 +196,40 @@ references. The codec manifest is retained as release provenance but is not
 byte-compared on future runs because hosted runner image metadata can change
 independently of the fixed decoder outputs.
 
+## v0.12.0
+
+- `fixtures/color-metadata-contracts/manifest.csv` records 13 fixed ICC, EXIF
+  orientation, CMYK, and YCCK JPEG streams, their metadata-stripped core
+  identities, and lossless raw BGR reference decodes.
+- `jpeg_metadata_codec_manifest.csv` records the local OpenCV, Pillow, FFmpeg,
+  and LittleCMS adapter and implementation provenance.
+- `jpeg_metadata_raw_observations.csv` contains 39 local raw decode records
+  with ICC conversion and orientation normalization explicitly disabled.
+- `jpeg_metadata_policy_observations.csv` contains 44 explicit ICC,
+  orientation, CMYK, and YCCK interpretation-policy records.
+- `jpeg_metadata_control_pairs.csv` contains 31 metadata-invariance, managed-
+  profile-response, and CMYK/YCCK comparisons.
+- `jpeg_metadata_summary.csv` contains 22 compact local aggregates.
+- `jpeg_metadata_interpretation.png` visualizes ICC response, orientation
+  contracts, raw metadata invariance, and CMYK/YCCK rendering differences.
+- `jpeg_metadata_cross_platform_codec_manifest.csv` records the 20 adapter and
+  implementation rows from the five-profile release matrix.
+- `jpeg_metadata_cross_platform_raw_observations.csv`,
+  `jpeg_metadata_cross_platform_policy_observations.csv`, and
+  `jpeg_metadata_cross_platform_control_pairs.csv` preserve the combined
+  release observations.
+- `jpeg_metadata_cross_platform_summary.csv` aggregates every fixed raw,
+  policy, and control key across the matrix.
+- `jpeg_metadata_cross_platform_interpretation.png` visualizes response ranges,
+  orientation policy exactness, decoded hash multiplicity, and CMYK/YCCK
+  behavior across the recorded builds.
+
+The fixed fixture corpus separates compressed component identity from APP
+metadata and rendering policy. Numerical code-value differences are diagnostic
+observations, not perceptual thresholds or device-color accuracy claims. The
+cross-platform files are produced by the successful release workflow rather
+than simulated platform labels.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -210,6 +244,7 @@ python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
+python experiments/run_color_metadata_interpretation.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

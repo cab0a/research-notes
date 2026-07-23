@@ -41,6 +41,8 @@ jobs:
           python experiments/run_cross_platform_codec_contracts.py --fixture-dir regenerated-fixtures/jpeg-decoder-contracts --output-dir regenerated-fixture-results --platform-label linux-x64-reference --refresh-fixtures
           python experiments/run_advanced_jpeg_syntax.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_advanced_jpeg_syntax.py --fixture-dir regenerated-fixtures/advanced-jpeg-syntax --output-dir regenerated-advanced-fixture-results --platform-label linux-x64-reference --refresh-fixtures
+          python experiments/run_color_metadata_interpretation.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_color_metadata_interpretation.py --fixture-dir regenerated-fixtures/color-metadata-contracts --output-dir regenerated-metadata-fixture-results --platform-label linux-x64-reference --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -89,8 +91,14 @@ jobs:
           diff -u results/jpeg_advanced_pairwise_differences.csv regenerated-results/jpeg_advanced_pairwise_differences.csv
           diff -u results/jpeg_advanced_syntax_equivalence.csv regenerated-results/jpeg_advanced_syntax_equivalence.csv
           diff -u results/jpeg_advanced_summary.csv regenerated-results/jpeg_advanced_summary.csv
+          diff -u results/jpeg_metadata_codec_manifest.csv regenerated-results/jpeg_metadata_codec_manifest.csv
+          diff -u results/jpeg_metadata_raw_observations.csv regenerated-results/jpeg_metadata_raw_observations.csv
+          diff -u results/jpeg_metadata_policy_observations.csv regenerated-results/jpeg_metadata_policy_observations.csv
+          diff -u results/jpeg_metadata_control_pairs.csv regenerated-results/jpeg_metadata_control_pairs.csv
+          diff -u results/jpeg_metadata_summary.csv regenerated-results/jpeg_metadata_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
+          diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -109,6 +117,7 @@ jobs:
           test -s regenerated-results/jpeg_codec_portability.png
           test -s regenerated-results/jpeg_decoded_pixel_contracts.png
           test -s regenerated-results/jpeg_advanced_codec_families.png
+          test -s regenerated-results/jpeg_metadata_interpretation.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -151,6 +160,7 @@ jobs:
         run: |
           python experiments/run_cross_platform_codec_contracts.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_advanced_jpeg_syntax.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_color_metadata_interpretation.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -186,6 +196,7 @@ jobs:
         run: |
           python experiments/summarize_cross_platform_codec_contracts.py --input-dir platform-artifacts --output-dir cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_advanced_jpeg_syntax.py --input-dir platform-artifacts --output-dir advanced-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_color_metadata_contracts.py --input-dir platform-artifacts --output-dir metadata-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -199,6 +210,7 @@ jobs:
           diff -u results/jpeg_advanced_cross_platform_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_summary.csv
           diff -u results/jpeg_advanced_cross_platform_pair_summary.csv advanced-cross-platform-results/jpeg_advanced_cross_platform_pair_summary.csv
           test -s advanced-cross-platform-results/jpeg_advanced_cross_platform_codec_families.png
+          test -s metadata-cross-platform-results/jpeg_metadata_cross_platform_interpretation.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7
@@ -207,4 +219,5 @@ jobs:
           path: |
             cross-platform-results
             advanced-cross-platform-results
+            metadata-cross-platform-results
           retention-days: 30

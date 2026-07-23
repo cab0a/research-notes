@@ -6,15 +6,22 @@ import pytest
 
 from research_notes import (
     apply_psf,
+    apply_exif_orientation_bgr,
+    attach_jpeg_metadata,
+    build_synthetic_rgb_profile,
     classify_decoded_pixel_contract,
+    cmyk_to_bgr_arithmetic,
     compare_decoded_pixels,
     disk_psf,
     decode_jpeg_ffmpeg,
     decode_jpeg_opencv,
     decode_jpeg_pillow,
+    decode_jpeg_pillow_color_managed,
+    decode_jpeg_pillow_oriented,
     encode_jpeg_opencv,
     encode_jpeg_pillow,
     encode_jpeg_cmyk_pillow,
+    encode_jpeg_ycck_pillow,
     gaussian_denoise,
     gamma_transform,
     jpeg_encode_decode,
@@ -24,11 +31,13 @@ from research_notes import (
     linear_motion_psf,
     minmax_normalize,
     inspect_jpeg_syntax,
+    inspect_jpeg_metadata,
     parse_jpeg_structure,
     pixel_array_sha256,
     repeated_jpeg_round_trip,
     resize_round_trip,
     sliding_metric_map,
+    strip_jpeg_interpretation_metadata,
     tenengrad_energy,
     tiled_metric_map,
     to_grayscale,
@@ -548,6 +557,138 @@ def test_cmyk_and_ffmpeg_decoder_preserve_the_array_interface() -> None:
     assert len(parse_jpeg_structure(encoded).components) == 4
     assert opencv.shape == ffmpeg.shape == (*grayscale.shape, 3)
     assert opencv.dtype == ffmpeg.dtype == np.uint8
+
+
+def test_synthetic_icc_profiles_are_deterministic_and_distinct() -> None:
+    linear_first = build_synthetic_rgb_profile(1.0)
+    linear_second = build_synthetic_rgb_profile(1.0)
+    gamma_encoded = build_synthetic_rgb_profile(2.2)
+
+    assert linear_first == linear_second
+    assert linear_first != gamma_encoded
+    assert len(linear_first) == len(gamma_encoded) > 128
+
+
+def test_jpeg_metadata_attachment_preserves_the_compressed_core() -> None:
+    grayscale = make_checkerboard(size=96, cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    profile = build_synthetic_rgb_profile(1.0)
+    tagged = attach_jpeg_metadata(
+        base,
+        exif_orientation=6,
+        icc_profile=profile,
+    )
+
+    metadata = inspect_jpeg_metadata(tagged)
+
+    assert strip_jpeg_interpretation_metadata(tagged) == base
+    assert metadata.exif_orientation == 6
+    assert metadata.icc_profile_present
+    assert metadata.icc_profile_length == len(profile)
+    assert metadata.icc_chunk_count == 1
+
+
+def test_orientation_policies_match_for_all_exif_values() -> None:
+    rows, columns = np.indices((72, 104))
+    color = np.stack(
+        (
+            (columns * 2) % 256,
+            (rows * 3) % 256,
+            ((rows + columns) * 2) % 256,
+        ),
+        axis=2,
+    ).astype(np.uint8)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    raw_reference = decode_jpeg_opencv(base, ignore_orientation=True)
+    ffmpeg_raw_reference = decode_jpeg_ffmpeg(
+        base, ignore_orientation=True
+    )
+
+    for orientation in range(1, 9):
+        tagged = attach_jpeg_metadata(base, exif_orientation=orientation)
+        expected = apply_exif_orientation_bgr(raw_reference, orientation)
+
+        assert np.array_equal(
+            decode_jpeg_opencv(tagged, ignore_orientation=True), raw_reference
+        )
+        assert np.array_equal(
+            decode_jpeg_ffmpeg(tagged, ignore_orientation=True),
+            ffmpeg_raw_reference,
+        )
+        assert np.array_equal(decode_jpeg_opencv(tagged), expected)
+        assert np.array_equal(decode_jpeg_pillow_oriented(tagged), expected)
+        assert np.array_equal(
+            decode_jpeg_ffmpeg(tagged),
+            apply_exif_orientation_bgr(ffmpeg_raw_reference, orientation),
+        )
+
+
+def test_icc_policy_changes_pixels_without_changing_jpeg_scans() -> None:
+    rows, columns = np.indices((72, 104))
+    color = np.stack(
+        (
+            (columns * 2) % 256,
+            (rows * 3) % 256,
+            ((rows // 8 + columns // 8) % 2) * 180 + 30,
+        ),
+        axis=2,
+    ).astype(np.uint8)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    linear = attach_jpeg_metadata(
+        base, icc_profile=build_synthetic_rgb_profile(1.0)
+    )
+    gamma_encoded = attach_jpeg_metadata(
+        base, icc_profile=build_synthetic_rgb_profile(2.2)
+    )
+
+    assert strip_jpeg_interpretation_metadata(linear) == base
+    assert strip_jpeg_interpretation_metadata(gamma_encoded) == base
+    assert np.array_equal(decode_jpeg_pillow(linear), decode_jpeg_pillow(base))
+    assert not np.array_equal(
+        decode_jpeg_pillow_color_managed(linear),
+        decode_jpeg_pillow_color_managed(gamma_encoded),
+    )
+
+
+def test_ycck_marker_and_arithmetic_preview_are_explicit() -> None:
+    grayscale = make_checkerboard(size=96, cell_size=7)
+    cmyk = np.stack(
+        (
+            grayscale,
+            255 - grayscale,
+            np.roll(grayscale, 3, axis=1),
+            np.full_like(grayscale, 24),
+        ),
+        axis=2,
+    )
+    encoded = encode_jpeg_ycck_pillow(cmyk, quality=75)
+    preview = cmyk_to_bgr_arithmetic(cmyk)
+
+    assert inspect_jpeg_metadata(encoded).adobe_transform == 2
+    assert len(parse_jpeg_structure(encoded).components) == 4
+    assert preview.shape == (*grayscale.shape, 3)
+    assert preview.dtype == np.uint8
+    assert decode_jpeg_opencv(encoded).shape == preview.shape
+    assert decode_jpeg_pillow(encoded).shape == preview.shape
+    assert decode_jpeg_ffmpeg(encoded).shape == preview.shape
+
+
+def test_jpeg_metadata_parameters_are_validated() -> None:
+    grayscale = make_checkerboard(size=32)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+
+    with pytest.raises(ValueError, match="one of"):
+        build_synthetic_rgb_profile(1.8)
+    with pytest.raises(ValueError, match=r"\[1, 8\]"):
+        attach_jpeg_metadata(base, exif_orientation=9)
+    with pytest.raises(ValueError, match=r"\[1, 8\]"):
+        apply_exif_orientation_bgr(color, 0)
+    with pytest.raises(TypeError, match="boolean"):
+        decode_jpeg_opencv(base, ignore_orientation=1)
+    with pytest.raises(TypeError, match="boolean"):
+        decode_jpeg_ffmpeg(base, ignore_orientation=1)
 
 
 def test_decoded_pixel_contracts_separate_exact_and_bounded_results() -> None:

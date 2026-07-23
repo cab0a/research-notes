@@ -396,12 +396,19 @@ def _validate_quantization_tables(
 
 
 def decode_jpeg_opencv(
-    jpeg_bytes: bytes, *, grayscale: bool = False
+    jpeg_bytes: bytes,
+    *,
+    grayscale: bool = False,
+    ignore_orientation: bool = False,
 ) -> NDArray[np.uint8]:
-    """Decode JPEG bytes through OpenCV to grayscale or BGR pixels."""
+    """Decode JPEG bytes through OpenCV with an explicit orientation policy."""
     if not isinstance(jpeg_bytes, bytes) or not jpeg_bytes:
         raise TypeError("jpeg_bytes must be non-empty bytes")
+    if not isinstance(ignore_orientation, bool):
+        raise TypeError("ignore_orientation must be a boolean")
     flag = cv2.IMREAD_GRAYSCALE if grayscale else cv2.IMREAD_COLOR
+    if ignore_orientation:
+        flag |= cv2.IMREAD_IGNORE_ORIENTATION
     decoded = cv2.imdecode(np.frombuffer(jpeg_bytes, dtype=np.uint8), flag)
     if decoded is None:
         raise ValueError("OpenCV could not decode the JPEG data")
@@ -424,10 +431,14 @@ def decode_jpeg_pillow(
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 
 
-def decode_jpeg_ffmpeg(jpeg_bytes: bytes) -> NDArray[np.uint8]:
-    """Decode JPEG bytes through FFmpeg's native MJPEG path to BGR pixels."""
+def decode_jpeg_ffmpeg(
+    jpeg_bytes: bytes, *, ignore_orientation: bool = False
+) -> NDArray[np.uint8]:
+    """Decode JPEG bytes through FFmpeg with an orientation policy."""
     if not isinstance(jpeg_bytes, bytes) or not jpeg_bytes:
         raise TypeError("jpeg_bytes must be non-empty bytes")
+    if not isinstance(ignore_orientation, bool):
+        raise TypeError("ignore_orientation must be a boolean")
     structure = parse_jpeg_structure(jpeg_bytes)
     command = [
         imageio_ffmpeg.get_ffmpeg_exe(),
@@ -440,16 +451,22 @@ def decode_jpeg_ffmpeg(jpeg_bytes: bytes) -> NDArray[np.uint8]:
         "mjpeg",
         "-f",
         "mjpeg",
-        "-i",
-        "pipe:0",
-        "-frames:v",
-        "1",
-        "-f",
-        "rawvideo",
-        "-pix_fmt",
-        "bgr24",
-        "pipe:1",
     ]
+    if ignore_orientation:
+        command.append("-noautorotate")
+    command.extend(
+        [
+            "-i",
+            "pipe:0",
+            "-frames:v",
+            "1",
+            "-f",
+            "rawvideo",
+            "-pix_fmt",
+            "bgr24",
+            "pipe:1",
+        ]
+    )
     completed = subprocess.run(
         command,
         input=jpeg_bytes,
@@ -460,11 +477,21 @@ def decode_jpeg_ffmpeg(jpeg_bytes: bytes) -> NDArray[np.uint8]:
     if completed.returncode != 0:
         message = completed.stderr.decode("utf-8", errors="replace").strip()
         raise ValueError(f"FFmpeg could not decode the JPEG data: {message}")
-    expected_size = structure.width * structure.height * 3
+    output_height = structure.height
+    output_width = structure.width
+    if not ignore_orientation:
+        try:
+            with Image.open(io.BytesIO(jpeg_bytes)) as image:
+                orientation = int(image.getexif().get(274, 1))
+        except (OSError, SyntaxError, TypeError, ValueError):
+            orientation = 1
+        if orientation in (5, 6, 7, 8):
+            output_height, output_width = output_width, output_height
+    expected_size = output_width * output_height * 3
     if len(completed.stdout) != expected_size:
         raise ValueError("FFmpeg returned an unexpected BGR byte count")
     return np.frombuffer(completed.stdout, dtype=np.uint8).reshape(
-        structure.height, structure.width, 3
+        output_height, output_width, 3
     ).copy()
 
 

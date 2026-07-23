@@ -12,12 +12,76 @@ synthetic data, committed reference results, tests, and continuous integration.
 It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
+The intended readers are R&D engineers and technical reviewers who want to
+trace a conclusion back through the research question, sources, fixtures,
+experiment code, measurements, and limitations. Unlike `vision-playground`,
+which presents a stable suite of algorithm comparisons, this repository keeps
+an evolving record of related investigations and the evidence boundaries of
+each release.
+
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
 models, photometric pipeline drift, JPEG compression history, and codec
-portability. v0.11.0 adds FFmpeg's native MJPEG decoder to the libjpeg-turbo
-wrapper paths and evaluates progressive scans, restart markers, grayscale,
-RGB, and CMYK streams through structural, exact-pixel, and numerical contracts.
+portability. v0.12.0 holds JPEG scans fixed while varying ICC and EXIF APP
+metadata, then compares explicit color, orientation, CMYK, and YCCK rendering
+policies through structural, exact-pixel, and numerical contracts.
+
+## Representative Result
+
+The v0.12.0 study compares 13 fixed JPEG streams across raw decoding and
+explicit interpretation policies. All 39 local raw observations, 44 policy
+observations, and 31 control pairs satisfied the array-interface contract.
+ICC transforms changed output code values despite identical compressed scans,
+all eight EXIF orientation controls normalized exactly, and the rendered
+CMYK/YCCK separation varied substantially by decoder path.
+
+![JPEG metadata interpretation policies](results/jpeg_metadata_interpretation.png)
+
+This is fixture-specific regression evidence, not a perceptual-quality result
+or a guarantee for every JPEG stream. The observation and pair tables are
+committed under [`results/`](results/).
+
+## Key Features
+
+- Twelve published notes connecting a focused question to sources, controls,
+  measurements, interpretation, and limitations
+- Programmatically generated blur, noise, window, preprocessing, optical, and
+  photometric conditions
+- Fixed JPEG fixtures covering baseline, progressive, restart-marker,
+  grayscale, RGB, CMYK, YCCK, chroma sampling, ICC, and EXIF orientation cases
+- Laplacian variance, Tenengrad, spatial aggregation, calibration drift,
+  decoded-pixel contracts, and codec/runtime manifests
+- CSV observations and summaries plus figures generated from the same runs
+- Exact dependency versions and deterministic random seeds
+- A five-profile CI matrix for cross-platform JPEG observations
+- Tests and CI regeneration checks for committed reference evidence
+
+## Quick Start
+
+Python 3.11 or newer is required; the reference environment uses Python 3.12.
+On Debian or Ubuntu, install `python3-venv` if `venv` reports that `ensurepip`
+is unavailable.
+
+```bash
+git clone https://github.com/cab0a/research-notes.git
+cd research-notes
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[test]"
+python experiments/run_laplacian_variance.py --output-dir output/quickstart
+```
+
+Review `output/quickstart/laplacian_variance.png` and
+`output/quickstart/laplacian_variance_summary.csv`. This smallest study shows
+both the expected blur response and the noise confound.
+
+## Generated Artifacts
+
+Each study writes observation-level or trial-level CSV, compact summary CSV,
+and one or more explanatory PNG figures. JPEG studies also write fixture,
+codec, runtime, syntax, decoded-pixel, and pair-comparison manifests. Committed
+reference files live in [`results/`](results/); fixed decoder inputs and their
+declared references live in [`fixtures/`](fixtures/).
 
 ## Research Workflow
 
@@ -36,6 +100,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Color Management, YCCK, and Metadata Interpretation](notes/color-management-ycck-metadata-interpretation.md)
+  — v0.12.0
 - [Independent Codec Families and Advanced JPEG Syntax](notes/independent-codec-families-advanced-jpeg-syntax.md)
   — v0.11.0
 - [Cross-Platform Codec Builds and Decoded-Pixel Contracts](notes/cross-platform-codec-builds-decoded-pixel-contracts.md)
@@ -83,6 +149,7 @@ python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
+python experiments/run_color_metadata_interpretation.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -90,11 +157,26 @@ On Windows PowerShell, activate the environment with
 generated images and deterministic random seeds. Each experiment writes its
 CSV and PNG artifacts under `results/`.
 
-The v0.10.0 and v0.11.0 workflows also run a five-profile GitHub Actions matrix
-and share each platform observation through workflow artifacts before
+The v0.10.0 through v0.12.0 workflows also run a five-profile GitHub Actions
+matrix and share each platform observation through workflow artifacts before
 producing the combined cross-platform reports.
 
 ## Evaluation
+
+Each note declares the variable being changed, the controls held fixed, the
+number of observations, the aggregation policy, and the claim boundary. Blur
+studies use known sharp/blurred patterns and deterministic noise; spatial
+studies preserve region identity and window geometry; photometric and JPEG
+studies record processing order and codec parameters. Decoder studies separate
+file structure, array-interface validity, exact decoded hashes, pairwise code-
+value differences, and cross-platform agreement.
+
+Metrics are interpreted as relative responses inside each controlled design.
+They are not converted into a universal blur threshold, perceptual score, or
+codec ranking. Individual notes contain their sources, hypotheses, full tables,
+and experiment-specific limitations.
+
+## Results and Interpretation
 
 The notes evaluate relative relationships under declared controls instead of
 proposing a fixed quality threshold:
@@ -163,18 +245,27 @@ proposing a fixed quality threshold:
   and up to 79 for the 4:2:0 hard-chroma controls; Pillow differed by at most 2
   on the two CMYK streams. These are fixture-specific code-value observations,
   not perceptual acceptance limits.
+- v0.12.0 adds 13 fixed ICC, EXIF orientation, CMYK, and YCCK controls. All 27
+  local raw metadata-invariance pairs were pixel-exact when orientation and ICC
+  processing were explicitly disabled. Mapping identical compressed RGB scans
+  through the synthetic gamma 1.0 and 2.2 profiles produced mean absolute
+  differences of 47.907630 and 2.139913 relative to the untagged unmanaged
+  array. All eight OpenCV automatic-orientation and Pillow explicit-transpose
+  outputs matched their declared normalized arrays. The CMYK/YCCK mean pair
+  difference was 4.514200 for OpenCV, 4.534322 for Pillow, and 53.128695 for
+  FFmpeg. These are synthetic code-value responses, not perceptual or device-
+  color accuracy claims.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.11.0 adds FFmpeg's native
-MJPEG implementation, progressive scans, restart markers, grayscale, and CMYK,
-but its ten advanced-syntax files do not establish behavior for IJG libjpeg,
-mozjpeg, hardware or camera codecs, YCCK, arithmetic or lossless JPEG,
-malformed streams, restart recovery, arbitrary color management, measured
-camera response or PSFs, or human quality judgments. GitHub-hosted runner
+The studies use small, 8-bit synthetic images. v0.12.0 adds ICC matrix/TRC
+controls, EXIF orientation, and one synthetic YCCK path, but it does not
+establish behavior for measured device profiles, LUT profiles, gamut mapping,
+proofing, hardware or camera codecs, malformed metadata, arithmetic or lossless
+JPEG, human color judgments, or print accuracy. GitHub-hosted runner
 observations are snapshots of recorded images and bundled codec builds rather
 than guarantees for every machine with the same operating-system label.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
@@ -183,6 +274,28 @@ metric details. Known pattern identities, matched sharp references, and
 synthetic anchors are controls that are usually unavailable in blind
 inspection.
 
+## Development and Testing
+
+```bash
+python -m pip install -e ".[test]"
+python -m pytest
+```
+
+The tests cover blur metrics and models, preprocessing and photometric
+transforms, JPEG parsing and fixture contracts, experiment outputs, and
+cross-platform summary logic. GitHub Actions runs tests and regenerates the
+reference evidence on Ubuntu with Python 3.12. Separate jobs collect JPEG
+observations on Ubuntu x64 default and scalar paths, Windows x64, macOS arm64,
+and macOS Intel x64, then aggregate and compare them with committed reports.
+
+## Compatibility
+
+Python 3.11 or newer is required; Python 3.12 and the exact runtime versions in
+`pyproject.toml` define the reference environment. Cross-platform conclusions
+apply only to the runner images and bundled codec builds recorded in the
+manifests. The project does not promise identical decoded arrays for other
+dependency versions, codecs, hardware paths, or platform images.
+
 ## Project Structure
 
 ```text
@@ -190,6 +303,7 @@ inspection.
 |-- .github/workflows/ci.yml
 |-- experiments/
 |   |-- run_advanced_jpeg_syntax.py
+|   |-- run_color_metadata_interpretation.py
 |   |-- run_cross_platform_codec_contracts.py
 |   |-- run_focus_metric_comparison.py
 |   |-- run_jpeg_compression_history.py
@@ -201,7 +315,12 @@ inspection.
 |   |-- run_preprocessing_sensitivity.py
 |   |-- run_window_geometry_evaluation.py
 |   |-- summarize_advanced_jpeg_syntax.py
+|   |-- summarize_color_metadata_contracts.py
 |   `-- summarize_cross_platform_codec_contracts.py
+|-- fixtures/color-metadata-contracts/
+|   |-- manifest.csv
+|   |-- *.jpg
+|   `-- *.reference.png
 |-- fixtures/advanced-jpeg-syntax/
 |   |-- manifest.csv
 |   |-- *.jpg
@@ -211,6 +330,7 @@ inspection.
 |   |-- *.jpg
 |   `-- *.reference.png
 |-- notes/
+|   |-- color-management-ycck-metadata-interpretation.md
 |   |-- cross-platform-codec-builds-decoded-pixel-contracts.md
 |   |-- independent-codec-families-advanced-jpeg-syntax.md
 |   |-- laplacian-variance-blur.md
@@ -232,6 +352,7 @@ inspection.
 |   |-- blur_metrics.py
 |   |-- jpeg_codec.py
 |   |-- jpeg_contracts.py
+|   |-- jpeg_metadata.py
 |   |-- photometric.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
@@ -242,9 +363,9 @@ inspection.
 
 ## Roadmap
 
-- Add YCCK, ICC, EXIF orientation, and independently generated color-managed
-  fixtures while keeping component, decoded-pixel, and rendered-color claims
-  separate.
+- Evaluate malformed or incomplete ICC chunks, invalid or conflicting EXIF
+  orientation, marker conflicts, truncation, decoder recovery, and application
+  trust boundaries without presenting unsafe recovery as silent correctness.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform
