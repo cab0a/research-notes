@@ -1,0 +1,4 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,libjpeg_simd_policy,decoder,adapter,adapter_version,codec_family,reported_backend,codec_build_fingerprint
+linux-x64-reference,Linux,x86_64,3.12,not_recorded,not_recorded,runtime_default,opencv,OpenCV,4.13.0,libjpeg-turbo,build-libjpeg-turbo (ver 3.1.2-70),5556c02119e97dfd5f49286d0dfea56be6ef28732a30cf6a8de040072f9e2eba
+linux-x64-reference,Linux,x86_64,3.12,not_recorded,not_recorded,runtime_default,pillow,Pillow,12.3.0,libjpeg-turbo,libjpeg-turbo 3.1.4.1,209e8867df4f3a8b4342345933d0989393e62565ec9687d55d3fcd7b353bbb23
+linux-x64-reference,Linux,x86_64,3.12,not_recorded,not_recorded,runtime_default,ffmpeg,imageio-ffmpeg,0.6.0,ffmpeg-native-mjpeg,FFmpeg 7.0.2-static native mjpeg,2063b5668ac9376f9adecc952bf9ba38ec0090ec7a4b517af98732b634ea526f

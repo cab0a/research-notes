@@ -15,9 +15,9 @@ experiment automatically generalizes to production imagery.
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
 models, photometric pipeline drift, JPEG compression history, and codec
-portability. v0.10.0 fixes a synthetic JPEG corpus and evaluates marker,
-array-interface, exact-pixel, and bounded numerical contracts across five
-GitHub-hosted platform profiles and two pinned decoder wrappers.
+portability. v0.11.0 adds FFmpeg's native MJPEG decoder to the libjpeg-turbo
+wrapper paths and evaluates progressive scans, restart markers, grayscale,
+RGB, and CMYK streams through structural, exact-pixel, and numerical contracts.
 
 ## Research Workflow
 
@@ -36,6 +36,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Independent Codec Families and Advanced JPEG Syntax](notes/independent-codec-families-advanced-jpeg-syntax.md)
+  — v0.11.0
 - [Cross-Platform Codec Builds and Decoded-Pixel Contracts](notes/cross-platform-codec-builds-decoded-pixel-contracts.md)
   — v0.10.0
 - [JPEG Quantization Tables and Codec Portability](notes/jpeg-quantization-codec-portability.md)
@@ -80,6 +82,7 @@ python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
+python experiments/run_advanced_jpeg_syntax.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -149,20 +152,28 @@ proposing a fixed quality threshold:
   x64 default and forced-scalar, Windows x64, macOS arm64, and macOS Intel x64.
   These exact hashes are regression evidence for the fixed corpus and pinned
   wheels, not a perceptual quality score or a codec-wide guarantee.
+- v0.11.0 adds ten fixed baseline, progressive, restart-marker, grayscale,
+  RGB, and CMYK streams and a native FFmpeg MJPEG path. Locally, all three
+  decoders satisfied the array interface. All 15 controlled progression and
+  restart comparisons were pixel-exact within each decoder. Relative to the
+  OpenCV BGR anchor, FFmpeg's maximum error was 3 for the 4:4:4 RGB pair and
+  79 for the 4:2:0 hard-chroma pair, while Pillow differed by at most 2 on the
+  two CMYK streams. These are fixture-specific code-value observations, not
+  perceptual acceptance limits.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.10.0 adds operating-system
-and architecture coverage, but its OpenCV and Pillow wheels still use the same
-libjpeg-turbo codec family. Its 12 fixed files do not establish behavior for
-IJG libjpeg, mozjpeg, hardware or camera codecs, progressive or malformed
-streams, CMYK/YCCK, arbitrary color management, measured camera response or
-PSFs, or human quality judgments. GitHub-hosted runner observations are
-snapshots of the recorded runner images rather than guarantees for every
-machine with the same operating-system label.
+The studies use small, 8-bit synthetic images. v0.11.0 adds FFmpeg's native
+MJPEG implementation, progressive scans, restart markers, grayscale, and CMYK,
+but its ten advanced-syntax files do not establish behavior for IJG libjpeg,
+mozjpeg, hardware or camera codecs, YCCK, arithmetic or lossless JPEG,
+malformed streams, restart recovery, arbitrary color management, measured
+camera response or PSFs, or human quality judgments. GitHub-hosted runner
+observations are snapshots of recorded images and bundled codec builds rather
+than guarantees for every machine with the same operating-system label.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
 preprocessing order, window geometry, PSF rasterization, border handling, and
 metric details. Known pattern identities, matched sharp references, and
@@ -175,6 +186,7 @@ inspection.
 .
 |-- .github/workflows/ci.yml
 |-- experiments/
+|   |-- run_advanced_jpeg_syntax.py
 |   |-- run_cross_platform_codec_contracts.py
 |   |-- run_focus_metric_comparison.py
 |   |-- run_jpeg_compression_history.py
@@ -185,13 +197,19 @@ inspection.
 |   |-- run_photometric_recompression.py
 |   |-- run_preprocessing_sensitivity.py
 |   |-- run_window_geometry_evaluation.py
+|   |-- summarize_advanced_jpeg_syntax.py
 |   `-- summarize_cross_platform_codec_contracts.py
+|-- fixtures/advanced-jpeg-syntax/
+|   |-- manifest.csv
+|   |-- *.jpg
+|   `-- *.reference.png
 |-- fixtures/jpeg-decoder-contracts/
 |   |-- manifest.csv
 |   |-- *.jpg
 |   `-- *.reference.png
 |-- notes/
 |   |-- cross-platform-codec-builds-decoded-pixel-contracts.md
+|   |-- independent-codec-families-advanced-jpeg-syntax.md
 |   |-- laplacian-variance-blur.md
 |   |-- laplacian-vs-tenengrad.md
 |   |-- jpeg-compression-history.md
@@ -221,8 +239,9 @@ inspection.
 
 ## Roadmap
 
-- Add an independent codec family and progressive, CMYK, and restart-marker
-  fixtures while keeping byte, marker, pixel, and perceptual claims separate.
+- Add YCCK, ICC, EXIF orientation, and independently generated color-managed
+  fixtures while keeping component, decoded-pixel, and rendered-color claims
+  separate.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform

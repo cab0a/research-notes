@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import hashlib
 import io
+import subprocess
 from dataclasses import dataclass
 from typing import TypeAlias
 
 import cv2
+import imageio_ffmpeg
 import numpy as np
 from numpy.typing import NDArray
 from PIL import Image
@@ -181,6 +183,27 @@ class JPEGStructure:
         }
 
 
+@dataclass(frozen=True)
+class JPEGSyntaxSummary:
+    """Marker-level syntax properties across all scans in a JPEG stream."""
+
+    frame_marker: int
+    scan_count: int
+    restart_interval: int
+    restart_marker_count: int
+    jfif_present: bool
+    adobe_transform: int | None
+
+    @property
+    def frame_process(self) -> str:
+        """Return a compact name for the observed frame process."""
+        if self.frame_marker == 0xC0:
+            return "baseline_sequential"
+        if self.frame_marker == 0xC2:
+            return "progressive_dct"
+        return f"sof_{self.frame_marker:02x}"
+
+
 def _validate_image(image: NDArray[np.generic]) -> NDArray[np.uint8]:
     """Return a validated 8-bit grayscale or BGR image."""
     if not isinstance(image, np.ndarray):
@@ -219,13 +242,18 @@ def encode_jpeg_opencv(
     chroma_sampling: str | None = None,
     *,
     optimize: bool = False,
+    progressive: bool = False,
+    restart_interval: int = 0,
 ) -> bytes:
-    """Encode one baseline JPEG with OpenCV and declared controls."""
+    """Encode one JPEG with OpenCV and declared structural controls."""
     validated = _validate_image(image)
     _validate_quality(quality)
     _validate_sampling(validated, chroma_sampling)
     if not isinstance(optimize, bool):
         raise TypeError("optimize must be a boolean")
+    if not isinstance(progressive, bool):
+        raise TypeError("progressive must be a boolean")
+    _validate_restart_interval(restart_interval)
     parameters = [
         cv2.IMWRITE_JPEG_QUALITY,
         quality,
@@ -238,6 +266,12 @@ def encode_jpeg_opencv(
                 cv2.IMWRITE_JPEG_SAMPLING_FACTOR,
                 _OPENCV_SAMPLING_FACTORS[chroma_sampling],
             ]
+        )
+    if progressive:
+        parameters.extend([cv2.IMWRITE_JPEG_PROGRESSIVE, 1])
+    if restart_interval:
+        parameters.extend(
+            [cv2.IMWRITE_JPEG_RST_INTERVAL, restart_interval]
         )
     succeeded, encoded = cv2.imencode(".jpg", validated, parameters)
     if not succeeded:
@@ -252,12 +286,17 @@ def encode_jpeg_pillow(
     *,
     quantization_tables: QuantizationTables | None = None,
     optimize: bool = False,
+    progressive: bool = False,
+    restart_interval: int = 0,
 ) -> bytes:
-    """Encode one baseline JPEG with Pillow using quality or explicit DQT."""
+    """Encode one JPEG with Pillow using quality or explicit DQT."""
     validated = _validate_image(image)
     _validate_sampling(validated, chroma_sampling)
     if not isinstance(optimize, bool):
         raise TypeError("optimize must be a boolean")
+    if not isinstance(progressive, bool):
+        raise TypeError("progressive must be a boolean")
+    _validate_restart_interval(restart_interval)
     if (quality is None) == (quantization_tables is None):
         raise ValueError(
             "provide exactly one of quality or quantization_tables"
@@ -277,7 +316,7 @@ def encode_jpeg_pillow(
     parameters: dict[str, object] = {
         "format": "JPEG",
         "optimize": optimize,
-        "progressive": False,
+        "progressive": progressive,
     }
     if quality is not None:
         parameters["quality"] = quality
@@ -287,9 +326,52 @@ def encode_jpeg_pillow(
         parameters["subsampling"] = _PILLOW_SAMPLING_FACTORS[
             chroma_sampling
         ]
+    if restart_interval:
+        parameters["restart_marker_blocks"] = restart_interval
     buffer = io.BytesIO()
     pillow_image.save(buffer, **parameters)
     return buffer.getvalue()
+
+
+def encode_jpeg_cmyk_pillow(
+    image: NDArray[np.generic],
+    quality: int,
+    *,
+    progressive: bool = False,
+    restart_interval: int = 0,
+) -> bytes:
+    """Encode a four-channel synthetic CMYK array through Pillow."""
+    if not isinstance(image, np.ndarray):
+        raise TypeError("image must be a NumPy array")
+    if image.size == 0 or image.ndim != 3 or image.shape[2] != 4:
+        raise ValueError("image must be a non-empty four-channel CMYK array")
+    if image.dtype != np.uint8:
+        raise TypeError("image must have dtype uint8")
+    _validate_quality(quality)
+    if not isinstance(progressive, bool):
+        raise TypeError("progressive must be a boolean")
+    _validate_restart_interval(restart_interval)
+    parameters: dict[str, object] = {
+        "format": "JPEG",
+        "quality": quality,
+        "progressive": progressive,
+        "optimize": False,
+    }
+    if restart_interval:
+        parameters["restart_marker_blocks"] = restart_interval
+    buffer = io.BytesIO()
+    Image.fromarray(image, mode="CMYK").save(buffer, **parameters)
+    return buffer.getvalue()
+
+
+def _validate_restart_interval(restart_interval: int) -> None:
+    """Validate a restart interval expressed in MCU blocks."""
+    if not isinstance(restart_interval, int) or isinstance(
+        restart_interval, bool
+    ):
+        raise TypeError("restart_interval must be an integer")
+    if not 0 <= restart_interval <= 65535:
+        raise ValueError("restart_interval must be in the interval [0, 65535]")
 
 
 def _validate_quantization_tables(
@@ -340,6 +422,91 @@ def decode_jpeg_pillow(
     except (OSError, SyntaxError) as error:
         raise ValueError("Pillow could not decode the JPEG data") from error
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+
+
+def decode_jpeg_ffmpeg(jpeg_bytes: bytes) -> NDArray[np.uint8]:
+    """Decode JPEG bytes through FFmpeg's native MJPEG path to BGR pixels."""
+    if not isinstance(jpeg_bytes, bytes) or not jpeg_bytes:
+        raise TypeError("jpeg_bytes must be non-empty bytes")
+    structure = parse_jpeg_structure(jpeg_bytes)
+    command = [
+        imageio_ffmpeg.get_ffmpeg_exe(),
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-threads",
+        "1",
+        "-c:v",
+        "mjpeg",
+        "-f",
+        "mjpeg",
+        "-i",
+        "pipe:0",
+        "-frames:v",
+        "1",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "bgr24",
+        "pipe:1",
+    ]
+    completed = subprocess.run(
+        command,
+        input=jpeg_bytes,
+        capture_output=True,
+        check=False,
+        timeout=30,
+    )
+    if completed.returncode != 0:
+        message = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise ValueError(f"FFmpeg could not decode the JPEG data: {message}")
+    expected_size = structure.width * structure.height * 3
+    if len(completed.stdout) != expected_size:
+        raise ValueError("FFmpeg returned an unexpected BGR byte count")
+    return np.frombuffer(completed.stdout, dtype=np.uint8).reshape(
+        structure.height, structure.width, 3
+    ).copy()
+
+
+def ffmpeg_build_information() -> dict[str, str]:
+    """Return stable FFmpeg adapter and native MJPEG build metadata."""
+    executable = imageio_ffmpeg.get_ffmpeg_exe()
+    version_output = subprocess.run(
+        [executable, "-version"],
+        capture_output=True,
+        check=True,
+        text=True,
+        timeout=30,
+    ).stdout.splitlines()
+    decoder_output = subprocess.run(
+        [executable, "-hide_banner", "-decoders"],
+        capture_output=True,
+        check=True,
+        text=True,
+        timeout=30,
+    ).stdout
+    if not any(
+        line.split()[1:2] == ["mjpeg"]
+        for line in decoder_output.splitlines()
+        if line.strip().startswith("V")
+    ):
+        raise RuntimeError("The bundled FFmpeg build has no MJPEG decoder")
+    version_line = next(
+        line for line in version_output if line.startswith("ffmpeg version ")
+    )
+    configuration = next(
+        (line for line in version_output if line.startswith("configuration:")),
+        "configuration:not_reported",
+    )
+    return {
+        "adapter": "imageio-ffmpeg",
+        "adapter_version": imageio_ffmpeg.__version__,
+        "codec_family": "ffmpeg-native-mjpeg",
+        "codec_version": version_line.split()[2],
+        "codec_build_fingerprint": hashlib.sha256(
+            configuration.encode("utf-8")
+        ).hexdigest(),
+    }
 
 
 def parse_jpeg_structure(jpeg_bytes: bytes) -> JPEGStructure:
@@ -408,6 +575,97 @@ def parse_jpeg_structure(jpeg_bytes: bytes) -> JPEGStructure:
         height=height,
         quantization_tables=tuple(tables[key] for key in sorted(tables)),
         components=components,
+    )
+
+
+def inspect_jpeg_syntax(jpeg_bytes: bytes) -> JPEGSyntaxSummary:
+    """Inspect frame, scan, restart, JFIF, and Adobe marker properties."""
+    structure = parse_jpeg_structure(jpeg_bytes)
+    position = 2
+    scan_count = 0
+    restart_interval = 0
+    restart_marker_count = 0
+    jfif_present = False
+    adobe_transform: int | None = None
+    reached_eoi = False
+    while position < len(jpeg_bytes):
+        if jpeg_bytes[position] != 0xFF:
+            raise ValueError("expected a JPEG marker prefix")
+        marker_prefix = position
+        while position < len(jpeg_bytes) and jpeg_bytes[position] == 0xFF:
+            position += 1
+        if position >= len(jpeg_bytes):
+            raise ValueError("truncated JPEG marker")
+        marker = jpeg_bytes[position]
+        position += 1
+        if marker == 0xD9:
+            reached_eoi = True
+            break
+        if marker == 0x01 or 0xD0 <= marker <= 0xD8:
+            continue
+        if position + 2 > len(jpeg_bytes):
+            raise ValueError("truncated JPEG segment length")
+        segment_length = int.from_bytes(
+            jpeg_bytes[position : position + 2], "big"
+        )
+        if segment_length < 2:
+            raise ValueError("invalid JPEG segment length")
+        payload_start = position + 2
+        payload_end = position + segment_length
+        if payload_end > len(jpeg_bytes):
+            raise ValueError("truncated JPEG segment")
+        payload = jpeg_bytes[payload_start:payload_end]
+        position = payload_end
+        if marker == 0xE0 and payload.startswith(b"JFIF\x00"):
+            jfif_present = True
+        elif marker == 0xEE and payload.startswith(b"Adobe"):
+            if len(payload) < 12:
+                raise ValueError("truncated Adobe APP14 segment")
+            adobe_transform = payload[11]
+        elif marker == 0xDD:
+            if len(payload) != 2:
+                raise ValueError("invalid DRI payload length")
+            observed_interval = int.from_bytes(payload, "big")
+            if restart_interval not in (0, observed_interval):
+                raise ValueError("inconsistent restart intervals")
+            restart_interval = observed_interval
+        elif marker == 0xDA:
+            scan_count += 1
+            while position < len(jpeg_bytes):
+                marker_prefix = jpeg_bytes.find(b"\xff", position)
+                if marker_prefix < 0:
+                    raise ValueError("entropy-coded scan has no closing marker")
+                marker_position = marker_prefix + 1
+                while (
+                    marker_position < len(jpeg_bytes)
+                    and jpeg_bytes[marker_position] == 0xFF
+                ):
+                    marker_position += 1
+                if marker_position >= len(jpeg_bytes):
+                    raise ValueError("truncated entropy-coded marker")
+                entropy_marker = jpeg_bytes[marker_position]
+                if entropy_marker == 0x00:
+                    position = marker_position + 1
+                    continue
+                if 0xD0 <= entropy_marker <= 0xD7:
+                    restart_marker_count += 1
+                    position = marker_position + 1
+                    continue
+                position = marker_prefix
+                break
+        if position == marker_prefix:
+            continue
+    if not reached_eoi:
+        raise ValueError("JPEG EOI marker was not found")
+    if scan_count == 0:
+        raise ValueError("JPEG SOS marker was not found")
+    return JPEGSyntaxSummary(
+        frame_marker=structure.frame_marker,
+        scan_count=scan_count,
+        restart_interval=restart_interval,
+        restart_marker_count=restart_marker_count,
+        jfif_present=jfif_present,
+        adobe_transform=adobe_transform,
     )
 
 

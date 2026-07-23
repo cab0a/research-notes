@@ -9,10 +9,12 @@ from research_notes import (
     classify_decoded_pixel_contract,
     compare_decoded_pixels,
     disk_psf,
+    decode_jpeg_ffmpeg,
     decode_jpeg_opencv,
     decode_jpeg_pillow,
     encode_jpeg_opencv,
     encode_jpeg_pillow,
+    encode_jpeg_cmyk_pillow,
     gaussian_denoise,
     gamma_transform,
     jpeg_encode_decode,
@@ -21,6 +23,7 @@ from research_notes import (
     linear_intensity_transform,
     linear_motion_psf,
     minmax_normalize,
+    inspect_jpeg_syntax,
     parse_jpeg_structure,
     pixel_array_sha256,
     repeated_jpeg_round_trip,
@@ -496,6 +499,55 @@ def test_jpeg_codec_controls_and_marker_data_are_validated() -> None:
         parse_jpeg_structure(
             b"\xff\xd8\xff\xdb\x00\x0d\x00" + b"\x01" * 10
         )
+
+
+def test_advanced_jpeg_syntax_reports_progressive_and_restart_markers() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    progressive = encode_jpeg_opencv(
+        color,
+        quality=75,
+        chroma_sampling="444",
+        progressive=True,
+    )
+    restarted = encode_jpeg_opencv(
+        color,
+        quality=75,
+        chroma_sampling="420",
+        restart_interval=2,
+    )
+
+    progressive_syntax = inspect_jpeg_syntax(progressive)
+    restarted_syntax = inspect_jpeg_syntax(restarted)
+
+    assert progressive_syntax.frame_process == "progressive_dct"
+    assert progressive_syntax.scan_count > 1
+    assert restarted_syntax.frame_process == "baseline_sequential"
+    assert restarted_syntax.restart_interval == 2
+    assert restarted_syntax.restart_marker_count > 0
+
+
+def test_cmyk_and_ffmpeg_decoder_preserve_the_array_interface() -> None:
+    grayscale = make_checkerboard(cell_size=7)
+    cmyk = np.stack(
+        (
+            grayscale,
+            255 - grayscale,
+            np.roll(grayscale, 3, axis=1),
+            np.full_like(grayscale, 24),
+        ),
+        axis=2,
+    )
+    encoded = encode_jpeg_cmyk_pillow(cmyk, quality=75, progressive=True)
+
+    syntax = inspect_jpeg_syntax(encoded)
+    opencv = decode_jpeg_opencv(encoded)
+    ffmpeg = decode_jpeg_ffmpeg(encoded)
+
+    assert syntax.frame_process == "progressive_dct"
+    assert len(parse_jpeg_structure(encoded).components) == 4
+    assert opencv.shape == ffmpeg.shape == (*grayscale.shape, 3)
+    assert opencv.dtype == ffmpeg.dtype == np.uint8
 
 
 def test_decoded_pixel_contracts_separate_exact_and_bounded_results() -> None:

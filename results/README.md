@@ -160,6 +160,35 @@ job verifies the three stable decoded-pixel reports against the committed
 references on every CI run. Runner image identifiers remain observational
 metadata because hosted images can be updated independently of this project.
 
+## v0.11.0
+
+- `fixtures/advanced-jpeg-syntax/manifest.csv` records ten generated baseline,
+  progressive, restart-marker, grayscale, RGB, and CMYK JPEG streams and their
+  lossless BGR reference decodes.
+- `jpeg_advanced_codec_manifest.csv` records the local OpenCV, Pillow, and
+  FFmpeg adapter, codec-family, platform, and build provenance.
+- `jpeg_advanced_decoder_observations.csv` contains 30 local structure,
+  interface, exact-pixel, numerical-error, and derivative-response records.
+- `jpeg_advanced_pairwise_differences.csv` contains all 30 local decoder-family
+  pairs across the ten fixtures.
+- `jpeg_advanced_syntax_equivalence.csv` contains 15 matched progression and
+  restart-marker comparisons within the three decoders.
+- `jpeg_advanced_summary.csv` provides one local row for every fixture and
+  decoder.
+- `jpeg_advanced_codec_families.png` visualizes maximum error, changed-sample
+  fraction, and derivative-metric ratios.
+- `jpeg_advanced_cross_platform_codec_manifest.csv` records the 15 decoder
+  build rows from the five-profile release matrix.
+- `jpeg_advanced_cross_platform_observations.csv`,
+  `jpeg_advanced_cross_platform_pairs.csv`, and
+  `jpeg_advanced_cross_platform_syntax_equivalence.csv` preserve the combined
+  release observations.
+- `jpeg_advanced_cross_platform_summary.csv` and
+  `jpeg_advanced_cross_platform_pair_summary.csv` aggregate those observations
+  by fixed fixture and decoder or decoder pair.
+- `jpeg_advanced_cross_platform_codec_families.png` visualizes exact, bounded,
+  maximum-error, and cross-platform hash behavior.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -173,6 +202,7 @@ python experiments/run_photometric_recompression.py
 python experiments/run_jpeg_compression_history.py
 python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
+python experiments/run_advanced_jpeg_syntax.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

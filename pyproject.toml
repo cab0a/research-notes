@@ -4,12 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-notes"
-version = "0.10.0"
+version = "0.11.0"
 description = "Reproducible technical research notes and controlled experiments"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 dependencies = [
+    "imageio-ffmpeg==0.6.0",
     "matplotlib==3.11.1",
     "numpy==2.4.6",
     "opencv-python-headless==4.13.0.92",
