@@ -411,3 +411,16 @@ The roadmap is exploratory and does not represent completed work.
 ## License
 
 Code and documentation are available under the [MIT License](LICENSE).
+
+---
+
+## 日本語概要
+
+このリポジトリは、画像処理に関するresearch question、source review、仮説、
+controlled experiment、結果、考察、limitationsを継続的に記録する研究ノートです。
+実装だけでなく、結論までの根拠を追跡したいR&Dエンジニアやreviewerに役立ちます。
+
+現在のJPEG研究では、同じ画像streamへ正常・不正・曖昧なAPP metadataを挿入し、
+strict metadata auditとdecoder recoveryを分けて評価しています。決定論的fixture、
+CSV/PNG成果物、固定依存関係、テスト、5つのplatform profileによるcontract CIが
+主な特徴です。各結果が主張できる範囲と再現手順は英語本文を参照してください。
