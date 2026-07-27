@@ -1,5 +1,7 @@
 """Tests for focus metrics, preprocessing, and controlled blur models."""
 
+import hashlib
+
 import cv2
 import numpy as np
 import pytest
@@ -581,6 +583,12 @@ def test_synthetic_icc_profiles_are_deterministic_and_distinct() -> None:
     assert linear_first == linear_second
     assert linear_first != gamma_encoded
     assert len(linear_first) == len(gamma_encoded) > 128
+    assert hashlib.sha256(linear_first).hexdigest() == (
+        "0409b34291f553ef52c050af31c58d3dae28030e0cb789e176b1642b48105db0"
+    )
+    assert hashlib.sha256(gamma_encoded).hexdigest() == (
+        "c166791a6d33d4d0ffc3b9a411d2a34b91b2e0df85ad5c7e1b47d4cac9a31f0d"
+    )
 
 
 def test_jpeg_metadata_attachment_preserves_the_compressed_core() -> None:

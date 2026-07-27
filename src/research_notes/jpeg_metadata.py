@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import io
 from dataclasses import dataclass
@@ -19,8 +20,23 @@ from research_notes.jpeg_codec import (
 
 _EXIF_ORIENTATION_TAG = 274
 _ICC_IDENTIFIER = b"ICC_PROFILE\x00"
-_PROFILE_DATE = (2026, 7, 23, 0, 0, 0)
 _SUPPORTED_PROFILE_GAMMAS = (1.0, 2.2)
+# Runtime profile factories can vary with their Little CMS build.
+_SYNTHETIC_RGB_PROFILE_TEMPLATE = base64.b64decode(
+    b"AAACTGxjbXMEQAAAbW50clJHQiBYWVogB+oABwAXAAAAAAAAYWNzcEFQUEwAAAAA"
+    b"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1sY21zAAAAAAAAAAAAAAAA"
+    b"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAAA2"
+    b"Y3BydAAAAUAAAABMd3RwdAAAAYwAAAAUY2hhZAAAAaAAAAAsclhZWgAAAcwAAAAU"
+    b"YlhZWgAAAeAAAAAUZ1hZWgAAAfQAAAAUclRSQwAAAggAAAAgZ1RSQwAAAggAAAAg"
+    b"YlRSQwAAAggAAAAgY2hybQAAAigAAAAkbWx1YwAAAAAAAAABAAAADGVuVVMAAAAa"
+    b"AAAAHABnAGEAbQBtAGEAIAAyAC4AMgAgAFIARwBCAABtbHVjAAAAAAAAAAEAAAAM"
+    b"ZW5VUwAAADAAAAAcAE4AbwAgAGMAbwBwAHkAcgBpAGcAaAB0ACwAIAB1AHMAZQAg"
+    b"AGYAcgBlAGUAbAB5WFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEIAAAXe"
+    b"///zJQAAB5MAAP2Q///7of///aIAAAPcAADAblhZWiAAAAAAAABvoAAAOPUAAAOQ"
+    b"WFlaIAAAAAAAACSfAAAPhAAAtsNYWVogAAAAAAAAYpcAALeHAAAY2XBhcmEAAAAA"
+    b"AAMAAAACMzMAAQAAAAAAAAABAAAAAAAAY2hybQAAAAAAAwAAAACj1wAAVHsAAEzN"
+    b"AACZmgAAJmYAAA9c"
+)
 
 
 @dataclass(frozen=True)
@@ -47,13 +63,7 @@ def build_synthetic_rgb_profile(gamma: float) -> bytes:
     if normalized_gamma not in _SUPPORTED_PROFILE_GAMMAS:
         raise ValueError("gamma must be one of: 1.0, 2.2")
 
-    profile = bytearray(
-        ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB")).tobytes()
-    )
-    profile[24:36] = b"".join(
-        value.to_bytes(2, "big") for value in _PROFILE_DATE
-    )
-    profile[84:100] = b"\x00" * 16
+    profile = bytearray(_SYNTHETIC_RGB_PROFILE_TEMPLATE)
     tags = _icc_tag_table(profile)
 
     description = f"gamma {normalized_gamma:.1f} RGB".encode("utf-16-be")
