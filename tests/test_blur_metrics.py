@@ -8,12 +8,14 @@ from research_notes import (
     apply_psf,
     apply_exif_orientation_bgr,
     attach_jpeg_metadata,
+    audit_jpeg_metadata,
     build_synthetic_rgb_profile,
     classify_decoded_pixel_contract,
     cmyk_to_bgr_arithmetic,
     compare_decoded_pixels,
     disk_psf,
     decode_jpeg_ffmpeg,
+    decode_jpeg_ffmpeg_with_expected_shape,
     decode_jpeg_opencv,
     decode_jpeg_pillow,
     decode_jpeg_pillow_color_managed,
@@ -29,6 +31,7 @@ from research_notes import (
     laplacian_variance,
     linear_intensity_transform,
     linear_motion_psf,
+    make_jpeg_app_segment,
     minmax_normalize,
     inspect_jpeg_syntax,
     inspect_jpeg_metadata,
@@ -62,6 +65,17 @@ def make_grating(
     phase = columns * np.cos(angle_radians) + rows * np.sin(angle_radians)
     values = 127.5 + 110.0 * np.cos(2.0 * np.pi * phase / period)
     return np.clip(np.rint(values), 0, 255).astype(np.uint8)
+
+
+def prepend_app_payload(
+    jpeg_bytes: bytes, app_number: int, payload: bytes
+) -> bytes:
+    """Prepend one test APP segment without changing compressed scans."""
+    return (
+        jpeg_bytes[:2]
+        + make_jpeg_app_segment(app_number, payload)
+        + jpeg_bytes[2:]
+    )
 
 
 def test_constant_image_has_zero_laplacian_variance() -> None:
@@ -589,6 +603,114 @@ def test_jpeg_metadata_attachment_preserves_the_compressed_core() -> None:
     assert metadata.icc_chunk_count == 1
 
 
+def test_strict_metadata_audit_accepts_valid_exif_and_icc() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    tagged = attach_jpeg_metadata(
+        base,
+        exif_orientation=6,
+        icc_profile=build_synthetic_rgb_profile(2.2),
+    )
+
+    audit = audit_jpeg_metadata(tagged)
+
+    assert audit.accepted
+    assert audit.issue_codes == ()
+    assert audit.exif_orientations == (6,)
+    assert audit.icc_declared_chunks == 1
+    assert audit.icc_observed_chunks == 1
+    assert audit.icc_profile_length > 128
+
+
+def test_strict_metadata_audit_rejects_invalid_exif_orientation() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    invalid_exif = (
+        b"Exif\x00\x00"
+        + b"MM\x00*"
+        + (8).to_bytes(4, "big")
+        + (1).to_bytes(2, "big")
+        + (274).to_bytes(2, "big")
+        + (3).to_bytes(2, "big")
+        + (1).to_bytes(4, "big")
+        + (9).to_bytes(2, "big")
+        + b"\x00\x00"
+        + b"\x00\x00\x00\x00"
+    )
+    malformed = prepend_app_payload(base, 1, invalid_exif)
+
+    audit = audit_jpeg_metadata(malformed)
+
+    assert not audit.accepted
+    assert audit.container_valid
+    assert audit.image_data_present
+    assert audit.exif_orientations == (9,)
+    assert "exif_orientation_out_of_range" in audit.issue_codes
+
+
+def test_strict_metadata_audit_rejects_incomplete_icc_chunks() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    profile = build_synthetic_rgb_profile(2.2)
+    incomplete = prepend_app_payload(
+        base,
+        2,
+        b"ICC_PROFILE\x00" + bytes((1, 2)) + profile,
+    )
+
+    audit = audit_jpeg_metadata(incomplete)
+
+    assert not audit.accepted
+    assert audit.container_valid
+    assert audit.icc_declared_chunks == 2
+    assert audit.icc_observed_chunks == 1
+    assert "icc_missing_sequence" in audit.issue_codes
+
+
+def test_strict_metadata_audit_enforces_framing_and_resource_limits() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    invalid_length = base[:2] + b"\xff\xe1\x00\x01" + base[2:]
+    many_segments = (
+        base[:2]
+        + b"".join(make_jpeg_app_segment(15, b"x") for _ in range(4))
+        + base[2:]
+    )
+    trailing = base + b"trailing"
+
+    length_audit = audit_jpeg_metadata(invalid_length)
+    limit_audit = audit_jpeg_metadata(many_segments, max_app_segments=3)
+    trailing_audit = audit_jpeg_metadata(trailing)
+
+    assert not length_audit.accepted
+    assert "invalid_segment_length" in length_audit.issue_codes
+    assert not limit_audit.accepted
+    assert "app_segment_limit_exceeded" in limit_audit.issue_codes
+    assert not trailing_audit.accepted
+    assert trailing_audit.trailing_bytes == len(b"trailing")
+    assert "trailing_data" in trailing_audit.issue_codes
+
+
+def test_ffmpeg_expected_shape_adapter_bypasses_python_marker_parser() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+
+    parsed = decode_jpeg_ffmpeg(base, ignore_orientation=True)
+    declared = decode_jpeg_ffmpeg_with_expected_shape(
+        base,
+        width=color.shape[1],
+        height=color.shape[0],
+        ignore_orientation=True,
+    )
+
+    assert np.array_equal(parsed, declared)
+
+
 def test_orientation_policies_match_for_all_exif_values() -> None:
     rows, columns = np.indices((72, 104))
     color = np.stack(
@@ -689,6 +811,14 @@ def test_jpeg_metadata_parameters_are_validated() -> None:
         decode_jpeg_opencv(base, ignore_orientation=1)
     with pytest.raises(TypeError, match="boolean"):
         decode_jpeg_ffmpeg(base, ignore_orientation=1)
+    with pytest.raises(ValueError, match="positive"):
+        audit_jpeg_metadata(base, max_app_segments=0)
+    with pytest.raises(ValueError, match=r"\[0, 15\]"):
+        make_jpeg_app_segment(16, b"")
+    with pytest.raises(ValueError, match="positive"):
+        decode_jpeg_ffmpeg_with_expected_shape(
+            base, width=0, height=32
+        )
 
 
 def test_decoded_pixel_contracts_separate_exact_and_bounded_results() -> None:

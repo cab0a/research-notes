@@ -440,6 +440,46 @@ def decode_jpeg_ffmpeg(
     if not isinstance(ignore_orientation, bool):
         raise TypeError("ignore_orientation must be a boolean")
     structure = parse_jpeg_structure(jpeg_bytes)
+    output_height = structure.height
+    output_width = structure.width
+    if not ignore_orientation:
+        try:
+            with Image.open(io.BytesIO(jpeg_bytes)) as image:
+                orientation = int(image.getexif().get(274, 1))
+        except (OSError, SyntaxError, TypeError, ValueError):
+            orientation = 1
+        if orientation in (5, 6, 7, 8):
+            output_height, output_width = output_width, output_height
+    return decode_jpeg_ffmpeg_with_expected_shape(
+        jpeg_bytes,
+        width=output_width,
+        height=output_height,
+        ignore_orientation=ignore_orientation,
+    )
+
+
+def decode_jpeg_ffmpeg_with_expected_shape(
+    jpeg_bytes: bytes,
+    *,
+    width: int,
+    height: int,
+    ignore_orientation: bool = True,
+) -> NDArray[np.uint8]:
+    """Decode through FFmpeg using a caller-declared output shape contract.
+
+    This adapter intentionally avoids parsing JPEG marker lengths before the
+    native decoder runs. It is useful for controlled malformed-input probes
+    where width and height come from a trusted fixture manifest.
+    """
+    if not isinstance(jpeg_bytes, bytes) or not jpeg_bytes:
+        raise TypeError("jpeg_bytes must be non-empty bytes")
+    for value, name in ((width, "width"), (height, "height")):
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be positive")
+    if not isinstance(ignore_orientation, bool):
+        raise TypeError("ignore_orientation must be a boolean")
     command = [
         imageio_ffmpeg.get_ffmpeg_exe(),
         "-hide_banner",
@@ -477,21 +517,11 @@ def decode_jpeg_ffmpeg(
     if completed.returncode != 0:
         message = completed.stderr.decode("utf-8", errors="replace").strip()
         raise ValueError(f"FFmpeg could not decode the JPEG data: {message}")
-    output_height = structure.height
-    output_width = structure.width
-    if not ignore_orientation:
-        try:
-            with Image.open(io.BytesIO(jpeg_bytes)) as image:
-                orientation = int(image.getexif().get(274, 1))
-        except (OSError, SyntaxError, TypeError, ValueError):
-            orientation = 1
-        if orientation in (5, 6, 7, 8):
-            output_height, output_width = output_width, output_height
-    expected_size = output_width * output_height * 3
+    expected_size = width * height * 3
     if len(completed.stdout) != expected_size:
         raise ValueError("FFmpeg returned an unexpected BGR byte count")
     return np.frombuffer(completed.stdout, dtype=np.uint8).reshape(
-        output_height, output_width, 3
+        height, width, 3
     ).copy()
 
 

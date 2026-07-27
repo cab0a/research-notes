@@ -234,6 +234,39 @@ control, and summary CSV files with these references on subsequent runs. The
 codec manifest remains release provenance because hosted runner image metadata
 can change independently of the fixed observations.
 
+## v0.13.0
+
+- `fixtures/malformed-jpeg-metadata/manifest.csv` records 21 deterministic
+  valid, malformed, ambiguous, trailing-data, and resource-boundary JPEG
+  fixtures around one preserved synthetic image stream.
+- `jpeg_recovery_codec_manifest.csv` records the local strict auditor and
+  OpenCV, Pillow, and FFmpeg decoder provenance.
+- `jpeg_recovery_audit.csv` records one bounded structural decision per
+  fixture, including stable issue codes, APP counts, metadata bytes, selected
+  Exif and ICC topology fields, Adobe transforms, and trailing bytes.
+- `jpeg_recovery_decoder_observations.csv` contains 63 local decoder probes
+  with success, interface, exact-pixel, numerical difference, output hash, and
+  diagnostic fingerprint fields.
+- `jpeg_recovery_summary.csv` separates strict audit acceptance from decoder
+  recovery for every fixture.
+- `jpeg_recovery_contracts.png` visualizes strict acceptance, decoder success,
+  exact output, and bounded metadata diagnostics.
+- `jpeg_recovery_cross_platform_codec_manifest.csv`,
+  `jpeg_recovery_cross_platform_audit.csv`, and
+  `jpeg_recovery_cross_platform_decoder_observations.csv` preserve the
+  five-profile release matrix.
+- `jpeg_recovery_cross_platform_summary.csv` aggregates each fixture overall
+  and by decoder.
+- `jpeg_recovery_cross_platform_contracts.png` visualizes cross-platform
+  acceptance, exact-success rates, and successful output-hash counts.
+
+The strict policy is an application boundary, not a universal JPEG acceptance
+rule. A successful pixel decode is reported as recovery availability and never
+as evidence that rejected metadata is valid or safe to propagate. The codec
+manifest is release provenance and is not byte-compared on later CI runs
+because hosted runner image identifiers can change independently of decoder
+behavior.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -249,6 +282,7 @@ python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
 python experiments/run_color_metadata_interpretation.py
+python experiments/run_malformed_metadata_recovery.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

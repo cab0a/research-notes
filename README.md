@@ -22,20 +22,20 @@ each release.
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
 models, photometric pipeline drift, JPEG compression history, and codec
-portability. v0.12.0 holds JPEG scans fixed while varying ICC and EXIF APP
-metadata, then compares explicit color, orientation, CMYK, and YCCK rendering
-policies through structural, exact-pixel, and numerical contracts.
+portability. v0.13.0 preserves a controlled JPEG image stream while inserting
+valid, malformed, ambiguous, and resource-bounded APP metadata, then separates
+strict metadata acceptance from decoder recovery and exact raw-pixel output.
 
 ## Representative Result
 
-The v0.12.0 study compares 13 fixed JPEG streams across five GitHub-hosted
-platform profiles. All 570 raw, policy, and control arrays satisfied their
-interface contracts; all 135 raw metadata-invariance pairs and all 160
-declared orientation-policy observations were pixel-exact. ICC transforms
-changed output code values despite identical compressed scans, and the
-rendered CMYK/YCCK separation varied substantially by decoder path.
+The v0.13.0 local reference study evaluates 21 fixed JPEG streams through a
+strict bounded metadata audit and three decoder paths. The strict policy
+accepted 5 fixtures and rejected 16, while 60 of 63 decoder probes still
+returned pixels. All 60 successful outputs were pixel-exact relative to the
+same decoder's unmodified control. Decoder recovery therefore did not certify
+Exif, ICC, Adobe, marker-framing, trailing-data, or resource-limit validity.
 
-![JPEG metadata interpretation policies across platforms](results/jpeg_metadata_cross_platform_interpretation.png)
+![Malformed JPEG metadata audit and decoder recovery](results/jpeg_recovery_contracts.png)
 
 This is fixture-specific regression evidence, not a perceptual-quality result
 or a guarantee for every JPEG stream. The observation and pair tables are
@@ -43,12 +43,13 @@ committed under [`results/`](results/).
 
 ## Key Features
 
-- Twelve published notes connecting a focused question to sources, controls,
+- Thirteen published notes connecting a focused question to sources, controls,
   measurements, interpretation, and limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
 - Fixed JPEG fixtures covering baseline, progressive, restart-marker,
-  grayscale, RGB, CMYK, YCCK, chroma sampling, ICC, and EXIF orientation cases
+  grayscale, RGB, CMYK, YCCK, chroma sampling, ICC, EXIF orientation, malformed
+  APP framing, conflicting metadata, trailing data, and resource controls
 - Laplacian variance, Tenengrad, spatial aggregation, calibration drift,
   decoded-pixel contracts, and codec/runtime manifests
 - CSV observations and summaries plus figures generated from the same runs
@@ -100,6 +101,8 @@ Every published note makes that chain inspectable and reproducible.
 
 ## Published Notes
 
+- [Malformed Metadata, Decoder Recovery, and Trust Boundaries](notes/malformed-metadata-decoder-recovery-trust-boundaries.md)
+  — v0.13.0
 - [Color Management, YCCK, and Metadata Interpretation](notes/color-management-ycck-metadata-interpretation.md)
   — v0.12.0
 - [Independent Codec Families and Advanced JPEG Syntax](notes/independent-codec-families-advanced-jpeg-syntax.md)
@@ -150,6 +153,7 @@ python experiments/run_jpeg_codec_portability.py
 python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
 python experiments/run_color_metadata_interpretation.py
+python experiments/run_malformed_metadata_recovery.py
 ```
 
 On Windows PowerShell, activate the environment with
@@ -157,7 +161,7 @@ On Windows PowerShell, activate the environment with
 generated images and deterministic random seeds. Each experiment writes its
 CSV and PNG artifacts under `results/`.
 
-The v0.10.0 through v0.12.0 workflows also run a five-profile GitHub Actions
+The v0.10.0 through v0.13.0 workflows also run a five-profile GitHub Actions
 matrix and share each platform observation through workflow artifacts before
 producing the combined cross-platform reports.
 
@@ -169,7 +173,8 @@ studies use known sharp/blurred patterns and deterministic noise; spatial
 studies preserve region identity and window geometry; photometric and JPEG
 studies record processing order and codec parameters. Decoder studies separate
 file structure, array-interface validity, exact decoded hashes, pairwise code-
-value differences, and cross-platform agreement.
+value differences, and cross-platform agreement. The malformed-metadata study
+also separates a bounded pre-interpretation audit from decoder availability.
 
 Metrics are interpreted as relative responses inside each controlled design.
 They are not converted into a universal blur threshold, perceptual score, or
@@ -259,17 +264,27 @@ proposing a fixed quality threshold:
   and Pillow each retained one raw hash per fixture; FFmpeg had two hashes for
   the eleven RGB metadata fixtures and the CMYK fixture, with macOS arm64
   differing from the other four profiles.
+- v0.13.0 adds 21 valid, malformed, ambiguous, trailing-data, and resource
+  controls around one preserved synthetic JPEG stream. The local strict audit
+  accepted 5 fixtures and rejected 16. Decoders nevertheless succeeded on 60
+  of 63 probes, including 45 of 48 probes for strict-rejected fixtures, and
+  every successful output was exact relative to that decoder's control.
+  OpenCV rejected the APP1 length overrun; Pillow rejected that fixture and the
+  truncated ICC chunk header; FFmpeg recovered exact pixels from all 21 local
+  fixtures. These are build-specific recovery observations, not permission to
+  trust, interpret, or preserve rejected metadata.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.
 
 ## Limitations
 
-The studies use small, 8-bit synthetic images. v0.12.0 adds ICC matrix/TRC
-controls, EXIF orientation, and one synthetic YCCK path, but it does not
-establish behavior for measured device profiles, LUT profiles, gamut mapping,
-proofing, hardware or camera codecs, malformed metadata, arithmetic or lossless
-JPEG, human color judgments, or print accuracy. GitHub-hosted runner
+The studies use small, 8-bit synthetic images. v0.13.0 adds bounded malformed
+APP metadata controls, but it is not a fuzzer, security assessment, resource
+benchmark, or memory-safety proof. It does not establish behavior for measured
+device profiles, LUT profiles, gamut mapping, proofing, hardware or camera
+codecs, entropy-coded scan corruption, arithmetic or lossless JPEG, human
+color judgments, or print accuracy. GitHub-hosted runner
 observations are snapshots of recorded images and bundled codec builds rather
 than guarantees for every machine with the same operating-system label.
 Scores remain dependent on texture, contrast, resolution, codec implementation,
@@ -314,13 +329,19 @@ dependency versions, codecs, hardware paths, or platform images.
 |   |-- run_jpeg_codec_portability.py
 |   |-- run_laplacian_variance.py
 |   |-- run_local_blur_evaluation.py
+|   |-- run_malformed_metadata_recovery.py
 |   |-- run_optical_blur_models.py
 |   |-- run_photometric_recompression.py
 |   |-- run_preprocessing_sensitivity.py
 |   |-- run_window_geometry_evaluation.py
 |   |-- summarize_advanced_jpeg_syntax.py
 |   |-- summarize_color_metadata_contracts.py
-|   `-- summarize_cross_platform_codec_contracts.py
+|   |-- summarize_cross_platform_codec_contracts.py
+|   `-- summarize_malformed_metadata_recovery.py
+|-- fixtures/malformed-jpeg-metadata/
+|   |-- manifest.csv
+|   |-- *.jpg
+|   `-- rgb_control.reference.png
 |-- fixtures/color-metadata-contracts/
 |   |-- manifest.csv
 |   |-- *.jpg
@@ -342,6 +363,7 @@ dependency versions, codecs, hardware paths, or platform images.
 |   |-- jpeg-compression-history.md
 |   |-- jpeg-quantization-codec-portability.md
 |   |-- local-blur-spatial-aggregation.md
+|   |-- malformed-metadata-decoder-recovery-trust-boundaries.md
 |   |-- optical-blur-models-directional-motion.md
 |   |-- photometric-normalization-recompression-drift.md
 |   |-- preprocessing-sensitivity-calibration-drift.md
@@ -357,6 +379,7 @@ dependency versions, codecs, hardware paths, or platform images.
 |   |-- jpeg_codec.py
 |   |-- jpeg_contracts.py
 |   |-- jpeg_metadata.py
+|   |-- jpeg_recovery.py
 |   |-- photometric.py
 |   `-- preprocessing.py
 |-- tests/test_blur_metrics.py
@@ -367,9 +390,8 @@ dependency versions, codecs, hardware paths, or platform images.
 
 ## Roadmap
 
-- Evaluate malformed or incomplete ICC chunks, invalid or conflicting EXIF
-  orientation, marker conflicts, truncation, decoder recovery, and application
-  trust boundaries without presenting unsafe recovery as silent correctness.
+- Compare metadata strip, preserve, normalize, and reject policies across JPEG
+  round trips without treating byte preservation as semantic correctness.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend the global PSF controls to spatially varying defocus and non-uniform
