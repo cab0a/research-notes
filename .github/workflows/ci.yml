@@ -225,6 +225,9 @@ jobs:
           diff -u results/jpeg_metadata_cross_platform_control_pairs.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_control_pairs.csv
           diff -u results/jpeg_metadata_cross_platform_summary.csv metadata-cross-platform-results/jpeg_metadata_cross_platform_summary.csv
           test -s metadata-cross-platform-results/jpeg_metadata_cross_platform_interpretation.png
+          diff -u results/jpeg_recovery_cross_platform_audit.csv recovery-cross-platform-results/jpeg_recovery_cross_platform_audit.csv
+          diff -u results/jpeg_recovery_cross_platform_decoder_observations.csv recovery-cross-platform-results/jpeg_recovery_cross_platform_decoder_observations.csv
+          diff -u results/jpeg_recovery_cross_platform_summary.csv recovery-cross-platform-results/jpeg_recovery_cross_platform_summary.csv
           test -s recovery-cross-platform-results/jpeg_recovery_cross_platform_contracts.png
 
       - name: Upload cross-platform report

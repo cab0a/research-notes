@@ -34,6 +34,9 @@ accepted 5 fixtures and rejected 16, while 60 of 63 decoder probes still
 returned pixels. All 60 successful outputs were pixel-exact relative to the
 same decoder's unmodified control. Decoder recovery therefore did not certify
 Exif, ICC, Adobe, marker-framing, trailing-data, or resource-limit validity.
+The five-profile CI matrix reproduced 60 successful exact probes per profile:
+300 of 315 probes succeeded overall, including 225 of 240 probes rejected by
+the strict audit.
 
 ![Malformed JPEG metadata audit and decoder recovery](results/jpeg_recovery_contracts.png)
 
@@ -271,8 +274,13 @@ proposing a fixed quality threshold:
   every successful output was exact relative to that decoder's control.
   OpenCV rejected the APP1 length overrun; Pillow rejected that fixture and the
   truncated ICC chunk header; FFmpeg recovered exact pixels from all 21 local
-  fixtures. These are build-specific recovery observations, not permission to
-  trust, interpret, or preserve rejected metadata.
+  fixtures. Across five CI profiles, the same rejection pattern produced 300
+  exact successful decodes from 315 probes, including 225 from 240 strict-
+  rejected probes. OpenCV and Pillow each retained one successful output hash
+  per fixture; FFmpeg had two because macOS arm64 differed from the other four
+  profiles while remaining exact to its own platform control. These are build-
+  specific recovery observations, not permission to trust, interpret, or
+  preserve rejected metadata.
 
 These are experiment-specific observations, not transferable quality
 thresholds or proof of universal metric superiority.

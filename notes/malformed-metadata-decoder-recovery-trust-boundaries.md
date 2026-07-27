@@ -139,6 +139,27 @@ committed cross-platform CSV files preserve per-build acceptance, rejection,
 pixel hashes, and diagnostic fingerprints. Findings are limited to those
 recorded runner images and bundled codec builds.
 
+Across the five recorded profiles, the strict audit met all 105 declared
+fixture expectations: it accepted 25 fixture-platform observations and
+rejected 80. Of 315 decoder probes, 300 decoded successfully, and every
+successful output was pixel-exact relative to that decoder's control on the
+same platform. Each platform therefore reproduced the local 60-of-63 recovery
+result. Strict-rejected fixtures still decoded in 225 of 240 probes.
+
+The rejection set was stable across all profiles. OpenCV rejected the APP1
+length overrun in 5 of 105 probes; Pillow rejected that fixture and the
+truncated ICC chunk header in 10 of 105 probes; FFmpeg decoded all 105 probes.
+OpenCV and Pillow each retained one successful output hash per fixture across
+the matrix. FFmpeg retained exact metadata invariance within every profile but
+had two control hashes per fixture because the macOS arm64 output differed
+from the other four recorded profiles. That cross-build difference is separate
+from malformed-metadata recovery and reinforces the need for a within-build
+control.
+
+These observations were produced by the successful
+[five-profile release workflow](https://github.com/cab0a/research-notes/actions/runs/30242822114),
+not by relabeling one local execution.
+
 ## Interpretation
 
 The main finding is not that permissive recovery is wrong. Recovery can be

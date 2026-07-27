@@ -260,6 +260,15 @@ can change independently of the fixed observations.
 - `jpeg_recovery_cross_platform_contracts.png` visualizes cross-platform
   acceptance, exact-success rates, and successful output-hash counts.
 
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30242822114)
+recorded 105 audit observations and 315 decoder probes. All audit expectations
+were met. Decoding succeeded exactly against the same decoder's platform
+control in 300 probes, including 225 of the 240 probes attached to strict-
+rejected fixtures. OpenCV failed only on the APP1 length overrun, Pillow failed
+on that fixture and the truncated ICC chunk header, and FFmpeg recovered all
+105 probes. The repeated failure set was identical on all five profiles.
+
 The strict policy is an application boundary, not a universal JPEG acceptance
 rule. A successful pixel decode is reported as recovery availability and never
 as evidence that rejected metadata is valid or safe to propagate. The codec
