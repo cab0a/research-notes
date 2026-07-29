@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、14件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化方針の結果を研究版ごとに対応付けています。
+このディレクトリには、15件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフトの結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -327,6 +327,28 @@ decoded-pixel hash across the matrix. The codec manifest remains release
 provenance and is not byte-compared on later CI runs because hosted runner
 image metadata can change independently of fixed observations.
 
+## v0.15.0
+
+- `jpeg_metadata_generation_codec_manifest.csv` records the local policy,
+  Pillow raw decoder, and Pillow and OpenCV encoder provenance.
+- `jpeg_metadata_generation_observations.csv` contains 660 local records from
+  five strict-accepted fixtures, two encoders, six policy sequences, and
+  generations 0 through 10.
+- `jpeg_metadata_generation_summary.csv` aggregates strict acceptance,
+  metadata changes, original-envelope retention, supported-semantic retention,
+  and decoded-pixel drift by encoder, sequence, and generation.
+- `jpeg_metadata_generation_contracts.csv` contains 60 temporal contracts with
+  post-transition metadata, JPEG, and pixel hash counts.
+- `jpeg_metadata_generation_drift.png` visualizes original-envelope retention,
+  supported EXIF and ICC retention, and the separate lossy image trajectory.
+
+All 60 local contracts reach one metadata-state hash after their final policy
+transition, and all 660 outputs pass the strict metadata audit. Within every
+fixture, encoder, and generation control, the six sequences have one
+compressed-core and decoded-pixel hash. The generation-3 pixel fixed point is
+specific to the one small synthetic image, quality 75, 4:4:4 sampling, and the
+pinned local builds; it is not a general convergence or quality claim.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -344,6 +366,7 @@ python experiments/run_advanced_jpeg_syntax.py
 python experiments/run_color_metadata_interpretation.py
 python experiments/run_malformed_metadata_recovery.py
 python experiments/run_metadata_round_trip.py
+python experiments/run_metadata_generation_drift.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

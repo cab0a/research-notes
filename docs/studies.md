@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化方針を扱う14件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフトを扱う15件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -277,6 +277,30 @@ metadata transfer, validity, semantics, and pixels are separate contracts.
 
 ```bash
 python experiments/run_metadata_round_trip.py
+```
+
+### v0.15.0 — Multi-Generation Metadata Policy Drift and Idempotence
+
+**Question:** When preserve, strip, and supported normalization are applied
+through ten repeated JPEG generations, which metadata, byte, and pixel
+properties stabilize?
+
+**Representative finding:** All 60 local fixture, encoder, and sequence
+contracts reach one metadata-state hash after their final policy transition.
+Preserve retains all eight generation-10 controlled envelopes, normalize
+retains the four supported EXIF and ICC envelopes, and strip prevents a later
+preserve stage from restoring removed metadata. The six policy sequences share
+one compressed-core and decoded-pixel hash within every controlled generation,
+while the lossy pixel path changes through generation 3 in this fixed setting.
+
+- [Complete note](../notes/multi-generation-metadata-policy-drift.md)
+- [Observations](../results/jpeg_metadata_generation_observations.csv)
+- [Summary](../results/jpeg_metadata_generation_summary.csv)
+- [Temporal contracts](../results/jpeg_metadata_generation_contracts.csv)
+- [Figure](../results/jpeg_metadata_generation_drift.png)
+
+```bash
+python experiments/run_metadata_generation_drift.py
 ```
 
 ## Artifact Details

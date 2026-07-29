@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、正常・不正・曖昧なメタデータを持つ同じ合成画像に対し、保存・除去・正規化・拒否の方針を比較し、バイト保持、意味保持、厳格な検査、復号画素を分けて評価しています。
+研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、5種類の固定JPEGを最大10世代まで繰り返し処理し、メタデータの保持・除去・正規化と方針遷移について、バイト状態、意味保持、厳格な検査、圧縮画像、復号画素を分けて評価しています。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -24,7 +24,8 @@ figures, interpretation, and limitations.
 The work starts with blur heuristics, then tests spatial aggregation,
 preprocessing, optical and photometric effects, JPEG compression history,
 decoder portability, metadata interpretation, malformed-metadata recovery,
-and metadata round-trip policies. The current release is v0.14.0.
+metadata round-trip policies, and multi-generation policy drift. The current
+release is v0.15.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -36,34 +37,35 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.14.0 | Which byte, pixel, metadata, recovery, and sanitization behaviors remain stable across encoders, decoders, syntax variants, policies, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.15.0 | Which byte, pixel, metadata, recovery, sanitization, and temporal behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 14 releases to their questions,
+The [study index](docs/studies.md) maps all 15 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.14.0 study applies four explicit metadata policies to the 21-fixture
-v0.13.0 corpus after fixed Pillow or OpenCV re-encoding. It measures complete
-input-envelope bytes, supported EXIF and ICC semantics, strict output
-acceptance, the compressed JPEG core, and raw decoded pixels separately.
+The v0.15.0 study follows six preserve, strip, normalize, and transition
+sequences through generations 0 to 10. Five strict-accepted metadata fixtures,
+two fixed encoder paths, six sequences, and eleven generations produce 660
+local observations.
 
-| Policy | Outputs per encoder | Strict accepted | Supported EXIF / ICC retained |
+| Sequence | Generation-10 envelope exact | EXIF / ICC retained | Stable metadata contracts |
 | --- | ---: | ---: | ---: |
-| preserve | 19 / 21 | 5 / 19 | 2 / 2 |
-| strip | 19 / 21 | 19 / 19 | 0 / 2 |
-| normalize | 19 / 21 | 19 / 19 | 2 / 2 |
-| reject | 5 / 21 | 5 / 5 | 2 / 2 |
+| preserve repeated | 8 / 8 | 4 / 4 | 10 / 10 |
+| strip repeated | 0 / 8 | 0 / 4 | 10 / 10 |
+| normalize repeated | 4 / 8 | 4 / 4 | 10 / 10 |
+| preserve then normalize | 4 / 8 | 4 / 4 | 10 / 10 |
+| normalize then strip | 0 / 8 | 0 / 4 | 10 / 10 |
+| strip then preserve | 0 / 8 | 0 / 4 | 10 / 10 |
 
-![JPEG metadata round-trip policy contracts](results/jpeg_metadata_round_trip.png)
+![Multi-generation metadata policy drift](results/jpeg_metadata_generation_drift.png)
 
-All 124 emitted local outputs retained the exact re-encoded JPEG core and raw
-pixels of their policy-free control. Preserve also copied every available
-controlled envelope, including rejected metadata: byte preservation is not
-the same contract as validation or semantic correctness. These counts apply
-only to the fixed synthetic corpus and pinned builds. The five-profile matrix
-repeated all 840 observations with one behavior signature per contract and no
-within-contract JPEG-byte or decoded-pixel hash variation.
+All 60 temporal contracts reached one metadata-state hash after their final
+policy transition. The six metadata sequences retained one compressed-core and
+decoded-pixel hash inside every fixture, encoder, and generation control.
+Pixels nevertheless changed during the first three lossy generations before
+reaching a fixed point in this one pinned synthetic setting. Metadata
+idempotence is therefore distinct from complete-file or image idempotence.
 
 ## Claim Boundaries
 
@@ -75,6 +77,9 @@ within-contract JPEG-byte or decoded-pixel hash variation.
   resource benchmark, or memory-safety proof.
 - The metadata normalizer supports only EXIF Orientation and complete embedded
   ICC profiles; it is not a general-purpose metadata sanitizer.
+- The observed generation-3 pixel fixed point applies only to one small
+  synthetic image, quality 75, 4:4:4 sampling, and the pinned builds. It is not
+  a convergence guarantee or losslessness claim.
 - Cross-platform observations describe pinned wheels on recorded GitHub-hosted
   runner images. They do not guarantee identical behavior for other builds.
 - Known pattern identities, matched references, and synthetic calibration
@@ -117,7 +122,7 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Fourteen published studies with explicit questions, controls, results, and
+- Fifteen published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -177,9 +182,10 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 56 tests covering blur metrics and models,
+The repository contains 59 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
-contracts, experiment outputs, and cross-platform summary logic.
+contracts, repeated metadata policies, experiment outputs, and cross-platform
+summary logic.
 
 GitHub Actions runs the tests and regenerates the reference evidence on Ubuntu
 with Python 3.12. Separate jobs record JPEG observations on Ubuntu x64 default
@@ -195,8 +201,12 @@ manifests.
 
 ## Roadmap
 
-- Evaluate field-level retention policies for XMP, IPTC, EXIF thumbnails, and
-  unknown APP data without claiming complete metadata semantics.
+- v0.16.0: evaluate field-level retention and provenance policies for XMP,
+  IPTC, EXIF thumbnails, comments, and unknown APP data without claiming
+  complete metadata semantics.
+- v0.17.0: evaluate resource-bounded parsing and explicit accept, sanitize,
+  reject, and quarantine decisions without presenting the experiment as a
+  vulnerability assessment.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and
