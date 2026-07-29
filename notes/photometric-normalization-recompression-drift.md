@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study measures how brightness, contrast, gamma, min-max normalization,
+repeated JPEG encoding, and grayscale-conversion order change two derivative
+metrics. It also tests whether a calibration from clean, uncompressed inputs
+survives those pipeline changes.
+
 ## Research Question
 
 How do deterministic brightness, contrast, gamma, global min-max

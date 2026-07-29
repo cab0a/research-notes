@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study compares Laplacian variance with area-normalized Tenengrad under
+controlled Gaussian blur, Gaussian noise, horizontal motion blur, and a resize
+round trip. It keeps score scale, direction sensitivity, and pixel-count
+effects distinct.
+
 ## Research Question
 
 When image content and preprocessing are controlled, how do Laplacian variance

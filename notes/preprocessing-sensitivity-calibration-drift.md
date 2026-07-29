@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study measures how JPEG compression, resize interpolation, Gaussian
+denoising, unsharp masking, and operation order change Laplacian variance and
+Tenengrad. It evaluates the failure of a decision rule transferred unchanged
+from the preprocessed reference pipeline.
+
 ## Research Question
 
 How do JPEG compression, resize interpolation, Gaussian denoising, unsharp

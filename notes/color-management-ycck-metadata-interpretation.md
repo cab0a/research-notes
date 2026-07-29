@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study separates JPEG sample decoding from metadata interpretation and
+explicit application normalization. It measures how ICC profiles, EXIF
+orientation, and CMYK or YCCK intent affect outputs from OpenCV, Pillow, and
+FFmpeg under fixed compressed-image data.
+
 ## Research Question
 
 When JPEG coefficient data is held fixed, how can ICC profiles and EXIF

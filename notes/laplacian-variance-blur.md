@@ -8,6 +8,12 @@
 
 ---
 
+## English Summary
+
+This study measures Laplacian variance under controlled Gaussian blur and
+additive Gaussian noise. It records when noise raises the derivative response
+enough to weaken a simple sharp-versus-blurred interpretation.
+
 ## Research Question
 
 Within a fixed image-generation and processing pipeline, does the variance of

@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study applies strict metadata audits and three decoder paths to JPEGs
+with malformed, conflicting, or excessive EXIF and ICC structures. It tests
+the boundary between successful pixel recovery and evidence of metadata
+validity, safety, or unambiguous interpretation.
+
 ## Research Question
 
 When a JPEG retains the same compressed image stream but carries malformed,

@@ -8,6 +8,12 @@
 
 ---
 
+## English Summary
+
+This guide defines the reference environment, smallest runnable study,
+complete experiment suite, deterministic controls, cross-platform matrix, and
+compatibility boundary for reproducing the committed research evidence.
+
 ## Environment
 
 Python 3.11 or newer is required. Python 3.12 and the exact runtime dependency

@@ -8,6 +8,8 @@
 
 ---
 
+## English Summary
+
 This index maps each published release to its research question, representative
 finding, committed evidence, reproduction command, and complete note. The
 numbers below describe the declared synthetic controls and recorded runtime

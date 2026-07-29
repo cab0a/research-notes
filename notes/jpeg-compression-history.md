@@ -8,6 +8,12 @@
 
 ---
 
+## English Summary
+
+This study measures how two-stage JPEG quality order, block-grid alignment,
+4:4:4 or 4:2:0 chroma sampling, and added noise change Laplacian variance,
+Tenengrad energy, and the transfer of a fixed pre-compression calibration.
+
 ## Research Question
 
 How do primary-to-secondary JPEG quality order, alignment of the two JPEG block

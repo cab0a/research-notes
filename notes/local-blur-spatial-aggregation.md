@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study compares full-image focus scores with non-overlapping tile scores
+when blur affects only part of an image. It measures how mean, lower-tail, and
+minimum aggregation change the visibility and interpretation of the degraded
+region.
+
 ## Research Question
 
 When blur affects only part of an otherwise sharp image, how strongly do

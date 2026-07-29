@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study compares libjpeg-turbo-based paths with FFmpeg's native MJPEG
+decoder on fixed progressive, restart-marker, grayscale, and CMYK streams. It
+separates syntax preservation, array-interface behavior, and decoded-pixel
+differences.
+
 ## Research Question
 
 How do fixed synthetic JPEG streams decode through the libjpeg-turbo family

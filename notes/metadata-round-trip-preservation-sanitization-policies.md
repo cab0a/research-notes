@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study compares preserve, strip, normalize, and reject policies while
+re-encoding 21 fixed JPEG fixtures. It evaluates output availability, strict
+metadata acceptance, byte preservation, supported EXIF and ICC semantics,
+compressed-image changes, and decoded pixels as separate observations.
+
 ## Research Question
 
 When a JPEG is decoded and re-encoded, how do four explicit metadata policies

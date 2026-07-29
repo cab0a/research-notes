@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study tests whether the same numeric JPEG quality produces matching
+quantization tables, encoded bytes, decoded pixels, and derivative metrics in
+pinned OpenCV and Pillow paths. It identifies which codec and marker evidence
+must accompany a portable claim.
+
 ## Research Question
 
 Does the same numeric JPEG quality control produce the same quantization tables,

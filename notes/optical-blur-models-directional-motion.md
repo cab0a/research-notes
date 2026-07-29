@@ -8,6 +8,12 @@
 
 ---
 
+## English Summary
+
+This study compares disk-defocus and line-motion point-spread functions under
+fixed image patterns and noise. It measures how blur model, motion direction,
+and image orientation change Laplacian-variance and Tenengrad responses.
+
 ## Research Question
 
 How do Laplacian variance and Tenengrad energy respond to two different

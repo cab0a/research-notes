@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study decodes a fixed baseline JPEG across operating systems, processor
+architectures, and pinned OpenCV and Pillow builds. It evaluates stream
+structure, array shape and type, exact pixels, and a one-code-value diagnostic
+as separate contracts.
+
 ## Research Question
 
 When a fixed baseline JPEG byte stream is decoded through pinned OpenCV and

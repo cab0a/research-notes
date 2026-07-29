@@ -8,6 +8,13 @@
 
 ---
 
+## English Summary
+
+This study varies window size, stride, and blur-region alignment for local
+Laplacian-variance and Tenengrad measurements. It tests whether smaller or
+overlapping windows resolve localized blur without removing noise and
+low-texture failure modes.
+
 ## Research Question
 
 How do window size, stride, and blur-region alignment change the visibility of
