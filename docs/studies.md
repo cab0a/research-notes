@@ -289,15 +289,17 @@ properties stabilize?
 contracts reach one metadata-state hash after their final policy transition.
 Preserve retains all eight generation-10 controlled envelopes, normalize
 retains the four supported EXIF and ICC envelopes, and strip prevents a later
-preserve stage from restoring removed metadata. The six policy sequences share
-one compressed-core and decoded-pixel hash within every controlled generation,
-while the lossy pixel path changes through generation 3 in this fixed setting.
+preserve stage from restoring removed metadata. Across five profiles, all 660
+fixture, encoder, sequence, and generation contracts retain one behavior,
+metadata, compressed-core, complete-JPEG, and decoded-pixel hash.
 
 - [Complete note](../notes/multi-generation-metadata-policy-drift.md)
 - [Observations](../results/jpeg_metadata_generation_observations.csv)
 - [Summary](../results/jpeg_metadata_generation_summary.csv)
 - [Temporal contracts](../results/jpeg_metadata_generation_contracts.csv)
 - [Figure](../results/jpeg_metadata_generation_drift.png)
+- [Cross-platform summary](../results/jpeg_metadata_generation_cross_platform_summary.csv)
+- [Cross-platform figure](../results/jpeg_metadata_generation_cross_platform.png)
 
 ```bash
 python experiments/run_metadata_generation_drift.py

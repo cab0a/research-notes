@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本ノートは、5種類の固定JPEGを最大10世代まで繰り返し復号・再符号化し、メタデータの保持・除去・正規化と代表的な方針遷移を比較します。660件のローカル観測では、すべての方針系列が遷移後に安定したメタデータ状態へ到達する一方、画素は別の非可逆圧縮過程として変化しました。メタデータの冪等性、意味保持、バイト保持、画素収束を別の契約として扱います。
+本ノートは、5種類の固定JPEGを最大10世代まで繰り返し復号・再符号化し、メタデータの保持・除去・正規化と代表的な方針遷移を比較します。660件のローカル観測と5環境の3,300観測では、すべての方針系列が遷移後に安定したメタデータ状態へ到達する一方、画素は別の非可逆圧縮過程として変化しました。メタデータの冪等性、意味保持、バイト保持、画素収束を別の契約として扱います。
 
 実験方法、観測結果、失敗条件、適用範囲は以下の英語本文を参照してください。
 
@@ -180,6 +180,27 @@ at generation 10 was 18.
 That fixed point is an observation about one small image, one quality and
 sampling configuration, and the pinned builds. It is not a general JPEG
 convergence bound.
+
+### Cross-Platform Results
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30434189139)
+recorded 3,300 observations and 660 fixture, encoder, sequence, and generation
+contracts:
+
+- all 3,300 outputs passed the strict metadata audit;
+- all 660 contracts had one categorical behavior signature;
+- all 660 contracts had one metadata-state hash;
+- all 660 contracts had one metadata-free compressed-core hash;
+- all 660 contracts had one complete JPEG hash;
+- all 660 contracts had one decoded-pixel hash.
+
+![Cross-platform metadata generation contracts](../results/jpeg_metadata_generation_cross_platform.png)
+
+The matrix covers Ubuntu x64 default and forced-scalar paths, Windows x64,
+macOS arm64, and macOS Intel x64 with the pinned wheels. The exact agreement is
+recorded compatibility evidence for those profiles, not a guarantee for other
+codec builds or future hosted-runner images.
 
 ## Interpretation
 

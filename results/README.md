@@ -341,6 +341,17 @@ image metadata can change independently of fixed observations.
   post-transition metadata, JPEG, and pixel hash counts.
 - `jpeg_metadata_generation_drift.png` visualizes original-envelope retention,
   supported EXIF and ICC retention, and the separate lossy image trajectory.
+- `jpeg_metadata_generation_cross_platform_codec_manifest.csv` records the 20
+  policy, decoder, and encoder provenance rows from the five-profile matrix.
+- `jpeg_metadata_generation_cross_platform_observations.csv` combines all
+  3,300 platform observations.
+- `jpeg_metadata_generation_cross_platform_contracts.csv` summarizes behavior
+  and metadata, compressed-core, complete-JPEG, and decoded-pixel hash
+  multiplicity for all 660 temporal contracts.
+- `jpeg_metadata_generation_cross_platform_summary.csv` contains 132 encoder,
+  sequence, and generation aggregates.
+- `jpeg_metadata_generation_cross_platform.png` visualizes behavior,
+  metadata-state, and decoded-pixel stability across the recorded profiles.
 
 All 60 local contracts reach one metadata-state hash after their final policy
 transition, and all 660 outputs pass the strict metadata audit. Within every
@@ -348,6 +359,13 @@ fixture, encoder, and generation control, the six sequences have one
 compressed-core and decoded-pixel hash. The generation-3 pixel fixed point is
 specific to the one small synthetic image, quality 75, 4:4:4 sampling, and the
 pinned local builds; it is not a general convergence or quality claim.
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30434189139)
+recorded one behavior, metadata-state, compressed-core, complete-JPEG, and
+decoded-pixel hash for every temporal contract. The codec manifest remains
+release provenance and is not byte-compared on later CI runs because hosted
+runner image identifiers can change independently of fixed observations.
 
 Regenerate the artifacts from the repository root:
 

@@ -67,6 +67,11 @@ Pixels nevertheless changed during the first three lossy generations before
 reaching a fixed point in this one pinned synthetic setting. Metadata
 idempotence is therefore distinct from complete-file or image idempotence.
 
+The five-profile release matrix repeated 3,300 observations. Every one of its
+660 fixture, encoder, sequence, and generation contracts retained one
+categorical behavior signature and one metadata, compressed-core, complete
+JPEG, and decoded-pixel hash across the recorded builds.
+
 ## Claim Boundaries
 
 - The studies use small, 8-bit synthetic images rather than a representative
