@@ -54,6 +54,10 @@ from research_notes.jpeg_recovery import (
     audit_jpeg_metadata,
     make_jpeg_app_segment,
 )
+from research_notes.jpeg_sanitization import (
+    JPEGMetadataPolicyResult,
+    apply_jpeg_metadata_policy,
+)
 from research_notes.preprocessing import (
     gaussian_denoise,
     jpeg_round_trip,
@@ -73,10 +77,12 @@ __all__ = [
     "JPEGSyntaxSummary",
     "JPEGMetadataSummary",
     "JPEGMetadataAudit",
+    "JPEGMetadataPolicyResult",
     "PixelDifference",
     "classify_decoded_pixel_contract",
     "compare_decoded_pixels",
     "apply_exif_orientation_bgr",
+    "apply_jpeg_metadata_policy",
     "attach_jpeg_metadata",
     "build_synthetic_rgb_profile",
     "cmyk_to_bgr_arithmetic",

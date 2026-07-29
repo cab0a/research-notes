@@ -1,0 +1,9 @@
+encoder,policy,attempts,source_decode_successes,outputs_emitted,output_rate,strict_accepted_outputs,strict_accept_rate_among_outputs,output_decode_successes,output_decode_rate_among_outputs,byte_envelope_cases,byte_exact_envelope_cases,byte_exact_envelope_rate,supported_semantic_cases,supported_semantics_retained,supported_semantic_retention_rate,compressed_core_exact_rate,pixel_exact_rate_among_decoded_outputs,reencode_mean_absolute_error_mean,reencode_mean_absolute_error_max
+pillow,preserve,21,19,19,0.904762,5,0.263158,19,1.000000,18,18,1.000000,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912
+pillow,strip,21,19,19,0.904762,19,1.000000,19,1.000000,18,0,0.000000,2,0,0.000000,1.000000,1.000000,0.036680912,0.036680912
+pillow,normalize,21,19,19,0.904762,19,1.000000,19,1.000000,18,2,0.111111,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912
+pillow,reject,21,19,5,0.238095,5,1.000000,5,1.000000,4,2,0.500000,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912
+opencv,preserve,21,19,19,0.904762,5,0.263158,19,1.000000,18,18,1.000000,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912
+opencv,strip,21,19,19,0.904762,19,1.000000,19,1.000000,18,0,0.000000,2,0,0.000000,1.000000,1.000000,0.036680912,0.036680912
+opencv,normalize,21,19,19,0.904762,19,1.000000,19,1.000000,18,2,0.111111,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912
+opencv,reject,21,19,5,0.238095,5,1.000000,5,1.000000,4,2,0.500000,2,2,1.000000,1.000000,1.000000,0.036680912,0.036680912

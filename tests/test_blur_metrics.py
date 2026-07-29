@@ -9,6 +9,7 @@ import pytest
 from research_notes import (
     apply_psf,
     apply_exif_orientation_bgr,
+    apply_jpeg_metadata_policy,
     attach_jpeg_metadata,
     audit_jpeg_metadata,
     build_synthetic_rgb_profile,
@@ -701,6 +702,95 @@ def test_strict_metadata_audit_enforces_framing_and_resource_limits() -> None:
     assert not trailing_audit.accepted
     assert trailing_audit.trailing_bytes == len(b"trailing")
     assert "trailing_data" in trailing_audit.issue_codes
+
+
+def test_metadata_policies_separate_copy_strip_normalize_and_reject() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    source_base = encode_jpeg_pillow(
+        color, quality=75, chroma_sampling="444"
+    )
+    reencoded = encode_jpeg_opencv(
+        decode_jpeg_pillow(source_base),
+        quality=75,
+        chroma_sampling="444",
+    )
+    exif_segment = make_jpeg_app_segment(
+        1,
+        b"Exif\x00\x00"
+        + b"MM\x00*"
+        + (8).to_bytes(4, "big")
+        + (1).to_bytes(2, "big")
+        + (274).to_bytes(2, "big")
+        + (3).to_bytes(2, "big")
+        + (1).to_bytes(4, "big")
+        + (6).to_bytes(2, "big")
+        + b"\x00\x00"
+        + b"\x00\x00\x00\x00",
+    )
+    source = source_base[:2] + exif_segment + source_base[2:]
+
+    preserved = apply_jpeg_metadata_policy(
+        source,
+        reencoded,
+        "preserve",
+        preserved_envelope=exif_segment,
+        envelope_placement="after_soi",
+    )
+    stripped = apply_jpeg_metadata_policy(source, reencoded, "strip")
+    normalized = apply_jpeg_metadata_policy(source, reencoded, "normalize")
+
+    assert preserved.output_bytes is not None
+    assert preserved.output_bytes[2 : 2 + len(exif_segment)] == exif_segment
+    assert stripped.output_bytes == reencoded
+    assert normalized.output_bytes is not None
+    assert inspect_jpeg_metadata(normalized.output_bytes).exif_orientation == 6
+    assert strip_jpeg_interpretation_metadata(normalized.output_bytes) == (
+        reencoded
+    )
+
+    malformed = source_base[:2] + b"\xff\xe1\x00\x01" + source_base[2:]
+    rejected = apply_jpeg_metadata_policy(malformed, reencoded, "reject")
+    sanitized = apply_jpeg_metadata_policy(malformed, reencoded, "normalize")
+
+    assert not rejected.emitted
+    assert rejected.action == "strict_reject"
+    assert sanitized.output_bytes == reencoded
+    assert audit_jpeg_metadata(sanitized.output_bytes).accepted
+
+
+def test_metadata_policy_preserves_controlled_trailing_envelope() -> None:
+    grayscale = make_checkerboard(size=64, cell_size=5)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+    source = base + b"SYNTHETIC"
+
+    result = apply_jpeg_metadata_policy(
+        source,
+        base,
+        "preserve",
+        preserved_envelope=b"SYNTHETIC",
+        envelope_placement="after_eoi",
+    )
+
+    assert result.output_bytes == source
+    assert not audit_jpeg_metadata(result.output_bytes).accepted
+
+
+def test_metadata_policy_validates_envelope_contract() -> None:
+    grayscale = make_checkerboard(size=32)
+    color = cv2.applyColorMap(grayscale, cv2.COLORMAP_TURBO)
+    base = encode_jpeg_pillow(color, quality=75, chroma_sampling="444")
+
+    with pytest.raises(ValueError, match="non-empty envelopes"):
+        apply_jpeg_metadata_policy(
+            base,
+            base,
+            "preserve",
+            preserved_envelope=b"metadata",
+        )
+    with pytest.raises(ValueError, match="policy must be one of"):
+        apply_jpeg_metadata_policy(base, base, "copy")  # type: ignore[arg-type]
 
 
 def test_ffmpeg_expected_shape_adapter_bypasses_python_marker_parser() -> None:

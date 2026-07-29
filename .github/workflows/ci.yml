@@ -45,6 +45,7 @@ jobs:
           python experiments/run_color_metadata_interpretation.py --fixture-dir regenerated-fixtures/color-metadata-contracts --output-dir regenerated-metadata-fixture-results --platform-label linux-x64-reference --refresh-fixtures
           python experiments/run_malformed_metadata_recovery.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_malformed_metadata_recovery.py --fixture-dir regenerated-fixtures/malformed-jpeg-metadata --output-dir regenerated-recovery-fixture-results --platform-label linux-x64-reference --refresh-fixtures
+          python experiments/run_metadata_round_trip.py --output-dir regenerated-results --platform-label linux-x64-reference
 
       - name: Verify reference data and chart generation
         run: |
@@ -102,6 +103,9 @@ jobs:
           diff -u results/jpeg_recovery_audit.csv regenerated-results/jpeg_recovery_audit.csv
           diff -u results/jpeg_recovery_decoder_observations.csv regenerated-results/jpeg_recovery_decoder_observations.csv
           diff -u results/jpeg_recovery_summary.csv regenerated-results/jpeg_recovery_summary.csv
+          diff -u results/jpeg_round_trip_codec_manifest.csv regenerated-results/jpeg_round_trip_codec_manifest.csv
+          diff -u results/jpeg_round_trip_observations.csv regenerated-results/jpeg_round_trip_observations.csv
+          diff -u results/jpeg_round_trip_summary.csv regenerated-results/jpeg_round_trip_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -126,6 +130,7 @@ jobs:
           test -s regenerated-results/jpeg_advanced_codec_families.png
           test -s regenerated-results/jpeg_metadata_interpretation.png
           test -s regenerated-results/jpeg_recovery_contracts.png
+          test -s regenerated-results/jpeg_metadata_round_trip.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -170,6 +175,7 @@ jobs:
           python experiments/run_advanced_jpeg_syntax.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_color_metadata_interpretation.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_malformed_metadata_recovery.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_metadata_round_trip.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -207,6 +213,7 @@ jobs:
           python experiments/summarize_advanced_jpeg_syntax.py --input-dir platform-artifacts --output-dir advanced-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_color_metadata_contracts.py --input-dir platform-artifacts --output-dir metadata-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_malformed_metadata_recovery.py --input-dir platform-artifacts --output-dir recovery-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_metadata_round_trip.py --input-dir platform-artifacts --output-dir round-trip-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -239,4 +246,5 @@ jobs:
             advanced-cross-platform-results
             metadata-cross-platform-results
             recovery-cross-platform-results
+            round-trip-cross-platform-results
           retention-days: 30
