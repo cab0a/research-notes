@@ -46,6 +46,7 @@ jobs:
           python experiments/run_malformed_metadata_recovery.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_malformed_metadata_recovery.py --fixture-dir regenerated-fixtures/malformed-jpeg-metadata --output-dir regenerated-recovery-fixture-results --platform-label linux-x64-reference --refresh-fixtures
           python experiments/run_metadata_round_trip.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_metadata_generation_drift.py --output-dir regenerated-results --platform-label linux-x64-reference
 
       - name: Verify reference data and chart generation
         run: |
@@ -106,6 +107,10 @@ jobs:
           diff -u results/jpeg_round_trip_codec_manifest.csv regenerated-results/jpeg_round_trip_codec_manifest.csv
           diff -u results/jpeg_round_trip_observations.csv regenerated-results/jpeg_round_trip_observations.csv
           diff -u results/jpeg_round_trip_summary.csv regenerated-results/jpeg_round_trip_summary.csv
+          diff -u results/jpeg_metadata_generation_codec_manifest.csv regenerated-results/jpeg_metadata_generation_codec_manifest.csv
+          diff -u results/jpeg_metadata_generation_observations.csv regenerated-results/jpeg_metadata_generation_observations.csv
+          diff -u results/jpeg_metadata_generation_summary.csv regenerated-results/jpeg_metadata_generation_summary.csv
+          diff -u results/jpeg_metadata_generation_contracts.csv regenerated-results/jpeg_metadata_generation_contracts.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -131,6 +136,7 @@ jobs:
           test -s regenerated-results/jpeg_metadata_interpretation.png
           test -s regenerated-results/jpeg_recovery_contracts.png
           test -s regenerated-results/jpeg_metadata_round_trip.png
+          test -s regenerated-results/jpeg_metadata_generation_drift.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -176,6 +182,7 @@ jobs:
           python experiments/run_color_metadata_interpretation.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_malformed_metadata_recovery.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_metadata_round_trip.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_metadata_generation_drift.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -214,6 +221,7 @@ jobs:
           python experiments/summarize_color_metadata_contracts.py --input-dir platform-artifacts --output-dir metadata-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_malformed_metadata_recovery.py --input-dir platform-artifacts --output-dir recovery-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_metadata_round_trip.py --input-dir platform-artifacts --output-dir round-trip-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_metadata_generation_drift.py --input-dir platform-artifacts --output-dir generation-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -251,4 +259,5 @@ jobs:
             metadata-cross-platform-results
             recovery-cross-platform-results
             round-trip-cross-platform-results
+            generation-cross-platform-results
           retention-days: 30
