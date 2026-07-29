@@ -1,5 +1,13 @@
 # Metadata Round-Trip Preservation and Sanitization Policies
 
+## 日本語概要
+
+本ノートは、21種類の固定JPEGを復号・再符号化するとき、メタデータを保持・除去・正規化・拒否する4方針が、出力可否、厳格検査、バイト保持、EXIF・ICCの意味、圧縮画像、復号画素へ与える影響を比較します。バイト一致、意味の保持、構造の妥当性を別の契約として扱います。
+
+実験方法、環境別結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When a JPEG is decoded and re-encoded, how do four explicit metadata policies

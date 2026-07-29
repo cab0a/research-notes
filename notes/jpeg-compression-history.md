@@ -1,5 +1,13 @@
 # JPEG Compression History: Quality Order, Grid Alignment, and Chroma Sampling
 
+## 日本語概要
+
+本ノートは、2回のJPEG圧縮における品質指定の順序、8×8格子の位置ずれ、4:4:4と4:2:0の色差間引きが、ラプラシアン分散とTenengradへ与える影響を検証します。圧縮前に校正した判定規則が、圧縮履歴や雑音の追加後に維持されるかも測定します。
+
+統制条件、結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do primary-to-secondary JPEG quality order, alignment of the two JPEG block

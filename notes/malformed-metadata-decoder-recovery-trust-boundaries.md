@@ -1,5 +1,13 @@
 # Malformed Metadata, Decoder Recovery, and Trust Boundaries
 
+## 日本語概要
+
+本ノートは、圧縮画像を固定したまま、壊れた・矛盾した・過大なEXIFやICC情報を持つJPEGを生成し、厳格な監査とOpenCV・Pillow・FFmpegの復旧動作を比較します。画素を復号できることが、メタデータの妥当性や安全性を証明しない境界を検証しています。
+
+検査規則、環境別結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When a JPEG retains the same compressed image stream but carries malformed,

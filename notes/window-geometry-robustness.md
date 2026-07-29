@@ -1,5 +1,13 @@
 # Window Geometry and Robustness for Local Blur Detection
 
+## 日本語概要
+
+本ノートは、局所的なガウスぼけを検出するとき、窓の大きさ、移動幅、ぼけ領域との位置合わせが、ラプラシアン分散とTenengradの可視性をどう変えるかを検証します。小窓や重複窓でも、雑音や模様の少ない領域による失敗が残る範囲を記録しています。
+
+窓条件、結果、失敗例、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do window size, stride, and blur-region alignment change the visibility of

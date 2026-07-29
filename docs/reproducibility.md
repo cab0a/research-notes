@@ -1,5 +1,13 @@
 # Reproducibility
 
+## 日本語概要
+
+本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、複数環境での検証、互換性境界をまとめています。
+
+環境構築と検証コマンドは以下の英語本文を参照してください。
+
+---
+
 ## Environment
 
 Python 3.11 or newer is required. Python 3.12 and the exact runtime dependency

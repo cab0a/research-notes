@@ -1,5 +1,13 @@
 # JPEG Quantization Tables and Codec Portability
 
+## 日本語概要
+
+本ノートは、同じJPEG品質値をOpenCVとPillowへ与えたとき、量子化表、符号化バイト列、復号画素、微分指標が一致するかを検証します。品質値だけでは処理を一意に表せないため、再現時に保存すべきコーデック情報とJPEGマーカーを段階別に整理しています。
+
+解析方法、比較結果、可搬性の境界は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 Does the same numeric JPEG quality control produce the same quantization tables,

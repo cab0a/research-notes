@@ -1,5 +1,13 @@
 # Independent Codec Families and Advanced JPEG Syntax
 
+## 日本語概要
+
+本ノートは、プログレッシブ走査、再開マーカー、グレースケール、CMYKを含む固定JPEG群を、libjpeg-turbo系とFFmpegの独立した復号経路で比較します。構文の維持、出力配列、画素差を分け、復号方式の違いとJPEG構造の違いを混同しない評価を行います。
+
+生成方法、環境別結果、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do fixed synthetic JPEG streams decode through the libjpeg-turbo family

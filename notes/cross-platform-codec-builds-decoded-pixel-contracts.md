@@ -1,5 +1,13 @@
 # Cross-Platform Codec Builds and Decoded-Pixel Contracts
 
+## 日本語概要
+
+本ノートは、固定した基準JPEGを異なるOS・プロセッサ・OpenCV・Pillow構成で復号し、マーカー構造、配列形式、画素の完全一致、1階調差以内という4段階の契約を比較します。実行時のコーデック情報も成果物へ保存し、画素一致の主張条件を明確にしています。
+
+実験方法、環境別結果、解釈境界は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When a fixed baseline JPEG byte stream is decoded through pinned OpenCV and

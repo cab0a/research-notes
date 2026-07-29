@@ -1,5 +1,13 @@
 # Preprocessing Sensitivity and Calibration Drift
 
+## 日本語概要
+
+本ノートは、JPEG圧縮、補間方法を変えた縮小・拡大、ガウシアンフィルター、アンシャープマスク、処理順序が、ラプラシアン分散とTenengradへ与える影響を検証します。前処理前に校正した判定規則をそのまま移すと失敗する条件を明示しています。
+
+手法、校正移行の結果、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do JPEG compression, resize interpolation, Gaussian denoising, unsharp

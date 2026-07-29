@@ -1,5 +1,13 @@
 # Laplacian Variance as a Blur Heuristic: Controlled Evaluation and Limitations
 
+## 日本語概要
+
+本ノートは、固定した合成画像でガウスぼけを強くしたときにラプラシアン分散がどう変化し、加法性ガウス雑音が単純なぼけ判定をどのように崩すかを検証します。指標が焦点だけでなく、輪郭、細かな模様、雑音、再標本化にも反応する境界を記録しています。
+
+手法、結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 Within a fixed image-generation and processing pipeline, does the variance of

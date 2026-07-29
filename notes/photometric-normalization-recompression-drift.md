@@ -1,5 +1,13 @@
 # Photometric Normalization and Recompression Drift
 
+## 日本語概要
+
+本ノートは、明るさ、コントラスト、ガンマ補正、最小最大正規化、JPEGの反復圧縮、グレースケール化の順序が、ラプラシアン分散とTenengradの尺度をどう変えるかを検証します。未圧縮画像で校正した判定境界が処理後に移動する条件も記録しています。
+
+統制条件、結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do deterministic brightness, contrast, gamma, global min-max

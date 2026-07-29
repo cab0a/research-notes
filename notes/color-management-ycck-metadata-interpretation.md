@@ -1,5 +1,13 @@
 # Color Management, YCCK, and Metadata Interpretation
 
+## 日本語概要
+
+本ノートは、JPEGの係数データを固定したまま、ICCプロファイルとEXIFの向きがアプリケーションへ渡される画素をどう変えるかを検証します。4成分のCMYK・YCCK画像について、OpenCV、Pillow、FFmpegの出力差を数値化し、色管理と単純な符号値変換を区別しています。
+
+実験条件、結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When JPEG coefficient data is held fixed, how can ICC profiles and EXIF

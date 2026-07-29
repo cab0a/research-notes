@@ -1,5 +1,13 @@
 # Local Blur and Spatial Aggregation
 
+## 日本語概要
+
+本ノートは、画像の一部だけがぼけた場合に、画像全体の指標と64×64区画ごとのラプラシアン分散・Tenengradがどう応答するかを比較します。平均、下位分位、最小値による集約が、劣化領域の見え方と誤判定へ与える影響を統制しています。
+
+実験方法、区画単位の結果、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When blur affects only part of an otherwise sharp image, how strongly do

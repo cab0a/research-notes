@@ -1,5 +1,13 @@
 # Laplacian Variance vs. Tenengrad Under Blur and Noise
 
+## 日本語概要
+
+本ノートは、ラプラシアン分散と面積正規化したTenengradを、ガウスぼけ、加法性雑音、水平移動ぼけ、縮小・拡大の統制条件で比較します。両指標の尺度、雑音感度、方向依存、画像サイズの影響を分けて記録しています。
+
+定義、反復評価、結果、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 When image content and preprocessing are controlled, how do Laplacian variance

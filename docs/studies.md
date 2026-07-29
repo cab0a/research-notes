@@ -1,5 +1,13 @@
 # Study Index
 
+## 日本語概要
+
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータを扱う13件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
+
+研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
+
+---
+
 This index maps each published release to its research question, representative
 finding, committed evidence, reproduction command, and complete note. The
 numbers below describe the declared synthetic controls and recorded runtime

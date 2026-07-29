@@ -1,5 +1,13 @@
 # Optical Blur Models and Directional Motion Sensitivity
 
+## 日本語概要
+
+本ノートは、円盤状の点拡がり関数による焦点外れと、線状の点拡がり関数による移動ぼけを分け、ラプラシアン分散とTenengradの応答を比較します。移動方向、画像模様の向き、雑音によって単一の指標値の解釈が変わる条件を測定しています。
+
+モデル、結果、失敗条件、制約は以下の英語本文を参照してください。
+
+---
+
 ## Research Question
 
 How do Laplacian variance and Tenengrad energy respond to two different
