@@ -248,6 +248,10 @@ jobs:
           diff -u results/jpeg_round_trip_cross_platform_contracts.csv round-trip-cross-platform-results/jpeg_round_trip_cross_platform_contracts.csv
           diff -u results/jpeg_round_trip_cross_platform_summary.csv round-trip-cross-platform-results/jpeg_round_trip_cross_platform_summary.csv
           test -s round-trip-cross-platform-results/jpeg_metadata_round_trip_cross_platform.png
+          diff -u results/jpeg_metadata_generation_cross_platform_observations.csv generation-cross-platform-results/jpeg_metadata_generation_cross_platform_observations.csv
+          diff -u results/jpeg_metadata_generation_cross_platform_contracts.csv generation-cross-platform-results/jpeg_metadata_generation_cross_platform_contracts.csv
+          diff -u results/jpeg_metadata_generation_cross_platform_summary.csv generation-cross-platform-results/jpeg_metadata_generation_cross_platform_summary.csv
+          test -s generation-cross-platform-results/jpeg_metadata_generation_cross_platform.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7
