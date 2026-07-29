@@ -4,74 +4,86 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-現在のJPEG研究では、同じ画像データへ正常・不正・曖昧なAPPメタデータを挿入し、厳格なメタデータ検査とデコーダーによる復旧を分けて評価しています。
+研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、同じ画像データへ正常・不正・曖昧なメタデータを挿入し、厳格な検査とデコーダーによる復旧を分けて評価しています。
 
-入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類のプラットフォーム構成を使った互換性検証が主な特徴です。各結果が主張できる範囲と再現手順は、以下の英語本文を参照してください。
+入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
 ---
 
-Reproducible technical investigations that connect a focused research question
-to source review, controlled experiments, evaluation, interpretation, and
-explicit limitations.
+Reproducible image-processing studies that connect a focused question to
+source review, controlled experiments, committed evidence, interpretation,
+and explicit claim boundaries.
+
+[![CI](https://github.com/cab0a/research-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/cab0a/research-notes/actions/workflows/ci.yml)
 
 ## Overview
 
-This repository demonstrates a compact research workflow for computer vision
-and image-processing questions. Each note is backed by reviewable code,
-synthetic data, committed reference results, tests, and continuous integration.
-It is not a collection of links and does not claim that a controlled synthetic
-experiment automatically generalizes to production imagery.
+This repository records a sequence of related technical investigations rather
+than a fixed algorithm showcase. Each published study includes a research
+question, controlled inputs, versioned experiment code, CSV observations, PNG
+figures, interpretation, and limitations.
 
-Unlike `vision-playground`, which presents a stable suite of algorithm
-comparisons, this repository keeps an evolving record of related investigations
-and the evidence boundaries of each release.
+The work starts with blur heuristics, then tests spatial aggregation,
+preprocessing, optical and photometric effects, JPEG compression history,
+decoder portability, metadata interpretation, and malformed-metadata recovery.
+The current release is v0.13.0.
 
-The studies progress from one global blur heuristic to comparative robustness,
-spatial aggregation, window geometry, preprocessing sensitivity, optical blur
-models, photometric pipeline drift, JPEG compression history, and codec
-portability. v0.13.0 preserves a controlled JPEG image stream while inserting
-valid, malformed, ambiguous, and resource-bounded APP metadata, then separates
-strict metadata acceptance from decoder recovery and exact raw-pixel output.
+Unlike `vision-playground`, which compares image-processing methods as a stable
+experiment suite, this repository preserves how questions, controls, evidence,
+and claim boundaries evolve from one study to the next.
+
+## Research Themes
+
+| Theme | Studies | Central question |
+| --- | --- | --- |
+| Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
+| Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
+| JPEG codec and metadata contracts | v0.9.0–v0.13.0 | Which byte, pixel, metadata, and recovery behaviors remain stable across encoders, decoders, syntax variants, and recorded CI environments? |
+
+The [study index](docs/studies.md) maps all 13 releases to their questions,
+representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.13.0 local reference study evaluates 21 fixed JPEG streams through a
-strict bounded metadata audit and three decoder paths. The strict policy
-accepted 5 fixtures and rejected 16, while 60 of 63 decoder probes still
-returned pixels. All 60 successful outputs were pixel-exact relative to the
-same decoder's unmodified control. Decoder recovery therefore did not certify
-Exif, ICC, Adobe, marker-framing, trailing-data, or resource-limit validity.
-The five-profile CI matrix reproduced 60 successful exact probes per profile:
-300 of 315 probes succeeded overall, including 225 of 240 probes rejected by
-the strict audit.
+The v0.13.0 study keeps one compressed image stream fixed while adding 21
+valid, malformed, ambiguous, trailing-data, and resource-boundary metadata
+conditions. A strict bounded audit is evaluated separately from OpenCV,
+Pillow, and FFmpeg decoding.
+
+| Observation | Local reference | Five-profile CI matrix |
+| --- | ---: | ---: |
+| Strict audit accepted | 5 / 21 fixtures | 25 / 105 fixture-profile observations |
+| Decoder returned pixels | 60 / 63 probes | 300 / 315 probes |
+| Successful outputs exact to the same decoder's control | 60 / 60 | 300 / 300 |
+| Strict-rejected inputs that still decoded | 45 / 48 probes | 225 / 240 probes |
 
 ![Malformed JPEG metadata audit and decoder recovery](results/jpeg_recovery_contracts.png)
 
-This is fixture-specific regression evidence, not a perceptual-quality result
-or a guarantee for every JPEG stream. The observation and pair tables are
-committed under [`results/`](results/).
+The result separates availability from trust: a decoder can recover pixels
+without establishing that metadata is valid, unambiguous, safe to interpret,
+or appropriate to preserve. The finding applies to the fixed corpus and
+recorded builds only.
 
-## Key Features
+## Claim Boundaries
 
-- Thirteen published notes connecting a focused question to sources, controls,
-  measurements, interpretation, and limitations
-- Programmatically generated blur, noise, window, preprocessing, optical, and
-  photometric conditions
-- Fixed JPEG fixtures covering baseline, progressive, restart-marker,
-  grayscale, RGB, CMYK, YCCK, chroma sampling, ICC, EXIF orientation, malformed
-  APP framing, conflicting metadata, trailing data, and resource controls
-- Laplacian variance, Tenengrad, spatial aggregation, calibration drift,
-  decoded-pixel contracts, and codec/runtime manifests
-- CSV observations and summaries plus figures generated from the same runs
-- Exact dependency versions and deterministic random seeds
-- A five-profile CI matrix for cross-platform JPEG observations
-- Tests and CI regeneration checks for committed reference evidence
+- The studies use small, 8-bit synthetic images rather than a representative
+  natural-image benchmark.
+- Metric responses are relative to declared controls. They are not universal
+  blur thresholds, perceptual scores, or proof that one metric is superior.
+- The malformed-metadata corpus is not a fuzzer, vulnerability assessment,
+  resource benchmark, or memory-safety proof.
+- Cross-platform observations describe pinned wheels on recorded GitHub-hosted
+  runner images. They do not guarantee identical behavior for other builds.
+- Known pattern identities, matched references, and synthetic calibration
+  anchors are controls that are usually unavailable in blind inspection.
+
+Each [complete research note](notes/) records additional limitations for its
+own experiment.
 
 ## Quick Start
 
-Python 3.11 or newer is required; the reference environment uses Python 3.12.
-On Debian or Ubuntu, install `python3-venv` if `venv` reports that `ensurepip`
-is unavailable.
+Python 3.11 or newer is required. The reference environment uses Python 3.12
+and the exact dependency versions in `pyproject.toml`.
 
 ```bash
 git clone https://github.com/cab0a/research-notes.git
@@ -82,19 +94,40 @@ python -m pip install -e .
 python experiments/run_laplacian_variance.py --output-dir output/quickstart
 ```
 
-Review `output/quickstart/laplacian_variance.png` and
-`output/quickstart/laplacian_variance_summary.csv`. This smallest study shows
-both the expected blur response and the noise confound.
+Review:
+
+- `output/quickstart/laplacian_variance.png`
+- `output/quickstart/laplacian_variance_summary.csv`
+
+This smallest study shows both the expected blur response and the noise
+confound.
 
 ## Generated Artifacts
 
-Each study writes observation-level or trial-level CSV, compact summary CSV,
-and one or more explanatory PNG figures. JPEG studies also write fixture,
-codec, runtime, syntax, decoded-pixel, and pair-comparison manifests. Committed
-reference files live in [`results/`](results/); fixed decoder inputs and their
-declared references live in [`fixtures/`](fixtures/).
+Each study writes observation-level or trial-level CSV files, compact summary
+tables, and one or more explanatory PNG figures. JPEG studies also write
+fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
-## Technical Design
+- Committed reference evidence: [`results/`](results/)
+- Artifact catalog: [`results/README.md`](results/README.md)
+- Fixed decoder inputs and declared references: [`fixtures/`](fixtures/)
+
+## Key Features
+
+- Thirteen published studies with explicit questions, controls, results, and
+  limitations
+- Programmatically generated blur, noise, window, preprocessing, optical, and
+  photometric conditions
+- Fixed JPEG fixtures for syntax, chroma sampling, color metadata, malformed
+  metadata, trailing data, and resource-policy controls
+- Observation-level CSV files alongside summaries and figures from the same
+  runs
+- Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
+  committed reference evidence
+- A five-profile CI matrix for decoded-pixel and metadata-recovery contracts
+- Unit tests and CI regeneration checks against committed CSV and fixture data
+
+## Research Workflow
 
 ```text
 Research Question
@@ -107,301 +140,55 @@ Research Question
     -> Documentation
 ```
 
-Every published note makes that chain inspectable and reproducible.
+The experiment-specific evidence is organized in three layers:
 
-## Published Notes
-
-- [Malformed Metadata, Decoder Recovery, and Trust Boundaries](notes/malformed-metadata-decoder-recovery-trust-boundaries.md)
-  — v0.13.0
-- [Color Management, YCCK, and Metadata Interpretation](notes/color-management-ycck-metadata-interpretation.md)
-  — v0.12.0
-- [Independent Codec Families and Advanced JPEG Syntax](notes/independent-codec-families-advanced-jpeg-syntax.md)
-  — v0.11.0
-- [Cross-Platform Codec Builds and Decoded-Pixel Contracts](notes/cross-platform-codec-builds-decoded-pixel-contracts.md)
-  — v0.10.0
-- [JPEG Quantization Tables and Codec Portability](notes/jpeg-quantization-codec-portability.md)
-  — v0.9.0
-- [JPEG Compression History: Quality Order, Grid Alignment, and Chroma Sampling](notes/jpeg-compression-history.md)
-  — v0.8.0
-- [Photometric Normalization and Recompression Drift](notes/photometric-normalization-recompression-drift.md)
-  — v0.7.0
-- [Optical Blur Models and Directional Motion Sensitivity](notes/optical-blur-models-directional-motion.md)
-  — v0.6.0
-- [Preprocessing Sensitivity and Calibration Drift](notes/preprocessing-sensitivity-calibration-drift.md)
-  — v0.5.0
-- [Window Geometry and Robustness for Local Blur Detection](notes/window-geometry-robustness.md)
-  — v0.4.0
-- [Local Blur and Spatial Aggregation](notes/local-blur-spatial-aggregation.md)
-  — v0.3.0
-- [Laplacian Variance vs. Tenengrad Under Blur and Noise](notes/laplacian-vs-tenengrad.md)
-  — v0.2.0
-- [Laplacian Variance as a Blur Heuristic: Controlled Evaluation and Limitations](notes/laplacian-variance-blur.md)
-  — v0.1.0
-
-## Reproducibility
-
-Python 3.11 or newer is required. The reference environment uses Python 3.12
-and exact runtime dependency versions declared in `pyproject.toml`.
-
-```bash
-git clone https://github.com/cab0a/research-notes.git
-cd research-notes
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e ".[test]"
-python -m pytest
-python experiments/run_laplacian_variance.py
-python experiments/run_focus_metric_comparison.py
-python experiments/run_local_blur_evaluation.py
-python experiments/run_window_geometry_evaluation.py
-python experiments/run_preprocessing_sensitivity.py
-python experiments/run_optical_blur_models.py
-python experiments/run_photometric_recompression.py
-python experiments/run_jpeg_compression_history.py
-python experiments/run_jpeg_codec_portability.py
-python experiments/run_cross_platform_codec_contracts.py
-python experiments/run_advanced_jpeg_syntax.py
-python experiments/run_color_metadata_interpretation.py
-python experiments/run_malformed_metadata_recovery.py
-```
-
-On Windows PowerShell, activate the environment with
-`.venv\Scripts\Activate.ps1`. The experiments use only programmatically
-generated images and deterministic random seeds. Each experiment writes its
-CSV and PNG artifacts under `results/`.
-
-The v0.10.0 through v0.13.0 workflows also run a five-profile GitHub Actions
-matrix and share each platform observation through workflow artifacts before
-producing the combined cross-platform reports.
+1. `notes/` contains the complete research record.
+2. `experiments/` and `src/research_notes/` contain the executable method.
+3. `results/` and `fixtures/` contain committed evidence and fixed inputs.
 
 ## Evaluation Methodology
 
-Each note declares the variable being changed, the controls held fixed, the
-number of observations, the aggregation policy, and the claim boundary. Blur
-studies use known sharp/blurred patterns and deterministic noise; spatial
-studies preserve region identity and window geometry; photometric and JPEG
-studies record processing order and codec parameters. Decoder studies separate
-file structure, array-interface validity, exact decoded hashes, pairwise code-
-value differences, and cross-platform agreement. The malformed-metadata study
-also separates a bounded pre-interpretation audit from decoder availability.
+Each study declares the variable being changed, the controls held fixed, the
+observation count, the aggregation policy, and the claim boundary. Decoder
+studies separate file structure, array-interface validity, exact decoded
+hashes, pairwise code-value differences, and cross-platform agreement.
 
-Metrics are interpreted as relative responses inside each controlled design.
-They are not converted into a universal blur threshold, perceptual score, or
-codec ranking. Individual notes contain their sources, hypotheses, full tables,
-and experiment-specific limitations.
+Measurements are interpreted inside each controlled design. Detailed results
+for every release are collected in [`docs/studies.md`](docs/studies.md), while
+the notes preserve hypotheses, source references, failure modes, and
+experiment-specific limitations.
 
-## Results and Interpretation
+## Reproducibility
 
-The notes evaluate relative relationships under declared controls instead of
-proposing a fixed quality threshold:
-
-- v0.1.0 confirms that noiseless Gaussian blur lowers Laplacian variance and
-  that added noise can reverse a simple interpretation.
-- v0.2.0 compares Laplacian variance with area-normalized Tenengrad over 720
-  repeated observations, plus bounded motion-blur and resize controls.
-- v0.3.0 shows spatial dilution: with one of 16 aligned tiles blurred at sigma
-  3, mean full-image ratios remain 0.936866 for Laplacian variance and 0.940676
-  for Tenengrad, while mean minimum tile ratios fall to 0.005025 and 0.062950.
-- v0.4.0 shows a window-geometry blind spot: a 64/64 grid captures at most 25%
-  of a 64-pixel region offset by 32 pixels, while a 64/32 grid recovers 100%
-  coverage. In repeated sigma-3 trials, noise standard deviation 15 raises the
-  mean minimum Laplacian ratio from 0.005765 to 0.200820 on the 64/32 grid even
-  though localization ranking remains unchanged.
-- v0.5.0 shows preprocessing calibration drift over 9,360 observations. For
-  clean sharp inputs, resize and Gaussian denoising lower mean Laplacian ratios
-  to 0.091416 and 0.048873, causing the unchanged synthetic midpoint rule to
-  fall to balanced accuracy 0.5. JPEG quality 50 raises the sigma-3 Laplacian
-  response to 1.853677 times the same uncompressed input, while unsharp masking
-  under noise 15 produces a blurred miss rate of 0.666667.
-- v0.6.0 compares 17 identity, disk-defocus, and directional-motion conditions
-  over 5,100 metric observations. At motion length 15 without noise, mean
-  aligned-to-perpendicular ratios are 0.066796 for Laplacian variance and
-  0.024429 for Tenengrad. At noise standard deviation 15, the Laplacian ratio
-  reaches 1.008207, showing that noise can erase and slightly reverse the
-  directional contrast in this controlled setting.
-- v0.7.0 records 11,520 metric observations across 16 photometric and JPEG
-  pipelines. Contrast gain 0.50 lowers clean sharp responses to 0.250919 for
-  Laplacian variance and 0.250680 for Tenengrad, reducing the unchanged
-  midpoint calibration to balanced accuracy 0.5 for both metrics. A first
-  grayscale JPEG quality-75 round trip lowers the clean sharp Laplacian ratio
-  to 0.930825 but raises the sigma-3 ratio to 1.637515; rounds 2 and 5 converge
-  to the same six-decimal aggregate values in this bounded setting.
-- v0.8.0 records 4,320 metric observations across nine two-stage JPEG
-  histories. An aligned grayscale quality-75 second round remains at a
-  six-decimal final-to-primary ratio of 1.000000, while a 4 x 4 grid shift
-  changes the sigma-3 Laplacian ratio to 0.805242. Reversing quality 95 -> 75
-  to 75 -> 95 changes the clean sharp Laplacian ratio from 0.920521 to
-  1.003831. At noise standard deviation 15, the unchanged uncompressed midpoint
-  rule falls to balanced accuracy 0.666667 for Laplacian variance and 0.833333
-  for Tenengrad on the shifted quality-75 path.
-- v0.9.0 audits all numeric qualities from 1 through 100 and records 1,152
-  decoded metric observations. The pinned OpenCV 4.13.0 and Pillow 12.3.0
-  default paths produce identical DQT fingerprints and JPEG bytes throughout
-  the sweep and all 72 larger image conditions. Supplying the extracted DQT
-  explicitly also reproduces all 72 files byte for byte. Huffman optimization
-  preserves every DQT and decoded pixel array while changing every file and
-  reducing encoded size to a mean ratio of 0.708379.
-- v0.10.0 commits 12 synthetic baseline JPEG streams and their declared BGR
-  decode references. The five-profile release matrix produced 120 of 120 exact
-  reference decodes and 60 of 60 exact within-profile OpenCV-versus-Pillow
-  comparisons. Every fixture and decoder had one decoded hash across Ubuntu
-  x64 default and forced-scalar, Windows x64, macOS arm64, and macOS Intel x64.
-  These exact hashes are regression evidence for the fixed corpus and pinned
-  wheels, not a perceptual quality score or a codec-wide guarantee.
-- v0.11.0 adds ten fixed baseline, progressive, restart-marker, grayscale,
-  RGB, and CMYK streams and a native FFmpeg MJPEG path. Across five CI profiles,
-  all 150 decoder observations satisfied the array interface and all 75
-  controlled progression and restart comparisons were pixel-exact. OpenCV and
-  Pillow each produced one decoded hash per fixture across platforms. FFmpeg
-  did so for six fixtures, while its four 4:2:0 RGB fixtures produced two hashes:
-  macOS arm64 returned one array and the other four profiles agreed on another.
-  Relative to the OpenCV BGR anchor, FFmpeg's maximum error was 3 for 4:4:4 RGB
-  and up to 79 for the 4:2:0 hard-chroma controls; Pillow differed by at most 2
-  on the two CMYK streams. These are fixture-specific code-value observations,
-  not perceptual acceptance limits.
-- v0.12.0 adds 13 fixed ICC, EXIF orientation, CMYK, and YCCK controls. All 27
-  local raw metadata-invariance pairs were pixel-exact when orientation and ICC
-  processing were explicitly disabled. Mapping identical compressed RGB scans
-  through the synthetic gamma 1.0 and 2.2 profiles produced mean absolute
-  differences of 47.907630 and 2.139913 relative to the untagged unmanaged
-  array. All eight OpenCV automatic-orientation and Pillow explicit-transpose
-  outputs matched their declared normalized arrays. The CMYK/YCCK mean pair
-  difference was 4.514200 for OpenCV, 4.534322 for Pillow, and 53.128695 for
-  FFmpeg. These are synthetic code-value responses, not perceptual or device-
-  color accuracy claims. Across five CI profiles, all 135 raw metadata-
-  invariance pairs and 160 orientation-policy observations were exact. OpenCV
-  and Pillow each retained one raw hash per fixture; FFmpeg had two hashes for
-  the eleven RGB metadata fixtures and the CMYK fixture, with macOS arm64
-  differing from the other four profiles.
-- v0.13.0 adds 21 valid, malformed, ambiguous, trailing-data, and resource
-  controls around one preserved synthetic JPEG stream. The local strict audit
-  accepted 5 fixtures and rejected 16. Decoders nevertheless succeeded on 60
-  of 63 probes, including 45 of 48 probes for strict-rejected fixtures, and
-  every successful output was exact relative to that decoder's control.
-  OpenCV rejected the APP1 length overrun; Pillow rejected that fixture and the
-  truncated ICC chunk header; FFmpeg recovered exact pixels from all 21 local
-  fixtures. Across five CI profiles, the same rejection pattern produced 300
-  exact successful decodes from 315 probes, including 225 from 240 strict-
-  rejected probes. OpenCV and Pillow each retained one successful output hash
-  per fixture; FFmpeg had two because macOS arm64 differed from the other four
-  profiles while remaining exact to its own platform control. These are build-
-  specific recovery observations, not permission to trust, interpret, or
-  preserve rejected metadata.
-
-These are experiment-specific observations, not transferable quality
-thresholds or proof of universal metric superiority.
-
-## Limitations
-
-The studies use small, 8-bit synthetic images. v0.13.0 adds bounded malformed
-APP metadata controls, but it is not a fuzzer, security assessment, resource
-benchmark, or memory-safety proof. It does not establish behavior for measured
-device profiles, LUT profiles, gamut mapping, proofing, hardware or camera
-codecs, entropy-coded scan corruption, arithmetic or lossless JPEG, human
-color judgments, or print accuracy. GitHub-hosted runner
-observations are snapshots of recorded images and bundled codec builds rather
-than guarantees for every machine with the same operating-system label.
-Scores remain dependent on texture, contrast, resolution, codec implementation,
-preprocessing order, window geometry, PSF rasterization, border handling, and
-metric details. Known pattern identities, matched sharp references, and
-synthetic anchors are controls that are usually unavailable in blind
-inspection.
-
-## Development and Testing
+Install test dependencies and run the suite:
 
 ```bash
 python -m pip install -e ".[test]"
 python -m pytest
 ```
 
-The tests cover blur metrics and models, preprocessing and photometric
-transforms, JPEG parsing and fixture contracts, experiment outputs, and
-cross-platform summary logic. GitHub Actions runs tests and regenerates the
-reference evidence on Ubuntu with Python 3.12. Separate jobs collect JPEG
-observations on Ubuntu x64 default and scalar paths, Windows x64, macOS arm64,
-and macOS Intel x64, then aggregate and compare them with committed reports.
+Every experiment can be run independently. The complete command list,
+deterministic controls, fixture-refresh commands, CI aggregation design, and
+repository layout are documented in
+[`docs/reproducibility.md`](docs/reproducibility.md).
+
+## Development and Testing
+
+The repository contains 53 tests covering blur metrics and models,
+preprocessing and photometric transforms, JPEG parsing, fixed-fixture
+contracts, experiment outputs, and cross-platform summary logic.
+
+GitHub Actions runs the tests and regenerates the reference evidence on Ubuntu
+with Python 3.12. Separate jobs record JPEG observations on Ubuntu x64 default
+and scalar paths, Windows x64, macOS arm64, and macOS Intel x64 before
+aggregating the combined reports.
 
 ## Compatibility
 
-Python 3.11 or newer is required; Python 3.12 and the exact runtime versions in
+Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The project does not promise identical decoded arrays for other
-dependency versions, codecs, hardware paths, or platform images.
-
-## Project Structure
-
-```text
-.
-|-- .github/workflows/ci.yml
-|-- experiments/
-|   |-- run_advanced_jpeg_syntax.py
-|   |-- run_color_metadata_interpretation.py
-|   |-- run_cross_platform_codec_contracts.py
-|   |-- run_focus_metric_comparison.py
-|   |-- run_jpeg_compression_history.py
-|   |-- run_jpeg_codec_portability.py
-|   |-- run_laplacian_variance.py
-|   |-- run_local_blur_evaluation.py
-|   |-- run_malformed_metadata_recovery.py
-|   |-- run_optical_blur_models.py
-|   |-- run_photometric_recompression.py
-|   |-- run_preprocessing_sensitivity.py
-|   |-- run_window_geometry_evaluation.py
-|   |-- summarize_advanced_jpeg_syntax.py
-|   |-- summarize_color_metadata_contracts.py
-|   |-- summarize_cross_platform_codec_contracts.py
-|   `-- summarize_malformed_metadata_recovery.py
-|-- fixtures/malformed-jpeg-metadata/
-|   |-- manifest.csv
-|   |-- *.jpg
-|   `-- rgb_control.reference.png
-|-- fixtures/color-metadata-contracts/
-|   |-- manifest.csv
-|   |-- *.jpg
-|   `-- *.reference.png
-|-- fixtures/advanced-jpeg-syntax/
-|   |-- manifest.csv
-|   |-- *.jpg
-|   `-- *.reference.png
-|-- fixtures/jpeg-decoder-contracts/
-|   |-- manifest.csv
-|   |-- *.jpg
-|   `-- *.reference.png
-|-- notes/
-|   |-- color-management-ycck-metadata-interpretation.md
-|   |-- cross-platform-codec-builds-decoded-pixel-contracts.md
-|   |-- independent-codec-families-advanced-jpeg-syntax.md
-|   |-- laplacian-variance-blur.md
-|   |-- laplacian-vs-tenengrad.md
-|   |-- jpeg-compression-history.md
-|   |-- jpeg-quantization-codec-portability.md
-|   |-- local-blur-spatial-aggregation.md
-|   |-- malformed-metadata-decoder-recovery-trust-boundaries.md
-|   |-- optical-blur-models-directional-motion.md
-|   |-- photometric-normalization-recompression-drift.md
-|   |-- preprocessing-sensitivity-calibration-drift.md
-|   `-- window-geometry-robustness.md
-|-- results/
-|   |-- README.md
-|   |-- *.csv
-|   `-- *.png
-|-- src/research_notes/
-|   |-- __init__.py
-|   |-- blur_models.py
-|   |-- blur_metrics.py
-|   |-- jpeg_codec.py
-|   |-- jpeg_contracts.py
-|   |-- jpeg_metadata.py
-|   |-- jpeg_recovery.py
-|   |-- photometric.py
-|   `-- preprocessing.py
-|-- tests/test_blur_metrics.py
-|-- LICENSE
-|-- README.md
-`-- pyproject.toml
-```
+manifests.
 
 ## Roadmap
 
@@ -409,8 +196,9 @@ dependency versions, codecs, hardware paths, or platform images.
   round trips without treating byte preservation as semantic correctness.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
-- Extend the global PSF controls to spatially varying defocus and non-uniform
-  motion without treating synthetic labels as measured camera truth.
+- Extend global point-spread-function controls to spatially varying defocus and
+  non-uniform motion without treating synthetic labels as measured camera
+  truth.
 - Replicate selected controls on a traceable public image set with labels.
 
 The roadmap is exploratory and does not represent completed work.
