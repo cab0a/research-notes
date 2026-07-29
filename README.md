@@ -63,7 +63,9 @@ All 124 emitted local outputs retained the exact re-encoded JPEG core and raw
 pixels of their policy-free control. Preserve also copied every available
 controlled envelope, including rejected metadata: byte preservation is not
 the same contract as validation or semantic correctness. These counts apply
-only to the fixed synthetic corpus and pinned local builds.
+only to the fixed synthetic corpus and pinned builds. The five-profile matrix
+repeated all 840 observations with one behavior signature per contract and no
+within-contract JPEG-byte or decoded-pixel hash variation.
 
 ## Claim Boundaries
 

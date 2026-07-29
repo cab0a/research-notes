@@ -290,6 +290,17 @@ behavior.
 - `jpeg_metadata_round_trip.png` visualizes output and strict acceptance,
   complete-envelope and supported-semantic retention, and pixel equality to
   the policy-free re-encode control.
+- `jpeg_round_trip_cross_platform_codec_manifest.csv` records 20 policy,
+  decoder, and encoder provenance rows from the five-profile matrix.
+- `jpeg_round_trip_cross_platform_observations.csv` combines all 840
+  platform observations.
+- `jpeg_round_trip_cross_platform_contracts.csv` summarizes behavior
+  signatures and JPEG-byte and decoded-pixel hash multiplicity for all 168
+  fixture, encoder, and policy contracts.
+- `jpeg_round_trip_cross_platform_summary.csv` aggregates the matrix by
+  re-encoder and policy.
+- `jpeg_metadata_round_trip_cross_platform.png` visualizes emission and strict
+  acceptance, behavior stability, and JPEG-byte stability.
 
 The preserve policy is a manifest-controlled blind-copy baseline, not a
 generic metadata parser. Normalize retains only strict-audit EXIF Orientation
@@ -298,6 +309,15 @@ Pillow source decode, while reject makes its trust decision at the strict audit
 boundary. Byte equality, semantic retention, strict validity, output
 availability, compressed-core identity, and decoded-pixel identity remain
 separate claims.
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30427760311)
+recorded one behavior signature for every fixed contract. All 620 emitted
+outputs satisfied the compressed-core and decoded-pixel controls. The 124
+output-bearing contracts also retained one output JPEG hash and one
+decoded-pixel hash across the matrix. The codec manifest remains release
+provenance and is not byte-compared on later CI runs because hosted runner
+image metadata can change independently of fixed observations.
 
 Regenerate the artifacts from the repository root:
 

@@ -170,8 +170,28 @@ The release workflow repeats the 168 observations on Ubuntu x64 default and
 forced-scalar paths, Windows x64, macOS arm64, and macOS Intel x64. The
 combined report preserves each platform observation and summarizes behavior
 signatures and byte or pixel hash multiplicity per fixture, encoder, and
-policy. These records are build-specific compatibility evidence, not a
-guarantee for other codec builds.
+policy.
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30427760311)
+recorded 840 observations and 168 fixture, encoder, and policy contracts:
+
+- all 168 contracts had one behavior signature across the five profiles;
+- 620 of 840 attempts emitted output bytes;
+- all 620 emitted outputs passed their compressed-core contract;
+- all 620 outputs decoded successfully and were pixel-exact to the same
+  re-encoder control;
+- preserve copied all 180 available non-empty envelopes byte-exactly but only
+  50 of its 190 outputs passed the strict audit;
+- strip and normalize each emitted 190 of 210 outputs, all strict accepted;
+- reject emitted only the 50 strict-audit inputs, all strict accepted;
+- all 124 output-bearing fixture, encoder, and policy contracts had one JPEG
+  hash and one decoded-pixel hash across the recorded profiles.
+
+![Cross-platform metadata round-trip policy results](../results/jpeg_metadata_round_trip_cross_platform.png)
+
+These records are build-specific compatibility evidence, not a guarantee for
+other codec builds.
 
 ## Interpretation
 

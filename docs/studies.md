@@ -255,13 +255,15 @@ and strict rejection differ across JPEG decode and re-encode boundaries?
 outputs but only 5 pass the strict metadata audit. Strip and normalize emit 19
 strict-accepted outputs, while reject emits only the 5 accepted inputs. All
 emitted outputs remain exact to their policy-free compressed core and raw-pixel
-control, showing that metadata transfer, validity, semantics, and pixels are
-separate contracts.
+control. Across five profiles, all 168 fixed behavior contracts repeat and all
+124 output-bearing contracts retain one JPEG and pixel hash, showing that
+metadata transfer, validity, semantics, and pixels are separate contracts.
 
 - [Complete note](../notes/metadata-round-trip-preservation-sanitization-policies.md)
 - [Local observations](../results/jpeg_round_trip_observations.csv)
 - [Local summary](../results/jpeg_round_trip_summary.csv)
-- [Figure](../results/jpeg_metadata_round_trip.png)
+- [Cross-platform summary](../results/jpeg_round_trip_cross_platform_summary.csv)
+- [Cross-platform figure](../results/jpeg_metadata_round_trip_cross_platform.png)
 
 ```bash
 python experiments/run_metadata_round_trip.py
