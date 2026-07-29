@@ -14,8 +14,6 @@ Reproducible image-processing studies that connect a focused question to
 source review, controlled experiments, committed evidence, interpretation,
 and explicit claim boundaries.
 
-[![CI](https://github.com/cab0a/research-notes/actions/workflows/ci.yml/badge.svg)](https://github.com/cab0a/research-notes/actions/workflows/ci.yml)
-
 ## Overview
 
 This repository records a sequence of related technical investigations rather
