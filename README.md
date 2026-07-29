@@ -22,12 +22,9 @@ synthetic data, committed reference results, tests, and continuous integration.
 It is not a collection of links and does not claim that a controlled synthetic
 experiment automatically generalizes to production imagery.
 
-The intended readers are R&D engineers and technical reviewers who want to
-trace a conclusion back through the research question, sources, fixtures,
-experiment code, measurements, and limitations. Unlike `vision-playground`,
-which presents a stable suite of algorithm comparisons, this repository keeps
-an evolving record of related investigations and the evidence boundaries of
-each release.
+Unlike `vision-playground`, which presents a stable suite of algorithm
+comparisons, this repository keeps an evolving record of related investigations
+and the evidence boundaries of each release.
 
 The studies progress from one global blur heuristic to comparative robustness,
 spatial aggregation, window geometry, preprocessing sensitivity, optical blur
