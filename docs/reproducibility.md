@@ -51,6 +51,7 @@ python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
 python experiments/run_color_metadata_interpretation.py
 python experiments/run_malformed_metadata_recovery.py
+python experiments/run_metadata_round_trip.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -116,9 +117,9 @@ profiles:
 5. macOS Intel x64
 
 Each profile uploads its observation tables. A separate Ubuntu job downloads
-the five artifacts, aggregates codec, syntax, metadata, and recovery reports,
-then compares the stable CSV outputs with the committed cross-platform
-references.
+the five artifacts, aggregates codec, syntax, metadata, recovery, and metadata
+round-trip policy reports, then compares the stable CSV outputs with the
+committed cross-platform references.
 
 This matrix cannot be reproduced as a genuine cross-platform observation from
 one local machine. A local `--platform-label` records provenance but does not
@@ -130,7 +131,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 53 tests cover:
+The 56 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation

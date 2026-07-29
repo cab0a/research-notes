@@ -276,6 +276,29 @@ manifest is release provenance and is not byte-compared on later CI runs
 because hosted runner image identifiers can change independently of decoder
 behavior.
 
+## v0.14.0
+
+- `jpeg_round_trip_codec_manifest.csv` records the local policy engine, Pillow
+  raw decoder, and Pillow and OpenCV re-encoder provenance.
+- `jpeg_round_trip_observations.csv` contains 168 local fixture, encoder, and
+  policy observations with separate source decode, output, strict audit,
+  complete-envelope byte, supported-semantic, compressed-core, and raw-pixel
+  contracts.
+- `jpeg_round_trip_summary.csv` aggregates output availability, strict
+  acceptance, metadata retention, compressed-core identity, raw-pixel
+  identity, and lossy re-encoding error by re-encoder and policy.
+- `jpeg_metadata_round_trip.png` visualizes output and strict acceptance,
+  complete-envelope and supported-semantic retention, and pixel equality to
+  the policy-free re-encode control.
+
+The preserve policy is a manifest-controlled blind-copy baseline, not a
+generic metadata parser. Normalize retains only strict-audit EXIF Orientation
+and complete ICC profile semantics. Strip and normalize require a successful
+Pillow source decode, while reject makes its trust decision at the strict audit
+boundary. Byte equality, semantic retention, strict validity, output
+availability, compressed-core identity, and decoded-pixel identity remain
+separate claims.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -292,6 +315,7 @@ python experiments/run_cross_platform_codec_contracts.py
 python experiments/run_advanced_jpeg_syntax.py
 python experiments/run_color_metadata_interpretation.py
 python experiments/run_malformed_metadata_recovery.py
+python experiments/run_metadata_round_trip.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

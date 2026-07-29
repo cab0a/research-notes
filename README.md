@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、同じ画像データへ正常・不正・曖昧なメタデータを挿入し、厳格な検査とデコーダーによる復旧を分けて評価しています。
+研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、正常・不正・曖昧なメタデータを持つ同じ合成画像に対し、保存・除去・正規化・拒否の方針を比較し、バイト保持、意味保持、厳格な検査、復号画素を分けて評価しています。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -25,8 +25,8 @@ figures, interpretation, and limitations.
 
 The work starts with blur heuristics, then tests spatial aggregation,
 preprocessing, optical and photometric effects, JPEG compression history,
-decoder portability, metadata interpretation, and malformed-metadata recovery.
-The current release is v0.13.0.
+decoder portability, metadata interpretation, malformed-metadata recovery,
+and metadata round-trip policies. The current release is v0.14.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -38,31 +38,32 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.13.0 | Which byte, pixel, metadata, and recovery behaviors remain stable across encoders, decoders, syntax variants, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.14.0 | Which byte, pixel, metadata, recovery, and sanitization behaviors remain stable across encoders, decoders, syntax variants, policies, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 13 releases to their questions,
+The [study index](docs/studies.md) maps all 14 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.13.0 study keeps one compressed image stream fixed while adding 21
-valid, malformed, ambiguous, trailing-data, and resource-boundary metadata
-conditions. A strict bounded audit is evaluated separately from OpenCV,
-Pillow, and FFmpeg decoding.
+The v0.14.0 study applies four explicit metadata policies to the 21-fixture
+v0.13.0 corpus after fixed Pillow or OpenCV re-encoding. It measures complete
+input-envelope bytes, supported EXIF and ICC semantics, strict output
+acceptance, the compressed JPEG core, and raw decoded pixels separately.
 
-| Observation | Local reference | Five-profile CI matrix |
-| --- | ---: | ---: |
-| Strict audit accepted | 5 / 21 fixtures | 25 / 105 fixture-profile observations |
-| Decoder returned pixels | 60 / 63 probes | 300 / 315 probes |
-| Successful outputs exact to the same decoder's control | 60 / 60 | 300 / 300 |
-| Strict-rejected inputs that still decoded | 45 / 48 probes | 225 / 240 probes |
+| Policy | Outputs per encoder | Strict accepted | Supported EXIF / ICC retained |
+| --- | ---: | ---: | ---: |
+| preserve | 19 / 21 | 5 / 19 | 2 / 2 |
+| strip | 19 / 21 | 19 / 19 | 0 / 2 |
+| normalize | 19 / 21 | 19 / 19 | 2 / 2 |
+| reject | 5 / 21 | 5 / 5 | 2 / 2 |
 
-![Malformed JPEG metadata audit and decoder recovery](results/jpeg_recovery_contracts.png)
+![JPEG metadata round-trip policy contracts](results/jpeg_metadata_round_trip.png)
 
-The result separates availability from trust: a decoder can recover pixels
-without establishing that metadata is valid, unambiguous, safe to interpret,
-or appropriate to preserve. The finding applies to the fixed corpus and
-recorded builds only.
+All 124 emitted local outputs retained the exact re-encoded JPEG core and raw
+pixels of their policy-free control. Preserve also copied every available
+controlled envelope, including rejected metadata: byte preservation is not
+the same contract as validation or semantic correctness. These counts apply
+only to the fixed synthetic corpus and pinned local builds.
 
 ## Claim Boundaries
 
@@ -72,6 +73,8 @@ recorded builds only.
   blur thresholds, perceptual scores, or proof that one metric is superior.
 - The malformed-metadata corpus is not a fuzzer, vulnerability assessment,
   resource benchmark, or memory-safety proof.
+- The metadata normalizer supports only EXIF Orientation and complete embedded
+  ICC profiles; it is not a general-purpose metadata sanitizer.
 - Cross-platform observations describe pinned wheels on recorded GitHub-hosted
   runner images. They do not guarantee identical behavior for other builds.
 - Known pattern identities, matched references, and synthetic calibration
@@ -114,12 +117,12 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Thirteen published studies with explicit questions, controls, results, and
+- Fourteen published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
 - Fixed JPEG fixtures for syntax, chroma sampling, color metadata, malformed
-  metadata, trailing data, and resource-policy controls
+  metadata, trailing data, resource-policy controls, and round-trip policies
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -174,7 +177,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 53 tests covering blur metrics and models,
+The repository contains 56 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, experiment outputs, and cross-platform summary logic.
 
@@ -192,8 +195,8 @@ manifests.
 
 ## Roadmap
 
-- Compare metadata strip, preserve, normalize, and reject policies across JPEG
-  round trips without treating byte preservation as semantic correctness.
+- Evaluate field-level retention policies for XMP, IPTC, EXIF thumbnails, and
+  unknown APP data without claiming complete metadata semantics.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and

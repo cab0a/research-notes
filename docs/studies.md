@@ -246,6 +246,27 @@ metadata.
 python experiments/run_malformed_metadata_recovery.py
 ```
 
+### v0.14.0 — Metadata Round-Trip Preservation and Sanitization Policies
+
+**Question:** How do blind preservation, stripping, supported normalization,
+and strict rejection differ across JPEG decode and re-encode boundaries?
+
+**Representative finding:** For each local re-encoder, preserve emits 19
+outputs but only 5 pass the strict metadata audit. Strip and normalize emit 19
+strict-accepted outputs, while reject emits only the 5 accepted inputs. All
+emitted outputs remain exact to their policy-free compressed core and raw-pixel
+control, showing that metadata transfer, validity, semantics, and pixels are
+separate contracts.
+
+- [Complete note](../notes/metadata-round-trip-preservation-sanitization-policies.md)
+- [Local observations](../results/jpeg_round_trip_observations.csv)
+- [Local summary](../results/jpeg_round_trip_summary.csv)
+- [Figure](../results/jpeg_metadata_round_trip.png)
+
+```bash
+python experiments/run_metadata_round_trip.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
