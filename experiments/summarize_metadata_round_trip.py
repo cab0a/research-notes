@@ -392,7 +392,8 @@ def plot_cross_platform(
         axes[2].bar(
             positions + offset,
             [
-                int(row["contracts_with_platform_jpeg_variation"])
+                int(row["total_behavior_contracts"])
+                - int(row["contracts_with_platform_jpeg_variation"])
                 for row in group
             ],
             width,
@@ -406,8 +407,9 @@ def plot_cross_platform(
     axes[1].set_title("Stable behavior contracts")
     axes[1].set_ylabel("Fraction of 21 fixtures")
     axes[1].set_ylim(0, 1.08)
-    axes[2].set_title("Contracts with JPEG byte variation")
+    axes[2].set_title("JPEG-byte-stable contracts")
     axes[2].set_ylabel("Fixture contracts")
+    axes[2].set_ylim(0, FIXTURE_COUNT + 1)
     for axis in axes:
         axis.set_xticks(positions, POLICIES, rotation=20)
         axis.grid(axis="y", alpha=0.25)

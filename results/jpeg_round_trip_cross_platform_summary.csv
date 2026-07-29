@@ -1,0 +1,9 @@
+encoder,policy,platform_profiles,attempts,outputs_emitted,output_rate,strict_accept_rate_among_outputs,output_decode_rate_among_outputs,byte_exact_envelope_rate,supported_semantic_retention_rate,compressed_core_exact_rate,pixel_exact_rate_among_decoded_outputs,stable_behavior_contracts,total_behavior_contracts,contracts_with_platform_pixel_variation,contracts_with_platform_jpeg_variation
+pillow,preserve,5,105,95,0.904762,0.263158,1.000000,1.000000,1.000000,1.000000,1.000000,21,21,0,0
+pillow,strip,5,105,95,0.904762,1.000000,1.000000,0.000000,0.000000,1.000000,1.000000,21,21,0,0
+pillow,normalize,5,105,95,0.904762,1.000000,1.000000,0.111111,1.000000,1.000000,1.000000,21,21,0,0
+pillow,reject,5,105,25,0.238095,1.000000,1.000000,0.500000,1.000000,1.000000,1.000000,21,21,0,0
+opencv,preserve,5,105,95,0.904762,0.263158,1.000000,1.000000,1.000000,1.000000,1.000000,21,21,0,0
+opencv,strip,5,105,95,0.904762,1.000000,1.000000,0.000000,0.000000,1.000000,1.000000,21,21,0,0
+opencv,normalize,5,105,95,0.904762,1.000000,1.000000,0.111111,1.000000,1.000000,1.000000,21,21,0,0
+opencv,reject,5,105,25,0.238095,1.000000,1.000000,0.500000,1.000000,1.000000,1.000000,21,21,0,0
