@@ -48,6 +48,7 @@ jobs:
           python experiments/run_metadata_round_trip.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_metadata_generation_drift.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_field_level_metadata_provenance.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_resource_bounded_metadata.py --output-dir regenerated-results --platform-label linux-x64-reference
 
       - name: Verify reference data and chart generation
         run: |
@@ -116,6 +117,8 @@ jobs:
           diff -u results/jpeg_field_provenance_decisions.csv regenerated-results/jpeg_field_provenance_decisions.csv
           diff -u results/jpeg_selective_retention_observations.csv regenerated-results/jpeg_selective_retention_observations.csv
           diff -u results/jpeg_selective_retention_summary.csv regenerated-results/jpeg_selective_retention_summary.csv
+          diff -u results/jpeg_resource_budget_observations.csv regenerated-results/jpeg_resource_budget_observations.csv
+          diff -u results/jpeg_resource_budget_summary.csv regenerated-results/jpeg_resource_budget_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -143,6 +146,7 @@ jobs:
           test -s regenerated-results/jpeg_metadata_round_trip.png
           test -s regenerated-results/jpeg_metadata_generation_drift.png
           test -s regenerated-results/jpeg_selective_retention.png
+          test -s regenerated-results/jpeg_resource_budget_boundaries.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -190,6 +194,7 @@ jobs:
           python experiments/run_metadata_round_trip.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_metadata_generation_drift.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_field_level_metadata_provenance.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_resource_bounded_metadata.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -230,6 +235,7 @@ jobs:
           python experiments/summarize_metadata_round_trip.py --input-dir platform-artifacts --output-dir round-trip-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_metadata_generation_drift.py --input-dir platform-artifacts --output-dir generation-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_field_level_metadata_provenance.py --input-dir platform-artifacts --output-dir provenance-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_resource_bounded_metadata.py --input-dir platform-artifacts --output-dir resource-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -278,4 +284,5 @@ jobs:
             round-trip-cross-platform-results
             generation-cross-platform-results
             provenance-cross-platform-results
+            resource-cross-platform-results
           retention-days: 30
