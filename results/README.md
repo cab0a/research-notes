@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、15件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフトの結果を研究版ごとに対応付けています。
+このディレクトリには、16件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフト・field単位の選択保持の結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -367,6 +367,30 @@ decoded-pixel hash for every temporal contract. The codec manifest remains
 release provenance and is not byte-compared on later CI runs because hosted
 runner image identifiers can change independently of fixed observations.
 
+## v0.16.0
+
+- `jpeg_field_provenance_codec_manifest.csv` records the local field policy,
+  controlled parser, raw decoder, and encoder provenance.
+- `jpeg_field_provenance_decisions.csv` contains 288 source-to-output field
+  decisions with field identifiers, categories, value hashes, retention
+  states, and reason codes.
+- `jpeg_selective_retention_observations.csv` contains 24 local output
+  observations from two equivalent metadata layouts, two encoders, and six
+  policies.
+- `jpeg_selective_retention_summary.csv` aggregates retained fields,
+  location and unclassified outcomes, strict acceptance, compressed-core
+  identity, raw-pixel identity, and layout-equivalence hashes.
+- `jpeg_selective_retention.png` visualizes retained field counts and
+  category-level retention for every policy.
+
+All 24 outputs pass the strict metadata audit and remain exact to the
+policy-free compressed image and raw-pixel controls. The location denylist
+removes both controlled GPS fields but retains the custom XMP field and opaque
+APP13 payload. The three selective allowlists remove every field that is not
+explicitly enumerated. These results apply only to the twelve controlled
+fields and bounded parser; they do not establish complete metadata semantics
+or privacy compliance.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -385,6 +409,7 @@ python experiments/run_color_metadata_interpretation.py
 python experiments/run_malformed_metadata_recovery.py
 python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
+python experiments/run_field_level_metadata_provenance.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

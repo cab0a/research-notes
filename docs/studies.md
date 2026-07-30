@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフトを扱う15件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフト・field単位の選択保持を扱う16件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -303,6 +303,29 @@ metadata, compressed-core, complete-JPEG, and decoded-pixel hash.
 
 ```bash
 python experiments/run_metadata_generation_drift.py
+```
+
+### v0.16.0 — Field-Level Metadata Provenance and Selective Retention
+
+**Question:** Can a JPEG pipeline retain selected metadata fields while
+recording an auditable source-to-output decision for every controlled field?
+
+**Representative finding:** The 24 local outputs and 288 field decisions all
+preserve strict validity, the policy-free compressed image core, and raw
+decoded pixels. The location denylist removes both GPS fields but retains two
+unclassified fields. The visual, catalog, and attribution allowlists retain
+only their declared 2, 6, and 4 fields. Two byte-distinct EXIF and XMP layouts
+produce one normalized metadata state and one complete JPEG per encoder and
+policy.
+
+- [Complete note](../notes/field-level-metadata-provenance-selective-retention.md)
+- [Field decisions](../results/jpeg_field_provenance_decisions.csv)
+- [Output observations](../results/jpeg_selective_retention_observations.csv)
+- [Summary](../results/jpeg_selective_retention_summary.csv)
+- [Figure](../results/jpeg_selective_retention.png)
+
+```bash
+python experiments/run_field_level_metadata_provenance.py
 ```
 
 ## Artifact Details

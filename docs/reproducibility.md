@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、反復メタデータ方針を含む複数環境での検証、互換性境界をまとめています。
+本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、反復およびfield単位のメタデータ方針を含む複数環境での検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -67,6 +67,7 @@ python experiments/run_color_metadata_interpretation.py
 python experiments/run_malformed_metadata_recovery.py
 python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
+python experiments/run_field_level_metadata_provenance.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -133,8 +134,8 @@ profiles:
 
 Each profile uploads its observation tables. A separate Ubuntu job downloads
 the five artifacts, aggregates codec, syntax, metadata, recovery, metadata
-round-trip, and multi-generation policy reports, then compares the stable CSV
-outputs with the committed cross-platform references.
+round-trip, multi-generation policy, and field-level retention reports, then
+compares the stable CSV outputs with the committed cross-platform references.
 
 This matrix cannot be reproduced as a genuine cross-platform observation from
 one local machine. A local `--platform-label` records provenance but does not
@@ -146,7 +147,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 59 tests cover:
+The 63 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -155,6 +156,7 @@ The 59 tests cover:
 - JPEG marker, quantization-table, syntax, and metadata parsing
 - fixed-fixture hashes and decoded-pixel contracts
 - repeated preserve, normalize, and strip policy relationships
+- field-level metadata extraction and selective-retention relationships
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
