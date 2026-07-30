@@ -1,0 +1,13 @@
+encoder,policy,platform_count,observation_count,field_decision_count,mean_retained_fields,retained_location_fields,retained_unclassified_fields,contract_count,stable_behavior_contracts,stable_decision_contracts,stable_metadata_contracts,stable_complete_jpeg_contracts,stable_decoded_pixel_contracts
+opencv,allow_attribution,5,10,120,4.000000000,0,0,2,2,2,2,2,2
+opencv,allow_catalog,5,10,120,6.000000000,0,0,2,2,2,2,2,2
+opencv,allow_visual_context,5,10,120,2.000000000,0,0,2,2,2,2,2,2
+opencv,drop_location_denylist,5,10,120,10.000000000,0,20,2,2,2,2,2,2
+opencv,retain_all,5,10,120,12.000000000,20,20,2,2,2,2,2,2
+opencv,strip_all,5,10,120,0.000000000,0,0,2,2,2,2,2,2
+pillow,allow_attribution,5,10,120,4.000000000,0,0,2,2,2,2,2,2
+pillow,allow_catalog,5,10,120,6.000000000,0,0,2,2,2,2,2,2
+pillow,allow_visual_context,5,10,120,2.000000000,0,0,2,2,2,2,2,2
+pillow,drop_location_denylist,5,10,120,10.000000000,0,20,2,2,2,2,2,2
+pillow,retain_all,5,10,120,12.000000000,20,20,2,2,2,2,2,2
+pillow,strip_all,5,10,120,0.000000000,0,0,2,2,2,2,2,2
