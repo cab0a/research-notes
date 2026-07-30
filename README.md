@@ -67,6 +67,11 @@ XMP property and opaque APP13 field. The allowlists bounded the output to
 their enumerated field sets. For each encoder and policy, both input layouts
 produced one normalized metadata state and one complete JPEG hash.
 
+The five-profile matrix repeated 120 output observations and 1,440 field
+decisions. Every one of its 24 fixture, encoder, and policy contracts retained
+one behavior signature, decision signature, metadata-state hash, complete
+JPEG hash, and decoded-pixel hash across the recorded builds.
+
 ## Claim Boundaries
 
 - The studies use small, 8-bit synthetic images rather than a representative

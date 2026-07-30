@@ -382,6 +382,20 @@ runner image identifiers can change independently of fixed observations.
   identity, raw-pixel identity, and layout-equivalence hashes.
 - `jpeg_selective_retention.png` visualizes retained field counts and
   category-level retention for every policy.
+- `jpeg_field_provenance_cross_platform_codec_manifest.csv` records the 25
+  policy, parser, decoder, and encoder provenance rows from the five-profile
+  matrix.
+- `jpeg_field_provenance_cross_platform_decisions.csv` combines all 1,440
+  platform field decisions.
+- `jpeg_selective_retention_cross_platform_observations.csv` combines all 120
+  platform output observations.
+- `jpeg_selective_retention_cross_platform_contracts.csv` records behavior,
+  decision, metadata-state, complete-JPEG, and decoded-pixel multiplicity for
+  all 24 fixture, encoder, and policy contracts.
+- `jpeg_selective_retention_cross_platform_summary.csv` aggregates the matrix
+  by encoder and policy.
+- `jpeg_selective_retention_cross_platform.png` visualizes policy field counts
+  and compatibility-contract stability.
 
 All 24 outputs pass the strict metadata audit and remain exact to the
 policy-free compressed image and raw-pixel controls. The location denylist
@@ -390,6 +404,14 @@ APP13 payload. The three selective allowlists remove every field that is not
 explicitly enumerated. These results apply only to the twelve controlled
 fields and bounded parser; they do not establish complete metadata semantics
 or privacy compliance.
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30501815768)
+recorded one behavior signature, decision signature, metadata-state hash,
+complete-JPEG hash, and decoded-pixel hash for every contract. The codec
+manifest remains release provenance and is not byte-compared on later CI runs
+because hosted runner image identifiers can change independently of fixed
+observations.
 
 Regenerate the artifacts from the repository root:
 

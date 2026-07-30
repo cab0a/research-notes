@@ -316,13 +316,17 @@ decoded pixels. The location denylist removes both GPS fields but retains two
 unclassified fields. The visual, catalog, and attribution allowlists retain
 only their declared 2, 6, and 4 fields. Two byte-distinct EXIF and XMP layouts
 produce one normalized metadata state and one complete JPEG per encoder and
-policy.
+policy. Across five profiles, all 24 contracts retain one behavior, decision,
+metadata-state, complete-JPEG, and decoded-pixel hash.
 
 - [Complete note](../notes/field-level-metadata-provenance-selective-retention.md)
 - [Field decisions](../results/jpeg_field_provenance_decisions.csv)
 - [Output observations](../results/jpeg_selective_retention_observations.csv)
 - [Summary](../results/jpeg_selective_retention_summary.csv)
 - [Figure](../results/jpeg_selective_retention.png)
+- [Cross-platform summary](../results/jpeg_selective_retention_cross_platform_summary.csv)
+- [Cross-platform contracts](../results/jpeg_selective_retention_cross_platform_contracts.csv)
+- [Cross-platform figure](../results/jpeg_selective_retention_cross_platform.png)
 
 ```bash
 python experiments/run_field_level_metadata_provenance.py

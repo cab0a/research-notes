@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本ノートは、EXIF・XMP・ICC・JPEG COM・opaque APP13にまたがる12個の合成metadata fieldを対象に、field単位の出所、保持判断、source/output hashを記録します。24件のローカルpolicy観測と288件のfield判断では、明示的allowlistが指定外fieldを除去する一方、location denylistは位置情報を除去しても未分類fieldを保持しました。すべての出力で厳格なmetadata検査、圧縮画像、raw decoded pixelsの非干渉を確認しています。
+本ノートは、EXIF・XMP・ICC・JPEG COM・opaque APP13にまたがる12個の合成metadata fieldを対象に、field単位の出所、保持判断、source/output hashを記録します。24件のローカルpolicy観測と288件のfield判断では、明示的allowlistが指定外fieldを除去する一方、location denylistは位置情報を除去しても未分類fieldを保持しました。5環境の120観測と1,440判断でも、全24契約でbehavior、decision、metadata、完全JPEG、復号画素が一致しています。
 
 実験設計、結果、実務上の判断基準、適用範囲は以下の英語本文を参照してください。
 
@@ -194,6 +194,28 @@ The location denylist demonstrates the intended negative control. It removed
 both declared GPS fields but retained the custom XMP pipeline hint and opaque
 APP13 payload because neither field was categorized as location. Passing that
 denylist is not evidence of data minimization.
+
+### Cross-Platform Results
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30501815768)
+recorded 120 output observations, 1,440 field decisions, and 24 fixture,
+encoder, and policy contracts:
+
+- all 120 outputs passed the strict metadata audit;
+- all 24 contracts had one categorical behavior signature;
+- all 24 contracts had one complete field-decision signature;
+- all 24 contracts had one normalized metadata-state hash;
+- all 24 contracts had one complete JPEG hash;
+- all 24 contracts had one decoded-pixel hash.
+
+![Cross-platform selective metadata retention](../results/jpeg_selective_retention_cross_platform.png)
+
+The matrix covers Ubuntu x64 default and forced-scalar paths, Windows x64,
+macOS arm64, and macOS Intel x64 with the pinned wheels. This exact agreement
+is compatibility evidence for those profiles and controlled fields. It is not
+a guarantee for other parser implementations, codec builds, or future runner
+images.
 
 ## Interpretation
 
