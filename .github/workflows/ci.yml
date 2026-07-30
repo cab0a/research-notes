@@ -23,6 +23,12 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && python -m pip install -e ".[test]"
 
+      - name: Run README Quick Start
+        run: |
+          python experiments/run_laplacian_variance.py --output-dir output/quickstart
+          test -s output/quickstart/laplacian_variance.png
+          test -s output/quickstart/laplacian_variance_summary.csv
+
       - name: Run unit tests
         run: python -m pytest
 
