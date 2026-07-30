@@ -1,4 +1,4 @@
 platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,component,role,implementation,version_or_backend,contract
-local-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
-local-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.6.1,64-byte feed chunks after packet-size admission
-local-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.6.1,64-byte feed chunks after packet-size admission
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
