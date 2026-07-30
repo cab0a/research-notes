@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、EXIF・XMP・ICC・JPEG COM・opaque APP13にまたがる12個の合成fieldについて、allowlistとdenylistによる保持判断、source/output hash、圧縮画像、復号画素を分けて評価しています。
+研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、JPEG metadataをdecoderへ渡す前の10種類のresource上限について、上限値ちょうどと上限値+1を含む24個の合成fixtureを評価しています。5環境の120観測では、全24契約でaccept・quarantine・reject、reason code、work counter、fixture hashが一致しました。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -25,7 +25,8 @@ The work starts with blur heuristics, then tests spatial aggregation,
 preprocessing, optical and photometric effects, JPEG compression history,
 decoder portability, metadata interpretation, malformed-metadata recovery,
 metadata round-trip policies, multi-generation policy drift, and field-level
-selective retention. The current release is v0.16.0.
+selective retention before evaluating resource-bounded metadata admission.
+The current release is v0.17.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -37,40 +38,36 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.16.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, and field-retention behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.17.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, and resource-boundary behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 16 releases to their questions,
+The [study index](docs/studies.md) maps all 17 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.16.0 study tracks twelve controlled fields across EXIF, XMP, ICC, JPEG
-COM, and opaque APP13 data. Two byte-distinct but semantically equivalent
-layouts, two fixed encoders, and six policies produce 24 local output
-observations and 288 field-level decisions.
+The v0.17.0 study declares ten ceilings for JPEG header traversal, metadata
+segments and bytes, one metadata segment, EXIF entries, XMP packet bytes,
+nodes, depth and text, and ICC chunks. Twenty paired fixtures exercise each
+ceiling exactly at the limit and at limit plus one.
 
-| Policy | Retained fields | Location retained | Unclassified retained |
-| --- | ---: | ---: | ---: |
-| retain all | 12 / 12 | 2 / 2 | 2 / 2 |
-| drop location denylist | 10 / 12 | 0 / 2 | 2 / 2 |
-| visual allowlist | 2 / 12 | 0 / 2 | 0 / 2 |
-| catalog allowlist | 6 / 12 | 0 / 2 | 0 / 2 |
-| attribution allowlist | 4 / 12 | 0 / 2 | 0 / 2 |
-| strip all | 0 / 12 | 0 / 2 | 0 / 2 |
+| Boundary class | Fixtures | Local decision | Five-profile observations |
+| --- | ---: | --- | ---: |
+| Exactly at limit | 10 | 10 `accept` | 50 `accept` |
+| Limit plus one | 10 | 10 `quarantine` | 50 `quarantine` |
+| Mixed baseline | 1 | 1 `accept` | 5 `accept` |
+| Metadata syntax controls | 2 | 2 `quarantine` | 10 `quarantine` |
+| Container framing control | 1 | 1 `reject` | 5 `reject` |
 
-![Field-level metadata retention](results/jpeg_selective_retention.png)
+![Cross-platform metadata resource contracts](results/jpeg_resource_budget_cross_platform.png)
 
-All 24 outputs passed the strict metadata audit, retained the policy-free
-compressed image core, and were raw-pixel exact to their re-encode control.
-The location denylist removed both declared GPS fields but retained the custom
-XMP property and opaque APP13 field. The allowlists bounded the output to
-their enumerated field sets. For each encoder and policy, both input layouts
-produced one normalized metadata state and one complete JPEG hash.
+Every over-limit fixture stopped at the first disallowed value, and no
+corresponding admitted counter exceeded its ceiling. The five-profile matrix
+produced 120 observations. All 24 fixture contracts retained one decision,
+reason-code, issue, counter, and fixture-hash signature.
 
-The five-profile matrix repeated 120 output observations and 1,440 field
-decisions. Every one of its 24 fixture, encoder, and policy contracts retained
-one behavior signature, decision signature, metadata-state hash, complete
-JPEG hash, and decoded-pixel hash across the recorded builds.
+`accept` means only that the controlled header policy permits a downstream
+decoder attempt. It does not establish metadata trust, full-JPEG validity, or
+bounded decoder memory and time.
 
 ## Claim Boundaries
 
@@ -84,6 +81,9 @@ JPEG hash, and decoded-pixel hash across the recorded builds.
   ICC profiles; it is not a general-purpose metadata sanitizer.
 - The field-level parser supports twelve controlled fields and two layouts.
   It is not a general EXIF, XMP, ICC, IPTC, or privacy sanitizer.
+- The resource-boundary auditor receives an already resident byte string and
+  bounds only its declared header and metadata work. It does not bound file
+  reads, decoder pixels, process memory, wall-clock time, or exploitability.
 - The observed generation-3 pixel fixed point applies only to one small
   synthetic image, quality 75, 4:4:4 sampling, and the pinned builds. It is not
   a convergence guarantee or losslessness claim.
@@ -129,12 +129,13 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Sixteen published studies with explicit questions, controls, results, and
+- Seventeen published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
-- Fixed JPEG fixtures for syntax, chroma sampling, color metadata, malformed
-  metadata, trailing data, resource-policy controls, and round-trip policies
+- Fixed or deterministically generated JPEG fixtures for syntax, chroma
+  sampling, color metadata, malformed metadata, trailing data, resource
+  boundaries, and round-trip policies
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -166,7 +167,8 @@ The experiment-specific evidence is organized in three layers:
 Each study declares the variable being changed, the controls held fixed, the
 observation count, the aggregation policy, and the claim boundary. Decoder
 studies separate file structure, array-interface validity, exact decoded
-hashes, pairwise code-value differences, and cross-platform agreement.
+hashes, pairwise code-value differences, metadata admission, and
+cross-platform agreement.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -189,10 +191,10 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 63 tests covering blur metrics and models,
+The repository contains 70 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
-contracts, repeated and field-level metadata policies, experiment outputs, and
-cross-platform summary logic.
+contracts, repeated and field-level metadata policies, resource-boundary
+routing, experiment outputs, and cross-platform summary logic.
 
 GitHub Actions runs the tests and regenerates the reference evidence on Ubuntu
 with Python 3.12. Separate jobs record JPEG observations on Ubuntu x64 default
@@ -208,12 +210,11 @@ manifests.
 
 ## Roadmap
 
-- v0.17.0: evaluate resource-bounded parsing and explicit accept, sanitize,
-  reject, and quarantine decisions without presenting the experiment as a
-  vulnerability assessment.
-- Evaluate EXIF thumbnails, extended XMP, IPTC IIM, maker notes, and
-  authenticated provenance without treating one parser as semantically
-  complete.
+- v0.18.0 candidate: extend controlled parser coverage to EXIF thumbnails,
+  extended XMP, IPTC IIM, maker notes, and nested payload relationships
+  without treating one implementation as semantically complete.
+- Evaluate authenticated provenance and signature-preservation boundaries
+  without treating metadata presence as authenticity.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、反復およびfield単位のメタデータ方針を含む複数環境での検証、互換性境界をまとめています。
+本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、反復・field単位のメタデータ方針・resource上限を含む複数環境での検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -68,6 +68,7 @@ python experiments/run_malformed_metadata_recovery.py
 python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
+python experiments/run_resource_bounded_metadata.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -115,6 +116,8 @@ python experiments/run_malformed_metadata_recovery.py \
 - Fixture manifests record hashes and declared structural relationships.
 - Observation and summary CSV files are generated from the same experiment
   run as their PNG figures.
+- Resource-boundary fixtures are generated in memory from fixed bytes and
+  exercise exact-limit and limit-plus-one relations without external data.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -134,8 +137,15 @@ profiles:
 
 Each profile uploads its observation tables. A separate Ubuntu job downloads
 the five artifacts, aggregates codec, syntax, metadata, recovery, metadata
-round-trip, multi-generation policy, and field-level retention reports, then
-compares the stable CSV outputs with the committed cross-platform references.
+round-trip, multi-generation policy, field-level retention, and
+resource-boundary reports, then compares the stable CSV outputs with the
+committed cross-platform references.
+
+For the resource-boundary study, the aggregate requires 24 fixture contracts
+and five observations per contract. It checks decision, reason-code, issue,
+work-counter, and fixture-hash multiplicity. Runtime manifests remain
+provenance records rather than byte-stable contracts because hosted runner
+image identifiers can change independently of the controlled result.
 
 This matrix cannot be reproduced as a genuine cross-platform observation from
 one local machine. A local `--platform-label` records provenance but does not
@@ -147,7 +157,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 63 tests cover:
+The 70 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -157,6 +167,8 @@ The 63 tests cover:
 - fixed-fixture hashes and decoded-pixel contracts
 - repeated preserve, normalize, and strip policy relationships
 - field-level metadata extraction and selective-retention relationships
+- exact-limit, over-limit, syntax, and framing decisions for bounded metadata
+  admission
 - experiment output schemas
 - cross-platform summary and aggregation logic
 

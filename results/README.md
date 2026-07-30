@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、16件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフト・field単位の選択保持の結果を研究版ごとに対応付けています。
+このディレクトリには、17件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフト・field単位の選択保持・resource上限の結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -413,6 +413,42 @@ manifest remains release provenance and is not byte-compared on later CI runs
 because hosted runner image identifiers can change independently of fixed
 observations.
 
+## v0.17.0
+
+- `jpeg_resource_budget_runtime_manifest.csv` records the local admission
+  policy, ElementTree/Expat parser, fixture encoder, and declared runtime
+  profile.
+- `jpeg_resource_budget_observations.csv` contains 24 local fixture
+  observations with expected and observed routing, reason codes, fixture
+  hashes, and observed-versus-admitted counters.
+- `jpeg_resource_budget_summary.csv` aggregates the 24 observations into 14
+  resource and negative-control families.
+- `jpeg_resource_budget_boundaries.png` visualizes exact-limit admission,
+  limit-plus-one quarantine, and admitted-counter ceilings.
+- `jpeg_resource_budget_cross_platform_runtime_manifest.csv` records 15
+  provenance rows from the five-profile matrix.
+- `jpeg_resource_budget_cross_platform_observations.csv` combines all 120
+  platform observations.
+- `jpeg_resource_budget_cross_platform_contracts.csv` records decision,
+  reason-code, issue, work-counter, and fixture-hash multiplicity for all 24
+  fixture contracts.
+- `jpeg_resource_budget_cross_platform_summary.csv` aggregates the matrix by
+  resource family.
+- `jpeg_resource_budget_cross_platform.png` visualizes routing counts and
+  contract stability across the five profiles.
+
+All ten exact-limit fixtures are accepted. All ten limit-plus-one fixtures are
+quarantined at the first disallowed value without admitting the corresponding
+counter above its ceiling. The prohibited-XMP and invalid-EXIF controls are
+quarantined, while the segment-length overrun is rejected as a framing error.
+
+The successful
+[five-profile workflow](https://github.com/cab0a/research-notes/actions/runs/30506465070)
+recorded one decision, reason-code, issue, work-counter, and fixture-hash
+signature for every contract. The runtime manifest remains release provenance
+and is not byte-compared on later CI runs because hosted runner image
+identifiers can change independently of the fixed behavior.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -432,6 +468,7 @@ python experiments/run_malformed_metadata_recovery.py
 python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
+python experiments/run_resource_bounded_metadata.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフト・field単位の選択保持を扱う16件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフト・field単位の選択保持・resource上限を扱う17件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -332,6 +332,32 @@ metadata-state, complete-JPEG, and decoded-pixel hash.
 python experiments/run_field_level_metadata_provenance.py
 ```
 
+### v0.17.0 — Resource-Bounded Metadata Parsing and Quarantine Decisions
+
+**Question:** Can a JPEG metadata admission layer enforce explicit work
+ceilings, stop at the first disallowed unit, and return deterministic routing
+decisions before image decoding?
+
+**Representative finding:** All ten at-limit fixtures return `accept`, while
+all ten limit-plus-one fixtures return `quarantine` and keep their
+corresponding admitted counter at or below the limit. Prohibited XMP and
+invalid EXIF controls are quarantined, and the JPEG segment overrun is
+rejected. Across five profiles, all 24 fixture contracts retain one decision,
+reason-code, issue, counter, and fixture-hash signature.
+
+- [Complete note](../notes/resource-bounded-metadata-parsing-quarantine.md)
+- [Local observations](../results/jpeg_resource_budget_observations.csv)
+- [Local summary](../results/jpeg_resource_budget_summary.csv)
+- [Local figure](../results/jpeg_resource_budget_boundaries.png)
+- [Cross-platform observations](../results/jpeg_resource_budget_cross_platform_observations.csv)
+- [Cross-platform contracts](../results/jpeg_resource_budget_cross_platform_contracts.csv)
+- [Cross-platform summary](../results/jpeg_resource_budget_cross_platform_summary.csv)
+- [Cross-platform figure](../results/jpeg_resource_budget_cross_platform.png)
+
+```bash
+python experiments/run_resource_bounded_metadata.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -349,6 +375,8 @@ failure-mode analysis, but it does not establish:
 - codec-family behavior beyond the fixed fixtures and pinned builds;
 - color accuracy for measured devices, LUT profiles, gamut mapping, or human
   judgments;
+- bounded file acquisition, decoded-pixel allocation, process memory, or
+  execution time beyond the declared metadata admission counters;
 - security, memory safety, denial-of-service resistance, or safe handling of
   arbitrary malformed files.
 
