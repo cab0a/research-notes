@@ -271,6 +271,10 @@ jobs:
           diff -u results/jpeg_selective_retention_cross_platform_contracts.csv provenance-cross-platform-results/jpeg_selective_retention_cross_platform_contracts.csv
           diff -u results/jpeg_selective_retention_cross_platform_summary.csv provenance-cross-platform-results/jpeg_selective_retention_cross_platform_summary.csv
           test -s provenance-cross-platform-results/jpeg_selective_retention_cross_platform.png
+          diff -u results/jpeg_resource_budget_cross_platform_observations.csv resource-cross-platform-results/jpeg_resource_budget_cross_platform_observations.csv
+          diff -u results/jpeg_resource_budget_cross_platform_contracts.csv resource-cross-platform-results/jpeg_resource_budget_cross_platform_contracts.csv
+          diff -u results/jpeg_resource_budget_cross_platform_summary.csv resource-cross-platform-results/jpeg_resource_budget_cross_platform_summary.csv
+          test -s resource-cross-platform-results/jpeg_resource_budget_cross_platform.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7

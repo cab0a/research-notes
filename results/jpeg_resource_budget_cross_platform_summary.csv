@@ -1,0 +1,15 @@
+resource_family,fixture_contracts,platform_observations,accept_observations,quarantine_observations,reject_observations,expectation_rate,stable_contract_rate,maximum_counter_signature_count
+baseline,1,5,5,0,0,1.000000,1.000000,1
+container_framing,1,5,0,0,5,1.000000,1.000000,1
+exif_entries,2,10,5,5,0,1.000000,1.000000,1
+header_segments,2,10,5,5,0,1.000000,1.000000,1
+icc_chunks,2,10,5,5,0,1.000000,1.000000,1
+invalid_metadata_syntax,1,5,0,5,0,1.000000,1.000000,1
+metadata_bytes,2,10,5,5,0,1.000000,1.000000,1
+metadata_segments,2,10,5,5,0,1.000000,1.000000,1
+single_segment_bytes,2,10,5,5,0,1.000000,1.000000,1
+unsafe_xmp_syntax,1,5,0,5,0,1.000000,1.000000,1
+xmp_depth,2,10,5,5,0,1.000000,1.000000,1
+xmp_nodes,2,10,5,5,0,1.000000,1.000000,1
+xmp_packet_bytes,2,10,5,5,0,1.000000,1.000000,1
+xmp_text_bytes,2,10,5,5,0,1.000000,1.000000,1

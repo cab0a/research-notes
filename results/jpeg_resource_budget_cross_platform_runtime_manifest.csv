@@ -1,0 +1,16 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,component,role,implementation,version_or_backend,contract
+macos-arm64-default,Darwin,arm64,3.12.10,macos15,20260727.0256.1,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+macos-arm64-default,Darwin,arm64,3.12.10,macos15,20260727.0256.1,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+macos-arm64-default,Darwin,arm64,3.12.10,macos15,20260727.0256.1,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.7.1,64-byte feed chunks after packet-size admission
+macos-x64-default,Darwin,x86_64,3.12.10,macos15,20260720.0353.1,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+macos-x64-default,Darwin,x86_64,3.12.10,macos15,20260720.0353.1,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+macos-x64-default,Darwin,x86_64,3.12.10,macos15,20260720.0353.1,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.7.1,64-byte feed chunks after packet-size admission
+ubuntu-x64-default,Linux,x86_64,3.12.13,ubuntu24,20260720.247.2,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+ubuntu-x64-default,Linux,x86_64,3.12.13,ubuntu24,20260720.247.2,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+ubuntu-x64-default,Linux,x86_64,3.12.13,ubuntu24,20260720.247.2,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.7.4,64-byte feed chunks after packet-size admission
+ubuntu-x64-scalar,Linux,x86_64,3.12.13,ubuntu24,20260726.254.1,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+ubuntu-x64-scalar,Linux,x86_64,3.12.13,ubuntu24,20260726.254.1,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+ubuntu-x64-scalar,Linux,x86_64,3.12.13,ubuntu24,20260726.254.1,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.7.4,64-byte feed chunks after packet-size admission
+windows-x64-default,Windows,amd64,3.12.10,win25-vs2026,20260714.173.1,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
+windows-x64-default,Windows,amd64,3.12.10,win25-vs2026,20260714.173.1,resource_boundary_auditor,admission_policy,research-notes,0.17.0,bounded marker and metadata work counters
+windows-x64-default,Windows,amd64,3.12.10,win25-vs2026,20260714.173.1,xml_pull_parser,metadata_parser,Python ElementTree,expat_2.7.1,64-byte feed chunks after packet-size admission
