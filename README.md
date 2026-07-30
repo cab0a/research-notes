@@ -196,10 +196,11 @@ preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, experiment outputs, and cross-platform summary logic.
 
-GitHub Actions runs the tests and regenerates the reference evidence on Ubuntu
-with Python 3.12. Separate jobs record JPEG observations on Ubuntu x64 default
-and scalar paths, Windows x64, macOS arm64, and macOS Intel x64 before
-aggregating the combined reports.
+GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
+then runs the tests and regenerates the reference evidence on Ubuntu with
+Python 3.12. Separate jobs record JPEG observations on Ubuntu x64 default and
+scalar paths, Windows x64, macOS arm64, and macOS Intel x64 before aggregating
+the combined reports.
 
 ## Compatibility
 
