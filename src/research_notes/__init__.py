@@ -147,6 +147,27 @@ from research_notes.step_exchange import (
     inspect_step_exchange,
     parse_step_exchange,
 )
+from research_notes.step_part21 import (
+    Part21Anchor,
+    Part21DataSection,
+    Part21Document,
+    Part21Entity,
+    Part21ExternalReference,
+    Part21ParseError,
+    Part21Record,
+    Part21Signature,
+    Part21SourceSpan,
+    Part21Token,
+    Part21Value,
+    lex_part21,
+    parse_part21_document,
+)
+from research_notes.step_source_model import (
+    STEPSourceModelFixture,
+    STEPSourceModelInspection,
+    build_step_source_model_fixtures,
+    inspect_part21_source_model,
+)
 
 __all__ = [
     "apply_psf",
@@ -268,4 +289,21 @@ __all__ = [
     "STEPExchangeReference",
     "STEPExternalReference",
     "STEPSignature",
+    "Part21Anchor",
+    "Part21DataSection",
+    "Part21Document",
+    "Part21Entity",
+    "Part21ExternalReference",
+    "Part21ParseError",
+    "Part21Record",
+    "Part21Signature",
+    "Part21SourceSpan",
+    "Part21Token",
+    "Part21Value",
+    "STEPSourceModelFixture",
+    "STEPSourceModelInspection",
+    "build_step_source_model_fixtures",
+    "inspect_part21_source_model",
+    "lex_part21",
+    "parse_part21_document",
 ]

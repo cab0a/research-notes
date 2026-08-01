@@ -1,0 +1,9 @@
+scope,metric,value
+corpus,fixture_count,10
+corpus,expectation_rate,1.000000
+accepted,exact_source_reconstruction_rate,1.000000
+accepted,token_inventory_rows,1435
+utf8_coordinates,byte_minus_character_count,7
+corpus,decision_accept,5
+corpus,decision_quarantine,2
+corpus,decision_reject,3

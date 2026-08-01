@@ -7,27 +7,16 @@ import re
 from dataclasses import dataclass
 from typing import Literal
 
+from research_notes.step_part21 import (
+    DEFAULT_STEP_PARSE_LIMITS,
+    STEPParseLimits,
+    Part21ParseError as _STEPParseError,
+    Part21Value,
+    parse_part21_document,
+)
+
 
 STEPDecision = Literal["accept", "quarantine", "reject"]
-
-
-@dataclass(frozen=True)
-class STEPParseLimits:
-    """Explicit work limits for one Part 21 document."""
-
-    max_file_bytes: int = 2_000_000
-    max_entities: int = 20_000
-    max_references: int = 100_000
-    max_nesting_depth: int = 32
-    max_token_chars: int = 16_384
-
-    def __post_init__(self) -> None:
-        for field_name, value in vars(self).items():
-            if value <= 0:
-                raise ValueError(f"{field_name} must be positive")
-
-
-DEFAULT_STEP_PARSE_LIMITS = STEPParseLimits()
 
 
 @dataclass(frozen=True)
@@ -195,32 +184,10 @@ class STEPBRepFixture:
     step_bytes: bytes
 
 
-@dataclass(frozen=True)
-class _Token:
-    kind: str
-    value: str
-    position: int
-
-
-class _STEPParseError(ValueError):
-    def __init__(
-        self, decision: STEPDecision, reason_code: str, message: str
-    ) -> None:
-        super().__init__(message)
-        self.decision = decision
-        self.reason_code = reason_code
-
-
 class _STEPTopologyError(ValueError):
     def __init__(self, reason_code: str, message: str) -> None:
         super().__init__(message)
         self.reason_code = reason_code
-
-
-_NUMBER_RE = re.compile(
-    r"[-+]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:[Ee][-+]?\d+)?"
-)
-_IDENTIFIER_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_-]*")
 
 
 def parse_step_part21(
@@ -238,92 +205,79 @@ def parse_step_part21(
         raise TypeError("step_bytes must be bytes")
     if not isinstance(limits, STEPParseLimits):
         raise TypeError("limits must be STEPParseLimits")
-    if len(step_bytes) > limits.max_file_bytes:
+    source = parse_part21_document(step_bytes, limits=limits)
+    if source.anchors or source.external_references or source.signatures:
         raise _STEPParseError(
-            "quarantine", "file_size_limit", "STEP file exceeds byte limit"
+            "quarantine",
+            "advanced_exchange_structure_unsupported",
+            "advanced exchange sections are outside the topology subset",
         )
-    try:
-        text = step_bytes.decode("utf-8")
-    except UnicodeDecodeError as error:
+    if len(source.data_sections) != 1:
         raise _STEPParseError(
-            "reject", "invalid_utf8", "STEP file is not valid UTF-8"
-        ) from error
-
-    tokens = _tokenize(text, limits)
-    stream = _TokenStream(tokens, limits)
-    stream.expect_identifier("ISO-10303-21")
-    stream.expect_symbol(";")
-    stream.expect_identifier("HEADER")
-    stream.expect_symbol(";")
-
-    header_records: list[tuple[str, tuple[object, ...]]] = []
-    while not stream.matches_identifier("ENDSEC"):
-        type_name = stream.pop_identifier()
-        arguments = stream.parse_argument_list(0)
-        stream.expect_symbol(";")
-        header_records.append((type_name, arguments))
-    stream.expect_identifier("ENDSEC")
-    stream.expect_symbol(";")
-    stream.expect_identifier("DATA")
-    if stream.matches_symbol("("):
+            "quarantine",
+            "data_section_count_unsupported",
+            "the topology subset requires exactly one DATA section",
+        )
+    section = source.data_sections[0]
+    if section.name is not None or section.schema_identifier is not None:
         raise _STEPParseError(
             "quarantine",
             "parameterized_data_section_unsupported",
             "parameterized DATA sections are outside the controlled scope",
         )
-    stream.expect_symbol(";")
-
     entities: list[STEPEntity] = []
-    seen_ids: set[int] = set()
-    while not stream.matches_identifier("ENDSEC"):
-        reference = stream.expect_kind("REFERENCE")
-        entity_id = _parse_reference_token(reference)
-        if entity_id in seen_ids:
-            raise _STEPParseError(
-                "reject",
-                "duplicate_entity_id",
-                f"duplicate entity identifier #{entity_id}",
-            )
-        seen_ids.add(entity_id)
-        if len(entities) >= limits.max_entities:
-            raise _STEPParseError(
-                "quarantine",
-                "entity_count_limit",
-                "STEP entity count exceeds limit",
-            )
-        stream.expect_symbol("=")
-        if stream.matches_symbol("("):
+    for entity in section.entities:
+        if entity.is_complex:
             raise _STEPParseError(
                 "quarantine",
                 "complex_entity_unsupported",
                 "complex entity instances are outside the controlled scope",
             )
-        type_name = stream.pop_identifier()
-        arguments = stream.parse_argument_list(0)
-        stream.expect_symbol(";")
-        entities.append(STEPEntity(entity_id, type_name, arguments))
-    stream.expect_identifier("ENDSEC")
-    stream.expect_symbol(";")
-    stream.expect_identifier("END-ISO-10303-21")
-    stream.expect_symbol(";")
-    if not stream.at_end:
-        raise _STEPParseError(
-            "reject", "trailing_tokens", "tokens follow END-ISO-10303-21"
+        record = entity.records[0]
+        entities.append(
+            STEPEntity(
+                entity.entity_id,
+                record.type_name,
+                tuple(_convert_part21_value(value) for value in record.arguments),
+            )
         )
-
     reference_count = sum(
         len(_references_in(entity.arguments)) for entity in entities
     )
-    if reference_count > limits.max_references:
-        raise _STEPParseError(
-            "quarantine",
-            "reference_count_limit",
-            "STEP reference count exceeds limit",
-        )
     return STEPDocument(
-        schema_identifiers=_schema_identifiers(header_records),
+        schema_identifiers=source.schema_identifiers,
         entities=tuple(entities),
         reference_count=reference_count,
+    )
+
+
+def _convert_part21_value(value: Part21Value) -> object:
+    if value.kind == "entity_reference":
+        return STEPReference(int(str(value.value)[1:]))
+    if value.kind == "string":
+        return str(value.value)
+    if value.kind == "binary":
+        return STEPTypedValue("BINARY", (str(value.value),))
+    if value.kind == "enumeration":
+        return STEPEnumeration(str(value.value))
+    if value.kind in {"integer", "real"}:
+        return value.value
+    if value.kind in {"omitted", "derived"}:
+        return STEPAbsentValue(str(value.value))
+    if value.kind == "list":
+        return tuple(_convert_part21_value(child) for child in value.children)
+    if value.kind == "typed":
+        return STEPTypedValue(
+            str(value.value),
+            tuple(_convert_part21_value(child) for child in value.children),
+        )
+    if value.kind == "keyword":
+        return str(value.value)
+    raise _STEPParseError(
+        "quarantine",
+        "parameter_kind_unsupported",
+        f"{value.kind} is outside the topology parameter subset",
+        value.span,
     )
 
 
@@ -480,273 +434,6 @@ def build_step_brep_fixtures() -> tuple[STEPBRepFixture, ...]:
             duplicate,
         ),
     )
-
-
-class _TokenStream:
-    def __init__(self, tokens: list[_Token], limits: STEPParseLimits) -> None:
-        self._tokens = tokens
-        self._index = 0
-        self._limits = limits
-
-    @property
-    def at_end(self) -> bool:
-        return self._index == len(self._tokens)
-
-    def _peek(self) -> _Token:
-        if self.at_end:
-            raise _STEPParseError(
-                "reject", "unexpected_end", "unexpected end of STEP file"
-            )
-        return self._tokens[self._index]
-
-    def pop(self) -> _Token:
-        token = self._peek()
-        self._index += 1
-        return token
-
-    def expect_kind(self, kind: str) -> _Token:
-        token = self.pop()
-        if token.kind != kind:
-            raise _STEPParseError(
-                "reject",
-                "unexpected_token",
-                f"expected {kind} at {token.position}",
-            )
-        return token
-
-    def pop_identifier(self) -> str:
-        return self.expect_kind("IDENTIFIER").value.upper()
-
-    def expect_identifier(self, value: str) -> None:
-        token = self.expect_kind("IDENTIFIER")
-        if token.value.upper() != value.upper():
-            raise _STEPParseError(
-                "reject",
-                "unexpected_token",
-                f"expected {value} at {token.position}",
-            )
-
-    def matches_identifier(self, value: str) -> bool:
-        return (
-            not self.at_end
-            and self._peek().kind == "IDENTIFIER"
-            and self._peek().value.upper() == value.upper()
-        )
-
-    def expect_symbol(self, value: str) -> None:
-        token = self.expect_kind("SYMBOL")
-        if token.value != value:
-            raise _STEPParseError(
-                "reject",
-                "unexpected_token",
-                f"expected {value} at {token.position}",
-            )
-
-    def matches_symbol(self, value: str) -> bool:
-        return (
-            not self.at_end
-            and self._peek().kind == "SYMBOL"
-            and self._peek().value == value
-        )
-
-    def parse_argument_list(self, depth: int) -> tuple[object, ...]:
-        self.expect_symbol("(")
-        if self.matches_symbol(")"):
-            self.expect_symbol(")")
-            return ()
-        values = [self.parse_value(depth + 1)]
-        while self.matches_symbol(","):
-            self.expect_symbol(",")
-            values.append(self.parse_value(depth + 1))
-        self.expect_symbol(")")
-        return tuple(values)
-
-    def parse_value(self, depth: int) -> object:
-        if depth > self._limits.max_nesting_depth:
-            raise _STEPParseError(
-                "quarantine",
-                "nesting_depth_limit",
-                "Part 21 aggregate nesting exceeds limit",
-            )
-        token = self._peek()
-        if token.kind == "REFERENCE":
-            self.pop()
-            return STEPReference(_parse_reference_token(token))
-        if token.kind == "STRING":
-            self.pop()
-            return token.value
-        if token.kind == "BINARY":
-            self.pop()
-            return STEPTypedValue("BINARY", (token.value,))
-        if token.kind == "ENUMERATION":
-            self.pop()
-            return STEPEnumeration(token.value.upper())
-        if token.kind == "NUMBER":
-            self.pop()
-            return _parse_number_token(token)
-        if token.kind == "SYMBOL" and token.value in {"$", "*"}:
-            self.pop()
-            return STEPAbsentValue(token.value)
-        if token.kind == "SYMBOL" and token.value == "(":
-            return self.parse_argument_list(depth)
-        if token.kind == "IDENTIFIER":
-            type_name = self.pop_identifier()
-            if not self.matches_symbol("("):
-                return type_name
-            return STEPTypedValue(
-                type_name, self.parse_argument_list(depth)
-            )
-        raise _STEPParseError(
-            "reject",
-            "unexpected_token",
-            f"unexpected token at {token.position}",
-        )
-
-
-def _tokenize(text: str, limits: STEPParseLimits) -> list[_Token]:
-    tokens: list[_Token] = []
-    index = 0
-    while index < len(text):
-        character = text[index]
-        if character.isspace():
-            index += 1
-            continue
-        if text.startswith("/*", index):
-            end = text.find("*/", index + 2)
-            if end < 0:
-                raise _STEPParseError(
-                    "reject", "unterminated_comment", "unterminated comment"
-                )
-            index = end + 2
-            continue
-        if character == "'":
-            value, index = _read_quoted(text, index, "'", limits)
-            tokens.append(_Token("STRING", value, index))
-            continue
-        if character == '"':
-            value, index = _read_quoted(text, index, '"', limits)
-            tokens.append(_Token("BINARY", value, index))
-            continue
-        if character == "#":
-            end = index + 1
-            while end < len(text) and text[end].isdigit():
-                end += 1
-            if end == index + 1:
-                raise _STEPParseError(
-                    "reject", "invalid_reference", "reference lacks digits"
-                )
-            value = text[index:end]
-            _check_token_length(value, limits)
-            tokens.append(_Token("REFERENCE", value, index))
-            index = end
-            continue
-        if character == ".":
-            end = text.find(".", index + 1)
-            if end > index + 1:
-                value = text[index + 1 : end]
-                if _IDENTIFIER_RE.fullmatch(value):
-                    _check_token_length(value, limits)
-                    tokens.append(_Token("ENUMERATION", value, index))
-                    index = end + 1
-                    continue
-        number = _NUMBER_RE.match(text, index)
-        if number is not None:
-            value = number.group(0)
-            _check_token_length(value, limits)
-            tokens.append(_Token("NUMBER", value, index))
-            index = number.end()
-            continue
-        identifier = _IDENTIFIER_RE.match(text, index)
-        if identifier is not None:
-            value = identifier.group(0)
-            _check_token_length(value, limits)
-            tokens.append(_Token("IDENTIFIER", value, index))
-            index = identifier.end()
-            continue
-        if character in "(),;=$*":
-            tokens.append(_Token("SYMBOL", character, index))
-            index += 1
-            continue
-        raise _STEPParseError(
-            "reject",
-            "illegal_character",
-            f"illegal character at position {index}",
-        )
-    return tokens
-
-
-def _read_quoted(
-    text: str,
-    start: int,
-    quote: str,
-    limits: STEPParseLimits,
-) -> tuple[str, int]:
-    index = start + 1
-    output: list[str] = []
-    while index < len(text):
-        if text[index] == quote:
-            if quote == "'" and index + 1 < len(text) and text[index + 1] == quote:
-                output.append(quote)
-                index += 2
-                continue
-            value = "".join(output)
-            _check_token_length(value, limits)
-            return value, index + 1
-        output.append(text[index])
-        index += 1
-    raise _STEPParseError(
-        "reject", "unterminated_string", "unterminated quoted value"
-    )
-
-
-def _check_token_length(value: str, limits: STEPParseLimits) -> None:
-    if len(value) > limits.max_token_chars:
-        raise _STEPParseError(
-            "quarantine", "token_length_limit", "token exceeds length limit"
-        )
-
-
-def _parse_reference_token(token: _Token) -> int:
-    try:
-        return int(token.value[1:])
-    except ValueError as error:
-        raise _STEPParseError(
-            "quarantine",
-            "reference_conversion_limit",
-            f"reference at {token.position} cannot be represented",
-        ) from error
-
-
-def _parse_number_token(token: _Token) -> int | float:
-    try:
-        if any(character in token.value.upper() for character in ".E"):
-            value: int | float = float(token.value)
-        else:
-            value = int(token.value)
-    except ValueError as error:
-        raise _STEPParseError(
-            "quarantine",
-            "number_conversion_limit",
-            f"number at {token.position} cannot be represented",
-        ) from error
-    if isinstance(value, float) and not math.isfinite(value):
-        raise _STEPParseError(
-            "reject",
-            "nonfinite_number",
-            f"number at {token.position} is not finite",
-        )
-    return value
-
-
-def _schema_identifiers(
-    header_records: list[tuple[str, tuple[object, ...]]],
-) -> tuple[str, ...]:
-    for type_name, arguments in header_records:
-        if type_name == "FILE_SCHEMA" and arguments:
-            first = arguments[0]
-            if isinstance(first, tuple):
-                return tuple(str(value) for value in first)
-    return ()
 
 
 def _references_in(value: object) -> tuple[STEPReference, ...]:

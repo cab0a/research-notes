@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造とB-rep位相を扱う22件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・B-rep位相を扱う23件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -477,6 +477,31 @@ preserves the closed tetrahedron with 74 entities and 97 local references.
 python experiments/run_step_exchange_structure.py
 ```
 
+### v0.23.0 — Unified Part 21 Lexer, Grammar, and Source Model
+
+**Question:** Can one source-preserving Python parser replace the separate
+v0.21 and v0.22 readers while retaining exact source evidence, localized
+diagnostics, and the published topology and exchange observations?
+
+**Representative finding:** All ten synthetic fixtures match their declared
+routes: 5 accept, 2 quarantine, and 3 reject. Every accepted fixture
+reconstructs its exact UTF-8 bytes, producing 1,435 token rows with raw
+spelling and character, byte, line, and column coordinates. The closed
+tetrahedron remains at 74 entities and 97 references and still resolves its
+published topology through the compatibility adapter.
+
+- [Complete note](../notes/unified-part21-lexer-grammar-source-model.md)
+- [Observations](../results/step_part21_source_model_observations.csv)
+- [Token inventory](../results/step_part21_token_inventory.csv)
+- [Summary](../results/step_part21_source_model_summary.csv)
+- [Figure](../results/step_part21_source_model.png)
+- [Sample catalog](step-sample-catalog.md)
+- [Parser-first roadmap](brep-learning-roadmap.md)
+
+```bash
+python experiments/run_step_part21_source_model.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -498,8 +523,8 @@ failure-mode analysis, but it does not establish:
   execution time beyond the declared metadata admission counters;
 - security, memory safety, denial-of-service resistance, or safe handling of
   arbitrary malformed files;
-- STEP conformance, EXPRESS validation, external reference safety, CMS
+- full Part 21 edition coverage, EXPRESS validation, external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 and v0.22.0 subsets.
+  controlled v0.21.0 through v0.23.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

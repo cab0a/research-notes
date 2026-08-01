@@ -1,373 +1,360 @@
-# STEP, B-Rep, and 3D Intelligence Roadmap
+# STEP Mastery, Python Parser, and 3D Tool Roadmap
 
 ## 日本語概要
 
-このロードマップは、STEPの交換構造を読む段階から、EXPRESS・application protocol・幾何・位相・公差・形状修復・モデリング・assembly・相互運用性を順に検証し、最終的に根拠を説明できる3D解析・モデリングツールとAI利用へ進む長期計画です。各releaseでは合成STEP本体、hash付きmanifest、目視用preview、機械可読な観測結果、テスト、限界を残します。v0.22.0は高度なPart 21構造とparser境界を扱い、外部参照取得、署名検証、ZIP展開、EXPRESS適合性を未実装のまま成功扱いしません。幾何kernelは機能だけでなく、native依存、ライセンス、配布義務、再現性を比較してから採用します。詳細は以下の英語本文に示します。
+このロードマップの主軸は、STEPを規格の層ごとに深く理解し、その理解をPythonパーサーとして実装・検証することです。Part 21の物理構文、EXPRESSスキーマ、用途別規格、製品構成、幾何、位相を混同せず、各段階で合成STEP、機械可読な結果、目視用資料、テスト、未解決事項を残します。
+
+<p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
+
+v0.23.0からは、分かれていた実験用読み取り処理を一つのPart 21基盤へ統合します。字句・構文・元の文字位置を保持する段階、EXPRESSによる型検証、AP242などの用途上の意味、B-repの幾何評価を順番に積み上げます。詳細は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
-This roadmap develops evidence-backed competence from STEP exchange syntax to
-EXPRESS and application-protocol semantics, evaluated geometry, B-Rep
-topology, modeling, interoperability, 3D analysis, and carefully bounded AI
-use. Every release preserves synthetic STEP samples, visual previews,
-machine-readable observations, tests, sources, and explicit claim boundaries.
+This roadmap makes STEP specification mastery and a Python parser the primary
+development path. It proceeds from a source-preserving Part 21 parser through
+EXPRESS parsing and schema validation, application-protocol semantics,
+product and representation graphs, B-Rep geometry, analysis, modeling, and
+finally evidence-backed 3D data for AI. Every stage keeps synthetic samples,
+machine-readable observations, tests, visual evidence when meaningful, and
+explicit unanswered questions.
 
-## Long-Term Objective
+## Direction
 
-The target is a small but technically honest 3D analysis and modeling tool,
-not merely a STEP viewer. It should be able to answer three different kinds of
-question without mixing them:
-
-1. What bytes, sections, entities, and references does the exchange structure
-   contain?
-2. What product, representation, geometry, topology, tolerance, attribute, and
-   assembly semantics are justified by the governing schemas?
-3. What geometry has a selected kernel actually evaluated, changed, repaired,
-   tessellated, or exported?
-
-The eventual tool should expose those answers through inspectable records,
-visual evidence, and stable identifiers scoped to one analysis. AI may consume
-the same attributed graph and measurements later, but it must not invent
-missing geometry, silently infer design intent, or erase source provenance.
-
-## Conceptual Layers to Master
+The intended progression is:
 
 ```text
-Container and bytes
-    -> ISO 10303-21 exchange structure
-    -> EXPRESS schema and application protocol
-    -> product and representation graph
-    -> geometry definitions and B-Rep topology
-    -> evaluated kernel shape and tolerances
-    -> tessellation and visual preview
-    -> analysis features and attributed graphs
-    -> modeling operations and topology history
-    -> AI-ready observations with provenance
+Understand STEP from its specifications
+    -> read STEP files correctly in Python
+    -> analyze shape, topology, and product structure
+    -> work with faces, edges, shells, and solids
+    -> develop inspection, visualization, conversion, and modeling tools
+    -> use attributed 3D evidence in carefully bounded AI systems
 ```
 
-Each arrow is a boundary. Passing one layer does not validate the next. A file
-can be syntactically readable while violating its EXPRESS schema. A schema-
-valid model can still be geometrically invalid for a particular kernel. A
-successful tessellation can hide topology or tolerance problems. A plausible
-AI label is not recovered design intent.
+This is not a plan to wrap a geometry kernel and call the result a STEP
+parser. A kernel can eventually evaluate geometry and perform modeling
+operations, but it cannot replace explicit knowledge of the exchange syntax,
+the governing EXPRESS schema, or the provenance of each interpreted fact.
+
+## Layers to Master
+
+### 1. ISO 10303 as a family of standards
+
+Establish the role of the STEP standard family and identify which part
+governs each claim. A file-format observation, a schema rule, and an
+application-protocol interpretation are different kinds of evidence.
+
+### 2. ISO 10303-21 physical-file syntax
+
+Read the clear-text exchange structure as bytes, UTF-8 text, tokens, sections,
+records, parameters, and occurrence references. Preserve source spelling and
+coordinates so a diagnostic can identify the exact line, column, character
+range, and byte range that produced it.
+
+### 3. EXPRESS language and schemas
+
+Parse entity declarations, types, attributes, inheritance, aggregates,
+selects, enumerations, imports, and constraints. EXPRESS determines what the
+ordered parameters in a Part 21 record mean; entity-name recognition alone
+does not.
+
+### 4. Part 21 validation against EXPRESS
+
+Resolve the declared schema and verify entity existence, parameter count,
+types, references, inheritance, and supported constraints. Report lexical,
+syntactic, schema-resolution, and schema-validation status separately.
+
+### 5. Application-protocol semantics
+
+Study controlled AP242 and selected predecessor patterns for products,
+representations, units, placements, assemblies, attributes, and shape
+definitions. Similar entity names across schemas do not establish semantic
+equivalence.
+
+### 6. Geometry and B-Rep topology
+
+Trace definitions for points, curves, surfaces, vertices, edges, loops,
+faces, shells, and solids. Separate a declared supporting surface from a
+trimmed face, and separate topology from kernel-evaluated geometry.
+
+### 7. Analysis, modeling, and AI
+
+Build inspection, visualization, transformation, validation, repair, and
+modeling functions over attributed records with provenance. AI may consume
+those observations later, but it must not invent missing geometry or erase an
+unresolved schema boundary.
 
 ## Release Program
 
-### Phase A — Exchange Structure and STEP Semantics
+### Phase A — Part 21 Parser Foundation
 
 #### v0.21.0 — STEP Part 21 and B-Rep Topology Inspection
 
-Parse a bounded simple-entity subset and resolve selected `EDGE_CURVE`,
-`ORIENTED_EDGE`, `EDGE_LOOP`, face-bound, surface, shell, and solid
-relationships. Establish analysis-local indices, topology inventories, and
-fail-closed reference handling using synthetic closed, open, disconnected,
-surface-catalog, and malformed fixtures.
+The first bounded experiment reads selected simple entity instances and
+resolves controlled face, edge, shell, and solid relationships. It establishes
+synthetic shape generation, topology inventories, and fail-closed reference
+handling, but it is not a general Part 21 parser or a schema validator.
 
 #### v0.22.0 — Advanced Part 21 Exchange Structure and Parser Boundaries
 
-Recognize ordered `HEADER`, `ANCHOR`, `REFERENCE`, repeated and parameterized
-`DATA`, complex entity instances, direct UTF-8 strings, binary tokens, trailing
-`SIGNATURE` sections, and ZIP container signatures. Validate section order,
-global occurrence-name uniqueness, DATA-section names, and schema bindings.
+The second experiment recognizes selected edition-3 sections and constructs:
+multiple DATA sections, complex instances, UTF-8 strings, binary values,
+anchors, external references, signatures, and ZIP container signatures.
+External resources, signatures, and archives cross explicit trust boundaries
+and are not resolved merely because their syntax is recognized.
 
-External resources are recorded but never fetched. Base64 signature payloads
-are inventoried but CMS signatures are not verified. ZIP containers are
-recognized but not opened. EXPRESS conformance, ECMAScript execution, legacy
-control directives, and arbitrary Part 21 compatibility remain outside this
-release.
+#### v0.23.0 — Unified Part 21 Lexer, Grammar, and Source Model
 
-#### v0.23.0 — EXPRESS Models and AP242 Representation Paths
+Replace the separate v0.21 and v0.22 tokenizers and parsers with one shared
+foundation. Preserve every token, comment, whitespace region, raw spelling,
+normalized value, character range, byte range, line, and column. Keep lexical
+analysis, grammar construction, exchange-structure checks, and downstream
+interpretation separate.
 
-Trace the difference between EXPRESS declarations and Part 21 instances.
-Resolve a controlled path from product definition and shape definition through
-shape representation, representation context, units, and geometric items.
-Compare selected AP203, AP214, and AP242-era naming patterns without treating
-entity-name similarity as semantic equivalence.
+Controlled evidence includes normal simple and complex instances, forward
+references, UTF-8 coordinate differences, exact source reconstruction,
+localized syntax failures, resource-limit failures, and the v0.21 closed
+tetrahedron as an integration control.
 
-Key question: how much application meaning can be established from public
-schemas and explicit graph relationships before a geometry kernel is needed?
+Key question: which source details must be retained now so later diagnostics,
+comparison, and writing do not depend on reparsing or guesswork?
 
-#### v0.24.0 — Kernel Selection, Licensing, and Import Contracts
+#### v0.24.0 — Part 21 Grammar Coverage and Conformance Corpus
 
-Record a reproducible decision matrix for candidate geometry backends and
-Python bindings. Compare supported STEP subsets, native packaging, version
-discovery, deterministic installation, headless CI behavior, error reporting,
-license terms, notice requirements, relinking or source obligations, and
-commercial alternatives. Import fixed samples and compare parser facts with
-kernel inventories before adopting a backend.
+Expand and classify edition-1, edition-2, and edition-3 grammar behavior.
+Study implementation-level declarations, legacy string and print control
+directives, user-defined keywords, all occurrence-name forms, anchor items,
+tags, resources, repeated sections, signatures, and archive transport. Compare
+the controlled corpus with independent public parsers where their documented
+scope overlaps.
 
-This is an engineering and distribution decision record, not legal advice.
+Key question: which valid forms remain unsupported, and which commonly
+accepted real-world forms are outside the standard grammar?
 
-### Phase B — Evaluated Geometry and B-Rep Correctness
+### Phase B — EXPRESS and Schema Validation
 
-#### v0.25.0 — Evaluated Face Geometry and Tolerances
+#### v0.25.0 — EXPRESS Lexer and Parser
 
-Measure trimmed-face area, centroid, UV bounds, representative normals, and
-face tolerance. Validate planes, cylinders, cones, spheres, tori, and bounded
-B-spline examples against independently derived synthetic expectations.
-Separate face orientation, surface orientation, and chosen normal convention.
+Build a source-preserving parser for controlled EXPRESS schemas. Cover schema,
+entity, type, subtype, supertype, explicit attribute, derived attribute,
+inverse attribute, select, enumeration, aggregate, function, rule, and import
+syntax incrementally, with unsupported productions reported explicitly.
 
-#### v0.26.0 — Curves, Edge Parameters, P-Curves, and Seams
+#### v0.26.0 — EXPRESS Symbols, Types, and Inheritance
 
-Inspect 3D curves, edge parameter ranges, vertices, curve-on-surface
-representations, seam edges, and periodic surfaces. Test whether 3D edges and
-2D p-curves agree within declared tolerances.
+Construct symbol tables and resolve local names, imported names, type aliases,
+select members, entity inheritance, redeclarations, and aggregate bounds.
+Preserve unresolved and ambiguous symbols instead of silently selecting a
+candidate.
 
-#### v0.27.0 — Wires, Trimming, UV Domains, and Orientation
+#### v0.27.0 — Part 21 Validation Against EXPRESS
+
+Bind each DATA section to a declared schema and validate entity names,
+component records, parameter order, parameter count, data types, optional and
+derived markers, and occurrence references. Publish staged outcomes such as
+`lexically_valid`, `syntactically_valid`, `schema_resolved`, and
+`schema_valid`; application meaning remains a later claim.
+
+Key question: which EXPRESS constraints can be evaluated safely and
+deterministically without building a full execution environment?
+
+### Phase C — Generic STEP Graph and Application Semantics
+
+#### v0.28.0 — Generic STEP Graph and Query API
+
+Expose forward and reverse references, entity-type queries, section and schema
+ownership, reachability, orphan detection, cycles, and bounded traversal.
+Return stable analysis-local identifiers and source spans through Python,
+CSV, and versioned JSON records.
+
+#### v0.29.0 — AP242 Product and Representation Paths
+
+Resolve controlled paths from product definitions and shape definitions to
+representations, contexts, units, placements, and geometric items. Compare
+selected AP203, AP214, and AP242-era patterns only where public schema evidence
+supports the comparison.
+
+#### v0.30.0 — Assembly, Reuse, Placement, and Units
+
+Distinguish a reusable component definition from each placed occurrence.
+Evaluate nested transforms, coordinate systems, and unit conversions on
+synthetic assemblies with independently known expectations.
+
+### Phase D — B-Rep Semantics and Evaluated Geometry
+
+#### v0.31.0 — Geometry Kernel and License Decision
+
+Compare candidate geometry backends and Python bindings for STEP coverage,
+B-Rep access, modeling operations, native packaging, headless CI, diagnostic
+quality, version discovery, license terms, notices, redistribution, and
+commercial alternatives. A permissive wrapper license does not replace the
+license of the native kernel it loads.
+
+This is a reproducible engineering and distribution decision record, not legal
+advice.
+
+#### v0.32.0 — Evaluated Face Geometry and Tolerances
+
+Measure area, centroid, UV bounds, representative normals, face tolerance,
+surface type, and analytic surface parameters against independently derived
+synthetic truth. Keep face orientation, surface orientation, and normal
+conventions explicit.
+
+#### v0.33.0 — Curves, Edge Parameters, P-Curves, and Seams
+
+Inspect vertices, 3D curves, edge ranges, curve-on-surface representations,
+seam edges, and periodic surfaces. Test 3D and 2D agreement inside declared
+tolerances.
+
+#### v0.34.0 — Wires, Trimming, and Face Orientation
 
 Evaluate ordered wires, outer and inner loops, holes, reversed uses, periodic
-wrap-around, and degenerate boundaries. Demonstrate why an unbounded
-supporting surface is not the same object as a trimmed face.
+wrap-around, and degenerate boundaries. Demonstrate why an unbounded support
+surface is not the same object as a trimmed face.
 
-#### v0.28.0 — Shell and Solid Validity
+#### v0.35.0 — Shell and Solid Validity
 
-Measure connected components, edge incidence, orientability, closure,
+Measure edge incidence, connected components, orientability, closure,
 nonmanifold use, Euler characteristics, and signed-volume consistency. Compare
-topological tests with kernel validity reports on controlled counterexamples.
+independent topology checks with kernel validity reports.
 
-#### v0.29.0 — Tolerances, Sewing, and Healing Effects
+#### v0.36.0 — Tolerances, Sewing, and Healing Effects
 
-Generate gaps and mismatches around explicit tolerance boundaries. Separate
-detection from repair, record every changed tolerance and topology count, and
-retain the original input beside the healed output. A repair is an operation,
-not proof that the intended shape was recovered.
+Generate gaps around controlled tolerance boundaries. Record every modified
+tolerance and topology count, retain original and repaired models, and treat
+repair as an operation rather than proof of recovered design intent.
 
-### Phase C — Modeling Operations and Topology History
+### Phase E — Inspection, Visualization, and Modeling
 
-#### v0.30.0 — Primitive Construction and STEP Round Trips
+#### v0.37.0 — Face-Level Analysis Reports
 
-Construct boxes, cylinders, cones, spheres, tori, and controlled B-spline
-patches. Export and re-import them, then compare declared parameters,
-topological counts, mass properties, tolerances, and exchange structure.
+Publish face-local indices, parent solid and shell, surface type, orientation,
+area, centroid, UV bounds, representative normal, analytic parameters, wire
+counts, edge counts, tolerance, adjacent faces, and attributed name or color
+sources.
 
-#### v0.31.0 — Profiles, Extrusion, and Revolution
+#### v0.38.0 — Tessellation and Visual Diagnostic Contracts
 
-Build planar profiles with holes, extrude and revolve them, and connect sketch
-orientation to resulting faces and seams. Preserve construction parameters as
-synthetic ground truth rather than attempting to recover undocumented intent.
+Generate meshes with explicit chordal and angular controls. Relate selected
+triangles back to faces and source entities, and treat previews as inspection
+aids rather than geometric truth.
 
-#### v0.32.0 — Sweeps, Lofts, and Surface Construction
+#### v0.39.0 — Primitive Construction and STEP Round Trips
+
+Construct controlled primitives and B-spline patches, export them, re-import
+them, and compare parameters, topology counts, measurements, tolerances, and
+exchange structure.
+
+#### v0.40.0 — Profiles, Extrusion, and Revolution
+
+Build profiles with holes, extrude and revolve them, and preserve synthetic
+construction parameters as ground truth.
+
+#### v0.41.0 — Sweeps, Lofts, and Surface Construction
 
 Study guide curves, section compatibility, parameterization, continuity, and
-failure conditions for sweeps and lofts. Compare the construction inputs with
-the evaluated B-Rep rather than relying only on a rendered result.
+controlled failure conditions.
 
-#### v0.33.0 — Boolean Operations and Robustness
+#### v0.42.0 — Boolean Operations and Robustness
 
 Exercise union, intersection, and subtraction across disjoint, tangent,
-near-coincident, and tolerance-sensitive cases. Record validity, volume,
-topology counts, diagnostics, and operation time under explicit bounds.
+near-coincident, and tolerance-sensitive cases.
 
-#### v0.34.0 — Fillets, Chamfers, and Topological Naming
+#### v0.43.0 — Fillets, Chamfers, and Topology History
 
-Apply edge-local operations and record generated, modified, deleted, split,
-and merged shapes where the backend exposes history. Demonstrate why positional
-face indices are not persistent design identities across edits.
+Record generated, modified, deleted, split, and merged shapes when the backend
+exposes history. Demonstrate why positional face indices are not persistent
+design identities.
 
-### Phase D — Product Structure, Attributes, and Presentation
+### Phase F — Interoperability and Defensive Processing
 
-#### v0.35.0 — Assemblies, Reuse, Placements, and Units
+#### v0.44.0 — STEP Round-Trip Preservation
 
-Resolve product structure, repeated components, nested transforms, coordinate
-systems, and unit conversion. Distinguish a reused definition from each placed
-occurrence and detect transform or unit ambiguity.
+Compare import-export-import cycles for structure, semantics, geometry,
+topology, attributes, tolerances, and file size. Separate semantic preservation
+from byte identity.
 
-#### v0.36.0 — Names, Colors, Layers, and Provenance
+#### v0.45.0 — Independent Parser and Kernel Portability
 
-Extract names, colors, layers, and selected attributes while recording whether
-each value comes from a Part 21 entity, schema relationship, import-library
-mapping, kernel object, or analysis-derived calculation.
+Run fixed samples through independently selected parsers, importers, or
+kernels. Treat disagreements as explicit interoperability evidence.
 
-#### v0.37.0 — PMI and Semantic Presentation Boundaries
+#### v0.46.0 — Resource-Bounded 3D Intake
 
-Inventory selected dimensions, tolerances, datum relationships, and
-presentation-only annotations. Keep semantic PMI separate from graphical
-presentation and do not claim manufacturing interpretation beyond tested
-constructs.
+Bound file bytes, tokens, entities, references, archive expansion, recursion,
+topology, tessellation output, and operation time. Isolate parsing, external
+resolution, and native-kernel execution.
 
-#### v0.38.0 — Tessellation Contracts and Visual Diagnostics
+### Phase G — 3D Features and AI-Ready Evidence
 
-Generate meshes under explicit chordal, angular, and deflection settings.
-Compare triangulated area, normals, boundaries, and component identities with
-the underlying B-Rep. Treat previews as inspection aids, not geometric truth.
+#### v0.47.0 — Face-Adjacency Graphs and Geometric Descriptors
 
-### Phase E — Interoperability, Scale, and Defensive Processing
+Represent faces as attributed nodes and shared edges as attributed relations,
+with source and calculation provenance for every field.
 
-#### v0.39.0 — STEP Round-Trip Preservation
+#### v0.48.0 — Deterministic Feature Recognition
 
-Compare import-export-import cycles for structure, geometry, topology,
-attributes, tolerances, and file size. Separate semantic preservation from byte
-identity and record every unsupported or rewritten construct.
+Build auditable geometric rules for holes, pockets, slots, bosses, ribs, and
+blends on generated shapes with known construction history.
 
-#### v0.40.0 — Independent Kernel and Converter Portability
+#### v0.49.0 — Synthetic 3D Dataset and Label Contracts
 
-Run fixed samples through independently selected importers or kernels. Compare
-entity inventories, shape counts, measurements, healing effects, and
-tessellations. Backend disagreements become explicit portability evidence.
+Generate controlled model families, negative examples, grouped splits, and
+leakage checks. Preserve STEP, graph, B-Rep, preview, and label provenance.
 
-#### v0.41.0 — Resource-Bounded 3D Intake
+#### v0.50.0 — Learned Baselines and Explainable 3D Assistance
 
-Add limits for file bytes, tokens, entities, references, archive members,
-decompressed bytes, recursion, topology counts, tessellation output, and
-operation time. Isolate parsing from external reference resolution and kernel
-execution. This is defensive processing evidence, not a memory-safety proof.
-
-### Phase F — Feature Understanding and AI-Ready Representations
-
-#### v0.42.0 — Face-Adjacency Graphs and Geometric Descriptors
-
-Represent faces as attributed nodes and shared edges as attributed relations.
-Include surface family, area, orientation, curvature summaries, boundary
-counts, tolerances, and provenance. Define canonicalization and invariance
-tests before using the graph for learning.
-
-#### v0.43.0 — Deterministic Feature Recognition
-
-Build auditable rules for through holes, blind holes, pockets, slots, bosses,
-ribs, and blends on generated shapes. Measure precision and recall against
-known construction history while treating outputs as geometric
-interpretations, not recovered design intent.
-
-#### v0.44.0 — Synthetic 3D Dataset and Label Contracts
-
-Generate parameterized model families with construction-history labels,
-controlled variations, negative examples, train-validation-test grouping, and
-leakage checks. Preserve STEP, B-Rep observations, previews, and label
-provenance for every sample.
-
-#### v0.45.0 — Learned Feature and Anomaly Baselines
-
-Compare simple graph, tabular, and geometric baselines against deterministic
-rules. Evaluate robustness to tessellation density, face ordering, kernel
-version, unit scale, and export history. Report calibration and abstention, not
-only aggregate accuracy.
-
-#### v0.46.0 — Explainable 3D Queries and AI Assistance
-
-Translate user questions into bounded graph and geometry queries, attach each
-answer to source entities and computed evidence, and require abstention when a
-claim depends on missing schema semantics or unsupported geometry. Generated
-text remains a presentation layer over verified observations.
-
-### Phase G — Integrated Analysis and Modeling Tool
-
-#### v0.47.0 — Stable CLI and Machine-Readable Reports
-
-Unify inspection, validation, preview, comparison, and export behind a small
-CLI with documented exit codes and versioned JSON/CSV schemas.
-
-#### v0.48.0 — Interactive Face and Assembly Explorer
-
-Link a 3D selection to face, edge, shell, solid, assembly, source-entity,
-tolerance, and provenance records. Keep the core analysis usable headlessly so
-the viewer does not become the only source of truth.
-
-#### v0.49.0 — Scriptable Modeling Prototype
-
-Expose a bounded modeling API for primitives, profiles, transformations,
-Boolean operations, and local edits. Every operation records inputs, outputs,
-history, validity, and export evidence.
-
-#### v0.50.0 — End-to-End 3D Analysis Contract
-
-Combine bounded intake, STEP semantics, kernel evaluation, topology analysis,
-visual diagnostics, rule-based features, optional learned assistance, and
-modeling operations. Define the supported subset precisely enough that a later
-v1.0 can be a compatibility promise rather than a marketing label.
+Compare simple graph, tabular, and geometric baselines with deterministic
+rules. Require calibration, robustness checks, evidence links, and abstention
+when schema or geometry support is incomplete.
 
 ## Sample and Visual Evidence Contract
 
-Every STEP and B-Rep release must preserve, when applicable:
+Every release preserves, when applicable:
 
-- generated `.step`, archive, or derivative input files;
-- a manifest containing the generator condition, byte length, SHA-256 digest,
-  expected decision, and expected structural or geometric relations;
-- one or more previews that make the controlled shape or failure condition
-  visually inspectable;
-- CSV observations produced from the same committed samples;
-- an exact regeneration command and CI comparison;
-- both valid controls and isolated negative or boundary cases;
-- a note explaining which preview elements come from declared construction
-  coordinates, parsed topology, evaluated kernel geometry, or tessellation.
+- generated `.step`, archive, schema, or derivative inputs;
+- a manifest with condition, limits, byte length, SHA-256 digest, and expected
+  relationships;
+- positive, negative, and boundary examples;
+- CSV observations from the committed inputs;
+- a preview for meaningful geometry or a source/relationship diagram for
+  syntax-only samples;
+- exact regeneration commands and CI comparisons;
+- a note identifying whether evidence comes from source text, schema
+  interpretation, declared geometry, kernel evaluation, or tessellation.
 
-Previews are not substitutes for topology, tolerance, or geometry tests. For a
-syntax-only fixture with no meaningful shape, the release should provide a
-section or relationship diagram instead of fabricating geometry.
+## Questions Carried Forward
 
-## Evidence Required at Every Stage
+- How much of the Part 21 edition history should one parser normalize, and
+  which distinctions must remain visible to callers?
+- Should a writer preserve exact syntax by default, produce a canonical form,
+  or expose both modes as separate contracts?
+- Which public EXPRESS schemas may be redistributed as fixtures, and which
+  should be downloaded only by an explicit user action?
+- Which EXPRESS rules require executable semantics rather than static type
+  checking?
+- Which kernel offers sufficient geometry and topology access under acceptable
+  packaging and license conditions?
+- Which identifiers remain stable after healing, modeling, and round trips?
+- Where must an AI-assisted tool abstain because syntax, schema, geometry, or
+  provenance is incomplete?
 
-Each release follows the repository workflow:
-
-```text
-Research Question
-    -> Source Review
-    -> Method Selection
-    -> Controlled Experiment
-    -> Evaluation
-    -> Interpretation
-    -> Limitations
-    -> Documentation
-```
-
-Acceptance requires source links, deterministic samples, machine-readable
-results, relative or invariant tests, visual evidence where meaningful, and a
-clear separation between observed results and general claims.
-
-## Kernel and License Checkpoint
-
-The v0.21.0 and v0.22.0 parsers deliberately have no geometry-kernel runtime.
-This keeps exchange-structure evidence independent of native CAD behavior and
-postpones distribution commitments until they can be examined directly.
-
-The current OCCT licensing page states that OCCT 6.7.0 and later use LGPL 2.1
-with an additional exception. A permissively licensed Python wrapper does not
-replace the terms of the native kernel it loads or distributes. Other
-candidate libraries can have commercial, copyleft, component-specific, or
-non-B-Rep limitations.
-
-Before a geometry backend enters the runtime dependency set, v0.24.0 will
-record:
-
-- exact kernel, wrapper, and native-binary versions;
-- direct and transitive licenses and required notices;
-- how binaries are linked, bundled, downloaded, or supplied by the user;
-- redistribution, source, relinking, or commercial-license considerations;
-- supported platforms and headless CI installation;
-- import, evaluation, healing, modeling, history, and export capabilities;
-- an independent parser fallback for the controlled Part 21 subset.
-
-## Open Questions
-
-- Which public EXPRESS schemas can be redistributed and tested without
-  introducing unclear terms or unverifiable copies?
-- Which kernel provides sufficient STEP, B-Rep, history, and healing access
-  under acceptable distribution conditions?
-- Which face and edge facts remain stable across kernel builds, tolerances,
-  and round trips?
-- How should topology identities be represented when operations split, merge,
-  generate, or delete shapes?
-- Which preview method exposes errors without letting tessellation hide them?
-- How can synthetic construction history provide labels without making learned
-  results depend on generator shortcuts?
-- Where must an AI-assisted tool abstain because the exchange structure,
-  schema, geometry, or provenance is incomplete?
-
-These are research questions, not gaps to conceal. Each later release should
-answer a bounded subset and add new questions when the evidence warrants them.
+These questions are part of the research record. A release should answer a
+bounded subset and state new uncertainty instead of hiding it.
 
 ## Sources
 
 - [ISO 10303-21:2016 overview](https://www.iso.org/standard/63141.html)
-- [Public final draft of ISO 10303-21 edition 3](https://www.steptools.com/stds/step/IS_final_p21e3.html)
+- [Public final edition-3 draft of ISO 10303-21](https://www.steptools.com/stds/step/IS_final_p21e3.html)
 - [ISO 10303-11:2004 overview](https://www.iso.org/standard/38047.html)
 - [ISO 10303-42:2021 overview](https://www.iso.org/standard/79892.html)
-- [ISO 10303-242:2025 overview](https://www.iso.org/standard/84300.html)
+- [ISO 10303-242 overview](https://www.iso.org/standard/84300.html)
+- [STEPcode documentation](https://stepcode.github.io/docs/home/)
+- [STEPcode Part 21 editor source](https://github.com/stepcode/stepcode/tree/develop/src/cleditor)
+- [IfcOpenShell pure-Python physical-file parser](https://github.com/IfcOpenShell/step-file-parser)
 - [Library of Congress STEP-file description](https://www.loc.gov/preservation/digital/formats/fdd/fdd000448.shtml)
 - [NIST STEP File Analyzer and Viewer](https://www.nist.gov/services-resources/software/step-file-analyzer-and-viewer)
 - [OCCT STEP translator documentation](https://dev.opencascade.org/doc/overview/html/occt_user_guides__step.html)
-- [OCCT Shape Healing documentation](https://dev.opencascade.org/doc/overview/html/occt_user_guides__shape_healing.html)
 - [OCCT licensing](https://dev.opencascade.org/resources/licensing)
-- [OCCT licensing FAQ](https://dev.opencascade.org/resources/faq)
-- [CadQuery OCP wrapper repository](https://github.com/CadQuery/OCP)

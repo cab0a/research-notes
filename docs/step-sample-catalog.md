@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-rep調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0の位相サンプルとv0.22.0の高度な交換構造サンプルを収録し、v0.22.0では閉じた四面体STEPをgeometry controlとして保存しています。previewは形状や関係を確認する補助であり、schema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-rep調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0の位相、v0.22.0の高度な交換構造、v0.23.0の統合source model用サンプルを収録します。閉じた四面体は形状を目視できる共通integration controlとして保存し、構文だけを扱うサンプルにはsource model図を用います。previewはschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -85,6 +85,41 @@ Most v0.22.0 samples intentionally use a minimal synthetic schema vocabulary
 and do not define a meaningful CAD shape. The structure diagram is therefore
 more honest than fabricating a 3D preview for them.
 
+## v0.23.0 — Unified Source Model Samples
+
+Directory: [`fixtures/step-part21-source-model/`](../fixtures/step-part21-source-model/)
+
+Manifest: [`manifest.csv`](../fixtures/step-part21-source-model/manifest.csv)
+
+The [`geometry_control.step`](../fixtures/step-part21-source-model/geometry_control.step)
+sample is byte-identical to the v0.21 closed tetrahedron. Reusing the exact
+shape makes the parser refactor measurable: the unified source model retains
+74 entities and 97 references, and the compatibility adapter still produces
+the same face, edge, shell, and solid observations.
+
+![Closed tetrahedron integration control](../results/step_part21_geometry_control.png)
+
+The syntax-focused samples isolate source retention and diagnostics:
+
+| Sample | Purpose | Expected route |
+| --- | --- | --- |
+| [`trivia_preservation.step`](../fixtures/step-part21-source-model/trivia_preservation.step) | Preserve whitespace, comments, aggregates, and an escaped apostrophe | accept |
+| [`utf8_coordinates.step`](../fixtures/step-part21-source-model/utf8_coordinates.step) | Separate character positions from UTF-8 byte positions | accept |
+| [`simple_and_complex.step`](../fixtures/step-part21-source-model/simple_and_complex.step) | Parse simple and subsuper records with one grammar | accept |
+| [`forward_reference.step`](../fixtures/step-part21-source-model/forward_reference.step) | Retain a reference whose target is defined later | accept |
+| [`missing_semicolon.step`](../fixtures/step-part21-source-model/missing_semicolon.step) | Localize a missing entity terminator | reject |
+| [`unterminated_comment.step`](../fixtures/step-part21-source-model/unterminated_comment.step) | Localize an open comment at end of input | reject |
+| [`nesting_limit.step`](../fixtures/step-part21-source-model/nesting_limit.step) | Stop beyond an explicit aggregate-depth budget | quarantine |
+| [`token_length_limit.step`](../fixtures/step-part21-source-model/token_length_limit.step) | Stop beyond an explicit token-character budget | quarantine |
+| [`invalid_utf8.step`](../fixtures/step-part21-source-model/invalid_utf8.step) | Reject invalid UTF-8 before grammar construction | reject |
+
+![Unified Part 21 source-model evidence](../results/step_part21_source_model.png)
+
+Most samples have no meaningful shape. Their diagram shows syntax decisions
+and retained token classes rather than fabricating a geometry preview. The
+invalid UTF-8 sample is intentionally not a valid text document and should be
+inspected as bytes or through its manifest and observation row.
+
 ## Regeneration
 
 ```bash
@@ -94,6 +129,10 @@ python experiments/run_step_brep_topology.py \
 
 python experiments/run_step_exchange_structure.py \
   --fixture-dir fixtures/step-part21-exchange \
+  --refresh-fixtures
+
+python experiments/run_step_part21_source_model.py \
+  --fixture-dir fixtures/step-part21-source-model \
   --refresh-fixtures
 ```
 

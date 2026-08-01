@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、22件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPの交換構造・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
+このディレクトリには、23件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -556,6 +556,29 @@ invalid structures are rejected. These results do not establish EXPRESS or
 AP242 conformance, external resource safety, CMS validity, archive safety, or
 evaluated geometry.
 
+## v0.23.0
+
+- `step_part21_source_model_observations.csv` records the expected and observed
+  route, syntax status, exact-source status, source size, token composition,
+  structure counts, diagnostics, schema status, and SHA-256 digest for ten
+  fixtures.
+- `step_part21_token_inventory.csv` contains 1,435 token rows for the five
+  accepted fixtures, including exact raw spelling, normalized value, character
+  offsets, UTF-8 byte offsets, and one-based line and column coordinates.
+- `step_part21_source_model_summary.csv` records the 5 accept, 2 quarantine,
+  and 3 reject outcomes, exact reconstruction rate, token inventory size, and
+  the UTF-8 byte-versus-character difference.
+- `step_part21_source_model.png` visualizes syntax decisions separately from
+  resource-limit quarantine and shows retained grammar and trivia tokens.
+
+All ten fixtures match their declared outcomes. The five accepted sources
+reconstruct their original UTF-8 bytes exactly. The closed tetrahedron remains
+an integration control with 74 entities and 97 occurrence references. Missing
+syntax and invalid UTF-8 are rejected, while explicit nesting and token-length
+budgets produce quarantine. EXPRESS schema conformance remains
+`not_evaluated`; exact source retention is not proof of full Part 21 edition
+coverage, application semantics, or geometric validity.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -581,6 +604,7 @@ python experiments/run_transform_integrity.py
 python experiments/run_policy_composition.py
 python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
+python experiments/run_step_part21_source_model.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

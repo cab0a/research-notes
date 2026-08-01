@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、22件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相・高度な交換構造を含む検証、互換性境界をまとめています。
+本書は、23件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相・高度な交換構造・統合source modelを含む検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -74,6 +74,7 @@ python experiments/run_transform_integrity.py
 python experiments/run_policy_composition.py
 python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
+python experiments/run_step_part21_source_model.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -119,6 +120,11 @@ python experiments/run_step_exchange_structure.py \
   --fixture-dir output/fixtures/step-part21-exchange \
   --output-dir output/step-part21-exchange \
   --refresh-fixtures
+
+python experiments/run_step_part21_source_model.py \
+  --fixture-dir output/fixtures/step-part21-source-model \
+  --output-dir output/step-part21-source-model \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -148,6 +154,11 @@ python experiments/run_step_exchange_structure.py \
   signatures, invalid structures, nesting, and ZIP container recognition.
 - The geometry-bearing Part 21 control is committed with a preview generated
   from its declared synthetic tetrahedron coordinates.
+- The unified Part 21 corpus preserves raw token spellings, comments,
+  whitespace, character and UTF-8 byte positions, localized failures, and
+  explicit nesting and token-length limits.
+- The v0.23 geometry control is byte-identical to the v0.21 closed tetrahedron,
+  so one shape tests the shared parser and the existing topology adapter.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -189,7 +200,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 109 tests cover:
+The 117 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -213,6 +224,9 @@ The 109 tests cover:
 - advanced exchange section order, repeated DATA bindings, complex entities,
   direct UTF-8 and binary values, anchors, inert external references,
   unverified signatures, ZIP recognition, and parser limits
+- exact Part 21 source reconstruction, trivia retention, character and UTF-8
+  byte spans, simple and subsuper records, forward references, localized
+  syntax diagnostics, and source-model resource limits
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -232,6 +246,7 @@ The 109 tests cover:
 |   |-- color-metadata-contracts/
 |   |-- jpeg-decoder-contracts/
 |   |-- malformed-jpeg-metadata/
+|   |-- step-part21-source-model/
 |   |-- step-part21-exchange/
 |   `-- step-brep-topology/
 |-- notes/
@@ -254,6 +269,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 and v0.22.0. They do not imply ISO 10303-21, EXPRESS, or AP242
+v0.21.0 through v0.23.0. They do not imply complete ISO 10303-21, EXPRESS, or AP242
 conformance and do not authorize external resource retrieval, signature trust,
 archive extraction, or evaluated geometry claims.

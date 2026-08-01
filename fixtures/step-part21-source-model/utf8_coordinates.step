@@ -1,0 +1,11 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Controlled source-model fixture'),'4;1');
+FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('DEMO_SCHEMA'));
+ENDSEC;
+DATA;
+#1=LABEL('café 測定面');
+#2=USE(#1);
+ENDSEC;
+END-ISO-10303-21;
