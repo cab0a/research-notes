@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、Exif thumbnail、Extended XMP、IPTC IIM、maker noteを含む15個の合成fixtureを使い、metadata familyの認識とnested relationshipの解決を評価しています。8 fixtureをaccept、7 fixtureをquarantineとし、acceptされたfixtureの9関係をすべて解決する一方、maker noteはopaque payloadとして扱います。
+研究テーマは、ぼけ評価、前処理や圧縮による評価値の変化、JPEGの復号・metadata・環境間互換性です。image core、正規化metadata、decoded pixelsの3つのSHA-256 bindingを持つunsigned assertionを11個の合成transform fixtureで評価しています。metadata並べ替えは全bindingを維持し、sanitization、再encode、pixel変更は異なるscopeを失効させます。digest一致を真正性や署名済みprovenanceとして扱わない境界も明記しています。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -26,7 +26,8 @@ preprocessing, optical and photometric effects, JPEG compression history,
 decoder portability, metadata interpretation, malformed-metadata recovery,
 metadata round-trip policies, multi-generation policy drift, field-level
 selective retention, and resource-bounded admission before evaluating extended
-metadata-family and nested-payload coverage. The current release is v0.18.0.
+metadata-family coverage before separating digest-bound transform integrity
+from authenticated provenance. The current release is v0.19.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -38,33 +39,35 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.18.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, and nested-relationship behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.19.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, and transform-integrity behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 18 releases to their questions,
+The [study index](docs/studies.md) maps all 19 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.18.0 study follows selected metadata relationships only after the
-v0.17.0 resource gate accepts the input. Fifteen fixtures exercise complete,
-reordered, missing, duplicate, orphaned, truncated, and out-of-bounds forms.
+The v0.19.0 study binds three explicitly different content scopes: JPEG image
+core, normalized controlled metadata, and raw decoded pixels. Eleven fixtures
+exercise inherited, renewed, missing, malformed, duplicate, and tampered
+assertions across controlled transforms.
 
-| Controlled class | Fixtures | Decision | Relationship evidence |
-| --- | ---: | --- | --- |
-| Complete or metadata-free | 8 | 8 `accept` | 9 of 9 declared links resolved |
-| Missing or out-of-bounds | 4 | 4 `quarantine` | first known incomplete link reported |
-| Duplicate, orphan, or mismatched | 3 | 3 `quarantine` | ambiguity reported without interpretation |
+| Controlled transform | Assertion treatment | Observed binding result |
+| --- | --- | --- |
+| Metadata reordering | inherited | all three scopes match |
+| Metadata sanitization | inherited | normalized metadata mismatches |
+| Metadata sanitization | renewed | all current scopes match; parent declared |
+| Re-encode or pixel edit | inherited | image core and decoded pixels mismatch |
+| Re-encode | renewed | all current scopes match; parent declared |
 
-![Controlled metadata-family coverage](results/jpeg_metadata_coverage.png)
+![Controlled transform integrity](results/jpeg_transform_integrity.png)
 
-Forward and reverse Extended XMP chunk layouts reconstruct the same 270-byte
-packet. The mixed fixture resolves EXIF sub-IFD, EXIF thumbnail, Extended XMP,
-and IPTC IIM relationships. Maker-note presence is recorded as one opaque
-component rather than interpreted as trusted fields.
+The experiment produces two `valid_binding`, two `valid_derived_binding`, four
+`stale_binding`, and one each of missing, malformed, and multiple assertion
+states. All fixtures match their declared outcome and mismatch scopes.
 
-`accept` means only that the controlled resource and relationship checks pass.
-It does not establish complete metadata support, authenticity, privacy, safe
-decoding, or maker-note semantics.
+A matching assertion is an unsigned digest agreement. It does not identify an
+actor, validate the declared parent, establish a signing time or trust chain,
+or implement C2PA or Content Credentials.
 
 ## Claim Boundaries
 
@@ -84,6 +87,8 @@ decoding, or maker-note semantics.
 - The metadata-coverage parser recognizes only the synthetic EXIF, XMP, IPTC
   IIM, Photoshop IRB, and maker-note structures used by v0.18.0. It is not a
   complete metadata implementation.
+- The transform-integrity record is a project-specific unsigned digest
+  assertion. Matching bindings are not authenticated provenance.
 - The observed generation-3 pixel fixed point applies only to one small
   synthetic image, quality 75, 4:4:4 sampling, and the pinned builds. It is not
   a convergence guarantee or losslessness claim.
@@ -129,7 +134,7 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Eighteen published studies with explicit questions, controls, results, and
+- Nineteen published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -191,7 +196,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 76 tests covering blur metrics and models,
+The repository contains 83 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, experiment outputs, and cross-platform summary logic.
@@ -211,10 +216,10 @@ manifests.
 
 ## Roadmap
 
-- v0.19.0 candidate: evaluate digest-bound provenance assertions and transform
-  integrity without treating an unsigned hash record as authenticated origin.
 - v0.20.0 candidate: compose resource, coverage, integrity, and retention
   policy stages into deterministic, explainable routing decisions.
+- v0.21.0 candidate: evaluate an end-to-end bounded intake pipeline with
+  stage-specific failure attribution and artifact contracts.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and

@@ -468,6 +468,26 @@ orphaned, mismatched, truncated, and out-of-bounds controls fail closed. The
 20-byte maker-note control remains opaque and is not interpreted as verified
 metadata.
 
+## v0.19.0
+
+- `jpeg_transform_integrity_runtime_manifest.csv` records the local digest
+  model, SHA-256 implementation, fixture encoder, and runtime profile.
+- `jpeg_transform_integrity_observations.csv` contains 11 controlled transform
+  observations with assertion status, reason, parent declaration, matching and
+  mismatching scopes, assertion digest, and fixture hash.
+- `jpeg_transform_integrity_summary.csv` aggregates statuses and mismatches
+  across nine transform families.
+- `jpeg_transform_integrity.png` visualizes assertion states and scope-specific
+  mismatches.
+
+The experiment produces two `valid_binding`, two `valid_derived_binding`, four
+`stale_binding`, and one each of missing, malformed, and multiple assertion
+states. Metadata reordering preserves all three declared scopes. Sanitization
+invalidates only normalized metadata, while re-encoding and pixel editing
+invalidate image-core and decoded-pixel bindings. Renewed records match their
+current output and declare a parent digest, but remain unsigned and do not
+authenticate provenance.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -489,6 +509,7 @@ python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
 python experiments/run_resource_bounded_metadata.py
 python experiments/run_metadata_family_coverage.py
+python experiments/run_transform_integrity.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

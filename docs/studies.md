@@ -381,6 +381,29 @@ explicitly opaque.
 python experiments/run_metadata_family_coverage.py
 ```
 
+### v0.19.0 — Provenance Assertions and Transform Integrity
+
+**Question:** Can explicit digest scopes distinguish metadata-only,
+compressed-image, and decoded-pixel changes, and what evidence is still
+missing before a matching record can be called authenticated provenance?
+
+**Representative finding:** Eleven fixtures produce two `valid_binding`, two
+`valid_derived_binding`, four `stale_binding`, and one each of missing,
+malformed, and multiple assertion states. Metadata reordering preserves all
+three scopes; sanitization invalidates only normalized metadata; re-encoding
+and pixel editing invalidate image-core and decoded-pixel scopes. Renewed
+unsigned assertions match current outputs but do not authenticate an actor or
+validate the declared parent.
+
+- [Complete note](../notes/provenance-assertions-transform-integrity.md)
+- [Observations](../results/jpeg_transform_integrity_observations.csv)
+- [Summary](../results/jpeg_transform_integrity_summary.csv)
+- [Figure](../results/jpeg_transform_integrity.png)
+
+```bash
+python experiments/run_transform_integrity.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
