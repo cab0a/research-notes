@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、21件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPの面・辺・シェル・立体の位相結果を研究版ごとに対応付けています。
+このディレクトリには、22件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPの交換構造・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -532,6 +532,30 @@ faces, 6 edges, 1 shell, 1 solid, and no free edges; removing one face exposes
 not establish general STEP conformance, evaluated geometric validity, or safe
 handling of arbitrary files.
 
+## v0.22.0
+
+- `step_part21_exchange_observations.csv` records expected and observed
+  decisions, section and entity counts, trust-boundary states, source sizes,
+  and SHA-256 digests for 13 advanced exchange-structure fixtures.
+- `step_part21_data_sections.csv` records DATA-section names, governing schema
+  identifiers, and simple and complex entity counts for every parseable input.
+- `step_part21_exchange_summary.csv` records the 5 accept, 4 quarantine, and 4
+  reject outcomes plus representative feature routes.
+- `step_part21_exchange_boundaries.png` visualizes structural recognition
+  separately from external resolution, signature verification, archive work,
+  and invalid structure.
+- `step_part21_geometry_control.png` renders the synthetic coordinates of the
+  committed closed tetrahedron geometry control.
+
+All 13 fixtures match their declared outcomes. Accepted controls cover one and
+multiple DATA sections, a three-component complex entity, direct UTF-8 and
+binary tokens, and a tagged anchor. External references and signatures remain
+quarantined with resolution and verification explicitly `not_attempted`.
+Excessive nesting and ZIP input are also quarantined; four contradictory or
+invalid structures are rejected. These results do not establish EXPRESS or
+AP242 conformance, external resource safety, CMS validity, archive safety, or
+evaluated geometry.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -556,6 +580,7 @@ python experiments/run_metadata_family_coverage.py
 python experiments/run_transform_integrity.py
 python experiments/run_policy_composition.py
 python experiments/run_step_brep_topology.py
+python experiments/run_step_exchange_structure.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

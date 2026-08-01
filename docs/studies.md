@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21とB-rep位相を扱う21件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造とB-rep位相を扱う22件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -451,6 +451,32 @@ quarantined and a duplicate entity identifier is rejected.
 python experiments/run_step_brep_topology.py
 ```
 
+### v0.22.0 — Advanced Part 21 Exchange Structure and Parser Boundaries
+
+**Question:** Which advanced Part 21 structures can a bounded parser recognize
+without confusing syntax with schema validation, resource resolution,
+signature verification, archive safety, or evaluated geometry?
+
+**Representative finding:** All 13 synthetic fixtures match their declared
+routes: 5 accept, 4 quarantine, and 4 reject. Supported controls cover repeated
+named DATA sections, a complex entity, direct UTF-8, a binary token, and a
+tagged anchor. External references, an unverified signature, excessive
+nesting, and a ZIP container remain quarantined. The geometry-bearing control
+preserves the closed tetrahedron with 74 entities and 97 local references.
+
+- [Complete note](../notes/advanced-part21-exchange-parser-boundaries.md)
+- [Observations](../results/step_part21_exchange_observations.csv)
+- [DATA-section inventory](../results/step_part21_data_sections.csv)
+- [Summary](../results/step_part21_exchange_summary.csv)
+- [Boundary figure](../results/step_part21_exchange_boundaries.png)
+- [Geometry control preview](../results/step_part21_geometry_control.png)
+- [Sample catalog](step-sample-catalog.md)
+- [Long-term roadmap](brep-learning-roadmap.md)
+
+```bash
+python experiments/run_step_exchange_structure.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -472,7 +498,8 @@ failure-mode analysis, but it does not establish:
   execution time beyond the declared metadata admission counters;
 - security, memory safety, denial-of-service resistance, or safe handling of
   arbitrary malformed files;
-- STEP conformance, EXPRESS validation, or exact geometry evaluation beyond
-  the controlled v0.21.0 subset.
+- STEP conformance, EXPRESS validation, external reference safety, CMS
+  verification, archive safety, or exact geometry evaluation beyond the
+  controlled v0.21.0 and v0.22.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

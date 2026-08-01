@@ -1,0 +1,9 @@
+fixture,section_index,section_name,schema_identifier,entity_count,simple_entity_count,complex_entity_count
+single_data_control,0,,,74,74,0
+multiple_data_sections,0,GEOMETRY,DEMO_SCHEMA,1,1,0
+multiple_data_sections,1,ATTRIBUTES,DEMO_SCHEMA,1,1,0
+complex_entity_instance,0,,,1,0,1
+utf8_binary_values,0,,,1,1,0
+anchor_with_tag,0,,,1,1,0
+external_reference,0,,,1,1,0
+signature_present,0,,,1,1,0

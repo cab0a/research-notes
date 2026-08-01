@@ -131,6 +131,22 @@ from research_notes.step_brep import (
     inspect_step_brep,
     parse_step_part21,
 )
+from research_notes.step_exchange import (
+    STEPAnchor,
+    STEPDataSection,
+    STEPExchangeDecision,
+    STEPExchangeDocument,
+    STEPExchangeEntity,
+    STEPExchangeFixture,
+    STEPExchangeInspection,
+    STEPExchangeRecord,
+    STEPExchangeReference,
+    STEPExternalReference,
+    STEPSignature,
+    build_step_exchange_fixtures,
+    inspect_step_exchange,
+    parse_step_exchange,
+)
 
 __all__ = [
     "apply_psf",
@@ -238,4 +254,18 @@ __all__ = [
     "STEPReference",
     "STEPShellObservation",
     "STEPSolidObservation",
+    "build_step_exchange_fixtures",
+    "inspect_step_exchange",
+    "parse_step_exchange",
+    "STEPAnchor",
+    "STEPDataSection",
+    "STEPExchangeDecision",
+    "STEPExchangeDocument",
+    "STEPExchangeEntity",
+    "STEPExchangeFixture",
+    "STEPExchangeInspection",
+    "STEPExchangeRecord",
+    "STEPExchangeReference",
+    "STEPExternalReference",
+    "STEPSignature",
 ]
