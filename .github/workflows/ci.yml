@@ -55,6 +55,7 @@ jobs:
           python experiments/run_metadata_generation_drift.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_field_level_metadata_provenance.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_resource_bounded_metadata.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_metadata_family_coverage.py --output-dir regenerated-results --platform-label linux-x64-reference
 
       - name: Verify reference data and chart generation
         run: |
@@ -125,6 +126,8 @@ jobs:
           diff -u results/jpeg_selective_retention_summary.csv regenerated-results/jpeg_selective_retention_summary.csv
           diff -u results/jpeg_resource_budget_observations.csv regenerated-results/jpeg_resource_budget_observations.csv
           diff -u results/jpeg_resource_budget_summary.csv regenerated-results/jpeg_resource_budget_summary.csv
+          diff -u results/jpeg_metadata_coverage_observations.csv regenerated-results/jpeg_metadata_coverage_observations.csv
+          diff -u results/jpeg_metadata_coverage_summary.csv regenerated-results/jpeg_metadata_coverage_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -153,6 +156,7 @@ jobs:
           test -s regenerated-results/jpeg_metadata_generation_drift.png
           test -s regenerated-results/jpeg_selective_retention.png
           test -s regenerated-results/jpeg_resource_budget_boundaries.png
+          test -s regenerated-results/jpeg_metadata_coverage.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -201,6 +205,7 @@ jobs:
           python experiments/run_metadata_generation_drift.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_field_level_metadata_provenance.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_resource_bounded_metadata.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_metadata_family_coverage.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -242,6 +247,7 @@ jobs:
           python experiments/summarize_metadata_generation_drift.py --input-dir platform-artifacts --output-dir generation-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_field_level_metadata_provenance.py --input-dir platform-artifacts --output-dir provenance-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_resource_bounded_metadata.py --input-dir platform-artifacts --output-dir resource-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_metadata_family_coverage.py --input-dir platform-artifacts --output-dir coverage-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -281,6 +287,10 @@ jobs:
           diff -u results/jpeg_resource_budget_cross_platform_contracts.csv resource-cross-platform-results/jpeg_resource_budget_cross_platform_contracts.csv
           diff -u results/jpeg_resource_budget_cross_platform_summary.csv resource-cross-platform-results/jpeg_resource_budget_cross_platform_summary.csv
           test -s resource-cross-platform-results/jpeg_resource_budget_cross_platform.png
+          test -s coverage-cross-platform-results/jpeg_metadata_coverage_cross_platform_observations.csv
+          test -s coverage-cross-platform-results/jpeg_metadata_coverage_cross_platform_contracts.csv
+          test -s coverage-cross-platform-results/jpeg_metadata_coverage_cross_platform_summary.csv
+          test -s coverage-cross-platform-results/jpeg_metadata_coverage_cross_platform.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7
@@ -295,4 +305,5 @@ jobs:
             generation-cross-platform-results
             provenance-cross-platform-results
             resource-cross-platform-results
+            coverage-cross-platform-results
           retention-days: 30

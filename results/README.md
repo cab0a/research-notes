@@ -449,6 +449,25 @@ signature for every contract. The runtime manifest remains release provenance
 and is not byte-compared on later CI runs because hosted runner image
 identifiers can change independently of the fixed behavior.
 
+## v0.18.0
+
+- `jpeg_metadata_coverage_runtime_manifest.csv` records the local coverage
+  parser, resource-admission gate, fixture encoder, and runtime profile.
+- `jpeg_metadata_coverage_observations.csv` contains 15 controlled fixture
+  observations with routing, reason codes, family recognition, relationship
+  counts, opaque counts, and fixture hashes.
+- `jpeg_metadata_coverage_summary.csv` aggregates the observations across
+  seven primary fixture families.
+- `jpeg_metadata_coverage.png` visualizes routing by family and declared versus
+  resolved relationships.
+
+Eight fixtures are accepted and seven are quarantined. Accepted fixtures
+resolve all nine of their declared relationships. Forward and reverse Extended
+XMP chunk order reconstruct the same 270-byte packet. Missing, duplicate,
+orphaned, mismatched, truncated, and out-of-bounds controls fail closed. The
+20-byte maker-note control remains opaque and is not interpreted as verified
+metadata.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -469,6 +488,7 @@ python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
 python experiments/run_resource_bounded_metadata.py
+python experiments/run_metadata_family_coverage.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

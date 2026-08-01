@@ -358,6 +358,29 @@ reason-code, issue, counter, and fixture-hash signature.
 python experiments/run_resource_bounded_metadata.py
 ```
 
+### v0.18.0 — Extended Metadata Families, Nested Payloads, and Parser Coverage
+
+**Question:** Can a resource-admitted parser recognize selected extended
+metadata families, resolve nested relationships independently of segment
+order, and quarantine incomplete or ambiguous structures without claiming
+complete format semantics?
+
+**Representative finding:** Eight of 15 synthetic fixtures are accepted and
+all nine relationships declared by accepted fixtures are resolved. Seven
+missing, duplicate, orphaned, truncated, mismatched, or out-of-bounds controls
+are quarantined with stable reason codes. Forward and reverse Extended XMP
+chunk order reconstruct the same 270-byte packet, while maker-note bytes remain
+explicitly opaque.
+
+- [Complete note](../notes/extended-metadata-families-nested-payloads-parser-coverage.md)
+- [Observations](../results/jpeg_metadata_coverage_observations.csv)
+- [Summary](../results/jpeg_metadata_coverage_summary.csv)
+- [Figure](../results/jpeg_metadata_coverage.png)
+
+```bash
+python experiments/run_metadata_family_coverage.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and

@@ -49,6 +49,12 @@ from research_notes.jpeg_metadata import (
     inspect_jpeg_metadata,
     strip_jpeg_interpretation_metadata,
 )
+from research_notes.jpeg_metadata_coverage import (
+    JPEGMetadataCoverageFixture,
+    JPEGMetadataCoverageResult,
+    build_metadata_coverage_fixtures,
+    inspect_jpeg_metadata_coverage,
+)
 from research_notes.jpeg_recovery import (
     JPEGMetadataAudit,
     audit_jpeg_metadata,
@@ -100,6 +106,8 @@ __all__ = [
     "JPEGStructure",
     "JPEGSyntaxSummary",
     "JPEGMetadataSummary",
+    "JPEGMetadataCoverageFixture",
+    "JPEGMetadataCoverageResult",
     "JPEGMetadataAudit",
     "JPEGMetadataPolicyResult",
     "JPEGMetadataBoundaryResult",
@@ -117,6 +125,7 @@ __all__ = [
     "attach_jpeg_metadata",
     "build_synthetic_rgb_profile",
     "build_controlled_metadata_fixture",
+    "build_metadata_coverage_fixtures",
     "build_resource_boundary_fixtures",
     "CONTROLLED_FIELD_VALUES",
     "cmyk_to_bgr_arithmetic",
@@ -133,6 +142,7 @@ __all__ = [
     "ffmpeg_build_information",
     "inspect_jpeg_syntax",
     "inspect_jpeg_metadata",
+    "inspect_jpeg_metadata_coverage",
     "extract_controlled_metadata_fields",
     "audit_jpeg_metadata",
     "audit_jpeg_metadata_resources",

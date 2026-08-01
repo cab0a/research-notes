@@ -1,0 +1,8 @@
+family,fixtures,accept_count,quarantine_count,reject_count,expectation_rate,recognized_components,opaque_components,relationships_declared,relationships_resolved,relationship_completion_rate
+baseline,1,1,0,0,1.000000,0,0,0,0,1.000000
+exif_thumbnail,2,1,1,0,1.000000,1,0,2,1,0.500000
+extended_xmp,6,2,4,0,1.000000,7,0,5,2,0.400000
+iptc_iim,2,1,1,0,1.000000,1,0,2,1,0.500000
+maker_note,2,1,1,0,1.000000,1,1,2,1,0.500000
+mixed,1,1,0,0,1.000000,5,1,4,4,1.000000
+standard_xmp,1,1,0,0,1.000000,1,0,0,0,1.000000
