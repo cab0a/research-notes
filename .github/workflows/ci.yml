@@ -57,6 +57,7 @@ jobs:
           python experiments/run_resource_bounded_metadata.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_metadata_family_coverage.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_transform_integrity.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_policy_composition.py --output-dir regenerated-results --platform-label linux-x64-reference
 
       - name: Verify reference data and chart generation
         run: |
@@ -131,6 +132,8 @@ jobs:
           diff -u results/jpeg_metadata_coverage_summary.csv regenerated-results/jpeg_metadata_coverage_summary.csv
           diff -u results/jpeg_transform_integrity_observations.csv regenerated-results/jpeg_transform_integrity_observations.csv
           diff -u results/jpeg_transform_integrity_summary.csv regenerated-results/jpeg_transform_integrity_summary.csv
+          diff -u results/jpeg_policy_composition_observations.csv regenerated-results/jpeg_policy_composition_observations.csv
+          diff -u results/jpeg_policy_composition_summary.csv regenerated-results/jpeg_policy_composition_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -161,6 +164,7 @@ jobs:
           test -s regenerated-results/jpeg_resource_budget_boundaries.png
           test -s regenerated-results/jpeg_metadata_coverage.png
           test -s regenerated-results/jpeg_transform_integrity.png
+          test -s regenerated-results/jpeg_policy_composition.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
@@ -211,6 +215,7 @@ jobs:
           python experiments/run_resource_bounded_metadata.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_metadata_family_coverage.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
           python experiments/run_transform_integrity.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
+          python experiments/run_policy_composition.py --output-dir platform-results --platform-label ${{ matrix.label }} --record-runner-image
 
       - name: Upload platform observations
         uses: actions/upload-artifact@v7
@@ -254,6 +259,7 @@ jobs:
           python experiments/summarize_resource_bounded_metadata.py --input-dir platform-artifacts --output-dir resource-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_metadata_family_coverage.py --input-dir platform-artifacts --output-dir coverage-cross-platform-results --expected-platform-count 5 --emit-log-payload
           python experiments/summarize_transform_integrity.py --input-dir platform-artifacts --output-dir integrity-cross-platform-results --expected-platform-count 5 --emit-log-payload
+          python experiments/summarize_policy_composition.py --input-dir platform-artifacts --output-dir policy-cross-platform-results --expected-platform-count 5 --emit-log-payload
 
       - name: Verify committed cross-platform contracts
         run: |
@@ -301,6 +307,10 @@ jobs:
           test -s integrity-cross-platform-results/jpeg_transform_integrity_cross_platform_contracts.csv
           test -s integrity-cross-platform-results/jpeg_transform_integrity_cross_platform_summary.csv
           test -s integrity-cross-platform-results/jpeg_transform_integrity_cross_platform.png
+          test -s policy-cross-platform-results/jpeg_policy_composition_cross_platform_observations.csv
+          test -s policy-cross-platform-results/jpeg_policy_composition_cross_platform_contracts.csv
+          test -s policy-cross-platform-results/jpeg_policy_composition_cross_platform_summary.csv
+          test -s policy-cross-platform-results/jpeg_policy_composition_cross_platform.png
 
       - name: Upload cross-platform report
         uses: actions/upload-artifact@v7
@@ -317,4 +327,5 @@ jobs:
             resource-cross-platform-results
             coverage-cross-platform-results
             integrity-cross-platform-results
+            policy-cross-platform-results
           retention-days: 30

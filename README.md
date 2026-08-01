@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価、前処理や圧縮による評価値の変化、JPEGの復号・metadata・環境間互換性です。image core、正規化metadata、decoded pixelsの3つのSHA-256 bindingを持つunsigned assertionを11個の合成transform fixtureで評価しています。metadata並べ替えは全bindingを維持し、sanitization、再encode、pixel変更は異なるscopeを失効させます。digest一致を真正性や署名済みprovenanceとして扱わない境界も明記しています。
+研究テーマは、ぼけ評価、前処理や圧縮による評価値の変化、JPEGの復号・metadata・環境間互換性です。現在の研究では、resource、coverage、opaque metadata、integrity、retentionを順序付きで合成し、9入力を4種類のpolicy profileで評価しています。36観測はaccept 4、sanitize 5、quarantine 23、reject 4となり、すべてのtraceが最初に判断を確定したstageを記録します。profile名を安全性やcomplianceの保証として扱わない限界も明記しています。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -26,8 +26,9 @@ preprocessing, optical and photometric effects, JPEG compression history,
 decoder portability, metadata interpretation, malformed-metadata recovery,
 metadata round-trip policies, multi-generation policy drift, field-level
 selective retention, and resource-bounded admission before evaluating extended
-metadata-family coverage before separating digest-bound transform integrity
-from authenticated provenance. The current release is v0.19.0.
+metadata-family coverage and digest-bound transform integrity before composing
+those controls into explainable routing policies. The current release is
+v0.20.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -39,35 +40,32 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.19.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, and transform-integrity behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 19 releases to their questions,
+The [study index](docs/studies.md) maps all 20 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.19.0 study binds three explicitly different content scopes: JPEG image
-core, normalized controlled metadata, and raw decoded pixels. Eleven fixtures
-exercise inherited, renewed, missing, malformed, duplicate, and tampered
-assertions across controlled transforms.
+The v0.20.0 study composes five previously isolated controls into an ordered
+decision trace. Nine synthetic inputs are evaluated under four explicit
+profiles, producing 36 fixture-profile observations.
 
-| Controlled transform | Assertion treatment | Observed binding result |
-| --- | --- | --- |
-| Metadata reordering | inherited | all three scopes match |
-| Metadata sanitization | inherited | normalized metadata mismatches |
-| Metadata sanitization | renewed | all current scopes match; parent declared |
-| Re-encode or pixel edit | inherited | image core and decoded pixels mismatch |
-| Re-encode | renewed | all current scopes match; parent declared |
+| Profile | Accept | Sanitize | Quarantine | Reject |
+| --- | ---: | ---: | ---: | ---: |
+| `open_catalog` | 3 | 0 | 5 | 1 |
+| `privacy_review` | 0 | 2 | 6 | 1 |
+| `verified_archive` | 1 | 0 | 7 | 1 |
+| `minimal_export` | 0 | 3 | 5 | 1 |
 
-![Controlled transform integrity](results/jpeg_transform_integrity.png)
+![Explainable policy composition](results/jpeg_policy_composition.png)
 
-The experiment produces two `valid_binding`, two `valid_derived_binding`, four
-`stale_binding`, and one each of missing, malformed, and multiple assertion
-states. All fixtures match their declared outcome and mismatch scopes.
+All observations match their declared decision and reason. Every trace has one
+decisive final stage: 8 stop at resource admission, 4 at relationship coverage,
+2 at opaque-data policy, 13 at integrity, and 9 at retention.
 
-A matching assertion is an unsigned digest agreement. It does not identify an
-actor, validate the declared parent, establish a signing time or trust chain,
-or implement C2PA or Content Credentials.
+The profiles are controlled rule combinations, not universal safety levels,
+privacy compliance, archival guarantees, or production recommendations.
 
 ## Claim Boundaries
 
@@ -89,6 +87,8 @@ or implement C2PA or Content Credentials.
   complete metadata implementation.
 - The transform-integrity record is a project-specific unsigned digest
   assertion. Matching bindings are not authenticated provenance.
+- The composition engine returns decisions and optional bytes; it does not
+  enforce quarantine storage, access control, retention, or operator review.
 - The observed generation-3 pixel fixed point applies only to one small
   synthetic image, quality 75, 4:4:4 sampling, and the pinned builds. It is not
   a convergence guarantee or losslessness claim.
@@ -134,7 +134,7 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Nineteen published studies with explicit questions, controls, results, and
+- Twenty published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -196,7 +196,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 83 tests covering blur metrics and models,
+The repository contains 90 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, experiment outputs, and cross-platform summary logic.
@@ -216,10 +216,10 @@ manifests.
 
 ## Roadmap
 
-- v0.20.0 candidate: compose resource, coverage, integrity, and retention
-  policy stages into deterministic, explainable routing decisions.
 - v0.21.0 candidate: evaluate an end-to-end bounded intake pipeline with
   stage-specific failure attribution and artifact contracts.
+- v0.22.0 candidate: minimize the synthetic regression corpus while preserving
+  boundary, reason-code, and policy-decision coverage.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and

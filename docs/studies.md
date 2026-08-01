@@ -404,6 +404,28 @@ validate the declared parent.
 python experiments/run_transform_integrity.py
 ```
 
+### v0.20.0 — Policy Composition and Explainable Decisions
+
+**Question:** Can independently tested JPEG metadata controls be composed into
+deterministic routing decisions while preserving the first decisive rule,
+profile assumptions, and output effects as auditable evidence?
+
+**Representative finding:** Nine synthetic inputs under four policy profiles
+produce 36 observations: 4 `accept`, 5 `sanitize`, 23 `quarantine`, and 4
+`reject`. Every trace has exactly one decisive final stage. Resource failures
+stop before deeper parsing, incomplete relationships stop at coverage, stale
+assertions stop at integrity, and clean inputs reach profile-specific retention
+rules.
+
+- [Complete note](../notes/policy-composition-explainable-decisions.md)
+- [Observations](../results/jpeg_policy_composition_observations.csv)
+- [Summary](../results/jpeg_policy_composition_summary.csv)
+- [Figure](../results/jpeg_policy_composition.png)
+
+```bash
+python experiments/run_policy_composition.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and

@@ -1,0 +1,4 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,component,role,implementation,version_or_backend,contract
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,policy_composition_engine,decision_engine,research-notes,0.20.0,"ordered resource, coverage, opacity, integrity, and retention stages"
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,policy_inputs,stage_contracts,research-notes,0.16.0-0.19.0,"selective retention, resource admission, coverage, and digest binding"
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444
