@@ -1,0 +1,9 @@
+SCHEMA entities;
+ENTITY product ABSTRACT SUPERTYPE OF (ONEOF(part, assembly));
+  identifier : STRING;
+END_ENTITY;
+ENTITY part SUBTYPE OF (product);
+END_ENTITY;
+ENTITY assembly SUBTYPE OF (product);
+END_ENTITY;
+END_SCHEMA;

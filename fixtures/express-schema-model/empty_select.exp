@@ -1,0 +1,3 @@
+SCHEMA demo;
+TYPE choice = SELECT (); END_TYPE;
+END_SCHEMA;

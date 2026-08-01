@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、24件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
+このディレクトリには、25件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema modelの結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -604,6 +604,28 @@ diagnostic comparisons, not standards-compliance scores. The corpus does not
 evaluate EXPRESS schema rules, external resources, CMS authenticity,
 application semantics, or geometry.
 
+## v0.25.0
+
+- `express_schema_observations.csv` records expected and observed routes,
+  reason codes, source sizes and hashes, token and declaration counts, exact
+  reconstruction, and deferred semantic states for 40 synthetic fixtures.
+- `express_schema_inventory.csv` flattens 59 accepted schema, type, entity,
+  attribute, interface, constant, rule, and algorithm-envelope records with
+  source-line evidence.
+- `express_grammar_coverage.csv` states which controlled lexical, declaration,
+  and semantic stages are implemented, preserved as envelopes, or deferred.
+- `express_schema_summary.csv` records corpus decisions, expectation rate,
+  model inventory counts, and the explicit semantic-stage boundaries.
+- `express_schema_model.png` visualizes controlled decisions, declaration
+  composition, and the implemented-versus-deferred pipeline.
+
+All 40 fixtures match their expected routes: 20 accept, 19 reject, and one
+quarantine. Accepted sources reconstruct exactly, but acceptance establishes
+only an unresolved syntax model for the controlled ASCII subset. It does not
+establish complete EXPRESS conformance, symbol resolution, type correctness,
+constraint evaluation, rule execution, Part 21 validation, or application
+semantics.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -631,6 +653,7 @@ python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
 python experiments/run_step_part21_source_model.py
 python experiments/run_step_part21_conformance.py
+python experiments/run_express_schema_model.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

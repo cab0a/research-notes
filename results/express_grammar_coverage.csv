@@ -1,0 +1,16 @@
+feature,fixture,implementation_status,model_output,claim_boundary
+ascii_lexical_source,minimal_schema|invalid_source_character,implemented_subset,tokens and source spans,non-ASCII source is rejected; encoded strings remain raw
+case_insensitive_identifiers,mixed_case|duplicate_declaration,implemented,raw and normalized keyword forms,identifier spelling is preserved; resolution is deferred
+tail_and_block_comments,comments|unterminated_comment,implemented,trivia tokens,nested block comments are bounded
+literal_tokens,source_literals|invalid_real|invalid_binary,implemented_subset,typed lexical tokens,literal types are not checked against declarations
+schema_envelope,minimal_schema|multiple_schemas,implemented,schema declarations,schema identification strings are not interpreted
+use_and_reference,use_import|reference_import,implemented,interface specifications,import targets and aliases are not resolved
+simple_and_named_types,type_alias_where,implemented,unresolved type references,domain equivalence is not computed
+aggregate_types,aggregate_type,implemented_subset,"kind, bounds, flags, element type","bound expressions are stored, not evaluated"
+select_and_enumeration,select_type|enumeration_type,implemented,ordered member names,members are not resolved or checked for uniqueness
+entity_subsuper_syntax,entity_inheritance,implemented_subset,"abstract flag, supertypes, expression envelope",inheritance graphs and redeclarations are deferred
+entity_attributes,explicit_attributes|derived_attribute|inverse_attribute,implemented_subset,"explicit, derived, and inverse declarations",derived expressions and inverse targets are unresolved
+where_and_unique,unique_where,envelope_only,labels and source expressions,"expression grammar, typing, and execution are deferred"
+constants,constant_block,envelope_only,"name, type, expression",constant expressions are not evaluated
+functions_procedures_rules,function_envelope|procedure_envelope|rule_envelope,envelope_only,"headers, parameters, targets, source bodies",statement grammar and execution are deferred
+symbol_resolution_and_type_checking,none,deferred,explicit status fields,planned for v0.26.0

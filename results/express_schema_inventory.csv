@@ -1,0 +1,60 @@
+fixture,schema,declaration_kind,name,parent,detail,source_line,symbol_resolution
+minimal_schema,demo,schema,demo,,declaration envelope,1,not_attempted
+mixed_case,Demo,schema,Demo,,declaration envelope,1,not_attempted
+mixed_case,Demo,type,Label,Demo,STRING,2,not_attempted
+comments,comments,schema,comments,,declaration envelope,2,not_attempted
+type_alias_where,types,schema,types,,declaration envelope,1,not_attempted
+type_alias_where,types,type,label,types,STRING(32) FIXED,2,not_attempted
+type_alias_where,types,where_rule,nonempty,label,SELF <> '',4,not_attempted
+enumeration_type,types,schema,types,,declaration envelope,1,not_attempted
+enumeration_type,types,type,finish,types,"ENUMERATION(rough,smooth,polished)",2,not_attempted
+select_type,types,schema,types,,declaration envelope,1,not_attempted
+select_type,types,type,geometry,types,"SELECT(point,curve,surface)",2,not_attempted
+aggregate_type,types,schema,types,,declaration envelope,1,not_attempted
+aggregate_type,types,type,labels,types,LIST [1:?] OF UNIQUE STRING,2,not_attempted
+explicit_attributes,entities,schema,entities,,declaration envelope,1,not_attempted
+explicit_attributes,entities,entity,item,entities,concrete,2,not_attempted
+explicit_attributes,entities,attribute_explicit,identifier,item,STRING,3,not_attempted
+explicit_attributes,entities,attribute_explicit,description,item,STRING,4,not_attempted
+entity_inheritance,entities,schema,entities,,declaration envelope,1,not_attempted
+entity_inheritance,entities,entity,product,entities,"ABSTRACT; SUPERTYPE OF ONEOF(part, assembly)",2,not_attempted
+entity_inheritance,entities,attribute_explicit,identifier,product,STRING,3,not_attempted
+entity_inheritance,entities,entity,part,entities,concrete; SUBTYPE OF product,5,not_attempted
+entity_inheritance,entities,entity,assembly,entities,concrete; SUBTYPE OF product,7,not_attempted
+derived_attribute,entities,schema,entities,,declaration envelope,1,not_attempted
+derived_attribute,entities,entity,segment,entities,concrete,2,not_attempted
+derived_attribute,entities,attribute_explicit,start_value,segment,REAL,3,not_attempted
+derived_attribute,entities,attribute_explicit,end_value,segment,REAL,3,not_attempted
+derived_attribute,entities,attribute_derived,span,segment,REAL,5,not_attempted
+inverse_attribute,entities,schema,entities,,declaration envelope,1,not_attempted
+inverse_attribute,entities,entity,parent,entities,concrete,2,not_attempted
+inverse_attribute,entities,attribute_inverse,children,parent,SET [0:?] OF child,4,not_attempted
+inverse_attribute,entities,entity,child,entities,concrete,6,not_attempted
+inverse_attribute,entities,attribute_explicit,owner,child,parent,7,not_attempted
+unique_where,entities,schema,entities,,declaration envelope,1,not_attempted
+unique_where,entities,entity,item,entities,concrete,2,not_attempted
+unique_where,entities,attribute_explicit,identifier,item,STRING,3,not_attempted
+unique_where,entities,unique_rule,ur1,item,identifier,5,not_attempted
+unique_where,entities,where_rule,wr1,item,SIZEOF(identifier) > 0,7,not_attempted
+use_import,imports,schema,imports,,declaration envelope,1,not_attempted
+use_import,imports,interface_use,base_schema,imports,base_item AS local_item|label,2,not_attempted
+reference_import,imports,schema,imports,,declaration envelope,1,not_attempted
+reference_import,imports,interface_reference,base_schema,imports,*,2,not_attempted
+constant_block,constants,schema,constants,,declaration envelope,1,not_attempted
+constant_block,constants,constant,default_count,constants,INTEGER,3,not_attempted
+constant_block,constants,constant,default_name,constants,STRING,4,not_attempted
+function_envelope,algorithms,schema,algorithms,,declaration envelope,1,not_attempted
+function_envelope,algorithms,function,add_one,algorithms,parameters=1,2,not_attempted
+procedure_envelope,algorithms,schema,algorithms,,declaration envelope,1,not_attempted
+procedure_envelope,algorithms,procedure,initialize,algorithms,parameters=1,2,not_attempted
+rule_envelope,algorithms,schema,algorithms,,declaration envelope,1,not_attempted
+rule_envelope,algorithms,entity,item,algorithms,concrete,2,not_attempted
+rule_envelope,algorithms,attribute_explicit,identifier,item,STRING,3,not_attempted
+rule_envelope,algorithms,rule,item_rule,algorithms,targets=item,5,not_attempted
+multiple_schemas,first_schema,schema,first_schema,,declaration envelope,1,not_attempted
+multiple_schemas,second_schema,schema,second_schema,,declaration envelope,3,not_attempted
+source_literals,literals,schema,literals,,declaration envelope,1,not_attempted
+source_literals,literals,constant,text_value,literals,STRING,3,not_attempted
+source_literals,literals,constant,bits,literals,BINARY,4,not_attempted
+source_literals,literals,constant,encoded,literals,STRING,5,not_attempted
+source_literals,literals,constant,ratio,literals,REAL,6,not_attempted

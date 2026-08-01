@@ -1,0 +1,5 @@
+SCHEMA algorithms;
+FUNCTION add_one(value : INTEGER) : INTEGER;
+  RETURN(value + 1);
+END_FUNCTION;
+END_SCHEMA;

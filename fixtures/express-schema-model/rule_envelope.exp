@@ -1,0 +1,9 @@
+SCHEMA algorithms;
+ENTITY item;
+  identifier : STRING;
+END_ENTITY;
+RULE item_rule FOR (item);
+WHERE
+  wr1 : SIZEOF(identifier) > 0;
+END_RULE;
+END_SCHEMA;

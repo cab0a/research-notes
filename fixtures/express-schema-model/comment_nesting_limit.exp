@@ -1,0 +1,1 @@
+SCHEMA demo; (* one (* two (* three *) two *) one *) END_SCHEMA;

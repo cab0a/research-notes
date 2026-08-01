@@ -1,0 +1,9 @@
+SCHEMA entities;
+ENTITY parent;
+INVERSE
+  children : SET [0:?] OF child FOR owner;
+END_ENTITY;
+ENTITY child;
+  owner : parent;
+END_ENTITY;
+END_SCHEMA;

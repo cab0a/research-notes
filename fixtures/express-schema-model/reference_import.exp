@@ -1,0 +1,3 @@
+SCHEMA imports;
+REFERENCE FROM base_schema;
+END_SCHEMA;

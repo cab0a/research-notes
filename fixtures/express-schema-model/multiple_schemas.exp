@@ -1,0 +1,4 @@
+SCHEMA first_schema;
+END_SCHEMA;
+SCHEMA second_schema;
+END_SCHEMA;

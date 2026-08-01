@@ -1,0 +1,3 @@
+SCHEMA demo;
+ENTITY item; value : REAL; DERIVE doubled : REAL value * 2; END_ENTITY;
+END_SCHEMA;

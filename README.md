@@ -2,11 +2,11 @@
 
 ## 日本語概要
 
-このリポジトリは、画像処理とSTEP/B-repの調査、統制実験、結果、考察、制約を再現可能に記録します。STEP研究は、仕様理解、Pythonパーサー、形状・位相・製品構成、モデリング、3D AI利用の順に進めます。
+このリポジトリは、画像処理とSTEP/B-repの調査、統制実験、結果、考察、制約を再現可能に記録します。STEP研究は、仕様理解、Pythonパーサー、形状・位相・製品構成、モデリング、3D AI利用へ進みます。
 
-v0.24.0ではPart 21の第1版・第2版・第3版、文字列制御、UTF-8、コメント、binary、複数DATA部、ANCHOR、REFERENCE、SIGNATURE、ZIP transportを34個の合成fixtureで検証します。内部パーサーは17件の正常例と17件の異常例をすべて期待どおり判定し、固定revisionの2つの公開Pythonパーサーとの受理境界の差も記録します。
+v0.25.0では、EXPRESSの字句解析、構文解析、未解決スキーマモデルを40個の合成fixtureで検証します。20件を受理、19件を拒否、resource上限の1件を隔離し、schema、type、entity、attribute、interface、constant、algorithm envelopeなど59件のmodel inventoryを記録します。
 
-合成データ、CSV・PNG、固定依存、123件のテスト、CIを備えます。結果は限定した構文適合性の証拠であり、ISO認証、完全なPart 21、EXPRESS・AP242適合、外部参照や署名の信頼性、幾何妥当性、書き戻し互換性は主張しません。詳細は以下の英語本文に示します。
+合成データ、CSV・PNG、131件のテスト、CIを備えます。結果はASCII EXPRESS構文からsource-preserving modelを構築できる証拠であり、完全なEXPRESS適合、名前解決、型検査、式・rule実行、Part 21検証、AP242適合、幾何妥当性は主張しません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -30,7 +30,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.24.0.
+v0.25.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -45,33 +45,32 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 24 releases to their questions,
+The [study index](docs/studies.md) maps all 25 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.24.0 study classifies selected Edition 1, Edition 2, and Edition 3
-grammar features and checks them against declared implementation levels.
-Thirty synthetic inputs isolate normal forms, malformed syntax, declaration
-mismatches, and bounded ZIP transport.
+The v0.25.0 study converts a controlled ASCII subset of EXPRESS into a
+source-preserving, unresolved schema model. Forty synthetic inputs isolate
+declarations, trivia, literals, malformed syntax, duplicate names, and an
+explicit comment-nesting budget.
 
-| Condition | Decision | Evidence |
+| Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Edition 1 controls | accept | Core exchange, legacy `X2` text, binary, comments, and complex entities parse |
-| Edition 2 controls | accept | Multiple named `DATA` sections and `SECTION_CONTEXT` are classified separately |
-| Edition 3 controls | accept | Direct UTF-8, anchors, references, signatures, constants, optional data, and ZIP root parse |
-| Declaration mismatches | reject | Used features require a newer edition or higher syntactical conformance class |
-| Malformed lexical forms | reject | Invalid reals, lowercase keyword, binary, signature, comment, and occurrence name fail explicitly |
-| Unsafe or incomplete ZIP | reject | Parent-relative paths and an absent `ISO-10303.p21` root fail before extraction |
+| Lexical controls | accept, reject, or quarantine | Exact source, raw spelling, trivia, locations, and bounded failures remain inspectable |
+| Type declarations | accept | Aliases, aggregates, enumerations, and selects become explicit type references |
+| Entity declarations | accept | Inheritance plus explicit, derived, and inverse attributes become model objects |
+| Interfaces and algorithms | envelope only | Imports, constants, and headers parse while executable bodies remain opaque source spans |
+| Semantic stages | not attempted | Symbol resolution, type checking, expression validation, and rule execution remain explicit deferred states |
 
-![Part 21 grammar coverage and controlled conformance](results/step_part21_conformance.png)
+![EXPRESS lexer, parser, and schema-model evidence](results/express_schema_model.png)
 
-All 34 internal observations match their declared decisions: 17 accept and 17
-reject. STEPutils accepts 14 fixtures and agrees with 23 expectations; the
-IfcOpenShell `step-file-parser` accepts five and agrees with 22. These figures
-locate differences for investigation and are not parser rankings or a vote on
-standards conformance. EXPRESS schema validity, external resource resolution,
-CMS verification, application semantics, and geometry remain unevaluated.
+All 40 observations match their declared routes: 20 accept, 19 reject, and one
+quarantine. Accepted sources produce 59 inventory rows across schemas, types,
+entities, attributes, interfaces, constants, rules, and algorithm envelopes.
+This is not a complete EXPRESS compiler: expressions and algorithm bodies are
+preserved as envelopes, and names, types, constraints, and rules are not yet
+resolved or executed.
 
 ## Claim Boundaries
 
@@ -104,6 +103,9 @@ CMS verification, application semantics, and geometry remain unevaluated.
   It is not an ISO certification suite, complete Wirth Syntax Notation
   coverage, EXPRESS validation, external-resource resolver, CMS verifier, or
   proof of support for arbitrary STEP files.
+- The EXPRESS parser supports a controlled ASCII declaration subset. An
+  accepted source has an unresolved syntax model, not proof of symbol
+  resolution, type correctness, constraint validity, or executable behavior.
 - STEP face and edge indices are analysis-local. They are not persistent CAD
   identities across export, editing, Boolean operations, or healing.
 - Known pattern identities, matched references, and synthetic calibration
@@ -139,21 +141,21 @@ confound.
 Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. JPEG studies also write
 fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
-The STEP studies commit generated Part 21 fixtures, token and source-span
-inventories, structure and section inventories, face-, edge-, shell-, and
-solid-level tables, and visual controls.
+The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
+source-span inventories, structure, section, declaration, face-, edge-, shell-,
+and solid-level tables, and visual controls.
 
 - Committed reference evidence: [`results/`](results/)
 - Artifact catalog: [`results/README.md`](results/README.md)
 - Fixed decoder inputs and declared references: [`fixtures/`](fixtures/)
 
-## STEP Sample Gallery
+## STEP and EXPRESS Sample Gallery
 
 The [STEP sample and preview catalog](docs/step-sample-catalog.md) links each
 generated input to its manifest, purpose, expected route, and visual evidence.
-The v0.24.0 corpus adds 34 viewable clear-text or archive fixtures, including
-paired edition and conformance-class mismatches. Syntax-only samples use the
-coverage figure rather than a fabricated geometry preview.
+The catalog includes the v0.24.0 Part 21 conformance corpus and the v0.25.0
+EXPRESS schema corpus. Syntax-only samples use source and coverage figures
+rather than fabricated geometry previews.
 
 ![Closed tetrahedron geometry control](results/step_part21_geometry_control.png)
 
@@ -162,7 +164,7 @@ validation evidence.
 
 ## Key Features
 
-- Twenty-four published studies with explicit questions, controls, results, and
+- Twenty-five published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -174,6 +176,8 @@ validation evidence.
   the geometry-bearing subset
 - Edition-aware Part 21 conformance observations and isolated comparisons with
   two pinned public Python parsers
+- A source-preserving EXPRESS lexer and parser that builds an unresolved schema
+  model while exposing deferred semantic stages
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -209,7 +213,8 @@ hashes, pairwise code-value differences, metadata admission, and
 cross-platform agreement. The STEP studies separate container recognition,
 physical-file parsing, exact source retention, source coordinates, section
 order, declared schema identifiers, external trust boundaries, topology
-resolution, visual previews, and deferred schema and geometry evaluation.
+resolution, visual previews, EXPRESS declaration parsing, unresolved schema
+models, and deferred semantic and geometry evaluation.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -232,12 +237,13 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 123 tests covering blur metrics and models,
+The repository contains 131 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
 conformance-class checks, bounded exchange structures, B-Rep topology
-ownership and incidence, experiment outputs, and
+ownership and incidence, EXPRESS tokenization, declaration models, resource
+limits, deferred semantic states, experiment outputs, and
 cross-platform summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
@@ -251,16 +257,18 @@ the combined reports.
 Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The v0.21.0 through v0.24.0 STEP layers have no geometry-kernel
-dependency and do not claim compatibility beyond their controlled Part 21 and
-topology subsets.
+manifests. The v0.21.0 through v0.25.0 STEP and EXPRESS layers have no
+geometry-kernel dependency and do not claim compatibility beyond their
+controlled Part 21, topology, and ASCII EXPRESS subsets.
 
 ## Roadmap
 
 The [STEP mastery, Python parser, and 3D tool roadmap](docs/brep-learning-roadmap.md)
 makes specification knowledge and a source-preserving Python parser the
-foundation. It proceeds through Part 21 grammar coverage, EXPRESS parsing and
-validation, AP242 product semantics, B-Rep geometry, inspection, modeling,
+foundation. v0.25.0 establishes a source-preserving, unresolved EXPRESS schema
+model; the next stage adds symbol, type, and inheritance resolution before Part
+21 validation. The roadmap then proceeds through AP242 product semantics,
+B-Rep geometry, inspection, modeling,
 interoperability, face-adjacency graphs, and AI-ready evidence. Geometry-kernel
 adoption remains an explicit capability, distribution, and license checkpoint.
 

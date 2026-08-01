@@ -1,0 +1,4 @@
+SCHEMA types;
+TYPE labels = LIST [1:?] OF UNIQUE STRING;
+END_TYPE;
+END_SCHEMA;

@@ -78,6 +78,8 @@ jobs:
           python experiments/run_step_part21_source_model.py --fixture-dir regenerated-fixtures/step-part21-source-model --output-dir regenerated-step-source-fixture-results --refresh-fixtures
           python experiments/run_step_part21_conformance.py --output-dir regenerated-results
           python experiments/run_step_part21_conformance.py --fixture-dir regenerated-fixtures/step-part21-conformance --output-dir regenerated-step-conformance-fixture-results --refresh-fixtures
+          python experiments/run_express_schema_model.py --output-dir regenerated-results
+          python experiments/run_express_schema_model.py --fixture-dir regenerated-fixtures/express-schema-model --output-dir regenerated-express-schema-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -171,6 +173,10 @@ jobs:
           diff -u results/step_part21_grammar_coverage.csv regenerated-results/step_part21_grammar_coverage.csv
           diff -u results/step_part21_parser_manifest.csv regenerated-results/step_part21_parser_manifest.csv
           diff -u results/step_part21_conformance_summary.csv regenerated-results/step_part21_conformance_summary.csv
+          diff -u results/express_schema_observations.csv regenerated-results/express_schema_observations.csv
+          diff -u results/express_schema_inventory.csv regenerated-results/express_schema_inventory.csv
+          diff -u results/express_grammar_coverage.csv regenerated-results/express_grammar_coverage.csv
+          diff -u results/express_schema_summary.csv regenerated-results/express_schema_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -179,6 +185,7 @@ jobs:
           diff -qr fixtures/step-part21-exchange regenerated-fixtures/step-part21-exchange
           diff -qr fixtures/step-part21-source-model regenerated-fixtures/step-part21-source-model
           diff -qr fixtures/step-part21-conformance regenerated-fixtures/step-part21-conformance
+          diff -qr fixtures/express-schema-model regenerated-fixtures/express-schema-model
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -211,6 +218,7 @@ jobs:
           test -s regenerated-results/step_part21_geometry_control.png
           test -s regenerated-results/step_part21_source_model.png
           test -s regenerated-results/step_part21_conformance.png
+          test -s regenerated-results/express_schema_model.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

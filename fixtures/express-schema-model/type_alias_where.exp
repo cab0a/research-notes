@@ -1,0 +1,6 @@
+SCHEMA types;
+TYPE label = STRING(32) FIXED;
+WHERE
+  nonempty : SELF <> '';
+END_TYPE;
+END_SCHEMA;

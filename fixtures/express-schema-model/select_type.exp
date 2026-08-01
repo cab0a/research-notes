@@ -1,0 +1,4 @@
+SCHEMA types;
+TYPE geometry = SELECT (point, curve, surface);
+END_TYPE;
+END_SCHEMA;

@@ -1,0 +1,6 @@
+SCHEMA entities;
+ENTITY item;
+  identifier : STRING;
+  description : OPTIONAL STRING;
+END_ENTITY;
+END_SCHEMA;

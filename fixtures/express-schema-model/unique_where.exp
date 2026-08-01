@@ -1,0 +1,9 @@
+SCHEMA entities;
+ENTITY item;
+  identifier : STRING;
+UNIQUE
+  ur1 : identifier;
+WHERE
+  wr1 : SIZEOF(identifier) > 0;
+END_ENTITY;
+END_SCHEMA;

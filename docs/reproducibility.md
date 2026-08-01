@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、24件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性を含む検証、互換性境界をまとめています。
+本書は、25件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema modelを含む検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -98,6 +98,7 @@ python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
 python experiments/run_step_part21_source_model.py
 python experiments/run_step_part21_conformance.py
+python experiments/run_express_schema_model.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -153,6 +154,11 @@ python experiments/run_step_part21_conformance.py \
   --fixture-dir output/fixtures/step-part21-conformance \
   --output-dir output/step-part21-conformance \
   --refresh-fixtures
+
+python experiments/run_express_schema_model.py \
+  --fixture-dir output/fixtures/express-schema-model \
+  --output-dir output/express-schema-model \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -192,6 +198,12 @@ python experiments/run_step_part21_conformance.py \
 - External parser comparisons run each fixture in an isolated child process
   against two exact public repository revisions; parser acceptance is never
   used as the conformance oracle.
+- The v0.25 corpus generates 40 exact ASCII EXPRESS sources with SHA-256
+  hashes, expected routes, explicit parser limits, and no external schema or
+  data dependency.
+- Accepted EXPRESS sources reconstruct exactly; inventory and coverage tables
+  preserve the boundary between parsed declarations, opaque expression or
+  algorithm envelopes, and deferred semantic stages.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -233,7 +245,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 123 tests cover:
+The 131 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -263,6 +275,12 @@ The 123 tests cover:
 - Part 21 edition floors, implementation levels, conformance classes, legacy
   string controls, direct UTF-8, strict real and occurrence syntax, bounded ZIP
   intake, and deterministic conformance fixtures
+- EXPRESS trivia and token coordinates, exact source reconstruction, bounded
+  lexical failures, schema and interface declarations, aliases, aggregates,
+  selects, enumerations, inheritance, explicit, derived, and inverse
+  attributes, constants, and algorithm envelopes
+- deterministic EXPRESS fixture routes, inventory counts, source hashes,
+  resource limits, and explicit deferred semantic states
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -282,6 +300,7 @@ The 123 tests cover:
 |   |-- color-metadata-contracts/
 |   |-- jpeg-decoder-contracts/
 |   |-- malformed-jpeg-metadata/
+|   |-- express-schema-model/
 |   |-- step-part21-source-model/
 |   |-- step-part21-conformance/
 |   |-- step-part21-exchange/
@@ -306,6 +325,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.24.0. They do not imply complete ISO 10303-21, EXPRESS, or AP242
-conformance and do not authorize external resource retrieval, signature trust,
-archive extraction, or evaluated geometry claims.
+v0.21.0 through v0.25.0. They do not imply complete ISO 10303-21, EXPRESS, or
+AP242 conformance and do not authorize external resource retrieval, signature
+trust, archive extraction, semantic execution, or evaluated geometry claims.

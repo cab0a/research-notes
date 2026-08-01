@@ -1,0 +1,5 @@
+SCHEMA algorithms;
+PROCEDURE initialize(VAR value : INTEGER);
+  value := 0;
+END_PROCEDURE;
+END_SCHEMA;

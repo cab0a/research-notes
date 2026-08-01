@@ -1,0 +1,3 @@
+SCHEMA demo;
+ALIAS item FOR other; END_ALIAS;
+END_SCHEMA;

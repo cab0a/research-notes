@@ -1,0 +1,8 @@
+SCHEMA literals;
+CONSTANT
+  text_value : STRING := 'it''s controlled';
+  bits : BINARY := %1010;
+  encoded : STRING := "00410042";
+  ratio : REAL := 1.25E+2;
+END_CONSTANT;
+END_SCHEMA;

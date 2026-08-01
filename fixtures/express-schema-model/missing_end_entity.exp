@@ -1,0 +1,3 @@
+SCHEMA demo;
+ENTITY item; identifier : STRING;
+END_SCHEMA;

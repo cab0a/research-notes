@@ -2,20 +2,20 @@
 
 ## 日本語概要
 
-本書は、STEP/B-rep調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0の位相、v0.22.0の高度な交換構造、v0.23.0の統合source model、v0.24.0の版別構文適合性サンプルを収録します。閉じた四面体は形状を目視できる共通integration controlとして保存し、構文だけを扱うサンプルには構造・coverage図を用います。previewはschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性に加え、v0.25.0のEXPRESS字句・構文・未解決schema modelを収録します。形状にはpreview、構文だけを扱うサンプルには構造・coverage図を用いますが、schema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
-This catalog maps committed synthetic STEP samples to their manifests,
-previews, research purpose, and validation boundary. Samples live under
-`fixtures/` because they are both human-inspectable examples and exact CI
-inputs.
+This catalog maps committed synthetic STEP and EXPRESS samples to their
+manifests, previews, research purpose, and validation boundary. Samples live
+under `fixtures/` because they are both human-inspectable examples and exact
+CI inputs.
 
 ## Sample Policy
 
-Each STEP/B-Rep study keeps the actual input bytes whenever licensing and
+Each STEP, B-Rep, or EXPRESS study keeps the actual input bytes whenever licensing and
 privacy permit. This repository uses only generated synthetic inputs. A sample
 set includes:
 
@@ -147,6 +147,31 @@ These files intentionally use a synthetic schema vocabulary and generally do
 not describe a meaningful 3D shape. The figure shows edition coverage and
 acceptance boundaries; the CSV observations remain the validation evidence.
 
+## v0.25.0 — EXPRESS Schema-Model Samples
+
+Directory: [`fixtures/express-schema-model/`](../fixtures/express-schema-model/)
+
+Manifest: [`manifest.csv`](../fixtures/express-schema-model/manifest.csv)
+
+The corpus contains 40 generated `.exp` sources. The manifest records exact
+byte length, SHA-256 digest, active resource limits, expected route, and reason
+code for every input.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Schema and lexical controls | [`minimal_schema.exp`](../fixtures/express-schema-model/minimal_schema.exp), [`mixed_case.exp`](../fixtures/express-schema-model/mixed_case.exp), [`comments.exp`](../fixtures/express-schema-model/comments.exp) | Schema envelopes, case-insensitive names, and source-preserved trivia |
+| Type declarations | [`aggregate_type.exp`](../fixtures/express-schema-model/aggregate_type.exp), [`select_type.exp`](../fixtures/express-schema-model/select_type.exp), [`enumeration_type.exp`](../fixtures/express-schema-model/enumeration_type.exp) | Structured type references and member lists |
+| Entity declarations | [`entity_inheritance.exp`](../fixtures/express-schema-model/entity_inheritance.exp), [`derived_attribute.exp`](../fixtures/express-schema-model/derived_attribute.exp), [`inverse_attribute.exp`](../fixtures/express-schema-model/inverse_attribute.exp) | Header relationships and three attribute kinds |
+| Interfaces and algorithms | [`use_import.exp`](../fixtures/express-schema-model/use_import.exp), [`function_envelope.exp`](../fixtures/express-schema-model/function_envelope.exp), [`rule_envelope.exp`](../fixtures/express-schema-model/rule_envelope.exp) | Parsed declarations with unresolved imports and opaque executable bodies |
+| Lexical and grammar failures | [`invalid_real.exp`](../fixtures/express-schema-model/invalid_real.exp), [`duplicate_declaration.exp`](../fixtures/express-schema-model/duplicate_declaration.exp), [`missing_end_entity.exp`](../fixtures/express-schema-model/missing_end_entity.exp) | Stable rejection reasons and case-insensitive collisions |
+| Resource boundary | [`comment_nesting_limit.exp`](../fixtures/express-schema-model/comment_nesting_limit.exp) | Quarantine before accepting excessive nested-comment work |
+
+![EXPRESS schema-model corpus](../results/express_schema_model.png)
+
+These sources specify no CAD shape and therefore have no geometry preview.
+The figure shows the observed routes, model composition, and the boundary
+between parsed declarations, opaque envelopes, and deferred semantic stages.
+
 ## Regeneration
 
 ```bash
@@ -165,12 +190,16 @@ python experiments/run_step_part21_source_model.py \
 python experiments/run_step_part21_conformance.py \
   --fixture-dir fixtures/step-part21-conformance \
   --refresh-fixtures
+
+python experiments/run_express_schema_model.py \
+  --fixture-dir fixtures/express-schema-model \
+  --refresh-fixtures
 ```
 
 ## Interpretation Boundary
 
 Opening a sample in a viewer is useful diagnostic evidence, but viewer success
-does not prove Part 21 conformance, application-protocol conformance, B-Rep
-validity, unit correctness, tolerance consistency, or preservation across
-another kernel. Those claims require the separate observations and tests
-defined by each study.
+does not prove Part 21 conformance, EXPRESS conformance or semantic validity,
+application-protocol conformance, B-Rep validity, unit correctness, tolerance
+consistency, or preservation across another kernel. Those claims require the
+separate observations and tests defined by each study.

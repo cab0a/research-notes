@@ -1,0 +1,4 @@
+SCHEMA types;
+TYPE finish = ENUMERATION OF (rough, smooth, polished);
+END_TYPE;
+END_SCHEMA;

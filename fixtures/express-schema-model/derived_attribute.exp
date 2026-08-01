@@ -1,0 +1,7 @@
+SCHEMA entities;
+ENTITY segment;
+  start_value, end_value : REAL;
+DERIVE
+  span : REAL := end_value - start_value;
+END_ENTITY;
+END_SCHEMA;

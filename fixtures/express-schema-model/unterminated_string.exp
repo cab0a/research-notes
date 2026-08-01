@@ -1,0 +1,2 @@
+SCHEMA demo; CONSTANT value : STRING := 'open
+END_CONSTANT; END_SCHEMA;

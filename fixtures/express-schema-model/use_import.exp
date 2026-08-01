@@ -1,0 +1,3 @@
+SCHEMA imports;
+USE FROM base_schema (base_item AS local_item, label);
+END_SCHEMA;

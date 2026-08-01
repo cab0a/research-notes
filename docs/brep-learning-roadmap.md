@@ -2,11 +2,11 @@
 
 ## 日本語概要
 
-このロードマップの主軸は、STEPを規格の層ごとに深く理解し、その理解をPythonパーサーとして実装・検証することです。Part 21の物理構文、EXPRESSスキーマ、用途別規格、製品構成、幾何、位相を混同せず、各段階で合成STEP、機械可読な結果、目視用資料、テスト、未解決事項を残します。
+このロードマップは、STEPの規格層を理解し、Pythonパーサーとして実装・検証する道筋です。Part 21、EXPRESS、用途別規格、製品構成、幾何、位相を分離し、合成データ、結果、テスト、課題を残します。
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.24.0までにPart 21基盤を統合し、3世代の主要構文、実装レベル、適合クラス、ZIP transportを34個の合成fixtureで検証しました。次はEXPRESS構文・型検証、AP242の意味、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
+v0.25.0までにPart 21基盤とEXPRESSの字句・構文基盤を統合しました。EXPRESSは40個の合成fixtureで20件受理・19件拒否・1件隔離を確認し、59件の未解決schema model inventoryを生成します。次は名前・型・継承の解決、Part 21とschemaの結合、AP242の意味、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
 
 ---
 
@@ -139,12 +139,19 @@ resources, verify CMS, or establish support for arbitrary STEP files.
 
 ### Phase B — EXPRESS and Schema Validation
 
-#### v0.25.0 — EXPRESS Lexer and Parser
+#### v0.25.0 — EXPRESS Lexer, Parser, and Schema Model
 
-Build a source-preserving parser for controlled EXPRESS schemas. Cover schema,
-entity, type, subtype, supertype, explicit attribute, derived attribute,
-inverse attribute, select, enumeration, aggregate, function, rule, and import
-syntax incrementally, with unsupported productions reported explicitly.
+The source-preserving parser now covers a controlled ASCII declaration subset:
+schemas, aliases, aggregates, selects, enumerations, entity inheritance,
+explicit, derived, and inverse attributes, interfaces, constants, functions,
+procedures, and rules. Forty deterministic fixtures produce 20 accepts, 19
+rejects, one resource-limit quarantine, exact reconstruction for accepted
+sources, and 59 schema-model inventory rows.
+
+Answered boundary: declarations become an unresolved model without pretending
+that spelling a name proves its target, type, or rule semantics. Expressions
+and algorithm bodies remain source-preserved envelopes; symbol resolution,
+type checking, expression validation, and rule execution are deferred.
 
 #### v0.26.0 — EXPRESS Symbols, Types, and Inheritance
 

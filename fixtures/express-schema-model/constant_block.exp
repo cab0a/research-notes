@@ -1,0 +1,6 @@
+SCHEMA constants;
+CONSTANT
+  default_count : INTEGER := 4;
+  default_name : STRING := 'controlled';
+END_CONSTANT;
+END_SCHEMA;

@@ -1,0 +1,3 @@
+SCHEMA demo;
+FUNCTION identity(value : INTEGER) : INTEGER; RETURN(value);
+END_SCHEMA;
