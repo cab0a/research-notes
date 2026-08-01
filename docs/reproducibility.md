@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、研究ノートの合成入力、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定標本の更新、決定論の範囲、反復・field単位のメタデータ方針・resource上限を含む複数環境での検証、互換性境界をまとめています。
+本書は、21件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相を含む検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -72,6 +72,7 @@ python experiments/run_resource_bounded_metadata.py
 python experiments/run_metadata_family_coverage.py
 python experiments/run_transform_integrity.py
 python experiments/run_policy_composition.py
+python experiments/run_step_brep_topology.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -79,7 +80,7 @@ artifacts.
 
 ## Fixed Fixture Refresh
 
-The decoder-contract experiments can recreate their fixed inputs in a separate
+The fixed-input experiments can recreate their fixture corpora in a separate
 directory. CI uses this mode and compares the generated directories with the
 committed fixtures.
 
@@ -107,6 +108,11 @@ python experiments/run_malformed_metadata_recovery.py \
   --output-dir output/malformed-jpeg-metadata \
   --platform-label linux-x64-reference \
   --refresh-fixtures
+
+python experiments/run_step_brep_topology.py \
+  --fixture-dir output/fixtures/step-brep-topology \
+  --output-dir output/step-brep-topology \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -127,6 +133,10 @@ python experiments/run_malformed_metadata_recovery.py \
   malformed, duplicate, and tampered unsigned assertions in memory.
 - Policy-composition fixtures evaluate nine controlled conditions under four
   explicit profiles and serialize every ordered decision trace.
+- STEP fixtures generate exact Part 21 bytes for closed, open, disconnected,
+  surface-catalog, unresolved-reference, and duplicate-identifier conditions.
+- The STEP fixture manifest records exact byte lengths, SHA-256 hashes,
+  expected routing decisions, topology counts, and free-edge counts.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -168,7 +178,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 90 tests cover:
+The 101 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -186,6 +196,9 @@ The 90 tests cover:
   inherited, renewed, stale, missing, malformed, and duplicate assertions
 - ordered resource, coverage, opacity, integrity, and retention traces across
   four explicit policy profiles
+- bounded Part 21 tokenization, resource decisions, broken references,
+  duplicate identifiers, topology ownership, edge incidence, face adjacency,
+  and declared surface parameters
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -204,7 +217,8 @@ The 90 tests cover:
 |   |-- advanced-jpeg-syntax/
 |   |-- color-metadata-contracts/
 |   |-- jpeg-decoder-contracts/
-|   `-- malformed-jpeg-metadata/
+|   |-- malformed-jpeg-metadata/
+|   `-- step-brep-topology/
 |-- notes/
 |   `-- *.md
 |-- results/
@@ -223,4 +237,6 @@ The 90 tests cover:
 The project does not promise identical decoded arrays for dependency versions,
 codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
-fixed corpus and pinned release matrix.
+fixed corpus and pinned release matrix. The STEP parser has no geometry-kernel
+dependency and promises only the controlled simple-entity subset documented by
+v0.21.0; it does not imply ISO 10303-21 or AP242 conformance.

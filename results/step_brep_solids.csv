@@ -1,0 +1,4 @@
+fixture,solid_index,entity_id,solid_type,name,outer_shell_id,face_count,edge_count
+closed_tetrahedron,0,74,manifold_solid_brep,tetrahedron_a,73,4,6
+two_closed_solids,0,74,manifold_solid_brep,tetrahedron_a,73,4,6
+two_closed_solids,1,148,manifold_solid_brep,tetrahedron_b,147,4,6

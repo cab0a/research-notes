@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-このディレクトリには、17件の研究を固定した合成画像と版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータ監査・保持・無害化・世代間ドリフト・field単位の選択保持・resource上限の結果を研究版ごとに対応付けています。
+このディレクトリには、21件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPの面・辺・シェル・立体の位相結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
 ---
 
 This directory contains committed outputs generated exclusively from synthetic
-images by the versioned experiment scripts.
+images and STEP exchange structures by the versioned experiment scripts.
 
 ## v0.1.0
 
@@ -508,6 +508,30 @@ none. Sanitization removes the unsigned assertion rather than silently copying
 a stale binding. Profile names remain study labels rather than compliance or
 production-safety claims.
 
+## v0.21.0
+
+- `step_brep_topology_observations.csv` records the decision, reason, schema
+  identifier, entity and reference counts, topology inventory, boundary counts,
+  and exact source hash for each of six synthetic STEP fixtures.
+- `step_brep_faces.csv` records analysis-local face indices, STEP entity IDs,
+  parent shells and solids, declared surface types and parameters, bound counts,
+  edge incidence, and adjacency.
+- `step_brep_edges.csv` records vertex and curve references, curve types,
+  oriented-use counts, incident faces, and free/nonmanifold classifications.
+- `step_brep_shells.csv` records constituent faces, topology counts, declared
+  closure, incidence-derived closure, and parent solids.
+- `step_brep_solids.csv` records solid names, outer shells, and topology counts.
+- `step_brep_topology_summary.csv` records corpus decisions, surface-family
+  counts, and fixture-level topology metrics.
+- `step_brep_topology.png` visualizes topology inventories, free boundaries,
+  declared surface families, and fail-closed decisions.
+
+All six fixtures match their declared outcomes. The closed tetrahedron has 4
+faces, 6 edges, 1 shell, 1 solid, and no free edges; removing one face exposes
+3 free edges. These results cover the committed simple-entity subset. They do
+not establish general STEP conformance, evaluated geometric validity, or safe
+handling of arbitrary files.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -531,6 +555,7 @@ python experiments/run_resource_bounded_metadata.py
 python experiments/run_metadata_family_coverage.py
 python experiments/run_transform_integrity.py
 python experiments/run_policy_composition.py
+python experiments/run_step_brep_topology.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

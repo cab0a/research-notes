@@ -114,6 +114,23 @@ from research_notes.preprocessing import (
     resize_round_trip,
     unsharp_mask,
 )
+from research_notes.step_brep import (
+    DEFAULT_STEP_PARSE_LIMITS,
+    STEPBRepFixture,
+    STEPDecision,
+    STEPDocument,
+    STEPEdgeObservation,
+    STEPEntity,
+    STEPFaceObservation,
+    STEPInspectionResult,
+    STEPParseLimits,
+    STEPReference,
+    STEPShellObservation,
+    STEPSolidObservation,
+    build_step_brep_fixtures,
+    inspect_step_brep,
+    parse_step_part21,
+)
 
 __all__ = [
     "apply_psf",
@@ -206,4 +223,19 @@ __all__ = [
     "to_grayscale",
     "unsharp_mask",
     "verify_transform_integrity_assertion",
+    "build_step_brep_fixtures",
+    "DEFAULT_STEP_PARSE_LIMITS",
+    "inspect_step_brep",
+    "parse_step_part21",
+    "STEPBRepFixture",
+    "STEPDecision",
+    "STEPDocument",
+    "STEPEdgeObservation",
+    "STEPEntity",
+    "STEPFaceObservation",
+    "STEPInspectionResult",
+    "STEPParseLimits",
+    "STEPReference",
+    "STEPShellObservation",
+    "STEPSolidObservation",
 ]

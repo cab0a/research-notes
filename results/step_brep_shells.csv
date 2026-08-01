@@ -1,0 +1,6 @@
+fixture,shell_index,entity_id,shell_type,face_entity_ids,face_count,edge_count,free_edge_count,nonmanifold_edge_count,declared_closed,incidence_closed,parent_solid_ids
+closed_tetrahedron,0,73,closed_shell,42|52|62|72,4,6,0,0,1,1,74
+open_tetrahedron,0,63,open_shell,42|52|62,3,6,3,0,0,0,
+two_closed_solids,0,73,closed_shell,42|52|62|72,4,6,0,0,1,1,74
+two_closed_solids,1,147,closed_shell,116|126|136|146,4,6,0,0,1,1,148
+surface_catalog,0,168,open_shell,28|56|84|112|140|167,6,18,18,0,0,0,

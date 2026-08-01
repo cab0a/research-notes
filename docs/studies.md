@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、壊れたメタデータ、メタデータ保持・無害化・世代間ドリフト・field単位の選択保持・resource上限を扱う17件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値を一般的なしきい値として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21とB-rep位相を扱う21件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -426,11 +426,36 @@ rules.
 python experiments/run_policy_composition.py
 ```
 
+## STEP and B-Rep Foundations
+
+### v0.21.0 — STEP Part 21 and B-Rep Topology Inspection
+
+**Question:** How much face-, edge-, shell-, and solid-level structure can be
+recovered deterministically from a controlled Part 21 subset without adopting
+a geometry kernel?
+
+**Representative finding:** The closed tetrahedron resolves to 4 faces, 6
+edges, 1 shell, 1 solid, and no free edges. Removing one face exposes 3 free
+edges. Two disconnected tetrahedra retain separate ownership, and the surface
+catalog classifies six declared surface families. An unresolved reference is
+quarantined and a duplicate entity identifier is rejected.
+
+- [Complete note](../notes/step-part21-brep-topology-inspection.md)
+- [Observations](../results/step_brep_topology_observations.csv)
+- [Face inventory](../results/step_brep_faces.csv)
+- [Summary](../results/step_brep_topology_summary.csv)
+- [Figure](../results/step_brep_topology.png)
+- [Learning and modeling roadmap](brep-learning-roadmap.md)
+
+```bash
+python experiments/run_step_brep_topology.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
-PNG file. Fixed JPEG streams, reference decodes, and their manifests are under
-[`fixtures/`](../fixtures/).
+PNG file. Fixed JPEG streams, reference decodes, synthetic STEP exchange
+structures, and their manifests are under [`fixtures/`](../fixtures/).
 
 ## Claim Boundaries
 
@@ -446,6 +471,8 @@ failure-mode analysis, but it does not establish:
 - bounded file acquisition, decoded-pixel allocation, process memory, or
   execution time beyond the declared metadata admission counters;
 - security, memory safety, denial-of-service resistance, or safe handling of
-  arbitrary malformed files.
+  arbitrary malformed files;
+- STEP conformance, EXPRESS validation, or exact geometry evaluation beyond
+  the controlled v0.21.0 subset.
 
 The complete notes contain the narrower limitations for each experiment.

@@ -58,6 +58,8 @@ jobs:
           python experiments/run_metadata_family_coverage.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_transform_integrity.py --output-dir regenerated-results --platform-label linux-x64-reference
           python experiments/run_policy_composition.py --output-dir regenerated-results --platform-label linux-x64-reference
+          python experiments/run_step_brep_topology.py --output-dir regenerated-results
+          python experiments/run_step_brep_topology.py --fixture-dir regenerated-fixtures/step-brep-topology --output-dir regenerated-step-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -134,10 +136,17 @@ jobs:
           diff -u results/jpeg_transform_integrity_summary.csv regenerated-results/jpeg_transform_integrity_summary.csv
           diff -u results/jpeg_policy_composition_observations.csv regenerated-results/jpeg_policy_composition_observations.csv
           diff -u results/jpeg_policy_composition_summary.csv regenerated-results/jpeg_policy_composition_summary.csv
+          diff -u results/step_brep_topology_observations.csv regenerated-results/step_brep_topology_observations.csv
+          diff -u results/step_brep_faces.csv regenerated-results/step_brep_faces.csv
+          diff -u results/step_brep_edges.csv regenerated-results/step_brep_edges.csv
+          diff -u results/step_brep_shells.csv regenerated-results/step_brep_shells.csv
+          diff -u results/step_brep_solids.csv regenerated-results/step_brep_solids.csv
+          diff -u results/step_brep_topology_summary.csv regenerated-results/step_brep_topology_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
           diff -qr fixtures/malformed-jpeg-metadata regenerated-fixtures/malformed-jpeg-metadata
+          diff -qr fixtures/step-brep-topology regenerated-fixtures/step-brep-topology
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -165,6 +174,7 @@ jobs:
           test -s regenerated-results/jpeg_metadata_coverage.png
           test -s regenerated-results/jpeg_transform_integrity.png
           test -s regenerated-results/jpeg_policy_composition.png
+          test -s regenerated-results/step_brep_topology.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
