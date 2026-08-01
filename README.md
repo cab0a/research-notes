@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査、統制実験、結果、考察、制約を再現可能に記録します。STEP研究は、仕様理解、Pythonパーサー、形状・位相・製品構成、モデリング、3D AI利用の順に進めます。
 
-v0.23.0ではv0.21とv0.22の読み取り処理を一つのPart 21基盤へ統合しました。10個の合成fixtureでsource保持、位置情報、単純・複合entity、前方参照、構文異常、resource上限を検証し、5件をaccept、2件をquarantine、3件をrejectにしました。acceptした5件は元bytesを完全再構成し、閉じた四面体の74 entities・97 referencesと従来の位相解析も維持します。
+v0.24.0ではPart 21の第1版・第2版・第3版、文字列制御、UTF-8、コメント、binary、複数DATA部、ANCHOR、REFERENCE、SIGNATURE、ZIP transportを34個の合成fixtureで検証します。内部パーサーは17件の正常例と17件の異常例をすべて期待どおり判定し、固定revisionの2つの公開Pythonパーサーとの受理境界の差も記録します。
 
-合成データ、CSV・PNG、固定依存、117件のテスト、CIを備えます。完全なPart 21、EXPRESS・AP242適合、幾何妥当性、書き戻し互換性は主張しません。詳細は以下の英語本文に示します。
+合成データ、CSV・PNG、固定依存、123件のテスト、CIを備えます。結果は限定した構文適合性の証拠であり、ISO認証、完全なPart 21、EXPRESS・AP242適合、外部参照や署名の信頼性、幾何妥当性、書き戻し互換性は主張しません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -30,7 +30,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.23.0.
+v0.24.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -45,32 +45,33 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 23 releases to their questions,
+The [study index](docs/studies.md) maps all 24 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.23.0 study replaces the separate v0.21 and v0.22 tokenizers and grammar
-streams with one source-preserving parser. Ten synthetic inputs isolate exact
-source retention, grammar forms, localized failures, and resource limits.
+The v0.24.0 study classifies selected Edition 1, Edition 2, and Edition 3
+grammar features and checks them against declared implementation levels.
+Thirty synthetic inputs isolate normal forms, malformed syntax, declaration
+mismatches, and bounded ZIP transport.
 
 | Condition | Decision | Evidence |
 | --- | --- | --- |
-| Geometry integration control | accept | 74 entities and 97 references pass the unified parser and existing topology adapter |
-| Whitespace and comments | accept | All trivia remains in the complete token stream |
-| UTF-8 coordinates | accept | Character, byte, line, and column positions remain distinct and attributable |
-| Simple, complex, and forward references | accept | One grammar constructs both record forms without requiring definition order |
-| Nesting and token-length limits | quarantine | Explicit budgets stop work without classifying the input as malformed syntax |
-| Missing delimiter, open comment, invalid UTF-8 | reject | Three isolated syntax or decoding failures |
+| Edition 1 controls | accept | Core exchange, legacy `X2` text, binary, comments, and complex entities parse |
+| Edition 2 controls | accept | Multiple named `DATA` sections and `SECTION_CONTEXT` are classified separately |
+| Edition 3 controls | accept | Direct UTF-8, anchors, references, signatures, constants, optional data, and ZIP root parse |
+| Declaration mismatches | reject | Used features require a newer edition or higher syntactical conformance class |
+| Malformed lexical forms | reject | Invalid reals, lowercase keyword, binary, signature, comment, and occurrence name fail explicitly |
+| Unsafe or incomplete ZIP | reject | Parent-relative paths and an absent `ISO-10303.p21` root fail before extraction |
 
-![Unified Part 21 source model](results/step_part21_source_model.png)
+![Part 21 grammar coverage and controlled conformance](results/step_part21_conformance.png)
 
-All ten observations match their declared decisions: five accept, two
-quarantine, and three reject. Every accepted fixture reconstructs its exact
-UTF-8 bytes, producing 1,435 committed token rows. The viewable tetrahedron
-still resolves four faces, six edges, one shell, one solid, and no free edges.
-These are controlled source-model and topology results, not complete Part 21,
-EXPRESS, or AP242 conformance and not evaluated geometric validity.
+All 34 internal observations match their declared decisions: 17 accept and 17
+reject. STEPutils accepts 14 fixtures and agrees with 23 expectations; the
+IfcOpenShell `step-file-parser` accepts five and agrees with 22. These figures
+locate differences for investigation and are not parser rankings or a vote on
+standards conformance. EXPRESS schema validity, external resource resolution,
+CMS verification, application semantics, and geometry remain unevaluated.
 
 ## Claim Boundaries
 
@@ -99,11 +100,10 @@ EXPRESS, or AP242 conformance and not evaluated geometric validity.
   a convergence guarantee or losslessness claim.
 - Cross-platform observations describe pinned wheels on recorded GitHub-hosted
   runner images. They do not guarantee identical behavior for other builds.
-- The unified STEP source model supports only the committed structural subset.
-  Exact source reconstruction does not establish full Part 21 edition
-  coverage, validate an EXPRESS schema, resolve external resources, verify CMS
-  signatures, open ZIP containers, evaluate trimmed geometry, or establish
-  support for arbitrary STEP files.
+- The STEP conformance layer supports only the committed 34-fixture subset.
+  It is not an ISO certification suite, complete Wirth Syntax Notation
+  coverage, EXPRESS validation, external-resource resolver, CMS verifier, or
+  proof of support for arbitrary STEP files.
 - STEP face and edge indices are analysis-local. They are not persistent CAD
   identities across export, editing, Boolean operations, or healing.
 - Known pattern identities, matched references, and synthetic calibration
@@ -151,8 +151,9 @@ solid-level tables, and visual controls.
 
 The [STEP sample and preview catalog](docs/step-sample-catalog.md) links each
 generated input to its manifest, purpose, expected route, and visual evidence.
-The v0.23.0 corpus retains a copy of the closed tetrahedron as an integration
-control alongside syntax-only samples and their source-model diagram.
+The v0.24.0 corpus adds 34 viewable clear-text or archive fixtures, including
+paired edition and conformance-class mismatches. Syntax-only samples use the
+coverage figure rather than a fabricated geometry preview.
 
 ![Closed tetrahedron geometry control](results/step_part21_geometry_control.png)
 
@@ -161,7 +162,7 @@ validation evidence.
 
 ## Key Features
 
-- Twenty-three published studies with explicit questions, controls, results, and
+- Twenty-four published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -171,6 +172,8 @@ validation evidence.
 - One dependency-free, source-preserving Part 21 lexer and parser shared by
   the exchange-structure and topology studies, plus topology resolution for
   the geometry-bearing subset
+- Edition-aware Part 21 conformance observations and isolated comparisons with
+  two pinned public Python parsers
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -229,11 +232,12 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 117 tests covering blur metrics and models,
+The repository contains 123 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
-routing, the unified source-preserving Part 21 parser, bounded exchange
-structures, B-Rep topology ownership and incidence, experiment outputs, and
+routing, the unified source-preserving Part 21 parser, edition and
+conformance-class checks, bounded exchange structures, B-Rep topology
+ownership and incidence, experiment outputs, and
 cross-platform summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
@@ -247,7 +251,7 @@ the combined reports.
 Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The v0.21.0 through v0.23.0 STEP layers have no geometry-kernel
+manifests. The v0.21.0 through v0.24.0 STEP layers have no geometry-kernel
 dependency and do not claim compatibility beyond their controlled Part 21 and
 topology subsets.
 

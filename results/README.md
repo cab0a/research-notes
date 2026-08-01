@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、23件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
+このディレクトリには、24件の研究を固定した合成画像・合成STEPと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体の結果と目視用previewを研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -579,6 +579,31 @@ budgets produce quarantine. EXPRESS schema conformance remains
 `not_evaluated`; exact source retention is not proof of full Part 21 edition
 coverage, application semantics, or geometric validity.
 
+## v0.24.0
+
+- `step_part21_conformance_observations.csv` records expected and observed
+  decisions, reason codes, transport, implementation level, declared and
+  required edition and class, detected features, structure counts, external
+  parser outcomes, deferred semantic states, and fixture hashes.
+- `step_part21_parser_comparison.csv` contains 102 parser-by-fixture outcomes
+  for the controlled implementation, STEPutils, and the IfcOpenShell
+  `step-file-parser`.
+- `step_part21_grammar_coverage.csv` maps 13 feature families to their first
+  edition, fixture, implementation status, and claim boundary.
+- `step_part21_parser_manifest.csv` pins repository URLs, revisions, licenses,
+  and comparison roles for all three parser observations.
+- `step_part21_conformance_summary.csv` records the 34-fixture expectation
+  rate, decision counts, accepted counts, and expectation agreement by parser.
+- `step_part21_conformance.png` visualizes edition feature floors, controlled
+  decisions, and different external-parser acceptance boundaries.
+
+All 34 internal observations match their declared expectations: 17 accept and
+17 reject. STEPutils accepts 14 fixtures and agrees with 23 expectations; the
+IfcOpenShell `step-file-parser` accepts five and agrees with 22. These are
+diagnostic comparisons, not standards-compliance scores. The corpus does not
+evaluate EXPRESS schema rules, external resources, CMS authenticity,
+application semantics, or geometry.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -605,6 +630,7 @@ python experiments/run_policy_composition.py
 python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
 python experiments/run_step_part21_source_model.py
+python experiments/run_step_part21_conformance.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

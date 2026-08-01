@@ -194,10 +194,13 @@ class Part21ParseError(ValueError):
         self.span = span
 
 
-_NUMBER_RE = re.compile(
-    r"[-+]?(?:(?:\d+(?:\.\d*)?)|(?:\.\d+))(?:[Ee][-+]?\d+)?"
-)
+_REAL_RE = re.compile(r"[-+]?\d+\.\d*(?:[Ee][-+]?\d+)?")
+_INTEGER_RE = re.compile(r"[-+]?\d+")
 _IDENTIFIER_RE = re.compile(r"!?[A-Za-z_][A-Za-z0-9_-]*")
+_KEYWORD_RE = re.compile(r"!?[A-Z][A-Z0-9_]*")
+_CONSTANT_RE = re.compile(r"[A-Z][A-Z0-9]*")
+_ENUMERATION_RE = re.compile(r"[A-Z][A-Z0-9]*")
+_TAG_NAME_RE = re.compile(r"[A-Za-z][A-Za-z0-9]*")
 _BINARY_RE = re.compile(r"[0-3][0-9A-F]*")
 
 
@@ -255,7 +258,7 @@ def lex_part21(
             )
             continue
         if character == "'":
-            value, index = _read_quoted(text, start, "'", coordinates, limits)
+            value, index = _read_string(text, start, coordinates, limits)
             _append_token(
                 tokens,
                 "STRING",
@@ -266,14 +269,7 @@ def lex_part21(
             )
             continue
         if character == '"':
-            value, index = _read_quoted(text, start, '"', coordinates, limits)
-            if not _BINARY_RE.fullmatch(value):
-                raise Part21ParseError(
-                    "reject",
-                    "invalid_binary",
-                    "binary token is not Part 21 hexadecimal",
-                    coordinates.span(start, index),
-                )
+            value, index = _read_binary(text, start, coordinates, limits)
             _append_token(
                 tokens,
                 "BINARY",
@@ -307,6 +303,13 @@ def lex_part21(
             while index < len(text) and text[index].isdigit():
                 index += 1
             if index > start + 1:
+                if set(text[start + 1 : index]) == {"0"}:
+                    raise Part21ParseError(
+                        "reject",
+                        "invalid_occurrence_name",
+                        "occurrence name must contain a non-zero digit",
+                        coordinates.span(start, index),
+                    )
                 kind = "ENTITY_REFERENCE" if character == "#" else "VALUE_REFERENCE"
                 _append_token(
                     tokens,
@@ -317,19 +320,25 @@ def lex_part21(
                     limits,
                 )
                 continue
-            if character == "#":
-                identifier = _IDENTIFIER_RE.match(text, index)
-                if identifier is not None:
-                    index = identifier.end()
-                    _append_token(
-                        tokens,
-                        "CONSTANT_REFERENCE",
-                        text[start:index],
-                        text[start:index],
+            identifier = _IDENTIFIER_RE.match(text, index)
+            if identifier is not None:
+                index = identifier.end()
+                if not _CONSTANT_RE.fullmatch(text[start + 1 : index]):
+                    raise Part21ParseError(
+                        "reject",
+                        "invalid_occurrence_name",
+                        "constant occurrence name is not normalized",
                         coordinates.span(start, index),
-                        limits,
                     )
-                    continue
+                _append_token(
+                    tokens,
+                    "CONSTANT_REFERENCE",
+                    text[start:index],
+                    text[start:index],
+                    coordinates.span(start, index),
+                    limits,
+                )
+                continue
             raise Part21ParseError(
                 "reject",
                 "invalid_occurrence_name",
@@ -340,7 +349,7 @@ def lex_part21(
             end = text.find(".", index + 1)
             if end > index + 1:
                 value = text[index + 1 : end]
-                if _IDENTIFIER_RE.fullmatch(value):
+                if _ENUMERATION_RE.fullmatch(value):
                     index = end + 1
                     _append_token(
                         tokens,
@@ -351,9 +360,25 @@ def lex_part21(
                         limits,
                     )
                     continue
-        number = _NUMBER_RE.match(text, index)
+            if index + 1 < len(text) and text[index + 1].isdigit():
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_real",
+                    "real requires a digit before the decimal point",
+                    coordinates.span(start, min(start + 2, len(text))),
+                )
+        number = _REAL_RE.match(text, index)
+        if number is None:
+            number = _INTEGER_RE.match(text, index)
         if number is not None:
             index = number.end()
+            if index < len(text) and text[index] in {"E", "e"}:
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_real",
+                    "real with an exponent requires a decimal point",
+                    coordinates.span(start, min(index + 1, len(text))),
+                )
             _append_token(
                 tokens,
                 "NUMBER",
@@ -442,12 +467,11 @@ def parse_part21_document(
         )
 
     _validate_data_sections(data_sections, schema_identifiers)
-    external_names = {
-        reference.occurrence_name for reference in external_references
+    external_ids = {
+        int(reference.occurrence_name[1:])
+        for reference in external_references
     }
-    duplicates = sorted(
-        external_names.intersection(f"#{entity_id}" for entity_id in entity_ids)
-    )
+    duplicates = sorted(external_ids.intersection(entity_ids))
     if duplicates:
         raise Part21ParseError(
             "reject",
@@ -541,19 +565,20 @@ def _append_token(
     tokens.append(Part21Token(kind, raw, value, span))
 
 
-def _read_quoted(
+def _read_string(
     text: str,
     start: int,
-    quote: str,
     coordinates: _SourceCoordinates,
     limits: STEPParseLimits,
 ) -> tuple[str, int]:
+    """Read one string and normalize legacy character control directives."""
     index = start + 1
     output: list[str] = []
+    iso_8859_page = 1
     while index < len(text):
-        if text[index] == quote:
-            if quote == "'" and index + 1 < len(text) and text[index + 1] == quote:
-                output.append(quote)
+        if text[index] == "'":
+            if index + 1 < len(text) and text[index + 1] == "'":
+                output.append("'")
                 index += 2
                 continue
             value = "".join(output)
@@ -565,21 +590,167 @@ def _read_quoted(
                     "token exceeds the length limit",
                     coordinates.span(start, end),
                 )
-            if "\\" in value:
+            return value, end
+        if text[index] != "\\":
+            output.append(text[index])
+            index += 1
+            continue
+        if text.startswith("\\\\", index):
+            output.append("\\")
+            index += 2
+            continue
+        if text.startswith(("\\N\\", "\\F\\"), index):
+            index += 3
+            continue
+        page_match = re.match(r"\\P([A-I])\\", text[index:])
+        if page_match is not None:
+            iso_8859_page = ord(page_match.group(1)) - ord("A") + 1
+            index += len(page_match.group(0))
+            continue
+        if text.startswith("\\S\\", index):
+            value_index = index + 3
+            if value_index >= len(text):
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_string_control_directive",
+                    "page control directive is missing its character",
+                    coordinates.span(index, len(text)),
+                )
+            code_value = ord(text[value_index]) + 128
+            if code_value > 255:
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_string_control_directive",
+                    "page control character is outside the basic alphabet",
+                    coordinates.span(index, value_index + 1),
+                )
+            codec = f"iso8859_{iso_8859_page}"
+            try:
+                output.append(bytes((code_value,)).decode(codec))
+            except (LookupError, UnicodeDecodeError) as error:
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_string_control_directive",
+                    "page control directive cannot be decoded",
+                    coordinates.span(index, value_index + 1),
+                ) from error
+            index = value_index + 1
+            continue
+        if text.startswith("\\X\\", index):
+            end = index + 5
+            digits = text[index + 3 : end]
+            if len(digits) != 2 or not re.fullmatch(r"[0-9A-F]{2}", digits):
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_string_control_directive",
+                    "arbitrary character directive requires two hexadecimal digits",
+                    coordinates.span(index, min(end, len(text))),
+                )
+            output.append(chr(int(digits, 16)))
+            index = end
+            continue
+        extended = _read_extended_string_directive(text, index, coordinates)
+        if extended is not None:
+            decoded, index = extended
+            output.append(decoded)
+            continue
+        raise Part21ParseError(
+            "reject",
+            "invalid_string_control_directive",
+            "string contains an unknown reverse-solidus directive",
+            coordinates.span(index, min(index + 1, len(text))),
+        )
+    raise Part21ParseError(
+        "reject",
+        "unterminated_string",
+        "string token is not terminated",
+        coordinates.span(start, len(text)),
+    )
+
+
+def _read_extended_string_directive(
+    text: str,
+    start: int,
+    coordinates: _SourceCoordinates,
+) -> tuple[str, int] | None:
+    width = 0
+    prefix = ""
+    if text.startswith("\\X2\\", start):
+        width = 4
+        prefix = "\\X2\\"
+    elif text.startswith("\\X4\\", start):
+        width = 8
+        prefix = "\\X4\\"
+    else:
+        return None
+    payload_start = start + len(prefix)
+    payload_end = text.find("\\X0\\", payload_start)
+    if payload_end < 0:
+        raise Part21ParseError(
+            "reject",
+            "invalid_string_control_directive",
+            "extended character directive is not terminated",
+            coordinates.span(start, len(text)),
+        )
+    payload = text[payload_start:payload_end]
+    if not payload or len(payload) % width or not re.fullmatch(r"[0-9A-F]+", payload):
+        raise Part21ParseError(
+            "reject",
+            "invalid_string_control_directive",
+            "extended character directive has invalid hexadecimal groups",
+            coordinates.span(start, payload_end + 4),
+        )
+    characters: list[str] = []
+    for offset in range(0, len(payload), width):
+        codepoint = int(payload[offset : offset + width], 16)
+        if codepoint > 0x10FFFF or 0xD800 <= codepoint <= 0xDFFF:
+            raise Part21ParseError(
+                "reject",
+                "invalid_string_codepoint",
+                "extended character directive contains an invalid Unicode code point",
+                coordinates.span(start, payload_end + 4),
+            )
+        characters.append(chr(codepoint))
+    return "".join(characters), payload_end + 4
+
+
+def _read_binary(
+    text: str,
+    start: int,
+    coordinates: _SourceCoordinates,
+    limits: STEPParseLimits,
+) -> tuple[str, int]:
+    """Read a binary token while ignoring permitted print controls."""
+    index = start + 1
+    output: list[str] = []
+    while index < len(text):
+        if text[index] == '"':
+            end = index + 1
+            if len(text[start:end]) > limits.max_token_chars:
                 raise Part21ParseError(
                     "quarantine",
-                    "control_directive_unsupported",
-                    "Part 21 string control directives are outside this release",
+                    "token_length_limit",
+                    "token exceeds the length limit",
+                    coordinates.span(start, end),
+                )
+            value = "".join(output)
+            if not _BINARY_RE.fullmatch(value):
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_binary",
+                    "binary token is not Part 21 hexadecimal",
                     coordinates.span(start, end),
                 )
             return value, end
+        if text.startswith(("\\N\\", "\\F\\"), index):
+            index += 3
+            continue
         output.append(text[index])
         index += 1
-    reason = "unterminated_string" if quote == "'" else "unterminated_binary"
     raise Part21ParseError(
         "reject",
-        reason,
-        "quoted token is not terminated",
+        "unterminated_binary",
+        "binary token is not terminated",
         coordinates.span(start, len(text)),
     )
 
@@ -618,7 +789,7 @@ class _TokenStream:
 
     def expect_identifier(self, value: str) -> Part21Token:
         token = self.expect_kind("IDENTIFIER")
-        if token.value.upper() != value.upper():
+        if token.value != value:
             raise Part21ParseError(
                 "reject", "unexpected_token", f"expected {value}", token.span
             )
@@ -705,6 +876,13 @@ class _TokenStream:
             return Part21Value("list", None, values, span)
         if token.kind == "IDENTIFIER":
             identifier = self.pop_identifier()
+            if not _KEYWORD_RE.fullmatch(identifier.value):
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_keyword",
+                    "keyword is not normalized uppercase Part 21 syntax",
+                    identifier.span,
+                )
             if not self.matches_symbol("("):
                 return Part21Value(
                     "keyword", identifier.value.upper(), (), identifier.span
@@ -733,6 +911,13 @@ def _parse_header(stream: _TokenStream) -> tuple[Part21Record, ...]:
 
 def _parse_record(stream: _TokenStream) -> Part21Record:
     identifier = stream.pop_identifier()
+    if not _KEYWORD_RE.fullmatch(identifier.value):
+        raise Part21ParseError(
+            "reject",
+            "invalid_keyword",
+            "record keyword is not normalized uppercase Part 21 syntax",
+            identifier.span,
+        )
     arguments, argument_span = stream.parse_argument_list(0)
     return Part21Record(
         identifier.value.upper(),
@@ -792,7 +977,14 @@ def _parse_anchor_section(stream: _TokenStream) -> tuple[Part21Anchor, ...]:
         tag_count = 0
         while stream.matches_symbol("{"):
             stream.expect_symbol("{")
-            stream.pop_identifier()
+            tag_name = stream.pop_identifier()
+            if not _TAG_NAME_RE.fullmatch(tag_name.value):
+                raise Part21ParseError(
+                    "reject",
+                    "invalid_tag_name",
+                    "anchor tag name is invalid",
+                    tag_name.span,
+                )
             stream.expect_symbol(":")
             stream.parse_value(0)
             stream.expect_symbol("}")
@@ -817,26 +1009,26 @@ def _parse_reference_section(
     stream.expect_identifier("REFERENCE")
     stream.expect_symbol(";")
     references: list[Part21ExternalReference] = []
-    seen: set[str] = set()
+    seen: set[int] = set()
     while not stream.matches_identifier("ENDSEC"):
         occurrence = stream.pop()
         kind_by_token: dict[str, Part21ReferenceKind] = {
             "ENTITY_REFERENCE": "entity",
             "VALUE_REFERENCE": "value",
-            "CONSTANT_REFERENCE": "constant",
         }
         if occurrence.kind not in kind_by_token:
             raise Part21ParseError(
                 "reject", "unexpected_token", "expected occurrence name", occurrence.span
             )
-        if occurrence.value in seen:
+        occurrence_id = int(occurrence.value[1:])
+        if occurrence_id in seen:
             raise Part21ParseError(
                 "reject",
                 "duplicate_reference_name",
                 "REFERENCE occurrence name is repeated",
                 occurrence.span,
             )
-        seen.add(occurrence.value)
+        seen.add(occurrence_id)
         stream.expect_symbol("=")
         resource = stream.expect_kind("RESOURCE")
         semicolon = stream.expect_symbol(";")

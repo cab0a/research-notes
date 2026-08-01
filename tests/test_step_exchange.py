@@ -11,6 +11,7 @@ from research_notes import (
     build_step_exchange_fixtures,
     inspect_step_brep,
     inspect_step_exchange,
+    parse_part21_document,
     parse_step_exchange,
 )
 
@@ -116,6 +117,27 @@ def test_external_references_and_signatures_never_imply_validation() -> None:
     assert signature.signature_verification == "not_attempted"
     assert signature.signature_payload_bytes > 0
     assert signature.schema_conformance == "not_evaluated"
+
+    implementation_levels = {
+        name: parse_part21_document(fixtures[name].source_bytes)
+        .header_records[0]
+        .arguments[1]
+        .value
+        for name in (
+            "multiple_data_sections",
+            "utf8_binary_values",
+            "anchor_with_tag",
+            "external_reference",
+            "signature_present",
+        )
+    }
+    assert implementation_levels == {
+        "multiple_data_sections": "3;1",
+        "utf8_binary_values": "4;1",
+        "anchor_with_tag": "4;1",
+        "external_reference": "4;2",
+        "signature_present": "4;1",
+    }
 
 
 def test_invalid_structure_and_resource_limits_fail_closed() -> None:

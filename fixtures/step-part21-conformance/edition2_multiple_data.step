@@ -1,0 +1,13 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Controlled conformance fixture'),'3;1');
+FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('DEMO_SCHEMA'));
+ENDSEC;
+DATA('ONE',('DEMO_SCHEMA'));
+#1=ITEM('one');
+ENDSEC;
+DATA('TWO',('DEMO_SCHEMA'));
+#2=ITEM('two');
+ENDSEC;
+END-ISO-10303-21;

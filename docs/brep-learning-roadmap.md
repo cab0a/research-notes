@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.23.0からは、分かれていた実験用読み取り処理を一つのPart 21基盤へ統合します。字句・構文・元の文字位置を保持する段階、EXPRESSによる型検証、AP242などの用途上の意味、B-repの幾何評価を順番に積み上げます。詳細は以下の英語本文に示します。
+v0.24.0までにPart 21基盤を統合し、3世代の主要構文、実装レベル、適合クラス、ZIP transportを34個の合成fixtureで検証しました。次はEXPRESS構文・型検証、AP242の意味、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
 
 ---
 
@@ -123,15 +123,19 @@ comparison, and writing do not depend on reparsing or guesswork?
 
 #### v0.24.0 — Part 21 Grammar Coverage and Conformance Corpus
 
-Expand and classify edition-1, edition-2, and edition-3 grammar behavior.
-Study implementation-level declarations, legacy string and print control
-directives, user-defined keywords, all occurrence-name forms, anchor items,
-tags, resources, repeated sections, signatures, and archive transport. Compare
-the controlled corpus with independent public parsers where their documented
-scope overlaps.
+Classify selected Edition 1, Edition 2, and Edition 3 grammar behavior with 34
+deterministic fixtures. The published evidence covers implementation-level
+declarations, legacy and direct character encodings, comments, binary values,
+multiple data sections, user-defined keywords, occurrence-name constraints,
+anchors, references, signatures, optional data, and bounded ZIP transport.
+The controlled parser matches all 34 expectations; two pinned public parsers
+expose different acceptance boundaries without being treated as conformance
+oracles.
 
-Key question: which valid forms remain unsupported, and which commonly
-accepted real-world forms are outside the standard grammar?
+Answered boundary: the parser now states which controlled forms it accepts and
+why it rejects the paired malformed or misdeclared inputs. It still does not
+cover the complete Wirth Syntax Notation, validate EXPRESS, resolve external
+resources, verify CMS, or establish support for arbitrary STEP files.
 
 ### Phase B — EXPRESS and Schema Validation
 

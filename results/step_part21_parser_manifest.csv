@@ -1,0 +1,4 @@
+parser,repository,revision,license,comparison_role
+research_notes,https://github.com/cab0a/research-notes,v0.24.0,MIT,controlled implementation under study
+steputils,https://github.com/mozman/steputils.git,547860b349a36cf24c564d6c87ffd8f60484f6fb,MIT,independent public parser observation
+ifcopenshell_step_file_parser,https://github.com/IfcOpenShell/step-file-parser.git,9400d243d880dace57490949d74ab1932ce99a09,LGPL-2.1,independent public parser observation

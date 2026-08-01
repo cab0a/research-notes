@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-rep調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0の位相、v0.22.0の高度な交換構造、v0.23.0の統合source model用サンプルを収録します。閉じた四面体は形状を目視できる共通integration controlとして保存し、構文だけを扱うサンプルにはsource model図を用います。previewはschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-rep調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0の位相、v0.22.0の高度な交換構造、v0.23.0の統合source model、v0.24.0の版別構文適合性サンプルを収録します。閉じた四面体は形状を目視できる共通integration controlとして保存し、構文だけを扱うサンプルには構造・coverage図を用います。previewはschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -120,6 +120,33 @@ and retained token classes rather than fabricating a geometry preview. The
 invalid UTF-8 sample is intentionally not a valid text document and should be
 inspected as bytes or through its manifest and observation row.
 
+## v0.24.0 — Edition and Conformance Samples
+
+Directory: [`fixtures/step-part21-conformance/`](../fixtures/step-part21-conformance/)
+
+Manifest: [`manifest.csv`](../fixtures/step-part21-conformance/manifest.csv)
+
+The corpus contains 31 clear-text `.step` inputs and three `.stpz` archives.
+Every byte is generated in code and the manifest records its SHA-256 digest,
+condition, expected decision, reason code, and edition floor.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Edition 1 core | [`edition1_minimal.step`](../fixtures/step-part21-conformance/edition1_minimal.step), [`edition1_legacy_controls.step`](../fixtures/step-part21-conformance/edition1_legacy_controls.step) | Core exchange and legacy `X`, `X4`, `S/P`, and `N/F` controls |
+| Comments and binary | [`edition1_comment.step`](../fixtures/step-part21-conformance/edition1_comment.step), [`invalid_binary.step`](../fixtures/step-part21-conformance/invalid_binary.step) | Non-nested trivia and binary hexadecimal rules |
+| Edition 2 structure | [`edition2_multiple_data.step`](../fixtures/step-part21-conformance/edition2_multiple_data.step), [`edition2_section_context.step`](../fixtures/step-part21-conformance/edition2_section_context.step) | Multiple named `DATA` and an Edition 2 header entity |
+| Edition 3 text and sections | [`edition3_utf8.step`](../fixtures/step-part21-conformance/edition3_utf8.step), [`edition3_anchor.step`](../fixtures/step-part21-conformance/edition3_anchor.step), [`edition3_value_reference.step`](../fixtures/step-part21-conformance/edition3_value_reference.step), [`edition3_signature.step`](../fixtures/step-part21-conformance/edition3_signature.step) | Direct UTF-8, anchor, external value reference, and signature syntax |
+| Edition and class mismatch | [`edition1_multiple_data.step`](../fixtures/step-part21-conformance/edition1_multiple_data.step), [`reference_class_1.step`](../fixtures/step-part21-conformance/reference_class_1.step), [`constant_class_2.step`](../fixtures/step-part21-conformance/constant_class_2.step) | Parsed feature floor versus declared implementation level |
+| Numeric and identifier errors | [`invalid_real_exponent.step`](../fixtures/step-part21-conformance/invalid_real_exponent.step), [`zero_occurrence.step`](../fixtures/step-part21-conformance/zero_occurrence.step), [`lowercase_keyword.step`](../fixtures/step-part21-conformance/lowercase_keyword.step) | Strict real, occurrence-name, and keyword syntax |
+| Character errors | [`invalid_string_control.step`](../fixtures/step-part21-conformance/invalid_string_control.step), [`invalid_utf8.step`](../fixtures/step-part21-conformance/invalid_utf8.step) | Unknown legacy directive and invalid UTF-8 input |
+| ZIP transport | [`zip_root.stpz`](../fixtures/step-part21-conformance/zip_root.stpz), [`zip_missing_root.stpz`](../fixtures/step-part21-conformance/zip_missing_root.stpz), [`zip_unsafe_path.stpz`](../fixtures/step-part21-conformance/zip_unsafe_path.stpz) | Required root and fail-closed path admission without extraction |
+
+![Part 21 grammar coverage and conformance corpus](../results/step_part21_conformance.png)
+
+These files intentionally use a synthetic schema vocabulary and generally do
+not describe a meaningful 3D shape. The figure shows edition coverage and
+acceptance boundaries; the CSV observations remain the validation evidence.
+
 ## Regeneration
 
 ```bash
@@ -133,6 +160,10 @@ python experiments/run_step_exchange_structure.py \
 
 python experiments/run_step_part21_source_model.py \
   --fixture-dir fixtures/step-part21-source-model \
+  --refresh-fixtures
+
+python experiments/run_step_part21_conformance.py \
+  --fixture-dir fixtures/step-part21-conformance \
   --refresh-fixtures
 ```
 

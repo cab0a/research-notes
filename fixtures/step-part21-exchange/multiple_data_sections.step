@@ -8,6 +8,6 @@ DATA('GEOMETRY',('DEMO_SCHEMA'));
 #1=POINT('origin',(0.,0.,0.));
 ENDSEC;
 DATA('ATTRIBUTES',('DEMO_SCHEMA'));
-#2=LABEL('測定面',#1);
+#2=LABEL('legacy',#1);
 ENDSEC;
 END-ISO-10303-21;

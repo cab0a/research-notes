@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、23件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相・高度な交換構造・統合source modelを含む検証、互換性境界をまとめています。
+本書は、24件の研究ノートの合成画像・合成STEP、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、反復・field単位のmetadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性を含む検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -46,6 +46,28 @@ This writes:
 - `output/quickstart/laplacian_variance_summary.csv`
 - `output/quickstart/laplacian_variance.png`
 
+## Part 21 Comparison Setup
+
+The v0.24.0 differential experiment uses two independent public parsers at
+exact commits. They are comparison inputs and are not vendored or imported by
+the `research_notes` package. From a clean repository checkout, run:
+
+```bash
+python -m pip install -e ".[comparison,test]"
+mkdir -p external
+git clone https://github.com/mozman/steputils.git external/steputils
+git -C external/steputils checkout 547860b349a36cf24c564d6c87ffd8f60484f6fb
+git clone https://github.com/IfcOpenShell/step-file-parser.git \
+  external/ifcopenshell_step_file_parser
+git -C external/ifcopenshell_step_file_parser checkout \
+  9400d243d880dace57490949d74ab1932ce99a09
+```
+
+The experiment verifies both `HEAD` values before collecting observations.
+The external checkouts remain ignored by Git. Their repository URLs,
+revisions, licenses, and comparison roles are committed in
+`results/step_part21_parser_manifest.csv`.
+
 ## Complete Experiment Set
 
 Each script can use its default `results/` destination or an explicit
@@ -75,6 +97,7 @@ python experiments/run_policy_composition.py
 python experiments/run_step_brep_topology.py
 python experiments/run_step_exchange_structure.py
 python experiments/run_step_part21_source_model.py
+python experiments/run_step_part21_conformance.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -125,6 +148,11 @@ python experiments/run_step_part21_source_model.py \
   --fixture-dir output/fixtures/step-part21-source-model \
   --output-dir output/step-part21-source-model \
   --refresh-fixtures
+
+python experiments/run_step_part21_conformance.py \
+  --fixture-dir output/fixtures/step-part21-conformance \
+  --output-dir output/step-part21-conformance \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -159,6 +187,11 @@ python experiments/run_step_part21_source_model.py \
   explicit nesting and token-length limits.
 - The v0.23 geometry control is byte-identical to the v0.21 closed tetrahedron,
   so one shape tests the shared parser and the existing topology adapter.
+- The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
+  signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
+- External parser comparisons run each fixture in an isolated child process
+  against two exact public repository revisions; parser acceptance is never
+  used as the conformance oracle.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -200,7 +233,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 117 tests cover:
+The 123 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -227,6 +260,9 @@ The 117 tests cover:
 - exact Part 21 source reconstruction, trivia retention, character and UTF-8
   byte spans, simple and subsuper records, forward references, localized
   syntax diagnostics, and source-model resource limits
+- Part 21 edition floors, implementation levels, conformance classes, legacy
+  string controls, direct UTF-8, strict real and occurrence syntax, bounded ZIP
+  intake, and deterministic conformance fixtures
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -247,6 +283,7 @@ The 117 tests cover:
 |   |-- jpeg-decoder-contracts/
 |   |-- malformed-jpeg-metadata/
 |   |-- step-part21-source-model/
+|   |-- step-part21-conformance/
 |   |-- step-part21-exchange/
 |   `-- step-brep-topology/
 |-- notes/
@@ -269,6 +306,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.23.0. They do not imply complete ISO 10303-21, EXPRESS, or AP242
+v0.21.0 through v0.24.0. They do not imply complete ISO 10303-21, EXPRESS, or AP242
 conformance and do not authorize external resource retrieval, signature trust,
 archive extraction, or evaluated geometry claims.

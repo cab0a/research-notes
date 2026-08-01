@@ -1,6 +1,6 @@
 ISO-10303-21;
 HEADER;
-FILE_DESCRIPTION(('Controlled synthetic exchange'),'3;1');
+FILE_DESCRIPTION(('Controlled synthetic exchange'),'2;1');
 FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
 FILE_SCHEMA(('DEMO_SCHEMA'));
 ENDSEC;

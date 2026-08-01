@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,fixture_count,34
+corpus,expectation_rate,1.000000
+corpus,decision_accept,17
+corpus,decision_quarantine,0
+corpus,decision_reject,17
+research_notes,accepted_fixture_count,17
+research_notes,agreement_with_fixture_expectation_rate,1.000000
+steputils,accepted_fixture_count,14
+steputils,agreement_with_fixture_expectation_rate,0.676471
+ifcopenshell_step_file_parser,accepted_fixture_count,5
+ifcopenshell_step_file_parser,agreement_with_fixture_expectation_rate,0.647059

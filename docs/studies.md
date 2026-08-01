@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・B-rep位相を扱う23件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相を扱う24件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -502,6 +502,32 @@ published topology through the compatibility adapter.
 python experiments/run_step_part21_source_model.py
 ```
 
+### v0.24.0 — Part 21 Grammar Coverage and Conformance Testing
+
+**Question:** Which Edition 1, Edition 2, and Edition 3 lexical, section,
+implementation-level, conformance-class, and archive rules does the controlled
+Python parser implement, and where do independent public parsers differ?
+
+**Representative finding:** All 34 synthetic fixtures match their expected
+internal decisions: 17 accept and 17 reject. STEPutils accepts 14 fixtures and
+agrees with 23 expectations, while the IfcOpenShell `step-file-parser` accepts
+five and agrees with 22. The disagreements include Edition 2/3 features,
+decimal-point requirements, all-zero occurrence names, optional data, and ZIP
+transport. They are retained as diagnostic evidence rather than parser ranks.
+
+- [Complete note](../notes/part21-grammar-conformance.md)
+- [Observations](../results/step_part21_conformance_observations.csv)
+- [Parser comparison](../results/step_part21_parser_comparison.csv)
+- [Grammar coverage](../results/step_part21_grammar_coverage.csv)
+- [Parser manifest](../results/step_part21_parser_manifest.csv)
+- [Summary](../results/step_part21_conformance_summary.csv)
+- [Figure](../results/step_part21_conformance.png)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_step_part21_conformance.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -525,6 +551,6 @@ failure-mode analysis, but it does not establish:
   arbitrary malformed files;
 - full Part 21 edition coverage, EXPRESS validation, external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.23.0 subsets.
+  controlled v0.21.0 through v0.24.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

@@ -168,6 +168,25 @@ from research_notes.step_source_model import (
     build_step_source_model_fixtures,
     inspect_part21_source_model,
 )
+from research_notes.step_conformance import (
+    DEFAULT_STEP_ARCHIVE_LIMITS,
+    Part21ConformanceFixture,
+    Part21ConformanceResult,
+    STEPArchiveLimits,
+    build_part21_conformance_fixtures,
+    inspect_part21_conformance,
+)
+from research_notes.step_parser_comparison import (
+    IFCOPENSHELL_PARSER_COMMIT,
+    IFCOPENSHELL_PARSER_REPOSITORY,
+    STEPUTILS_COMMIT,
+    STEPUTILS_REPOSITORY,
+    ExternalParserObservation,
+    ExternalPart21Parser,
+    external_parser_definitions,
+    observe_external_parser,
+    verify_external_parser_checkout,
+)
 
 __all__ = [
     "apply_psf",
@@ -306,4 +325,19 @@ __all__ = [
     "inspect_part21_source_model",
     "lex_part21",
     "parse_part21_document",
+    "DEFAULT_STEP_ARCHIVE_LIMITS",
+    "Part21ConformanceFixture",
+    "Part21ConformanceResult",
+    "STEPArchiveLimits",
+    "build_part21_conformance_fixtures",
+    "inspect_part21_conformance",
+    "IFCOPENSHELL_PARSER_COMMIT",
+    "IFCOPENSHELL_PARSER_REPOSITORY",
+    "STEPUTILS_COMMIT",
+    "STEPUTILS_REPOSITORY",
+    "ExternalParserObservation",
+    "ExternalPart21Parser",
+    "external_parser_definitions",
+    "observe_external_parser",
+    "verify_external_parser_checkout",
 ]

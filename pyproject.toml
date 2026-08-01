@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-notes"
-version = "0.23.0"
+version = "0.24.0"
 description = "Reproducible technical research notes and controlled experiments"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -18,6 +18,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+comparison = [
+    "antlr4-python3-runtime==4.9.3",
+    "lark-parser==0.12.0",
+    "pyparsing==3.2.5",
+]
 test = ["pytest==9.1.1"]
 
 [tool.pytest.ini_options]

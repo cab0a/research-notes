@@ -1,0 +1,14 @@
+feature,first_edition,edition_1,edition_2,edition_3,controlled_fixture,implementation_status,claim_boundary
+clear_text_core,1,1,1,1,edition1_minimal,implemented,EXPRESS schema rules are not evaluated
+comments,1,1,1,1,edition1_comment,implemented,comments are retained as source trivia
+binary_values,1,1,1,1,edition1_binary,implemented,binary syntax is checked without schema typing
+legacy_string_controls,1,1,1,1,edition1_legacy_x2|edition1_legacy_controls,implemented_subset,"X, X2, X4, S, P, N, and F directives are decoded; not a certification suite"
+multiple_data_sections,2,0,1,1,edition2_multiple_data,implemented,section-to-schema declaration is checked without EXPRESS validation
+edition2_header_entities,2,0,1,1,edition2_section_context,syntax_only,header record shape beyond FILE_DESCRIPTION and FILE_SCHEMA is not fully validated
+direct_utf8,3,0,0,1,edition3_utf8,implemented,invalid UTF-8 is rejected before tokenization
+anchor_section,3,0,0,1,edition3_anchor,implemented,anchor semantics and ECMAScript bindings are not executed
+reference_section,3,0,0,1,edition3_reference,syntax_only,external resources are never retrieved
+signature_section,3,0,0,1,edition3_signature,syntax_only,Base64 is decoded but CMS is not verified
+zip_transport,3,0,0,1,zip_root,bounded_root_only,root is read in memory; subsidiary references are not resolved
+optional_data_section,3,0,0,1,edition3_no_data,implemented,schema populations are not evaluated
+constant_and_value_references,3,0,0,1,edition3_constant|edition3_value_reference,syntax_only,EXPRESS constants and referenced value types are not resolved

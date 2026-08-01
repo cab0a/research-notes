@@ -387,7 +387,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
                 "DATA('GEOMETRY',('DEMO_SCHEMA'));\n"
                 "#1=POINT('origin',(0.,0.,0.));\nENDSEC;\n"
                 "DATA('ATTRIBUTES',('DEMO_SCHEMA'));\n"
-                "#2=LABEL('測定面',#1);\nENDSEC;"
+                "#2=LABEL('legacy',#1);\nENDSEC;",
+                implementation_level="3;1",
             ),
         ),
         STEPExchangeFixture(
@@ -404,7 +405,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             _exchange(
                 "DATA;\n#1=(REPRESENTATION_ITEM('curve') "
-                "GEOMETRIC_REPRESENTATION_ITEM() CURVE());\nENDSEC;"
+                "GEOMETRIC_REPRESENTATION_ITEM() CURVE());\nENDSEC;",
+                implementation_level="2;1",
             ),
         ),
         STEPExchangeFixture(
@@ -453,7 +455,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             _exchange(
                 "REFERENCE;\n"
                 "#10=<https://example.invalid/model.step#shape>;\nENDSEC;\n"
-                "DATA;\n#1=USE(#10);\nENDSEC;"
+                "DATA;\n#1=USE(#10);\nENDSEC;",
+                implementation_level="4;2",
             ),
         ),
         STEPExchangeFixture(
@@ -484,7 +487,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             _exchange(
                 "DATA('A',('DEMO_SCHEMA'));\n#1=ITEM('a');\nENDSEC;\n"
-                "DATA('B',('DEMO_SCHEMA'));\n#1=ITEM('b');\nENDSEC;"
+                "DATA('B',('DEMO_SCHEMA'));\n#1=ITEM('b');\nENDSEC;",
+                implementation_level="3;1",
             ),
         ),
         STEPExchangeFixture(
@@ -499,7 +503,10 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             0,
             0,
-            _exchange("DATA;\n#1=ITEM('a');\nENDSEC;\nDATA;\n#2=ITEM('b');\nENDSEC;"),
+            _exchange(
+                "DATA;\n#1=ITEM('a');\nENDSEC;\nDATA;\n#2=ITEM('b');\nENDSEC;",
+                implementation_level="3;1",
+            ),
         ),
         STEPExchangeFixture(
             "undeclared_data_schema",
@@ -514,7 +521,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             0,
             _exchange(
-                "DATA('GEOMETRY',('OTHER_SCHEMA'));\n#1=ITEM('a');\nENDSEC;"
+                "DATA('GEOMETRY',('OTHER_SCHEMA'));\n#1=ITEM('a');\nENDSEC;",
+                implementation_level="3;1",
             ),
         ),
         STEPExchangeFixture(
@@ -529,7 +537,10 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             0,
             0,
-            _exchange("DATA;\n#1=PROPERTY(\"0G\");\nENDSEC;"),
+            _exchange(
+                "DATA;\n#1=PROPERTY(\"0G\");\nENDSEC;",
+                implementation_level="2;1",
+            ),
         ),
         STEPExchangeFixture(
             "deep_nesting",
@@ -544,7 +555,8 @@ def build_step_exchange_fixtures() -> tuple[STEPExchangeFixture, ...]:
             0,
             0,
             _exchange(
-                "DATA;\n#1=NESTED(" + "(" * 34 + "1" + ")" * 34 + ");\nENDSEC;"
+                "DATA;\n#1=NESTED(" + "(" * 34 + "1" + ")" * 34 + ");\nENDSEC;",
+                implementation_level="2;1",
             ),
         ),
         STEPExchangeFixture(
@@ -610,11 +622,11 @@ def _empty_inspection(
     )
 
 
-def _exchange(body: str) -> bytes:
+def _exchange(body: str, *, implementation_level: str = "4;1") -> bytes:
     text = (
         "ISO-10303-21;\n"
         "HEADER;\n"
-        "FILE_DESCRIPTION(('Controlled synthetic exchange'),'3;1');\n"
+        f"FILE_DESCRIPTION(('Controlled synthetic exchange'),'{implementation_level}');\n"
         "FILE_NAME('fixture.step','2026-01-01T00:00:00',"
         "('research-notes'),('research-notes'),'','','');\n"
         "FILE_SCHEMA(('DEMO_SCHEMA'));\n"
