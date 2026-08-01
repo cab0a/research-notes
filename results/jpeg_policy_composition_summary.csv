@@ -1,0 +1,5 @@
+profile,fixtures,accept_count,sanitize_count,quarantine_count,reject_count,emitted_count,expectation_rate,source_field_count,retained_field_count,dropped_field_count
+minimal_export,9,0,3,5,1,3,1.000000,12,0,12
+open_catalog,9,3,0,5,1,3,1.000000,12,12,0
+privacy_review,9,0,2,6,1,2,1.000000,12,4,8
+verified_archive,9,1,0,7,1,1,1.000000,6,6,0

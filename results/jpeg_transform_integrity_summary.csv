@@ -1,0 +1,10 @@
+transform,fixtures,valid_binding_count,valid_derived_binding_count,stale_binding_count,missing_assertion_count,malformed_assertion_count,multiple_assertions_count,expectation_rate,mismatching_binding_count
+created,1,1,0,0,0,0,0,1.000000,0
+manifest_duplicated,1,0,0,0,0,0,1,1.000000,0
+manifest_malformed,1,0,0,0,0,1,0,1.000000,0
+manifest_removed,1,0,0,0,1,0,0,1.000000,0
+manifest_tampered,1,0,0,1,0,0,0,1.000000,1
+metadata_reordered,1,1,0,0,0,0,0,1.000000,0
+metadata_sanitized,2,0,1,1,0,0,0,1.000000,1
+pixel_modified,1,0,0,1,0,0,0,1.000000,2
+reencoded,2,0,1,1,0,0,0,1.000000,2

@@ -1,0 +1,4 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,component,role,implementation,version_or_backend,contract
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,transform_integrity_model,digest_binding,research-notes,0.19.0,"unsigned image-core, normalized-metadata, and decoded-pixel bindings"
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,sha256,digest,Python hashlib,SHA-256,canonical JSON assertion and controlled content scopes
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75 source; quality 65 re-encode; chroma 444

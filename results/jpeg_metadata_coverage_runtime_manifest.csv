@@ -1,0 +1,4 @@
+platform_label,operating_system,architecture,python_version,runner_image_os,runner_image_version,component,role,implementation,version_or_backend,contract
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,metadata_coverage_parser,relationship_parser,research-notes,0.18.0,"controlled EXIF, XMP, IPTC IIM, and opaque maker-note coverage"
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,resource_admission_gate,precondition,research-notes,0.17.0,default metadata resource budget
+linux-x64-reference,Linux,x86_64,3.12.3,not_recorded,not_recorded,fixture_encoder,image_encoder,Pillow 12.3.0,libjpeg-turbo 3.1.4.1,quality 75; chroma 444

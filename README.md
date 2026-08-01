@@ -4,7 +4,7 @@
 
 このリポジトリは、画像処理に関する研究課題、文献調査、仮説、統制実験、結果、考察、制約を継続的に記録する研究ノートです。
 
-研究テーマは、ぼけ評価と局所化、前処理や圧縮による評価値の変化、JPEGの復号・メタデータ・環境間互換性です。現在の研究では、JPEG metadataをdecoderへ渡す前の10種類のresource上限について、上限値ちょうどと上限値+1を含む24個の合成fixtureを評価しています。5環境の120観測では、全24契約でaccept・quarantine・reject、reason code、work counter、fixture hashが一致しました。
+研究テーマは、ぼけ評価、前処理や圧縮による評価値の変化、JPEGの復号・metadata・環境間互換性です。現在の研究では、resource、coverage、opaque metadata、integrity、retentionを順序付きで合成し、9入力を4種類のpolicy profileで評価しています。36観測はaccept 4、sanitize 5、quarantine 23、reject 4となり、すべてのtraceが最初に判断を確定したstageを記録します。profile名を安全性やcomplianceの保証として扱わない限界も明記しています。
 
 入力が同じなら同じ結果を生成するテストデータ、CSV・PNG成果物、固定した依存関係、テスト、5種類の環境を使った互換性検証を含みます。研究ごとの結果、再現手順、主張できる範囲は、以下の英語本文と個別ノートを参照してください。
 
@@ -24,9 +24,11 @@ figures, interpretation, and limitations.
 The work starts with blur heuristics, then tests spatial aggregation,
 preprocessing, optical and photometric effects, JPEG compression history,
 decoder portability, metadata interpretation, malformed-metadata recovery,
-metadata round-trip policies, multi-generation policy drift, and field-level
-selective retention before evaluating resource-bounded metadata admission.
-The current release is v0.17.0.
+metadata round-trip policies, multi-generation policy drift, field-level
+selective retention, and resource-bounded admission before evaluating extended
+metadata-family coverage and digest-bound transform integrity before composing
+those controls into explainable routing policies. The current release is
+v0.20.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -38,36 +40,32 @@ and claim boundaries evolve from one study to the next.
 | --- | --- | --- |
 | Blur measurement and localization | v0.1.0–v0.4.0 | How do noise, spatial aggregation, and window geometry change Laplacian variance and Tenengrad responses? |
 | Processing-pipeline sensitivity | v0.5.0–v0.8.0 | How do preprocessing, optical blur, photometric transforms, and JPEG history move scores and fixed calibration rules? |
-| JPEG codec and metadata contracts | v0.9.0–v0.17.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, and resource-boundary behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
+| JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 
-The [study index](docs/studies.md) maps all 17 releases to their questions,
+The [study index](docs/studies.md) maps all 20 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.17.0 study declares ten ceilings for JPEG header traversal, metadata
-segments and bytes, one metadata segment, EXIF entries, XMP packet bytes,
-nodes, depth and text, and ICC chunks. Twenty paired fixtures exercise each
-ceiling exactly at the limit and at limit plus one.
+The v0.20.0 study composes five previously isolated controls into an ordered
+decision trace. Nine synthetic inputs are evaluated under four explicit
+profiles, producing 36 fixture-profile observations.
 
-| Boundary class | Fixtures | Local decision | Five-profile observations |
-| --- | ---: | --- | ---: |
-| Exactly at limit | 10 | 10 `accept` | 50 `accept` |
-| Limit plus one | 10 | 10 `quarantine` | 50 `quarantine` |
-| Mixed baseline | 1 | 1 `accept` | 5 `accept` |
-| Metadata syntax controls | 2 | 2 `quarantine` | 10 `quarantine` |
-| Container framing control | 1 | 1 `reject` | 5 `reject` |
+| Profile | Accept | Sanitize | Quarantine | Reject |
+| --- | ---: | ---: | ---: | ---: |
+| `open_catalog` | 3 | 0 | 5 | 1 |
+| `privacy_review` | 0 | 2 | 6 | 1 |
+| `verified_archive` | 1 | 0 | 7 | 1 |
+| `minimal_export` | 0 | 3 | 5 | 1 |
 
-![Cross-platform metadata resource contracts](results/jpeg_resource_budget_cross_platform.png)
+![Explainable policy composition](results/jpeg_policy_composition.png)
 
-Every over-limit fixture stopped at the first disallowed value, and no
-corresponding admitted counter exceeded its ceiling. The five-profile matrix
-produced 120 observations. All 24 fixture contracts retained one decision,
-reason-code, issue, counter, and fixture-hash signature.
+All observations match their declared decision and reason. Every trace has one
+decisive final stage: 8 stop at resource admission, 4 at relationship coverage,
+2 at opaque-data policy, 13 at integrity, and 9 at retention.
 
-`accept` means only that the controlled header policy permits a downstream
-decoder attempt. It does not establish metadata trust, full-JPEG validity, or
-bounded decoder memory and time.
+The profiles are controlled rule combinations, not universal safety levels,
+privacy compliance, archival guarantees, or production recommendations.
 
 ## Claim Boundaries
 
@@ -84,6 +82,13 @@ bounded decoder memory and time.
 - The resource-boundary auditor receives an already resident byte string and
   bounds only its declared header and metadata work. It does not bound file
   reads, decoder pixels, process memory, wall-clock time, or exploitability.
+- The metadata-coverage parser recognizes only the synthetic EXIF, XMP, IPTC
+  IIM, Photoshop IRB, and maker-note structures used by v0.18.0. It is not a
+  complete metadata implementation.
+- The transform-integrity record is a project-specific unsigned digest
+  assertion. Matching bindings are not authenticated provenance.
+- The composition engine returns decisions and optional bytes; it does not
+  enforce quarantine storage, access control, retention, or operator review.
 - The observed generation-3 pixel fixed point applies only to one small
   synthetic image, quality 75, 4:4:4 sampling, and the pinned builds. It is not
   a convergence guarantee or losslessness claim.
@@ -129,7 +134,7 @@ fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 
 ## Key Features
 
-- Seventeen published studies with explicit questions, controls, results, and
+- Twenty published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -191,7 +196,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 70 tests covering blur metrics and models,
+The repository contains 90 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, experiment outputs, and cross-platform summary logic.
@@ -211,11 +216,10 @@ manifests.
 
 ## Roadmap
 
-- v0.18.0 candidate: extend controlled parser coverage to EXIF thumbnails,
-  extended XMP, IPTC IIM, maker notes, and nested payload relationships
-  without treating one implementation as semantically complete.
-- Evaluate authenticated provenance and signature-preservation boundaries
-  without treating metadata presence as authenticity.
+- v0.21.0 candidate: evaluate an end-to-end bounded intake pipeline with
+  stage-specific failure attribution and artifact contracts.
+- v0.22.0 candidate: minimize the synthetic regression corpus while preserving
+  boundary, reason-code, and policy-decision coverage.
 - Evaluate adaptive or multiscale aggregation without treating overlapping
   windows as independent evidence.
 - Extend global point-spread-function controls to spatially varying defocus and

@@ -69,6 +69,9 @@ python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
 python experiments/run_resource_bounded_metadata.py
+python experiments/run_metadata_family_coverage.py
+python experiments/run_transform_integrity.py
+python experiments/run_policy_composition.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -118,6 +121,12 @@ python experiments/run_malformed_metadata_recovery.py \
   run as their PNG figures.
 - Resource-boundary fixtures are generated in memory from fixed bytes and
   exercise exact-limit and limit-plus-one relations without external data.
+- Metadata-coverage fixtures generate EXIF thumbnail, Extended XMP, IPTC IIM,
+  and maker-note relationships entirely in memory.
+- Transform-integrity fixtures generate inherited, renewed, stale, missing,
+  malformed, duplicate, and tampered unsigned assertions in memory.
+- Policy-composition fixtures evaluate nine controlled conditions under four
+  explicit profiles and serialize every ordered decision trace.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -138,8 +147,10 @@ profiles:
 Each profile uploads its observation tables. A separate Ubuntu job downloads
 the five artifacts, aggregates codec, syntax, metadata, recovery, metadata
 round-trip, multi-generation policy, field-level retention, and
-resource-boundary reports, then compares the stable CSV outputs with the
-committed cross-platform references.
+resource-boundary, metadata-family coverage, transform-integrity, and composed-policy reports. Existing
+stable CSV outputs are compared with committed cross-platform references;
+the v0.18 through v0.20 aggregates validate all fixture contracts during the
+workflow.
 
 For the resource-boundary study, the aggregate requires 24 fixture contracts
 and five observations per contract. It checks decision, reason-code, issue,
@@ -157,7 +168,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 70 tests cover:
+The 90 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -169,6 +180,12 @@ The 70 tests cover:
 - field-level metadata extraction and selective-retention relationships
 - exact-limit, over-limit, syntax, and framing decisions for bounded metadata
   admission
+- complete, reordered, missing, duplicate, orphaned, and out-of-bounds nested
+  metadata relationships
+- image-core, normalized-metadata, and decoded-pixel digest bindings across
+  inherited, renewed, stale, missing, malformed, and duplicate assertions
+- ordered resource, coverage, opacity, integrity, and retention traces across
+  four explicit policy profiles
 - experiment output schemas
 - cross-platform summary and aggregation logic
 

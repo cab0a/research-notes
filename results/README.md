@@ -449,6 +449,65 @@ signature for every contract. The runtime manifest remains release provenance
 and is not byte-compared on later CI runs because hosted runner image
 identifiers can change independently of the fixed behavior.
 
+## v0.18.0
+
+- `jpeg_metadata_coverage_runtime_manifest.csv` records the local coverage
+  parser, resource-admission gate, fixture encoder, and runtime profile.
+- `jpeg_metadata_coverage_observations.csv` contains 15 controlled fixture
+  observations with routing, reason codes, family recognition, relationship
+  counts, opaque counts, and fixture hashes.
+- `jpeg_metadata_coverage_summary.csv` aggregates the observations across
+  seven primary fixture families.
+- `jpeg_metadata_coverage.png` visualizes routing by family and declared versus
+  resolved relationships.
+
+Eight fixtures are accepted and seven are quarantined. Accepted fixtures
+resolve all nine of their declared relationships. Forward and reverse Extended
+XMP chunk order reconstruct the same 270-byte packet. Missing, duplicate,
+orphaned, mismatched, truncated, and out-of-bounds controls fail closed. The
+20-byte maker-note control remains opaque and is not interpreted as verified
+metadata.
+
+## v0.19.0
+
+- `jpeg_transform_integrity_runtime_manifest.csv` records the local digest
+  model, SHA-256 implementation, fixture encoder, and runtime profile.
+- `jpeg_transform_integrity_observations.csv` contains 11 controlled transform
+  observations with assertion status, reason, parent declaration, matching and
+  mismatching scopes, assertion digest, and fixture hash.
+- `jpeg_transform_integrity_summary.csv` aggregates statuses and mismatches
+  across nine transform families.
+- `jpeg_transform_integrity.png` visualizes assertion states and scope-specific
+  mismatches.
+
+The experiment produces two `valid_binding`, two `valid_derived_binding`, four
+`stale_binding`, and one each of missing, malformed, and multiple assertion
+states. Metadata reordering preserves all three declared scopes. Sanitization
+invalidates only normalized metadata, while re-encoding and pixel editing
+invalidate image-core and decoded-pixel bindings. Renewed records match their
+current output and declare a parent digest, but remain unsigned and do not
+authenticate provenance.
+
+## v0.20.0
+
+- `jpeg_policy_composition_runtime_manifest.csv` records the local decision
+  engine, prerequisite study contracts, fixture encoder, and runtime profile.
+- `jpeg_policy_composition_observations.csv` contains 36 fixture-profile
+  observations with decisions, reasons, ordered traces, decisive stages,
+  field counts, integrity states, and input/output hashes.
+- `jpeg_policy_composition_summary.csv` aggregates decisions and emitted field
+  counts for the four controlled profiles.
+- `jpeg_policy_composition.png` visualizes profile-specific decisions and the
+  stage responsible for each terminal result.
+
+Across all profiles, the nine synthetic inputs produce 4 `accept`, 5
+`sanitize`, 23 `quarantine`, and 4 `reject` decisions. All expectations match,
+and every trace contains exactly one decisive final stage. The two selective
+privacy outputs retain two of six controlled fields; minimal outputs retain
+none. Sanitization removes the unsigned assertion rather than silently copying
+a stale binding. Profile names remain study labels rather than compliance or
+production-safety claims.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -469,6 +528,9 @@ python experiments/run_metadata_round_trip.py
 python experiments/run_metadata_generation_drift.py
 python experiments/run_field_level_metadata_provenance.py
 python experiments/run_resource_bounded_metadata.py
+python experiments/run_metadata_family_coverage.py
+python experiments/run_transform_integrity.py
+python experiments/run_policy_composition.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

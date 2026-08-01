@@ -358,6 +358,74 @@ reason-code, issue, counter, and fixture-hash signature.
 python experiments/run_resource_bounded_metadata.py
 ```
 
+### v0.18.0 — Extended Metadata Families, Nested Payloads, and Parser Coverage
+
+**Question:** Can a resource-admitted parser recognize selected extended
+metadata families, resolve nested relationships independently of segment
+order, and quarantine incomplete or ambiguous structures without claiming
+complete format semantics?
+
+**Representative finding:** Eight of 15 synthetic fixtures are accepted and
+all nine relationships declared by accepted fixtures are resolved. Seven
+missing, duplicate, orphaned, truncated, mismatched, or out-of-bounds controls
+are quarantined with stable reason codes. Forward and reverse Extended XMP
+chunk order reconstruct the same 270-byte packet, while maker-note bytes remain
+explicitly opaque.
+
+- [Complete note](../notes/extended-metadata-families-nested-payloads-parser-coverage.md)
+- [Observations](../results/jpeg_metadata_coverage_observations.csv)
+- [Summary](../results/jpeg_metadata_coverage_summary.csv)
+- [Figure](../results/jpeg_metadata_coverage.png)
+
+```bash
+python experiments/run_metadata_family_coverage.py
+```
+
+### v0.19.0 — Provenance Assertions and Transform Integrity
+
+**Question:** Can explicit digest scopes distinguish metadata-only,
+compressed-image, and decoded-pixel changes, and what evidence is still
+missing before a matching record can be called authenticated provenance?
+
+**Representative finding:** Eleven fixtures produce two `valid_binding`, two
+`valid_derived_binding`, four `stale_binding`, and one each of missing,
+malformed, and multiple assertion states. Metadata reordering preserves all
+three scopes; sanitization invalidates only normalized metadata; re-encoding
+and pixel editing invalidate image-core and decoded-pixel scopes. Renewed
+unsigned assertions match current outputs but do not authenticate an actor or
+validate the declared parent.
+
+- [Complete note](../notes/provenance-assertions-transform-integrity.md)
+- [Observations](../results/jpeg_transform_integrity_observations.csv)
+- [Summary](../results/jpeg_transform_integrity_summary.csv)
+- [Figure](../results/jpeg_transform_integrity.png)
+
+```bash
+python experiments/run_transform_integrity.py
+```
+
+### v0.20.0 — Policy Composition and Explainable Decisions
+
+**Question:** Can independently tested JPEG metadata controls be composed into
+deterministic routing decisions while preserving the first decisive rule,
+profile assumptions, and output effects as auditable evidence?
+
+**Representative finding:** Nine synthetic inputs under four policy profiles
+produce 36 observations: 4 `accept`, 5 `sanitize`, 23 `quarantine`, and 4
+`reject`. Every trace has exactly one decisive final stage. Resource failures
+stop before deeper parsing, incomplete relationships stop at coverage, stale
+assertions stop at integrity, and clean inputs reach profile-specific retention
+rules.
+
+- [Complete note](../notes/policy-composition-explainable-decisions.md)
+- [Observations](../results/jpeg_policy_composition_observations.csv)
+- [Summary](../results/jpeg_policy_composition_summary.csv)
+- [Figure](../results/jpeg_policy_composition.png)
+
+```bash
+python experiments/run_policy_composition.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
