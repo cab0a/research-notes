@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY item; END_ENTITY; RULE item_rule FOR (item); WHERE wr1: TRUE; END_RULE; END_SCHEMA;

@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY owner; items : SET [0:?] OF item; END_ENTITY; ENTITY item; owner_ref : owner; INVERSE owners : SET [0:?] OF owner FOR items; END_ENTITY; END_SCHEMA;

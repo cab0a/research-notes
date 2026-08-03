@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・schema modelを扱う25件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・schema model・semantic graphを扱う26件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -554,6 +554,34 @@ validation, and rule execution remain recorded as `not_attempted` or
 python experiments/run_express_schema_model.py
 ```
 
+### v0.26.0 — EXPRESS Symbols, Types, and Inheritance
+
+**Question:** Can a bounded resolver connect parsed EXPRESS names to explicit
+symbols, terminal type domains, and entity inheritance without silently
+selecting ambiguous imports or hiding graph cycles?
+
+**Representative finding:** All 38 synthetic fixtures match their expected
+routes: 20 accept, 17 reject, and one semantic-budget quarantine. The evidence
+contains 118 symbol rows and 72 references: 61 resolve, seven remain
+unresolved, one is ambiguous, and three have an invalid declaration kind.
+Defined-type and inheritance tables preserve unresolved, ambiguous, and cyclic
+states separately.
+
+- [Complete note](../notes/express-symbols-types-inheritance.md)
+- [Observations](../results/express_resolution_observations.csv)
+- [Symbol table](../results/express_symbols.csv)
+- [Reference resolution](../results/express_reference_resolution.csv)
+- [Defined types](../results/express_type_resolution.csv)
+- [Aggregate bounds](../results/express_aggregate_bounds.csv)
+- [Entity inheritance](../results/express_inheritance.csv)
+- [Summary](../results/express_resolution_summary.csv)
+- [Figure](../results/express_symbols_types_inheritance.png)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_express_symbol_resolution.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -578,6 +606,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.25.0 subsets.
+  controlled v0.21.0 through v0.26.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE labels = LIST [1:?] OF STRING; END_TYPE; END_SCHEMA;

@@ -1,0 +1,10 @@
+fixture,schema_name,owner_symbol_id,role,aggregate_kind,lower_source,upper_source,lower_status,upper_status,lower_value,upper_value,status
+aggregate_entity_element,demo,demo::items,type_underlying,LIST,0,?,integer_literal,unbounded,0,,resolved
+literal_bounds,demo,demo::labels,type_underlying,LIST,1,?,integer_literal,unbounded,1,,resolved
+constant_bounds,demo,demo::labels,type_underlying,LIST,1,upper_limit,integer_literal,integer_constant,1,8,resolved
+reference_constant,app,app::labels,type_underlying,LIST,1,upper_limit,integer_literal,integer_constant,1,4,resolved
+inverse_attribute,demo,demo::owner,attribute_explicit:items,SET,0,?,integer_literal,unbounded,0,,resolved
+inverse_attribute,demo,demo::item,attribute_inverse:owners,SET,0,?,integer_literal,unbounded,0,,resolved
+inverse_missing_forward,demo,demo::item,attribute_inverse:owners,SET,0,?,integer_literal,unbounded,0,,resolved
+invalid_bound_order,demo,demo::labels,type_underlying,LIST,5,2,integer_literal,integer_literal,5,2,unresolved
+missing_bound_constant,demo,demo::labels,type_underlying,LIST,1,missing_limit,integer_literal,unresolved,1,,unresolved

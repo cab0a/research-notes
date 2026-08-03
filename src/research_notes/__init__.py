@@ -214,6 +214,25 @@ from research_notes.express_study import (
     build_express_schema_fixtures,
     inspect_express_schema,
 )
+from research_notes.express_resolution import (
+    DEFAULT_EXPRESS_RESOLUTION_LIMITS,
+    ExpressAggregateBoundResolution,
+    ExpressInheritanceResolution,
+    ExpressReferenceResolution,
+    ExpressResolutionDiagnostic,
+    ExpressResolutionLimitError,
+    ExpressResolutionLimits,
+    ExpressResolvedDocument,
+    ExpressSymbol,
+    ExpressTypeResolution,
+    resolve_express_document,
+)
+from research_notes.express_resolution_study import (
+    ExpressResolutionFixture,
+    ExpressResolutionObservation,
+    build_express_resolution_fixtures,
+    inspect_express_resolution,
+)
 
 __all__ = [
     "apply_psf",
@@ -390,4 +409,19 @@ __all__ = [
     "inspect_express_schema",
     "lex_express",
     "parse_express_document",
+    "DEFAULT_EXPRESS_RESOLUTION_LIMITS",
+    "ExpressAggregateBoundResolution",
+    "ExpressInheritanceResolution",
+    "ExpressReferenceResolution",
+    "ExpressResolutionDiagnostic",
+    "ExpressResolutionFixture",
+    "ExpressResolutionLimitError",
+    "ExpressResolutionLimits",
+    "ExpressResolutionObservation",
+    "ExpressResolvedDocument",
+    "ExpressSymbol",
+    "ExpressTypeResolution",
+    "build_express_resolution_fixtures",
+    "inspect_express_resolution",
+    "resolve_express_document",
 ]

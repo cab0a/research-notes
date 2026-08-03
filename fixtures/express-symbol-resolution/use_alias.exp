@@ -1,0 +1,1 @@
+SCHEMA base; TYPE identifier = STRING; END_TYPE; END_SCHEMA; SCHEMA app; USE FROM base (identifier AS local_id); ENTITY item; id : local_id; END_ENTITY; END_SCHEMA;

@@ -98,6 +98,7 @@ class ExpressAttribute:
     optional: bool
     expression: str | None
     inverse_for: str | None
+    redeclared_from: str | None
     span: ExpressSourceSpan
 
 
@@ -815,7 +816,15 @@ def _parse_attribute(
     stream: _TokenStream, kind: ExpressAttributeKind
 ) -> list[ExpressAttribute]:
     first = stream.peek()
-    names = _parse_unparenthesized_identifier_list(stream)
+    redeclared_from = None
+    if stream.matches_keyword("SELF"):
+        stream.expect_keyword("SELF")
+        stream.expect_symbol("\\")
+        redeclared_from = stream.pop_identifier().value
+        stream.expect_symbol(".")
+        names = [stream.pop_identifier().value]
+    else:
+        names = _parse_unparenthesized_identifier_list(stream)
     stream.expect_symbol(":")
     optional = False
     if kind == "explicit" and stream.matches_keyword("OPTIONAL"):
@@ -850,6 +859,7 @@ def _parse_attribute(
             optional,
             expression,
             inverse_for,
+            redeclared_from,
             span,
         )
         for name in names

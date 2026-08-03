@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY child SUBTYPE OF (missing_base); END_ENTITY; END_SCHEMA;

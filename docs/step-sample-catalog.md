@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性に加え、v0.25.0のEXPRESS字句・構文・未解決schema modelを収録します。形状にはpreview、構文だけを扱うサンプルには構造・coverage図を用いますが、schema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性に加え、v0.25.0のEXPRESS字句・構文・未解決schema modelとv0.26.0のシンボル・型・継承graphを収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、schema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -172,6 +172,30 @@ These sources specify no CAD shape and therefore have no geometry preview.
 The figure shows the observed routes, model composition, and the boundary
 between parsed declarations, opaque envelopes, and deferred semantic stages.
 
+## v0.26.0 — EXPRESS Semantic-Graph Samples
+
+Directory: [`fixtures/express-symbol-resolution/`](../fixtures/express-symbol-resolution/)
+
+Manifest: [`manifest.csv`](../fixtures/express-symbol-resolution/manifest.csv)
+
+The corpus contains 38 generated `.exp` sources. Every source is independently
+readable and the manifest records its exact bytes, SHA-256 identity, expected
+semantic route, reason code, and active graph limits.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Local symbols and types | [`alias_chain.exp`](../fixtures/express-symbol-resolution/alias_chain.exp), [`select_members.exp`](../fixtures/express-symbol-resolution/select_members.exp), [`constant_bounds.exp`](../fixtures/express-symbol-resolution/constant_bounds.exp) | Terminal domains, select targets, and bounded constants |
+| Interfaces | [`use_alias.exp`](../fixtures/express-symbol-resolution/use_alias.exp), [`reference_constant.exp`](../fixtures/express-symbol-resolution/reference_constant.exp), [`import_collision.exp`](../fixtures/express-symbol-resolution/import_collision.exp) | Direct imports, aliases, kinds, and multiple visible candidates |
+| Inheritance | [`diamond_inheritance.exp`](../fixtures/express-symbol-resolution/diamond_inheritance.exp), [`qualified_redeclaration.exp`](../fixtures/express-symbol-resolution/qualified_redeclaration.exp), [`inherited_collision.exp`](../fixtures/express-symbol-resolution/inherited_collision.exp) | Shared origins, qualified replacement, and conflicting origins |
+| Graph failures | [`alias_cycle.exp`](../fixtures/express-symbol-resolution/alias_cycle.exp), [`inheritance_cycle.exp`](../fixtures/express-symbol-resolution/inheritance_cycle.exp), [`missing_type.exp`](../fixtures/express-symbol-resolution/missing_type.exp) | Cyclic and unresolved states without guessed targets |
+| Resource boundary | [`symbol_limit.exp`](../fixtures/express-symbol-resolution/symbol_limit.exp) | Quarantine before exceeding a declared semantic graph budget |
+
+![EXPRESS symbol and relationship corpus](../results/express_symbols_types_inheritance.png)
+
+These sources define schema relationships, not CAD instance geometry. The
+figure therefore visualizes decisions and graph states rather than inventing
+shape previews.
+
 ## Regeneration
 
 ```bash
@@ -193,6 +217,10 @@ python experiments/run_step_part21_conformance.py \
 
 python experiments/run_express_schema_model.py \
   --fixture-dir fixtures/express-schema-model \
+  --refresh-fixtures
+
+python experiments/run_express_symbol_resolution.py \
+  --fixture-dir fixtures/express-symbol-resolution \
   --refresh-fixtures
 ```
 

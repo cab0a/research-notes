@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE label = STRING; END_TYPE; END_SCHEMA;

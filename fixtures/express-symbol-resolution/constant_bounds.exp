@@ -1,0 +1,1 @@
+SCHEMA demo; CONSTANT upper_limit : INTEGER := 8; END_CONSTANT; TYPE labels = LIST [1:upper_limit] OF STRING; END_TYPE; END_SCHEMA;

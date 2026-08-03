@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、25件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema modelの結果を研究版ごとに対応付けています。
+このディレクトリには、26件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema model・semantic graphの結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -626,6 +626,35 @@ establish complete EXPRESS conformance, symbol resolution, type correctness,
 constraint evaluation, rule execution, Part 21 validation, or application
 semantics.
 
+## v0.26.0
+
+- `express_resolution_observations.csv` records expected and observed routes,
+  reason codes, semantic counts, deferred stages, and source identities for 38
+  synthetic fixtures.
+- `express_symbols.csv` contains 118 analysis-local schema and declaration
+  symbols with original spelling and source lines.
+- `express_reference_resolution.csv` contains 72 interface, type, select,
+  inheritance, rule, bound, and inverse references with required kinds, all
+  candidates, and explicit resolution states.
+- `express_type_resolution.csv` records terminal domains and alias chains for
+  23 defined types.
+- `express_aggregate_bounds.csv` records nine aggregate-bound pairs with raw
+  source, integer-literal or constant provenance, evaluated values, and state.
+- `express_inheritance.csv` records immediate and transitive supertypes plus
+  local, inherited, effective, and redeclared attribute counts for 44 entity
+  observations.
+- `express_resolution_summary.csv` records decision, graph-row, and state
+  counts.
+- `express_symbols_types_inheritance.png` visualizes decisions, reference
+  states, and type-versus-inheritance graph outcomes.
+
+All 38 fixtures match their expected routes: 20 accept, 17 reject, and one
+quarantine. The 72 reference rows contain 61 resolved, seven unresolved, one
+ambiguous, and three invalid-kind states. These results apply only to local and
+direct in-document imports in the controlled subset. They do not establish
+complete EXPRESS visibility, external schema loading, type compatibility,
+expression typing, rule execution, Part 21 validation, or AP242 semantics.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -654,6 +683,7 @@ python experiments/run_step_exchange_structure.py
 python experiments/run_step_part21_source_model.py
 python experiments/run_step_part21_conformance.py
 python experiments/run_express_schema_model.py
+python experiments/run_express_symbol_resolution.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

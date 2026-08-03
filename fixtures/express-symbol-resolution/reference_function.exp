@@ -1,0 +1,1 @@
+SCHEMA base; FUNCTION identity(value : INTEGER) : INTEGER; RETURN(value); END_FUNCTION; END_SCHEMA; SCHEMA app; REFERENCE FROM base (identity); END_SCHEMA;

@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY item; END_ENTITY; TYPE item_alias = item; END_TYPE; END_SCHEMA;

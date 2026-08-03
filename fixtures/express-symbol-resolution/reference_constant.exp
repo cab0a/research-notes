@@ -1,0 +1,1 @@
+SCHEMA base; CONSTANT upper_limit : INTEGER := 4; END_CONSTANT; END_SCHEMA; SCHEMA app; REFERENCE FROM base (upper_limit); TYPE labels = LIST [1:upper_limit] OF STRING; END_TYPE; END_SCHEMA;

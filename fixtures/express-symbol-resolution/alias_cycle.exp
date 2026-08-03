@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE first = second; END_TYPE; TYPE second = first; END_TYPE; END_SCHEMA;

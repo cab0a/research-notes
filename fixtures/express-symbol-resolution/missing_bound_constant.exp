@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE labels = LIST [1:missing_limit] OF STRING; END_TYPE; END_SCHEMA;

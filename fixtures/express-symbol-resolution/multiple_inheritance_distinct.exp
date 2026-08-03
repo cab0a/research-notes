@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY left; left_code : STRING; END_ENTITY; ENTITY right; right_code : STRING; END_ENTITY; ENTITY child SUBTYPE OF (left, right); END_ENTITY; END_SCHEMA;

@@ -1,0 +1,1 @@
+SCHEMA base; ENTITY item; END_ENTITY; END_SCHEMA; SCHEMA app; USE FROM base (item); ENTITY holder; value : item; END_ENTITY; END_SCHEMA;

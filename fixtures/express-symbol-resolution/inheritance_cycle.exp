@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY first SUBTYPE OF (second); END_ENTITY; ENTITY second SUBTYPE OF (first); END_ENTITY; END_SCHEMA;

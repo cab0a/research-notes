@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY owner; END_ENTITY; ENTITY item; INVERSE owners : SET [0:?] OF owner FOR missing_items; END_ENTITY; END_SCHEMA;

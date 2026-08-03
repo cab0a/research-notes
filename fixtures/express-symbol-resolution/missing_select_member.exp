@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE choice = SELECT (missing_item); END_TYPE; END_SCHEMA;

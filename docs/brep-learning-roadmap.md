@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.25.0までにPart 21基盤とEXPRESSの字句・構文基盤を統合しました。EXPRESSは40個の合成fixtureで20件受理・19件拒否・1件隔離を確認し、59件の未解決schema model inventoryを生成します。次は名前・型・継承の解決、Part 21とschemaの結合、AP242の意味、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
+v0.26.0までにPart 21とEXPRESSの字句・構文・semantic graphを実装しました。38個の合成fixtureで20件受理・17件拒否・1件隔離を確認し、未解決・曖昧・種類不一致・循環を区別します。次はPart 21とschemaの結合、AP242、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
 
 ---
 
@@ -155,10 +155,16 @@ type checking, expression validation, and rule execution are deferred.
 
 #### v0.26.0 — EXPRESS Symbols, Types, and Inheritance
 
-Construct symbol tables and resolve local names, imported names, type aliases,
-select members, entity inheritance, redeclarations, and aggregate bounds.
-Preserve unresolved and ambiguous symbols instead of silently selecting a
-candidate.
+The bounded semantic stage now constructs case-insensitive symbol tables and
+resolves local names, direct in-document `USE` and `REFERENCE` imports, type
+aliases, select members, entity inheritance, qualified redeclarations,
+aggregate bounds, rule targets, and inverse forward attributes. Thirty-eight
+fixtures produce 20 accepts, 17 rejects, and one resource-limit quarantine.
+
+Answered boundary: unresolved, ambiguous, invalid-kind, and cyclic states
+remain explicit rather than receiving guessed targets. Implicit imports,
+transitive re-export, external schema loading, complete type compatibility,
+expression typing, constraints, and rule execution remain deferred.
 
 #### v0.27.0 — Part 21 Validation Against EXPRESS
 

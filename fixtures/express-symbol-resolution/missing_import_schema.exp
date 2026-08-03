@@ -1,0 +1,1 @@
+SCHEMA app; USE FROM absent (item); END_SCHEMA;

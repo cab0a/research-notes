@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY item; END_ENTITY; TYPE items = LIST [0:?] OF item; END_TYPE; END_SCHEMA;

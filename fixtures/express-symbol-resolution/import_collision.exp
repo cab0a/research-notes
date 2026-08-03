@@ -1,0 +1,1 @@
+SCHEMA left_schema; TYPE code = STRING; END_TYPE; END_SCHEMA; SCHEMA right_schema; TYPE code = INTEGER; END_TYPE; END_SCHEMA; SCHEMA app; USE FROM left_schema (code); USE FROM right_schema (code); ENTITY item; value : code; END_ENTITY; END_SCHEMA;

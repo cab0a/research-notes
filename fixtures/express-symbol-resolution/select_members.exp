@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE label = STRING; END_TYPE; ENTITY item; END_ENTITY; TYPE choice = SELECT (label, item); END_TYPE; END_SCHEMA;
