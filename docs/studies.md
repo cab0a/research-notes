@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・schema model・semantic graphを扱う26件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instanceとEXPRESS属性の段階的検証を扱う27件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -582,6 +582,35 @@ states separately.
 python experiments/run_express_symbol_resolution.py
 ```
 
+### v0.27.0 — Part 21 Validation Against EXPRESS
+
+**Question:** Can a bounded validator distinguish syntactically readable STEP
+records from schema-bound instances whose entity names, parameter positions,
+values, references, and inheritance mapping agree with a controlled EXPRESS
+document?
+
+**Representative finding:** All 40 paired synthetic fixtures match their
+declared routes: 15 accept, 21 reject, and four quarantine. Thirty-five
+parameters validate, 13 fail with attribute-level reasons, and two remain
+deferred. Internal inheritance ordering, shared-diamond deduplication, `$`,
+`*`, aggregates, `SELECT`, and entity-reference compatibility are checked.
+Complex evaluated sets, constants, width constraints, rules, AP242 meaning,
+and geometry remain deferred.
+
+- [Complete note](../notes/part21-validation-against-express.md)
+- [Observations](../results/step_express_validation_observations.csv)
+- [DATA-section bindings](../results/step_express_sections.csv)
+- [Instance validation](../results/step_express_instances.csv)
+- [Parameter validation](../results/step_express_parameters.csv)
+- [Diagnostics](../results/step_express_diagnostics.csv)
+- [Summary](../results/step_express_validation_summary.csv)
+- [Figure](../results/step_express_validation.png)
+- [Paired sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_step_express_validation.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -606,6 +635,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.26.0 subsets.
+  controlled v0.21.0 through v0.27.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

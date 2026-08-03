@@ -1,0 +1,11 @@
+SCHEMA demo;
+ENTITY item;
+  integer_value : INTEGER;
+  real_value : REAL;
+  number_value : NUMBER;
+  text_value : STRING;
+  flag : BOOLEAN;
+  state : LOGICAL;
+  bits : BINARY;
+END_ENTITY;
+END_SCHEMA;

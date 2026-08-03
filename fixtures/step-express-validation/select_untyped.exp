@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE measured_value = REAL; END_TYPE; TYPE choice = SELECT (measured_value); END_TYPE; ENTITY item; value : choice; END_ENTITY; END_SCHEMA;

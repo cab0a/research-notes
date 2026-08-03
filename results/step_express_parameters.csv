@@ -1,0 +1,51 @@
+fixture,section_index,entity_id,record_index,parameter_index,entity_type,attribute_owner,attribute_name,expected_type,value_kind,value_source,status,reason_code,source_line
+scalar_types,0,1,0,0,ITEM,item,integer_value,INTEGER,integer,3,valid,scalar_value_valid,8
+scalar_types,0,1,0,1,ITEM,item,real_value,REAL,real,1.5,valid,scalar_value_valid,8
+scalar_types,0,1,0,2,ITEM,item,number_value,NUMBER,integer,2,valid,scalar_value_valid,8
+scalar_types,0,1,0,3,ITEM,item,text_value,STRING,string,'label',valid,scalar_value_valid,8
+scalar_types,0,1,0,4,ITEM,item,flag,BOOLEAN,enumeration,.T.,valid,boolean_value_valid,8
+scalar_types,0,1,0,5,ITEM,item,state,LOGICAL,enumeration,.U.,valid,logical_value_valid,8
+scalar_types,0,1,0,6,ITEM,item,bits,BINARY,binary,"""0A""",valid,scalar_value_valid,8
+optional_present,0,1,0,0,ITEM,item,label,STRING,string,'present',valid,scalar_value_valid,8
+optional_omitted,0,1,0,0,ITEM,item,label,STRING,omitted,$,valid,optional_omission_valid,8
+enumeration_value,0,1,0,0,ITEM,item,value,state,enumeration,.READY.,valid,enumeration_value_valid,8
+aggregate_list,0,1,0,0,ITEM,item,values,LIST OF INTEGER,list,"(1,2,3)",valid,aggregate_value_valid,8
+aggregate_set,0,1,0,0,ITEM,item,values,SET OF INTEGER,list,"(1,2)",valid,aggregate_value_valid,8
+forward_entity_reference,0,1,0,0,HOLDER,holder,value,target,entity_reference,#2,valid,entity_reference_valid,8
+forward_entity_reference,0,2,0,0,TARGET,target,label,STRING,string,'target',valid,scalar_value_valid,9
+subtype_entity_reference,0,1,0,0,HOLDER,holder,value,base,entity_reference,#2,valid,entity_reference_valid,8
+subtype_entity_reference,0,2,0,0,CHILD,base,label,STRING,string,'child',valid,scalar_value_valid,9
+subtype_entity_reference,0,2,0,1,CHILD,child,code,INTEGER,integer,7,valid,scalar_value_valid,9
+internal_inheritance,0,1,0,0,LEAF,root,label,STRING,string,'leaf',valid,scalar_value_valid,8
+internal_inheritance,0,1,0,1,LEAF,middle,rank,INTEGER,integer,2,valid,scalar_value_valid,8
+internal_inheritance,0,1,0,2,LEAF,leaf,score,REAL,real,3.5,valid,scalar_value_valid,8
+diamond_inheritance,0,1,0,0,LEAF,root,label,STRING,string,'leaf',valid,scalar_value_valid,8
+diamond_inheritance,0,1,0,1,LEAF,left,left_value,INTEGER,integer,1,valid,scalar_value_valid,8
+diamond_inheritance,0,1,0,2,LEAF,right,right_value,BOOLEAN,enumeration,.T.,valid,boolean_value_valid,8
+diamond_inheritance,0,1,0,3,LEAF,leaf,score,REAL,real,2.5,valid,scalar_value_valid,8
+select_entity,0,1,0,0,HOLDER,holder,value,choice,entity_reference,#2,valid,select_entity_value_valid,8
+select_entity,0,2,0,0,TARGET,target,label,STRING,string,'selected',valid,scalar_value_valid,9
+select_typed_defined,0,1,0,0,ITEM,item,value,choice,typed,MEASURED_VALUE(1.5),valid,scalar_value_valid,8
+derived_redeclaration,0,1,0,0,CHILD,base,value,REAL,derived,*,valid,derived_marker_valid,8
+direct_use_entity,0,1,0,0,HOLDER,holder,value,target,entity_reference,#2,valid,entity_reference_valid,8
+direct_use_entity,0,2,0,0,TARGET,target,label,STRING,string,'imported',valid,scalar_value_valid,9
+abstract_entity,0,1,0,0,ITEM,item,value,INTEGER,integer,1,valid,scalar_value_valid,8
+parameter_count_short,0,1,0,0,ITEM,item,first,INTEGER,integer,1,valid,scalar_value_valid,8
+required_value_omitted,0,1,0,0,ITEM,item,label,STRING,omitted,$,invalid,required_value_omitted,8
+unexpected_derived_marker,0,1,0,0,ITEM,item,value,REAL,derived,*,invalid,unexpected_derived_marker,8
+derived_marker_required,0,1,0,0,CHILD,base,value,REAL,real,1.0,invalid,derived_marker_required,8
+wrong_scalar_type,0,1,0,0,ITEM,item,value,INTEGER,string,'one',invalid,parameter_type_mismatch,8
+invalid_enumeration,0,1,0,0,ITEM,item,value,state,enumeration,.MISSING.,invalid,enumeration_value_invalid,8
+aggregate_cardinality,0,1,0,0,ITEM,item,values,LIST OF INTEGER,list,(1),invalid,aggregate_cardinality_mismatch,8
+aggregate_duplicate,0,1,0,0,ITEM,item,values,SET OF INTEGER,list,"(1,1)",invalid,aggregate_unique_violation,8
+unresolved_entity_reference,0,1,0,0,HOLDER,holder,value,target,entity_reference,#99,invalid,unresolved_entity_reference,8
+wrong_reference_type,0,1,0,0,HOLDER,holder,value,expected,entity_reference,#2,invalid,entity_reference_type_mismatch,8
+select_untyped,0,1,0,0,ITEM,item,value,choice,real,1.5,invalid,select_typed_parameter_required,8
+select_wrong_member,0,1,0,0,ITEM,item,value,choice,typed,OTHER_VALUE(1.5),invalid,select_member_invalid,8
+inheritance_parameter_order,0,1,0,0,CHILD,base,label,STRING,integer,1,invalid,parameter_type_mismatch,8
+inheritance_parameter_order,0,1,0,1,CHILD,child,rank,INTEGER,string,'label',invalid,parameter_type_mismatch,8
+complex_mapping_deferred,0,1,0,0,BASE,base,label,STRING,string,'root',valid,scalar_value_valid,8
+complex_mapping_deferred,0,1,1,0,LEFT,left,left_value,INTEGER,integer,1,valid,scalar_value_valid,8
+complex_mapping_deferred,0,1,2,0,RIGHT,right,right_value,REAL,real,2.0,valid,scalar_value_valid,8
+constant_reference_deferred,0,1,0,0,ITEM,item,value,INTEGER,constant_reference,#LIMIT,deferred,external_value_resolution_deferred,8
+width_constraint_deferred,0,1,0,0,ITEM,item,label,STRING,string,'text',deferred,width_constraint_deferred,8

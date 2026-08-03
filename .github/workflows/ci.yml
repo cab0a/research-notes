@@ -82,6 +82,8 @@ jobs:
           python experiments/run_express_schema_model.py --fixture-dir regenerated-fixtures/express-schema-model --output-dir regenerated-express-schema-fixture-results --refresh-fixtures
           python experiments/run_express_symbol_resolution.py --output-dir regenerated-results
           python experiments/run_express_symbol_resolution.py --fixture-dir regenerated-fixtures/express-symbol-resolution --output-dir regenerated-express-resolution-fixture-results --refresh-fixtures
+          python experiments/run_step_express_validation.py --output-dir regenerated-results
+          python experiments/run_step_express_validation.py --fixture-dir regenerated-fixtures/step-express-validation --output-dir regenerated-step-express-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -186,6 +188,12 @@ jobs:
           diff -u results/express_aggregate_bounds.csv regenerated-results/express_aggregate_bounds.csv
           diff -u results/express_inheritance.csv regenerated-results/express_inheritance.csv
           diff -u results/express_resolution_summary.csv regenerated-results/express_resolution_summary.csv
+          diff -u results/step_express_validation_observations.csv regenerated-results/step_express_validation_observations.csv
+          diff -u results/step_express_sections.csv regenerated-results/step_express_sections.csv
+          diff -u results/step_express_instances.csv regenerated-results/step_express_instances.csv
+          diff -u results/step_express_parameters.csv regenerated-results/step_express_parameters.csv
+          diff -u results/step_express_diagnostics.csv regenerated-results/step_express_diagnostics.csv
+          diff -u results/step_express_validation_summary.csv regenerated-results/step_express_validation_summary.csv
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -196,6 +204,7 @@ jobs:
           diff -qr fixtures/step-part21-conformance regenerated-fixtures/step-part21-conformance
           diff -qr fixtures/express-schema-model regenerated-fixtures/express-schema-model
           diff -qr fixtures/express-symbol-resolution regenerated-fixtures/express-symbol-resolution
+          diff -qr fixtures/step-express-validation regenerated-fixtures/step-express-validation
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -230,6 +239,7 @@ jobs:
           test -s regenerated-results/step_part21_conformance.png
           test -s regenerated-results/express_schema_model.png
           test -s regenerated-results/express_symbols_types_inheritance.png
+          test -s regenerated-results/step_express_validation.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

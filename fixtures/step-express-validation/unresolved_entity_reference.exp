@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY target; END_ENTITY; ENTITY holder; value : target; END_ENTITY; END_SCHEMA;

@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.26.0までにPart 21とEXPRESSの字句・構文・semantic graphを実装しました。38個の合成fixtureで20件受理・17件拒否・1件隔離を確認し、未解決・曖昧・種類不一致・循環を区別します。次はPart 21とschemaの結合、AP242、B-rep幾何へ進みます。詳細は以下の英語本文に示します。
+v0.27.0までにPart 21・EXPRESS解析と、40組の合成データによるschema・引数・参照・継承の検証を実装しました。次は汎用STEP graph、AP242、B-rep幾何へ進み、v0.40で新規パラメトリック形状、v0.44でSTEP編集・再出力、v0.55以降で根拠付きフィーチャー再構築を目指します。詳細は以下の英語本文に示します。
 
 ---
 
@@ -168,14 +168,18 @@ expression typing, constraints, and rule execution remain deferred.
 
 #### v0.27.0 — Part 21 Validation Against EXPRESS
 
-Bind each DATA section to a declared schema and validate entity names,
-component records, parameter order, parameter count, data types, optional and
-derived markers, and occurrence references. Publish staged outcomes such as
-`lexically_valid`, `syntactically_valid`, `schema_resolved`, and
-`schema_valid`; application meaning remains a later claim.
+The controlled validator now binds DATA sections to in-document schemas and
+checks entity names, internal inheritance order, parameter count, selected
+data domains, optional and derived markers, aggregates, selects, and
+occurrence-reference compatibility. Forty paired fixtures produce 15 accepts,
+21 rejects, and four quarantines while retaining Part 21 syntax, EXPRESS
+syntax, symbol resolution, schema binding, and instance validation as separate
+stages.
 
-Key question: which EXPRESS constraints can be evaluated safely and
-deterministically without building a full execution environment?
+Answered boundary: simple internal mapping can be checked without executing
+rules, but complete complex evaluated sets, external values and schemas,
+width expressions, assignment compatibility, constraints, and application
+meaning remain deferred.
 
 ### Phase C — Generic STEP Graph and Application Semantics
 
@@ -326,6 +330,60 @@ leakage checks. Preserve STEP, graph, B-Rep, preview, and label provenance.
 Compare simple graph, tabular, and geometric baselines with deterministic
 rules. Require calibration, robustness checks, evidence links, and abstention
 when schema or geometry support is incomplete.
+
+### Phase H — Parametric Reconstruction and Recompute
+
+#### v0.51.0 — Parametric Feature Graph
+
+Represent sketches, construction planes, dimensions, features, dependencies,
+and generated B-Rep results as a versioned graph. Imported STEP topology is an
+input reference; it is not silently relabeled as recovered design history.
+
+#### v0.52.0 — Two-Dimensional Sketches and Geometric Constraints
+
+Implement bounded line, arc, circle, coincidence, parallel, perpendicular,
+tangent, horizontal, vertical, distance, radius, and angle constraints.
+Separate under-constrained, fully constrained, over-constrained, and
+inconsistent systems.
+
+#### v0.53.0 — Parametric Holes, Pockets, Bosses, and Ribs
+
+Construct common features from explicit parameters and compare their generated
+topology and geometry with independently known synthetic construction truth.
+
+#### v0.54.0 — Dependency Graph and Deterministic Recompute
+
+Propagate parameter changes through an acyclic feature dependency graph,
+isolate failed features, retain the last valid result, and report which
+downstream shapes became invalid or stale.
+
+#### v0.55.0 — STEP-to-Feature Reconstruction Candidates
+
+Generate auditable candidate sketches and features from imported B-Rep
+evidence. Report geometric residuals, ambiguity, alternative explanations,
+and confidence; never claim recovery of unavailable original CAD history.
+
+#### v0.56.0 — Assisted Parametric Modeling Tool
+
+Expose import, inspection, candidate selection, parameter editing, recompute,
+visual comparison, and STEP export through a bounded Python API and a focused
+interactive tool. Require explicit user confirmation before replacing inferred
+features or repaired geometry.
+
+## Parametric Modeling Milestones
+
+The phrase "parametric STEP editing" has three distinct meanings:
+
+| Milestone | Planned release | Claim boundary |
+| --- | --- | --- |
+| Construct new parameter-driven geometry | v0.40.0 | Profiles, extrusion, and revolution recompute from explicit user parameters |
+| Import STEP, add modeled operations, and export STEP | v0.43.0–v0.44.0 | The imported B-Rep is a base shape; no original feature history is implied |
+| Infer an editable feature model from imported STEP | v0.55.0–v0.56.0 | Outputs are evidence-backed reconstruction candidates, not recovered authoring history |
+
+A normal STEP exchange can preserve final product geometry without preserving
+the originating CAD system's sketches, constraints, feature order, or design
+intent. The project therefore distinguishes deterministic modeling operations
+from reverse-engineered feature hypotheses throughout its APIs and evidence.
 
 ## Sample and Visual Evidence Contract
 

@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY root; label : STRING; END_ENTITY; ENTITY left SUBTYPE OF (root); left_value : INTEGER; END_ENTITY; ENTITY right SUBTYPE OF (root); right_value : BOOLEAN; END_ENTITY; ENTITY leaf SUBTYPE OF (left, right); score : REAL; END_ENTITY; END_SCHEMA;

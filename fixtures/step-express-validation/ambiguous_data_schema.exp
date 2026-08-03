@@ -1,0 +1,1 @@
+SCHEMA left_schema; ENTITY left_item; END_ENTITY; END_SCHEMA; SCHEMA right_schema; ENTITY right_item; END_ENTITY; END_SCHEMA;

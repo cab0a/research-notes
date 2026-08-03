@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY base; label : STRING; END_ENTITY; ENTITY left SUBTYPE OF (base); left_value : INTEGER; END_ENTITY; ENTITY right SUBTYPE OF (base); right_value : REAL; END_ENTITY; END_SCHEMA;

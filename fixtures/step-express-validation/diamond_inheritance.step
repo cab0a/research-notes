@@ -1,0 +1,10 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Controlled STEP and EXPRESS validation fixture'),'4;1');
+FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('DEMO'));
+ENDSEC;
+DATA;
+#1=LEAF('leaf',1,.T.,2.5);
+ENDSEC;
+END-ISO-10303-21;

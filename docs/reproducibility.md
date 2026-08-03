@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、26件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graphを含む検証、互換性境界をまとめています。
+本書は、27件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証を含む検証、互換性境界をまとめています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -100,6 +100,7 @@ python experiments/run_step_part21_source_model.py
 python experiments/run_step_part21_conformance.py
 python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
+python experiments/run_step_express_validation.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -165,6 +166,11 @@ python experiments/run_express_symbol_resolution.py \
   --fixture-dir output/fixtures/express-symbol-resolution \
   --output-dir output/express-symbol-resolution \
   --refresh-fixtures
+
+python experiments/run_step_express_validation.py \
+  --fixture-dir output/fixtures/step-express-validation \
+  --output-dir output/step-express-validation \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -213,6 +219,9 @@ python experiments/run_express_symbol_resolution.py \
 - The v0.26 corpus generates 38 exact ASCII EXPRESS sources and preserves
   stable symbol IDs, every reference candidate, type-alias and inheritance
   graph states, aggregate-bound provenance, and semantic resource limits.
+- The v0.27 corpus generates 40 exact STEP/EXPRESS pairs with independent
+  hashes and retains stage, DATA-schema, instance, parameter, diagnostic, and
+  resource-limit evidence.
 - CI compares regenerated CSV and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -294,6 +303,10 @@ The 140 tests cover:
   aliases, select members, aggregate bounds, inheritance diamonds and cycles,
   qualified redeclarations, inverse links, and explicit ambiguous or
   invalid-kind references
+- schema-bound Part 21 DATA sections, internal inheritance parameter order,
+  optional and derived markers, scalar and aggregate values, select wrappers,
+  forward and subtype-compatible occurrence references, and explicit complex-
+  mapping deferral
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -315,6 +328,7 @@ The 140 tests cover:
 |   |-- malformed-jpeg-metadata/
 |   |-- express-schema-model/
 |   |-- express-symbol-resolution/
+|   |-- step-express-validation/
 |   |-- step-part21-source-model/
 |   |-- step-part21-conformance/
 |   |-- step-part21-exchange/
@@ -339,6 +353,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.26.0. They do not imply complete ISO 10303-21, EXPRESS, or
+v0.21.0 through v0.27.0. They do not imply complete ISO 10303-21, EXPRESS, or
 AP242 conformance and do not authorize external resource retrieval, signature
 trust, archive extraction, semantic execution, or evaluated geometry claims.

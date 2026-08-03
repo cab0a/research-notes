@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、26件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema model・semantic graphの結果を研究版ごとに対応付けています。
+このディレクトリには、27件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -655,6 +655,31 @@ direct in-document imports in the controlled subset. They do not establish
 complete EXPRESS visibility, external schema loading, type compatibility,
 expression typing, rule execution, Part 21 validation, or AP242 semantics.
 
+## v0.27.0
+
+- `step_express_validation_observations.csv` records the expected and observed
+  routes, five validation-stage states, counts, deferred work, and paired
+  source identities for 40 synthetic STEP/EXPRESS fixtures.
+- `step_express_sections.csv` records DATA-section schema ownership and binding
+  outcomes.
+- `step_express_instances.csv` records internal or external mapping, component
+  entity identities, expected and actual parameter counts, and instance state.
+- `step_express_parameters.csv` maps 50 Part 21 parameters to their EXPRESS
+  entity and attribute origins, expected types, exact value sources, and
+  validation reasons.
+- `step_express_diagnostics.csv` records 21 invalid or deferred stage,
+  instance, and parameter diagnostics with source coordinates where available.
+- `step_express_validation_summary.csv` records decisions, stage reach,
+  instance states, and parameter states.
+- `step_express_validation.png` visualizes fixture decisions, stage reach,
+  parameter evidence, and frequent controlled diagnostics.
+
+All 40 fixtures match their expected routes: 15 accept, 21 reject, and four
+quarantine. The parameter evidence contains 35 valid, 13 invalid, and two
+deferred rows. Complex evaluated sets, constants, width constraints, complete
+assignment compatibility, rules, AP242 application meaning, and geometry are
+not validated.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -684,6 +709,7 @@ python experiments/run_step_part21_source_model.py
 python experiments/run_step_part21_conformance.py
 python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
+python experiments/run_step_express_validation.py
 ```
 
 All committed CSV files are deterministic reference artifacts checked by CI.

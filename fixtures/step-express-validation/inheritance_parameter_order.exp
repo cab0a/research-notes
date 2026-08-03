@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY base; label : STRING; END_ENTITY; ENTITY child SUBTYPE OF (base); rank : INTEGER; END_ENTITY; END_SCHEMA;

@@ -1,0 +1,1 @@
+SCHEMA demo; TYPE state = ENUMERATION OF (new, done); END_TYPE; ENTITY item; value : state; END_ENTITY; END_SCHEMA;

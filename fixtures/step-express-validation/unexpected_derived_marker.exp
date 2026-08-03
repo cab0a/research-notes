@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY item; value : REAL; END_ENTITY; END_SCHEMA;

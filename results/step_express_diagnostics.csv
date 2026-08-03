@@ -1,0 +1,22 @@
+fixture,severity,reason_code,stage,section_index,entity_id,record_index,parameter_index,source_line,detail
+missing_data_schema,invalid,data_schema_not_found,schema_binding,0,,,,7,schema 'MISSING' is not present in the EXPRESS document
+unknown_entity,invalid,unknown_entity_type,instance_validation,0,1,0,,8,entity type 'MISSING' is not visible in the governing schema
+abstract_entity,invalid,abstract_entity_instance,instance_validation,0,1,0,,8,abstract entity 'item' cannot be instantiated directly
+parameter_count_short,invalid,parameter_count_mismatch,instance_validation,0,1,0,,8,ITEM expects 2 parameters but received 1
+required_value_omitted,invalid,required_value_omitted,parameter_validation,0,1,0,0,8,parameter for item.label is required_value_omitted
+unexpected_derived_marker,invalid,unexpected_derived_marker,parameter_validation,0,1,0,0,8,parameter for item.value is unexpected_derived_marker
+derived_marker_required,invalid,derived_marker_required,parameter_validation,0,1,0,0,8,parameter for base.value is derived_marker_required
+wrong_scalar_type,invalid,parameter_type_mismatch,parameter_validation,0,1,0,0,8,parameter for item.value is parameter_type_mismatch
+invalid_enumeration,invalid,enumeration_value_invalid,parameter_validation,0,1,0,0,8,parameter for item.value is enumeration_value_invalid
+aggregate_cardinality,invalid,aggregate_cardinality_mismatch,parameter_validation,0,1,0,0,8,parameter for item.values is aggregate_cardinality_mismatch
+aggregate_duplicate,invalid,aggregate_unique_violation,parameter_validation,0,1,0,0,8,parameter for item.values is aggregate_unique_violation
+unresolved_entity_reference,invalid,unresolved_entity_reference,parameter_validation,0,1,0,0,8,parameter for holder.value is unresolved_entity_reference
+wrong_reference_type,invalid,entity_reference_type_mismatch,parameter_validation,0,1,0,0,8,parameter for holder.value is entity_reference_type_mismatch
+select_untyped,invalid,select_typed_parameter_required,parameter_validation,0,1,0,0,8,parameter for item.value is select_typed_parameter_required
+select_wrong_member,invalid,select_member_invalid,parameter_validation,0,1,0,0,8,parameter for item.value is select_member_invalid
+inheritance_parameter_order,invalid,parameter_type_mismatch,parameter_validation,0,1,0,0,8,parameter for base.label is parameter_type_mismatch
+inheritance_parameter_order,invalid,parameter_type_mismatch,parameter_validation,0,1,0,1,8,parameter for child.rank is parameter_type_mismatch
+complex_component_order,invalid,complex_component_order,instance_validation,0,1,,,8,complex component records are not in ascending encoded-name order
+complex_mapping_deferred,deferred,complex_evaluated_set_deferred,instance_validation,0,1,,,8,"component closure is checked, but complete EXPRESS evaluated-set semantics are not implemented"
+constant_reference_deferred,deferred,external_value_resolution_deferred,parameter_validation,0,1,0,0,8,parameter for item.value is external_value_resolution_deferred
+width_constraint_deferred,deferred,width_constraint_deferred,parameter_validation,0,1,0,0,8,parameter for item.label is width_constraint_deferred

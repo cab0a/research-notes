@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性に加え、v0.25.0のEXPRESS字句・構文・未解決schema modelとv0.26.0のシンボル・型・継承graphを収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、schema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証を収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -196,6 +196,31 @@ These sources define schema relationships, not CAD instance geometry. The
 figure therefore visualizes decisions and graph states rather than inventing
 shape previews.
 
+## v0.27.0 — Paired STEP and EXPRESS Validation Samples
+
+Directory: [`fixtures/step-express-validation/`](../fixtures/step-express-validation/)
+
+Manifest: [`manifest.csv`](../fixtures/step-express-validation/manifest.csv)
+
+The corpus contains 40 generated pairs. Each condition has one `.step` exchange
+and one `.exp` schema. The manifest binds both file names, byte lengths,
+SHA-256 identities, expected decision and reason, and active schema-validation
+limits.
+
+| Sample group | Representative pairs | Boundary isolated |
+| --- | --- | --- |
+| Values and markers | [`scalar_types.step`](../fixtures/step-express-validation/scalar_types.step) + [`scalar_types.exp`](../fixtures/step-express-validation/scalar_types.exp), [`derived_redeclaration.step`](../fixtures/step-express-validation/derived_redeclaration.step) + [`derived_redeclaration.exp`](../fixtures/step-express-validation/derived_redeclaration.exp) | Scalar domains, `$`, and inherited `*` positions |
+| Inheritance | [`internal_inheritance.step`](../fixtures/step-express-validation/internal_inheritance.step) + [`internal_inheritance.exp`](../fixtures/step-express-validation/internal_inheritance.exp), [`diamond_inheritance.step`](../fixtures/step-express-validation/diamond_inheritance.step) + [`diamond_inheritance.exp`](../fixtures/step-express-validation/diamond_inheritance.exp) | Ancestor order and shared-origin deduplication |
+| References and selects | [`subtype_entity_reference.step`](../fixtures/step-express-validation/subtype_entity_reference.step), [`select_typed_defined.step`](../fixtures/step-express-validation/select_typed_defined.step) | Forward targets, subtype compatibility, and typed select members |
+| Staged failures | [`part21_syntax_failure.step`](../fixtures/step-express-validation/part21_syntax_failure.step), [`express_syntax_failure.exp`](../fixtures/step-express-validation/express_syntax_failure.exp), [`express_resolution_failure.exp`](../fixtures/step-express-validation/express_resolution_failure.exp) | Part 21 syntax, EXPRESS syntax, and name resolution stop independently |
+| Deferred work | [`complex_mapping_deferred.step`](../fixtures/step-express-validation/complex_mapping_deferred.step), [`constant_reference_deferred.step`](../fixtures/step-express-validation/constant_reference_deferred.step), [`width_constraint_deferred.exp`](../fixtures/step-express-validation/width_constraint_deferred.exp) | Evaluated sets, external values, and width constraints remain quarantine boundaries |
+
+![Paired Part 21 and EXPRESS validation corpus](../results/step_express_validation.png)
+
+The paired sources describe schema-validation controls rather than meaningful
+product geometry. The figure shows validation stages and parameter evidence;
+it is not a fabricated CAD preview.
+
 ## Regeneration
 
 ```bash
@@ -221,6 +246,10 @@ python experiments/run_express_schema_model.py \
 
 python experiments/run_express_symbol_resolution.py \
   --fixture-dir fixtures/express-symbol-resolution \
+  --refresh-fixtures
+
+python experiments/run_step_express_validation.py \
+  --fixture-dir fixtures/step-express-validation \
   --refresh-fixtures
 ```
 

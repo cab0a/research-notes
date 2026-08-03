@@ -1,0 +1,1 @@
+SCHEMA base; ENTITY target; label : STRING; END_ENTITY; END_SCHEMA; SCHEMA demo; USE FROM base (target); ENTITY holder; value : target; END_ENTITY; END_SCHEMA;

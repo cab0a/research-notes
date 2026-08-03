@@ -2,11 +2,11 @@
 
 ## 日本語概要
 
-このリポジトリは、画像処理とSTEP/B-repの調査、統制実験、結果、考察、制約を再現可能に記録します。STEP研究は、仕様理解、Pythonパーサー、形状・位相・製品構成、モデリング、3D AI利用へ進みます。
+このリポジトリは、画像処理とSTEP/B-repの調査・実験・結果・制約を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.26.0では、EXPRESSのシンボル表、名前・型解決、直接import、型別名、`SELECT`、集約境界、entity継承、属性再宣言、逆属性を38個の合成fixtureで検証します。20件を受理、17件を拒否、semantic resource上限の1件を隔離し、未解決・曖昧・種類不一致・循環を別の状態として記録します。
+v0.27.0では、STEP Part 21とEXPRESS graphを結合し、schema、entity、引数、値、参照、継承を40組の合成fixtureで検証します。15件を受理、21件を拒否、4件を隔離し、35個の引数を妥当、13個を不適合、2個を保留として記録します。
 
-合成データ、CSV・PNG、140件のテスト、CIを備えます。結果は同一文書内の直接参照を監査可能なsemantic graphへ変換できる証拠であり、完全なEXPRESS適合、暗黙・推移的import、外部schema読込み、式の型検査・rule実行、Part 21検証、AP242適合、幾何妥当性は主張しません。詳細は以下の英語本文に示します。
+合成データ、CSV・PNG、150件のテスト、CIを備えます。結果は限定したSTEP instanceをEXPRESS属性へ監査可能に結合できる証拠であり、完全なEXPRESS・Part 21適合、複合entityのevaluated set、定数・value instance、式・rule実行、AP242適合、幾何妥当性は主張しません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -30,7 +30,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.26.0.
+v0.27.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -45,32 +45,31 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 26 releases to their questions,
+The [study index](docs/studies.md) maps all 27 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.26.0 study converts source-preserving EXPRESS declarations into a
-bounded semantic graph. Thirty-eight synthetic inputs isolate local and
-imported names, type aliases, aggregate bounds, inheritance, redeclarations,
-inverse attributes, failure states, and an explicit symbol budget.
+The v0.27.0 study connects the source-preserving Part 21 parser to the bounded
+EXPRESS semantic graph. Forty paired synthetic inputs isolate staged syntax,
+schema ownership, entity names, parameter order and arity, value domains,
+occurrence references, inheritance, and explicit deferral boundaries.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Symbols and references | resolved or explicit failure | 118 symbol rows and 72 reference rows retain targets and all candidates |
-| Defined types | graph result | Alias terminal domains, `SELECT` members, cycles, and kind failures remain distinct |
-| Entity inheritance | graph result | Immediate and transitive supertypes, diamonds, collisions, and qualified redeclarations are recorded |
-| Aggregate bounds | controlled evaluation | Integer literals, `?`, and integer-literal constants are evaluated; broader expressions remain deferred |
-| Semantic boundary | partial | Direct in-document imports resolve; expression typing, rule execution, external schemas, and transitive re-export remain deferred |
+| Validation stages | explicit | Part 21 syntax, EXPRESS syntax, symbol resolution, schema binding, and instance validation remain separate |
+| Parameter mapping | controlled | 35 valid, 13 invalid, and two deferred parameter rows retain EXPRESS attribute origins and Part 21 source values |
+| Inheritance mapping | controlled | Ancestor order, diamond deduplication, and qualified derived redeclarations determine parameter positions |
+| Occurrence references | controlled | Forward references and subtype compatibility pass; absent and incompatible targets fail distinctly |
+| Semantic boundary | partial | Complex evaluated sets, constants, width constraints, rules, AP242 meaning, and geometry remain deferred |
 
-![EXPRESS symbol, type, and inheritance evidence](results/express_symbols_types_inheritance.png)
+![Part 21 validation against EXPRESS](results/step_express_validation.png)
 
-All 38 observations match their declared routes: 20 accept, 17 reject, and one
-quarantine. The graph records 61 resolved, seven unresolved, one ambiguous,
-and three invalid-kind references. This is not a complete EXPRESS compiler:
-visibility is limited to direct imports from schemas in the same document, and
-expressions, constraints, algorithms, and rules are not type-checked or
-executed.
+All 40 observations match their declared routes: 15 accept, 21 reject, and four
+quarantine. This is not complete Part 21 or EXPRESS conformance: complex
+evaluated-set semantics, external values and schemas, complete assignment
+compatibility, constraints, algorithms, application meaning, and geometry are
+not evaluated.
 
 ## Claim Boundaries
 
@@ -107,6 +106,10 @@ executed.
   direct imports from schemas in the same document. It does not implement
   complete visibility, transitive re-export, external schema loading,
   expression typing, constraint evaluation, or executable rule behavior.
+- The Part 21-to-EXPRESS validator covers a controlled internal mapping and
+  selected values. Complex instances remain quarantined after structural
+  checks; constants, value instances, complete assignment compatibility,
+  rules, and application semantics remain deferred.
 - STEP face and edge indices are analysis-local. They are not persistent CAD
   identities across export, editing, Boolean operations, or healing.
 - Known pattern identities, matched references, and synthetic calibration
@@ -154,9 +157,10 @@ and solid-level tables, and visual controls.
 
 The [STEP sample and preview catalog](docs/step-sample-catalog.md) links each
 generated input to its manifest, purpose, expected route, and visual evidence.
-The catalog includes the v0.24.0 Part 21 conformance corpus and the v0.25.0 and
-v0.26.0 EXPRESS corpora. Syntax-only samples use source and relationship
-figures rather than fabricated geometry previews.
+The catalog includes the v0.24.0 Part 21 conformance corpus, the v0.25.0 and
+v0.26.0 EXPRESS corpora, and the paired v0.27.0 STEP/EXPRESS validation corpus.
+Syntax-only samples use source and relationship figures rather than fabricated
+geometry previews.
 
 ![Closed tetrahedron geometry control](results/step_part21_geometry_control.png)
 
@@ -165,7 +169,7 @@ validation evidence.
 
 ## Key Features
 
-- Twenty-six published studies with explicit questions, controls, results, and
+- Twenty-seven published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -179,6 +183,8 @@ validation evidence.
   two pinned public Python parsers
 - A source-preserving EXPRESS lexer and parser plus bounded symbol, direct
   import, type-alias, aggregate-bound, and inheritance resolution
+- Staged binding from Part 21 DATA sections and parameters to controlled
+  EXPRESS schemas, entities, attributes, value domains, and inheritance order
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -215,7 +221,8 @@ cross-platform agreement. The STEP studies separate container recognition,
 physical-file parsing, exact source retention, source coordinates, section
 order, declared schema identifiers, external trust boundaries, topology
 resolution, visual previews, EXPRESS declaration parsing, semantic graph
-states, and deferred expression, application, and geometry evaluation.
+states, DATA-schema binding, attribute-level parameter validation, and deferred
+expression, application, and geometry evaluation.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -238,7 +245,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 140 tests covering blur metrics and models,
+The repository contains 150 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -246,7 +253,8 @@ conformance-class checks, bounded exchange structures, B-Rep topology
 ownership and incidence, EXPRESS tokenization, declaration models, resource
 limits, symbol tables, direct imports, type aliases, aggregate bounds,
 inheritance, redeclarations, inverse links, experiment outputs, and
-cross-platform summary logic.
+schema-bound Part 21 parameters, occurrence-reference compatibility, staged
+validation boundaries, experiment outputs, and cross-platform summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -259,7 +267,7 @@ the combined reports.
 Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The v0.21.0 through v0.26.0 STEP and EXPRESS layers have no
+manifests. The v0.21.0 through v0.27.0 STEP and EXPRESS layers have no
 geometry-kernel dependency and do not claim compatibility beyond their
 controlled Part 21, topology, and ASCII EXPRESS subsets.
 
@@ -267,12 +275,14 @@ controlled Part 21, topology, and ASCII EXPRESS subsets.
 
 The [STEP mastery, Python parser, and 3D tool roadmap](docs/brep-learning-roadmap.md)
 makes specification knowledge and a source-preserving Python parser the
-foundation. v0.26.0 adds bounded symbol, type, and inheritance resolution to the
-source-preserving EXPRESS model; the next stage validates Part 21 instances
-against those declarations. The roadmap then proceeds through AP242 product
-semantics, B-Rep geometry, inspection, modeling,
-interoperability, face-adjacency graphs, and AI-ready evidence. Geometry-kernel
-adoption remains an explicit capability, distribution, and license checkpoint.
+foundation. v0.27.0 binds controlled Part 21 instances to resolved EXPRESS
+declarations. The roadmap then proceeds through a generic STEP graph, AP242
+product semantics, B-Rep geometry, inspection, modeling, STEP round trips,
+feature recognition, and evidence-backed parametric reconstruction. v0.40.0
+starts new parameter-driven construction, v0.44.0 targets import-edit-export
+round trips, and v0.55.0 begins STEP-to-feature reconstruction candidates.
+Geometry-kernel adoption remains an explicit capability, distribution, and
+license checkpoint.
 
 The roadmap is exploratory; only published releases represent completed work.
 

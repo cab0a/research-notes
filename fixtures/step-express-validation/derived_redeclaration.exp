@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY base; value : REAL; END_ENTITY; ENTITY child SUBTYPE OF (base); DERIVE SELF\base.value : REAL := 1.0; END_ENTITY; END_SCHEMA;

@@ -233,6 +233,21 @@ from research_notes.express_resolution_study import (
     build_express_resolution_fixtures,
     inspect_express_resolution,
 )
+from research_notes.step_express_validation import (
+    DEFAULT_STEP_EXPRESS_VALIDATION_LIMITS,
+    STEPExpressDiagnostic,
+    STEPExpressInstanceValidation,
+    STEPExpressParameterValidation,
+    STEPExpressSectionValidation,
+    STEPExpressValidationLimitError,
+    STEPExpressValidationLimits,
+    STEPExpressValidationResult,
+    inspect_step_express_validation,
+)
+from research_notes.step_express_validation_study import (
+    STEPExpressValidationFixture,
+    build_step_express_validation_fixtures,
+)
 
 __all__ = [
     "apply_psf",
@@ -424,4 +439,15 @@ __all__ = [
     "build_express_resolution_fixtures",
     "inspect_express_resolution",
     "resolve_express_document",
+    "DEFAULT_STEP_EXPRESS_VALIDATION_LIMITS",
+    "STEPExpressDiagnostic",
+    "STEPExpressInstanceValidation",
+    "STEPExpressParameterValidation",
+    "STEPExpressSectionValidation",
+    "STEPExpressValidationFixture",
+    "STEPExpressValidationLimitError",
+    "STEPExpressValidationLimits",
+    "STEPExpressValidationResult",
+    "build_step_express_validation_fixtures",
+    "inspect_step_express_validation",
 ]

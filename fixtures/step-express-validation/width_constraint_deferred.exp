@@ -1,0 +1,1 @@
+SCHEMA demo; ENTITY item; label : STRING(4) FIXED; END_ENTITY; END_SCHEMA;
