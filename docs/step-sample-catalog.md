@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証を収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照graphと上限制御付き照会を収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、AP242意味論、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -221,6 +221,30 @@ The paired sources describe schema-validation controls rather than meaningful
 product geometry. The figure shows validation stages and parameter evidence;
 it is not a fabricated CAD preview.
 
+## v0.28.0 — Physical Reference Graph Samples
+
+Directory: [`fixtures/step-graph-queries/`](../fixtures/step-graph-queries/)
+
+Manifest: [`manifest.csv`](../fixtures/step-graph-queries/manifest.csv)
+
+The corpus contains 14 generated STEP files. The manifest binds exact bytes
+and SHA-256 identities to expected routes, graph-construction budgets,
+traversal roots, and per-fixture depth limits.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Reachability | [`branching_orphan.step`](../fixtures/step-graph-queries/branching_orphan.step), [`isolated_nodes.step`](../fixtures/step-graph-queries/isolated_nodes.step) | Caller-relative reachability, zero indegree, isolation, and orphans |
+| Cycles and multiplicity | [`directed_cycles.step`](../fixtures/step-graph-queries/directed_cycles.step), [`duplicate_reference_occurrences.step`](../fixtures/step-graph-queries/duplicate_reference_occurrences.step) | Strongly connected components, self-loops, and repeated edge occurrences |
+| Source and ownership | [`nested_parameter_paths.step`](../fixtures/step-graph-queries/nested_parameter_paths.step), [`multiple_data_sections.step`](../fixtures/step-graph-queries/multiple_data_sections.step), [`complex_instance.step`](../fixtures/step-graph-queries/complex_instance.step) | Nested parameter paths, schema-owned DATA sections, and multiple record types on one node |
+| Nonlocal targets | [`external_entity.step`](../fixtures/step-graph-queries/external_entity.step), [`external_value_and_constant.step`](../fixtures/step-graph-queries/external_value_and_constant.step), [`unresolved_entity.step`](../fixtures/step-graph-queries/unresolved_entity.step) | External entity and value scopes, schema constants, and unresolved local IDs without retrieval |
+| Resource boundaries | [`depth_limited_chain.step`](../fixtures/step-graph-queries/depth_limited_chain.step), [`node_budget.step`](../fixtures/step-graph-queries/node_budget.step), [`edge_budget.step`](../fixtures/step-graph-queries/edge_budget.step), [`syntax_failure.step`](../fixtures/step-graph-queries/syntax_failure.step) | Partial query results, construction quarantine, and parse rejection |
+
+![Physical STEP reference graph corpus](../results/step_graph.png)
+
+The figure shows source-level reference relationships and controlled query
+states. It does not assert product structure, assembly occurrence semantics,
+B-Rep ownership, evaluated geometry, or persistent identity.
+
 ## Regeneration
 
 ```bash
@@ -250,6 +274,10 @@ python experiments/run_express_symbol_resolution.py \
 
 python experiments/run_step_express_validation.py \
   --fixture-dir fixtures/step-express-validation \
+  --refresh-fixtures
+
+python experiments/run_step_graph_queries.py \
+  --fixture-dir fixtures/step-graph-queries \
   --refresh-fixtures
 ```
 

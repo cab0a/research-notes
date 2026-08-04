@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、27件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、28件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照graph、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -680,6 +680,33 @@ deferred rows. Complex evaluated sets, constants, width constraints, complete
 assignment compatibility, rules, AP242 application meaning, and geometry are
 not validated.
 
+## v0.28.0
+
+- `step_graph_observations.csv` records expected and observed routes, graph
+  counts, traversal status, source hashes, and controlled graph limits for 14
+  synthetic fixtures.
+- `step_graph_nodes.csv` records stable analysis-local node IDs, Part 21 IDs,
+  DATA-section and schema ownership, record types, source spans, and adjacency
+  edge indices.
+- `step_graph_edges.csv` records every reference occurrence independently,
+  including repeated edges, nested parameter paths, target scope, reference
+  kind, and source span.
+- `step_graph_queries.csv` records exact-type, forward, reverse, root,
+  isolation, cycle, reachability, and caller-relative orphan queries with
+  explicit complete, partial, or not-evaluated states.
+- `step_graph_summary.csv` records corpus, graph, decision, target-scope, and
+  query-status counts.
+- `step_graph.json` is the deterministic `research-notes.step-graph` version
+  `1.0` record for the representative branching fixture.
+- `step_graph.png` visualizes that graph, corpus edge scopes, and query states.
+
+All 14 fixtures match their expected routes: 11 accept, two quarantine, and
+one reject. Accepted graphs contain 31 nodes and 25 reference-occurrence
+edges; 86 query rows complete, two stop at a declared depth limit, and one
+orphan query remains not evaluated because its traversal is partial. These
+are physical Part 21 relationships, not AP242 product structure, assembly
+semantics, B-Rep interpretation, or persistent CAD identity.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -710,9 +737,10 @@ python experiments/run_step_part21_conformance.py
 python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
 python experiments/run_step_express_validation.py
+python experiments/run_step_graph_queries.py
 ```
 
-All committed CSV files are deterministic reference artifacts checked by CI.
+All committed CSV and JSON files are deterministic reference artifacts checked by CI.
 CI also regenerates every chart and verifies that non-empty PNG files are
 produced. PNG byte identity is not asserted because font rasterization can
 differ across operating systems.

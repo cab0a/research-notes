@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-本書は、27件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV、図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証を含む検証、互換性境界をまとめています。
+本書は、28件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証・物理参照graph照会を含む検証、互換性境界をまとめています。
 
-再現手順に加え、`v0.27.0`以前のMIT Licenseと、それ以後のPolyForm Noncommercial License 1.0.0の境界を保持します。商用利用には書面による別ライセンスが必要です。
+再現手順に加え、`v0.27.0`以前の各タグ同梱条件と、それ以後のPolyForm Noncommercial License 1.0.0の境界を保持します。商用利用には書面による別ライセンスが必要です。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 
@@ -103,6 +103,7 @@ python experiments/run_step_part21_conformance.py
 python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
 python experiments/run_step_express_validation.py
+python experiments/run_step_graph_queries.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -173,6 +174,11 @@ python experiments/run_step_express_validation.py \
   --fixture-dir output/fixtures/step-express-validation \
   --output-dir output/step-express-validation \
   --refresh-fixtures
+
+python experiments/run_step_graph_queries.py \
+  --fixture-dir output/fixtures/step-graph-queries \
+  --output-dir output/step-graph-queries \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -224,7 +230,10 @@ python experiments/run_step_express_validation.py \
 - The v0.27 corpus generates 40 exact STEP/EXPRESS pairs with independent
   hashes and retains stage, DATA-schema, instance, parameter, diagnostic, and
   resource-limit evidence.
-- CI compares regenerated CSV and fixture data with committed references.
+- The v0.28 corpus generates 14 exact STEP files with independent hashes and
+  retains stable graph-local IDs, source-linked reference occurrences, target
+  scopes, traversal roots, graph budgets, query limits, and versioned JSON.
+- CI compares regenerated CSV, JSON, and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
 carry the deterministic equality contract because rendering metadata can vary
@@ -265,7 +274,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 140 tests cover:
+The 160 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -309,6 +318,9 @@ The 140 tests cover:
   optional and derived markers, scalar and aggregate values, select wrappers,
   forward and subtype-compatible occurrence references, and explicit complex-
   mapping deferral
+- stable Part 21 graph nodes, repeated reference edges, nested parameter paths,
+  nonlocal target scopes, forward and reverse traversal, query-relative
+  orphans, strongly connected components, graph limits, and deterministic JSON
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -330,6 +342,7 @@ The 140 tests cover:
 |   |-- malformed-jpeg-metadata/
 |   |-- express-schema-model/
 |   |-- express-symbol-resolution/
+|   |-- step-graph-queries/
 |   |-- step-express-validation/
 |   |-- step-part21-source-model/
 |   |-- step-part21-conformance/
@@ -340,6 +353,7 @@ The 140 tests cover:
 |-- results/
 |   |-- README.md
 |   |-- *.csv
+|   |-- *.json
 |   `-- *.png
 |-- src/research_notes/
 |-- tests/
@@ -356,6 +370,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.27.0. They do not imply complete ISO 10303-21, EXPRESS, or
+v0.21.0 through v0.28.0. They do not imply complete ISO 10303-21, EXPRESS, or
 AP242 conformance and do not authorize external resource retrieval, signature
 trust, archive extraction, semantic execution, or evaluated geometry claims.

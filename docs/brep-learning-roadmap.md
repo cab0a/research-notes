@@ -6,9 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.27.0までにPart 21・EXPRESS解析とschema・引数・参照・継承検証を実装しました。次はSTEP graph、AP242、B-rep幾何へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
-
-`v0.27.0`以前はMIT、以後はPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
+v0.28.0までにPart 21・EXPRESS解析、schema・引数・参照・継承検証、source span付き物理参照graphと上限制御付き照会を実装しました。次はAP242、B-rep幾何へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
 
 詳細は以下の英語本文に示します。
 
@@ -92,7 +90,7 @@ unresolved schema boundary.
 
 ## Licensing Boundary
 
-Tagged releases through v0.27.0 remain available under the MIT License. The
+Tagged releases through v0.27.0 retain the terms included with each tag. The
 repository state after that tag, including the roadmap work beginning with
 v0.28.0, is offered under the PolyForm Noncommercial License 1.0.0.
 Noncommercial research, academic, educational, and personal experimental use
@@ -204,10 +202,14 @@ meaning remain deferred.
 
 #### v0.28.0 — Generic STEP Graph and Query API
 
-Expose forward and reverse references, entity-type queries, section and schema
-ownership, reachability, orphan detection, cycles, and bounded traversal.
-Return stable analysis-local identifiers and source spans through Python,
-CSV, and versioned JSON records.
+The parser now exposes forward and reverse references, exact entity-type
+queries, section and schema ownership, reachability, caller-relative orphan
+detection, cycles, and bounded traversal. Stable analysis-local identifiers
+and source spans are available through Python, CSV, and versioned JSON records.
+
+Answered boundary: the graph preserves physical Part 21 reference occurrences
+without claiming that an edge represents product structure, an assembly
+occurrence, B-Rep ownership, or geometry. AP242 meaning remains the next stage.
 
 #### v0.29.0 — AP242 Product and Representation Paths
 

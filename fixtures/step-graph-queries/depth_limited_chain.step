@@ -1,0 +1,15 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Controlled generic STEP graph fixture'),'4;3');
+FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('DEMO'));
+ENDSEC;
+DATA;
+#1=LINK(#2);
+#2=LINK(#3);
+#3=LINK(#4);
+#4=LINK(#5);
+#5=LINK(#6);
+#6=END_NODE();
+ENDSEC;
+END-ISO-10303-21;

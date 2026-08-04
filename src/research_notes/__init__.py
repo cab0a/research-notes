@@ -248,6 +248,23 @@ from research_notes.step_express_validation_study import (
     STEPExpressValidationFixture,
     build_step_express_validation_fixtures,
 )
+from research_notes.step_graph import (
+    DEFAULT_STEP_GRAPH_LIMITS,
+    STEPGraph,
+    STEPGraphEdge,
+    STEPGraphLimitError,
+    STEPGraphLimits,
+    STEPGraphNode,
+    STEPGraphTraversal,
+    STEPGraphVisit,
+    build_step_graph,
+)
+from research_notes.step_graph_study import (
+    STEPGraphFixture,
+    STEPGraphObservation,
+    build_step_graph_fixtures,
+    inspect_step_graph_fixture,
+)
 
 __all__ = [
     "apply_psf",
@@ -353,6 +370,19 @@ __all__ = [
     "STEPInspectionResult",
     "STEPParseLimits",
     "STEPReference",
+    "DEFAULT_STEP_GRAPH_LIMITS",
+    "STEPGraph",
+    "STEPGraphEdge",
+    "STEPGraphFixture",
+    "STEPGraphLimitError",
+    "STEPGraphLimits",
+    "STEPGraphNode",
+    "STEPGraphObservation",
+    "STEPGraphTraversal",
+    "STEPGraphVisit",
+    "build_step_graph",
+    "build_step_graph_fixtures",
+    "inspect_step_graph_fixture",
     "STEPShellObservation",
     "STEPSolidObservation",
     "build_step_exchange_fixtures",

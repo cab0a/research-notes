@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instanceとEXPRESS属性の段階的検証を扱う27件の研究を索引化しています。各版の問い、代表結果、CSV・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instance検証、物理参照graph照会を扱う28件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -611,6 +611,32 @@ and geometry remain deferred.
 python experiments/run_step_express_validation.py
 ```
 
+### v0.28.0 — Generic STEP Graph and Query API
+
+**Question:** Can the source-preserving Part 21 model expose stable,
+source-linked graph records and bounded queries without confusing physical
+references with AP242 product, assembly, or B-Rep meaning?
+
+**Representative finding:** All 14 synthetic fixtures match their expected
+routes: 11 accept, two quarantine, and one reject. The accepted graphs contain
+31 nodes and 25 reference-occurrence edges. Eighty-six query rows complete,
+two report the controlled traversal-depth boundary, and one orphan query is
+not evaluated because its prerequisite traversal is partial.
+
+- [Complete note](../notes/generic-step-graph-query-api.md)
+- [Observations](../results/step_graph_observations.csv)
+- [Nodes](../results/step_graph_nodes.csv)
+- [Reference edges](../results/step_graph_edges.csv)
+- [Queries](../results/step_graph_queries.csv)
+- [Summary](../results/step_graph_summary.csv)
+- [Versioned JSON](../results/step_graph.json)
+- [Figure](../results/step_graph.png)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_step_graph_queries.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -635,6 +661,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.27.0 subsets.
+  controlled v0.21.0 through v0.28.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

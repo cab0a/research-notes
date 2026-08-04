@@ -1,0 +1,16 @@
+scope,metric,value
+corpus,fixture_count,14
+corpus,expectation_match_count,14
+graph,node_count,31
+graph,edge_count,25
+decision,accept,11
+decision,quarantine,2
+decision,reject,1
+target_scope,local_entity,21
+target_scope,external_entity,1
+target_scope,external_value,1
+target_scope,schema_constant,1
+target_scope,unresolved,1
+query_status,complete,86
+query_status,partial,2
+query_status,not_evaluated,1
