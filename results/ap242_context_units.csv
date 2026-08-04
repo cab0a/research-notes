@@ -1,0 +1,16 @@
+fixture,path_index,unit_index,entity_id,unit_kind,si_prefix,si_name,record_types,source_line
+ap242_block_path,0,0,41,length,MILLI,METRE,LENGTH_UNIT|NAMED_UNIT|SI_UNIT,23
+ap242_block_path,0,1,42,plane_angle,,RADIAN,NAMED_UNIT|PLANE_ANGLE_UNIT|SI_UNIT,24
+ap242_block_path,0,2,43,solid_angle,,STERADIAN,NAMED_UNIT|SI_UNIT|SOLID_ANGLE_UNIT,25
+ap242_advanced_brep_root,0,0,141,length,MILLI,METRE,LENGTH_UNIT|NAMED_UNIT|SI_UNIT,92
+ap242_advanced_brep_root,0,1,142,plane_angle,,RADIAN,NAMED_UNIT|PLANE_ANGLE_UNIT|SI_UNIT,93
+ap242_advanced_brep_root,0,2,143,solid_angle,,STERADIAN,NAMED_UNIT|SI_UNIT|SOLID_ANGLE_UNIT,94
+ap242_multiple_representations,0,0,41,length,MILLI,METRE,LENGTH_UNIT|NAMED_UNIT|SI_UNIT,23
+ap242_multiple_representations,0,1,42,plane_angle,,RADIAN,NAMED_UNIT|PLANE_ANGLE_UNIT|SI_UNIT,24
+ap242_multiple_representations,0,2,43,solid_angle,,STERADIAN,NAMED_UNIT|SI_UNIT|SOLID_ANGLE_UNIT,25
+ap242_multiple_representations,1,0,41,length,MILLI,METRE,LENGTH_UNIT|NAMED_UNIT|SI_UNIT,23
+ap242_multiple_representations,1,1,42,plane_angle,,RADIAN,NAMED_UNIT|PLANE_ANGLE_UNIT|SI_UNIT,24
+ap242_multiple_representations,1,2,43,solid_angle,,STERADIAN,NAMED_UNIT|SI_UNIT|SOLID_ANGLE_UNIT,25
+unclassified_item,0,0,41,length,MILLI,METRE,LENGTH_UNIT|NAMED_UNIT|SI_UNIT,23
+unclassified_item,0,1,42,plane_angle,,RADIAN,NAMED_UNIT|PLANE_ANGLE_UNIT|SI_UNIT,24
+unclassified_item,0,2,43,solid_angle,,STERADIAN,NAMED_UNIT|SI_UNIT|SOLID_ANGLE_UNIT,25

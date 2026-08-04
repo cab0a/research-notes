@@ -1,0 +1,228 @@
+{
+  "fixtures": [
+    {
+      "decision": "accept",
+      "fixture": "ap242_block_path",
+      "paths": [
+        {
+          "context_identifier": "model",
+          "context_type": "3D",
+          "coordinate_space_dimension": 3,
+          "formation_entity_id": 4,
+          "formation_identifier": "F-001",
+          "path_index": 0,
+          "placement_count": 1,
+          "product_definition_context_entity_id": 5,
+          "product_definition_entity_id": 6,
+          "product_definition_identifier": "PD-001",
+          "product_definition_shape_entity_id": 7,
+          "product_entity_id": 3,
+          "product_identifier": "P-001",
+          "product_name": "Controlled block",
+          "representation_context_entity_id": 40,
+          "representation_entity_id": 20,
+          "representation_item_count": 2,
+          "representation_name": "controlled shape",
+          "representation_type": "SHAPE_REPRESENTATION",
+          "shape_definition_representation_entity_id": 8,
+          "source_line": 13,
+          "unit_count": 3
+        }
+      ],
+      "reason_code": "ap242_paths_resolved",
+      "source_sha256": "60161041f3890d6dc46e5e11b0ab0bcca3f0c5c60c90f34a78f5b54b52a5fd21"
+    },
+    {
+      "decision": "accept",
+      "fixture": "ap242_advanced_brep_root",
+      "paths": [
+        {
+          "context_identifier": "model",
+          "context_type": "3D",
+          "coordinate_space_dimension": 3,
+          "formation_entity_id": 104,
+          "formation_identifier": "F-002",
+          "path_index": 0,
+          "placement_count": 1,
+          "product_definition_context_entity_id": 105,
+          "product_definition_entity_id": 106,
+          "product_definition_identifier": "PD-002",
+          "product_definition_shape_entity_id": 107,
+          "product_entity_id": 103,
+          "product_identifier": "P-002",
+          "product_name": "Controlled tetrahedron",
+          "representation_context_entity_id": 140,
+          "representation_entity_id": 120,
+          "representation_item_count": 2,
+          "representation_name": "controlled tetrahedron",
+          "representation_type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "shape_definition_representation_entity_id": 108,
+          "source_line": 87,
+          "unit_count": 3
+        }
+      ],
+      "reason_code": "ap242_paths_resolved",
+      "source_sha256": "5d1a71dbf3db89a7ac8253fb90bc46a396eb547c876318e0036ee97848a6d033"
+    },
+    {
+      "decision": "accept",
+      "fixture": "ap242_multiple_representations",
+      "paths": [
+        {
+          "context_identifier": "model",
+          "context_type": "3D",
+          "coordinate_space_dimension": 3,
+          "formation_entity_id": 4,
+          "formation_identifier": "F-001",
+          "path_index": 0,
+          "placement_count": 1,
+          "product_definition_context_entity_id": 5,
+          "product_definition_entity_id": 6,
+          "product_definition_identifier": "PD-001",
+          "product_definition_shape_entity_id": 7,
+          "product_entity_id": 3,
+          "product_identifier": "P-001",
+          "product_name": "Controlled block",
+          "representation_context_entity_id": 40,
+          "representation_entity_id": 20,
+          "representation_item_count": 2,
+          "representation_name": "controlled shape",
+          "representation_type": "SHAPE_REPRESENTATION",
+          "shape_definition_representation_entity_id": 8,
+          "source_line": 13,
+          "unit_count": 3
+        },
+        {
+          "context_identifier": "model",
+          "context_type": "3D",
+          "coordinate_space_dimension": 3,
+          "formation_entity_id": 4,
+          "formation_identifier": "F-001",
+          "path_index": 1,
+          "placement_count": 1,
+          "product_definition_context_entity_id": 5,
+          "product_definition_entity_id": 6,
+          "product_definition_identifier": "PD-001",
+          "product_definition_shape_entity_id": 7,
+          "product_entity_id": 3,
+          "product_identifier": "P-001",
+          "product_name": "Controlled block",
+          "representation_context_entity_id": 40,
+          "representation_entity_id": 21,
+          "representation_item_count": 1,
+          "representation_name": "alternate shape",
+          "representation_type": "SHAPE_REPRESENTATION",
+          "shape_definition_representation_entity_id": 9,
+          "source_line": 13,
+          "unit_count": 3
+        }
+      ],
+      "reason_code": "ap242_paths_resolved",
+      "source_sha256": "9934136fcfc821bfac031e11c9da7bc82d4fcc5f18bf3826d705dde5c188b950"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "ap214_schema_boundary",
+      "paths": [],
+      "reason_code": "unsupported_application_schema",
+      "source_sha256": "17cabda24886c215a46b8076a7ac25cf6455ee61792c58654079a87d39f81060"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "no_product_definition",
+      "paths": [],
+      "reason_code": "product_definition_not_found",
+      "source_sha256": "6e46de065d4153e89b6b743f53f16824388c1c36f99741b190cd308add130fda"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "product_without_shape",
+      "paths": [],
+      "reason_code": "product_definition_shape_not_found",
+      "source_sha256": "f8e6f9cd372971c32faf59a691288fd17e730ce0e95941d345056d4f90c0c042"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "shape_without_representation",
+      "paths": [],
+      "reason_code": "shape_representation_not_found",
+      "source_sha256": "57504250db331f07e1b83720086f55237fafe1747fb148bc8c43125a8ae52f8d"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "unsupported_representation",
+      "paths": [],
+      "reason_code": "representation_type_deferred",
+      "source_sha256": "bd79225f019a73ac4a5391a629f121e7f67b07fe6e2a40f75f93e72e0937e7fe"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "context_without_units",
+      "paths": [],
+      "reason_code": "global_units_not_available",
+      "source_sha256": "2b399627be0580715a013c119b8f61d42cc2a07f28c275d39df9b6b23468e01d"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "unclassified_item",
+      "paths": [
+        {
+          "context_identifier": "model",
+          "context_type": "3D",
+          "coordinate_space_dimension": 3,
+          "formation_entity_id": 4,
+          "formation_identifier": "F-001",
+          "path_index": 0,
+          "placement_count": 1,
+          "product_definition_context_entity_id": 5,
+          "product_definition_entity_id": 6,
+          "product_definition_identifier": "PD-001",
+          "product_definition_shape_entity_id": 7,
+          "product_entity_id": 3,
+          "product_identifier": "P-001",
+          "product_name": "Controlled block",
+          "representation_context_entity_id": 40,
+          "representation_entity_id": 20,
+          "representation_item_count": 2,
+          "representation_name": "controlled shape",
+          "representation_type": "SHAPE_REPRESENTATION",
+          "shape_definition_representation_entity_id": 8,
+          "source_line": 13,
+          "unit_count": 3
+        }
+      ],
+      "reason_code": "representation_item_type_deferred",
+      "source_sha256": "4bc0a0032facf800b28277c2c63f4b7f09e5609c8f076716369c533da3ec30a6"
+    },
+    {
+      "decision": "reject",
+      "fixture": "wrong_formation_target",
+      "paths": [],
+      "reason_code": "unexpected_semantic_target",
+      "source_sha256": "16c1b1394373217ac9044fe6564bf174a78526939ffaa6d4e8a60a06701933ab"
+    },
+    {
+      "decision": "reject",
+      "fixture": "unresolved_formation",
+      "paths": [],
+      "reason_code": "unresolved_semantic_reference",
+      "source_sha256": "979e6ad56c85ea0c1042513b61b5459393685d305cee676024180c000717b68d"
+    },
+    {
+      "decision": "reject",
+      "fixture": "product_parameter_count",
+      "paths": [],
+      "reason_code": "semantic_parameter_count_mismatch",
+      "source_sha256": "b654a507d4c9c1230dcbee751a6b989fb095b707392a2721255a48feabe950f9"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "path_budget",
+      "paths": [],
+      "reason_code": "ap242_path_limit",
+      "source_sha256": "9934136fcfc821bfac031e11c9da7bc82d4fcc5f18bf3826d705dde5c188b950"
+    }
+  ],
+  "format_version": "1.0",
+  "record_type": "research-notes.ap242-product-paths"
+}

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、28件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証・物理参照graph照会を含む検証、互換性境界をまとめています。
+本書は、29件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証・物理参照graph照会・AP242製品経路を含む検証、互換性境界をまとめています。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -104,6 +104,7 @@ python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
 python experiments/run_step_express_validation.py
 python experiments/run_step_graph_queries.py
+python experiments/run_ap242_product_paths.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -179,6 +180,11 @@ python experiments/run_step_graph_queries.py \
   --fixture-dir output/fixtures/step-graph-queries \
   --output-dir output/step-graph-queries \
   --refresh-fixtures
+
+python experiments/run_ap242_product_paths.py \
+  --fixture-dir output/fixtures/ap242-product-paths \
+  --output-dir output/ap242-product-paths \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -233,6 +239,10 @@ python experiments/run_step_graph_queries.py \
 - The v0.28 corpus generates 14 exact STEP files with independent hashes and
   retains stable graph-local IDs, source-linked reference occurrences, target
   scopes, traversal roots, graph budgets, query limits, and versioned JSON.
+- The v0.29 corpus generates 14 exact STEP files with independent hashes and
+  retains product paths, source-linked semantic roles, direct representation
+  items, geometric context, assigned units, diagnostics, work budgets, and
+  versioned JSON.
 - CI compares regenerated CSV, JSON, and fixture data with committed references.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
@@ -274,7 +284,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 160 tests cover:
+The 167 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -321,6 +331,9 @@ The 160 tests cover:
 - stable Part 21 graph nodes, repeated reference edges, nested parameter paths,
   nonlocal target scopes, forward and reverse traversal, query-relative
   orphans, strongly connected components, graph limits, and deterministic JSON
+- controlled AP242 product-definition, shape-definition, representation,
+  context, direct-item, placement, and assigned-unit paths with exact physical
+  edge provenance and explicit schema, subset, invalidity, and work boundaries
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -342,6 +355,7 @@ The 160 tests cover:
 |   |-- malformed-jpeg-metadata/
 |   |-- express-schema-model/
 |   |-- express-symbol-resolution/
+|   |-- ap242-product-paths/
 |   |-- step-graph-queries/
 |   |-- step-express-validation/
 |   |-- step-part21-source-model/
@@ -370,6 +384,6 @@ codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers have no geometry-
 kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.28.0. They do not imply complete ISO 10303-21, EXPRESS, or
+v0.21.0 through v0.29.0. They do not imply complete ISO 10303-21, EXPRESS, or
 AP242 conformance and do not authorize external resource retrieval, signature
 trust, archive extraction, semantic execution, or evaluated geometry claims.

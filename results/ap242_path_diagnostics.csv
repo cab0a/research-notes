@@ -1,0 +1,11 @@
+fixture,diagnostic_index,severity,reason_code,role,entity_id,source_line,detail
+ap214_schema_boundary,0,deferred,unsupported_application_schema,file_schema,,,the controlled resolver accepts only the declared AP242 MIM schema
+no_product_definition,0,deferred,product_definition_not_found,product_definition,,,no encoded PRODUCT_DEFINITION root is available
+product_without_shape,0,deferred,product_definition_shape_not_found,product_definition_shape.definition,6,13,a product definition need not have a geometric shape association
+shape_without_representation,0,deferred,shape_representation_not_found,shape_definition_representation.definition,7,14,the shape definition has no supported representation association
+unsupported_representation,0,deferred,representation_type_deferred,shape_definition_representation.used_representation,8,15,target type is outside the expected controlled role
+context_without_units,0,deferred,global_units_not_available,global_unit_assigned_context,40,22,the controlled path requires explicit context units
+unclassified_item,0,deferred,representation_item_type_deferred,representation.items,35,26,item type is outside the controlled AP242 classification subset
+wrong_formation_target,0,invalid,unexpected_semantic_target,product_definition_formation.of_product,4,11,target type is outside the expected controlled role
+unresolved_formation,0,invalid,unresolved_semantic_reference,product_definition.formation,6,13,local target #404 is absent
+product_parameter_count,0,invalid,semantic_parameter_count_mismatch,product,3,10,PRODUCT requires 4 encoded parameters in this subset

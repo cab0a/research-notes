@@ -1,0 +1,10 @@
+fixture,path_index,item_index,entity_id,role,record_types,name,source_line
+ap242_block_path,0,0,30,placement,AXIS2_PLACEMENT_3D,,17
+ap242_block_path,0,1,31,solid_model,BLOCK,block,18
+ap242_advanced_brep_root,0,0,35,placement,AXIS2_PLACEMENT_3D,,42
+ap242_advanced_brep_root,0,1,74,solid_model,MANIFOLD_SOLID_BREP,tetrahedron_a,81
+ap242_multiple_representations,0,0,30,placement,AXIS2_PLACEMENT_3D,,17
+ap242_multiple_representations,0,1,31,solid_model,BLOCK,block,18
+ap242_multiple_representations,1,0,30,placement,AXIS2_PLACEMENT_3D,,17
+unclassified_item,0,0,30,placement,AXIS2_PLACEMENT_3D,,17
+unclassified_item,0,1,35,unclassified,DESCRIPTIVE_REPRESENTATION_ITEM,note,26

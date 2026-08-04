@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.28.0までにPart 21・EXPRESS解析、schema・引数・参照・継承検証、source span付き物理参照graphと上限制御付き照会を実装しました。次はAP242、B-rep幾何へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
+v0.29.0までにPart 21・EXPRESS解析、schema・引数・参照・継承検証、source span付き物理参照graph、AP242の製品定義から形状表現・項目・座標次元・単位へ至る制御された意味経路を実装しました。次はassemblyの再利用・配置・単位へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
 
 詳細は以下の英語本文に示します。
 
@@ -212,10 +212,19 @@ occurrence, B-Rep ownership, or geometry. AP242 meaning remains the next stage.
 
 #### v0.29.0 — AP242 Product and Representation Paths
 
-Resolve controlled paths from product definitions and shape definitions to
-representations, contexts, units, placements, and geometric items. Compare
-selected AP203, AP214, and AP242-era patterns only where public schema evidence
-supports the comparison.
+The application-semantic layer now resolves controlled paths from product
+definitions and shape definitions to representations, direct items, geometric
+contexts, coordinate-space dimensions, and explicitly assigned SI units.
+Fourteen fixtures produce three accepts, eight quarantines, and three rejects;
+five paths and 59 source-linked semantic relations remain independently
+inspectable.
+
+Answered boundary: a schema-derived role can be joined to one physical Part 21
+reference occurrence without turning the generic graph into an AP242 graph.
+Missing optional shape associations and unsupported schemas remain deferred.
+Complete AP242 conformance, AP203/AP214 portability, assembly occurrences,
+transform composition, unit conversion, and B-Rep evaluation remain outside
+the result.
 
 #### v0.30.0 — Assembly, Reuse, Placement, and Units
 

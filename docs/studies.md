@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instance検証、物理参照graph照会を扱う28件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instance検証、物理参照graph照会、AP242製品経路を扱う29件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -637,6 +637,34 @@ not evaluated because its prerequisite traversal is partial.
 python experiments/run_step_graph_queries.py
 ```
 
+### v0.29.0 — AP242 Product and Representation Paths
+
+**Question:** Can physical Part 21 references support a controlled AP242
+product-to-representation query while keeping schema roles, optional paths,
+unsupported forms, and source provenance explicit?
+
+**Representative finding:** All 14 synthetic fixtures match their expected
+routes: three accept, eight quarantine, and three reject. Five resolved paths
+retain 59 unique source-linked semantic relations, nine direct representation
+items, five placements, and 15 assigned units. Missing shape associations and
+unsupported schemas remain deferred rather than being called corrupt.
+
+- [Complete note](../notes/ap242-product-representation-paths.md)
+- [Observations](../results/ap242_path_observations.csv)
+- [Resolved paths](../results/ap242_product_paths.csv)
+- [Semantic relations](../results/ap242_semantic_relations.csv)
+- [Representation items](../results/ap242_representation_items.csv)
+- [Context units](../results/ap242_context_units.csv)
+- [Diagnostics](../results/ap242_path_diagnostics.csv)
+- [Summary](../results/ap242_path_summary.csv)
+- [Versioned JSON](../results/ap242_product_paths.json)
+- [Figure](../results/ap242_product_paths.png)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_ap242_product_paths.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -661,6 +689,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.28.0 subsets.
+  controlled v0.21.0 through v0.29.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

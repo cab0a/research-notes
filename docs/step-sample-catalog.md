@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照graphと上限制御付き照会を収録します。形状にはpreview、構文だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、AP242意味論、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照graph、v0.29.0のAP242製品経路を収録します。形状にはpreview、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、AP242適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -245,6 +245,34 @@ The figure shows source-level reference relationships and controlled query
 states. It does not assert product structure, assembly occurrence semantics,
 B-Rep ownership, evaluated geometry, or persistent identity.
 
+## v0.29.0 — AP242 Product-Path Samples
+
+Directory: [`fixtures/ap242-product-paths/`](../fixtures/ap242-product-paths/)
+
+Manifest: [`manifest.csv`](../fixtures/ap242-product-paths/manifest.csv)
+
+The corpus contains 14 generated STEP files. The manifest binds each exact
+byte stream and SHA-256 identity to an expected semantic route and explicit
+product-definition, path, relation, item, and unit work budgets.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Resolved paths | [`ap242_block_path.step`](../fixtures/ap242-product-paths/ap242_block_path.step), [`ap242_multiple_representations.step`](../fixtures/ap242-product-paths/ap242_multiple_representations.step) | Product, formation, definition, shape, representation, item, context, and unit roles |
+| Representation subtype | [`ap242_advanced_brep_root.step`](../fixtures/ap242-product-paths/ap242_advanced_brep_root.step) | Controlled advanced B-rep representation root without geometry evaluation |
+| Optional and subset boundaries | [`product_without_shape.step`](../fixtures/ap242-product-paths/product_without_shape.step), [`unsupported_representation.step`](../fixtures/ap242-product-paths/unsupported_representation.step), [`context_without_units.step`](../fixtures/ap242-product-paths/context_without_units.step) | Absent or unsupported semantic evidence remains quarantine |
+| Schema boundary | [`ap214_schema_boundary.step`](../fixtures/ap242-product-paths/ap214_schema_boundary.step) | Familiar entity names do not establish AP242 interpretation |
+| Invalid and bounded routes | [`wrong_formation_target.step`](../fixtures/ap242-product-paths/wrong_formation_target.step), [`unresolved_formation.step`](../fixtures/ap242-product-paths/unresolved_formation.step), [`path_budget.step`](../fixtures/ap242-product-paths/path_budget.step) | Wrong type, absent target, and semantic work limit |
+
+![AP242 product-path corpus](../results/ap242_product_paths.png)
+
+The representative block is encoded with product and shape context sufficient
+for the controlled path query. The advanced B-rep sample reuses the v0.21.0
+closed tetrahedron, so its shape remains inspectable through the existing
+geometry control below. The path figure visualizes semantic relationships,
+not evaluated solid geometry or AP242 conformance.
+
+![AP242 advanced B-rep tetrahedron control](../results/step_part21_geometry_control.png)
+
 ## Regeneration
 
 ```bash
@@ -278,6 +306,10 @@ python experiments/run_step_express_validation.py \
 
 python experiments/run_step_graph_queries.py \
   --fixture-dir fixtures/step-graph-queries \
+  --refresh-fixtures
+
+python experiments/run_ap242_product_paths.py \
+  --fixture-dir fixtures/ap242-product-paths \
   --refresh-fixtures
 ```
 

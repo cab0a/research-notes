@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、28件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照graph、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、29件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照graph・AP242製品経路、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -707,6 +707,34 @@ orphan query remains not evaluated because its traversal is partial. These
 are physical Part 21 relationships, not AP242 product structure, assembly
 semantics, B-Rep interpretation, or persistent CAD identity.
 
+## v0.29.0
+
+- `ap242_path_observations.csv` records expected and observed routes, schema
+  identifiers, evidence counts, diagnostics, source hashes, and controlled
+  semantic work limits for 14 synthetic fixtures.
+- `ap242_product_paths.csv` records product, formation, product-definition,
+  shape-definition, representation, context, dimension, item, placement, and
+  unit facts for each resolved path.
+- `ap242_semantic_relations.csv` joins each schema-derived role to one physical
+  reference occurrence, parameter path, and source coordinate.
+- `ap242_representation_items.csv` classifies direct items as placements, solid
+  models, geometric items, mapped items, or unclassified.
+- `ap242_context_units.csv` records controlled SI length, plane-angle, and
+  solid-angle assignments without performing conversion.
+- `ap242_path_diagnostics.csv` preserves deferred and invalid semantic states.
+- `ap242_path_summary.csv` records corpus, decision, evidence, and item-role
+  counts.
+- `ap242_product_paths.json` is the deterministic
+  `research-notes.ap242-product-paths` version `1.0` record.
+- `ap242_product_paths.png` visualizes the controlled semantic chain and corpus
+  decisions.
+
+All 14 fixtures match their expected routes: three accept, eight quarantine,
+and three reject. The experiment resolves five paths, 59 source-linked
+semantic relations, nine direct items, five placements, and 15 units. These
+results do not establish complete AP242 conformance, assembly occurrence
+semantics, transformation composition, unit conversion, or B-Rep validity.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -738,6 +766,7 @@ python experiments/run_express_schema_model.py
 python experiments/run_express_symbol_resolution.py
 python experiments/run_step_express_validation.py
 python experiments/run_step_graph_queries.py
+python experiments/run_ap242_product_paths.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

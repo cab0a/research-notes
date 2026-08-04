@@ -1,0 +1,15 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Controlled AP242 product path fixture'),'4;3');
+FILE_NAME('fixture.step','2026-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF'));
+ENDSEC;
+DATA;
+#1=APPLICATION_CONTEXT('managed model based 3d engineering');
+#2=PRODUCT_CONTEXT('',#1,'mechanical');
+#3=PRODUCT('P-001','Controlled block','',(#2));
+#4=PRODUCT_DEFINITION_FORMATION('F-001','',#3);
+#5=PRODUCT_DEFINITION_CONTEXT('part definition',#1,'design');
+#6=PRODUCT_DEFINITION('PD-001','',#4,#5);
+ENDSEC;
+END-ISO-10303-21;

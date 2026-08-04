@@ -259,6 +259,25 @@ from research_notes.step_graph import (
     STEPGraphVisit,
     build_step_graph,
 )
+from research_notes.ap242_paths import (
+    AP242_SCHEMA_IDENTIFIER,
+    DEFAULT_AP242_PATH_LIMITS,
+    AP242PathDiagnostic,
+    AP242PathLimitError,
+    AP242PathLimits,
+    AP242PathResult,
+    AP242ProductRepresentationPath,
+    AP242RepresentationItem,
+    AP242SemanticRelation,
+    AP242UnitObservation,
+    resolve_ap242_product_paths,
+)
+from research_notes.ap242_path_study import (
+    AP242PathFixture,
+    AP242PathObservation,
+    build_ap242_path_fixtures,
+    inspect_ap242_path_fixture,
+)
 from research_notes.step_graph_study import (
     STEPGraphFixture,
     STEPGraphObservation,

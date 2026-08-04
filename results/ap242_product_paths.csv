@@ -1,0 +1,6 @@
+fixture,path_index,product_entity_id,product_identifier,product_name,formation_entity_id,formation_identifier,product_definition_entity_id,product_definition_identifier,product_definition_context_entity_id,product_definition_shape_entity_id,shape_definition_representation_entity_id,representation_entity_id,representation_type,representation_name,representation_context_entity_id,context_identifier,context_type,coordinate_space_dimension,representation_item_count,placement_count,unit_count,source_line
+ap242_block_path,0,3,P-001,Controlled block,4,F-001,6,PD-001,5,7,8,20,SHAPE_REPRESENTATION,controlled shape,40,model,3D,3,2,1,3,13
+ap242_advanced_brep_root,0,103,P-002,Controlled tetrahedron,104,F-002,106,PD-002,105,107,108,120,ADVANCED_BREP_SHAPE_REPRESENTATION,controlled tetrahedron,140,model,3D,3,2,1,3,87
+ap242_multiple_representations,0,3,P-001,Controlled block,4,F-001,6,PD-001,5,7,8,20,SHAPE_REPRESENTATION,controlled shape,40,model,3D,3,2,1,3,13
+ap242_multiple_representations,1,3,P-001,Controlled block,4,F-001,6,PD-001,5,7,9,21,SHAPE_REPRESENTATION,alternate shape,40,model,3D,3,1,1,3,13
+unclassified_item,0,3,P-001,Controlled block,4,F-001,6,PD-001,5,7,8,20,SHAPE_REPRESENTATION,controlled shape,40,model,3D,3,2,1,3,13

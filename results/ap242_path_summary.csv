@@ -1,0 +1,16 @@
+scope,metric,value
+corpus,fixture_count,14
+corpus,expectation_match_count,14
+evidence,path_count,5
+evidence,relation_count,59
+evidence,representation_item_count,9
+evidence,unit_count,15
+evidence,diagnostic_count,10
+decision,accept,3
+decision,quarantine,8
+decision,reject,3
+item_role,placement,5
+item_role,solid_model,3
+item_role,geometric_item,0
+item_role,mapped_item,0
+item_role,unclassified,1
