@@ -2,13 +2,13 @@
 
 ## 日本語概要
 
-このリポジトリは、画像処理とSTEP/B-repの調査・実験・結果・制約を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
+このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。[現在の能力表](docs/step-brep-capabilities.md)は実装済み・限定対応・未実装を区別します。
 
 v0.30.0では、AP242の再利用可能な部品定義と組立内の個々の出現を区別し、子部品から親組立への配置変換、入れ子経路、長さ単位の換算を17件の合成STEPで検証します。5件受理・6件隔離・6件拒否となり、受理群では8出現、8経路、出典付きの226参照関係、16単位観測を記録します。
 
-合成データ、CSV・JSON・PNG、175件のテスト、CIを備えます。結果は制御されたAP242組立経路の評価であり、AP242完全適合、任意の配置演算子、派生単位、B-rep幾何評価、永続CAD識別子は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、175件のテスト、CIを備えます。AP242完全適合、任意の配置演算子、派生単位、B-rep幾何評価、永続CAD識別子は主張しません。詳細は英語本文に示します。
 
-現在と今後の公開版は、研究・教育・個人的実験向けのPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
+研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
 ---
 
@@ -79,6 +79,23 @@ control keeps one bolt definition distinct from three placements and composes
 the rotated two-level path to the declared root-relative origin. Missing
 optional links and unsupported transformation forms remain quarantine outcomes
 rather than corruption claims. Geometry is not evaluated.
+
+## Current STEP and B-Rep Capability
+
+The current implementation is strongest at source-preserving Part 21 parsing,
+bounded EXPRESS and instance validation, physical-reference graphs, and one
+controlled AP242 product and assembly mapping. It can inventory selected
+declared B-Rep topology, but it cannot yet evaluate face geometry or modify a
+model.
+
+| Capability level | Available now | Not available yet |
+| --- | --- | --- |
+| Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
+| Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
+| B-Rep and modeling | Selected face, edge, shell, solid, ownership, adjacency, and incidence declarations | Area, centroid, UV bounds, normals, tolerances, validity, tessellation, editing, healing, or STEP export |
+
+The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
+maps each current field to its evidence, exact limitation, and planned release.
 
 ## Claim Boundaries
 

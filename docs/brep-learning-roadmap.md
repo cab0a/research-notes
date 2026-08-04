@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.30.0までにPart 21・EXPRESS解析、スキーマ検証、物理参照グラフ、AP242製品経路、部品定義と組立内の出現の分離、配置変換、入れ子経路、長さ単位換算を実装しました。次は幾何処理核とライセンスを選定し、面の幾何評価へ進みます。
+v0.30.0までにPart 21・EXPRESS解析、スキーマ検証、物理参照グラフ、AP242製品経路、部品定義と組立内の出現の分離、配置変換、入れ子経路、長さ単位換算を実装しました。現在の対応範囲は[STEP・B-rep能力表](step-brep-capabilities.md)に整理しています。次は幾何処理核とライセンスを選定し、面の幾何評価へ進みます。
 
 詳細は以下の英語本文に示します。
 
@@ -39,6 +39,10 @@ This is not a plan to wrap a geometry kernel and call the result a STEP
 parser. A kernel can eventually evaluate geometry and perform modeling
 operations, but it cannot replace explicit knowledge of the exchange syntax,
 the governing EXPRESS schema, or the provenance of each interpreted fact.
+
+The [current STEP and B-Rep capability matrix](step-brep-capabilities.md)
+separates completed evidence from controlled subsets, structural-only outputs,
+and planned work.
 
 ## Layers to Master
 
