@@ -6,13 +6,21 @@
 
 v0.27.0では、STEP Part 21とEXPRESS graphを結合し、schema、entity、引数、値、参照、継承を40組の合成fixtureで検証します。15件を受理、21件を拒否、4件を隔離し、35個の引数を妥当、13個を不適合、2個を保留として記録します。
 
-合成データ、CSV・PNG、150件のテスト、CIを備えます。結果は限定したSTEP instanceをEXPRESS属性へ監査可能に結合できる証拠であり、完全なEXPRESS・Part 21適合、複合entityのevaluated set、定数・value instance、式・rule実行、AP242適合、幾何妥当性は主張しません。詳細は以下の英語本文に示します。
+合成データ、CSV・PNG、150件のテスト、CIを備えます。結果は限定したSTEP instance検証であり、完全な規格適合、複合entity評価、rule実行、AP242意味論、幾何妥当性は主張しません。詳細は英語本文に示します。
+
+`v0.27.0`以前はMIT、以後はPolyForm Noncommercial 1.0.0です。非商用の研究・教育・個人実験を許可し、商用利用は別契約です。
 
 ---
 
 Reproducible image-processing and STEP/B-Rep studies that connect a focused
 question to source review, controlled experiments, committed evidence,
 interpretation, and explicit claim boundaries.
+
+The development branch after v0.27.0 is source-available for noncommercial
+research, academic, educational, and personal experimental use. Commercial
+use requires a separate written license. Tagged releases through v0.27.0
+remain available under the MIT License; see [Licensing](LICENSING.md) for the
+version boundary and inquiry process.
 
 ## Overview
 
@@ -288,4 +296,15 @@ The roadmap is exploratory; only published releases represent completed work.
 
 ## License
 
-Code and documentation are available under the [MIT License](LICENSE).
+The repository state after the v0.27.0 tag, including future releases, is
+licensed under the
+[PolyForm Noncommercial License 1.0.0](LICENSE). Commercial use requires a
+separate written license from the copyright holder. To discuss commercial
+licensing, [open a GitHub issue](https://github.com/cab0a/research-notes/issues/new)
+with `Commercial licensing inquiry` in the title and do not include
+confidential information.
+
+Tagged releases through v0.27.0 remain available under the
+[MIT License](LICENSE-MIT). Third-party material retains its own terms. The
+complete version boundary and summary are documented in
+[Licensing](LICENSING.md).

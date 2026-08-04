@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-notes"
-version = "0.27.0"
+version = "0.28.0.dev0"
 description = "Reproducible technical research notes and controlled experiments"
 readme = "README.md"
 requires-python = ">=3.11"
-license = "MIT"
+license = "PolyForm-Noncommercial-1.0.0"
 dependencies = [
     "imageio-ffmpeg==0.6.0",
     "matplotlib==3.11.1",

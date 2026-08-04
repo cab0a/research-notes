@@ -2,11 +2,15 @@
 
 ## 日本語概要
 
-このロードマップは、STEPの規格層を理解し、Pythonパーサーとして実装・検証する道筋です。Part 21、EXPRESS、用途別規格、製品構成、幾何、位相を分離し、合成データ、結果、テスト、課題を残します。
+このロードマップは、STEP規格をPythonパーサーとして実装・検証する道筋です。Part 21、EXPRESS、構成、幾何、位相を分離し、合成データとテストを残します。
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.27.0までにPart 21・EXPRESS解析と、40組の合成データによるschema・引数・参照・継承の検証を実装しました。次は汎用STEP graph、AP242、B-rep幾何へ進み、v0.40で新規パラメトリック形状、v0.44でSTEP編集・再出力、v0.55以降で根拠付きフィーチャー再構築を目指します。詳細は以下の英語本文に示します。
+v0.27.0までにPart 21・EXPRESS解析とschema・引数・参照・継承検証を実装しました。次はSTEP graph、AP242、B-rep幾何へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
+
+`v0.27.0`以前はMIT、以後はPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
+
+詳細は以下の英語本文に示します。
 
 ---
 
@@ -85,6 +89,21 @@ Build inspection, visualization, transformation, validation, repair, and
 modeling functions over attributed records with provenance. AI may consume
 those observations later, but it must not invent missing geometry or erase an
 unresolved schema boundary.
+
+## Licensing Boundary
+
+Tagged releases through v0.27.0 remain available under the MIT License. The
+repository state after that tag, including the roadmap work beginning with
+v0.28.0, is offered under the PolyForm Noncommercial License 1.0.0.
+Noncommercial research, academic, educational, and personal experimental use
+is governed by the license terms; commercial use requires a separate written
+license. See [Licensing](../LICENSING.md) for the controlling files, historical
+boundary, third-party scope, and inquiry process.
+
+Source availability supports reproducible research but does not disclose or
+recover proprietary CAD feature history, third-party schema rights, or rights
+in a geometry kernel. Each future kernel decision must still record the
+kernel's own license, notices, distribution conditions, and commercial terms.
 
 ## Release Program
 
