@@ -296,6 +296,18 @@ from research_notes.ap242_assembly_study import (
     build_ap242_assembly_fixtures,
     inspect_ap242_assembly_fixture,
 )
+from research_notes.geometry_kernel import (
+    REQUIRED_GATES,
+    GeometryBackendCandidate,
+    GeometryBackendDisposition,
+    GeometryKernelProbe,
+    InstalledPackageAudit,
+    audit_installed_distribution,
+    geometry_backend_candidates,
+    normalize_ocp_step_bytes,
+    probe_ocp_backend,
+    selected_geometry_backend,
+)
 from research_notes.step_graph_study import (
     STEPGraphFixture,
     STEPGraphObservation,
@@ -531,4 +543,14 @@ __all__ = [
     "build_ap242_assembly_fixtures",
     "evaluate_ap242_assembly",
     "inspect_ap242_assembly_fixture",
+    "REQUIRED_GATES",
+    "GeometryBackendCandidate",
+    "GeometryBackendDisposition",
+    "GeometryKernelProbe",
+    "InstalledPackageAudit",
+    "audit_installed_distribution",
+    "geometry_backend_candidates",
+    "normalize_ocp_step_bytes",
+    "probe_ocp_backend",
+    "selected_geometry_backend",
 ]

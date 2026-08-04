@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、30件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品経路・組立出現・配置・単位換算、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、31件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -765,6 +765,31 @@ is two, and one conversion-based unit is normalized to millimetres. These
 results do not establish complete AP242 conformance, support for arbitrary
 transformation selections, derived-unit evaluation, or B-Rep validity.
 
+## v0.31.0
+
+- `geometry_kernel_candidates.csv` compares eight routes against six technical
+  gates while preserving kernel family, Python route, license layers,
+  independence, disposition, rationale, and direct source links.
+- `geometry_kernel_package_audit.csv` records versions, package metadata
+  licenses, requirements, manifest file counts and sizes, standard license-file
+  paths, and whether the bounded inventory found an OCCT LGPL notice.
+- `geometry_kernel_probe.csv` records the pinned binding and processor versions,
+  STEP write/read status, kernel checks, unique topology counts, normalized
+  fixture hash, and the internal Part 21 parser boundary.
+- `geometry_kernel_selection_summary.csv` provides compact selection,
+  round-trip, parser, and package evidence.
+- `geometry_kernel_decision.json` is the deterministic
+  `research-notes.geometry-kernel-selection` version `1.0` decision record.
+- `geometry_kernel_selection.png` visualizes the candidate gates, topology
+  preservation, and installed reference dependency footprint.
+
+CadQuery OCP with OCCT is the only route passing all six project gates. The
+synthetic box retains 1 solid, 6 faces, 12 unique edges, and 8 unique vertices
+after STEP exchange. The 940,567,380-byte installed-file inventory describes
+three pinned Python distributions; it is not memory use or download size. No
+third-party binaries are committed, and the result is not legal advice or
+permission to redistribute OCCT.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -798,6 +823,7 @@ python experiments/run_step_express_validation.py
 python experiments/run_step_graph_queries.py
 python experiments/run_ap242_product_paths.py
 python experiments/run_ap242_assembly.py
+python experiments/run_geometry_kernel_selection.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

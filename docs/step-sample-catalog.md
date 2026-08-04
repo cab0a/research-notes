@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、幾何妥当性、公差、幾何処理核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、幾何妥当性、公差、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -299,6 +299,30 @@ not a kernel rendering of moved solids. The STEP files include block geometry
 so the exchange records remain inspectable, but v0.30.0 does not tessellate,
 transform, intersect, or validate those solids.
 
+## v0.31.0 — Geometry-Kernel Round-Trip Sample
+
+Directory: [`fixtures/geometry-kernel-selection/`](../fixtures/geometry-kernel-selection/)
+
+Manifest: [`manifest.csv`](../fixtures/geometry-kernel-selection/manifest.csv)
+
+The corpus contains one STEP file generated headlessly by the pinned optional
+OCCT route. `ocp_box.step` is a 10 × 20 × 30 synthetic box with a normalized
+writer timestamp and process counter. Its committed SHA-256 binds the visible
+sample to the round-trip observations.
+
+| Sample | Construction | Recorded round-trip evidence |
+| --- | --- | --- |
+| [`ocp_box.step`](../fixtures/geometry-kernel-selection/ocp_box.step) | `BRepPrimAPI_MakeBox(10.0, 20.0, 30.0)` | 1 solid, 6 faces, 12 unique edges, and 8 unique vertices before and after STEP exchange; both shapes pass the selected kernel check |
+
+![Geometry-kernel selection and box round trip](../results/geometry_kernel_selection.png)
+
+The figure includes the candidate gate matrix and the topology counts rather
+than a tessellated rendering. v0.31.0 proves one construction and exchange
+probe, not face geometry, visual equivalence, general STEP compatibility, or
+independent-kernel agreement. The strict internal Part 21 parser rejects the
+writer's `.PCURVE_S1.` spelling; the exact boundary remains visible in the
+probe CSV.
+
 ## Regeneration
 
 ```bash
@@ -340,6 +364,10 @@ python experiments/run_ap242_product_paths.py \
 
 python experiments/run_ap242_assembly.py \
   --fixture-dir fixtures/ap242-assemblies \
+  --refresh-fixtures
+
+python experiments/run_geometry_kernel_selection.py \
+  --fixture-dir fixtures/geometry-kernel-selection \
   --refresh-fixtures
 ```
 

@@ -1,0 +1,47 @@
+{
+  "conditions": [
+    "Keep the native geometry dependency optional and separate from the kernel-free Part 21 and EXPRESS layers.",
+    "Do not commit or redistribute third-party wheels or native libraries in this repository.",
+    "Audit OCCT notices, source-access duties, relinking conditions, and the additional exception before any binary redistribution.",
+    "A commercial repository license does not replace third-party license obligations.",
+    "This engineering record is not legal advice."
+  ],
+  "controlled_probe": {
+    "constructed_topology": {
+      "edges": 12,
+      "faces": 6,
+      "solids": 1,
+      "vertices": 8
+    },
+    "constructed_valid": true,
+    "fixture": "ocp_box.step",
+    "imported_topology": {
+      "edges": 12,
+      "faces": 6,
+      "solids": 1,
+      "vertices": 8
+    },
+    "imported_valid": true,
+    "internal_parser_decision": "reject",
+    "internal_parser_reason": "illegal_character",
+    "source_sha256": "a418c0ce0f670673348a7bfe054ed3480a1e57b6c5851b63338871d8b8b94bea"
+  },
+  "disposition": "selected_bounded_research",
+  "release": "v0.31.0",
+  "schema": "research-notes.geometry-kernel-selection",
+  "schema_version": "1.0",
+  "selected_candidate": "cadquery_ocp",
+  "technical_gate_results": {
+    "analytic_brep": true,
+    "headless": true,
+    "modeling": true,
+    "pip_reference_install": true,
+    "python_api": true,
+    "step_exchange": true
+  },
+  "unresolved_items": [
+    "The installed reference distributions did not expose an OCCT LGPL notice through the standard distribution license-file inventory.",
+    "The internal Part 21 lexer rejects the OCCT writer enumeration spelling .PCURVE_S1.; this is a parser interoperability boundary, not a geometry-kernel failure.",
+    "Only one platform and one analytic box were probed in this release."
+  ]
+}

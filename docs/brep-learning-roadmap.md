@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.30.0までにPart 21・EXPRESS解析、スキーマ検証、物理参照グラフ、AP242製品経路、部品定義と組立内の出現の分離、配置変換、入れ子経路、長さ単位換算を実装しました。現在の対応範囲は[STEP・B-rep能力表](step-brep-capabilities.md)に整理しています。次は幾何処理核とライセンスを選定し、面の幾何評価へ進みます。
+v0.31.0までにPart 21・EXPRESS解析とAP242製品・組立経路を実装しました。形状計算核はOpen CASCADE Technologyを研究用依存として採用し、箱のSTEP往復、ライセンス層、告知監査、解析器との不一致を記録しています。[STEP・B-rep能力表](step-brep-capabilities.md)の次段階では面の幾何と公差を独立真値と比較します。
 
 詳細は以下の英語本文に示します。
 
@@ -250,14 +250,23 @@ outside the result.
 
 #### v0.31.0 — Geometry Kernel and License Decision
 
-Compare candidate geometry backends and Python bindings for STEP coverage,
-B-Rep access, modeling operations, native packaging, headless CI, diagnostic
-quality, version discovery, license terms, notices, redistribution, and
-commercial alternatives. A permissive wrapper license does not replace the
-license of the native kernel it loads.
+Completed with eight candidates, six explicit technical gates, installed
+package evidence, and one headless synthetic box round trip. CadQuery OCP with
+OCCT is selected as an optional bounded research backend. The kernel-free
+parser remains authoritative for source provenance, and no third-party wheel
+or native library is committed or redistributed.
 
-This is a reproducible engineering and distribution decision record, not legal
-advice.
+The Apache-2.0 Python wrapper and OCCT's LGPL-2.1 additional-exception terms
+remain separate license layers. The installed reference inventory did not
+surface the OCCT LGPL notice through standard Python distribution license-file
+records, so packaged redistribution remains blocked pending a dedicated audit.
+The study is an engineering decision record, not legal advice.
+
+Answered boundary: the selected route can construct and validate one box,
+write it to STEP, read it back, and preserve 1 solid, 6 faces, 12 unique edges,
+and 8 unique vertices. It does not yet evaluate face fields. The strict Part 21
+parser's rejection of the writer's `.PCURVE_S1.` spelling is retained as an
+open interoperability question.
 
 #### v0.32.0 — Evaluated Face Geometry and Tolerances
 

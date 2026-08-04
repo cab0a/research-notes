@@ -1,0 +1,2 @@
+fixture,file_name,source_bytes,source_sha256,generator,binding_distribution_version,binding_module_version,step_processor
+ocp_box,ocp_box.step,15416,a418c0ce0f670673348a7bfe054ed3480a1e57b6c5851b63338871d8b8b94bea,"BRepPrimAPI_MakeBox(10.0, 20.0, 30.0)",7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9

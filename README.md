@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。[現在の能力表](docs/step-brep-capabilities.md)は実装済み・限定対応・未実装を区別します。
 
-v0.30.0では、AP242の再利用可能な部品定義と組立内の個々の出現を区別し、子部品から親組立への配置変換、入れ子経路、長さ単位の換算を17件の合成STEPで検証します。5件受理・6件隔離・6件拒否となり、受理群では8出現、8経路、出典付きの226参照関係、16単位観測を記録します。
+v0.31.0では、8つの形状計算候補を比較し、`cadquery-ocp`経由のOpen CASCADE Technologyを再配布しない任意の研究用依存として限定採用します。合成箱のSTEP往復では1立体・6面・12辺・8頂点を保持しました。結合部と本体のライセンス、告知監査、自作Part 21解析器との不一致を分けて記録します。
 
-合成データ、CSV・JSON・PNG、175件のテスト、CIを備えます。AP242完全適合、任意の配置演算子、派生単位、B-rep幾何評価、永続CAD識別子は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、182件のテストを備えます。ライセンス上の助言、第三者バイナリ再配布の許可、一般的なSTEP適合、面の幾何評価、形状編集は主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.30.0.
+v0.31.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,32 +53,32 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 30 releases to their questions,
+The [study index](docs/studies.md) maps all 31 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.30.0 study adds controlled assembly occurrence and placement evaluation
-over the AP242 product paths. Seventeen synthetic fixtures isolate reusable
-definitions, distinct placed occurrences, transform direction, nested matrix
-composition, length-unit normalization, invalid cycles, unsupported forms,
-and explicit work limits.
+The v0.31.0 study selects a bounded route from parsed STEP records to evaluated
+geometry. Eight candidates are compared against six project-specific technical
+gates, and CadQuery OCP with OCCT is the only route that passes all six in the
+reference environment. The selected native dependency remains optional and is
+not redistributed by this repository.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Corpus routes | explicit | Five accept, six quarantine, and six reject outcomes match their declarations |
-| Assembly evidence | controlled | Eight accepted occurrences produce eight root-relative paths with maximum depth two |
-| Transform controls | independent | Translation, quarter-turn rotation, source-frame offset, nesting, and inch conversion match declared values |
-| Source provenance | explicit | 226 accepted semantic relations join to physical reference occurrences, parameter paths, and source spans |
-| Claim boundary | application subset | An evaluated path does not prove complete AP242 conformance, arbitrary transformation support, or B-Rep validity |
+| Technical selection | explicit | One of eight routes passes all six reference-environment gates |
+| STEP round trip | controlled | The generated box retains 1 solid, 6 faces, 12 unique edges, and 8 unique vertices |
+| Kernel checks | controlled | Constructed and imported shapes both pass the selected kernel's validity analyzer |
+| License boundary | explicit | Apache-2.0 wrapper metadata is kept separate from OCCT's LGPL-2.1 additional-exception terms |
+| Claim boundary | unresolved | No binary redistribution approval, independent geometric validation, or general STEP compatibility follows |
 
-![AP242 assembly evidence](results/ap242_assembly_paths.png)
+![Geometry-kernel selection evidence](results/geometry_kernel_selection.png)
 
-All 17 semantic observations match their declared routes. The nested reuse
-control keeps one bolt definition distinct from three placements and composes
-the rotated two-level path to the declared root-relative origin. Missing
-optional links and unsupported transformation forms remain quarantine outcomes
-rather than corruption claims. Geometry is not evaluated.
+The 10 × 20 × 30 synthetic box round trip is byte-reproducible after narrowly
+normalizing the generated timestamp and process counter. The current strict
+Part 21 parser rejects the OCCT writer's `.PCURVE_S1.` spelling at line 38,
+column 38. The release records that disagreement rather than silently widening
+the grammar.
 
 ## Current STEP and B-Rep Capability
 
@@ -92,7 +92,7 @@ model.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected face, edge, shell, solid, ownership, adjacency, and incidence declarations | Area, centroid, UV bounds, normals, tolerances, validity, tessellation, editing, healing, or STEP export |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route proven on one synthetic box construction and STEP round trip | Face area, centroid, UV bounds, normals, tolerance evaluation, tessellation, editing, healing, or supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -144,6 +144,14 @@ maps each current field to its evidence, exact limitation, and planned release.
   SI metre prefixes, and conversion-based length units. An evaluated path is
   not complete AP242 conformance; alternate transformations, derived units,
   tolerances, and evaluated B-Rep geometry remain deferred.
+- The optional geometry backend is selected from project-specific gates and
+  tested on one Linux x64 synthetic box. This is not legal advice, binary
+  redistribution approval, independent kernel validation, or general STEP
+  interoperability evidence.
+- The installed Python distribution inventory did not surface an OCCT LGPL
+  notice through its standard license-file records. That observation is not a
+  noncompliance finding and blocks this project's redistribution until a
+  separate audit is completed.
 - STEP face and edge indices are analysis-local. They are not persistent CAD
   identities across export, editing, Boolean operations, or healing.
 - Known pattern identities, matched references, and synthetic calibration
@@ -178,8 +186,8 @@ confound.
 
 Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
-AP242 product-path, and v0.30.0 assembly studies also write deterministic
-versioned JSON records. JPEG studies write
+AP242 product-path, v0.30.0 assembly, and v0.31.0 geometry-kernel decision
+studies also write deterministic versioned JSON records. JPEG studies write
 fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
 source-span inventories, structure, section, declaration, face-, edge-, shell-,
@@ -196,7 +204,8 @@ generated input to its manifest, purpose, expected route, and visual evidence.
 The catalog includes the v0.24.0 Part 21 conformance corpus, the v0.25.0 and
 v0.26.0 EXPRESS corpora, the paired v0.27.0 STEP/EXPRESS validation corpus,
 the v0.28.0 physical-reference graph corpus, the v0.29.0 AP242 product-path
-corpus, and the v0.30.0 assembly occurrence and placement corpus.
+corpus, the v0.30.0 assembly occurrence and placement corpus, and the v0.31.0
+OCCT-generated box round-trip fixture.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -207,7 +216,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty published studies with explicit questions, controls, results, and
+- Thirty-one published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -232,6 +241,8 @@ validation evidence.
 - A controlled AP242 assembly evaluator that separates definitions from
   occurrences, evaluates child-to-parent rigid placements, composes nested
   paths, and normalizes supported length units to millimetres
+- A source-backed geometry-kernel decision matrix plus a pinned, headless,
+  optional OCCT box construction and STEP round-trip probe
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -273,7 +284,9 @@ expression, application, and geometry evaluation. Physical-reference graph
 queries preserve repeated occurrences and nonlocal target scopes. The AP242
 studies add separate product-path and assembly-occurrence semantic layers. The
 assembly layer evaluates one bounded rigid-placement and length-unit subset
-while keeping alternate mappings and B-Rep meaning outside that contract.
+while keeping alternate mappings and B-Rep meaning outside that contract. The
+geometry-kernel study separately evaluates candidate gates, unique topology
+preservation, kernel validity, package metadata, and license-layer boundaries.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -285,7 +298,7 @@ experiment-specific limitations.
 Install test dependencies and run the suite:
 
 ```bash
-python -m pip install -e ".[test]"
+python -m pip install -e ".[geometry,test]"
 python -m pytest
 ```
 
@@ -296,7 +309,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 175 tests covering blur metrics and models,
+The repository contains 182 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -308,8 +321,9 @@ schema-bound Part 21 parameters, occurrence-reference compatibility, staged
 validation boundaries, source-linked graph construction, bounded queries,
 AP242 product paths, direct representation items, contexts, assigned units,
 assembly occurrences, rigid transforms, nested composition, conversion-based
-length units, versioned JSON records, experiment outputs, and cross-platform
-summary logic.
+length units, geometry-kernel candidate selection, deterministic OCCT STEP
+round trips, installed-package audits, versioned JSON records, experiment
+outputs, and cross-platform summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -322,23 +336,23 @@ the combined reports.
 Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The v0.21.0 through v0.30.0 STEP and EXPRESS layers have no
-geometry-kernel dependency and do not claim compatibility beyond their
-controlled Part 21, topology, and ASCII EXPRESS subsets.
+manifests. The v0.21.0 through v0.30.0 STEP and EXPRESS layers remain
+geometry-kernel-free. v0.31.0 adds an optional pinned OCCT route tested on one
+Linux x64 box fixture; it does not claim compatibility beyond that controlled
+probe or change the parser subset.
 
 ## Roadmap
 
 The [STEP mastery, Python parser, and 3D tool roadmap](docs/brep-learning-roadmap.md)
 makes specification knowledge and a source-preserving Python parser the
-foundation. v0.30.0 evaluates controlled assembly reuse, child-to-parent
-placements, nested composition, and supported length units over the physical
-Part 21 graph. The roadmap next proceeds through a geometry-kernel and license
-decision, evaluated B-Rep geometry, inspection, modeling, STEP round trips,
+foundation. v0.31.0 selects an optional bounded OCCT route after a reproducible
+technical, packaging, and license-layer comparison. The roadmap next proceeds
+through evaluated B-Rep geometry, inspection, modeling, STEP round trips,
 feature recognition, and evidence-backed parametric reconstruction. v0.40.0
 starts new parameter-driven construction, v0.44.0 targets import-edit-export
 round trips, and v0.55.0 begins STEP-to-feature reconstruction candidates.
-Geometry-kernel adoption remains an explicit capability, distribution, and
-license checkpoint.
+Geometry-kernel binary distribution remains a separate license and packaging
+checkpoint even though the bounded research backend is selected.
 
 The roadmap is exploratory; only published releases represent completed work.
 

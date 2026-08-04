@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品経路・組立出現・配置・単位換算を扱う30件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核とライセンスの選定を扱う31件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -695,6 +695,35 @@ declared `25.4` millimetre result.
 python experiments/run_ap242_assembly.py
 ```
 
+### v0.31.0 — Geometry Kernel and License Decision
+
+**Question:** Which geometry-kernel route supplies reproducible Python STEP,
+analytic B-Rep, modeling, and headless evaluation while keeping wrapper,
+native-kernel, packaging, and redistribution boundaries explicit?
+
+**Representative finding:** CadQuery OCP with OCCT is the only one of eight
+candidates that passes all six project-specific technical gates. A generated
+10 × 20 × 30 box retains 1 solid, 6 faces, 12 unique edges, and 8 unique
+vertices after STEP write/read. The installed package records total
+940,567,380 bytes and do not expose an OCCT LGPL notice through the audited
+standard license-file inventory. The native route is therefore optional and
+not redistributed by this repository.
+
+- [Complete note](../notes/geometry-kernel-license-decision.md)
+- [Candidate matrix](../results/geometry_kernel_candidates.csv)
+- [Package audit](../results/geometry_kernel_package_audit.csv)
+- [Round-trip probe](../results/geometry_kernel_probe.csv)
+- [Summary](../results/geometry_kernel_selection_summary.csv)
+- [Decision record](../results/geometry_kernel_decision.json)
+- [Figure](../results/geometry_kernel_selection.png)
+- [Generated STEP fixture](../fixtures/geometry-kernel-selection/ocp_box.step)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_geometry_kernel_selection.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -719,6 +748,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.30.0 subsets.
+  controlled v0.21.0 through v0.31.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

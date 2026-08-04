@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、30件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品経路・組立出現・配置・単位換算を含む検証、互換性境界をまとめています。
+本書は、31件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品・組立経路・形状計算核選定を含む検証、互換性境界をまとめています。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -27,7 +27,7 @@ cd research-notes
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e ".[test]"
+python -m pip install -e ".[comparison,geometry,test]"
 python -m pytest
 ```
 
@@ -106,6 +106,7 @@ python experiments/run_step_express_validation.py
 python experiments/run_step_graph_queries.py
 python experiments/run_ap242_product_paths.py
 python experiments/run_ap242_assembly.py
+python experiments/run_geometry_kernel_selection.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -191,6 +192,11 @@ python experiments/run_ap242_assembly.py \
   --fixture-dir output/fixtures/ap242-assemblies \
   --output-dir output/ap242-assemblies \
   --refresh-fixtures
+
+python experiments/run_geometry_kernel_selection.py \
+  --fixture-dir output/fixtures/geometry-kernel-selection \
+  --output-dir output/geometry-kernel-selection \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -225,6 +231,9 @@ python experiments/run_ap242_assembly.py \
   explicit nesting and token-length limits.
 - The v0.23 geometry control is byte-identical to the v0.21 closed tetrahedron,
   so one shape tests the shared parser and the existing topology adapter.
+- The v0.31 OCCT box fixture normalizes only the generated timestamp and
+  process counter. Repeated generation must otherwise remain byte-identical,
+  and the manifest records its exact hash and generator versions.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -294,7 +303,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 175 tests cover:
+The 182 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -347,6 +356,9 @@ The 175 tests cover:
 - controlled AP242 definition reuse, occurrence identity, child-to-parent
   transform direction, rigid rotation, nested matrix composition,
   conversion-based length units, semantic cycles, and work boundaries
+- geometry-backend gate selection, wrapper-versus-kernel identity, narrow OCCT
+  writer normalization, headless box construction and STEP round trip, unique
+  topology preservation, parser disagreement, and installed-package inventory
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -370,6 +382,7 @@ The 175 tests cover:
 |   |-- express-symbol-resolution/
 |   |-- ap242-assemblies/
 |   |-- ap242-product-paths/
+|   |-- geometry-kernel-selection/
 |   |-- step-graph-queries/
 |   |-- step-express-validation/
 |   |-- step-part21-source-model/
@@ -396,8 +409,9 @@ The 175 tests cover:
 The project does not promise identical decoded arrays for dependency versions,
 codec builds, hardware paths, or runner images that are not recorded in the
 committed manifests. Cross-platform findings are regression evidence for the
-fixed corpus and pinned release matrix. The STEP parsers have no geometry-
-kernel dependency and promise only the controlled subsets documented by
-v0.21.0 through v0.30.0. They do not imply complete ISO 10303-21, EXPRESS, or
-AP242 conformance and do not authorize external resource retrieval, signature
-trust, archive extraction, semantic execution, or evaluated geometry claims.
+fixed corpus and pinned release matrix. The STEP parsers remain independent of
+the optional geometry backend and promise only the controlled subsets
+documented by v0.21.0 through v0.30.0. v0.31.0 adds one pinned Linux x64 OCCT
+box round trip; it does not imply complete ISO 10303-21, EXPRESS, or AP242
+conformance, cross-platform kernel portability, redistribution permission, or
+face-level geometry evaluation.

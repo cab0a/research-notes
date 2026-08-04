@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.30.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、未実装に分けて整理します。現在は原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品経路・組立配置・単位換算まで実装済みです。一方、面積・重心・UV範囲・代表法線・公差・体積などの幾何計算、一般的な実ファイルへの適合、形状編集、STEP書き出し、AIモデルは未実装です。詳細な根拠と予定版は以下の英語本文に示します。
+本書は、v0.31.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。現在は原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品・組立経路に加え、任意のOpen CASCADE形状計算経路で合成箱を生成しSTEP往復する研究実証まで完了しました。一方、面積・重心・UV範囲・代表法線・公差・体積などの面・立体計算、一般的な実ファイルへの適合、利用者向け形状編集機能、AIモデルは未実装です。第三者バイナリの再配布も選定対象外です。詳細な根拠と予定版は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim at
-v0.30.0. It separates syntax recognition, schema validation, physical-reference
+v0.31.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 
@@ -39,8 +39,9 @@ directions, not delivery promises.
 | B-Rep topology | Structural only | Inventory selected faces, edges, shells, solids, ownership, adjacency, and edge incidence | Kernel-evaluated geometry, tolerance validity, orientability, volume, or repair |
 | AP242 product paths | Controlled subset | Resolve one exact schema identifier through selected product, shape, representation, item, context, and unit roles | AP203/AP214 portability, complete AP242 coverage, or geometric validity |
 | AP242 assemblies | Controlled subset | Separate definitions from occurrences, evaluate selected rigid placements, compose nested paths, and normalize supported length units | Arbitrary transformation operators, all unit forms, moved B-Rep evaluation, or persistent CAD identity |
+| Geometry backend | Research evidence | One optional pinned OCCT route constructs, validates, writes, reads, and recounts a synthetic box headlessly | Face geometry, independent validation, cross-platform portability, redistribution approval, or general STEP compatibility |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Not implemented | None | Primitive construction, sketches, sweeps, Boolean operations, editing, healing, and STEP export |
+| Geometry modeling | Research evidence | The v0.31 experiment constructs one fixed box and writes it to STEP through the optional backend | A supported modeling API, parameter editing, sketches, sweeps, Boolean operations, healing, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -117,7 +118,7 @@ values are declared parameters, not independently evaluated geometric facts.
 ## Face-Level Field Matrix
 
 This table maps the intended face report to the fields that are actually
-available at v0.30.0.
+available at v0.31.0.
 
 | Requested field | Current status | What can be reported now | What is still missing | Planned stage |
 | --- | --- | --- | --- | --- |
@@ -148,7 +149,7 @@ available at v0.30.0.
 
 | Capability | Current status | Earliest roadmap stage | Required evidence before a claim |
 | --- | --- | --- | --- |
-| Geometry-kernel selection | Not implemented | v0.31.0 | Reproducible capability, packaging, diagnostics, and license comparison |
+| Geometry-kernel selection | Implemented as research evidence | v0.31.0 | Eight candidates, six gates, installed-package audit, optional dependency, and one deterministic box round trip; binary redistribution remains excluded |
 | Evaluated face geometry and tolerance | Not implemented | v0.32.0 | Synthetic analytic truth plus independent numerical checks |
 | Curves, p-curves, seams, and periodicity | Not implemented | v0.33.0 | 3D/2D agreement under declared tolerances |
 | Wire ordering, trimming, holes, and oriented faces | Not implemented | v0.34.0 | Controlled reversed, periodic, degenerate, and nested-bound cases |
@@ -178,6 +179,8 @@ available at v0.30.0.
 - Inspect selected simple B-Rep topology declarations and edge incidence.
 - Resolve the controlled AP242 product and assembly paths documented by the
   generated corpora.
+- Reproduce one headless OCCT box construction and STEP round trip with the
+  optional pinned geometry dependency.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -202,6 +205,7 @@ available at v0.30.0.
 Run the current STEP and EXPRESS test surface:
 
 ```bash
+python -m pip install -e ".[geometry,test]"
 python -m pytest \
   tests/test_step_part21.py \
   tests/test_step_exchange.py \
@@ -212,7 +216,8 @@ python -m pytest \
   tests/test_step_express_validation.py \
   tests/test_step_graph.py \
   tests/test_ap242_paths.py \
-  tests/test_ap242_assembly.py
+  tests/test_ap242_assembly.py \
+  tests/test_geometry_kernel.py
 ```
 
 The complete generated-input catalog is in the
