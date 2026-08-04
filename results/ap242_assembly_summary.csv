@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,fixture_count,17
+corpus,expectation_mismatch_count,0
+decision,accept,5
+decision,quarantine,6
+decision,reject,6
+accepted,occurrence_count,8
+accepted,path_count,8
+accepted,maximum_depth,2
+accepted,physical_relation_count,226
+accepted,unit_observation_count,16
+accepted,conversion_based_unit_count,1

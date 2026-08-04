@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、hash付きmanifest、目視用preview、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・source model・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決schema model、v0.26.0のシンボル・型・継承graph、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照graph、v0.29.0のAP242製品経路を収録します。形状にはpreview、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なschema適合性、AP242適合性、幾何妥当性、公差、kernel間互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、幾何妥当性、公差、幾何処理核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -273,6 +273,32 @@ not evaluated solid geometry or AP242 conformance.
 
 ![AP242 advanced B-rep tetrahedron control](../results/step_part21_geometry_control.png)
 
+## v0.30.0 — AP242 Assembly and Placement Samples
+
+Directory: [`fixtures/ap242-assemblies/`](../fixtures/ap242-assemblies/)
+
+Manifest: [`manifest.csv`](../fixtures/ap242-assemblies/manifest.csv)
+
+The corpus contains 17 generated STEP files. Each readable file encodes only
+synthetic products and block primitives. The manifest binds the exact bytes
+and SHA-256 identity to an expected assembly route and explicit occurrence,
+path, relation, depth, and unit-conversion budgets.
+
+| Sample group | Representative samples | Boundary isolated |
+| --- | --- | --- |
+| Placement direction | [`single_translation.step`](../fixtures/ap242-assemblies/single_translation.step), [`rotated_occurrence.step`](../fixtures/ap242-assemblies/rotated_occurrence.step), [`source_frame_offset.step`](../fixtures/ap242-assemblies/source_frame_offset.step) | Translation, rotation, and child-frame inverse order |
+| Nested reuse | [`nested_reuse.step`](../fixtures/ap242-assemblies/nested_reuse.step) | Distinct occurrences of one reusable definition and parent-to-root composition |
+| Unit conversion | [`conversion_based_inch.step`](../fixtures/ap242-assemblies/conversion_based_inch.step) | Conversion-based child unit normalized into the parent millimetre frame |
+| Optional and subset boundaries | [`missing_occurrence_shape.step`](../fixtures/ap242-assemblies/missing_occurrence_shape.step), [`unsupported_transform_operator.step`](../fixtures/ap242-assemblies/unsupported_transform_operator.step), [`missing_length_unit.step`](../fixtures/ap242-assemblies/missing_length_unit.step) | Missing evidence and unsupported forms remain quarantine |
+| Invalid and bounded routes | [`wrong_representation_order.step`](../fixtures/ap242-assemblies/wrong_representation_order.step), [`assembly_cycle.step`](../fixtures/ap242-assemblies/assembly_cycle.step), [`unit_conversion_cycle.step`](../fixtures/ap242-assemblies/unit_conversion_cycle.step), [`assembly_depth_budget.step`](../fixtures/ap242-assemblies/assembly_depth_budget.step) | Direction mismatch, cycles, and semantic work limits |
+
+![AP242 assembly placement corpus](../results/ap242_assembly_paths.png)
+
+The right panel is a coordinate-frame view of evaluated occurrence origins,
+not a kernel rendering of moved solids. The STEP files include block geometry
+so the exchange records remain inspectable, but v0.30.0 does not tessellate,
+transform, intersect, or validate those solids.
+
 ## Regeneration
 
 ```bash
@@ -310,6 +336,10 @@ python experiments/run_step_graph_queries.py \
 
 python experiments/run_ap242_product_paths.py \
   --fixture-dir fixtures/ap242-product-paths \
+  --refresh-fixtures
+
+python experiments/run_ap242_assembly.py \
+  --fixture-dir fixtures/ap242-assemblies \
   --refresh-fixtures
 ```
 

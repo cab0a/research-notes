@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査・実験・結果・制約を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.29.0では、AP242の製品定義から形状表現・表現項目・座標次元・単位へ至る意味経路を14件の合成fixtureで検証します。3件受理・8件隔離・3件拒否となり、解決した5経路、source span付きの59参照関係、9表現項目、15単位を記録します。
+v0.30.0では、AP242の再利用可能な部品定義と組立内の個々の出現を区別し、子部品から親組立への配置変換、入れ子経路、長さ単位の換算を17件の合成STEPで検証します。5件受理・6件隔離・6件拒否となり、受理群では8出現、8経路、出典付きの226参照関係、16単位観測を記録します。
 
-合成データ、CSV・JSON・PNG、167件のテスト、CIを備えます。結果は制御されたAP242意味経路であり、AP242完全適合、assembly occurrence、変換合成、単位換算、B-rep幾何評価、永続CAD identityは主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、175件のテスト、CIを備えます。結果は制御されたAP242組立経路の評価であり、AP242完全適合、任意の配置演算子、派生単位、B-rep幾何評価、永続CAD識別子は主張しません。詳細は英語本文に示します。
 
 現在と今後の公開版は、研究・教育・個人的実験向けのPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.29.0.
+v0.30.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,32 +53,32 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 29 releases to their questions,
+The [study index](docs/studies.md) maps all 30 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.29.0 study adds a controlled application-semantic layer over the
-source-preserving Part 21 graph. Fourteen synthetic fixtures isolate AP242
-product-to-representation paths, path multiplicity, direct item roles,
-geometric context, assigned SI units, unsupported schemas and subtypes,
-semantic invalidity, and explicit query limits.
+The v0.30.0 study adds controlled assembly occurrence and placement evaluation
+over the AP242 product paths. Seventeen synthetic fixtures isolate reusable
+definitions, distinct placed occurrences, transform direction, nested matrix
+composition, length-unit normalization, invalid cycles, unsupported forms,
+and explicit work limits.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Corpus routes | explicit | Three accept, eight quarantine, and three reject outcomes match their declarations |
-| Resolved paths | controlled | Five product-to-representation paths retain product, definition, shape, context, and item identities |
-| Source provenance | explicit | 59 semantic relations join to unique physical reference occurrences, parameter paths, and source spans |
-| Context evidence | bounded | Nine direct representation items, five placements, and 15 assigned SI units are recorded |
-| Claim boundary | application subset | A resolved path does not prove complete AP242 conformance, assembly placement, unit conversion, or B-Rep validity |
+| Corpus routes | explicit | Five accept, six quarantine, and six reject outcomes match their declarations |
+| Assembly evidence | controlled | Eight accepted occurrences produce eight root-relative paths with maximum depth two |
+| Transform controls | independent | Translation, quarter-turn rotation, source-frame offset, nesting, and inch conversion match declared values |
+| Source provenance | explicit | 226 accepted semantic relations join to physical reference occurrences, parameter paths, and source spans |
+| Claim boundary | application subset | An evaluated path does not prove complete AP242 conformance, arbitrary transformation support, or B-Rep validity |
 
-![AP242 product-path evidence](results/ap242_product_paths.png)
+![AP242 assembly evidence](results/ap242_assembly_paths.png)
 
-All 14 semantic observations match their declared routes. Missing optional
-shape associations and unsupported schemas remain quarantine outcomes rather
-than corruption claims. The resolver assigns roles only when one physical
-source reference supports them; it does not infer assembly occurrences,
-compose transforms, convert units, or evaluate geometry.
+All 17 semantic observations match their declared routes. The nested reuse
+control keeps one bolt definition distinct from three placements and composes
+the rotated two-level path to the declared root-relative origin. Missing
+optional links and unsupported transformation forms remain quarantine outcomes
+rather than corruption claims. Geometry is not evaluated.
 
 ## Claim Boundaries
 
@@ -122,10 +122,11 @@ compose transforms, convert units, or evaluate geometry.
 - The generic STEP graph contains physical local and nonlocal reference
   occurrences. Zero indegree, isolation, reachability, cycles, and
   root-relative orphans do not establish application meaning.
-- The AP242 path resolver supports one exact schema identifier and a controlled
-  entity-role subset. A resolved path is not complete AP242 conformance;
-  assembly occurrences, transform composition, converted units, tolerances,
-  and evaluated B-Rep geometry remain deferred.
+- The AP242 assembly evaluator supports one exact schema identifier, one
+  controlled occurrence mapping, explicit 3D item-defined rigid transforms,
+  SI metre prefixes, and conversion-based length units. An evaluated path is
+  not complete AP242 conformance; alternate transformations, derived units,
+  tolerances, and evaluated B-Rep geometry remain deferred.
 - STEP face and edge indices are analysis-local. They are not persistent CAD
   identities across export, editing, Boolean operations, or healing.
 - Known pattern identities, matched references, and synthetic calibration
@@ -159,8 +160,9 @@ confound.
 ## Generated Artifacts
 
 Each study writes observation-level or trial-level CSV files, compact summary
-tables, and one or more explanatory PNG figures. The v0.28.0 graph and v0.29.0
-AP242 path studies also write deterministic versioned JSON records. JPEG studies write
+tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
+AP242 product-path, and v0.30.0 assembly studies also write deterministic
+versioned JSON records. JPEG studies write
 fixture, codec, runtime, syntax, decoded-pixel, and pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
 source-span inventories, structure, section, declaration, face-, edge-, shell-,
@@ -176,8 +178,8 @@ The [STEP sample and preview catalog](docs/step-sample-catalog.md) links each
 generated input to its manifest, purpose, expected route, and visual evidence.
 The catalog includes the v0.24.0 Part 21 conformance corpus, the v0.25.0 and
 v0.26.0 EXPRESS corpora, the paired v0.27.0 STEP/EXPRESS validation corpus,
-the v0.28.0 physical-reference graph corpus, and the v0.29.0 AP242
-product-path corpus.
+the v0.28.0 physical-reference graph corpus, the v0.29.0 AP242 product-path
+corpus, and the v0.30.0 assembly occurrence and placement corpus.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -188,7 +190,7 @@ validation evidence.
 
 ## Key Features
 
-- Twenty-nine published studies with explicit questions, controls, results, and
+- Thirty published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -210,6 +212,9 @@ validation evidence.
 - A controlled AP242 product-to-representation resolver that assigns semantic
   roles to source-linked graph edges and retains direct items, dimension, and
   explicit context units
+- A controlled AP242 assembly evaluator that separates definitions from
+  occurrences, evaluates child-to-parent rigid placements, composes nested
+  paths, and normalizes supported length units to millimetres
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -249,8 +254,9 @@ resolution, visual previews, EXPRESS declaration parsing, semantic graph
 states, DATA-schema binding, attribute-level parameter validation, and deferred
 expression, application, and geometry evaluation. Physical-reference graph
 queries preserve repeated occurrences and nonlocal target scopes. The AP242
-study adds a separate, controlled semantic role layer while keeping assembly,
-unit conversion, and B-Rep meaning outside that contract.
+studies add separate product-path and assembly-occurrence semantic layers. The
+assembly layer evaluates one bounded rigid-placement and length-unit subset
+while keeping alternate mappings and B-Rep meaning outside that contract.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -273,7 +279,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 167 tests covering blur metrics and models,
+The repository contains 175 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -284,7 +290,9 @@ inheritance, redeclarations, inverse links, experiment outputs, and
 schema-bound Part 21 parameters, occurrence-reference compatibility, staged
 validation boundaries, source-linked graph construction, bounded queries,
 AP242 product paths, direct representation items, contexts, assigned units,
-versioned JSON records, experiment outputs, and cross-platform summary logic.
+assembly occurrences, rigid transforms, nested composition, conversion-based
+length units, versioned JSON records, experiment outputs, and cross-platform
+summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -297,7 +305,7 @@ the combined reports.
 Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 `pyproject.toml` define the reference environment. Cross-platform conclusions
 apply only to the runner images and bundled codec builds recorded in the
-manifests. The v0.21.0 through v0.29.0 STEP and EXPRESS layers have no
+manifests. The v0.21.0 through v0.30.0 STEP and EXPRESS layers have no
 geometry-kernel dependency and do not claim compatibility beyond their
 controlled Part 21, topology, and ASCII EXPRESS subsets.
 
@@ -305,9 +313,10 @@ controlled Part 21, topology, and ASCII EXPRESS subsets.
 
 The [STEP mastery, Python parser, and 3D tool roadmap](docs/brep-learning-roadmap.md)
 makes specification knowledge and a source-preserving Python parser the
-foundation. v0.29.0 resolves a controlled AP242 product-to-representation path
-over the physical Part 21 graph. The roadmap next proceeds through assembly
-reuse, placements, units, B-Rep geometry, inspection, modeling, STEP round trips,
+foundation. v0.30.0 evaluates controlled assembly reuse, child-to-parent
+placements, nested composition, and supported length units over the physical
+Part 21 graph. The roadmap next proceeds through a geometry-kernel and license
+decision, evaluated B-Rep geometry, inspection, modeling, STEP round trips,
 feature recognition, and evidence-backed parametric reconstruction. v0.40.0
 starts new parameter-driven construction, v0.44.0 targets import-edit-export
 round trips, and v0.55.0 begins STEP-to-feature reconstruction candidates.

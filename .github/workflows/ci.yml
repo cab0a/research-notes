@@ -88,6 +88,8 @@ jobs:
           python experiments/run_step_graph_queries.py --fixture-dir regenerated-fixtures/step-graph-queries --output-dir regenerated-step-graph-fixture-results --refresh-fixtures
           python experiments/run_ap242_product_paths.py --output-dir regenerated-results
           python experiments/run_ap242_product_paths.py --fixture-dir regenerated-fixtures/ap242-product-paths --output-dir regenerated-ap242-fixture-results --refresh-fixtures
+          python experiments/run_ap242_assembly.py --output-dir regenerated-results
+          python experiments/run_ap242_assembly.py --fixture-dir regenerated-fixtures/ap242-assemblies --output-dir regenerated-ap242-assembly-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -212,6 +214,14 @@ jobs:
           diff -u results/ap242_path_diagnostics.csv regenerated-results/ap242_path_diagnostics.csv
           diff -u results/ap242_path_summary.csv regenerated-results/ap242_path_summary.csv
           diff -u results/ap242_product_paths.json regenerated-results/ap242_product_paths.json
+          diff -u results/ap242_assembly_observations.csv regenerated-results/ap242_assembly_observations.csv
+          diff -u results/ap242_assembly_occurrences.csv regenerated-results/ap242_assembly_occurrences.csv
+          diff -u results/ap242_assembly_paths.csv regenerated-results/ap242_assembly_paths.csv
+          diff -u results/ap242_assembly_relations.csv regenerated-results/ap242_assembly_relations.csv
+          diff -u results/ap242_assembly_units.csv regenerated-results/ap242_assembly_units.csv
+          diff -u results/ap242_assembly_diagnostics.csv regenerated-results/ap242_assembly_diagnostics.csv
+          diff -u results/ap242_assembly_summary.csv regenerated-results/ap242_assembly_summary.csv
+          diff -u results/ap242_assembly.json regenerated-results/ap242_assembly.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -225,6 +235,7 @@ jobs:
           diff -qr fixtures/step-express-validation regenerated-fixtures/step-express-validation
           diff -qr fixtures/step-graph-queries regenerated-fixtures/step-graph-queries
           diff -qr fixtures/ap242-product-paths regenerated-fixtures/ap242-product-paths
+          diff -qr fixtures/ap242-assemblies regenerated-fixtures/ap242-assemblies
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -262,6 +273,7 @@ jobs:
           test -s regenerated-results/step_express_validation.png
           test -s regenerated-results/step_graph.png
           test -s regenerated-results/ap242_product_paths.png
+          test -s regenerated-results/ap242_assembly_paths.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

@@ -278,6 +278,24 @@ from research_notes.ap242_path_study import (
     build_ap242_path_fixtures,
     inspect_ap242_path_fixture,
 )
+from research_notes.ap242_assembly import (
+    DEFAULT_ASSEMBLY_LIMITS,
+    AssemblyDiagnostic,
+    AssemblyLimitError,
+    AssemblyLimits,
+    AssemblyOccurrence,
+    AssemblyPath,
+    AssemblyRelation,
+    AssemblyResult,
+    AssemblyUnitObservation,
+    evaluate_ap242_assembly,
+)
+from research_notes.ap242_assembly_study import (
+    AP242AssemblyFixture,
+    AP242AssemblyObservation,
+    build_ap242_assembly_fixtures,
+    inspect_ap242_assembly_fixture,
+)
 from research_notes.step_graph_study import (
     STEPGraphFixture,
     STEPGraphObservation,
@@ -499,4 +517,18 @@ __all__ = [
     "STEPExpressValidationResult",
     "build_step_express_validation_fixtures",
     "inspect_step_express_validation",
+    "DEFAULT_ASSEMBLY_LIMITS",
+    "AssemblyDiagnostic",
+    "AssemblyLimitError",
+    "AssemblyLimits",
+    "AssemblyOccurrence",
+    "AssemblyPath",
+    "AssemblyRelation",
+    "AssemblyResult",
+    "AssemblyUnitObservation",
+    "AP242AssemblyFixture",
+    "AP242AssemblyObservation",
+    "build_ap242_assembly_fixtures",
+    "evaluate_ap242_assembly",
+    "inspect_ap242_assembly_fixture",
 ]

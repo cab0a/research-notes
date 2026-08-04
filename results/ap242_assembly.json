@@ -1,0 +1,736 @@
+{
+  "canonical_length_unit": "millimetre",
+  "fixtures": [
+    {
+      "decision": "accept",
+      "fixture": "single_translation",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        }
+      ],
+      "paths": [
+        {
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "C1"
+          ]
+        }
+      ],
+      "reason_code": "assembly_paths_evaluated",
+      "source_sha256": "0eaf3ed3b8ced5068347e8f669dec859e2a53a477235edef37b2d411486a21dd"
+    },
+    {
+      "decision": "accept",
+      "fixture": "rotated_occurrence",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            0.0,
+            -1.0,
+            0.0,
+            10.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        }
+      ],
+      "paths": [
+        {
+          "global_matrix": [
+            0.0,
+            -1.0,
+            0.0,
+            10.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "C1"
+          ]
+        }
+      ],
+      "reason_code": "assembly_paths_evaluated",
+      "source_sha256": "297472de756690973ed1cdfaf923a477cc83852dc24929606e395f33bd708fcc"
+    },
+    {
+      "decision": "accept",
+      "fixture": "source_frame_offset",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            15.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            15.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        }
+      ],
+      "paths": [
+        {
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            15.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            15.0,
+            0.0,
+            0.0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "C1"
+          ]
+        }
+      ],
+      "reason_code": "assembly_paths_evaluated",
+      "source_sha256": "870c7a76ee7d2587ae9ba408842d3ff7465f1a01b2e0525b88de2f1276cee8a2"
+    },
+    {
+      "decision": "accept",
+      "fixture": "nested_reuse",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 302,
+          "local_matrix": [
+            0.0,
+            -1.0,
+            0.0,
+            100.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            100.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "S1"
+        },
+        {
+          "child_product_definition_entity_id": 402,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 1,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "B1"
+        },
+        {
+          "child_product_definition_entity_id": 402,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            20.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            20.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 2,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "B2"
+        },
+        {
+          "child_product_definition_entity_id": 402,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 3,
+          "parent_product_definition_entity_id": 302,
+          "reference_designator": "B3"
+        }
+      ],
+      "paths": [
+        {
+          "global_matrix": [
+            0.0,
+            -1.0,
+            0.0,
+            100.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            100.0,
+            0.0,
+            0.0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "S1"
+          ]
+        },
+        {
+          "global_matrix": [
+            0.0,
+            -1.0,
+            0.0,
+            100.0,
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            100.0,
+            10.0,
+            0.0
+          ],
+          "path_index": 1,
+          "reference_designators": [
+            "S1",
+            "B3"
+          ]
+        },
+        {
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "path_index": 2,
+          "reference_designators": [
+            "B1"
+          ]
+        },
+        {
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            20.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            20.0,
+            0.0,
+            0.0
+          ],
+          "path_index": 3,
+          "reference_designators": [
+            "B2"
+          ]
+        }
+      ],
+      "reason_code": "assembly_paths_evaluated",
+      "source_sha256": "ce84a6209a424566d29193daf898901b8d12de3178adc995161152463477ad05"
+    },
+    {
+      "decision": "accept",
+      "fixture": "conversion_based_inch",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 502,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            25.4,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            25.4,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "I1"
+        }
+      ],
+      "paths": [
+        {
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            25.4,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            25.4,
+            0.0,
+            0.0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "I1"
+          ]
+        }
+      ],
+      "reason_code": "assembly_paths_evaluated",
+      "source_sha256": "e789d832a92771e74ee3dc7f146300b2e769b121783870d6d8836d3d4e1f8718"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "no_assembly_occurrence",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "assembly_occurrence_not_found",
+      "source_sha256": "9638db47c02cbe435789ab8821e68765de931f7736de04cccf64511d5e1014ea"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "missing_occurrence_shape",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "occurrence_shape_not_found",
+      "source_sha256": "84193b06a2a44384755dd60f1c4fa229a96c9ddc750db0f4fd325daa8da32fc9"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "missing_context_dependent_relation",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "context_dependent_shape_representation_not_found",
+      "source_sha256": "312b9564e6c44433855b885d2ae1e50ebf2d1281ed35dfed57b0d24c6f63a478"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "unsupported_transform_operator",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "transformation_form_deferred",
+      "source_sha256": "489ed6fc4d681b992e9e9fd31aac6dddd13073636669bc54db42b814d76047ab"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "missing_length_unit",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "length_unit_not_available",
+      "source_sha256": "9573e68fc4a4c4003731bf8ca06e2aaf9013807d190be207573e2554385fa86c"
+    },
+    {
+      "decision": "quarantine",
+      "fixture": "assembly_depth_budget",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "assembly_depth_limit",
+      "source_sha256": "e6fa53a3175628ac7595027c36dabb15d22193bb14b6dd48a02d7510f0038c92"
+    },
+    {
+      "decision": "reject",
+      "fixture": "wrong_representation_order",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "assembly_representation_order_mismatch",
+      "source_sha256": "da5e387eb1a6233914e6803a81a0636bcef99cf90390e4b7347ec64deebb7fd1"
+    },
+    {
+      "decision": "reject",
+      "fixture": "nonorthogonal_placement",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "nonorthogonal_placement_axes",
+      "source_sha256": "098d4ea0e45cdedbe60ad1e9f4b4d51577bcef8f28657f03c839ac320f638127"
+    },
+    {
+      "decision": "reject",
+      "fixture": "unresolved_child_definition",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "unresolved_semantic_reference",
+      "source_sha256": "d1496902684f4bf8bd2ebaf1cc9a376911413640347cfd4223eb4b715716ae09"
+    },
+    {
+      "decision": "reject",
+      "fixture": "duplicate_reference_designator",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        },
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            20.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            20.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 1,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        }
+      ],
+      "paths": [],
+      "reason_code": "duplicate_reference_designator",
+      "source_sha256": "74f50e77758fe16846f8988faf7aadc93c0efcd1f732b331e3f107f4d1d1dbbf"
+    },
+    {
+      "decision": "reject",
+      "fixture": "assembly_cycle",
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "reference_designator": "C1"
+        },
+        {
+          "child_product_definition_entity_id": 102,
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "occurrence_index": 1,
+          "parent_product_definition_entity_id": 202,
+          "reference_designator": "R1"
+        }
+      ],
+      "paths": [],
+      "reason_code": "assembly_cycle",
+      "source_sha256": "66f11476ceebf0d549c314f991876148c46024a201a4f5902303bc9138d48090"
+    },
+    {
+      "decision": "reject",
+      "fixture": "unit_conversion_cycle",
+      "occurrences": [],
+      "paths": [],
+      "reason_code": "unit_conversion_cycle",
+      "source_sha256": "9dbc776ce2ac937a5642f8a7741f669582457aa9285fd6e8e749a8ea2214aa42"
+    }
+  ],
+  "schema": "research-notes.ap242-assembly",
+  "version": "1.0"
+}

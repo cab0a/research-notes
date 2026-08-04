@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.29.0までにPart 21・EXPRESS解析、schema・引数・参照・継承検証、source span付き物理参照graph、AP242の製品定義から形状表現・項目・座標次元・単位へ至る制御された意味経路を実装しました。次はassemblyの再利用・配置・単位へ進み、v0.40で形状生成、v0.44でSTEP編集・再出力、v0.55以降でフィーチャー再構築を目指します。
+v0.30.0までにPart 21・EXPRESS解析、スキーマ検証、物理参照グラフ、AP242製品経路、部品定義と組立内の出現の分離、配置変換、入れ子経路、長さ単位換算を実装しました。次は幾何処理核とライセンスを選定し、面の幾何評価へ進みます。
 
 詳細は以下の英語本文に示します。
 
@@ -228,9 +228,19 @@ the result.
 
 #### v0.30.0 — Assembly, Reuse, Placement, and Units
 
-Distinguish a reusable component definition from each placed occurrence.
-Evaluate nested transforms, coordinate systems, and unit conversions on
-synthetic assemblies with independently known expectations.
+The assembly layer now distinguishes reusable product definitions from placed
+occurrences, resolves their context-dependent shape relationships, evaluates
+explicit 3D item-defined child-to-parent rigid transforms, composes nested
+root-relative paths, and normalizes supported SI and conversion-based length
+units to millimetres. Seventeen fixtures produce five accepts, six
+quarantines, and six rejects.
+
+Answered boundary: source-frame offsets, quarter-turn rotation, nested reuse,
+and inch conversion independently constrain transformation direction and
+scale. Unsupported transformation selections, missing semantic evidence,
+cycles, ambiguous reference designators, and work-budget exhaustion remain
+explicit. Complete AP242 conformance and B-Rep geometry evaluation remain
+outside the result.
 
 ### Phase D — B-Rep Semantics and Evaluated Geometry
 

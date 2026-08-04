@@ -1,0 +1,12 @@
+fixture,diagnostic_index,severity,reason_code,role,entity_id,source_line,detail
+no_assembly_occurrence,0,deferred,assembly_occurrence_not_found,next_assembly_usage_occurrence,,,no encoded immediate assembly occurrence is available
+missing_occurrence_shape,0,deferred,occurrence_shape_not_found,product_definition_shape.definition,1000,41,the occurrence requires exactly one product-definition shape association
+missing_context_dependent_relation,0,deferred,context_dependent_shape_representation_not_found,context_dependent_shape_representation.represented_product_relation,1001,42,the occurrence requires exactly one context-dependent shape association
+unsupported_transform_operator,0,deferred,transformation_form_deferred,representation_relationship.transformation_operator,1003,44,the target type is outside the expected controlled role
+missing_length_unit,0,deferred,length_unit_not_available,child_representation.units,211,37,the representation context requires exactly one controlled length unit
+wrong_representation_order,0,invalid,assembly_representation_order_mismatch,representation_relationship,1003,44,rep_1 must be the child representation and rep_2 the parent representation
+nonorthogonal_placement,0,invalid,nonorthogonal_placement_axes,target_placement,1006,47,the controlled placement requires orthogonal axis and reference direction
+unresolved_child_definition,0,invalid,unresolved_semantic_reference,assembly_occurrence.child_definition,1000,41,local target #9999 is absent
+duplicate_reference_designator,0,invalid,duplicate_reference_designator,assembly_occurrence.reference_designator,1100,54,reference designators must be unique within one parent definition
+assembly_cycle,0,invalid,assembly_cycle,assembly_structure,1000,41,the assembly occurrence graph has no acyclic root
+unit_conversion_cycle,0,invalid,unit_conversion_cycle,conversion_based_unit,512,38,conversion-based length units must not form a cycle

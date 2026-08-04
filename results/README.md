@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、29件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・resource上限・信頼境界、STEPのsource model・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照graph・AP242製品経路、EXPRESSの字句・構文・schema model・semantic graph、STEP instanceとEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、30件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品経路・組立出現・配置・単位換算、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -735,6 +735,36 @@ semantic relations, nine direct items, five placements, and 15 units. These
 results do not establish complete AP242 conformance, assembly occurrence
 semantics, transformation composition, unit conversion, or B-Rep validity.
 
+## v0.30.0
+
+- `ap242_assembly_observations.csv` records expected and observed routes,
+  evidence counts, diagnostics, source hashes, and controlled semantic work
+  limits for 17 synthetic fixtures.
+- `ap242_assembly_occurrences.csv` records definition identities, occurrence
+  identities, reference designators, source and target placements, source
+  units, child-to-parent translations, rotations, and source coordinates.
+- `ap242_assembly_paths.csv` records root-relative occurrence chains, depth,
+  composed translations, rotations, and determinants.
+- `ap242_assembly_relations.csv` joins every controlled assembly role to one
+  physical reference occurrence, parameter path, and source coordinate.
+- `ap242_assembly_units.csv` records child and parent length-unit declarations,
+  unit forms, millimetre scales, and conversion hops.
+- `ap242_assembly_diagnostics.csv` preserves deferred and invalid semantic
+  states when parsing and graph construction complete.
+- `ap242_assembly_summary.csv` records corpus routes and accepted evidence
+  counts.
+- `ap242_assembly.json` preserves occurrence and path matrices in deterministic
+  machine-readable records.
+- `ap242_assembly_paths.png` visualizes corpus decisions and root-relative
+  origins for the nested reuse control.
+
+All 17 fixtures match their expected routes: five accept, six quarantine, and
+six reject. Accepted evidence contains eight occurrences, eight paths, 226
+source-linked relations, and 16 unit observations. The maximum accepted depth
+is two, and one conversion-based unit is normalized to millimetres. These
+results do not establish complete AP242 conformance, support for arbitrary
+transformation selections, derived-unit evaluation, or B-Rep validity.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -767,6 +797,7 @@ python experiments/run_express_symbol_resolution.py
 python experiments/run_step_express_validation.py
 python experiments/run_step_graph_queries.py
 python experiments/run_ap242_product_paths.py
+python experiments/run_ap242_assembly.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

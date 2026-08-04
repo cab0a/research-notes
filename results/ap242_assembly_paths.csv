@@ -1,0 +1,9 @@
+fixture,path_index,root_product_definition_entity_id,leaf_product_definition_entity_id,depth,occurrence_indices,occurrence_entity_ids,reference_designators,global_translation_x_mm,global_translation_y_mm,global_translation_z_mm,global_rotation,rotation_determinant
+single_translation,0,102,202,1,0,1000,C1,10,20,30,1|0|0|0|1|0|0|0|1,1
+rotated_occurrence,0,102,202,1,0,1000,C1,10,0,0,0|-1|0|1|0|0|0|0|1,1
+source_frame_offset,0,102,202,1,0,1000,C1,15,0,0,1|0|0|0|1|0|0|0|1,1
+nested_reuse,0,102,302,1,0,1000,S1,100,0,0,0|-1|0|1|0|0|0|0|1,1
+nested_reuse,1,102,402,2,0|3,1000|1300,S1/B3,100,10,0,0|-1|0|1|0|0|0|0|1,1
+nested_reuse,2,102,402,1,1,1100,B1,10,0,0,1|0|0|0|1|0|0|0|1,1
+nested_reuse,3,102,402,1,2,1200,B2,20,0,0,1|0|0|0|1|0|0|0|1,1
+conversion_based_inch,0,102,502,1,0,1000,I1,25.4,0,0,1|0|0|0|1|0|0|0|1,1

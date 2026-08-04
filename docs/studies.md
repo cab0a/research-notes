@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・resource上限・信頼境界、STEP Part 21の交換構造・統合source model・版別構文適合性・B-rep位相、EXPRESSの字句・構文・semantic graph、STEP instance検証、物理参照graph照会、AP242製品経路を扱う29件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定fixtureの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品経路・組立出現・配置・単位換算を扱う30件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -665,6 +665,36 @@ unsupported schemas remain deferred rather than being called corrupt.
 python experiments/run_ap242_product_paths.py
 ```
 
+### v0.30.0 — AP242 Assembly Occurrences, Placements, and Units
+
+**Question:** Can reusable product definitions, placed occurrences,
+child-to-parent transformations, nested paths, and length-unit conversion be
+evaluated without collapsing their distinct identities or losing source
+provenance?
+
+**Representative finding:** All 17 synthetic STEP fixtures match their
+declared routes: five accept, six quarantine, and six reject. The accepted
+fixtures contain eight occurrences and eight root-relative paths. A rotated
+subassembly composes its local child origin to `(100, 10, 0)` millimetres, and
+the conversion-based control maps a one-inch source-frame offset to the
+declared `25.4` millimetre result.
+
+- [Complete note](../notes/ap242-assembly-occurrences.md)
+- [Observations](../results/ap242_assembly_observations.csv)
+- [Occurrences](../results/ap242_assembly_occurrences.csv)
+- [Root-relative paths](../results/ap242_assembly_paths.csv)
+- [Source-linked relations](../results/ap242_assembly_relations.csv)
+- [Unit observations](../results/ap242_assembly_units.csv)
+- [Diagnostics](../results/ap242_assembly_diagnostics.csv)
+- [Summary](../results/ap242_assembly_summary.csv)
+- [Versioned JSON](../results/ap242_assembly.json)
+- [Figure](../results/ap242_assembly_paths.png)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python experiments/run_ap242_assembly.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -689,6 +719,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.29.0 subsets.
+  controlled v0.21.0 through v0.30.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.
