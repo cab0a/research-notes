@@ -8,7 +8,7 @@ v0.28.0では、STEP Part 21のDATA entityと参照出現をsource span付きの
 
 合成データ、CSV・JSON・PNG、160件のテスト、CIを備えます。結果は物理参照graphであり、AP242製品構成、B-rep意味論、外部resource解決、永続CAD identityは主張しません。詳細は英語本文に示します。
 
-`v0.27.0`以前は各タグ同梱の条件、以後はPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
+現在と今後の公開版は、研究・教育・個人的実験向けのPolyForm Noncommercial 1.0.0です。商用利用は別契約です。
 
 ---
 
@@ -16,11 +16,11 @@ Reproducible image-processing and STEP/B-Rep studies that connect a focused
 question to source review, controlled experiments, committed evidence,
 interpretation, and explicit claim boundaries.
 
-The development branch after v0.27.0 is source-available for noncommercial
-research, academic, educational, and personal experimental use. Commercial
-use requires a separate written license. Tagged releases through v0.27.0
-retain the license included with each tag; see [Licensing](LICENSING.md) for
-the version boundary and inquiry process.
+The current release and future development are source-available for
+noncommercial research, academic, educational, and personal experimental use.
+Commercial use requires a separate written license. See
+[Licensing](LICENSING.md) for the controlling terms, historical record, and
+inquiry process.
 
 ## Overview
 
@@ -306,16 +306,12 @@ The roadmap is exploratory; only published releases represent completed work.
 
 ## License
 
-The repository state after the v0.27.0 tag, including future releases, is
-licensed under the
+The current release and future development are licensed under the
 [PolyForm Noncommercial License 1.0.0](LICENSE). Commercial use requires a
 separate written license from the copyright holder. To discuss commercial
 licensing, [open a GitHub issue](https://github.com/cab0a/research-notes/issues/new)
 with `Commercial licensing inquiry` in the title and do not include
 confidential information.
 
-Tagged releases through v0.27.0 retain the license included with each tag;
-the [v0.27.0 license](https://github.com/cab0a/research-notes/blob/v0.27.0/LICENSE)
-records the final historical boundary. Third-party material retains its own
-terms. The complete version boundary and summary are documented in
-[Licensing](LICENSING.md).
+Third-party material retains its own terms. Historical releases and the
+complete project policy are documented in [Licensing](LICENSING.md).

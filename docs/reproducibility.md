@@ -4,7 +4,7 @@
 
 本書は、28件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定fixtureの更新、決定論の範囲、metadata方針・resource上限・STEP位相・交換構造・統合source model・版別構文適合性・EXPRESS schema model・semantic graph・STEP instance検証・物理参照graph照会を含む検証、互換性境界をまとめています。
 
-再現手順に加え、`v0.27.0`以前の各タグ同梱条件と、それ以後のPolyForm Noncommercial License 1.0.0の境界を保持します。商用利用には書面による別ライセンスが必要です。
+現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
 環境構築と検証コマンドは以下の英語本文を参照してください。
 

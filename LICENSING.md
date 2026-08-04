@@ -2,28 +2,33 @@
 
 ## 日本語概要
 
-`v0.27.0`以前のタグ付きリリースにはMIT Licenseが適用されます。`v0.27.0`タグ後の`main`と今後のリリースにはPolyForm Noncommercial License 1.0.0が適用され、非商用の研究・教育・個人的実験を許可します。商用利用には著作権者との書面による別ライセンスが必要です。詳細と問い合わせ方法は以下の英語本文に示します。
+本プロジェクトの現在と今後の公開版にはPolyForm Noncommercial License 1.0.0が適用され、非商用の研究・教育・個人的実験を許可します。商用利用には著作権者との書面による別ライセンスが必要です。過去に別条件で公開済みの版は遡及変更できないため、その事実だけを履歴として保持します。詳細と問い合わせ方法は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
-Tagged releases through v0.27.0 remain available under the MIT License. The
-repository state after the v0.27.0 tag, including future releases, is offered
-under the PolyForm Noncommercial License 1.0.0. Commercial use requires a
-separate written license from the copyright holder.
+The current release and future development are offered under the PolyForm
+Noncommercial License 1.0.0 for noncommercial research, academic, educational,
+and personal experimental use. Commercial use requires a separate written
+license from the copyright holder. Previously published releases retain the
+terms under which their copies were distributed.
 
-## Version Boundary
+## Current Project Policy
 
 | Repository state | License |
 | --- | --- |
-| Tagged releases v0.1.0 through v0.27.0 | [License included with v0.27.0](https://github.com/cab0a/research-notes/blob/v0.27.0/LICENSE) |
-| Commits after the v0.27.0 tag and future releases | [PolyForm Noncommercial License 1.0.0](LICENSE) |
+| Current release and future development | [PolyForm Noncommercial License 1.0.0](LICENSE) |
 | Third-party dependencies, comparison sources, and vendored material | Their own accompanying licenses |
 
-The license change does not retroactively restrict copies obtained from an
-earlier release. Check out the applicable tag and read the license included
-with that version when evaluating a historical release.
+## Historical Releases
+
+Tagged releases v0.1.0 through v0.27.0 were distributed with a different
+license. Changing the current project policy does not retroactively restrict
+copies already obtained under those terms. Check out the applicable tag and
+read the license included with that version when evaluating a historical
+release. This section records history; it is not the policy for current or
+future development.
 
 ## Permitted Noncommercial Use
 
@@ -33,9 +38,9 @@ anticipated commercial application, and use by the noncommercial
 organizations identified in the license. This summary does not replace or
 modify those terms.
 
-Public source availability does not make post-v0.27.0 versions open source
-under the Open Source Definition because commercial fields of use are not
-granted by the repository license.
+Public source availability does not make current or future versions open
+source under the Open Source Definition because commercial fields of use are
+not granted by the repository license.
 
 ## Commercial Licensing
 

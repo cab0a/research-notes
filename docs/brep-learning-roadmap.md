@@ -90,9 +90,8 @@ unresolved schema boundary.
 
 ## Licensing Boundary
 
-Tagged releases through v0.27.0 retain the terms included with each tag. The
-repository state after that tag, including the roadmap work beginning with
-v0.28.0, is offered under the PolyForm Noncommercial License 1.0.0.
+The current release and future roadmap work are offered under the PolyForm
+Noncommercial License 1.0.0.
 Noncommercial research, academic, educational, and personal experimental use
 is governed by the license terms; commercial use requires a separate written
 license. See [Licensing](../LICENSING.md) for the controlling files, historical
