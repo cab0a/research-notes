@@ -120,6 +120,7 @@ def test_package_audit_keeps_wrapper_and_kernel_notice_questions_separate() -> N
     assert any("cadquery_ocp/LICENSE" == path for path in audit.license_files)
     assert not audit.occt_lgpl_notice_detected
     assert all(not path.startswith(("/", "\\")) for path in audit.license_files)
+    assert audit.recorded_file_count == 728
 
 
 def test_public_inputs_fail_predictably() -> None:

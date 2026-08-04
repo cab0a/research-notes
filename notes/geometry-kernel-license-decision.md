@@ -118,6 +118,10 @@ The experiment performs these headless steps with pinned
 9. Inventory distribution versions, declared licenses, recorded file sizes,
    requirements, and standard license-file paths without absolute paths.
 
+The inventory excludes the zero-byte `REQUESTED` installer marker because pip
+adds it according to direct-versus-transitive installation history rather than
+third-party wheel payload content.
+
 ```bash
 python -m pip install -e ".[geometry,test]"
 python experiments/run_geometry_kernel_selection.py

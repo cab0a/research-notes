@@ -290,7 +290,11 @@ def audit_installed_distribution(name: str) -> InstalledPackageAudit:
     if not isinstance(name, str):
         raise TypeError("name must be a string")
     distribution = importlib.metadata.distribution(name)
-    files = tuple(distribution.files or ())
+    files = tuple(
+        path
+        for path in (distribution.files or ())
+        if path.name != "REQUESTED"
+    )
     license_files = tuple(
         sorted(
             str(path)

@@ -772,7 +772,8 @@ transformation selections, derived-unit evaluation, or B-Rep validity.
   independence, disposition, rationale, and direct source links.
 - `geometry_kernel_package_audit.csv` records versions, package metadata
   licenses, requirements, manifest file counts and sizes, standard license-file
-  paths, and whether the bounded inventory found an OCCT LGPL notice.
+  paths, and whether the bounded inventory found an OCCT LGPL notice. The
+  installer-history-specific zero-byte `REQUESTED` marker is excluded.
 - `geometry_kernel_probe.csv` records the pinned binding and processor versions,
   STEP write/read status, kernel checks, unique topology counts, normalized
   fixture hash, and the internal Part 21 parser boundary.

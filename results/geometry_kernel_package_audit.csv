@@ -1,4 +1,4 @@
 platform_label,distribution,version,metadata_license,requirements,recorded_file_count,recorded_bytes,license_files,occt_lgpl_notice_detected
-linux-x64-reference,cadquery-ocp,7.9.3.1.1,Apache-2.0,cadquery-ocp-proxy==7.9.3.1.1|vtk==9.6.2,729,273058651,cadquery_ocp/LICENSE,0
+linux-x64-reference,cadquery-ocp,7.9.3.1.1,Apache-2.0,cadquery-ocp-proxy==7.9.3.1.1|vtk==9.6.2,728,273058651,cadquery_ocp/LICENSE,0
 linux-x64-reference,cadquery-ocp-proxy,7.9.3.1.1,Apache-2.0,,8,5497,,0
 linux-x64-reference,vtk,9.6.2,BSD,"matplotlib>=2.0.0|numpy>=1.9; extra == ""numpy""|wslink>=1.0.4; extra == ""web""",642,667503232,vtk-9.6.2.dist-info/licenses/LICENSE,0
