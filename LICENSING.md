@@ -17,14 +17,13 @@ separate written license from the copyright holder.
 
 | Repository state | License |
 | --- | --- |
-| Tagged releases v0.1.0 through v0.27.0 | [MIT License](LICENSE-MIT) |
+| Tagged releases v0.1.0 through v0.27.0 | [License included with v0.27.0](https://github.com/cab0a/research-notes/blob/v0.27.0/LICENSE) |
 | Commits after the v0.27.0 tag and future releases | [PolyForm Noncommercial License 1.0.0](LICENSE) |
 | Third-party dependencies, comparison sources, and vendored material | Their own accompanying licenses |
 
-The license change does not retroactively restrict copies obtained from a
-release that was distributed under the MIT License. Check out the applicable
-tag and read the license files included with that version when evaluating a
-historical release.
+The license change does not retroactively restrict copies obtained from an
+earlier release. Check out the applicable tag and read the license included
+with that version when evaluating a historical release.
 
 ## Permitted Noncommercial Use
 

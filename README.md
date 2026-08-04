@@ -304,7 +304,8 @@ licensing, [open a GitHub issue](https://github.com/cab0a/research-notes/issues/
 with `Commercial licensing inquiry` in the title and do not include
 confidential information.
 
-Tagged releases through v0.27.0 remain available under the
-[MIT License](LICENSE-MIT). Third-party material retains its own terms. The
-complete version boundary and summary are documented in
+Tagged releases through v0.27.0 retain the license included with each tag;
+the [v0.27.0 license](https://github.com/cab0a/research-notes/blob/v0.27.0/LICENSE)
+records the final historical boundary. Third-party material retains its own
+terms. The complete version boundary and summary are documented in
 [Licensing](LICENSING.md).

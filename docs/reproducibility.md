@@ -344,7 +344,6 @@ The 140 tests cover:
 |-- src/research_notes/
 |-- tests/
 |-- LICENSE
-|-- LICENSE-MIT
 |-- LICENSING.md
 |-- README.md
 `-- pyproject.toml
