@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核とライセンスの選定を扱う31件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面の幾何・向き・公差を扱う32件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -724,6 +724,33 @@ python -m pip install -e ".[geometry]"
 python experiments/run_geometry_kernel_selection.py
 ```
 
+### v0.32.0 — Evaluated Face Geometry and Tolerances
+
+**Question:** Can the selected optional geometry backend evaluate bounded
+planar and cylindrical B-Rep faces against closed-form truth, and which
+orientation and tolerance claims survive a STEP round trip?
+
+**Representative finding:** Two planes and one cylindrical patch match
+independent analytic area, centroid, UV bounds, representative point, normal,
+surface-frame, and radius truth within the fixed regression contract before
+and after STEP exchange. The reversed plane retains its orientation. The
+constructed face tolerances `1e-4`, `2e-4`, and `3e-4` are all observed as
+`1e-7` after import, so tolerance is reported as stage-specific state rather
+than assumed round-trip identity.
+
+- [Complete note](../notes/evaluated-face-geometry-tolerances.md)
+- [Face observations](../results/evaluated_face_geometry_observations.csv)
+- [Summary](../results/evaluated_face_geometry_summary.csv)
+- [Evaluation contract](../results/evaluated_face_geometry.json)
+- [Figure](../results/evaluated_face_geometry.png)
+- [Generated STEP fixture](../fixtures/evaluated-face-geometry/analytic_faces.step)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_evaluated_face_geometry.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -748,6 +775,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.31.0 subsets.
+  controlled v0.21.0 through v0.32.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

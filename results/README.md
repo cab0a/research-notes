@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、31件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、32件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -791,6 +791,28 @@ three pinned Python distributions; it is not memory use or download size. No
 third-party binaries are committed, and the result is not legal advice or
 permission to redistribute OCCT.
 
+## v0.32.0
+
+- `evaluated_face_geometry_observations.csv` records six matched observations:
+  three constructed faces and the same three controls after STEP import. Every
+  row contains expected and observed surface type, orientation, area,
+  centroid, UV bounds, representative point, support normal, oriented normal,
+  surface frame, cylinder radius, face tolerance, and explicit error fields.
+- `evaluated_face_geometry_summary.csv` records compact maximum-error,
+  orientation, validity, representation-uncertainty, and face-tolerance
+  evidence by evaluation stage.
+- `evaluated_face_geometry.json` is the deterministic
+  `research-notes.evaluated-face-geometry` version `1.0` truth, tolerance,
+  provenance, limitation, and open-question contract.
+- `evaluated_face_geometry.png` visualizes the three analytic controls,
+  closed-form comparison errors, and constructed-versus-imported tolerances.
+
+The constructed and imported geometric values remain inside the declared
+synthetic numeric contract, and the reversed plane orientation is retained.
+The constructed face tolerances `1e-4`, `2e-4`, and `3e-4` become `1e-7` for
+all three imported faces. This is a pinned translation observation, not a
+universal STEP tolerance rule or a manufacturing quality threshold.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -825,6 +847,7 @@ python experiments/run_step_graph_queries.py
 python experiments/run_ap242_product_paths.py
 python experiments/run_ap242_assembly.py
 python experiments/run_geometry_kernel_selection.py
+python experiments/run_evaluated_face_geometry.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

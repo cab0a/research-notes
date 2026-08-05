@@ -58,6 +58,10 @@ def test_timestamp_normalization_is_narrow_and_deterministic() -> None:
         normalize_ocp_step_bytes(b"FILE_NAME('other','2026-08-04T00:00:00')")
     with pytest.raises(TypeError, match="source_bytes"):
         normalize_ocp_step_bytes("bad")  # type: ignore[arg-type]
+    with pytest.raises(TypeError, match="expected_translator_occurrences"):
+        normalize_ocp_step_bytes(source, expected_translator_occurrences=2.0)  # type: ignore[arg-type]
+    with pytest.raises(ValueError, match="must be positive"):
+        normalize_ocp_step_bytes(source, expected_translator_occurrences=0)
 
 
 @pytest.mark.skipif(

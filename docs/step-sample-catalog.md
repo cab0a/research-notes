@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、幾何妥当性、公差、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復、v0.32.0の解析式から生成した平面・円筒面の幾何・向き・公差評価を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、一般的な幾何妥当性、公差保存、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -323,6 +323,33 @@ independent-kernel agreement. The strict internal Part 21 parser rejects the
 writer's `.PCURVE_S1.` spelling; the exact boundary remains visible in the
 probe CSV.
 
+## v0.32.0 — Evaluated Analytic Face Sample
+
+Directory: [`fixtures/evaluated-face-geometry/`](../fixtures/evaluated-face-geometry/)
+
+Manifest: [`manifest.csv`](../fixtures/evaluated-face-geometry/manifest.csv)
+
+`analytic_faces.step` contains two bounded planes and one bounded cylindrical
+lateral face generated from fixed numeric controls. One plane has reversed
+topological orientation. Each face occupies a distinct location so the study
+can match it by surface type and nearest independent analytic centroid rather
+than relying on traversal order.
+
+| Face | Construction | Intended visual and numeric evidence |
+| --- | --- | --- |
+| `plane_forward` | 5 × 5 rectangular parameter domain at the origin | Area 25, centroid `(0.5, 1.5, 0)`, support and oriented normal `+Z` |
+| `plane_reversed` | 3 × 4 rectangular parameter domain at `(20, 0, 5)` | Area 12, support normal `+Y`, oriented normal `-Y` |
+| `cylinder_forward` | Radius 2.5, angular span `[0.3, 1.7]`, axial span `[-1, 4]` | Area 17.5, analytic area centroid distinct from the UV-midpoint sample |
+
+![Analytic face geometry and tolerance stages](../results/evaluated_face_geometry.png)
+
+The figure's left panel is generated directly from the independent plane and
+cylinder equations, so the shapes remain inspectable without relying on a
+viewer. The committed STEP bytes are also available for external visual
+inspection. The sample demonstrates one pinned analytic regression contract;
+it does not cover seams, holes, degenerate trims, B-splines, general STEP
+interoperability, or per-face tolerance preservation.
+
 ## Regeneration
 
 ```bash
@@ -368,6 +395,10 @@ python experiments/run_ap242_assembly.py \
 
 python experiments/run_geometry_kernel_selection.py \
   --fixture-dir fixtures/geometry-kernel-selection \
+  --refresh-fixtures
+
+python experiments/run_evaluated_face_geometry.py \
+  --fixture-dir fixtures/evaluated-face-geometry \
   --refresh-fixtures
 ```
 

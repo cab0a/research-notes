@@ -92,6 +92,8 @@ jobs:
           python experiments/run_ap242_assembly.py --fixture-dir regenerated-fixtures/ap242-assemblies --output-dir regenerated-ap242-assembly-fixture-results --refresh-fixtures
           python experiments/run_geometry_kernel_selection.py --output-dir regenerated-results
           python experiments/run_geometry_kernel_selection.py --fixture-dir regenerated-fixtures/geometry-kernel-selection --output-dir regenerated-geometry-fixture-results --refresh-fixtures
+          python experiments/run_evaluated_face_geometry.py --output-dir regenerated-results
+          python experiments/run_evaluated_face_geometry.py --fixture-dir regenerated-fixtures/evaluated-face-geometry --output-dir regenerated-face-geometry-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -229,6 +231,9 @@ jobs:
           diff -u results/geometry_kernel_probe.csv regenerated-results/geometry_kernel_probe.csv
           diff -u results/geometry_kernel_selection_summary.csv regenerated-results/geometry_kernel_selection_summary.csv
           diff -u results/geometry_kernel_decision.json regenerated-results/geometry_kernel_decision.json
+          diff -u results/evaluated_face_geometry_observations.csv regenerated-results/evaluated_face_geometry_observations.csv
+          diff -u results/evaluated_face_geometry_summary.csv regenerated-results/evaluated_face_geometry_summary.csv
+          diff -u results/evaluated_face_geometry.json regenerated-results/evaluated_face_geometry.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -244,6 +249,7 @@ jobs:
           diff -qr fixtures/ap242-product-paths regenerated-fixtures/ap242-product-paths
           diff -qr fixtures/ap242-assemblies regenerated-fixtures/ap242-assemblies
           diff -qr fixtures/geometry-kernel-selection regenerated-fixtures/geometry-kernel-selection
+          diff -qr fixtures/evaluated-face-geometry regenerated-fixtures/evaluated-face-geometry
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -283,6 +289,7 @@ jobs:
           test -s regenerated-results/ap242_product_paths.png
           test -s regenerated-results/ap242_assembly_paths.png
           test -s regenerated-results/geometry_kernel_selection.png
+          test -s regenerated-results/evaluated_face_geometry.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

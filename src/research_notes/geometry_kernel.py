@@ -357,10 +357,16 @@ _TRANSLATOR_COUNTER_PATTERN = re.compile(
 _NORMALIZED_TIMESTAMP = b"2000-01-01T00:00:00"
 
 
-def normalize_ocp_step_bytes(source_bytes: bytes) -> bytes:
-    """Replace the writer timestamp and process counter, retaining other bytes."""
+def normalize_ocp_step_bytes(
+    source_bytes: bytes, *, expected_translator_occurrences: int = 2
+) -> bytes:
+    """Replace known writer timestamps and counters, retaining other bytes."""
     if not isinstance(source_bytes, bytes):
         raise TypeError("source_bytes must be bytes")
+    if not isinstance(expected_translator_occurrences, int):
+        raise TypeError("expected_translator_occurrences must be an integer")
+    if expected_translator_occurrences <= 0:
+        raise ValueError("expected_translator_occurrences must be positive")
     normalized, replacements = _TIMESTAMP_PATTERN.subn(
         rb"\1'" + _NORMALIZED_TIMESTAMP + b"'", source_bytes, count=1
     )
@@ -369,8 +375,11 @@ def normalize_ocp_step_bytes(source_bytes: bytes) -> bytes:
     normalized, counter_replacements = _TRANSLATOR_COUNTER_PATTERN.subn(
         rb"\1 1", normalized
     )
-    if counter_replacements != 2:
-        raise ValueError("expected exactly two Open CASCADE translator counters")
+    if counter_replacements != expected_translator_occurrences:
+        raise ValueError(
+            "expected exactly "
+            f"{expected_translator_occurrences} Open CASCADE translator counters"
+        )
     return normalized
 
 

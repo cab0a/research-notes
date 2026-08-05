@@ -308,6 +308,16 @@ from research_notes.geometry_kernel import (
     probe_ocp_backend,
     selected_geometry_backend,
 )
+from research_notes.face_geometry import (
+    FaceControl,
+    FaceEvaluation,
+    FaceGeometryProbe,
+    FaceMeasurement,
+    FaceTruth,
+    analytic_face_truth,
+    face_controls,
+    probe_evaluated_face_geometry,
+)
 from research_notes.step_graph_study import (
     STEPGraphFixture,
     STEPGraphObservation,
@@ -553,4 +563,12 @@ __all__ = [
     "normalize_ocp_step_bytes",
     "probe_ocp_backend",
     "selected_geometry_backend",
+    "FaceControl",
+    "FaceEvaluation",
+    "FaceGeometryProbe",
+    "FaceMeasurement",
+    "FaceTruth",
+    "analytic_face_truth",
+    "face_controls",
+    "probe_evaluated_face_geometry",
 ]

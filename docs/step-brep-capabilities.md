@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.31.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。現在は原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品・組立経路に加え、任意のOpen CASCADE形状計算経路で合成箱を生成しSTEP往復する研究実証まで完了しました。一方、面積・重心・UV範囲・代表法線・公差・体積などの面・立体計算、一般的な実ファイルへの適合、利用者向け形状編集機能、AIモデルは未実装です。第三者バイナリの再配布も選定対象外です。詳細な根拠と予定版は以下の英語本文に示します。
+本書は、v0.32.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品・組立経路、任意のOpen CASCADE形状計算経路に加え、平面2面と円筒面1面の面積・重心・UV範囲・代表点・法線・曲面軸・半径・面公差を解析式と比較しました。幾何値と反転面の向きはSTEP往復後も一致しましたが、面公差は再読込時に再構成されました。周期境界、パラメータ曲線、穴、Bスプライン面、体積、一般的な実ファイル、形状編集、AIモデルは未実装で、第三者バイナリの再配布も対象外です。詳細な根拠と予定版は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim at
-v0.31.0. It separates syntax recognition, schema validation, physical-reference
+v0.32.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 
@@ -39,9 +39,10 @@ directions, not delivery promises.
 | B-Rep topology | Structural only | Inventory selected faces, edges, shells, solids, ownership, adjacency, and edge incidence | Kernel-evaluated geometry, tolerance validity, orientability, volume, or repair |
 | AP242 product paths | Controlled subset | Resolve one exact schema identifier through selected product, shape, representation, item, context, and unit roles | AP203/AP214 portability, complete AP242 coverage, or geometric validity |
 | AP242 assemblies | Controlled subset | Separate definitions from occurrences, evaluate selected rigid placements, compose nested paths, and normalize supported length units | Arbitrary transformation operators, all unit forms, moved B-Rep evaluation, or persistent CAD identity |
-| Geometry backend | Research evidence | One optional pinned OCCT route constructs, validates, writes, reads, and recounts a synthetic box headlessly | Face geometry, independent validation, cross-platform portability, redistribution approval, or general STEP compatibility |
+| Geometry backend | Research evidence | One optional pinned OCCT route constructs, evaluates, writes, and reads a small analytic face corpus headlessly | General trimmed geometry, independent-kernel validation, cross-platform portability, redistribution approval, or general STEP compatibility |
+| Evaluated face geometry | Controlled subset | Closed-form truth checks two planes and one cylindrical patch before and after STEP exchange | Seams, arbitrary trims, holes, singularities, splines, and general tolerance validity |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | The v0.31 experiment constructs one fixed box and writes it to STEP through the optional backend | A supported modeling API, parameter editing, sketches, sweeps, Boolean operations, healing, and evaluated export preservation |
+| Geometry modeling | Research evidence | The v0.31 and v0.32 experiments construct a box and three bounded analytic faces for controlled exchange studies | A supported modeling API, parameter editing, sketches, sweeps, Boolean operations, healing, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -118,29 +119,29 @@ values are declared parameters, not independently evaluated geometric facts.
 ## Face-Level Field Matrix
 
 This table maps the intended face report to the fields that are actually
-available at v0.31.0.
+available at v0.32.0.
 
 | Requested field | Current status | What can be reported now | What is still missing | Planned stage |
 | --- | --- | --- | --- | --- |
 | Analysis-local face index | Implemented | Deterministic `face_index` ordered by Part 21 entity ID | Persistence across export, editing, Boolean operations, or healing | v0.37.0 report contract retains the local-only warning |
 | Parent solid and shell | Controlled subset | Parent shell and outer-solid entity IDs for selected topology patterns | Complete void-shell ownership and arbitrary schema mapping | v0.35.0–v0.37.0 |
-| Surface type | Controlled subset | Declared plane, cylinder, cone, sphere, torus, and selected B-spline categories | Kernel classification of arbitrary support surfaces | v0.32.0 |
-| Face orientation | Structural only | The face's declared `same_sense` value | Combined face, bound, edge-use, surface, and shell orientation semantics | v0.34.0–v0.35.0 |
-| Area | Not implemented | None | Trimmed-surface integration and independently checked truth | v0.32.0 |
-| Centroid | Not implemented | None | Area-weighted trimmed-face centroid | v0.32.0 |
-| UV bounds | Not implemented | None | Valid parameter domain, periodic wrap handling, and trim-aware bounds | v0.32.0–v0.34.0 |
-| Representative normal | Not implemented | A declared analytic-surface axis may be retained, but it is not reported as a face normal | Evaluated point, derivative convention, face orientation, and degeneracy handling | v0.32.0 |
-| Plane normal | Structural only | Declared placement axis for the generated plane catalog | Independent unit-vector validation and oriented face normal | v0.32.0 |
-| Cylinder axis and radius | Structural only | Declared placement origin, axis, reference direction, and radius | Unit normalization, tolerance comparison, and trimmed-face verification | v0.32.0 |
-| Cone parameters | Structural only | Declared origin, axis, reference direction, radius, and semi-angle | Independent surface evaluation and unit-aware validation | v0.32.0 |
-| Sphere parameters | Structural only | Declared center placement and radius | Independent surface evaluation and unit-aware validation | v0.32.0 |
-| Torus parameters | Structural only | Declared placement, major radius, and minor radius | Independent surface evaluation and unit-aware validation | v0.32.0 |
-| B-spline parameters | Structural only | Selected declared U and V degrees | Control points, weights, knots, multiplicities, closure, rational evaluation, and continuity | v0.32.0–v0.33.0 |
+| Surface type | Controlled subset | Declared analytic categories plus kernel classification for the two controlled planes and one cylinder | Kernel classification of arbitrary or nonanalytic support surfaces | Future corpus expansion |
+| Face orientation | Research evidence | One forward plane, one reversed plane, and one forward cylinder retain their expected topological orientation after STEP exchange | Bound, edge-use, surface, and shell-relative outward orientation semantics | v0.34.0–v0.35.0 |
+| Area | Controlled subset | Exact-surface area agrees with independent truth for two rectangular planes and one cylindrical patch | Arbitrary trimmed, periodic, singular, spline, or repaired faces | Future corpus expansion |
+| Centroid | Controlled subset | Area centroid agrees with independent plane and cylindrical-patch formulas | Arbitrary trimmed, periodic, spline, or repaired faces | Future corpus expansion |
+| UV bounds | Controlled subset | The fixed nonperiodic rectangular parameter domains agree before and after STEP exchange | Seam-crossing canonicalization, holes, and general trim-aware bounds | v0.33.0–v0.34.0 |
+| Representative normal | Controlled subset | Derivative-cross-product support normals and orientation-adjusted normals are reported at the UV midpoint | Interior-point selection, degeneracy handling, and whole-face normal variation | v0.33.0–v0.34.0 |
+| Plane normal | Controlled subset | Two plane support normals are checked independently; the reversed face flips only its oriented normal | Arbitrary plane placement, unit, and shell-relative outward validation | Future corpus expansion |
+| Cylinder axis and radius | Controlled subset | One cylinder origin, axis, X direction, and radius agree with independent truth | Seam-crossing, transformed-unit, conical, and arbitrary trimmed cases | v0.33.0 onward |
+| Cone parameters | Structural only | Declared origin, axis, reference direction, radius, and semi-angle | Independent surface evaluation and unit-aware validation | Future analytic corpus |
+| Sphere parameters | Structural only | Declared center placement and radius | Independent surface evaluation and unit-aware validation | Future analytic corpus |
+| Torus parameters | Structural only | Declared placement, major radius, and minor radius | Independent surface evaluation and unit-aware validation | Future analytic corpus |
+| B-spline parameters | Structural only | Selected declared U and V degrees | Control points, weights, knots, multiplicities, closure, rational evaluation, and continuity | v0.33.0 onward |
 | Outer and inner wire counts | Controlled subset | Counts `FACE_OUTER_BOUND` separately from other `FACE_BOUND` records | Ordered wire semantics, nested islands, degeneracy, and periodic wrapping | v0.34.0 |
 | Boundary-edge count | Controlled subset | Counts distinct selected `EDGE_CURVE` references used by a face | Orientation-aware edge uses, repeated seam use, and p-curve agreement | v0.33.0–v0.34.0 |
 | Free and nonmanifold edge evidence | Controlled subset | Counts incidence of selected edge IDs across parsed faces | Tolerance-aware geometric coincidence and full nonmanifold classification | v0.35.0 |
 | Adjacent face indices | Controlled subset | Reports faces sharing a selected edge entity | Geometric adjacency without a shared topological edge and persistent identity | v0.37.0 |
-| Face tolerance | Not implemented | None | Declared and kernel-normalized tolerance with provenance | v0.32.0 |
+| Face tolerance | Research evidence | Records constructed face values, written representation uncertainty, and imported face values as separate stages | General writer/reader behavior, source identity, residual validity, and application policy | v0.36.0 |
 | Face name | Not implemented | Product, representation, and solid names exist in separate controlled outputs | General face-name attribution and its source relationship | v0.37.0 |
 | Face color | Not implemented | None | Presentation-style traversal, inheritance/override policy, and source attribution | v0.37.0 |
 | Direct source provenance | Partial | Entity IDs allow a join to the source model; AP242 relations retain direct spans | Face CSV rows do not yet include every originating source span | v0.37.0 |
@@ -150,7 +151,7 @@ available at v0.31.0.
 | Capability | Current status | Earliest roadmap stage | Required evidence before a claim |
 | --- | --- | --- | --- |
 | Geometry-kernel selection | Implemented as research evidence | v0.31.0 | Eight candidates, six gates, installed-package audit, optional dependency, and one deterministic box round trip; binary redistribution remains excluded |
-| Evaluated face geometry and tolerance | Not implemented | v0.32.0 | Synthetic analytic truth plus independent numerical checks |
+| Evaluated face geometry and tolerance | Controlled subset | v0.32.0 | Two planes and one cylinder checked against analytic truth; arbitrary trim and general tolerance claims remain excluded |
 | Curves, p-curves, seams, and periodicity | Not implemented | v0.33.0 | 3D/2D agreement under declared tolerances |
 | Wire ordering, trimming, holes, and oriented faces | Not implemented | v0.34.0 | Controlled reversed, periodic, degenerate, and nested-bound cases |
 | Shell and solid validity | Not implemented | v0.35.0 | Independent incidence, orientation, closure, Euler, volume, and kernel reports |
@@ -181,6 +182,9 @@ available at v0.31.0.
   generated corpora.
 - Reproduce one headless OCCT box construction and STEP round trip with the
   optional pinned geometry dependency.
+- Reproduce controlled face-level area, centroid, UV-bound, representative
+  point, normal, surface-frame, radius, orientation, and tolerance-stage
+  observations for the v0.32 analytic corpus.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -190,8 +194,8 @@ available at v0.31.0.
 
 - Treating parser acceptance as ISO, AP242, or B-Rep conformance.
 - Treating a declared surface axis as an evaluated face normal.
-- Using the current tables for area, centroid, volume, inertia, collision,
-  clearance, or tolerance decisions.
+- Using the controlled face results as evidence for arbitrary area, centroid,
+  volume, inertia, collision, clearance, or manufacturing-tolerance decisions.
 - Editing, healing, tessellating, rendering, or exporting arbitrary CAD models.
 - Processing untrusted arbitrary STEP files as if resource use or native-code
   safety had been established.
@@ -217,7 +221,8 @@ python -m pytest \
   tests/test_step_graph.py \
   tests/test_ap242_paths.py \
   tests/test_ap242_assembly.py \
-  tests/test_geometry_kernel.py
+  tests/test_geometry_kernel.py \
+  tests/test_face_geometry.py
 ```
 
 The complete generated-input catalog is in the

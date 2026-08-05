@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、31件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品・組立経路・形状計算核選定を含む検証、互換性境界をまとめています。
+本書は、32件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品・組立経路・形状計算核選定・解析式と比較した面の幾何と公差を含む検証、互換性境界をまとめています。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -107,6 +107,7 @@ python experiments/run_step_graph_queries.py
 python experiments/run_ap242_product_paths.py
 python experiments/run_ap242_assembly.py
 python experiments/run_geometry_kernel_selection.py
+python experiments/run_evaluated_face_geometry.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -197,6 +198,11 @@ python experiments/run_geometry_kernel_selection.py \
   --fixture-dir output/fixtures/geometry-kernel-selection \
   --output-dir output/geometry-kernel-selection \
   --refresh-fixtures
+
+python experiments/run_evaluated_face_geometry.py \
+  --fixture-dir output/fixtures/evaluated-face-geometry \
+  --output-dir output/evaluated-face-geometry \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -234,6 +240,10 @@ python experiments/run_geometry_kernel_selection.py \
 - The v0.31 OCCT box fixture normalizes only the generated timestamp and
   process counter. Repeated generation must otherwise remain byte-identical,
   and the manifest records its exact hash and generator versions.
+- The v0.32 analytic-face fixture narrowly normalizes the same header and
+  process fields plus three writer-generated compound occurrence numbers.
+  Independent formulas define plane and cylinder truth, while the fixture
+  manifest binds the normalized bytes to the pinned backend versions.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -303,7 +313,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 182 tests cover:
+The 190 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -359,6 +369,9 @@ The 182 tests cover:
 - geometry-backend gate selection, wrapper-versus-kernel identity, narrow OCCT
   writer normalization, headless box construction and STEP round trip, unique
   topology preservation, parser disagreement, and installed-package inventory
+- independent plane and cylinder area, centroid, UV, point, normal, frame, and
+  radius truth; constructed and STEP-imported face evaluation; reversed
+  orientation; tolerance-stage separation; and deterministic fixture bytes
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -383,6 +396,7 @@ The 182 tests cover:
 |   |-- ap242-assemblies/
 |   |-- ap242-product-paths/
 |   |-- geometry-kernel-selection/
+|   |-- evaluated-face-geometry/
 |   |-- step-graph-queries/
 |   |-- step-express-validation/
 |   |-- step-part21-source-model/
@@ -412,6 +426,7 @@ committed manifests. Cross-platform findings are regression evidence for the
 fixed corpus and pinned release matrix. The STEP parsers remain independent of
 the optional geometry backend and promise only the controlled subsets
 documented by v0.21.0 through v0.30.0. v0.31.0 adds one pinned Linux x64 OCCT
-box round trip; it does not imply complete ISO 10303-21, EXPRESS, or AP242
-conformance, cross-platform kernel portability, redistribution permission, or
-face-level geometry evaluation.
+box round trip, and v0.32.0 evaluates three analytic faces on the same route.
+Neither implies complete ISO 10303-21, EXPRESS, or AP242 conformance,
+cross-platform kernel portability, redistribution permission, or general
+trimmed-face and tolerance validity.

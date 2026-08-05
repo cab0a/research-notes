@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.31.0までにPart 21・EXPRESS解析とAP242製品・組立経路を実装しました。形状計算核はOpen CASCADE Technologyを研究用依存として採用し、箱のSTEP往復、ライセンス層、告知監査、解析器との不一致を記録しています。[STEP・B-rep能力表](step-brep-capabilities.md)の次段階では面の幾何と公差を独立真値と比較します。
+v0.32.0までに仕様解析、製品・組立経路、形状計算核選定、平面・円筒面の幾何評価を実装しました。幾何値と反転面の向きはSTEP往復後も合成正解値と一致しました。再構成される面公差は段階と出典を記録します。[能力表](step-brep-capabilities.md)では未対応の周期境界・パラメータ曲線・一般トリム面も示します。
 
 詳細は以下の英語本文に示します。
 
@@ -270,10 +270,17 @@ open interoperability question.
 
 #### v0.32.0 — Evaluated Face Geometry and Tolerances
 
-Measure area, centroid, UV bounds, representative normals, face tolerance,
-surface type, and analytic surface parameters against independently derived
-synthetic truth. Keep face orientation, surface orientation, and normal
-conventions explicit.
+Completed with two bounded planes, one bounded cylindrical face, independent
+closed-form truth, and a deterministic STEP round trip. Area, centroid, UV
+bounds, representative points, support normals, orientation-adjusted normals,
+surface frames, and cylinder radius remain inside the fixed numeric contract.
+The reversed plane retains its topological orientation.
+
+Answered boundary: constructed face tolerances of `1e-4`, `2e-4`, and `3e-4`
+are all observed as `1e-7` after import while the STEP representation
+uncertainty is `1e-4`. Tolerance is therefore recorded with stage and
+provenance rather than claimed as per-face round-trip identity. Periodic seams,
+p-curves, general trimming, holes, and spline surfaces remain deferred.
 
 #### v0.33.0 — Curves, Edge Parameters, P-Curves, and Seams
 

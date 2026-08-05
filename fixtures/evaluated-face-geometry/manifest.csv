@@ -1,0 +1,2 @@
+fixture,file_name,source_bytes,source_sha256,generator,binding_distribution_version,binding_module_version,step_processor
+analytic_faces,analytic_faces.step,15611,95dc8978750fe4fcffa987cff58e0eef252525cd7b78d66b2eb1564818ae9047,two bounded planes and one bounded cylinder from analytic controls,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9

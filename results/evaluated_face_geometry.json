@@ -1,0 +1,131 @@
+{
+  "fixture": {
+    "faces": [
+      {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "constructed_tolerance": 0.0001,
+        "face_id": "plane_forward",
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "radius": null,
+        "reversed": false,
+        "surface_type": "plane",
+        "uv_bounds": [
+          -2.0,
+          3.0,
+          -1.0,
+          4.0
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "constructed_tolerance": 0.0002,
+        "face_id": "plane_reversed",
+        "origin": [
+          20.0,
+          0.0,
+          5.0
+        ],
+        "radius": null,
+        "reversed": true,
+        "surface_type": "plane",
+        "uv_bounds": [
+          -1.0,
+          2.0,
+          -2.0,
+          2.0
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "constructed_tolerance": 0.0003,
+        "face_id": "cylinder_forward",
+        "origin": [
+          10.0,
+          -2.0,
+          1.0
+        ],
+        "radius": 2.5,
+        "reversed": false,
+        "surface_type": "cylinder",
+        "uv_bounds": [
+          0.3,
+          1.7,
+          -1.0,
+          4.0
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "file": "analytic_faces.step",
+    "sha256": "95dc8978750fe4fcffa987cff58e0eef252525cd7b78d66b2eb1564818ae9047"
+  },
+  "open_questions": [
+    "How should periodic UV intervals that cross the cylinder seam be canonicalized?",
+    "How do per-face tolerances relate to representation uncertainty across other writers and readers?",
+    "Which trim and p-curve checks are required before a representative normal can be trusted on arbitrary faces?"
+  ],
+  "release": "v0.32.0",
+  "runtime": {
+    "binding_distribution_version": "7.9.3.1.1",
+    "binding_module_version": "7.9.3.1",
+    "platform_label": "linux-x64-reference",
+    "step_processor": "Open CASCADE STEP processor 7.9"
+  },
+  "schema": "research-notes.evaluated-face-geometry",
+  "schema_version": "1.0",
+  "tolerance_contract": {
+    "claim": "Face tolerance is a backend state observed at each stage; STEP round-trip identity is not assumed.",
+    "constructed_face_tolerances": [
+      0.0001,
+      0.0002,
+      0.0003
+    ],
+    "exported_uncertainty_values": [
+      0.0001,
+      0.0001,
+      0.0001,
+      0.0001
+    ],
+    "imported_face_tolerances": [
+      1e-07,
+      1e-07,
+      1e-07
+    ]
+  },
+  "truth_contract": [
+    "Area, centroid, UV bounds, representative points, normals, and analytic parameters are derived from closed-form plane and cylinder equations without calling OCCT.",
+    "Backend faces are matched by surface type and nearest analytic centroid rather than explorer order.",
+    "Support-surface normals are derivative cross products; oriented face normals additionally apply the topological face orientation.",
+    "Absolute error limits in tests verify this synthetic numeric contract and are not universal CAD quality thresholds."
+  ]
+}
