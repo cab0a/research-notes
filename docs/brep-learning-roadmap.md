@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.32.0までに仕様解析、製品・組立経路、形状計算核選定、平面・円筒面の幾何評価を実装しました。幾何値と反転面の向きはSTEP往復後も合成正解値と一致しました。再構成される面公差は段階と出典を記録します。[能力表](step-brep-capabilities.md)では未対応の周期境界・パラメータ曲線・一般トリム面も示します。
+v0.33.0までに仕様解析から面幾何、辺曲線、面上曲線、媒介変数、円筒の継ぎ目まで実装しました。全周円筒では1本の辺を境界で2回使い、面上では `u=0` と `u=2π` の2本としてSTEP往復後にも扱います。公差は段階と出典を記録し、[能力表](step-brep-capabilities.md)には未対応の一般トリム面・穴・退化辺・Bスプライン曲線も示します。
 
 詳細は以下の英語本文に示します。
 
@@ -284,9 +284,17 @@ p-curves, general trimming, holes, and spline surfaces remain deferred.
 
 #### v0.33.0 — Curves, Edge Parameters, P-Curves, and Seams
 
-Inspect vertices, 3D curves, edge ranges, curve-on-surface representations,
-seam edges, and periodic surfaces. Test 3D and 2D agreement inside declared
-tolerances.
+Completed with one plane, one partial cylinder, one full cylinder, independent
+boundary truth, and a deterministic STEP round trip. Eleven unique edges and
+twelve oriented wire occurrences distinguish line and circle geometry,
+analytic length, parameter span, vertex traversal, p-curves, and tolerance.
+
+Answered boundary: the full cylinder uses one topological seam edge twice,
+with two p-curve branches at `u=0` and `u=2π`. All controlled
+`SameParameter` and `SameRange` flags are true, while a separate 17-sample
+check records a maximum imported 3D-to-surface distance of `1.24e-12`.
+Stored-versus-generated planar p-curves, degenerate edges, singularities,
+splines, adaptive checks, and repair remain deferred.
 
 #### v0.34.0 — Wires, Trimming, and Face Orientation
 

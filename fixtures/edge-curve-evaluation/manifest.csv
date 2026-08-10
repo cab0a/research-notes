@@ -1,0 +1,2 @@
+fixture,file_name,source_bytes,source_sha256,generator,binding_distribution_version,binding_module_version,step_processor
+analytic_edge_faces,analytic_edge_faces.step,15386,6969acae2a4cb674a5668573ba44e6b93ed1e7bb9e5088afa4b4197cbcdd420a,"one bounded plane, one partial cylinder, and one closed cylindrical lateral face",7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9

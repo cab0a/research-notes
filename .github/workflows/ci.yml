@@ -94,6 +94,8 @@ jobs:
           python experiments/run_geometry_kernel_selection.py --fixture-dir regenerated-fixtures/geometry-kernel-selection --output-dir regenerated-geometry-fixture-results --refresh-fixtures
           python experiments/run_evaluated_face_geometry.py --output-dir regenerated-results
           python experiments/run_evaluated_face_geometry.py --fixture-dir regenerated-fixtures/evaluated-face-geometry --output-dir regenerated-face-geometry-fixture-results --refresh-fixtures
+          python experiments/run_edge_curve_evaluation.py --output-dir regenerated-results
+          python experiments/run_edge_curve_evaluation.py --fixture-dir regenerated-fixtures/edge-curve-evaluation --output-dir regenerated-edge-geometry-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -234,6 +236,10 @@ jobs:
           diff -u results/evaluated_face_geometry_observations.csv regenerated-results/evaluated_face_geometry_observations.csv
           diff -u results/evaluated_face_geometry_summary.csv regenerated-results/evaluated_face_geometry_summary.csv
           diff -u results/evaluated_face_geometry.json regenerated-results/evaluated_face_geometry.json
+          diff -u results/edge_curve_observations.csv regenerated-results/edge_curve_observations.csv
+          diff -u results/pcurve_observations.csv regenerated-results/pcurve_observations.csv
+          diff -u results/edge_curve_summary.csv regenerated-results/edge_curve_summary.csv
+          diff -u results/edge_curve_contract.json regenerated-results/edge_curve_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -250,6 +256,7 @@ jobs:
           diff -qr fixtures/ap242-assemblies regenerated-fixtures/ap242-assemblies
           diff -qr fixtures/geometry-kernel-selection regenerated-fixtures/geometry-kernel-selection
           diff -qr fixtures/evaluated-face-geometry regenerated-fixtures/evaluated-face-geometry
+          diff -qr fixtures/edge-curve-evaluation regenerated-fixtures/edge-curve-evaluation
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -290,6 +297,7 @@ jobs:
           test -s regenerated-results/ap242_assembly_paths.png
           test -s regenerated-results/geometry_kernel_selection.png
           test -s regenerated-results/evaluated_face_geometry.png
+          test -s regenerated-results/edge_curve_evaluation.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

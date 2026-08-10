@@ -114,6 +114,16 @@ from research_notes.preprocessing import (
     resize_round_trip,
     unsharp_mask,
 )
+from research_notes.edge_geometry import (
+    BoundaryTruth,
+    EdgeCurveObservation,
+    EdgeFaceControl,
+    EdgeGeometryProbe,
+    PCurveObservation,
+    analytic_boundary_truth,
+    edge_face_controls,
+    probe_edge_geometry,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,

@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.32.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品・組立経路、任意のOpen CASCADE形状計算経路に加え、平面2面と円筒面1面の面積・重心・UV範囲・代表点・法線・曲面軸・半径・面公差を解析式と比較しました。幾何値と反転面の向きはSTEP往復後も一致しましたが、面公差は再読込時に再構成されました。周期境界、パラメータ曲線、穴、Bスプライン面、体積、一般的な実ファイル、形状編集、AIモデルは未実装で、第三者バイナリの再配布も対象外です。詳細な根拠と予定版は以下の英語本文に示します。
+本書は、v0.33.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。原文を保持したPart 21解析、限定したEXPRESS検証、物理参照グラフ、単純な位相関係、AP242製品・組立経路、任意のOpen CASCADE形状計算経路に加え、平面・円筒面の面幾何と、線・円の辺曲線、面上曲線、媒介変数範囲、境界での向き、円筒の継ぎ目を解析式と比較しました。全周円筒では1本の継ぎ目辺を境界で2回使用し、面上では `u=0` と `u=2π` の2本として扱うことをSTEP往復後にも確認しました。一般的なトリム面、穴、退化辺、Bスプライン曲線・曲面、体積、一般的な実ファイル、形状編集、AIモデルは未実装で、第三者バイナリの再配布も対象外です。詳細な根拠と予定版は以下の英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim at
-v0.32.0. It separates syntax recognition, schema validation, physical-reference
+v0.33.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 
@@ -39,10 +39,11 @@ directions, not delivery promises.
 | B-Rep topology | Structural only | Inventory selected faces, edges, shells, solids, ownership, adjacency, and edge incidence | Kernel-evaluated geometry, tolerance validity, orientability, volume, or repair |
 | AP242 product paths | Controlled subset | Resolve one exact schema identifier through selected product, shape, representation, item, context, and unit roles | AP203/AP214 portability, complete AP242 coverage, or geometric validity |
 | AP242 assemblies | Controlled subset | Separate definitions from occurrences, evaluate selected rigid placements, compose nested paths, and normalize supported length units | Arbitrary transformation operators, all unit forms, moved B-Rep evaluation, or persistent CAD identity |
-| Geometry backend | Research evidence | One optional pinned OCCT route constructs, evaluates, writes, and reads a small analytic face corpus headlessly | General trimmed geometry, independent-kernel validation, cross-platform portability, redistribution approval, or general STEP compatibility |
+| Geometry backend | Research evidence | One optional pinned OCCT route constructs, evaluates, writes, and reads small analytic face and edge corpora headlessly | General trimmed geometry, independent-kernel validation, cross-platform portability, redistribution approval, or general STEP compatibility |
 | Evaluated face geometry | Controlled subset | Closed-form truth checks two planes and one cylindrical patch before and after STEP exchange | Seams, arbitrary trims, holes, singularities, splines, and general tolerance validity |
+| Evaluated edge geometry | Controlled subset | Closed-form truth checks line and circle edges, p-curves, parameter spans, oriented wire uses, and one cylindrical seam before and after STEP exchange | Degenerate edges, singularities, inner wires, splines, adaptive checks, and general repair validity |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | The v0.31 and v0.32 experiments construct a box and three bounded analytic faces for controlled exchange studies | A supported modeling API, parameter editing, sketches, sweeps, Boolean operations, healing, and evaluated export preservation |
+| Geometry modeling | Research evidence | The v0.31 through v0.33 experiments construct a box and bounded analytic faces for controlled face and edge exchange studies | A supported modeling API, parameter editing, sketches, sweeps, Boolean operations, healing, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -109,7 +110,7 @@ values are declared parameters, not independently evaluated geometric facts.
 | Capability | Status | Current output | Missing evaluation | Evidence |
 | --- | --- | --- | --- | --- |
 | Faces | Structural only | Analysis-local index, Part 21 entity ID, supporting-surface ID, bounds, ownership, and adjacency | Trimmed-domain geometry and tolerance validity | [`step_brep_faces.csv`](../results/step_brep_faces.csv) |
-| Edges | Structural only | Analysis-local index, endpoint vertex IDs, supporting-curve ID and type, use count, incident faces, free/nonmanifold flags | Vertex coordinates, edge parameters, curve length, p-curves, and seam evaluation | [`step_brep_edges.csv`](../results/step_brep_edges.csv) |
+| Edges | Partial | The dependency-free parser reports endpoint IDs, declared curve type, uses, incident faces, and incidence; the optional controlled backend reports evaluated line/circle type, length, parameter range, oriented vertex parameters, p-curves, and one seam | A unified arbitrary-file report, splines, degenerate edges, singularities, and general consistency policy | [`edge_curve_observations.csv`](../results/edge_curve_observations.csv) |
 | Shells | Structural only | Face membership, edge counts, declared open/closed state, incidence closure, and parent solids | Orientability, geometric closure, tolerance-aware sewing, and validity | [`step_brep_shells.csv`](../results/step_brep_shells.csv) |
 | Solids | Structural only | Outer-shell relationship, name, face count, and edge count for selected solid types | Inner void evaluation, volume, centroid, inertia, signed orientation, and kernel validity | [`step_brep_solids.csv`](../results/step_brep_solids.csv) |
 | Surface declarations | Controlled subset | Plane, cylinder, cone, sphere, torus, and selected B-spline declarations | Evaluation outside the generated catalog or proof that trimming produces a valid face | [`test_step_brep.py`](../tests/test_step_brep.py) |
@@ -119,26 +120,26 @@ values are declared parameters, not independently evaluated geometric facts.
 ## Face-Level Field Matrix
 
 This table maps the intended face report to the fields that are actually
-available at v0.32.0.
+available at v0.33.0.
 
 | Requested field | Current status | What can be reported now | What is still missing | Planned stage |
 | --- | --- | --- | --- | --- |
 | Analysis-local face index | Implemented | Deterministic `face_index` ordered by Part 21 entity ID | Persistence across export, editing, Boolean operations, or healing | v0.37.0 report contract retains the local-only warning |
 | Parent solid and shell | Controlled subset | Parent shell and outer-solid entity IDs for selected topology patterns | Complete void-shell ownership and arbitrary schema mapping | v0.35.0–v0.37.0 |
 | Surface type | Controlled subset | Declared analytic categories plus kernel classification for the two controlled planes and one cylinder | Kernel classification of arbitrary or nonanalytic support surfaces | Future corpus expansion |
-| Face orientation | Research evidence | One forward plane, one reversed plane, and one forward cylinder retain their expected topological orientation after STEP exchange | Bound, edge-use, surface, and shell-relative outward orientation semantics | v0.34.0–v0.35.0 |
+| Face orientation | Research evidence | One reversed face plus forward and reversed boundary-edge uses are observed separately after STEP exchange | Complete bound, nested-loop, degenerate, and shell-relative outward orientation semantics | v0.34.0–v0.35.0 |
 | Area | Controlled subset | Exact-surface area agrees with independent truth for two rectangular planes and one cylindrical patch | Arbitrary trimmed, periodic, singular, spline, or repaired faces | Future corpus expansion |
 | Centroid | Controlled subset | Area centroid agrees with independent plane and cylindrical-patch formulas | Arbitrary trimmed, periodic, spline, or repaired faces | Future corpus expansion |
-| UV bounds | Controlled subset | The fixed nonperiodic rectangular parameter domains agree before and after STEP exchange | Seam-crossing canonicalization, holes, and general trim-aware bounds | v0.33.0–v0.34.0 |
+| UV bounds | Controlled subset | Fixed nonperiodic domains and one full-cylinder `[0, 2π]` domain agree; the seam retains both periodic U branches | Seam-crossing intervals outside the canonical full period, holes, and general trim-aware bounds | v0.34.0 |
 | Representative normal | Controlled subset | Derivative-cross-product support normals and orientation-adjusted normals are reported at the UV midpoint | Interior-point selection, degeneracy handling, and whole-face normal variation | v0.33.0–v0.34.0 |
 | Plane normal | Controlled subset | Two plane support normals are checked independently; the reversed face flips only its oriented normal | Arbitrary plane placement, unit, and shell-relative outward validation | Future corpus expansion |
-| Cylinder axis and radius | Controlled subset | One cylinder origin, axis, X direction, and radius agree with independent truth | Seam-crossing, transformed-unit, conical, and arbitrary trimmed cases | v0.33.0 onward |
+| Cylinder axis and radius | Controlled subset | One partial and one full cylinder use independent frames and radii; the full cylinder exposes a periodic seam | Seam-crossing intervals, transformed units, conical cases, and arbitrary trims | Future corpus expansion |
 | Cone parameters | Structural only | Declared origin, axis, reference direction, radius, and semi-angle | Independent surface evaluation and unit-aware validation | Future analytic corpus |
 | Sphere parameters | Structural only | Declared center placement and radius | Independent surface evaluation and unit-aware validation | Future analytic corpus |
 | Torus parameters | Structural only | Declared placement, major radius, and minor radius | Independent surface evaluation and unit-aware validation | Future analytic corpus |
 | B-spline parameters | Structural only | Selected declared U and V degrees | Control points, weights, knots, multiplicities, closure, rational evaluation, and continuity | v0.33.0 onward |
 | Outer and inner wire counts | Controlled subset | Counts `FACE_OUTER_BOUND` separately from other `FACE_BOUND` records | Ordered wire semantics, nested islands, degeneracy, and periodic wrapping | v0.34.0 |
-| Boundary-edge count | Controlled subset | Counts distinct selected `EDGE_CURVE` references used by a face | Orientation-aware edge uses, repeated seam use, and p-curve agreement | v0.33.0–v0.34.0 |
+| Boundary-edge count | Controlled subset | The controlled full cylinder distinguishes three unique edges from four oriented wire occurrences and measures two p-curve seam branches | General ordered loops, inner wires, degeneracy, and arbitrary schemas | v0.34.0 |
 | Free and nonmanifold edge evidence | Controlled subset | Counts incidence of selected edge IDs across parsed faces | Tolerance-aware geometric coincidence and full nonmanifold classification | v0.35.0 |
 | Adjacent face indices | Controlled subset | Reports faces sharing a selected edge entity | Geometric adjacency without a shared topological edge and persistent identity | v0.37.0 |
 | Face tolerance | Research evidence | Records constructed face values, written representation uncertainty, and imported face values as separate stages | General writer/reader behavior, source identity, residual validity, and application policy | v0.36.0 |
@@ -152,7 +153,7 @@ available at v0.32.0.
 | --- | --- | --- | --- |
 | Geometry-kernel selection | Implemented as research evidence | v0.31.0 | Eight candidates, six gates, installed-package audit, optional dependency, and one deterministic box round trip; binary redistribution remains excluded |
 | Evaluated face geometry and tolerance | Controlled subset | v0.32.0 | Two planes and one cylinder checked against analytic truth; arbitrary trim and general tolerance claims remain excluded |
-| Curves, p-curves, seams, and periodicity | Not implemented | v0.33.0 | 3D/2D agreement under declared tolerances |
+| Curves, p-curves, seams, and periodicity | Controlled subset | v0.33.0 | Eleven analytic edges, twelve oriented uses, closed-form line/circle truth, UV paths, sampled 3D agreement, and one full-cylinder seam; splines and degeneracy remain excluded |
 | Wire ordering, trimming, holes, and oriented faces | Not implemented | v0.34.0 | Controlled reversed, periodic, degenerate, and nested-bound cases |
 | Shell and solid validity | Not implemented | v0.35.0 | Independent incidence, orientation, closure, Euler, volume, and kernel reports |
 | Sewing and healing | Not implemented | v0.36.0 | Original-versus-repaired evidence and a complete modification log |
@@ -185,6 +186,9 @@ available at v0.32.0.
 - Reproduce controlled face-level area, centroid, UV-bound, representative
   point, normal, surface-frame, radius, orientation, and tolerance-stage
   observations for the v0.32 analytic corpus.
+- Reproduce controlled line and circle edge types, analytic lengths, parameter
+  spans, oriented vertex traversal, p-curve UV paths, and one cylindrical seam
+  for the v0.33 analytic corpus.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -196,6 +200,8 @@ available at v0.32.0.
 - Treating a declared surface axis as an evaluated face normal.
 - Using the controlled face results as evidence for arbitrary area, centroid,
   volume, inertia, collision, clearance, or manufacturing-tolerance decisions.
+- Treating `SameParameter` flags or the fixed 17-sample edge residual as proof
+  of arbitrary p-curve consistency or as a universal CAD threshold.
 - Editing, healing, tessellating, rendering, or exporting arbitrary CAD models.
 - Processing untrusted arbitrary STEP files as if resource use or native-code
   safety had been established.
@@ -222,7 +228,8 @@ python -m pytest \
   tests/test_ap242_paths.py \
   tests/test_ap242_assembly.py \
   tests/test_geometry_kernel.py \
-  tests/test_face_geometry.py
+  tests/test_face_geometry.py \
+  tests/test_edge_geometry.py
 ```
 
 The complete generated-input catalog is in the

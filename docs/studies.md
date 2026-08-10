@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面の幾何・向き・公差を扱う32件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目を扱う33件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -751,6 +751,34 @@ python -m pip install -e ".[geometry]"
 python experiments/run_evaluated_face_geometry.py
 ```
 
+### v0.33.0 — Curves, Edge Parameters, P-Curves, and Seams
+
+**Question:** Can the selected geometry backend recover controlled edge
+curves, parameter ranges, p-curves, oriented boundary traversal, and a
+cylindrical seam after STEP exchange while keeping flags and measured
+consistency separate?
+
+**Representative finding:** Each stage contains 11 unique edges and 12 ordered
+wire occurrences. All line and circle classifications, analytic lengths,
+parameter spans, and controlled UV paths match. The full cylinder uses one
+axial seam edge twice, with p-curve branches at `u=0` and `u=2π`. The maximum
+STEP-imported 3D-curve-to-p-curve distance is `1.24e-12` over 17 samples per
+p-curve; this is a fixture regression result, not a universal tolerance.
+
+- [Complete note](../notes/curves-edge-parameters-pcurves-seams.md)
+- [Unique-edge observations](../results/edge_curve_observations.csv)
+- [P-curve observations](../results/pcurve_observations.csv)
+- [Summary](../results/edge_curve_summary.csv)
+- [Evaluation contract](../results/edge_curve_contract.json)
+- [Figure](../results/edge_curve_evaluation.png)
+- [Generated STEP fixture](../fixtures/edge-curve-evaluation/analytic_edge_faces.step)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_edge_curve_evaluation.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -775,6 +803,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.32.0 subsets.
+  controlled v0.21.0 through v0.33.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

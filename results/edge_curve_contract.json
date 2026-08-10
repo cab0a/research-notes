@@ -1,0 +1,120 @@
+{
+  "claim_boundaries": [
+    "Observed numerical limits validate only these analytic fixtures and this pinned backend.",
+    "A p-curve returned for a planar face is not proof that the p-curve was stored because OCCT may generate one on demand.",
+    "The experiment observes but does not repair missing curves, inconsistent flags, or excessive tolerances.",
+    "Degenerate edges, singular surfaces, inner wires, spline curves, and cross-kernel behavior are outside this release."
+  ],
+  "fixture": {
+    "faces": [
+      {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "constructed_edge_tolerance": 1e-05,
+        "face_id": "planar_rectangle",
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "radius": null,
+        "surface_type": "plane",
+        "uv_bounds": [
+          -2.0,
+          3.0,
+          -1.0,
+          2.0
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "constructed_edge_tolerance": 2e-05,
+        "face_id": "partial_cylinder",
+        "origin": [
+          10.0,
+          0.0,
+          1.0
+        ],
+        "radius": 2.0,
+        "surface_type": "cylinder",
+        "uv_bounds": [
+          0.25,
+          1.75,
+          -1.0,
+          3.5
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "constructed_edge_tolerance": 3e-05,
+        "face_id": "closed_cylinder",
+        "origin": [
+          20.0,
+          0.0,
+          -2.0
+        ],
+        "radius": 3.0,
+        "surface_type": "cylinder",
+        "uv_bounds": [
+          0.0,
+          6.283185307179586,
+          0.0,
+          4.0
+        ],
+        "x_direction": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "file": "analytic_edge_faces.step",
+    "sha256": "6969acae2a4cb674a5668573ba44e6b93ed1e7bb9e5088afa4b4197cbcdd420a"
+  },
+  "open_questions": [
+    "How should stored and generated-on-demand p-curves be distinguished through the Python binding?",
+    "Which checks should precede any SameParameter or tolerance repair decision?",
+    "How should degenerate edges at surface singularities participate in wire traversal?"
+  ],
+  "release": "v0.33.0",
+  "runtime": {
+    "binding_distribution_version": "7.9.3.1.1",
+    "binding_module_version": "7.9.3.1",
+    "platform_label": "linux-x64-reference",
+    "step_processor": "Open CASCADE STEP processor 7.9"
+  },
+  "sampling": {
+    "rule": "equally spaced in the shared three-dimensional curve range",
+    "samples_per_pcurve": 17
+  },
+  "schema": "research-notes.edge-curve-evaluation",
+  "schema_version": "1.0",
+  "truth_contract": [
+    "Boundary curve type, length, parameter span, and UV path are derived from plane and cylinder equations without calling OCCT.",
+    "A circular parameter span is angular and is deliberately reported separately from arc length.",
+    "A seam is expected only where the full cylindrical face uses one topological edge at both periodic U boundaries.",
+    "Topological vertex order is reported separately from the ascending geometric curve range.",
+    "SameParameter and SameRange are flags; sampled three-dimensional residuals provide separate controlled evidence."
+  ]
+}

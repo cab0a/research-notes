@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復、v0.32.0の解析式から生成した平面・円筒面の幾何・向き・公差評価を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、一般的な幾何妥当性、公差保存、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復、v0.32.0の面幾何・向き・公差評価、v0.33.0の辺曲線・面上曲線・媒介変数・円筒継ぎ目評価を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、一般的な幾何妥当性、公差保存、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
 
 ---
 
@@ -350,6 +350,31 @@ inspection. The sample demonstrates one pinned analytic regression contract;
 it does not cover seams, holes, degenerate trims, B-splines, general STEP
 interoperability, or per-face tolerance preservation.
 
+## v0.33.0 — Edge Curves, P-Curves, and Seam Sample
+
+Directory: [`fixtures/edge-curve-evaluation/`](../fixtures/edge-curve-evaluation/)
+
+Manifest: [`manifest.csv`](../fixtures/edge-curve-evaluation/manifest.csv)
+
+`analytic_edge_faces.step` contains one bounded plane, one partial cylindrical
+face, and one full-period cylindrical lateral face generated from fixed
+numeric controls. The full cylinder makes the seam directly inspectable: its
+three unique edges form four oriented wire occurrences because one axial edge
+is used at both periodic U boundaries.
+
+| Face | Construction | Intended visual and numeric evidence |
+| --- | --- | --- |
+| `planar_rectangle` | U `[-2, 3]`, V `[-1, 2]` | Four line edges and four linear p-curves |
+| `partial_cylinder` | Radius 2, U `[0.25, 1.75]`, V `[-1, 3.5]` | Two axial lines, two circular arcs, and no seam |
+| `closed_cylinder` | Radius 3, U `[0, 2π]`, V `[0, 4]` | Two full circles plus one axial seam with p-curves at `u=0` and `u=2π` |
+
+![Controlled edge curves and periodic seam](../results/edge_curve_evaluation.png)
+
+The STEP fixture retains 11 `EDGE_CURVE`, 10 `SURFACE_CURVE`, 12 `PCURVE`,
+and one `SEAM_CURVE` instances. These are writer-specific observations. The
+sample does not cover degenerate edges, singularities, inner wires, spline
+curves, adaptive consistency checks, repair, or another shape kernel.
+
 ## Regeneration
 
 ```bash
@@ -399,6 +424,10 @@ python experiments/run_geometry_kernel_selection.py \
 
 python experiments/run_evaluated_face_geometry.py \
   --fixture-dir fixtures/evaluated-face-geometry \
+  --refresh-fixtures
+
+python experiments/run_edge_curve_evaluation.py \
+  --fixture-dir fixtures/edge-curve-evaluation \
   --refresh-fixtures
 ```
 

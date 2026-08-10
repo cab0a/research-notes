@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、32件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、33件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -813,6 +813,30 @@ The constructed face tolerances `1e-4`, `2e-4`, and `3e-4` become `1e-7` for
 all three imported faces. This is a pinned translation observation, not a
 universal STEP tolerance rule or a manufacturing quality threshold.
 
+## v0.33.0
+
+- `edge_curve_observations.csv` records 22 unique-edge observations: 11
+  constructed and 11 STEP imported. Each row contains boundary roles, expected
+  and observed 3D curve type, analytic and measured length, parameter range,
+  `SameParameter`, `SameRange`, degenerate and seam states, p-curve branch
+  count, edge tolerance, and maximum consistency distance.
+- `pcurve_observations.csv` records 24 oriented wire occurrences: 12 at each
+  stage. Each row contains p-curve range, topological start and end vertex
+  parameters, UV start/mid/end, UV error, range alignment, and the 17-sample
+  3D-curve-to-surface residual.
+- `edge_curve_summary.csv` records compact topology, STEP entity-count,
+  curve-type, length, parameter, UV, residual, flag, and tolerance evidence.
+- `edge_curve_contract.json` is the deterministic
+  `research-notes.edge-curve-evaluation` version `1.0` truth, sampling,
+  provenance, limitation, and open-question contract.
+- `edge_curve_evaluation.png` visualizes the analytic boundary controls, the
+  two periodic p-curve branches of one seam edge, and maximum numeric errors.
+
+The full-cylinder seam is one unique edge used twice, with separate p-curves
+at `u=0` and `u=2π`. All controlled curve types and parameter spans match; the
+maximum imported p-curve-to-3D-curve distance is `1.24e-12`. This is a fixed
+fixture result, not a universal consistency threshold or repair policy.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -848,6 +872,7 @@ python experiments/run_ap242_product_paths.py
 python experiments/run_ap242_assembly.py
 python experiments/run_geometry_kernel_selection.py
 python experiments/run_evaluated_face_geometry.py
+python experiments/run_edge_curve_evaluation.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
