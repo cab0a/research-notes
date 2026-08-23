@@ -1,0 +1,3 @@
+stage,first_control_id,second_control_id,first_vertex_count,first_edge_count,first_face_count,first_shell_count,first_solid_count,second_vertex_count,second_edge_count,second_face_count,second_shell_count,second_solid_count,topology_matches,first_volume,second_volume,volume_absolute_difference,first_minus_second_volume,second_minus_first_volume,boundary_equivalent
+constructed,chamfer_operation,equivalent_bevel,10,15,7,1,1,10,15,7,1,1,1,572,572,0,0,0,1
+step_imported,chamfer_operation,equivalent_bevel,10,15,7,1,1,10,15,7,1,1,1,572,572,0,0,0,1

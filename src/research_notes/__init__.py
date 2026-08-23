@@ -200,6 +200,23 @@ from research_notes.shape_correspondence import (
     correspondence_controls,
     probe_shape_correspondence,
 )
+from research_notes.feature_recognition import (
+    ANGLE_TRUTH_TOLERANCE_DEGREES,
+    BOUNDARY_EQUIVALENCE_TOLERANCE,
+    LENGTH_TRUTH_TOLERANCE,
+    EquivalentBoundaryObservation,
+    FeatureAdjacency,
+    FeatureCandidate,
+    FeatureControl,
+    FeatureFaceAttribute,
+    FeatureRecognitionProbe,
+    build_feature_shapes,
+    feature_controls,
+    probe_feature_recognition,
+    recovered_dimension_series,
+    round_trip_dimension_differences,
+    truth_dimension_errors,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,

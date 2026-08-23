@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体に加え、STEP読込・修復前後の面・辺対応を扱う39件の研究を索引化しています。v0.39.0ではSTEP再読込の23面・47辺を一意対応し、区別不能な2面・8辺では棄権し、修復後の辺を一対一変更・二対一統合・削除に分けました。幾何推定、隣接面による裏付け、処理履歴、直接的な位相同一性は分離しており、恒久命名や設計履歴の回復ではありません。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体、対応追跡、形状特徴候補を扱う40件の研究を索引化しています。v0.40.0は9個の合成形状から穴・段差・溝・面取りらしい形状・丸みらしい形状を検出し、14候補の分類と寸法を真値で検証しました。同じ最終境界を持つ異なる作成経路も比較し、幾何候補から設計意図は復元できないことを明示します。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -991,6 +991,47 @@ python -m pip install -e ".[geometry]"
 python experiments/run_shape_correspondence.py
 ```
 
+### v0.40.0 — Rule-Based B-Rep Feature Recognition
+
+**Question:** Can bounded hole, step, slot, chamfer-like, and fillet-like
+geometric candidates be recognized from evaluated face attributes and
+adjacency while keeping construction history and design intent outside the
+claim?
+
+**Representative finding:** Nine controls produce seven candidates before and
+seven after STEP import. All 14 candidates match controlled classification and
+dimension truth. The maximum controlled-truth errors are
+`3.9612757518625585e-13` model units for length and
+`5.8832938520936295e-12°` for angle; the plain block and external cylindrical
+boss produce no false positives.
+
+An operation-made chamfer and a direct-profile bevel have equivalent checked
+boundaries at both stages: `V=10`, `E=15`, `F=7`, one shell, one solid, volume
+`572`, and zero Boolean difference volume in both directions. They retain
+different construction labels, so all 14 candidates report design intent as
+unproven. The evidence contains 136 face rows, 282 adjacency rows, 14 candidate
+rows, 18 control/stage observations, and two equivalent-boundary rows. This is
+a controlled geometric-candidate study, not feature-history reconstruction or
+a general B-Rep recognizer.
+
+- [Complete note](../notes/rule-based-brep-feature-recognition.md)
+- [Face attributes](../results/feature_face_attributes.csv)
+- [Adjacency evidence](../results/feature_adjacency_edges.csv)
+- [Feature candidates](../results/feature_candidates.csv)
+- [Control-stage observations](../results/feature_recognition_observations.csv)
+- [Equivalent-boundary observations](../results/feature_equivalent_boundary_observations.csv)
+- [Summary](../results/feature_recognition_summary.csv)
+- [Evaluation contract](../results/feature_recognition_contract.json)
+- [Figure](../results/feature_recognition.png)
+- [Shape preview](../results/feature_recognition_shapes.png)
+- [Generated STEP fixtures](../fixtures/feature-recognition/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_feature_recognition.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1015,8 +1056,10 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.39.0 subsets;
+  controlled v0.21.0 through v0.40.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
-  recovery from the v0.39.0 geometry-inferred correspondence controls.
+  recovery from the v0.39.0 geometry-inferred correspondence controls;
+- feature-history or design-intent recovery, or general feature recognition,
+  from the v0.40.0 rule-based geometric candidates.
 
 The complete notes contain the narrower limitations for each experiment.

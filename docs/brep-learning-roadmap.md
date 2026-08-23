@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.39.0は平面と開いた直線辺の合成4形状を検証します。面56記述子/37候補/35関係はSTEP一対一23・棄権2、修復一対一2・多対一8、履歴10/10です。辺122/79/75はSTEP一対一47・棄権8、修復20→12（修正一対一8・多対一8/4群・削除4）、履歴20/20、直接同一・共有元0/75です。幾何・位相支持・処理履歴・直接同一性を分離し、恒久同一性は対象外です。v0.40.0は未実装です。
+v0.39.0は合成4形状の面・辺対応で幾何、位相支持、処理履歴、直接同一性を分離し、恒久同一性を主張しません。v0.40.0は9形状の構築時とSTEP再読込時に各7候補を抽出し、分類・登録寸法14/14一致、2負例の誤検出0件、同等境界比較2/2、設計意図証明0件です。対象は貫通穴、止まり穴、開いた段差、貫通溝、面取り状、丸み状に限定し、特徴履歴復元や一般認識は主張しません。v0.41.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -407,14 +407,30 @@ remain unevaluated.
 
 #### v0.40.0 — Rule-Based Feature Recognition
 
-Planned; not implemented in v0.39.0.
+Completed with nine generated controls and their deterministic STEP fixtures.
+Across constructed and imported stages, 136 face-attribute rows and 282
+adjacency rows support seven geometric candidates per stage: through and blind
+holes, an open step, a through slot, two chamfer-like boundaries, and one
+constant-radius fillet-like boundary. The 14 candidate rows match both
+controlled classification and registered dimensions; 18 whole-shape
+observation rows and two equivalent-boundary rows retain the surrounding
+evidence. Maximum controlled-truth error is
+`3.9612757518625585e-13` model units for length and
+`5.8832938520936295e-12` degrees for angle. The plain block and external
+cylindrical boss are negative controls and produce zero false positives.
 
-Recognize controlled holes, steps, slots, chamfers, and fillets from analytic
-surface evidence and face adjacency. Compare every rule with synthetic
-construction truth, publish false-positive controls, and abstain when topology,
-geometry, or correspondence evidence is insufficient.
+Answered boundary: the operation-built chamfer and a directly profiled bevel
+have equivalent final boundaries at both stages. Each has 10 vertices, 15
+edges, seven faces, one shell, one solid, volume `572`, and zero Boolean
+difference volume in both directions. The rules therefore report both as
+chamfer-like while `design_intent_proven` remains false. This is a bounded,
+geometry-only, rule-based candidate recognizer for the named controls; it does
+not recover feature history, prove manufacturing or design intent, or support
+arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
+
+The stages from v0.41.0 onward are planned and not implemented at v0.40.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 

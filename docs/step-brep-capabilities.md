@@ -2,16 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.39.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.39.0では4個の合成平面形状を用い、面について56記述子、37候補、35関係を、開いた直線辺について122記述子、79候補、75関係を記録しました。STEP再読込では23面と47辺を一対一に対応し、2面と8辺では棄権しました。同一領域統合では面の2件の一対一と8件の多対一、辺の8件の修正一対一、8件の多対一、4件の削除を処理履歴と照合しました。幾何、位相による候補支持、処理履歴、直接同一性は分離され、75件の辺関係の直接同一・共有元判定はいずれも0件です。これは恒久的な位相同一性や設計履歴の回復ではなく、一般的な修復、形状編集、AIモデル、v0.40.0の形状特徴認識は未実装です。詳細は英語本文に示します。
+本書は、v0.40.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.39.0の面・辺対応では幾何、位相による候補支持、処理履歴、直接同一性を分離します。v0.40.0は9形状の構築時とSTEP再読込時に各7候補を抽出し、分類・登録寸法14/14一致、2負例の誤検出0件、同等境界比較2/2、設計意図証明0件です。対象は貫通穴、止まり穴、開いた段差、貫通溝、面取り状、丸み状の幾何規則に限定し、特徴履歴復元や一般認識は主張しません。v0.41.0以降は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
-This document states what the STEP and B-Rep track can and cannot claim at
-v0.39.0. It separates syntax recognition, schema validation, physical-reference
+This document states what the STEP and B-Rep track can and cannot claim across
+40 studies through v0.40.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
+v0.41.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -45,8 +46,9 @@ directions, not delivery promises.
 | Evaluated shell and solid validity | Controlled subset | Seven validity controls, a 3-by-3 sewing matrix, bounded vertex-link counterexamples, and ten material-region controls separate topology, containment, orientation, partial overlap, volume, and composite-solid connectivity | General curved-shell self-intersection, nonconvex containment, arbitrary nesting depth, arbitrary geometry, or general repair |
 | Vertex manifoldness and geometric relationships | Controlled subset | Vertex-link components and degree classify generated tetrahedral neighborhoods; one-argument interference records cover separated/crossing edges and faces; minimum distance, common parts, and sections distinguish disjoint, point, curve, surface, and volume relations | Arbitrary curved or spline shapes, tangent or near-contact cases, tolerance policy, and independent-kernel proof |
 | Face and edge correspondence | Controlled subset | Four planar/open-line controls record 56 face descriptors, 37 face candidates, 35 face relations, 122 edge descriptors, 79 edge candidates, and 75 edge relations; STEP import resolves 23 faces and 47 edges one-to-one while two faces and eight edges abstain, and all 10 face plus 20 edge healing relations agree with separate operation history | Persistent topological identity, one-to-many splits, generated-result controls, moving frames, curved or closed edges, semantic provenance, or design-history recovery |
+| Rule-based feature recognition | Controlled subset | Nine generated solids and STEP fixtures produce 136 face rows, 282 adjacency rows, 14 candidate rows, 18 stage observations, and two equivalent-boundary rows; all 14 candidates match controlled classification and dimensions, while two negative controls produce no false positives | Feature-history reconstruction, design-intent proof, interacting or arbitrary features, or a general recognizer |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | The v0.31 through v0.39 experiments construct bounded analytic and polyhedral controls and apply selected sewing, repair, common-part, section, shell-nesting, cell-adjacency, and same-domain-unification operations for exchange studies | A supported modeling API, parameter editing, sketches, sweeps, general Boolean modeling, general healing, persistent naming, and evaluated export preservation |
+| Geometry modeling | Research evidence | The v0.31 through v0.40 experiments construct bounded analytic and polyhedral controls and apply selected Boolean, chamfer, fillet, sewing, repair, common-part, section, shell-nesting, cell-adjacency, and same-domain-unification operations for exchange studies | A supported modeling API, parameter editing, sketches, sweeps, general Boolean modeling, general healing, persistent naming, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -112,7 +114,7 @@ values are declared parameters, not independently evaluated geometric facts.
 
 | Capability | Status | Current output | Missing evaluation | Evidence |
 | --- | --- | --- | --- | --- |
-| Faces | Partial | The dependency-free parser reports selected declarations and ownership; the optional backend evaluates controlled trimmed faces and records 56 stage-local descriptors, 37 geometry candidates, and 35 inferred or history-compared relations for four planar controls | A unified arbitrary-file report, curved or invalid correspondence, shell-relative outwardness, general tolerance validity, persistent naming, and semantic provenance | [`wire_trimming_face_observations.csv`](../results/wire_trimming_face_observations.csv), [`shape_correspondence_relations.csv`](../results/shape_correspondence_relations.csv) |
+| Faces | Partial | The dependency-free parser reports selected declarations and ownership; the optional backend evaluates controlled trimmed faces, records 56 stage-local correspondence descriptors, and emits 136 face-attribute plus 282 face-adjacency rows for the v0.40 feature corpus | A unified arbitrary-file report, curved or invalid correspondence, shell-relative outwardness, general tolerance validity, persistent naming, and semantic provenance | [`wire_trimming_face_observations.csv`](../results/wire_trimming_face_observations.csv), [`shape_correspondence_relations.csv`](../results/shape_correspondence_relations.csv), [`feature_face_attributes.csv`](../results/feature_face_attributes.csv) |
 | Edges | Partial | The dependency-free parser reports endpoint IDs, declared curve type, uses, incident faces, and incidence; the optional backend evaluates line/circle geometry, p-curves, seams, and degeneracy, while v0.39 records 122 stage-local descriptors, 79 geometry candidates with separately retained incident-face support, and 75 inferred or history-compared relations for open line edges | A unified arbitrary-file report, splines, closed-edge correspondence, general singularities, general consistency policy, and persistent naming | [`wire_trimming_edge_uses.csv`](../results/wire_trimming_edge_uses.csv), [`shape_correspondence_edge_relations.csv`](../results/shape_correspondence_edge_relations.csv) |
 | Shells | Controlled subset | Declared membership, seven validity controls, a 3-by-3 box-gap sewing matrix, tetrahedral vertex links, and 44 shell-role observations separate incidence, neighborhoods, closure, orientation, tolerances, containment depth, and backend status | Curved or degenerate neighborhoods, general self-intersection, nonconvex or unbounded containment, arbitrary nesting, and general healing | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv), [`tolerance_sewing_observations.csv`](../results/tolerance_sewing_observations.csv), [`manifold_intersection_observations.csv`](../results/manifold_intersection_observations.csv), [`shell_role_observations.csv`](../results/shell_role_observations.csv) |
 | Solids | Controlled subset | Box and torus validity controls plus ten material-region controls evaluate signed and analytic volume, void containment, material islands, shared-face adjacency, connected components, container type, and STEP-stage change | General curved or nonconvex voids, centroid, inertia, arbitrary cellular complexes, or cross-kernel validity | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv), [`solid_region_observations.csv`](../results/solid_region_observations.csv), [`solid_adjacency_observations.csv`](../results/solid_adjacency_observations.csv) |
@@ -124,7 +126,7 @@ values are declared parameters, not independently evaluated geometric facts.
 ## Face-Level Field Matrix
 
 This table maps the intended face report to the fields that are actually
-available at v0.39.0.
+available at v0.40.0.
 
 | Requested field | Current status | What can be reported now | What is still missing | Planned stage |
 | --- | --- | --- | --- | --- |
@@ -164,7 +166,7 @@ available at v0.39.0.
 | Vertex manifoldness and self-intersection | Controlled subset | v0.37.0 | Twelve controls produce 24 topology, 224 vertex-link, 14 pair-relation, and eight single-argument `BOPAlgo_CheckerSI` observations; all controlled matches hold with zero recorded quantity error, but no arbitrary curved-shape proof follows |
 | Voids, inner shells, and composite solids | Controlled subset | v0.38.0 | Ten controls produce 20 main, 44 shell-role, 60 containment, and nine adjacency rows; all constructed candidate, shared-face, and component expectations match, but axis-aligned convex boxes and one STEP route do not establish general containment or composite-solid preservation |
 | Correspondence across import and healing | Controlled subset | v0.39.0 | Four planar/open-line controls provide face and edge one-to-one, many-to-one, deletion, and ambiguous-abstention evidence across STEP import and one healing operation; geometry, incident-face topology support, operation history, and direct identity are separate, with no split, moving-frame, curved/closed-edge, or persistent-identity claim |
-| Rule-based feature recognition | Not implemented | v0.40.0 | Holes, steps, slots, chamfers, and fillets compared with synthetic construction truth and false-positive controls |
+| Rule-based feature recognition | Controlled subset | v0.40.0 | Nine controls and STEP fixtures produce seven candidates per stage; all 14 match controlled classification and dimensions, with maximum truth errors of `3.9612757518625585e-13` model units and `5.8832938520936295e-12` degrees, zero false positives across the plain block and external boss, and no design-intent claim |
 | Complete face-level report | Not implemented | v0.41.0 | Evaluated fields, attribution, source provenance, and explicit local identity |
 | Tessellation and interactive viewing | Not implemented | v0.42.0 | Meshing controls and triangle-to-face provenance |
 | Primitive and surface construction | Not implemented | v0.43.0 | Known parameters, export, re-import, and measured comparison |
@@ -223,6 +225,15 @@ available at v0.39.0.
 - Inspect edge geometry, incident-face topology support, operation history,
   and direct identity as separate evidence; all 75 relations report neither
   direct `IsSame` nor direct `IsPartner` identity.
+- Reproduce the v0.40 attributed-face and adjacency evidence for controlled
+  through and blind holes, an open step, a through slot, chamfer-like faces,
+  and a fillet-like face. All 14 stage-specific candidates match their
+  registered classifications and dimensions, and the two negative controls
+  produce zero false positives.
+- Reproduce the v0.40 intent-boundary comparison: the operation chamfer and
+  direct-profile equivalent bevel each have `V=10`, `E=15`, `F=7`, one shell,
+  one solid, volume `572`, and zero bidirectional difference volumes at both
+  constructed and STEP-imported stages, while design intent remains unproven.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -253,6 +264,8 @@ available at v0.39.0.
   safety had been established.
 - Claiming recovered sketches, dimensions, feature history, or design intent
   from an imported STEP model.
+- Treating the v0.40 geometry-only rule candidates as recovered feature
+  operations, machining intent, or a general feature recognizer.
 - Feeding current outputs into an AI system without a separate dataset, label,
   split, calibration, and abstention contract.
 
@@ -281,11 +294,13 @@ python -m pytest \
   tests/test_tolerance_sewing_healing.py \
   tests/test_manifold_self_intersection.py \
   tests/test_solid_regions.py \
-  tests/test_shape_correspondence.py
+  tests/test_shape_correspondence.py \
+  tests/test_feature_recognition.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
+python experiments/run_feature_recognition.py
 ```
 
 The complete generated-input catalog is in the

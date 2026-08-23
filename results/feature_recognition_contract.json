@@ -1,0 +1,215 @@
+{
+  "contract_version": "1.0",
+  "controlled_candidate_instances_per_stage": 7,
+  "controlled_truth": {
+    "blind_hole": {
+      "condition": "Flat-bottom blind hole",
+      "construction_history_label": "boolean_cut",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [
+        "hole"
+      ],
+      "expected_depth": 3.5,
+      "expected_primary_size": 2.0,
+      "expected_secondary_size": null,
+      "expected_subtypes": [
+        "blind"
+      ]
+    },
+    "chamfer_operation": {
+      "condition": "Symmetric edge chamfer",
+      "construction_history_label": "chamfer_operation",
+      "expected_angle_degrees": 45.0,
+      "expected_candidate_types": [
+        "chamfer_like"
+      ],
+      "expected_depth": null,
+      "expected_primary_size": 1.0,
+      "expected_secondary_size": null,
+      "expected_subtypes": [
+        "symmetric"
+      ]
+    },
+    "cylindrical_boss": {
+      "condition": "External cylinder confounding a hole-only rule",
+      "construction_history_label": "boolean_fuse",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [],
+      "expected_depth": null,
+      "expected_primary_size": null,
+      "expected_secondary_size": null,
+      "expected_subtypes": []
+    },
+    "equivalent_bevel": {
+      "condition": "Direct profile with chamfer-equivalent boundary",
+      "construction_history_label": "direct_profile",
+      "expected_angle_degrees": 45.0,
+      "expected_candidate_types": [
+        "chamfer_like"
+      ],
+      "expected_depth": null,
+      "expected_primary_size": 1.0,
+      "expected_secondary_size": null,
+      "expected_subtypes": [
+        "symmetric"
+      ]
+    },
+    "fillet_operation": {
+      "condition": "Constant-radius edge fillet",
+      "construction_history_label": "fillet_operation",
+      "expected_angle_degrees": 90.0,
+      "expected_candidate_types": [
+        "fillet_like"
+      ],
+      "expected_depth": null,
+      "expected_primary_size": 1.0,
+      "expected_secondary_size": 8.0,
+      "expected_subtypes": [
+        "constant_radius"
+      ]
+    },
+    "plain_block": {
+      "condition": "Feature-free rectangular block",
+      "construction_history_label": "primitive",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [],
+      "expected_depth": null,
+      "expected_primary_size": null,
+      "expected_secondary_size": null,
+      "expected_subtypes": []
+    },
+    "stepped_block": {
+      "condition": "Two parallel levels joined by one riser",
+      "construction_history_label": "direct_profile",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [
+        "step"
+      ],
+      "expected_depth": null,
+      "expected_primary_size": 2.0,
+      "expected_secondary_size": 8.0,
+      "expected_subtypes": [
+        "open"
+      ]
+    },
+    "through_hole": {
+      "condition": "Round through hole",
+      "construction_history_label": "boolean_cut",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [
+        "hole"
+      ],
+      "expected_depth": 6.0,
+      "expected_primary_size": 2.5,
+      "expected_secondary_size": null,
+      "expected_subtypes": [
+        "through"
+      ]
+    },
+    "through_slot": {
+      "condition": "Straight capsule slot through a plate",
+      "construction_history_label": "boolean_cut",
+      "expected_angle_degrees": null,
+      "expected_candidate_types": [
+        "slot"
+      ],
+      "expected_depth": 4.0,
+      "expected_primary_size": 2.0,
+      "expected_secondary_size": 6.0,
+      "expected_subtypes": [
+        "through"
+      ]
+    }
+  },
+  "controlled_truth_regression": {
+    "angle_absolute_tolerance_degrees": 1e-08,
+    "length_absolute_tolerance": 1e-08,
+    "maximum_angle_absolute_error_degrees": 5.8832938520936295e-12,
+    "maximum_length_absolute_error": 3.9612757518625585e-13
+  },
+  "design_intent_is_not_inferred": true,
+  "equivalent_boundary_contract": {
+    "controls": [
+      "chamfer_operation",
+      "equivalent_bevel"
+    ],
+    "expected_equivalent": true,
+    "observations": [
+      {
+        "boundary_equivalent": true,
+        "first_control_id": "chamfer_operation",
+        "first_edge_count": 15,
+        "first_face_count": 7,
+        "first_minus_second_volume": 0.0,
+        "first_shell_count": 1,
+        "first_solid_count": 1,
+        "first_vertex_count": 10,
+        "first_volume": 572.0,
+        "second_control_id": "equivalent_bevel",
+        "second_edge_count": 15,
+        "second_face_count": 7,
+        "second_minus_first_volume": 0.0,
+        "second_shell_count": 1,
+        "second_solid_count": 1,
+        "second_vertex_count": 10,
+        "second_volume": 572.0,
+        "stage": "constructed",
+        "topology_matches": true,
+        "volume_absolute_difference": 0.0
+      },
+      {
+        "boundary_equivalent": true,
+        "first_control_id": "chamfer_operation",
+        "first_edge_count": 15,
+        "first_face_count": 7,
+        "first_minus_second_volume": 0.0,
+        "first_shell_count": 1,
+        "first_solid_count": 1,
+        "first_vertex_count": 10,
+        "first_volume": 572.0,
+        "second_control_id": "equivalent_bevel",
+        "second_edge_count": 15,
+        "second_face_count": 7,
+        "second_minus_first_volume": 0.0,
+        "second_shell_count": 1,
+        "second_solid_count": 1,
+        "second_vertex_count": 10,
+        "second_volume": 572.0,
+        "stage": "step_imported",
+        "topology_matches": true,
+        "volume_absolute_difference": 0.0
+      }
+    ],
+    "volume_absolute_tolerance": 1e-08
+  },
+  "equivalent_boundary_control": "equivalent_bevel",
+  "fixture_sha256": {
+    "blind_hole.step": "5dd90a8675941d66c4226aaf50a058a2f9b1e3b88d4b5a67452c0b0d206ba6d5",
+    "chamfer_operation.step": "1cf397f42b551b726b788d041595179769b4b87f1ad8bb9837a6ab76924931c7",
+    "cylindrical_boss.step": "1d6031f6491207d92cde8dbb41691a3a54d4515af02ae887f85453299b7163b4",
+    "equivalent_bevel.step": "2d3d807b63e31301d443056ba1564394bb4d13f9d7ced2ffe72a53d09e5ff62d",
+    "fillet_operation.step": "c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758",
+    "plain_block.step": "1e7a3ecda9402ee740bf40fbae47a384f4c8bbf6dd5a131bc8f2b06b1bcea0e3",
+    "stepped_block.step": "d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d",
+    "through_hole.step": "c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543",
+    "through_slot.step": "7bad2742a1a43cae093fc186ac85cd1d7497d46f27df6272f61f4611475b6829"
+  },
+  "negative_controls": [
+    "plain_block",
+    "cylindrical_boss"
+  ],
+  "recognized_geometric_candidates": [
+    "hole",
+    "step",
+    "slot",
+    "chamfer_like",
+    "fillet_like"
+  ],
+  "regression_gates_are_not_manufacturing_tolerances": true,
+  "round_trip_regression": {
+    "maximum_angle_absolute_difference_degrees": 5.8832938520936295e-12,
+    "maximum_length_absolute_difference": 3.9523939676655573e-13
+  },
+  "study_version": "v0.40.0",
+  "title": "Rule-Based B-Rep Feature Recognition"
+}

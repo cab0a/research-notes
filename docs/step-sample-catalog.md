@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.38.0までの構文・意味・製品構成・幾何・位相・多様体性・交差・材料領域に加え、v0.39.0では4個の合成平面形状について、STEP再読込と同一領域統合をまたぐ面と開いた直線辺の対応を収録します。面では56記述子、37候補、35関係を、辺では122記述子、79候補、75関係を記録し、幾何、位相による候補支持、処理履歴、直接同一性を別々の証拠として保持します。これは限定的な対応推論であり、恒久的な位相同一性、完全なスキーマ・AP242適合性、形状計算核間の互換性を証明しません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.39.0では4個の合成平面形状について、STEP再読込と同一領域統合をまたぐ面56記述子・37候補・35関係と、開いた直線辺122記述子・79候補・75関係を収録し、幾何、位相による候補支持、処理履歴、直接同一性を分離します。v0.40.0では9個の合成形状とSTEP試験ファイルを用い、面属性136行、面隣接282行、特徴候補14行、形状段階観測18行、等価境界比較2行を記録します。各段階7候補の分類と寸法は14/14で真値に一致し、通常の直方体と外向き円筒突起では誤検出0件です。ただし、これは幾何だけに基づく規則的な候補抽出であり、恒久的な位相同一性、特徴履歴、設計意図、一般的な特徴認識を証明しません。詳細は英語本文に示します。
 
 ---
 
@@ -565,6 +565,51 @@ They do not provide persistent names, topological identity, semantic
 provenance, recovered design history, moving-frame correspondence, or general
 curved and closed-edge matching.
 
+## v0.40.0 — Rule-Based Feature-Recognition Samples
+
+Directory: [`fixtures/feature-recognition/`](../fixtures/feature-recognition/)
+
+Manifest: [`manifest.csv`](../fixtures/feature-recognition/manifest.csv)
+
+Nine generated controls and their normalized STEP fixtures isolate five
+geometry-only feature families, two negative controls, and one deliberate
+design-intent ambiguity. The manifest binds exact bytes and hashes to the
+pinned STEP writer and reader.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `plain_block.step` | 15,390 | `1e7a3ecda9402ee740bf40fbae47a384f4c8bbf6dd5a131bc8f2b06b1bcea0e3` | Feature-free negative control |
+| `through_hole.step` | 19,001 | `c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543` | Through-hole candidate with diameter `2.5` and depth `6` |
+| `blind_hole.step` | 19,207 | `5dd90a8675941d66c4226aaf50a058a2f9b1e3b88d4b5a67452c0b0d206ba6d5` | Blind-hole candidate with diameter `2` and depth `3.5` |
+| `stepped_block.step` | 22,389 | `d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d` | Open-step candidate with height `2` and span `8` |
+| `through_slot.step` | 31,908 | `7bad2742a1a43cae093fc186ac85cd1d7497d46f27df6272f61f4611475b6829` | Through-slot candidate with width `2`, total length `6`, and depth `4` |
+| `chamfer_operation.step` | 18,884 | `1cf397f42b551b726b788d041595179769b4b87f1ad8bb9837a6ab76924931c7` | Operation-built `45`-degree chamfer-like boundary |
+| `equivalent_bevel.step` | 19,186 | `2d3d807b63e31301d443056ba1564394bb4d13f9d7ced2ffe72a53d09e5ff62d` | Direct-profile bevel with the same final controlled boundary |
+| `fillet_operation.step` | 19,982 | `c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758` | Constant-radius fillet-like candidate with radius `1` and `90`-degree sweep |
+| `cylindrical_boss.step` | 19,217 | `1d6031f6491207d92cde8dbb41691a3a54d4515af02ae887f85453299b7163b4` | External-cylinder negative control for a hole-only rule |
+
+![Nine synthetic feature-recognition controls](../results/feature_recognition_shapes.png)
+
+Across constructed and STEP-imported stages, the experiment records 136 face-
+attribute rows, 282 face-adjacency rows, 14 candidate rows, 18 whole-shape
+observation rows, and two equivalent-boundary comparison rows. Each stage has
+seven candidates. All 14 candidate classifications and all 14 controlled
+dimension comparisons match their registered truth. The maximum controlled-
+truth errors are `3.9612757518625585e-13` model units for length and
+`5.8832938520936295e-12` degrees for angle. The plain block and external
+cylindrical boss produce zero false positives.
+
+The operation-built chamfer and directly profiled equivalent bevel have the
+same controlled final boundary at both stages: `V=10`, `E=15`, `F=7`, one
+shell, one solid, volume `572`, and zero Boolean difference volume in both
+directions. Both receive a chamfer-like geometric candidate, while
+`design_intent_proven` remains false for every candidate. The rules cover only
+the generated through and blind holes, open step, through slot, chamfer-like
+faces, and fillet-like faces. They are neither feature-history reconstruction
+nor a general feature recognizer.
+
+![Feature inventory and recovered dimensions](../results/feature_recognition.png)
+
 ## Regeneration
 
 ```bash
@@ -642,6 +687,10 @@ python experiments/run_solid_region_evaluation.py \
 
 python experiments/run_shape_correspondence.py \
   --fixture-dir fixtures/shape-correspondence \
+  --refresh-fixtures
+
+python experiments/run_feature_recognition.py \
+  --fixture-dir fixtures/feature-recognition \
   --refresh-fixtures
 ```
 

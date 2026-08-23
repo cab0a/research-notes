@@ -1,0 +1,19 @@
+stage,control_id,condition,expected_candidate_types,observed_candidate_types,expected_subtypes,observed_subtypes,candidate_count,expected_candidate_count,expected_primary_size,observed_primary_size,primary_size_absolute_error,expected_secondary_size,observed_secondary_size,secondary_size_absolute_error,expected_depth,observed_depth,depth_absolute_error,expected_angle_degrees,observed_angle_degrees,angle_absolute_error_degrees,classification_matches_truth,dimension_matches_truth,overall_matches_truth,construction_history_label,design_intent_claim_eligible
+constructed,plain_block,Feature-free rectangular block,,,,,0,0,,,,,,,,,,,,,1,1,1,primitive,0
+step_imported,plain_block,Feature-free rectangular block,,,,,0,0,,,,,,,,,,,,,1,1,1,primitive,0
+constructed,through_hole,Round through hole,hole,hole,through,through,1,1,2.5,2.5,0,,,,6,6.0000000000000009,8.8817841970012523e-16,,,,1,1,1,boolean_cut,0
+step_imported,through_hole,Round through hole,hole,hole,through,through,1,1,2.5,2.5,0,,,,6,6.0000000000003961,3.9612757518625585e-13,,,,1,1,1,boolean_cut,0
+constructed,blind_hole,Flat-bottom blind hole,hole,hole,blind,blind,1,1,2,2,0,,,,3.5,3.5,0,,,,1,1,1,boolean_cut,0
+step_imported,blind_hole,Flat-bottom blind hole,hole,hole,blind,blind,1,1,2,2,0,,,,3.5,3.5000000000002305,2.304822999121825e-13,,,,1,1,1,boolean_cut,0
+constructed,stepped_block,Two parallel levels joined by one riser,step,step,open,open,1,1,2,2.0000000000000004,4.4408920985006262e-16,8,7.9999999999999982,1.7763568394002505e-15,,,,,,,1,1,1,direct_profile,0
+step_imported,stepped_block,Two parallel levels joined by one riser,step,step,open,open,1,1,2,2.0000000000000004,4.4408920985006262e-16,8,7.9999999999999982,1.7763568394002505e-15,,,,,,,1,1,1,direct_profile,0
+constructed,through_slot,Straight capsule slot through a plate,slot,slot,through,through,1,1,2,2,0,6,6,0,4,4,0,,,,1,1,1,boolean_cut,0
+step_imported,through_slot,Straight capsule slot through a plate,slot,slot,through,through,1,1,2,2,0,6,6,0,4,4.0000000000002638,2.6378899065093719e-13,,,,1,1,1,boolean_cut,0
+constructed,chamfer_operation,Symmetric edge chamfer,chamfer_like,chamfer_like,symmetric,symmetric,1,1,1,1.0000000000000002,2.2204460492503131e-16,,,,,,,45,45,0,1,1,1,chamfer_operation,0
+step_imported,chamfer_operation,Symmetric edge chamfer,chamfer_like,chamfer_like,symmetric,symmetric,1,1,1,1,0,,,,,,,45,45,0,1,1,1,chamfer_operation,0
+constructed,equivalent_bevel,Direct profile with chamfer-equivalent boundary,chamfer_like,chamfer_like,symmetric,symmetric,1,1,1,0.99999999999999989,1.1102230246251565e-16,,,,,,,45,45,0,1,1,1,direct_profile,0
+step_imported,equivalent_bevel,Direct profile with chamfer-equivalent boundary,chamfer_like,chamfer_like,symmetric,symmetric,1,1,1,0.99999999999999989,1.1102230246251565e-16,,,,,,,45,45,0,1,1,1,direct_profile,0
+constructed,fillet_operation,Constant-radius edge fillet,fillet_like,fillet_like,constant_radius,constant_radius,1,1,1,1,0,8,8,0,,,,90,90,0,1,1,1,fillet_operation,0
+step_imported,fillet_operation,Constant-radius edge fillet,fillet_like,fillet_like,constant_radius,constant_radius,1,1,1,1,0,8,8,0,,,,90,90.000000000005883,5.8832938520936295e-12,1,1,1,fillet_operation,0
+constructed,cylindrical_boss,External cylinder confounding a hole-only rule,,,,,0,0,,,,,,,,,,,,,1,1,1,boolean_fuse,0
+step_imported,cylindrical_boss,External cylinder confounding a hole-only rule,,,,,0,0,,,,,,,,,,,,,1,1,1,boolean_fuse,0

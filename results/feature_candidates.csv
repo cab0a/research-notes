@@ -1,0 +1,15 @@
+stage,control_id,candidate_index,candidate_type,subtype,face_indices,primary_size,secondary_size,depth,angle_degrees,expected_primary_size,expected_secondary_size,expected_depth,expected_angle_degrees,primary_size_absolute_error,secondary_size_absolute_error,depth_absolute_error,angle_absolute_error_degrees,geometric_candidate,construction_history_label,design_intent_proven,classification_matches_truth,dimension_matches_truth,truth_correct
+constructed,through_hole,1,hole,through,7,2.5,,6.0000000000000009,,2.5,,6,,0,,8.8817841970012523e-16,,1,boolean_cut,0,1,1,1
+step_imported,through_hole,1,hole,through,7,2.5,,6.0000000000003961,,2.5,,6,,0,,3.9612757518625585e-13,,1,boolean_cut,0,1,1,1
+constructed,blind_hole,1,hole,blind,7|8,2,,3.5,,2,,3.5,,0,,0,,1,boolean_cut,0,1,1,1
+step_imported,blind_hole,1,hole,blind,7|8,2,,3.5000000000002305,,2,,3.5,,0,,2.304822999121825e-13,,1,boolean_cut,0,1,1,1
+constructed,stepped_block,1,step,open,3|4|5,2.0000000000000004,7.9999999999999982,,,2,8,,,4.4408920985006262e-16,1.7763568394002505e-15,,,1,direct_profile,0,1,1,1
+step_imported,stepped_block,1,step,open,3|4|5,2.0000000000000004,7.9999999999999982,,,2,8,,,4.4408920985006262e-16,1.7763568394002505e-15,,,1,direct_profile,0,1,1,1
+constructed,through_slot,1,slot,through,7|8|9|10,2,6,4,,2,6,4,,0,0,0,,1,boolean_cut,0,1,1,1
+step_imported,through_slot,1,slot,through,7|8|9|10,2,6,4.0000000000002638,,2,6,4,,0,0,2.6378899065093719e-13,,1,boolean_cut,0,1,1,1
+constructed,chamfer_operation,1,chamfer_like,symmetric,1|3|6,1.0000000000000002,,,45,1,,,45,2.2204460492503131e-16,,,0,1,chamfer_operation,0,1,1,1
+step_imported,chamfer_operation,1,chamfer_like,symmetric,1|3|6,1,,,45,1,,,45,0,,,0,1,chamfer_operation,0,1,1,1
+constructed,equivalent_bevel,1,chamfer_like,symmetric,2|3|4,0.99999999999999989,,,45,1,,,45,1.1102230246251565e-16,,,0,1,direct_profile,0,1,1,1
+step_imported,equivalent_bevel,1,chamfer_like,symmetric,2|3|4,0.99999999999999989,,,45,1,,,45,1.1102230246251565e-16,,,0,1,direct_profile,0,1,1,1
+constructed,fillet_operation,1,fillet_like,constant_radius,1|3|6,1,8,,90,1,8,,90,0,0,,0,1,fillet_operation,0,1,1,1
+step_imported,fillet_operation,1,fillet_like,constant_radius,1|3|6,1,8,,90.000000000005883,1,8,,90,0,0,,5.8832938520936295e-12,1,fillet_operation,0,1,1,1

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、39件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・内殻・空洞・材料島・複合立体、許容差付き縫合、多様体性、接触・交差、STEP読込・修復前後の面・辺対応を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。v0.39.0は23面・47辺の一意対応、2面・8辺の曖昧性による棄権、修復後の辺の一対一変更・二対一統合・削除を、幾何・隣接面・処理履歴・直接同一性を分離して記録します。これは恒久的な位相同一性や命名ではありません。
+このディレクトリには、40件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.40.0は9個の合成形状について、構築時とSTEP再読込時の形状特徴候補14件、面・隣接関係、分類・寸法真値、負例、同じ最終境界を持つ異なる作成経路をCSV・JSON・図で記録します。14候補は分類・寸法とも一致し、負例誤検出は0件、同等境界は2段階とも一致しますが、設計意図を証明した候補は0件です。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1049,6 +1049,42 @@ sources, with no `IsSame` or `IsPartner` relation. These fixture-specific
 claims do not establish persistent naming, semantic provenance, STEP-carried
 history, or design-history recovery.
 
+## v0.40.0
+
+- `feature_face_attributes.csv` records 136 constructed and STEP-imported face
+  rows with surface, centroid, normal, parameter-span, radius, curvature,
+  boundary, and adjacency attributes.
+- `feature_adjacency_edges.csv` records 282 shared-edge adjacency rows with
+  curve type, length, representative-normal relation, and local face indices.
+- `feature_candidates.csv` records 14 geometric candidates with class, subtype,
+  evidence faces, recovered dimensions, controlled truth, residuals,
+  construction label, and an explicit false design-intent claim flag.
+- `feature_recognition_observations.csv` records all 18 control/stage outcomes,
+  including the two negative controls with zero candidates.
+- `feature_equivalent_boundary_observations.csv` records the operation-chamfer
+  and direct-bevel comparison at constructed and STEP-imported stages.
+- `feature_recognition_summary.csv` records candidate, truth, residual,
+  negative-control, equivalent-boundary, and design-intent counts.
+- `feature_recognition_contract.json` binds fixture hashes, per-control truth,
+  regression gates, recognized geometric labels, equivalent-boundary evidence,
+  and the non-inference policy for design intent.
+- `feature_recognition.png` compares candidate inventories and recovered
+  dimensions.
+- `feature_recognition_shapes.png` previews all nine synthetic controls.
+
+All seven constructed and seven STEP-imported candidates match classification
+and dimension truth. Maximum controlled-truth error is
+`3.9612757518625585e-13` model units for lengths and
+`5.8832938520936295e-12°` for angles. The plain block and external cylindrical
+boss produce zero false positives.
+
+The operation chamfer and direct-profile bevel have matching
+`V=10`, `E=15`, `F=7`, one-shell, one-solid topology, volume `572`, and zero
+Boolean difference volume in both directions at both stages. Their construction
+labels differ and design intent remains unproven for all 14 candidates. These
+are bounded geometric labels, not reconstructed feature history, manufacturing
+semantics, or general recognition evidence.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1091,6 +1127,7 @@ python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
+python experiments/run_feature_recognition.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

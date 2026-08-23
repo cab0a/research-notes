@@ -1,0 +1,10 @@
+control_id,file_name,source_bytes,source_sha256,generator,binding_distribution_version,step_processor,writer_status,reader_status,transferred_roots
+plain_block,plain_block.step,15390,1e7a3ecda9402ee740bf40fbae47a384f4c8bbf6dd5a131bc8f2b06b1bcea0e3,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+through_hole,through_hole.step,19001,c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+blind_hole,blind_hole.step,19207,5dd90a8675941d66c4226aaf50a058a2f9b1e3b88d4b5a67452c0b0d206ba6d5,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+stepped_block,stepped_block.step,22389,d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+through_slot,through_slot.step,31908,7bad2742a1a43cae093fc186ac85cd1d7497d46f27df6272f61f4611475b6829,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+chamfer_operation,chamfer_operation.step,18884,1cf397f42b551b726b788d041595179769b4b87f1ad8bb9837a6ab76924931c7,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+equivalent_bevel,equivalent_bevel.step,19186,2d3d807b63e31301d443056ba1564394bb4d13f9d7ced2ffe72a53d09e5ff62d,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+fillet_operation,fillet_operation.step,19982,c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+cylindrical_boss,cylindrical_boss.step,19217,1d6031f6491207d92cde8dbb41691a3a54d4515af02ae887f85453299b7163b4,experiments/run_feature_recognition.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

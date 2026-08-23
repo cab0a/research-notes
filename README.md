@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.39.0では、4形状でSTEP再読込と同一領域統合の前後の面・辺を追跡します。再読込では23面・47辺を一対一対応し、区別不能な2面・8辺は棄権しました。統合で10面から6面、20辺から12辺となり、辺を8件の一対一変更、8件の二対一統合、4件の削除として記録し、処理履歴20件すべてと一致しました。幾何推定、隣接面による裏付け、処理履歴、直接的な位相同一性は分離しています。
+v0.40.0では、穴、段差、溝、面取りらしい形状、丸みらしい形状を9個の合成形状から規則で検出します。構築時とSTEP再読込時の14候補は分類・寸法とも真値に一致し、負例の誤検出は0件でした。同じ最終境界を持つ処理由来の面取りと直接作成した斜面は2段階とも位相・体積・双方向差分が一致しますが、設計意図を証明できた候補は0件です。
 
-合成データ、CSV・JSON・PNG、283件のテストを備えます。面・辺番号の恒久性、位相同一性、設計履歴・設計意図の回復、一般的なSTEP適合、任意形状の修復は主張しません。v0.40.0の形状特徴認識は未実装です。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、298件のテストを備えます。これは限定した幾何候補の認識であり、設計履歴の復元、一般的な特徴認識、製造判断は主張しません。v0.41.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -37,8 +37,8 @@ selective retention, and resource-bounded admission before evaluating extended
 metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
-application semantics, evaluated B-Rep geometry, and controlled geometric face
-and edge correspondence. The current release is v0.39.0.
+application semantics, evaluated B-Rep geometry, controlled correspondence,
+and rule-based geometric feature candidates. The current release is v0.40.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,34 +53,34 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 39 releases to their questions,
+The [study index](docs/studies.md) maps all 40 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.39.0 study reports controlled face and edge correspondence across STEP
-import and one same-domain healing operation without treating traversal
-indices as persistent names. Face candidates use planar support, area, and
-centroid evidence. Edge candidates use line support, endpoints, and length;
-mapped incident-face candidates provide separate topology corroboration.
-Healing inference is compared with operation-local history, while direct
-native topology identity is recorded independently.
+The v0.40.0 study recognizes bounded geometric candidates for through and blind
+holes, an open step, a through slot, chamfer-like faces, and a constant-radius
+fillet-like face from surface attributes and face adjacency. It evaluates nine
+synthetic controls both before and after STEP exchange.
 
-| Condition | Face evidence | Edge evidence |
-| --- | --- | --- |
-| STEP import | 23 one-to-one; 2 ambiguous abstentions | 47 one-to-one; 8 ambiguous abstentions |
-| Split-box healing | 2 one-to-one and 8 many-to-one sources; 10 → 6 faces | 8 one-to-one modified, 8 many-to-one, and 4 deleted sources; 20 → 12 edges |
-| Operation-history comparison | 10 / 10 relations agree | 20 / 20 relations agree; `Modified=16`, `Generated=0`, `Removed=4` |
-| Direct native identity | Not used as matching evidence | 75 / 75 checked; `IsSame=0`, `IsPartner=0` |
+| Evidence | Observed result |
+| --- | ---: |
+| Candidate classification | 14 / 14 match controlled truth |
+| Recovered dimensions | 14 / 14 match controlled truth |
+| Maximum controlled-truth length error | `3.96e-13` model units |
+| Maximum controlled-truth angle error | `5.88e-12°` |
+| Plain-block and external-boss false positives | 0 |
+| Equivalent chamfer/direct-bevel boundaries | 2 / 2 |
+| Equivalent topology and volume | `V=10`, `E=15`, `F=7`; volume `572` |
+| Bidirectional Boolean difference volume | 0 in both directions |
+| Candidates proving design intent | 0 |
 
-![Face and edge correspondence outcomes and numeric residuals](results/shape_correspondence.png)
+![Rule-based geometric feature evidence](results/feature_recognition.png)
 
-The four fixtures produce 56 face descriptors, 37 face candidates, and 35 face
-relations, plus 122 edge descriptors, 79 edge candidates, and 75 edge
-relations. All 110 source relations agree with analytic construction truth.
-Twenty-eight of 47 selected STEP edge relations change local index. These are
-planar, straight-edge, fixture-specific inferences, not topological identity,
-persistent naming, semantic provenance, or design-history recovery.
+The equivalent-boundary control is the central limitation: an operation-made
+chamfer and a directly modeled bevel produce the same checked boundary at both
+stages, despite different construction labels. The output therefore reports
+geometric candidates, never recovered feature history or design intent.
 
 ## Current STEP and B-Rep Capability
 
@@ -92,7 +92,8 @@ and solid corpora, including controlled invalid cases. It now checks bounded
 polyhedral vertex links, shape-pair contact dimension, nested void-shell roles,
 partial overlap, composite-solid adjacency, and controlled planar face
 and straight-edge correspondence across STEP import and one same-domain merge.
-It cannot prove
+It also reports bounded geometric feature candidates for nine synthetic
+controls. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -100,7 +101,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, and planar-face/straight-edge correspondence | Persistent naming, arbitrary curved or spline correspondence and manifoldness, nonconvex containment, general healing, tessellation, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, correspondence, and bounded rule-based feature candidates | Persistent naming, recovered feature history, general feature recognition, arbitrary curved or spline correspondence and manifoldness, general healing, editing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -194,6 +195,10 @@ maps each current field to its evidence, exact limitation, and planned release.
   operation-local history, and direct `IsSame`/`IsPartner` checks are recorded
   separately. These relations are not topological identity, persistent naming,
   STEP-carried history, semantic provenance, or recovered design intent.
+- The feature recognizer is a rule-based evaluator for nine synthetic controls.
+  Its hole, step, slot, chamfer-like, and fillet-like labels describe measured
+  boundary candidates, not recovered construction history, manufacturing
+  semantics, or a complete recognizer for arbitrary B-Reps.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -236,7 +241,8 @@ AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
 v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
 v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
 manifoldness/self-intersection, v0.38.0 solid-region, and v0.39.0 face-and-edge
-correspondence studies also write deterministic versioned JSON records.
+correspondence, and v0.40.0 feature-recognition studies also write deterministic
+versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -261,7 +267,8 @@ v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture,
 the seven v0.35.0 shell/solid validity fixtures, the ten v0.36.0
 tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
 intersection fixtures, the ten v0.38.0 solid-region fixtures, and the four
-v0.39.0 face-and-edge correspondence fixtures.
+v0.39.0 face-and-edge correspondence fixtures, plus the nine v0.40.0 geometric
+feature-recognition fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -272,7 +279,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-nine published studies with explicit questions, controls, results, and
+- Forty published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -321,6 +328,9 @@ validation evidence.
 - Geometry-inferred planar-face and straight-edge correspondence across STEP
   import, explicit abstention for tied candidates, and modified, many-to-one,
   and deleted healing relations compared with separate operation history
+- Rule-based hole, step, slot, chamfer-like, and fillet-like candidates with
+  controlled dimensions, negative controls, and an equivalent-boundary
+  counterexample to design-history inference
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -392,6 +402,12 @@ candidates from line support, endpoints, and length. Incident-face candidate
 sets corroborate edge geometry without breaking ties. Modified, many-to-one,
 deleted, and ambiguous relations are explicit; operation history and direct
 native topology identity remain separate from inference and persistent naming.
+The feature-recognition study separates face measurements, shared-edge
+adjacency, geometric candidate rules, controlled classification truth,
+dimension truth, STEP stability, and construction labels. It also compares an
+operation-made chamfer with a direct-profile bevel using topology, volume, and
+bidirectional Boolean differences. Boundary equivalence is evidence against,
+not evidence for, inferred design intent.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -414,7 +430,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 283 tests covering blur metrics and models,
+The repository contains 298 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -457,6 +473,12 @@ separate incident-face corroboration; explicit ambiguity and abstention;
 one-to-one modified, many-to-one, and deleted healing relations; group area and
 length conservation; operation-history comparison; direct native identity
 checks; target-conflict regression; and deterministic STEP fixtures.
+The v0.40.0 additions cover nine feature and confounder controls, 14
+classification and dimension comparisons, through-versus-blind hole evidence,
+external-cylinder polarity, correct parent-face selection for chamfer-like and
+fillet-like candidates, equivalent-boundary topology and volume checks,
+bidirectional Boolean differences, negative controls, and the explicit
+design-intent boundary.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -480,7 +502,8 @@ bounded polyhedral vertex links and geometric relationship dimensions, and
 v0.38.0 evaluates ten void-shell and composite-solid controls, and v0.39.0
 evaluates face and straight-edge correspondence on four planar controls across
 STEP import and one same-domain healing operation on the same Linux x64
-reference route. These releases do not claim
+reference route. v0.40.0 evaluates nine bounded geometric feature controls on
+that route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -500,10 +523,13 @@ overlap and crossing. v0.38.0 adds shell-role, containment, overlap, material-
 island, and composite-solid contracts. v0.39.0 adds controlled geometry-
 inferred face and edge correspondence, explicit abstention, and modified,
 many-to-one, and deleted healing relations without a persistent-identity claim.
-The roadmap next proceeds
-through rule-based feature recognition, modeling, STEP round trips, and
-evidence-backed parametric reconstruction. Future versions target import-edit-export
-round trips, and v0.59.0 begins STEP-to-feature reconstruction candidates.
+v0.40.0 adds bounded rule-based geometric feature candidates, controlled
+dimensions, two negative controls, and an equivalent-boundary demonstration
+that construction history is not recoverable from final geometry alone. The
+roadmap next proceeds through face-level reports, modeling, STEP round trips,
+and evidence-backed parametric reconstruction. Future versions target import-
+edit-export round trips, and v0.59.0 begins STEP-to-feature reconstruction
+candidates. v0.41.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 
