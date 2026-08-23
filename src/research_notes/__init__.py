@@ -153,6 +153,19 @@ from research_notes.shell_solid_validity import (
     probe_shell_solid_validity,
     shell_solid_controls,
 )
+from research_notes.tolerance_sewing_healing import (
+    OperationObservation,
+    SewingControl,
+    SewingSetting,
+    ShapeObservation,
+    SubshapeToleranceObservation,
+    ToleranceFixture,
+    ToleranceSewingProbe,
+    analytic_box_surface_area,
+    probe_tolerance_sewing_healing,
+    sewing_settings,
+    tolerance_sewing_controls,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,
@@ -635,4 +648,15 @@ __all__ = [
     "euler_characteristic",
     "probe_shell_solid_validity",
     "shell_solid_controls",
+    "OperationObservation",
+    "SewingControl",
+    "SewingSetting",
+    "ShapeObservation",
+    "SubshapeToleranceObservation",
+    "ToleranceFixture",
+    "ToleranceSewingProbe",
+    "analytic_box_surface_area",
+    "probe_tolerance_sewing_healing",
+    "sewing_settings",
+    "tolerance_sewing_controls",
 ]

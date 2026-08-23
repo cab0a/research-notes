@@ -1,0 +1,88 @@
+{
+  "backend": {
+    "distribution": "cadquery-ocp",
+    "distribution_version": "7.9.3.1.1",
+    "module_version": "7.9.3.1",
+    "step_processor": "Open CASCADE STEP processor 7.9"
+  },
+  "box_dimensions": [
+    4.0,
+    5.0,
+    6.0
+  ],
+  "closure_matrix": {
+    "coincident_box_faces": {
+      "tol_1e_4": true,
+      "tol_1e_6": true,
+      "tol_1e_7": true
+    },
+    "large_gap_box_faces": {
+      "tol_1e_4": true,
+      "tol_1e_6": false,
+      "tol_1e_7": false
+    },
+    "small_gap_box_faces": {
+      "tol_1e_4": true,
+      "tol_1e_6": true,
+      "tol_1e_7": false
+    }
+  },
+  "controls": [
+    {
+      "condition": "six independent box faces with coincident boundaries",
+      "control_id": "coincident_box_faces",
+      "controlled_gap": 0.0
+    },
+    {
+      "condition": "six independent box faces with the top face displaced by 5e-7",
+      "control_id": "small_gap_box_faces",
+      "controlled_gap": 5e-07
+    },
+    {
+      "condition": "six independent box faces with the top face displaced by 5e-5",
+      "control_id": "large_gap_box_faces",
+      "controlled_gap": 5e-05
+    }
+  ],
+  "limitations": [
+    "The corpus contains axis-aligned planar synthetic controls and one pinned OCCT route.",
+    "A requested sewing tolerance is an algorithm parameter, not a manufacturing acceptance limit.",
+    "Tolerance-mediated topological closure does not prove coincident support geometry or recovered design intent.",
+    "The face descriptor check is specific to six known planar faces and is not a persistent-identity method.",
+    "The orientation repair study changes one controlled face only and does not establish material side for nested shells.",
+    "STEP samples are exchange and visual artifacts; STEP import may normalize topology or orientation.",
+    "No arbitrary-input healing, spline repair, self-intersection repair, or cross-kernel portability claim is made."
+  ],
+  "operation_policy": {
+    "controlled_single_face_reorientation": "accepted_control",
+    "exact_coincident_closure": "accepted_control",
+    "invalidating_tolerance_cap": "rejected_invalid",
+    "remaining_free_boundary": "not_closed",
+    "tolerance_mediated_gap_closure": "review_required",
+    "valid_orientation_no_op": "no_change"
+  },
+  "platform_label": "linux-x64-reference",
+  "questions": [
+    "Which application evidence should define an acceptable sewing-tolerance budget?",
+    "Should tolerance-mediated closure be quarantined until geometric residuals are reviewed?",
+    "How should modified, split, and merged subshapes be matched without treating local indices as identities?",
+    "How can orientation repair preserve material side when outer and void shells are nested?"
+  ],
+  "release": "v0.36.0",
+  "schema": "research-notes.tolerance-sewing-healing",
+  "schema_version": "1.0",
+  "sewing_settings": [
+    {
+      "requested_tolerance": 1e-07,
+      "setting_id": "tol_1e_7"
+    },
+    {
+      "requested_tolerance": 1e-06,
+      "setting_id": "tol_1e_6"
+    },
+    {
+      "requested_tolerance": 0.0001,
+      "setting_id": "tol_1e_4"
+    }
+  ]
+}

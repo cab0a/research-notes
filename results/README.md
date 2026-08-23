@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、35件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面・辺・外周・内周・切り取りに加え、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、36件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・立体、隙間と縫合許容差、局所許容差、方向修復、許容差変更による妥当性喪失を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -903,6 +903,35 @@ shell into three, and splits the disconnected face pair from one shell into
 two. The valid torus retains Euler characteristic `0`; its imported volume
 magnitude differs from `18π²` by `6.37e-12`.
 
+## v0.36.0
+
+- `tolerance_sewing_observations.csv` records seventeen source, sewn,
+  orientation-repair, and tolerance-cap stages with topology, incidence,
+  orientation, local-tolerance aggregates, planar geometry, raw volume, and
+  admission fields.
+- `tolerance_sewing_subshape_tolerances.csv` records all 550 analysis-local
+  vertex, edge, and face tolerances without claiming stable identity across
+  stages.
+- `tolerance_sewing_operations.csv` records twelve sewing, orientation, and
+  tolerance-change operations with exact parameters, backend reports, observed
+  changes, and bounded decisions.
+- `tolerance_sewing_summary.csv` records the closure matrix, tolerance growth,
+  orientation repair, invalidating cap, geometry preservation, and volume gate.
+- `tolerance_sewing_contract.json` is the deterministic
+  `research-notes.tolerance-sewing-healing` version `1.0` contract.
+- `tolerance_sewing_healing.png` compares closure, stored edge tolerances,
+  free boundaries, orientation, validity, and volume eligibility.
+- `tolerance_sewing_shapes.png` shows the synthetic gap and orientation
+  controls with nonzero gaps deliberately exaggerated.
+
+The `5e-7` gap closes at `1e-6` and above; the `5e-5` gap closes only at
+`1e-4`. All six planar face areas, centroids, and support-plane equations
+remain fixed, while selected vertex and edge tolerances grow with the merged
+residual. One reversed face is
+reoriented without topology or support-geometry drift. Capping the large-gap
+result below its residual retains closure but changes native validity from
+true to false, so the completed operation is rejected.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -941,6 +970,7 @@ python experiments/run_evaluated_face_geometry.py
 python experiments/run_edge_curve_evaluation.py
 python experiments/run_wire_trimming_evaluation.py
 python experiments/run_shell_solid_validity.py
+python experiments/run_tolerance_sewing_healing.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

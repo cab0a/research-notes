@@ -100,6 +100,8 @@ jobs:
           python experiments/run_wire_trimming_evaluation.py --fixture-dir regenerated-fixtures/wire-trimming-evaluation --output-dir regenerated-wire-trimming-fixture-results --refresh-fixtures
           python experiments/run_shell_solid_validity.py --output-dir regenerated-results
           python experiments/run_shell_solid_validity.py --fixture-dir regenerated-fixtures/shell-solid-validity --output-dir regenerated-shell-solid-fixture-results --refresh-fixtures
+          python experiments/run_tolerance_sewing_healing.py --output-dir regenerated-results
+          python experiments/run_tolerance_sewing_healing.py --fixture-dir regenerated-fixtures/tolerance-sewing-healing --output-dir regenerated-tolerance-sewing-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -256,6 +258,11 @@ jobs:
           diff -u results/shell_validity_observations.csv regenerated-results/shell_validity_observations.csv
           diff -u results/shell_solid_summary.csv regenerated-results/shell_solid_summary.csv
           diff -u results/shell_solid_contract.json regenerated-results/shell_solid_contract.json
+          diff -u results/tolerance_sewing_observations.csv regenerated-results/tolerance_sewing_observations.csv
+          diff -u results/tolerance_sewing_subshape_tolerances.csv regenerated-results/tolerance_sewing_subshape_tolerances.csv
+          diff -u results/tolerance_sewing_operations.csv regenerated-results/tolerance_sewing_operations.csv
+          diff -u results/tolerance_sewing_summary.csv regenerated-results/tolerance_sewing_summary.csv
+          diff -u results/tolerance_sewing_contract.json regenerated-results/tolerance_sewing_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -273,6 +280,7 @@ jobs:
           diff -qr fixtures/geometry-kernel-selection regenerated-fixtures/geometry-kernel-selection
           diff -qr fixtures/evaluated-face-geometry regenerated-fixtures/evaluated-face-geometry
           diff -qr fixtures/edge-curve-evaluation regenerated-fixtures/edge-curve-evaluation
+          diff -qr fixtures/tolerance-sewing-healing regenerated-fixtures/tolerance-sewing-healing
           diff -qr fixtures/wire-trimming-evaluation regenerated-fixtures/wire-trimming-evaluation
           diff -qr fixtures/shell-solid-validity regenerated-fixtures/shell-solid-validity
           test -s regenerated-results/laplacian_variance.png
@@ -320,6 +328,8 @@ jobs:
           test -s regenerated-results/wire_trimming_shapes.png
           test -s regenerated-results/shell_solid_validity.png
           test -s regenerated-results/shell_solid_shapes.png
+          test -s regenerated-results/tolerance_sewing_healing.png
+          test -s regenerated-results/tolerance_sewing_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

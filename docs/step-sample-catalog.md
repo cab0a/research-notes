@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文、v0.26.0のシンボル・型・継承、v0.27.0のSTEP・EXPRESS検証、v0.28.0の参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立、v0.31.0の形状計算核、v0.32.0の面幾何・公差、v0.33.0の辺曲線・継ぎ目、v0.34.0の外周・内周・切り取り・面反転・縮退辺、v0.35.0の外殻・立体の閉包・向き・非多様体・連結性・種数を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.35.0までの構文・意味・製品構成・面・辺・輪郭線・外殻・立体に加え、v0.36.0の独立面、隙間、縫合結果、方向修復、許容差変更の10試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、設計意図の回復、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -432,6 +432,33 @@ consistent, and the nonmanifold and disconnected shell containers are split.
 The fixtures are regression evidence for one writer/reader route, not a
 general invalid-STEP corpus, repair benchmark, or cross-kernel contract.
 
+## v0.36.0 — Tolerance, Sewing, and Healing Samples
+
+Directory: [`fixtures/tolerance-sewing-healing/`](../fixtures/tolerance-sewing-healing/)
+
+Manifest: [`manifest.csv`](../fixtures/tolerance-sewing-healing/manifest.csv)
+
+Ten normalized STEP files retain operation inputs and selected outputs. The
+manifest contains each full SHA-256, byte length, operation role, backend
+version, STEP processor, entity counts, and imported topology.
+
+| Sample group | Files | Intended evidence |
+| --- | ---: | --- |
+| Independent face inputs | 3 | Coincident, `5e-7` gap, and `5e-5` gap controls before sewing |
+| Selected sewn outputs | 3 | Shared topology created at requested tolerance `1e-4` while support faces remain fixed |
+| Orientation controls | 3 | Valid no-op input plus one-face-flipped input and reoriented output |
+| Rejected tolerance output | 1 | Closed topology whose in-memory local tolerance cap makes native validity false |
+
+The STEP read-back of the rejected tolerance sample is valid in the fixed
+translator route. The file therefore remains evidence of exchange
+normalization, not a serialization contract for the invalid in-memory state.
+
+![Synthetic gap and orientation controls](../results/tolerance_sewing_shapes.png)
+
+The two nonzero gaps are deliberately exaggerated in the preview. Exact gap,
+requested tolerance, stored local tolerance, closure, and validity evidence
+remain in the CSV and operation log.
+
 ## Regeneration
 
 ```bash
@@ -493,6 +520,10 @@ python experiments/run_wire_trimming_evaluation.py \
 
 python experiments/run_shell_solid_validity.py \
   --fixture-dir fixtures/shell-solid-validity \
+  --refresh-fixtures
+
+python experiments/run_tolerance_sewing_healing.py \
+  --fixture-dir fixtures/tolerance-sewing-healing \
   --refresh-fixtures
 ```
 

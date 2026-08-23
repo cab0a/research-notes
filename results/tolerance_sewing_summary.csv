@@ -1,0 +1,17 @@
+scope,metric,value
+fixture,step_file_count,10
+experiment,observation_count,17
+experiment,operation_count,12
+sewing,matrix_cell_count,9
+sewing,closed_cell_count_by_control,coincident_box_faces:3;small_gap_box_faces:2;large_gap_box_faces:1
+boundary,small_gap_closure_change_1e_7_to_1e_6,0->1
+boundary,large_gap_closure_change_1e_6_to_1e_4,0->1
+tolerance,small_gap_closed_max_edge_tolerance,5.2499999960708974e-07
+tolerance,large_gap_closed_max_edge_tolerance,5.249999999987765e-05
+orientation,valid_shell_minimum_face_flips,0->0
+orientation,flipped_shell_minimum_face_flips,1->0
+orientation,flipped_shell_signed_volume,80->120
+negative_control,tolerance_cap_kernel_validity,1->0
+geometry,face_geometry_match_count,17/17
+volume,eligible_observation_count,6
+volume,maximum_eligible_magnitude_absolute_error,0

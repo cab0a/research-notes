@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.35.0で面・辺・切り取りを経て、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積まで実装しました。一般妥当性が真でも開放・向き不正・非多様体を許す場合と、STEP往復が体積符号、面向き、外殻構成を変える場合を分離します。[能力表](step-brep-capabilities.md)には未対応の頂点近傍・自己交差・許容差付き縫合・修復も示します。
+v0.36.0では、直方体6面の隙間と縫合許容差を3水準ずつ組み合わせ、閉包、局所許容差、支持面、向き修復、妥当性を分離して記録しました。縫合による閉包は隙間の除去ではなく、修復も設計意図の回復ではありません。[能力表](step-brep-capabilities.md)には実装境界と、v0.37.0以降の多様体性、自己交差、空洞、形状対応、特徴認識を示します。
 
 詳細は以下の英語本文に示します。
 
@@ -329,47 +329,85 @@ and repair remain deferred.
 
 #### v0.36.0 — Tolerances, Sewing, and Healing Effects
 
-Generate gaps around controlled tolerance boundaries. Record every modified
-tolerance and topology count, retain original and repaired models, and treat
-repair as an operation rather than proof of recovered design intent.
+Completed with three controlled top-face gaps crossed against three requested
+sewing tolerances. Seventeen stage observations, 550 subshape-tolerance rows,
+12 operation records, and 10 STEP samples separate requested tolerance, stored
+tolerance, topology, support geometry, and translator behavior. Zero gap closes
+at every request, `5e-7` closes at `1e-6` and above, and `5e-5` closes only at
+`1e-4`.
+
+Answered boundary: tolerance-mediated closure does not move the six controlled
+support planes or prove that a physical gap was filled. Shell orientation
+repair is a no-op for the valid box and reduces the one-face-reversed control
+from one required flip to zero. A deliberately over-tight tolerance cap keeps
+the sewn topology closed but changes generic validity from true to false; its
+STEP re-import becomes valid again, so the rejected in-memory operation remains
+the decision record rather than being erased by translator normalization.
+
+#### v0.37.0 — Manifoldness and Self-Intersection
+
+Evaluate vertex neighborhoods in addition to edge incidence, and distinguish
+manifold boundaries, nonmanifold junctions, geometric self-intersection, and
+mere contact. Use paired synthetic controls so a topological identification,
+a tangential touch, and a transverse crossing do not collapse into one status.
+
+#### v0.38.0 — Voids, Inner Shells, and Composite Solids
+
+Construct outer and inner shells, cavities, multiple solids, and nested region
+controls. Verify material-side orientation, containment depth, connected
+regions, and additive or subtractive volume against independently known truth.
+
+#### v0.39.0 — Correspondence Across Import and Healing
+
+Track faces and edges when STEP import or healing changes positional indices.
+Report preserved, changed, split, merged, unmatched, and ambiguous candidates
+from explicit geometric and topological evidence; never relabel a heuristic
+match as persistent CAD identity.
+
+#### v0.40.0 — Rule-Based Feature Recognition
+
+Recognize controlled holes, steps, slots, chamfers, and fillets from analytic
+surface evidence and face adjacency. Compare every rule with synthetic
+construction truth, publish false-positive controls, and abstain when topology,
+geometry, or correspondence evidence is insufficient.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-#### v0.37.0 — Face-Level Analysis Reports
+#### v0.41.0 — Face-Level Analysis Reports
 
 Publish face-local indices, parent solid and shell, surface type, orientation,
 area, centroid, UV bounds, representative normal, analytic parameters, wire
 counts, edge counts, tolerance, adjacent faces, and attributed name or color
 sources.
 
-#### v0.38.0 — Tessellation and Visual Diagnostic Contracts
+#### v0.42.0 — Tessellation and Visual Diagnostic Contracts
 
 Generate meshes with explicit chordal and angular controls. Relate selected
 triangles back to faces and source entities, and treat previews as inspection
 aids rather than geometric truth.
 
-#### v0.39.0 — Primitive Construction and STEP Round Trips
+#### v0.43.0 — Primitive Construction and STEP Round Trips
 
 Construct controlled primitives and B-spline patches, export them, re-import
 them, and compare parameters, topology counts, measurements, tolerances, and
 exchange structure.
 
-#### v0.40.0 — Profiles, Extrusion, and Revolution
+#### v0.44.0 — Profiles, Extrusion, and Revolution
 
 Build profiles with holes, extrude and revolve them, and preserve synthetic
 construction parameters as ground truth.
 
-#### v0.41.0 — Sweeps, Lofts, and Surface Construction
+#### v0.45.0 — Sweeps, Lofts, and Surface Construction
 
 Study guide curves, section compatibility, parameterization, continuity, and
 controlled failure conditions.
 
-#### v0.42.0 — Boolean Operations and Robustness
+#### v0.46.0 — Boolean Operations and Robustness
 
 Exercise union, intersection, and subtraction across disjoint, tangent,
 near-coincident, and tolerance-sensitive cases.
 
-#### v0.43.0 — Fillets, Chamfers, and Topology History
+#### v0.47.0 — Fillets, Chamfers, and Topology History
 
 Record generated, modified, deleted, split, and merged shapes when the backend
 exposes history. Demonstrate why positional face indices are not persistent
@@ -377,18 +415,18 @@ design identities.
 
 ### Phase F — Interoperability and Defensive Processing
 
-#### v0.44.0 — STEP Round-Trip Preservation
+#### v0.48.0 — STEP Round-Trip Preservation
 
 Compare import-export-import cycles for structure, semantics, geometry,
 topology, attributes, tolerances, and file size. Separate semantic preservation
 from byte identity.
 
-#### v0.45.0 — Independent Parser and Kernel Portability
+#### v0.49.0 — Independent Parser and Kernel Portability
 
 Run fixed samples through independently selected parsers, importers, or
 kernels. Treat disagreements as explicit interoperability evidence.
 
-#### v0.46.0 — Resource-Bounded 3D Intake
+#### v0.50.0 — Resource-Bounded 3D Intake
 
 Bound file bytes, tokens, entities, references, archive expansion, recursion,
 topology, tessellation output, and operation time. Isolate parsing, external
@@ -396,22 +434,23 @@ resolution, and native-kernel execution.
 
 ### Phase G — 3D Features and AI-Ready Evidence
 
-#### v0.47.0 — Face-Adjacency Graphs and Geometric Descriptors
+#### v0.51.0 — Face-Adjacency Graphs and Geometric Descriptors
 
 Represent faces as attributed nodes and shared edges as attributed relations,
 with source and calculation provenance for every field.
 
-#### v0.48.0 — Deterministic Feature Recognition
+#### v0.52.0 — Feature Recognition Robustness and Benchmarking
 
-Build auditable geometric rules for holes, pockets, slots, bosses, ribs, and
-blends on generated shapes with known construction history.
+Extend the v0.40 rules across tolerance, size, orientation, import, and healing
+perturbations. Publish deterministic confusion counts, rejection reasons, and
+abstention behavior over generated shapes with known construction history.
 
-#### v0.49.0 — Synthetic 3D Dataset and Label Contracts
+#### v0.53.0 — Synthetic 3D Dataset and Label Contracts
 
 Generate controlled model families, negative examples, grouped splits, and
 leakage checks. Preserve STEP, graph, B-Rep, preview, and label provenance.
 
-#### v0.50.0 — Learned Baselines and Explainable 3D Assistance
+#### v0.54.0 — Learned Baselines and Explainable 3D Assistance
 
 Compare simple graph, tabular, and geometric baselines with deterministic
 rules. Require calibration, robustness checks, evidence links, and abstention
@@ -419,37 +458,37 @@ when schema or geometry support is incomplete.
 
 ### Phase H — Parametric Reconstruction and Recompute
 
-#### v0.51.0 — Parametric Feature Graph
+#### v0.55.0 — Parametric Feature Graph
 
 Represent sketches, construction planes, dimensions, features, dependencies,
 and generated B-Rep results as a versioned graph. Imported STEP topology is an
 input reference; it is not silently relabeled as recovered design history.
 
-#### v0.52.0 — Two-Dimensional Sketches and Geometric Constraints
+#### v0.56.0 — Two-Dimensional Sketches and Geometric Constraints
 
 Implement bounded line, arc, circle, coincidence, parallel, perpendicular,
 tangent, horizontal, vertical, distance, radius, and angle constraints.
 Separate under-constrained, fully constrained, over-constrained, and
 inconsistent systems.
 
-#### v0.53.0 — Parametric Holes, Pockets, Bosses, and Ribs
+#### v0.57.0 — Parametric Holes, Pockets, Bosses, and Ribs
 
 Construct common features from explicit parameters and compare their generated
 topology and geometry with independently known synthetic construction truth.
 
-#### v0.54.0 — Dependency Graph and Deterministic Recompute
+#### v0.58.0 — Dependency Graph and Deterministic Recompute
 
 Propagate parameter changes through an acyclic feature dependency graph,
 isolate failed features, retain the last valid result, and report which
 downstream shapes became invalid or stale.
 
-#### v0.55.0 — STEP-to-Feature Reconstruction Candidates
+#### v0.59.0 — STEP-to-Feature Reconstruction Candidates
 
 Generate auditable candidate sketches and features from imported B-Rep
 evidence. Report geometric residuals, ambiguity, alternative explanations,
 and confidence; never claim recovery of unavailable original CAD history.
 
-#### v0.56.0 — Assisted Parametric Modeling Tool
+#### v0.60.0 — Assisted Parametric Modeling Tool
 
 Expose import, inspection, candidate selection, parameter editing, recompute,
 visual comparison, and STEP export through a bounded Python API and a focused
@@ -462,9 +501,9 @@ The phrase "parametric STEP editing" has three distinct meanings:
 
 | Milestone | Planned release | Claim boundary |
 | --- | --- | --- |
-| Construct new parameter-driven geometry | v0.40.0 | Profiles, extrusion, and revolution recompute from explicit user parameters |
-| Import STEP, add modeled operations, and export STEP | v0.43.0–v0.44.0 | The imported B-Rep is a base shape; no original feature history is implied |
-| Infer an editable feature model from imported STEP | v0.55.0–v0.56.0 | Outputs are evidence-backed reconstruction candidates, not recovered authoring history |
+| Construct new parameter-driven geometry | v0.44.0 | Profiles, extrusion, and revolution recompute from explicit user parameters |
+| Import STEP, add modeled operations, and export STEP | v0.47.0–v0.48.0 | The imported B-Rep is a base shape; no original feature history is implied |
+| Infer an editable feature model from imported STEP | v0.59.0–v0.60.0 | Outputs are evidence-backed reconstruction candidates, not recovered authoring history |
 
 A normal STEP exchange can preserve final product geometry without preserving
 the originating CAD system's sketches, constraints, feature order, or design

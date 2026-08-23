@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面・辺・外周・内周・切り取りに加え、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積を扱う35件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体に加え、隙間と許容差の境界、面の縫合、方向修復、局所許容差の変更を扱う36件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的なしきい値、製造許容値、設計意図の回復として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -842,6 +842,37 @@ error `6.37e-12` against `18π²`.
 ```bash
 python -m pip install -e ".[geometry]"
 python experiments/run_shell_solid_validity.py
+```
+
+### v0.36.0 — Tolerances, Sewing, and Healing Effects
+
+**Question:** When do controlled face gaps become topologically sewn, which
+local tolerances change, and can a bounded repair be accepted without erasing
+geometry, validity, and provenance boundaries?
+
+**Representative finding:** The `5e-7` gap closes at requests `1e-6` and
+`1e-4`, while the `5e-5` gap closes only at `1e-4`. All seventeen stage
+observations retain the six controlled planar areas, centroids, and support-
+plane equations, but stored edge tolerances rise with merged residuals. One
+reversed face is repaired from
+one required flip to zero and signed volume `80` to `120`; deliberately capping
+the large-gap result to `1e-5` keeps V/E/F and closure while making the native
+shape invalid.
+
+- [Complete note](../notes/tolerance-sewing-healing.md)
+- [Stage observations](../results/tolerance_sewing_observations.csv)
+- [Analysis-local tolerances](../results/tolerance_sewing_subshape_tolerances.csv)
+- [Operation log](../results/tolerance_sewing_operations.csv)
+- [Summary](../results/tolerance_sewing_summary.csv)
+- [Evaluation contract](../results/tolerance_sewing_contract.json)
+- [Figure](../results/tolerance_sewing_healing.png)
+- [Shape preview](../results/tolerance_sewing_shapes.png)
+- [Generated STEP fixtures](../fixtures/tolerance-sewing-healing/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_tolerance_sewing_healing.py
 ```
 
 ## Artifact Details
