@@ -187,6 +187,19 @@ from research_notes.solid_regions import (
     probe_solid_regions,
     solid_region_controls,
 )
+from research_notes.shape_correspondence import (
+    CandidateObservation,
+    CorrespondenceControl,
+    EdgeCandidateObservation,
+    EdgeDescriptor,
+    EdgeRelationObservation,
+    FaceDescriptor,
+    RelationObservation,
+    ShapeCorrespondenceProbe,
+    build_correspondence_shapes,
+    correspondence_controls,
+    probe_shape_correspondence,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,
@@ -697,4 +710,12 @@ __all__ = [
     "SolidRegionProbe",
     "probe_solid_regions",
     "solid_region_controls",
+    "CandidateObservation",
+    "CorrespondenceControl",
+    "FaceDescriptor",
+    "RelationObservation",
+    "ShapeCorrespondenceProbe",
+    "build_correspondence_shapes",
+    "correspondence_controls",
+    "probe_shape_correspondence",
 ]

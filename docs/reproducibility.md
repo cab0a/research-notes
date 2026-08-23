@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、38件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。画像・JPEG・メタデータ・STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差に加え、空洞、内殻、材料島、複合立体の検証と互換性境界をまとめています。
+本書は、39件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。画像・JPEG・メタデータ・STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体に加え、STEP読込・修復前後の面・辺対応を含みます。v0.39.0は23面・47辺の一意対応、2面・8辺の曖昧性による棄権、修復後の辺の一対一変更・二対一統合・削除を、幾何・隣接面・処理履歴・直接同一性を分離して検証します。この対応は位相同一性や恒久命名を証明しません。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -114,6 +114,7 @@ python experiments/run_shell_solid_validity.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
+python experiments/run_shape_correspondence.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -239,6 +240,11 @@ python experiments/run_solid_region_evaluation.py \
   --fixture-dir output/fixtures/solid-regions \
   --output-dir output/solid-regions \
   --refresh-fixtures
+
+python experiments/run_shape_correspondence.py \
+  --fixture-dir output/fixtures/shape-correspondence \
+  --output-dir output/shape-correspondence \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -312,6 +318,12 @@ python experiments/run_solid_region_evaluation.py \
   a material island, connected and disconnected composite-solid claims, and a
   generic compound. Analytic volume, complete-volume containment, shell role,
   shared-face adjacency, and constructed expectation matches remain explicit.
+- The v0.39 correspondence corpus generates four normalized planar STEP
+  samples. Each stage receives new face and edge indices. Face candidates use
+  support plane, area, and centroid; straight-edge candidates use line support,
+  endpoints, and length. Incident-face candidates, operation history, and
+  direct native identity are recorded separately. Ambiguous candidates remain
+  unresolved instead of being ordered by index.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -381,7 +393,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 270 tests cover:
+The 283 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -454,6 +466,11 @@ The 270 tests cover:
 - outer and void shell roles, complete-volume containment, shell orientation,
   same-depth partial overlap, material islands, analytic material volume,
   shared-face adjacency, composite-solid components, and STEP container drift
+- stage-local face and edge descriptors; face and straight-edge geometry
+  gates; incident-face corroboration; tied-candidate and target-conflict
+  abstention; modified, many-to-one, and deleted healing relations; grouped
+  area and length conservation; separate operation history; and direct native
+  identity checks
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -480,6 +497,7 @@ The 270 tests cover:
 |   |-- geometry-kernel-selection/
 |   |-- evaluated-face-geometry/
 |   |-- manifold-self-intersection/
+|   |-- shape-correspondence/
 |   |-- solid-regions/
 |   |-- step-graph-queries/
 |   |-- step-express-validation/
@@ -516,9 +534,11 @@ and v0.34.0 evaluates outer and inner wires, face reversal, periodic seams,
 and sphere-pole degeneracy. v0.35.0 evaluates seven shell and solid validity
 conditions, v0.36.0 evaluates controlled sewing, local tolerance changes, and
 orientation repair, v0.37.0 evaluates bounded polyhedral vertex links and
-shape-pair relationship dimensions, and v0.38.0 evaluates ten void-shell and
-composite-solid controls on the same route. None implies complete ISO
+shape-pair relationship dimensions, v0.38.0 evaluates ten void-shell and
+composite-solid controls, and v0.39.0 evaluates face and straight-edge
+correspondence on four planar controls on the same route. None implies complete ISO
 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell
 manifoldness, self-intersection, nonconvex containment, general repair,
-manufacturing tolerance, or design-intent recovery.
+manufacturing tolerance, persistent topological identity, persistent naming,
+or design-intent recovery.

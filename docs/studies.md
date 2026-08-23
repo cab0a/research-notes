@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差に加え、空洞、内殻、材料島、複合立体を扱う38件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的な製造許容値、設計意図、任意形状の包含・妥当性証明として扱わない境界も示します。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体に加え、STEP読込・修復前後の面・辺対応を扱う39件の研究を索引化しています。v0.39.0ではSTEP再読込の23面・47辺を一意対応し、区別不能な2面・8辺では棄権し、修復後の辺を一対一変更・二対一統合・削除に分けました。幾何推定、隣接面による裏付け、処理履歴、直接的な位相同一性は分離しており、恒久命名や設計履歴の回復ではありません。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -948,6 +948,49 @@ python -m pip install -e ".[geometry]"
 python experiments/run_solid_region_evaluation.py
 ```
 
+### v0.39.0 — Face and Edge Correspondence Across STEP Import and Healing
+
+**Question:** Can face and edge relationships across STEP import and one
+topology-changing healing operation be reported as one-to-one, modified,
+many-to-one, deleted, ambiguous, or unmatched without treating analysis-local
+order as identity?
+
+**Representative finding:** Geometry evidence resolves 23 faces and 47 edges
+across STEP import, while two coincident faces and eight duplicate edges retain
+tied candidates and abstain. Same-domain healing changes the split box from 10
+faces and 20 edges to 6 faces and 12 edges. Edge relations comprise eight
+one-to-one modified sources, eight sources in four two-to-one groups, and four
+deleted seams. All 35 face and 75 edge relations match construction truth; all
+10 face and 20 edge healing relations agree with separately recorded operation
+history.
+
+The evidence contains 56 face descriptors, 37 face candidates, 35 face
+relations, 122 edge descriptors, 79 edge candidates, 75 edge relations, four
+hashed STEP fixtures, one versioned JSON contract, and two figures. Incident-
+face candidates corroborate edge geometry without breaking ties. Operation
+history and 75 direct identity checks are separate; `IsSame` and `IsPartner`
+are both absent. This planar, straight-edge corpus is not persistent naming,
+STEP-carried operation history, or recovered design intent.
+
+- [Complete note](../notes/face-correspondence-step-import-healing.md)
+- [Face descriptors](../results/shape_correspondence_faces.csv)
+- [Candidate evidence](../results/shape_correspondence_candidates.csv)
+- [Resolved and abstained relations](../results/shape_correspondence_relations.csv)
+- [Edge descriptors](../results/shape_correspondence_edges.csv)
+- [Edge candidate evidence](../results/shape_correspondence_edge_candidates.csv)
+- [Edge relations and history](../results/shape_correspondence_edge_relations.csv)
+- [Summary](../results/shape_correspondence_summary.csv)
+- [Evaluation contract](../results/shape_correspondence_contract.json)
+- [Figure](../results/shape_correspondence.png)
+- [Shape preview](../results/shape_correspondence_shapes.png)
+- [Generated STEP fixtures](../fixtures/shape-correspondence/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_shape_correspondence.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -972,6 +1015,8 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.38.0 subsets.
+  controlled v0.21.0 through v0.39.0 subsets;
+- persistent face or edge identity, topological naming, or design-history
+  recovery from the v0.39.0 geometry-inferred correspondence controls.
 
 The complete notes contain the narrower limitations for each experiment.

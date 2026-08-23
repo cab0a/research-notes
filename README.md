@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.38.0では、外殻、空洞、向き不正・外部・重複内殻、空洞内の材料島、面共有・非連結の複合立体を合成し、包含、向き、重複、体積、共有面、連結成分をSTEP再読込前後で比較します。重複空洞は両方が深さ1で向き正常でも、部分重複検査により失格になります。
+v0.39.0では、4形状でSTEP再読込と同一領域統合の前後の面・辺を追跡します。再読込では23面・47辺を一対一対応し、区別不能な2面・8辺は棄権しました。統合で10面から6面、20辺から12辺となり、辺を8件の一対一変更、8件の二対一統合、4件の削除として記録し、処理履歴20件すべてと一致しました。幾何推定、隣接面による裏付け、処理履歴、直接的な位相同一性は分離しています。
 
-合成データ、CSV・JSON・PNG、270件のテストを備えます。一般的なSTEP適合、設計意図の回復、製造許容値、非凸・曲面形状の包含判定、任意形状の修復は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、283件のテストを備えます。面・辺番号の恒久性、位相同一性、設計履歴・設計意図の回復、一般的なSTEP適合、任意形状の修復は主張しません。v0.40.0の形状特徴認識は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -37,8 +37,8 @@ selective retention, and resource-bounded admission before evaluating extended
 metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
-application semantics, and evaluated B-Rep geometry. The current release is
-v0.38.0.
+application semantics, evaluated B-Rep geometry, and controlled geometric face
+and edge correspondence. The current release is v0.39.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,33 +53,34 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 38 releases to their questions,
+The [study index](docs/studies.md) maps all 39 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.38.0 study treats outer shells, void shells, material islands, generic
-compounds, and face-connected composite solids as explicit material-region
-contracts. It separates containment, orientation, partial overlap, analytic
-volume, shared topology, and solid-graph connectivity before and after STEP
-exchange.
+The v0.39.0 study reports controlled face and edge correspondence across STEP
+import and one same-domain healing operation without treating traversal
+indices as persistent names. Face candidates use planar support, area, and
+centroid evidence. Edge candidates use line support, endpoints, and length;
+mapped incident-face candidates provide separate topology corroboration.
+Healing inference is compared with operation-local history, while direct
+native topology identity is recorded independently.
 
-| Condition | Observed state | Evidence |
+| Condition | Face evidence | Edge evidence |
 | --- | --- | --- |
-| Centered void | accepted material region | Correct containment and orientation give volume `464` |
-| Outside reversed shell | rejected despite scalar match | Constructed volume is also `464`, but two local root shells expose containment failure |
-| Overlapping voids | partial-overlap rejection | Both voids retain depth `1` and correct orientation; raw volume `522` differs from analytic material volume `531`, so the overlap gate fails |
-| Wrong void orientation | translator normalization | Constructed volume `496` and orientation failure become imported volume `464` with the gate passing |
-| Shared-face composite solid | adjacency loss | `V=12,E=20,F=11`, one shared face, and one component become `V=16,E=24,F=12`, no shared face, and two components after STEP import |
+| STEP import | 23 one-to-one; 2 ambiguous abstentions | 47 one-to-one; 8 ambiguous abstentions |
+| Split-box healing | 2 one-to-one and 8 many-to-one sources; 10 → 6 faces | 8 one-to-one modified, 8 many-to-one, and 4 deleted sources; 20 → 12 edges |
+| Operation-history comparison | 10 / 10 relations agree | 20 / 20 relations agree; `Modified=16`, `Generated=0`, `Removed=4` |
+| Direct native identity | Not used as matching evidence | 75 / 75 checked; `IsSame=0`, `IsPartner=0` |
 
-![Signed volume, analytic truth, and topology counts](results/solid_regions.png)
+![Face and edge correspondence outcomes and numeric residuals](results/shape_correspondence.png)
 
-These are regression results for one pinned backend and ten axis-aligned
-synthetic controls. The corpus produces 20 main rows, 44 shell-role rows, 60
-containment relations, and nine solid-adjacency rows. All ten constructed
-candidate, shared-face, and component expectations match. A volume or container
-type alone is not proof of a coherent material region, and the result does not
-establish general nonconvex or curved-shell containment.
+The four fixtures produce 56 face descriptors, 37 face candidates, and 35 face
+relations, plus 122 edge descriptors, 79 edge candidates, and 75 edge
+relations. All 110 source relations agree with analytic construction truth.
+Twenty-eight of 47 selected STEP edge relations change local index. These are
+planar, straight-edge, fixture-specific inferences, not topological identity,
+persistent naming, semantic provenance, or design-history recovery.
 
 ## Current STEP and B-Rep Capability
 
@@ -89,15 +90,17 @@ controlled AP242 product and assembly mapping. It can inventory selected
 declared B-Rep topology and evaluate small analytic face, edge, wire, shell,
 and solid corpora, including controlled invalid cases. It now checks bounded
 polyhedral vertex links, shape-pair contact dimension, nested void-shell roles,
-partial overlap, and composite-solid adjacency, but it cannot prove arbitrary
-trimmed, self-intersecting, or nonconvex geometry and does not expose a
-supported general modeling or editing API.
+partial overlap, composite-solid adjacency, and controlled planar face
+and straight-edge correspondence across STEP import and one same-domain merge.
+It cannot prove
+arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
+CAD identities, or expose a supported general modeling or editing API.
 
 | Capability level | Available now | Not available yet |
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment and orientation, partial overlap, material islands, and composite-solid adjacency | Arbitrary curved or spline manifoldness, nonconvex containment, general healing, tessellation, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, and planar-face/straight-edge correspondence | Persistent naming, arbitrary curved or spline correspondence and manifoldness, nonconvex containment, general healing, tessellation, editing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -185,6 +188,12 @@ maps each current field to its evidence, exact limitation, and planned release.
   the shared topological face of the controlled connected composite solid, so
   neither container type nor geometric coincidence is a persistent cell
   identity.
+- The correspondence evaluator uses four planar controls with open straight
+  edges. Face inference uses support plane, area, and centroid; edge inference
+  uses line support, endpoints, and length. Incident-face candidates,
+  operation-local history, and direct `IsSame`/`IsPartner` checks are recorded
+  separately. These relations are not topological identity, persistent naming,
+  STEP-carried history, semantic provenance, or recovered design intent.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -226,8 +235,8 @@ tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
 AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
 v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
 v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
-manifoldness/self-intersection, and v0.38.0 solid-region studies also write
-deterministic versioned JSON records.
+manifoldness/self-intersection, v0.38.0 solid-region, and v0.39.0 face-and-edge
+correspondence studies also write deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -251,7 +260,8 @@ the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture, and the
 v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture,
 the seven v0.35.0 shell/solid validity fixtures, the ten v0.36.0
 tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
-intersection fixtures, and the ten v0.38.0 solid-region fixtures.
+intersection fixtures, the ten v0.38.0 solid-region fixtures, and the four
+v0.39.0 face-and-edge correspondence fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -262,7 +272,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-eight published studies with explicit questions, controls, results, and
+- Thirty-nine published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -308,6 +318,9 @@ validation evidence.
 - Explicit shell-role, full-volume containment, orientation, partial-overlap,
   material-island, shared-face, and solid-component contracts for controlled
   void and composite-solid models
+- Geometry-inferred planar-face and straight-edge correspondence across STEP
+  import, explicit abstention for tied candidates, and modified, many-to-one,
+  and deleted healing relations compared with separate operation history
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -373,6 +386,12 @@ The solid-region study then separates local and global shell depth, orientation,
 complete containment, partial overlap, analytic material volume, shared
 topological faces, and solid-adjacency components from kernel validity and
 container type.
+The correspondence study then assigns new face and edge indices at each stage.
+It infers face candidates from planar support, area, and centroid, and edge
+candidates from line support, endpoints, and length. Incident-face candidate
+sets corroborate edge geometry without breaking ties. Modified, many-to-one,
+deleted, and ambiguous relations are explicit; operation history and direct
+native topology identity remain separate from inference and persistent naming.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -395,7 +414,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 270 tests covering blur metrics and models,
+The repository contains 283 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -432,6 +451,12 @@ The v0.38.0 additions cover local and global shell roles, complete-volume
 containment, orientation parity, sibling-shell partial overlap, analytic
 material volume, material islands, shared-face adjacency, composite-solid
 connectivity, constructed expectation matches, and STEP container drift.
+The v0.39.0 additions cover stage-local face and edge descriptors; face support,
+area, and centroid gates; edge curve, line-support, endpoint, and length gates;
+separate incident-face corroboration; explicit ambiguity and abstention;
+one-to-one modified, many-to-one, and deleted healing relations; group area and
+length conservation; operation-history comparison; direct native identity
+checks; target-conflict regression; and deterministic STEP fixtures.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -452,8 +477,10 @@ inner wires, trimming, face reversal, periodic seams, and degenerate pole
 edges. v0.35.0 evaluates seven controlled shell/solid validity conditions,
 v0.36.0 evaluates controlled sewing and orientation repair, v0.37.0 evaluates
 bounded polyhedral vertex links and geometric relationship dimensions, and
-v0.38.0 evaluates ten void-shell and composite-solid controls on the same Linux
-x64 reference route. These releases do not claim
+v0.38.0 evaluates ten void-shell and composite-solid controls, and v0.39.0
+evaluates face and straight-edge correspondence on four planar controls across
+STEP import and one same-domain healing operation on the same Linux x64
+reference route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -470,8 +497,11 @@ STEP normalization evidence, and v0.36.0 adds tolerance-mediated sewing,
 auditable orientation repair, and explicit invalid repair controls. v0.37.0
 adds vertex-neighborhood manifoldness and separates geometric contact from
 overlap and crossing. v0.38.0 adds shell-role, containment, overlap, material-
-island, and composite-solid contracts. The roadmap next proceeds through face
-correspondence, feature recognition, modeling, STEP round trips, and
+island, and composite-solid contracts. v0.39.0 adds controlled geometry-
+inferred face and edge correspondence, explicit abstention, and modified,
+many-to-one, and deleted healing relations without a persistent-identity claim.
+The roadmap next proceeds
+through rule-based feature recognition, modeling, STEP round trips, and
 evidence-backed parametric reconstruction. Future versions target import-edit-export
 round trips, and v0.59.0 begins STEP-to-feature reconstruction candidates.
 Geometry-kernel binary distribution remains a separate license and packaging

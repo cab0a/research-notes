@@ -1,0 +1,44 @@
+{
+  "contract_version": "1.0",
+  "controlled_expectations": {
+    "edge_ambiguous_sources_correctly_abstained": 8,
+    "edge_deleted_source_relations": 4,
+    "edge_direct_identity_checked_sources": 75,
+    "edge_direct_is_partner_sources": 0,
+    "edge_direct_is_same_sources": 0,
+    "edge_history_generated_items": 0,
+    "edge_history_modified_items": 16,
+    "edge_history_removed_sources": 4,
+    "edge_many_to_one_source_relations": 8,
+    "edge_many_to_one_target_groups": 4,
+    "edge_one_to_one_modified_source_relations": 8,
+    "edge_step_import_one_to_one_sources": 47,
+    "face_ambiguous_sources_correctly_abstained": 2,
+    "face_many_to_one_source_relations": 8,
+    "face_many_to_one_target_groups": 4,
+    "face_step_import_one_to_one_sources": 23,
+    "healed_edge_count": 12,
+    "healed_face_count": 6
+  },
+  "fixture_sha256": {
+    "asymmetric_prism.step": "5c29f5c0c063ca63413d1722ce2b5404badd0c2806a991f9dc189c578a11fc68",
+    "coincident_faces.step": "bd9856b83799b8453b4852d0650f0219d17608d52caddd1352f7fbb045e5c460",
+    "reversed_box.step": "74aa7e419a37b8a7012edb9b341ee0b88747cbd7c029f7dca0849553c8c72152",
+    "split_box.step": "0c5831dd613855b963af8f4c1e70cd04516077881350a03f3b62181bb2c61153"
+  },
+  "matching_policy": {
+    "direct_topology_identity_used_as_matching_signal": false,
+    "edge_healing_evidence": "geometry_inference_compared_with_operation_local_history",
+    "edge_step_import_geometry_evidence": "curve_type_line_support_endpoints_length",
+    "edge_topology_evidence": "incident_face_candidate_sets_recorded_separately",
+    "face_step_import_evidence": "support_plane_area_centroid_geometry_inference",
+    "force_ambiguous_matches": false,
+    "persistent_local_indices": false
+  },
+  "observed_edge_curve_types": [
+    "line"
+  ],
+  "regression_gates_are_not_general_cad_tolerances": true,
+  "study_version": "v0.39.0",
+  "title": "Face and Edge Correspondence Across STEP Import and Healing"
+}

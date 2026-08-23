@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.37.0までの構文・意味・製品構成・幾何・位相・多様体性・交差に加え、v0.38.0の外殻、空洞、重複内殻、材料島、複合立体の10試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、任意形状の包含証明、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.38.0までの構文・意味・製品構成・幾何・位相・多様体性・交差・材料領域に加え、v0.39.0では4個の合成平面形状について、STEP再読込と同一領域統合をまたぐ面と開いた直線辺の対応を収録します。面では56記述子、37候補、35関係を、辺では122記述子、79候補、75関係を記録し、幾何、位相による候補支持、処理履歴、直接同一性を別々の証拠として保持します。これは限定的な対応推論であり、恒久的な位相同一性、完全なスキーマ・AP242適合性、形状計算核間の互換性を証明しません。詳細は英語本文に示します。
 
 ---
 
@@ -524,6 +524,47 @@ show that this writer route does not preserve their original kernel-container
 distinction. The samples do not prove general nonconvex containment or
 cross-translator preservation.
 
+## v0.39.0 — Face- and Edge-Correspondence Samples
+
+Directory: [`fixtures/shape-correspondence/`](../fixtures/shape-correspondence/)
+
+Manifest: [`manifest.csv`](../fixtures/shape-correspondence/manifest.csv)
+
+Four normalized files isolate uniquely distinguishable planar regions, whole-
+shape reversal, same-domain face and edge merging, and deliberate ambiguity.
+The manifest binds exact bytes and hashes to the pinned STEP writer and reader.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `asymmetric_prism.step` | 19,435 | `5c29f5c0c063ca63413d1722ce2b5404badd0c2806a991f9dc189c578a11fc68` | Seven analytically distinguishable planar faces and 15 open line edges |
+| `reversed_box.step` | 15,377 | `74aa7e419a37b8a7012edb9b341ee0b88747cbd7c029f7dca0849553c8c72152` | Six planar faces and 12 open line edges despite whole-shape reversal |
+| `split_box.step` | 24,503 | `0c5831dd613855b963af8f4c1e70cd04516077881350a03f3b62181bb2c61153` | Ten faces and 20 edges that become six faces and 12 edges after same-domain healing |
+| `coincident_faces.step` | 10,725 | `bd9856b83799b8453b4852d0650f0219d17608d52caddd1352f7fbb045e5c460` | Two indistinguishable faces and eight source edges that each retain two candidate targets |
+
+![Synthetic controls for face and edge correspondence](../results/shape_correspondence_shapes.png)
+
+The correspondence experiment assigns fresh local face and edge indices at
+each stage. Its 56 face descriptors produce 37 candidates and 35 source
+relations: STEP import resolves 23 faces one-to-one and abstains for two
+ambiguous sources, while healing records two one-to-one and eight many-to-one
+relations in four merge groups. All ten healing-face relations agree with the
+separately recorded operation history.
+
+The 122 edge descriptors produce 79 candidates and 75 source relations. STEP
+import resolves 47 edges one-to-one and abstains for eight ambiguous sources.
+Same-domain healing changes the split box from 20 edges to 12, with eight
+`one_to_one_modified`, eight many-to-one relations in four merge groups, and
+four deleted source edges; all 20 relations agree with operation history.
+None of the 75 edge relations reports direct `IsSame` or `IsPartner` identity.
+Edge geometry, incident-face topology support, operation history, and direct
+identity checks remain separate evidence columns rather than interchangeable
+proofs.
+
+The controls contain only planar faces and open line edges in fixed frames.
+They do not provide persistent names, topological identity, semantic
+provenance, recovered design history, moving-frame correspondence, or general
+curved and closed-edge matching.
+
 ## Regeneration
 
 ```bash
@@ -597,6 +638,10 @@ python experiments/run_manifold_self_intersection.py \
 
 python experiments/run_solid_region_evaluation.py \
   --fixture-dir fixtures/solid-regions \
+  --refresh-fixtures
+
+python experiments/run_shape_correspondence.py \
+  --fixture-dir fixtures/shape-correspondence \
   --refresh-fixtures
 ```
 

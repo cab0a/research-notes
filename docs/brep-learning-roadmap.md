@@ -2,11 +2,11 @@
 
 ## 日本語概要
 
-このロードマップは、STEP規格をPythonパーサーとして実装・検証する道筋です。Part 21、EXPRESS、構成、幾何、位相を分離し、合成データとテストを残します。
+STEP規格をPythonパーサーとして実装・検証し、構文・意味・幾何・位相を分離して合成証拠を残す道筋です。
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.38.0では、外殻と内殻の包含・向き・符号付き体積、材料島、立体間の面共有を10個の合成条件で検証しました。重複空洞では体積の二重減算を検出し、面共有複合立体ではSTEP読込後に共有位相が失われる境界を記録します。[能力表](step-brep-capabilities.md)には実装範囲と、v0.39.0以降の形状対応、特徴認識を示します。
+v0.39.0は平面と開いた直線辺の合成4形状を検証します。面56記述子/37候補/35関係はSTEP一対一23・棄権2、修復一対一2・多対一8、履歴10/10です。辺122/79/75はSTEP一対一47・棄権8、修復20→12（修正一対一8・多対一8/4群・削除4）、履歴20/20、直接同一・共有元0/75です。幾何・位相支持・処理履歴・直接同一性を分離し、恒久同一性は対象外です。v0.40.0は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -380,12 +380,34 @@ and translator route, not a general containment proof or preservation claim.
 
 #### v0.39.0 — Correspondence Across Import and Healing
 
-Track faces and edges when STEP import or healing changes positional indices.
-Report preserved, changed, split, merged, unmatched, and ambiguous candidates
-from explicit geometric and topological evidence; never relabel a heuristic
-match as persistent CAD identity.
+Completed with four generated planar/open-line controls. The face evidence
+contains 56 stage-local descriptors, 37 geometry-gated candidates, and 35
+source relations. Support-plane, area, and centroid evidence resolves 23
+source faces uniquely across STEP import and leaves two coincident sources
+ambiguous. Same-domain healing records two one-to-one and eight many-to-one
+relations in four merge groups; all ten agree with separately recorded
+operation history.
+
+The edge evidence contains 122 stage-local descriptors, 79 candidates, and 75
+source relations. Curve type, endpoints, length, and line-support evidence
+resolve 47 STEP-import relations one-to-one and leave eight sources ambiguous.
+Incident-face topology support is retained separately and does not force a
+choice. Healing changes 20 edges to 12: eight relations are
+`one_to_one_modified`, eight are many-to-one in four merge groups, and four
+are deleted. All 20 agree with operation history. Direct `IsSame` and
+`IsPartner` checks are each present for zero of the 75 edge relations.
+
+Answered boundary: deterministic local indices are not persistent names.
+Geometry inference, topology support for a candidate, operation history, and
+direct identity are distinct evidence classes. These planar faces and open
+line edges do not prove topological identity, STEP-carried operation history,
+semantic provenance, or design intent. One-to-many splits, generated-result
+controls, moving frames, curved and closed edges, and interacting repairs
+remain unevaluated.
 
 #### v0.40.0 — Rule-Based Feature Recognition
+
+Planned; not implemented in v0.39.0.
 
 Recognize controlled holes, steps, slots, chamfers, and fillets from analytic
 surface evidence and face adjacency. Compare every rule with synthetic

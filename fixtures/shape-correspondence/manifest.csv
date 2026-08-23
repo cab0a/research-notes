@@ -1,0 +1,5 @@
+control_id,file_name,source_bytes,source_sha256,generator,binding_distribution_version,step_processor,writer_status,reader_status,transferred_roots
+asymmetric_prism,asymmetric_prism.step,19435,5c29f5c0c063ca63413d1722ce2b5404badd0c2806a991f9dc189c578a11fc68,experiments/run_shape_correspondence.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+reversed_box,reversed_box.step,15377,74aa7e419a37b8a7012edb9b341ee0b88747cbd7c029f7dca0849553c8c72152,experiments/run_shape_correspondence.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+split_box,split_box.step,24503,0c5831dd613855b963af8f4c1e70cd04516077881350a03f3b62181bb2c61153,experiments/run_shape_correspondence.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+coincident_faces,coincident_faces.step,10725,bd9856b83799b8453b4852d0650f0219d17608d52caddd1352f7fbb045e5c460,experiments/run_shape_correspondence.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

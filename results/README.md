@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、38件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・内殻・空洞・材料島・複合立体、許容差付き縫合、多様体性、接触と交差を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
+このディレクトリには、39件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・内殻・空洞・材料島・複合立体、許容差付き縫合、多様体性、接触・交差、STEP読込・修復前後の面・辺対応を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。v0.39.0は23面・47辺の一意対応、2面・8辺の曖昧性による棄権、修復後の辺の一対一変更・二対一統合・削除を、幾何・隣接面・処理履歴・直接同一性を分離して記録します。これは恒久的な位相同一性や命名ではありません。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1001,6 +1001,54 @@ one component before exchange, then zero shared faces and two components after
 STEP import. These axis-aligned controls do not establish general nonconvex
 containment or cross-translator preservation.
 
+## v0.39.0
+
+- `shape_correspondence_faces.csv` records 56 stage-local face descriptors for
+  four controls at constructed, STEP-imported, and selected healed stages. It
+  retains analytic truth roles for evaluation, support geometry, area,
+  centroid, boundary counts, adjacency degree, and boundary-length signature.
+- `shape_correspondence_candidates.csv` records 37 support-plane, area, and
+  centroid candidate rows. Its selected flag preserves 23 unique STEP-import
+  candidates and ten healing candidates while retaining all four tied
+  coincident-face candidates without selecting them.
+- `shape_correspondence_relations.csv` records 35 source relations: 23 unique
+  STEP-import matches, two explicit ambiguity abstentions, two one-to-one
+  healing relations, and eight many-to-one healing relations. History targets
+  are separate from inferred targets.
+- `shape_correspondence_edges.csv` records 122 stage-local edge descriptors,
+  including curve type, normalized endpoints, length, line support, and
+  incident analysis-local face indices.
+- `shape_correspondence_edge_candidates.csv` records 79 geometry candidates.
+  It separates curve, line-support, endpoint, and length residuals from
+  bidirectional incident-face candidate corroboration and selection.
+- `shape_correspondence_edge_relations.csv` records 75 source relations: 47
+  unique STEP matches, eight ambiguous abstentions, eight one-to-one modified
+  healing relations, eight many-to-one sources in four target groups, and four
+  deleted seams. `Modified`, `Generated`, `IsRemoved`, direct `IsSame`, and
+  direct `IsPartner` evidence are separate columns.
+- `shape_correspondence_summary.csv` records four controls, four fixtures,
+  face and edge relation counts, 35 / 35 and 75 / 75 truth agreement, 10 / 10
+  and 20 / 20 healing-history agreement, direct-identity counts, and maximum
+  selected STEP-import residuals.
+- `shape_correspondence_contract.json` records fixture hashes, controlled
+  expectations, geometry-inference policy, nonpersistent local indices, and the
+  statement that regression gates are not general CAD tolerances.
+- `shape_correspondence.png` compares resolved relation classes and selected
+  STEP-import residuals.
+- `shape_correspondence_shapes.png` previews the four synthetic planar controls
+  and the intended split, reversal, and ambiguity conditions.
+
+The selected STEP-import face matches have a maximum relative area residual of
+`7.35e-14` and maximum centroid distance of `5.00e-13`. Selected edge matches
+have maximum relative length, endpoint-pair, and line-support residuals of
+`1.99e-16`, `1.00e-12`, and `1.49e-12`. Healing changes the split box from 10
+faces and 20 edges to 6 faces and 12 edges. Operation history contains 16
+modified items, no generated items, and four removed sources; all 20 healing
+edge relations agree. Direct native identity was checked for all 75 edge
+sources, with no `IsSame` or `IsPartner` relation. These fixture-specific
+claims do not establish persistent naming, semantic provenance, STEP-carried
+history, or design-history recovery.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1042,6 +1090,7 @@ python experiments/run_shell_solid_validity.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
+python experiments/run_shape_correspondence.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
