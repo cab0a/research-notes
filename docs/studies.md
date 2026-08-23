@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目、外周・内周・切り取り・面反転・縮退辺を扱う34件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
+本書は、ぼけ指標、局所評価、前処理、JPEG圧縮、デコーダー差、色管理、メタデータの解釈・保持・資源上限・信頼境界、STEP Part 21の交換構造・統合原文モデル・版別構文適合性・B-rep位相、EXPRESSの字句・構文・意味グラフ、STEP実体検証、物理参照グラフ照会、AP242製品・組立経路、形状計算核選定、解析式と比較した面・辺・外周・内周・切り取りに加え、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積を扱う35件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、数値や限定試験データの結果を一般的なしきい値や適合性として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -811,6 +811,39 @@ python -m pip install -e ".[geometry]"
 python experiments/run_wire_trimming_evaluation.py
 ```
 
+### v0.35.0 — Shell and Solid Validity
+
+**Question:** Can shell and solid validity be decomposed into reproducible
+incidence, connectivity, orientation, Euler, volume, and backend claims before
+and after STEP exchange?
+
+**Representative finding:** All fourteen stage observations retain their
+controlled V/E/F, face-component, edge-incidence, closure, orientability, and
+Euler values. Generic backend validity nevertheless returns true for the open
+box, one-face-flipped box, and nonmanifold fan. STEP import changes the whole
+reversed box from signed volume `-120` to `+120`, reorients the flipped face,
+splits the nonmanifold fan from one shell into three, and splits two
+disconnected faces from one shell container into two. The valid one-face torus
+demonstrates a closed solid with Euler characteristic `0` and imported volume
+error `6.37e-12` against `18π²`.
+
+- [Complete note](../notes/shell-solid-validity.md)
+- [Whole-shape observations](../results/shell_solid_observations.csv)
+- [Edge incidence](../results/shell_solid_edge_incidence.csv)
+- [Connected components](../results/shell_solid_components.csv)
+- [Per-shell backend reports](../results/shell_validity_observations.csv)
+- [Summary](../results/shell_solid_summary.csv)
+- [Evaluation contract](../results/shell_solid_contract.json)
+- [Figure](../results/shell_solid_validity.png)
+- [Shape preview](../results/shell_solid_shapes.png)
+- [Generated STEP fixtures](../fixtures/shell-solid-validity/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_shell_solid_validity.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -835,6 +868,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.34.0 subsets.
+  controlled v0.21.0 through v0.35.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

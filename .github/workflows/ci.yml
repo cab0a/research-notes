@@ -98,6 +98,8 @@ jobs:
           python experiments/run_edge_curve_evaluation.py --fixture-dir regenerated-fixtures/edge-curve-evaluation --output-dir regenerated-edge-geometry-fixture-results --refresh-fixtures
           python experiments/run_wire_trimming_evaluation.py --output-dir regenerated-results
           python experiments/run_wire_trimming_evaluation.py --fixture-dir regenerated-fixtures/wire-trimming-evaluation --output-dir regenerated-wire-trimming-fixture-results --refresh-fixtures
+          python experiments/run_shell_solid_validity.py --output-dir regenerated-results
+          python experiments/run_shell_solid_validity.py --fixture-dir regenerated-fixtures/shell-solid-validity --output-dir regenerated-shell-solid-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -248,6 +250,12 @@ jobs:
           diff -u results/wire_trimming_classifications.csv regenerated-results/wire_trimming_classifications.csv
           diff -u results/wire_trimming_summary.csv regenerated-results/wire_trimming_summary.csv
           diff -u results/wire_trimming_contract.json regenerated-results/wire_trimming_contract.json
+          diff -u results/shell_solid_observations.csv regenerated-results/shell_solid_observations.csv
+          diff -u results/shell_solid_edge_incidence.csv regenerated-results/shell_solid_edge_incidence.csv
+          diff -u results/shell_solid_components.csv regenerated-results/shell_solid_components.csv
+          diff -u results/shell_validity_observations.csv regenerated-results/shell_validity_observations.csv
+          diff -u results/shell_solid_summary.csv regenerated-results/shell_solid_summary.csv
+          diff -u results/shell_solid_contract.json regenerated-results/shell_solid_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -266,6 +274,7 @@ jobs:
           diff -qr fixtures/evaluated-face-geometry regenerated-fixtures/evaluated-face-geometry
           diff -qr fixtures/edge-curve-evaluation regenerated-fixtures/edge-curve-evaluation
           diff -qr fixtures/wire-trimming-evaluation regenerated-fixtures/wire-trimming-evaluation
+          diff -qr fixtures/shell-solid-validity regenerated-fixtures/shell-solid-validity
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -309,6 +318,8 @@ jobs:
           test -s regenerated-results/edge_curve_evaluation.png
           test -s regenerated-results/wire_trimming_evaluation.png
           test -s regenerated-results/wire_trimming_shapes.png
+          test -s regenerated-results/shell_solid_validity.png
+          test -s regenerated-results/shell_solid_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

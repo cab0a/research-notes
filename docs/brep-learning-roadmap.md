@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.34.0で仕様解析から面幾何、辺曲線、面上曲線、外周・内周、切り取り、面反転、球面極の縮退辺まで実装しました。平面枠では穴による材料領域の減算と境界向きの反転を分離し、球面では三次元曲線を持たない縮退辺が二次元境界を閉じることをSTEP往復で確認します。[能力表](step-brep-capabilities.md)には未対応の曲線境界・壊れた位相・Bスプラインも示します。
+v0.35.0で面・辺・切り取りを経て、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積まで実装しました。一般妥当性が真でも開放・向き不正・非多様体を許す場合と、STEP往復が体積符号、面向き、外殻構成を変える場合を分離します。[能力表](step-brep-capabilities.md)には未対応の頂点近傍・自己交差・許容差付き縫合・修復も示します。
 
 詳細は以下の英語本文に示します。
 
@@ -312,9 +312,20 @@ wires, nested islands, splines, non-manifold uses, and repair remain deferred.
 
 #### v0.35.0 — Shell and Solid Validity
 
-Measure edge incidence, connected components, orientability, closure,
-nonmanifold use, Euler characteristics, and signed-volume consistency. Compare
-independent topology checks with kernel validity reports.
+Completed with an outward box, a whole reversed box, an open box, a
+one-face-flipped box, a three-face nonmanifold fan, a genus-one torus, and two
+disconnected faces. Fourteen constructed and STEP-imported observations match
+independent V/E/F, component, incidence, closure, orientability, and Euler
+truth. Exact box and torus volume magnitudes are admitted only after explicit
+topology and orientation gates.
+
+Answered boundary: generic backend validity is true for the open,
+misoriented, and nonmanifold constructed controls, while shell-specific and
+independent checks retain the distinction. STEP import normalizes the whole
+reversed box from signed volume `-120` to `+120`, reorients one flipped face,
+and splits nonmanifold or disconnected shell containers. Vertex-neighborhood
+manifoldness, self-intersection, nested void shells, tolerance-aware sewing,
+and repair remain deferred.
 
 #### v0.36.0 — Tolerances, Sewing, and Healing Effects
 

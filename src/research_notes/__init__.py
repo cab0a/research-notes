@@ -139,6 +139,20 @@ from research_notes.wire_trimming import (
     probe_wire_trimming,
     wire_trimming_controls,
 )
+from research_notes.shell_solid_validity import (
+    EdgeIncidenceObservation,
+    FaceComponentObservation,
+    KernelShellObservation,
+    ShellSolidControl,
+    ShellSolidFixture,
+    ShellSolidObservation,
+    ShellSolidProbe,
+    analytic_box_volume,
+    analytic_torus_volume,
+    euler_characteristic,
+    probe_shell_solid_validity,
+    shell_solid_controls,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,
@@ -609,4 +623,16 @@ __all__ = [
     "expected_wire_signed_uv_area",
     "probe_wire_trimming",
     "wire_trimming_controls",
+    "EdgeIncidenceObservation",
+    "FaceComponentObservation",
+    "KernelShellObservation",
+    "ShellSolidControl",
+    "ShellSolidFixture",
+    "ShellSolidObservation",
+    "ShellSolidProbe",
+    "analytic_box_volume",
+    "analytic_torus_volume",
+    "euler_characteristic",
+    "probe_shell_solid_validity",
+    "shell_solid_controls",
 ]

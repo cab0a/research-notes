@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.34.0では、外周と穴を持つ平面枠、その反転面、全周円柱面、球面を解析式から生成し、支持曲面と切り取り領域、外周と内周、辺の接続順、面の向き、周期的な継ぎ目、極の縮退辺を分離して評価します。平面枠の面積は `42` のまま、面反転で外周・内周の符号付き媒介変数面積だけが反転しました。球面では三次元曲線を持たない極上の縮退辺2本が二次元境界を閉じることをSTEP再読込後にも確認しました。
+v0.35.0では、正常・反転・開放・1面反転・非多様体・種数1・非連結の7形状を合成し、辺の使用回数、面の連結成分、閉包、向き付け可能性、現在の向き、オイラー標数、符号付き体積を独立に評価します。14件の構築時・STEP再読込時観測で制御した位相値を保持しましたが、一般妥当性が真でも開いた外殻、向き不正、非多様体を許す場合があり、STEP往復は反転立体の体積符号、1面反転、外殻のまとまり方を変えました。
 
-合成データ、CSV・JSON・PNG、213件のテストを備えます。一般的なSTEP適合、任意の曲線境界、壊れた位相、Bスプライン曲線・曲面、修復、形状編集は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、227件のテストを備えます。一般的なSTEP適合、頂点近傍の多様体性、自己交差、許容差付き縫合、修復、形状編集は主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.34.0.
+v0.35.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,46 +53,47 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 34 releases to their questions,
+The [study index](docs/studies.md) maps all 35 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.34.0 study evaluates two planar frames, one full cylinder, and one
-sphere against closed-form truth that does not call the geometry backend. It
-separates support surfaces, trimmed material regions, outer and inner wires,
-ordered edge uses, face orientation, periodic seams, and degenerate pole edges
-before and after STEP exchange.
+The v0.35.0 study evaluates seven analytic shell and solid controls against
+topology and volume truth that does not call the geometry backend. It separates
+edge incidence, face components, closure, orientability, current orientation,
+Euler characteristic, signed volume, generic validity, and shell-specific
+reports before and after STEP exchange.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Analytic controls | independent | Material area, centroid, restricted UV bounds, and signed loop areas are derived with Python arithmetic and `math` |
-| Outer and inner loops | distinguished | The forward planar frame has signed UV areas `+48` and `-6`; face reversal changes them to `-48` and `+6` without changing material area `42` |
-| Ordered wires | closed | All six wires have zero reported defects, topologically identical next vertices, and matching point classifications before and after STEP exchange |
-| Seam representation | retained | Cylinder and sphere each use one seam edge twice at the two periodic U boundaries |
-| Singular boundary | retained | The sphere uses two degenerate pole edges without 3D curves to close its UV boundary |
+| Topology truth | retained | All 14 stage observations match controlled V/E/F, component, incidence, closure, orientability, and Euler values |
+| Valid box and torus | accepted | The box retains volume `120`; the one-face torus has `V=1, E=2, F=1`, Euler characteristic `0`, and volume `18π²` |
+| Generic validity boundary | separated | The open box, one-face-flipped box, and nonmanifold fan return generic analyzer `true` while failing the project's closed-oriented-shell contract |
+| Global orientation | normalized | The whole reversed box retains volume magnitude `120` but changes signed volume from `-120` to `+120` after STEP import |
+| Shell grouping | changed | The nonmanifold fan changes from one to three shells and the disconnected pair from one to two shells while global incidence and component evidence remains visible |
 
-![Wire winding, periodic seams, singular pole boundaries, and numeric checks](results/wire_trimming_evaluation.png)
+![Shell and solid validity layers, topology counts, volumes, and STEP changes](results/shell_solid_validity.png)
 
-These are regression results for one pinned backend and four generated
-analytic faces. The numeric test limits are not universal CAD quality or
-manufacturing thresholds. The study does not repair invalid wires, and it
-does not generalize signed polygon area to arbitrary curved trim loops.
+These are regression results for one pinned backend and seven generated
+controls. The incidence rule does not prove vertex-manifold neighborhoods or
+absence of geometric self-intersection, and the numeric test limits are not
+universal CAD quality or manufacturing thresholds. The study records
+translator changes but does not sew or repair topology.
 
 ## Current STEP and B-Rep Capability
 
 The current implementation is strongest at source-preserving Part 21 parsing,
 bounded EXPRESS and instance validation, physical-reference graphs, and one
 controlled AP242 product and assembly mapping. It can inventory selected
-declared B-Rep topology and evaluate small analytic face, edge, and wire
-corpora, including holes, periodic seams, and sphere-pole degeneracy, but it
-cannot yet evaluate arbitrary trimmed geometry or modify a model.
+declared B-Rep topology and evaluate small analytic face, edge, wire, shell,
+and solid corpora, including controlled invalid cases, but it cannot yet prove
+arbitrary trimmed or self-intersecting geometry or modify a model.
 
 | Capability level | Available now | Not available yet |
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, outer and inner wires, line and circle edges, p-curves, parameter ranges, orientations, periodic seams, and sphere-pole degenerate edges before and after STEP exchange | Arbitrary curved trims, invalid topology, B-splines, shell and solid validity, tessellation, editing, healing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, and seven shell/solid validity controls before and after STEP exchange | Arbitrary curved trims, vertex-manifold and self-intersection proof, B-splines, tolerance-aware sewing, tessellation, editing, healing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -158,6 +159,11 @@ maps each current field to its evidence, exact limitation, and planned release.
   uses, and degenerate pole edges do not establish validity for arbitrary
   curved, nested, self-intersecting, disconnected, non-manifold, or repaired
   boundaries.
+- The shell/solid evaluator covers seven synthetic controls and one pinned
+  backend. Its edge-incidence, component, orientability, Euler, and volume
+  gates do not establish vertex-neighborhood manifoldness, absence of
+  geometric self-intersection, valid nested void shells, or arbitrary-file
+  solid validity.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -197,7 +203,8 @@ confound.
 Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
 AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
-v0.32.0 face-geometry, v0.33.0 edge-geometry, and v0.34.0 wire-trimming studies also write
+v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming, and
+v0.35.0 shell/solid-validity studies also write
 deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
@@ -219,7 +226,8 @@ the v0.28.0 physical-reference graph corpus, the v0.29.0 AP242 product-path
 corpus, the v0.30.0 assembly occurrence and placement corpus, the v0.31.0
 OCCT-generated box round-trip fixture, the v0.32.0 analytic face fixture, and
 the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture, and the
-v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture.
+v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture,
+and the seven v0.35.0 shell/solid validity fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -230,7 +238,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-four published studies with explicit questions, controls, results, and
+- Thirty-five published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -266,6 +274,9 @@ validation evidence.
 - Closed-form material and parameter-domain truth compared with ordered outer
   and inner wires, face reversal, point classification, periodic seams, and
   degenerate sphere-pole edges
+- Independent edge-incidence, face-component, orientation-parity, Euler, and
+  analytic-volume checks compared with generic, shell-specific, and STEP
+  round-trip observations
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -318,6 +329,9 @@ parameter spans, oriented wire traversal, seam branches, and sampled
 surface bounds from face restrictions, unique edges from ordered occurrences,
 outer from inner loops, winding from material classification, and degenerate
 3D geometry from necessary UV boundary topology.
+The shell/solid study then separates incidence closure, orientability, current
+orientation, connectedness, Euler invariants, volume eligibility, generic
+validity, shell-specific failures, and STEP translator normalization.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -340,7 +354,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 213 tests covering blur metrics and models,
+The repository contains 227 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -360,6 +374,10 @@ agreement, oriented vertex-parameter traversal, periodic seams, experiment
 outputs, planar holes, face-reversal winding, support-versus-restriction
 domains, ordered wire closure, UV point classification, sphere-pole
 degeneracy, and cross-platform summary logic.
+The v0.35.0 additions cover independent volume formulas, Euler arithmetic,
+edge-use incidence, connected components, orientation parity, boundary and
+nonmanifold conditions, genus-one topology, shell-specific reports, signed
+volume admission, and deterministic multi-file STEP exchange.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -377,7 +395,8 @@ geometry-kernel-free. v0.31.0 adds an optional pinned OCCT route, v0.32.0
 evaluates three analytic faces, v0.33.0 evaluates controlled edge curves,
 p-curves, parameter ranges, and one seam, and v0.34.0 evaluates outer and
 inner wires, trimming, face reversal, periodic seams, and degenerate pole
-edges on the same Linux x64 reference route. These releases do not claim
+edges. v0.35.0 evaluates seven controlled shell/solid validity conditions on
+the same Linux x64 reference route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -388,8 +407,10 @@ foundation. v0.31.0 selects an optional bounded OCCT route after a reproducible
 technical, packaging, and license-layer comparison. v0.32.0 establishes the
 first independently checked face-geometry contract, v0.33.0 adds edge curves,
 p-curves, parameter ranges, and seams, and v0.34.0 adds ordered outer and inner
-wires, trimming, face reversal, and sphere-pole degeneracy. The roadmap next
-proceeds through shell and solid validity, repair, inspection, modeling, STEP
+wires, trimming, face reversal, and sphere-pole degeneracy. v0.35.0 adds
+layered shell and solid validity, topology invariants, signed-volume gates, and
+STEP normalization evidence. The roadmap next proceeds through tolerance-aware
+sewing and healing, inspection, modeling, STEP
 round trips, feature recognition, and evidence-backed parametric
 reconstruction. v0.40.0
 starts new parameter-driven construction, v0.44.0 targets import-edit-export

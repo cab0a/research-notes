@@ -1,0 +1,15 @@
+platform_label,stage,control_id,condition,observed_shape_type,vertex_count,edge_count,face_count,shell_count,solid_count,face_component_count,boundary_edge_count,boundary_component_count,boundary_degree_violation_count,manifold_pair_edge_count,nonmanifold_edge_count,euler_characteristic,closed_by_incidence,orientable_manifold,current_orientation_consistent,minimum_face_flips,closed_oriented_shell_candidate,topology_matches_control,kernel_analyzer_valid,kernel_signed_volume,analytic_volume_magnitude,volume_contract_eligible,volume_magnitude_absolute_error,volume_sign,kernel_solid_statuses
+linux-x64-reference,constructed,valid_box,closed outward box solid,solid,8,12,6,1,1,1,0,0,0,12,0,2,1,1,1,0,1,1,1,120,120,1,0,positive,BRepCheck_NoError
+linux-x64-reference,step_imported,valid_box,closed outward box solid,solid,8,12,6,1,1,1,0,0,0,12,0,2,1,1,1,0,1,1,1,120,120,1,0,positive,BRepCheck_NoError
+linux-x64-reference,constructed,reversed_box,closed box solid with the whole shape reversed,solid,8,12,6,1,1,1,0,0,0,12,0,2,1,1,1,0,1,1,1,-120,120,1,0,negative,BRepCheck_NoError
+linux-x64-reference,step_imported,reversed_box,closed box solid with the whole shape reversed,solid,8,12,6,1,1,1,0,0,0,12,0,2,1,1,1,0,1,1,1,120,120,1,0,positive,BRepCheck_NoError
+linux-x64-reference,constructed,open_box,box shell with the top face removed,shell,8,12,5,1,0,1,4,1,0,8,0,1,0,1,1,0,0,1,1,96,120,0,,positive,
+linux-x64-reference,step_imported,open_box,box shell with the top face removed,shell,8,12,5,1,0,1,4,1,0,8,0,1,0,1,1,0,0,1,1,96,120,0,,positive,
+linux-x64-reference,constructed,flipped_face_box,closed box shell with one face reversed,shell,8,12,6,1,0,1,0,0,0,12,0,2,1,1,0,1,0,1,1,80,120,0,,positive,
+linux-x64-reference,step_imported,flipped_face_box,closed box shell with one face reversed,shell,8,12,6,1,0,1,0,0,0,12,0,2,1,1,1,0,1,1,1,120,120,1,0,positive,
+linux-x64-reference,constructed,nonmanifold_fan,three triangular faces sharing one edge,shell,5,7,3,1,0,1,6,1,2,0,1,1,0,0,0,,0,1,1,-2.7755575615628914e-17,,0,,zero,
+linux-x64-reference,step_imported,nonmanifold_fan,three triangular faces sharing one edge,compound,5,7,3,3,0,1,6,1,2,0,1,1,0,0,0,,0,1,1,1.8482437802447294e-13,,0,,positive,
+linux-x64-reference,constructed,valid_torus,closed genus-one torus solid,solid,1,2,1,1,1,1,0,0,0,2,0,0,1,1,1,0,1,1,1,177.65287921960845,177.65287921960845,1,0,positive,BRepCheck_NoError
+linux-x64-reference,step_imported,valid_torus,closed genus-one torus solid,solid,1,2,1,1,1,1,0,0,0,2,0,0,1,1,1,0,1,1,1,177.65287921961482,177.65287921960845,1,6.3664629124104977e-12,positive,BRepCheck_NoError
+linux-x64-reference,constructed,disconnected_faces,one shell container holding two disconnected triangular faces,shell,6,6,2,1,0,2,6,2,0,0,0,2,0,1,1,0,0,1,0,0,,0,,zero,
+linux-x64-reference,step_imported,disconnected_faces,one shell container holding two disconnected triangular faces,compound,6,6,2,2,0,2,6,2,0,0,0,2,0,1,1,0,0,1,1,0,,0,,zero,

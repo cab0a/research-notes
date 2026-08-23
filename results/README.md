@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、34件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目、外周・内周・切り取り・面反転・縮退辺、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、35件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面・辺・外周・内周・切り取りに加え、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -870,6 +870,39 @@ sixteen classifications match after STEP import. The imported sphere no
 longer reports the constructed `NaturalRestriction` flag, so that kernel state
 is not claimed as a portable STEP semantic.
 
+## v0.35.0
+
+- `shell_solid_observations.csv` records fourteen whole-shape observations:
+  seven constructed and seven STEP imported. Each row reports V/E/F,
+  shell/solid counts, face components, boundary and nonmanifold incidence,
+  Euler characteristic, orientability, current orientation, minimum face
+  flips, project admission, generic backend validity, and signed volume.
+- `shell_solid_edge_incidence.csv` records every unique edge with oriented use
+  count, unique incident faces, boundary/nonmanifold class, and paired
+  direction evidence.
+- `shell_solid_components.csv` records sixteen connected face components with
+  local V/E/F, Euler, boundary, nonmanifold, and closure values.
+- `shell_validity_observations.csv` keeps every backend shell's closure and
+  orientation status separate from the whole-shape analyzer result.
+- `shell_solid_summary.csv` records the compact independent topology,
+  volume-admission, backend-boundary, and STEP-change findings.
+- `shell_solid_contract.json` is the deterministic
+  `research-notes.shell-solid-validity` version `1.0` truth, exchange,
+  limitation, and open-question contract.
+- `shell_solid_validity.png` compares validity layers, topology counts, signed
+  volumes, and STEP shell regrouping.
+- `shell_solid_shapes.png` renders the valid, reversed, open, misoriented,
+  nonmanifold, genus-one, and disconnected controls for visual inspection.
+
+All fourteen stages retain their controlled topology values. The generic
+analyzer returns true for three constructed controls that fail the project's
+closed-oriented-shell gate: the open box, one-face-flipped box, and
+nonmanifold fan. STEP import changes the reversed box volume sign from `-120`
+to `+120`, reorients the flipped face, splits the nonmanifold fan from one
+shell into three, and splits the disconnected face pair from one shell into
+two. The valid torus retains Euler characteristic `0`; its imported volume
+magnitude differs from `18π²` by `6.37e-12`.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -907,6 +940,7 @@ python experiments/run_geometry_kernel_selection.py
 python experiments/run_evaluated_face_geometry.py
 python experiments/run_edge_curve_evaluation.py
 python experiments/run_wire_trimming_evaluation.py
+python experiments/run_shell_solid_validity.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

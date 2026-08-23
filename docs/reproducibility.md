@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、34件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品・組立経路・形状計算核選定・解析式と比較した面の幾何と公差、辺曲線・面上曲線・媒介変数・継ぎ目、外周・内周・切り取り・面反転・縮退辺を含む検証、互換性境界をまとめています。
+本書は、35件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。最小実験と全実験の実行方法、固定試験データの更新、決定論の範囲、メタデータ方針・資源上限・STEP位相・交換構造・統合原文モデル・版別構文適合性・EXPRESSスキーマモデル・意味グラフ・STEP実体検証・物理参照グラフ照会・AP242製品・組立経路・形状計算核選定・解析式と比較した面・辺・外周・内周・切り取りに加え、外殻・立体の辺使用回数、連結成分、閉包、向き付け、オイラー標数、符号付き体積を含む検証、互換性境界をまとめています。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -110,6 +110,7 @@ python experiments/run_geometry_kernel_selection.py
 python experiments/run_evaluated_face_geometry.py
 python experiments/run_edge_curve_evaluation.py
 python experiments/run_wire_trimming_evaluation.py
+python experiments/run_shell_solid_validity.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -215,6 +216,11 @@ python experiments/run_wire_trimming_evaluation.py \
   --fixture-dir output/fixtures/wire-trimming-evaluation \
   --output-dir output/wire-trimming-evaluation \
   --refresh-fixtures
+
+python experiments/run_shell_solid_validity.py \
+  --fixture-dir output/fixtures/shell-solid-validity \
+  --output-dir output/shell-solid-validity \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -266,6 +272,11 @@ python experiments/run_wire_trimming_evaluation.py \
   formulas define material area, centroid, restricted UV bounds, and signed
   loop areas. Connection order, point classification, seams, pole degeneracy,
   and stage-specific kernel flags are observed separately.
+- The v0.35 shell/solid corpus applies the narrow header normalization to seven
+  separate STEP files. Independent controls define V/E/F, face components,
+  edge incidence, closure, orientability, Euler characteristic, and analytic
+  volume magnitude. Generic analyzer, shell-specific status, signed volume,
+  and STEP reorientation or shell splitting remain separate observations.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -451,7 +462,8 @@ documented by v0.21.0 through v0.30.0. v0.31.0 adds one pinned Linux x64 OCCT
 box round trip, v0.32.0 evaluates three analytic faces, v0.33.0 evaluates
 controlled line and circle edges, p-curves, parameter ranges, and one seam,
 and v0.34.0 evaluates outer and inner wires, face reversal, periodic seams,
-and sphere-pole degeneracy on the same route. None implies complete ISO
+and sphere-pole degeneracy. v0.35.0 evaluates seven shell and solid validity
+conditions on the same route. None implies complete ISO
 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
-redistribution permission, or general trimmed-face, spline, invalid-topology,
-repair, and tolerance validity.
+redistribution permission, or general trimmed-face, spline, vertex-manifold,
+self-intersection, repair, and tolerance validity.

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文、v0.26.0のシンボル・型・継承、v0.27.0のSTEP・EXPRESS検証、v0.28.0の参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立、v0.31.0の形状計算核、v0.32.0の面幾何・公差、v0.33.0の辺曲線・継ぎ目、v0.34.0の外周・内周・切り取り・面反転・縮退辺を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文、v0.26.0のシンボル・型・継承、v0.27.0のSTEP・EXPRESS検証、v0.28.0の参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立、v0.31.0の形状計算核、v0.32.0の面幾何・公差、v0.33.0の辺曲線・継ぎ目、v0.34.0の外周・内周・切り取り・面反転・縮退辺、v0.35.0の外殻・立体の閉包・向き・非多様体・連結性・種数を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -404,6 +404,34 @@ All sixteen point classifications match after import. The sample does not
 cover curved p-curve integration, invalid or self-intersecting wires, nested
 islands, splines, non-manifold uses, repair, or another shape kernel.
 
+## v0.35.0 — Shell and Solid Validity Samples
+
+Directory: [`fixtures/shell-solid-validity/`](../fixtures/shell-solid-validity/)
+
+Manifest: [`manifest.csv`](../fixtures/shell-solid-validity/manifest.csv)
+
+Seven separate STEP files retain one controlled condition per input so that a
+successful import, global topology, shell grouping, and backend validity can be
+compared without relying on spatial matching inside one compound.
+
+| File | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `valid_box.step` | 15,377 | `25ba866189fc0ea901e282dfc620750b086022408cdd438343027ce01b8d3993` | Closed outward genus-zero solid; volume `120` |
+| `reversed_box.step` | 15,403 | `b6df0cb5a01364a3343ac236c6a47208f5a9019fdbdf3284193770fb5aaf4f74` | Whole-solid reversal and signed-volume normalization |
+| `open_box.step` | 13,629 | `96ebf08a0f5f343a5e6ce441db472970b0b1ad0d9ff73c7139f93387ecf44f07` | Four boundary edges and an open-shell report |
+| `flipped_face_box.step` | 15,412 | `b8e8b352ad42c96195d82f73919f6f776964f2bf1fe2b2a3c99696deb4ddec30` | Incidence closure with one inconsistent face orientation |
+| `nonmanifold_fan.step` | 7,751 | `607e98aa4115e5bc434706c45c02be01b1bd23afbf8c8238e7db1d611107ce6f` | Three oriented uses and three incident faces on one edge |
+| `valid_torus.step` | 4,150 | `40b20c6c119b07f98a53d60166ddcbcb41af6fb41edb236a49e09f8b0ad3439a` | Closed genus-one solid with `V=1, E=2, F=1, χ=0` |
+| `disconnected_faces.step` | 6,406 | `797cf27124a62cac6edeaaf0860a694b2c9449f03e788e6cabeac303a026cc8c` | Two disconnected triangular face components |
+
+![Valid, open, misoriented, nonmanifold, genus-one, and disconnected controls](../results/shell_solid_shapes.png)
+
+All global control topology values survive import. Representation details do
+not: the reversed solid becomes positive-volume, the flipped face becomes
+consistent, and the nonmanifold and disconnected shell containers are split.
+The fixtures are regression evidence for one writer/reader route, not a
+general invalid-STEP corpus, repair benchmark, or cross-kernel contract.
+
 ## Regeneration
 
 ```bash
@@ -461,6 +489,10 @@ python experiments/run_edge_curve_evaluation.py \
 
 python experiments/run_wire_trimming_evaluation.py \
   --fixture-dir fixtures/wire-trimming-evaluation \
+  --refresh-fixtures
+
+python experiments/run_shell_solid_validity.py \
+  --fixture-dir fixtures/shell-solid-validity \
   --refresh-fixtures
 ```
 
