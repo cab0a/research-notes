@@ -1,0 +1,195 @@
+{
+  "binding_distribution_version": "7.9.3.1.1",
+  "binding_module_version": "7.9.3.1",
+  "controls": [
+    {
+      "analytic_material_volume": 480.0,
+      "condition": "one outer box shell",
+      "control_id": "single_outer_box",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 12,
+      "expected_face_count": 6,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 1,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 8
+    },
+    {
+      "analytic_material_volume": 464.0,
+      "condition": "one centered void inside a box",
+      "control_id": "centered_void_box",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 24,
+      "expected_face_count": 12,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 16
+    },
+    {
+      "analytic_material_volume": 560.0,
+      "condition": "two disjoint voids inside a box",
+      "control_id": "two_void_box",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 36,
+      "expected_face_count": 18,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 3,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 24
+    },
+    {
+      "analytic_material_volume": 464.0,
+      "condition": "inner shell oriented as material",
+      "control_id": "wrong_void_orientation",
+      "expected_constructed_contract": false,
+      "expected_edge_count": 24,
+      "expected_face_count": 12,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 16
+    },
+    {
+      "analytic_material_volume": 464.0,
+      "condition": "reversed shell outside the outer shell",
+      "control_id": "outside_void_shell",
+      "expected_constructed_contract": false,
+      "expected_edge_count": 24,
+      "expected_face_count": 12,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 16
+    },
+    {
+      "analytic_material_volume": 531.0,
+      "condition": "two same-depth void shells overlap",
+      "control_id": "overlapping_void_shells",
+      "expected_constructed_contract": false,
+      "expected_edge_count": 36,
+      "expected_face_count": 18,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 3,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 1,
+      "expected_vertex_count": 24
+    },
+    {
+      "analytic_material_volume": 392.0,
+      "condition": "material island represented as a second solid inside a void",
+      "control_id": "material_island_compound",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 36,
+      "expected_face_count": 18,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 3,
+      "expected_solid_component_count": 2,
+      "expected_solid_count": 2,
+      "expected_vertex_count": 24
+    },
+    {
+      "analytic_material_volume": 64.0,
+      "condition": "two cells connected by one shared topological face",
+      "control_id": "shared_face_compsolid",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 20,
+      "expected_face_count": 11,
+      "expected_shared_face_count": 1,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 1,
+      "expected_solid_count": 2,
+      "expected_vertex_count": 12
+    },
+    {
+      "analytic_material_volume": 64.0,
+      "condition": "composite-solid container with two disconnected solids",
+      "control_id": "disconnected_compsolid",
+      "expected_constructed_contract": false,
+      "expected_edge_count": 24,
+      "expected_face_count": 12,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 2,
+      "expected_solid_count": 2,
+      "expected_vertex_count": 16
+    },
+    {
+      "analytic_material_volume": 64.0,
+      "condition": "general compound containing two disconnected solids",
+      "control_id": "disjoint_compound",
+      "expected_constructed_contract": true,
+      "expected_edge_count": 24,
+      "expected_face_count": 12,
+      "expected_shared_face_count": 0,
+      "expected_shell_count": 2,
+      "expected_solid_component_count": 2,
+      "expected_solid_count": 2,
+      "expected_vertex_count": 16
+    }
+  ],
+  "platform_label": "linux-x64-reference",
+  "schema_version": "v0.38.0",
+  "summary": [
+    {
+      "metric": "control_count",
+      "scope": "corpus",
+      "value": 10
+    },
+    {
+      "metric": "stage_observation_count",
+      "scope": "corpus",
+      "value": 20
+    },
+    {
+      "metric": "material_region_candidates",
+      "scope": "constructed",
+      "value": 6
+    },
+    {
+      "metric": "candidate_contract_matches",
+      "scope": "constructed",
+      "value": 10
+    },
+    {
+      "metric": "shared_face_count_matches",
+      "scope": "constructed",
+      "value": 10
+    },
+    {
+      "metric": "solid_component_count_matches",
+      "scope": "constructed",
+      "value": 10
+    },
+    {
+      "metric": "material_region_candidates",
+      "scope": "step_imported",
+      "value": 8
+    },
+    {
+      "metric": "kernel_valid_but_contract_false",
+      "scope": "constructed",
+      "value": 2
+    },
+    {
+      "metric": "kernel_valid_but_contract_false",
+      "scope": "step_imported",
+      "value": 2
+    },
+    {
+      "metric": "container_type_changes",
+      "scope": "step_exchange",
+      "value": 5
+    },
+    {
+      "metric": "maximum_volume_absolute_error",
+      "scope": "step_exchange",
+      "value": 32.00000000000006
+    }
+  ]
+}

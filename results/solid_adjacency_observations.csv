@@ -1,0 +1,10 @@
+platform_label,stage,control_id,first_solid_index,second_solid_index,shared_face_count,common_volume,face_adjacent,interiors_overlap
+linux-x64-reference,step_imported,outside_void_shell,1,2,0,0,0,0
+linux-x64-reference,constructed,material_island_compound,1,2,0,0,0,0
+linux-x64-reference,step_imported,material_island_compound,1,2,0,0,0,0
+linux-x64-reference,constructed,shared_face_compsolid,1,2,1,0,1,0
+linux-x64-reference,step_imported,shared_face_compsolid,1,2,0,0,0,0
+linux-x64-reference,constructed,disconnected_compsolid,1,2,0,0,0,0
+linux-x64-reference,step_imported,disconnected_compsolid,1,2,0,0,0,0
+linux-x64-reference,constructed,disjoint_compound,1,2,0,0,0,0
+linux-x64-reference,step_imported,disjoint_compound,1,2,0,0,0,0

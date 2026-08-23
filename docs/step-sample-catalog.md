@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.36.0までの構文・意味・製品構成・面・辺・輪郭線・外殻・立体・許容差付き縫合に加え、v0.37.0の頂点近傍、点・辺・面接触、体積重複、面交差の試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、任意形状の自己交差証明、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.37.0までの構文・意味・製品構成・幾何・位相・多様体性・交差に加え、v0.38.0の外殻、空洞、重複内殻、材料島、複合立体の10試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、任意形状の包含証明、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -493,6 +493,37 @@ proof, persistent topology identity, or independent-kernel agreement. The
 edge and face pairs are intentionally stored inside one aggregate so the
 single-argument checker result is not inferred from two independent calls.
 
+## v0.38.0 — Void, Inner-Shell, and Composite-Solid Samples
+
+Directory: [`fixtures/solid-regions/`](../fixtures/solid-regions/)
+
+Manifest: [`manifest.csv`](../fixtures/solid-regions/manifest.csv)
+
+Ten normalized files separate shell containment and orientation from scalar
+volume, and container type from shared-face connectivity. The manifest records
+exact bytes, hashes, backend versions, STEP processor status, and selected STEP
+solid/shell entity counts.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `single_outer_box.step` | 15,390 | `1dc5a6cca9e43b1deacf23c8283969d060138a9d18ac1988871d83b0d4a1ae7c` | One outer shell and material volume `480` |
+| `centered_void_box.step` | 29,279 | `0d277c1d5e1f297a872bd4e114588bde274a683cb1d4d43c43fa5f1cd0bf7b9a` | One contained, correctly oriented void and material volume `464` |
+| `two_void_box.step` | 43,199 | `76894d5c141082fc14187ac0d708365fab021a8047619fbdd8a7ad95b3b7a37b` | Two disjoint void shells and material volume `560` |
+| `wrong_void_orientation.step` | 29,279 | `b89766e35383371e05589957901ee06ee767b146463721e6abe0058df1505de0` | Correct containment with the wrong inner-shell sign before import |
+| `outside_void_shell.step` | 29,305 | `373443b23873b1ba8bc5189fdd5710e7ce913daeb18b7172a02a52ff7a85b2f9` | Reversed shell outside the body despite constructed volume `464` |
+| `overlapping_void_shells.step` | 43,242 | `a0f9e555825cdc91710c51858169d7ba37c0602bb8c5e8b5dabd0bc5459cfc72` | Two depth-one voids with volume-`9` partial overlap |
+| `material_island_compound.step` | 46,491 | `89ba9609fd4376354cd1db5f4e41bc032841d476bbc0afca5f02ab74222df97a` | A second material solid nested inside a void |
+| `shared_face_compsolid.step` | 32,477 | `b4d61a543036442b8a6bfc66315c5a4d0451a79bfbf85078b02b2257517e7e00` | Connected two-cell composite-solid input whose shared identity is lost on import |
+| `disconnected_compsolid.step` | 32,477 | `29cb8e157efabc7c172bff37faf8a78f7d905465535530154f5650a6bbd4bc89` | Invalid disconnected composite-solid claim |
+| `disjoint_compound.step` | 32,477 | `29cb8e157efabc7c172bff37faf8a78f7d905465535530154f5650a6bbd4bc89` | Generic collection with the same emitted STEP bytes as the disconnected composite-solid control |
+
+![Synthetic void-shell and material-region cross sections](../results/solid_region_shapes.png)
+
+The identical bytes for the disconnected composite solid and generic compound
+show that this writer route does not preserve their original kernel-container
+distinction. The samples do not prove general nonconvex containment or
+cross-translator preservation.
+
 ## Regeneration
 
 ```bash
@@ -562,6 +593,10 @@ python experiments/run_tolerance_sewing_healing.py \
 
 python experiments/run_manifold_self_intersection.py \
   --fixture-dir fixtures/manifold-self-intersection \
+  --refresh-fixtures
+
+python experiments/run_solid_region_evaluation.py \
+  --fixture-dir fixtures/solid-regions \
   --refresh-fixtures
 ```
 

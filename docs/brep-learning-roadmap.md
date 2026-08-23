@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.37.0では、辺使用回数と頂点リンクを分け、全辺を2面が使っても共有頂点近傍が分断される非多様体を検出します。単一集約形状内の辺・面干渉と、別立体間の離隔・接触・重複も次元と測定量で区別します。[能力表](step-brep-capabilities.md)には実装境界と、v0.38.0以降の空洞、形状対応、特徴認識を示します。
+v0.38.0では、外殻と内殻の包含・向き・符号付き体積、材料島、立体間の面共有を10個の合成条件で検証しました。重複空洞では体積の二重減算を検出し、面共有複合立体ではSTEP読込後に共有位相が失われる境界を記録します。[能力表](step-brep-capabilities.md)には実装範囲と、v0.39.0以降の形状対応、特徴認識を示します。
 
 詳細は以下の英語本文に示します。
 
@@ -363,9 +363,20 @@ a general proof for curved, spline, tangent, near-contact, or folded geometry.
 
 #### v0.38.0 — Voids, Inner Shells, and Composite Solids
 
-Construct outer and inner shells, cavities, multiple solids, and nested region
-controls. Verify material-side orientation, containment depth, connected
-regions, and additive or subtractive volume against independently known truth.
+Completed with ten generated controls and 20 constructed/imported stage
+observations. Forty-four shell-role rows, 60 containment rows, and nine solid-
+adjacency rows separate outer and void shells, local and global nesting,
+material islands, partial shell overlap, generic collections, and connected or
+disconnected composite-solid claims. All ten constructed material-candidate,
+shared-face-count, and solid-component-count expectations match.
+
+Answered boundary: both overlapping voids have local depth one and the correct
+orientation, yet their raw signed sum is `522` rather than the independently
+known union-subtracted volume `531`; the partial-overlap gate rejects the
+candidate. The constructed face-connected composite solid has one shared face
+and one solid component, but STEP import returns two components with no shared
+topological face. The result is a bounded axis-aligned-box study in one kernel
+and translator route, not a general containment proof or preservation claim.
 
 #### v0.39.0 — Correspondence Across Import and Healing
 

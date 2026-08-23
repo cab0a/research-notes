@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.37.0では、辺の使用回数だけでなく頂点周囲の接続を調べ、全辺を2面が使っていても共有頂点の近傍が分断された非多様体形状を検出します。また、単一の集約形状内で離れた辺・交差する辺、離れた面・横断する面を比較し、別立体間の点・辺・面接触と体積重複も次元と測定量で区別します。
+v0.38.0では、外殻、空洞、向き不正・外部・重複内殻、空洞内の材料島、面共有・非連結の複合立体を合成し、包含、向き、重複、体積、共有面、連結成分をSTEP再読込前後で比較します。重複空洞は両方が深さ1で向き正常でも、部分重複検査により失格になります。
 
-合成データ、CSV・JSON・PNG、255件のテストを備えます。一般的なSTEP適合、設計意図の回復、製造許容値、曲面や任意形状の多様体性・自己交差証明、任意形状の修復は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、270件のテストを備えます。一般的なSTEP適合、設計意図の回復、製造許容値、非凸・曲面形状の包含判定、任意形状の修復は主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.37.0.
+v0.38.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,38 +53,33 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 37 releases to their questions,
+The [study index](docs/studies.md) maps all 38 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.37.0 study separates edge incidence, vertex-neighborhood topology, and
-geometric relationship dimension. The same observations are collected before
-and after deterministic STEP exchange rather than treating import success or a
-generic validity flag as a manifoldness or intersection proof.
+The v0.38.0 study treats outer shells, void shells, material islands, generic
+compounds, and face-connected composite solids as explicit material-region
+contracts. It separates containment, orientation, partial overlap, analytic
+volume, shared topology, and solid-graph connectivity before and after STEP
+exchange.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Closed tetrahedron | manifold vertex links | Each of four vertex links is one cycle with maximum degree two |
-| Pinched tetrahedra | vertex nonmanifold | Every edge has two face uses, but the shared vertex link has two components |
-| Three-face fan | edge and vertex nonmanifold | One edge has three face uses and both endpoint links branch with degree three |
-| Edges in one aggregate | self-interference boundary | The separated control has no edge/edge interference; the crossing control has one interior intersection point |
-| Box relationships | dimensions `-1` through `3` | A unit gap, point contact, length-`4` edge contact, area-`16` face contact, and volume-`9` overlap remain distinct |
-| Faces in one aggregate | self-interference boundary | The separated control has no face/face interference; transverse faces have one face/face curve of length `2` |
+| Centered void | accepted material region | Correct containment and orientation give volume `464` |
+| Outside reversed shell | rejected despite scalar match | Constructed volume is also `464`, but two local root shells expose containment failure |
+| Overlapping voids | partial-overlap rejection | Both voids retain depth `1` and correct orientation; raw volume `522` differs from analytic material volume `531`, so the overlap gate fails |
+| Wrong void orientation | translator normalization | Constructed volume `496` and orientation failure become imported volume `464` with the gate passing |
+| Shared-face composite solid | adjacency loss | `V=12,E=20,F=11`, one shared face, and one component become `V=16,E=24,F=12`, no shared face, and two components after STEP import |
 
-![Controlled relationship dimension and nonmanifold counts](results/manifold_self_intersection.png)
+![Signed volume, analytic truth, and topology counts](results/solid_regions.png)
 
-These are regression results for one pinned backend and a bounded polyhedral
-corpus. Two face uses per edge are necessary but insufficient for a manifold
-vertex neighborhood, and zero minimum distance does not identify whether the
-relationship is a point, curve, surface, or volume. A bounded single-argument
-self-interference checker (`BOPAlgo_CheckerSI`) adds direct edge/edge and
-face/face evidence, but the result is not a proof for arbitrary curved, spline,
-tangent, near-contact, or folded geometry.
-All 24 whole-shape observations, 14 pair-relation observations, and eight
-single-argument `BOPAlgo_CheckerSI` observations match their controlled contracts at both
-the constructed and STEP-imported stages, with zero recorded measure error in
-the pinned environment.
+These are regression results for one pinned backend and ten axis-aligned
+synthetic controls. The corpus produces 20 main rows, 44 shell-role rows, 60
+containment relations, and nine solid-adjacency rows. All ten constructed
+candidate, shared-face, and component expectations match. A volume or container
+type alone is not proof of a coherent material region, and the result does not
+establish general nonconvex or curved-shell containment.
 
 ## Current STEP and B-Rep Capability
 
@@ -93,15 +88,16 @@ bounded EXPRESS and instance validation, physical-reference graphs, and one
 controlled AP242 product and assembly mapping. It can inventory selected
 declared B-Rep topology and evaluate small analytic face, edge, wire, shell,
 and solid corpora, including controlled invalid cases. It now checks bounded
-polyhedral vertex links and shape-pair contact dimension, but it cannot prove
-arbitrary trimmed or self-intersecting geometry and does not expose a supported
-general modeling or editing API.
+polyhedral vertex links, shape-pair contact dimension, nested void-shell roles,
+partial overlap, and composite-solid adjacency, but it cannot prove arbitrary
+trimmed, self-intersecting, or nonconvex geometry and does not expose a
+supported general modeling or editing API.
 
 | Capability level | Available now | Not available yet |
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and orientation repair, polyhedral vertex links, single-argument edge/face interference, and shape-pair contact dimension | Arbitrary curved or spline manifoldness and self-intersection proof, nested voids, general healing, tessellation, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment and orientation, partial overlap, material islands, and composite-solid adjacency | Arbitrary curved or spline manifoldness, nonconvex containment, general healing, tessellation, editing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -180,6 +176,15 @@ maps each current field to its evidence, exact limitation, and planned release.
 - The single-argument checker controls place two independent edges or faces in
   one aggregate B-Rep. They do not test one parametric curve or one supporting
   surface intersecting itself.
+- The solid-region evaluator uses axis-aligned convex boxes, analytic volumes,
+  bounding-box-derived witnesses, and same-kernel Boolean common volumes. Its
+  complete-volume gate prevents the controlled overlapping voids from being
+  misclassified as containment, but it does not establish general nonconvex,
+  curved, tangent, thin-wall, or arbitrary-depth shell containment.
+- Composite-solid evidence is analysis-local. The selected STEP route loses
+  the shared topological face of the controlled connected composite solid, so
+  neither container type nor geometric coincidence is a persistent cell
+  identity.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -220,9 +225,9 @@ Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
 AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
 v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
-v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, and v0.37.0
-manifoldness/self-intersection studies also write deterministic versioned JSON
-records.
+v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
+manifoldness/self-intersection, and v0.38.0 solid-region studies also write
+deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -246,7 +251,7 @@ the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture, and the
 v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture,
 the seven v0.35.0 shell/solid validity fixtures, the ten v0.36.0
 tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
-intersection fixtures.
+intersection fixtures, and the ten v0.38.0 solid-region fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -257,7 +262,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-seven published studies with explicit questions, controls, results, and
+- Thirty-eight published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -300,6 +305,9 @@ validation evidence.
   interference, minimum-distance, common-part, section, and relationship-
   dimension observations for controlled manifold, contact, overlap, and
   crossing cases
+- Explicit shell-role, full-volume containment, orientation, partial-overlap,
+  material-island, shared-face, and solid-component contracts for controlled
+  void and composite-solid models
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -361,6 +369,10 @@ intersection study then separates edge-use incidence, vertex-link topology,
 minimum distance, common-part dimension, section evidence, and application-
 dependent contact policy, while a bounded single-argument checker records
 edge/edge, edge/face, and face/face interference counts separately.
+The solid-region study then separates local and global shell depth, orientation,
+complete containment, partial overlap, analytic material volume, shared
+topological faces, and solid-adjacency components from kernel validity and
+container type.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -383,7 +395,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 255 tests covering blur metrics and models,
+The repository contains 270 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -416,6 +428,10 @@ vertex nonmanifold controls, disjoint and zero-distance contacts, common-part
 dimension and measure, single-argument edge/edge and face/face interference,
 transverse face sections, STEP-stage preservation, and byte-deterministic
 fixtures.
+The v0.38.0 additions cover local and global shell roles, complete-volume
+containment, orientation parity, sibling-shell partial overlap, analytic
+material volume, material islands, shared-face adjacency, composite-solid
+connectivity, constructed expectation matches, and STEP container drift.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -434,9 +450,10 @@ evaluates three analytic faces, v0.33.0 evaluates controlled edge curves,
 p-curves, parameter ranges, and one seam, and v0.34.0 evaluates outer and
 inner wires, trimming, face reversal, periodic seams, and degenerate pole
 edges. v0.35.0 evaluates seven controlled shell/solid validity conditions,
-v0.36.0 evaluates controlled sewing and orientation repair, and v0.37.0
-evaluates bounded polyhedral vertex links and geometric relationship dimensions
-on the same Linux x64 reference route. These releases do not claim
+v0.36.0 evaluates controlled sewing and orientation repair, v0.37.0 evaluates
+bounded polyhedral vertex links and geometric relationship dimensions, and
+v0.38.0 evaluates ten void-shell and composite-solid controls on the same Linux
+x64 reference route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -452,8 +469,9 @@ layered shell and solid validity, topology invariants, signed-volume gates, and
 STEP normalization evidence, and v0.36.0 adds tolerance-mediated sewing,
 auditable orientation repair, and explicit invalid repair controls. v0.37.0
 adds vertex-neighborhood manifoldness and separates geometric contact from
-overlap and crossing. The roadmap next proceeds through nested solid regions,
-face correspondence, feature recognition, modeling, STEP round trips, and
+overlap and crossing. v0.38.0 adds shell-role, containment, overlap, material-
+island, and composite-solid contracts. The roadmap next proceeds through face
+correspondence, feature recognition, modeling, STEP round trips, and
 evidence-backed parametric reconstruction. Future versions target import-edit-export
 round trips, and v0.59.0 begins STEP-to-feature reconstruction candidates.
 Geometry-kernel binary distribution remains a separate license and packaging

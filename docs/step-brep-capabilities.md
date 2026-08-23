@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.37.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けて整理します。v0.36.0までの構文、意味、幾何、位相、許容差付き縫合に加え、四面体で辺使用回数と頂点リンクを比較し、単一の集約形状内の辺・面干渉と、別立体間の離隔、点・辺・面接触、体積重複を区別します。全辺を2面が使うだけでは頂点近傍の多様体性を証明できず、最短距離ゼロだけでも接触と重複を区別できません。曲面や任意形状の多様体性・自己交差証明、空洞と内殻、読込・修復前後の形状対応、一般的な修復、形状編集、AIモデルは未実装です。詳細な根拠と予定版は以下の英語本文に示します。
+本書は、v0.38.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。これまでの構文、意味、幾何、位相、多様体性、交差に加え、10個の合成立体で外殻と内殻の包含・向き・符号付き体積、材料島、立体間の面共有を検証しました。重複空洞では向きと深さが正しくても体積の二重減算を防げず、面共有複合立体ではSTEP読込後に共有位相が失われます。任意形状の包含証明、読込・修復前後の形状対応、一般的な修復、形状編集、AIモデルは未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim at
-v0.37.0. It separates syntax recognition, schema validation, physical-reference
+v0.38.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 
@@ -36,16 +36,16 @@ directions, not delivery promises.
 | EXPRESS | Controlled subset | Parse selected declarations and resolve bounded in-document symbols, types, imports, and inheritance | Complete language semantics, external schema loading, or rule execution |
 | Part 21 against EXPRESS | Controlled subset | Bind selected DATA sections to controlled schemas and check selected entity parameters | Full EXPRESS validation or AP242 conformance |
 | Physical reference graph | Implemented | Query local and nonlocal reference occurrences with source provenance and explicit traversal budgets | Product, assembly, topology, or geometry meaning without another semantic layer |
-| B-Rep topology | Controlled subset | Inventory selected declarations; evaluate shell/solid invariants and tolerance-mediated sewing; and compare edge incidence with combinatorial vertex links for bounded polyhedral controls | General curved or arbitrary vertex-manifold, self-intersection, nested-shell, or repair validity |
+| B-Rep topology | Controlled subset | Inventory selected declarations; evaluate shell/solid invariants, tolerance-mediated sewing, vertex links, shell containment, material-side orientation, and solid face adjacency for bounded controls | General curved or arbitrary vertex-manifold, self-intersection, nonconvex containment, nested material regions, or repair validity |
 | AP242 product paths | Controlled subset | Resolve one exact schema identifier through selected product, shape, representation, item, context, and unit roles | AP203/AP214 portability, complete AP242 coverage, or geometric validity |
 | AP242 assemblies | Controlled subset | Separate definitions from occurrences, evaluate selected rigid placements, compose nested paths, and normalize supported length units | Arbitrary transformation operators, all unit forms, moved B-Rep evaluation, or persistent CAD identity |
-| Geometry backend | Research evidence | One optional pinned OCCT route constructs, evaluates, sews, selectively reorients, intersects, writes, and reads small analytic and polyhedral corpora headlessly | Arbitrary trimmed geometry, independent-kernel validation, cross-platform portability, redistribution approval, general healing, or general STEP compatibility |
+| Geometry backend | Research evidence | One optional pinned OCCT route constructs, evaluates, sews, selectively reorients, intersects, classifies shell containment, writes, and reads small analytic and polyhedral corpora headlessly | Arbitrary trimmed geometry, independent-kernel validation, cross-platform portability, redistribution approval, general healing, or general STEP compatibility |
 | Evaluated face geometry | Controlled subset | Closed-form truth checks planar frames, cylindrical faces, and a sphere, including holes, face reversal, restrictions, and point classification before and after STEP exchange | Arbitrary curved trims, invalid loops, splines, shell-relative outwardness, and general tolerance validity |
 | Evaluated edge and wire geometry | Controlled subset | Closed-form truth checks line and circle edges, p-curves, parameter spans, ordered outer and inner wires, periodic seams, and sphere-pole degenerate edges before and after STEP exchange | Splines, curved-loop integration, invalid or nested loops, non-manifold uses, adaptive checks, and general repair validity |
-| Evaluated shell and solid validity | Controlled subset | Seven validity conditions compare independent topology and volume gates; separate studies cover a 3-by-3 sewing matrix, targeted orientation repair, and bounded polyhedral vertex-link counterexamples | General curved-shell self-intersection, nested voids, arbitrary geometry, or general repair |
+| Evaluated shell and solid validity | Controlled subset | Seven validity controls, a 3-by-3 sewing matrix, bounded vertex-link counterexamples, and ten material-region controls separate topology, containment, orientation, partial overlap, volume, and composite-solid connectivity | General curved-shell self-intersection, nonconvex containment, arbitrary nesting depth, arbitrary geometry, or general repair |
 | Vertex manifoldness and geometric relationships | Controlled subset | Vertex-link components and degree classify generated tetrahedral neighborhoods; one-argument interference records cover separated/crossing edges and faces; minimum distance, common parts, and sections distinguish disjoint, point, curve, surface, and volume relations | Arbitrary curved or spline shapes, tangent or near-contact cases, tolerance policy, and independent-kernel proof |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | The v0.31 through v0.37 experiments construct bounded analytic and polyhedral controls and apply selected sewing, repair, common-part, and section operations for exchange studies | A supported modeling API, parameter editing, sketches, sweeps, general Boolean modeling, general healing, and evaluated export preservation |
+| Geometry modeling | Research evidence | The v0.31 through v0.38 experiments construct bounded analytic and polyhedral controls and apply selected sewing, repair, common-part, section, shell-nesting, and cell-adjacency operations for exchange studies | A supported modeling API, parameter editing, sketches, sweeps, general Boolean modeling, general healing, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -113,8 +113,8 @@ values are declared parameters, not independently evaluated geometric facts.
 | --- | --- | --- | --- | --- |
 | Faces | Partial | The dependency-free parser reports selected declarations and ownership; the optional backend evaluates four controlled trimmed faces with outer/inner loops, restrictions, area, centroid, orientation, and point classification | A unified arbitrary-file report, curved or invalid trims, shell-relative outwardness, and general tolerance validity | [`wire_trimming_face_observations.csv`](../results/wire_trimming_face_observations.csv) |
 | Edges | Partial | The dependency-free parser reports endpoint IDs, declared curve type, uses, incident faces, and incidence; the optional controlled backend reports evaluated line/circle type, length, parameter range, oriented vertex parameters, p-curves, seams, and sphere-pole degeneracy | A unified arbitrary-file report, splines, general singularities, and general consistency policy | [`wire_trimming_edge_uses.csv`](../results/wire_trimming_edge_uses.csv) |
-| Shells | Controlled subset | Declared membership, seven validity controls, a 3-by-3 box-gap sewing matrix, and tetrahedral vertex-link controls separate edge incidence, vertex neighborhoods, closure, orientation, tolerances, and backend status | Curved or degenerate vertex neighborhoods, general self-intersection, nested shells, arbitrary geometry, and general healing | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv), [`tolerance_sewing_observations.csv`](../results/tolerance_sewing_observations.csv), [`manifold_intersection_observations.csv`](../results/manifold_intersection_observations.csv) |
-| Solids | Controlled subset | Outer-shell structure plus box and torus controls with signed volume, analytic magnitude, eligibility gates, generic validity, and STEP-stage comparison | General void shells, centroid, inertia, containment, arbitrary geometry, and cross-kernel validity | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv) |
+| Shells | Controlled subset | Declared membership, seven validity controls, a 3-by-3 box-gap sewing matrix, tetrahedral vertex links, and 44 shell-role observations separate incidence, neighborhoods, closure, orientation, tolerances, containment depth, and backend status | Curved or degenerate neighborhoods, general self-intersection, nonconvex or unbounded containment, arbitrary nesting, and general healing | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv), [`tolerance_sewing_observations.csv`](../results/tolerance_sewing_observations.csv), [`manifold_intersection_observations.csv`](../results/manifold_intersection_observations.csv), [`shell_role_observations.csv`](../results/shell_role_observations.csv) |
+| Solids | Controlled subset | Box and torus validity controls plus ten material-region controls evaluate signed and analytic volume, void containment, material islands, shared-face adjacency, connected components, container type, and STEP-stage change | General curved or nonconvex voids, centroid, inertia, arbitrary cellular complexes, or cross-kernel validity | [`shell_solid_observations.csv`](../results/shell_solid_observations.csv), [`solid_region_observations.csv`](../results/solid_region_observations.csv), [`solid_adjacency_observations.csv`](../results/solid_adjacency_observations.csv) |
 | Geometric contact and intersection | Controlled subset | Generated shape pairs distinguish disjoint, point, curve, surface, volume-overlap, and transverse-face-crossing relations; four aggregate controls separately record single-argument edge/edge, edge/face, and face/face interference evidence | Self-crossing of one parametric curve or supporting surface, general interference enumeration, curved or tangent cases, tolerance-sensitive near contact, and an application acceptance policy | [`shape_pair_relations.csv`](../results/shape_pair_relations.csv), [`self_intersection_observations.csv`](../results/self_intersection_observations.csv) |
 | Surface declarations | Controlled subset | Plane, cylinder, cone, sphere, torus, and selected B-spline declarations | Evaluation outside the generated catalog or proof that trimming produces a valid face | [`test_step_brep.py`](../tests/test_step_brep.py) |
 | Broken topology routes | Implemented for declared cases | Missing references quarantine, duplicate entity IDs reject, and selected wrong-type relationships quarantine | No broad corrupt-file recovery or healing | [`step_brep_topology_observations.csv`](../results/step_brep_topology_observations.csv) |
@@ -123,14 +123,14 @@ values are declared parameters, not independently evaluated geometric facts.
 ## Face-Level Field Matrix
 
 This table maps the intended face report to the fields that are actually
-available at v0.37.0.
+available at v0.38.0.
 
 | Requested field | Current status | What can be reported now | What is still missing | Planned stage |
 | --- | --- | --- | --- | --- |
 | Analysis-local face index | Implemented | Deterministic `face_index` ordered by Part 21 entity ID | Persistence across export, editing, Boolean operations, or healing | v0.39.0 correspondence study; v0.41.0 report contract retains the local-only warning |
-| Parent solid and shell | Controlled subset | Parent shell and outer-solid entity IDs for selected topology patterns; controlled backend rows separately report shell and solid counts | Complete per-face imported ownership, void-shell ownership, and arbitrary schema mapping | v0.38.0 void ownership; v0.41.0 report contract |
+| Parent solid and shell | Controlled subset | Parent shell and outer-solid entity IDs for selected topology patterns; controlled backend rows report shell and solid counts, while v0.38 rows assign each controlled shell to a solid and infer its outer or void role | Complete per-face imported void-shell ownership and arbitrary schema mapping | v0.38.0 bounded shell-role evidence; v0.41.0 report contract |
 | Surface type | Controlled subset | Declared analytic categories plus kernel classification for controlled planes, cylinders, and one sphere | Kernel classification of arbitrary or nonanalytic support surfaces | Future corpus expansion |
-| Face orientation | Controlled subset | Face reversal flips loop winding; shell-level parity detects one inconsistent box face, and targeted repair distinguishes a valid no-op from the one-face-reversed control | Nested-loop, curved or degenerate nonmanifold vertex neighborhoods, nested-shell material side, and arbitrary imported face correspondence | v0.38.0–v0.39.0 and future corpus expansion |
+| Face orientation | Controlled subset | Face reversal flips loop winding; shell-level parity detects one inconsistent box face; targeted repair handles one reversed face; and v0.38 compares shell volume sign with controlled containment depth | General shell-relative face outwardness, curved or degenerate neighborhoods, arbitrary nested material regions, and imported face correspondence | v0.39.0 correspondence and future corpus expansion |
 | Area | Controlled subset | Exact-surface area agrees with independent truth for rectangular planes, planar holes, cylindrical faces, and one whole sphere | Arbitrary curved trims, splines, invalid or repaired faces | Future corpus expansion |
 | Centroid | Controlled subset | Area centroid agrees with independent plane-hole, cylinder, and sphere formulas | Arbitrary curved trims, splines, invalid or repaired faces | Future corpus expansion |
 | UV bounds | Controlled subset | Restricted and support bounds are separated for planes, a full cylinder, and a whole sphere; periodic seams retain both U branches | Seam-crossing intervals outside the canonical full period and general curved trim-aware bounds | Future corpus expansion |
@@ -161,7 +161,7 @@ available at v0.37.0.
 | Shell and solid validity | Controlled subset | v0.35.0 | Seven controls provide independent incidence, components, orientability, closure, Euler, volume eligibility, signed volume, and generic/shell-specific backend reports; arbitrary topology, vertex manifoldness, self-intersection, nested voids, and repair remain excluded |
 | Tolerance-mediated sewing and targeted orientation repair | Controlled subset | v0.36.0 | Three gaps by three requested tolerances, 17 stage observations, 550 subshape-tolerance rows, positive and negative orientation controls, a rejected tolerance-cap operation, and STEP-stage comparison; no universal threshold or general healing claim |
 | Vertex manifoldness and self-intersection | Controlled subset | v0.37.0 | Twelve controls produce 24 topology, 224 vertex-link, 14 pair-relation, and eight single-argument `BOPAlgo_CheckerSI` observations; all controlled matches hold with zero recorded quantity error, but no arbitrary curved-shape proof follows |
-| Voids, inner shells, and composite solids | Not implemented | v0.38.0 | Material-side orientation, containment depth, multiple regions, and independently known additive or subtractive volume |
+| Voids, inner shells, and composite solids | Controlled subset | v0.38.0 | Ten controls produce 20 main, 44 shell-role, 60 containment, and nine adjacency rows; all constructed candidate, shared-face, and component expectations match, but axis-aligned convex boxes and one STEP route do not establish general containment or composite-solid preservation |
 | Correspondence across import and healing | Not implemented | v0.39.0 | Preserved, changed, split, merged, unmatched, and ambiguous face/edge mappings without a persistent-identity claim |
 | Rule-based feature recognition | Not implemented | v0.40.0 | Holes, steps, slots, chamfers, and fillets compared with synthetic construction truth and false-positive controls |
 | Complete face-level report | Not implemented | v0.41.0 | Evaluated fields, attribution, source provenance, and explicit local identity |
@@ -208,6 +208,9 @@ available at v0.37.0.
   controlled single-argument edge/face interference and disjoint, point-,
   edge-, face-, volume-, and transverse-crossing relationship dimensions and
   measures.
+- Reproduce the v0.38 outer/void-shell roles, containment relations, partial-
+  overlap gate, material-island nesting, and solid face-adjacency graph for ten
+  controlled material-region cases before and after STEP exchange.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -225,6 +228,9 @@ available at v0.37.0.
   healing policy or proof of recovered design intent.
 - Treating the bounded vertex-link and shape-pair results as a general
   self-intersection proof, collision policy, or tolerance threshold.
+- Treating signed volume, containment depth, generic kernel validity, or the
+  top-level container type alone as proof of a valid material region or a
+  preserved composite solid.
 - Editing, tessellating, rendering, or exporting arbitrary production CAD
   models through a supported end-user workflow.
 - Processing untrusted arbitrary STEP files as if resource use or native-code
@@ -257,9 +263,11 @@ python -m pytest \
   tests/test_wire_trimming.py \
   tests/test_shell_solid_validity.py \
   tests/test_tolerance_sewing_healing.py \
-  tests/test_manifold_self_intersection.py
+  tests/test_manifold_self_intersection.py \
+  tests/test_solid_regions.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
+python experiments/run_solid_region_evaluation.py
 ```
 
 The complete generated-input catalog is in the

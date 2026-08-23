@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,control_count,10
+corpus,stage_observation_count,20
+constructed,material_region_candidates,6
+constructed,candidate_contract_matches,10
+constructed,shared_face_count_matches,10
+constructed,solid_component_count_matches,10
+step_imported,material_region_candidates,8
+constructed,kernel_valid_but_contract_false,2
+step_imported,kernel_valid_but_contract_false,2
+step_exchange,container_type_changes,5
+step_exchange,maximum_volume_absolute_error,32.000000000000057

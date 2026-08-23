@@ -176,6 +176,17 @@ from research_notes.manifold_self_intersection import (
     manifold_controls,
     probe_manifold_self_intersection,
 )
+from research_notes.solid_regions import (
+    ShellContainmentObservation,
+    ShellRoleObservation,
+    SolidAdjacencyObservation,
+    SolidRegionControl,
+    SolidRegionFixture,
+    SolidRegionObservation,
+    SolidRegionProbe,
+    probe_solid_regions,
+    solid_region_controls,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,
@@ -677,4 +688,13 @@ __all__ = [
     "VertexLinkObservation",
     "manifold_controls",
     "probe_manifold_self_intersection",
+    "ShellContainmentObservation",
+    "ShellRoleObservation",
+    "SolidAdjacencyObservation",
+    "SolidRegionControl",
+    "SolidRegionFixture",
+    "SolidRegionObservation",
+    "SolidRegionProbe",
+    "probe_solid_regions",
+    "solid_region_controls",
 ]

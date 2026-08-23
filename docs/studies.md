@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、許容差付き縫合に加え、頂点近傍の多様体性と形状間の接触・重複・交差を扱う37件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的なしきい値、製造許容値、設計意図の回復、任意形状の自己交差証明として扱わない境界も示します。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差に加え、空洞、内殻、材料島、複合立体を扱う38件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的な製造許容値、設計意図、任意形状の包含・妥当性証明として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -913,6 +913,41 @@ python -m pip install -e ".[geometry]"
 python experiments/run_manifold_self_intersection.py
 ```
 
+### v0.38.0 — Voids, Inner Shells, and Composite Solids
+
+**Question:** How can outer shells, void shells, material islands, compounds,
+and composite solids be evaluated as explicit material-region claims rather
+than inferred from one container type or volume number?
+
+**Representative finding:** A valid centered void and an invalid outside
+reversed shell both have constructed volume `464`; only containment separates
+them. The overlapping-void control retains two depth-one, correctly oriented
+voids, but raw volume `522` differs from analytic material volume `531` and the
+partial-overlap gate fails. The face-connected composite solid changes from
+`V=12,E=20,F=11`, one shared face, and one component to
+`V=16,E=24,F=12`, no shared face, and two components after STEP import.
+
+All ten constructed material-candidate, shared-face, and component expectations
+match. The committed evidence contains 20 main observations, 44 shell-role
+rows, 60 containment relations, and nine solid-adjacency rows.
+
+- [Complete note](../notes/voids-inner-shells-composite-solids.md)
+- [Main observations](../results/solid_region_observations.csv)
+- [Shell roles](../results/shell_role_observations.csv)
+- [Containment relations](../results/shell_containment_relations.csv)
+- [Solid adjacency](../results/solid_adjacency_observations.csv)
+- [Summary](../results/solid_region_summary.csv)
+- [Evaluation contract](../results/solid_region_contract.json)
+- [Figure](../results/solid_regions.png)
+- [Shape preview](../results/solid_region_shapes.png)
+- [Generated STEP fixtures](../fixtures/solid-regions/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_solid_region_evaluation.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -937,6 +972,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.37.0 subsets.
+  controlled v0.21.0 through v0.38.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

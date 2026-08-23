@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、37件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・立体、許容差付き縫合、辺使用回数、頂点リンク、接触次元、重複、横断交差を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
+このディレクトリには、38件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・内殻・空洞・材料島・複合立体、許容差付き縫合、多様体性、接触と交差を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -969,6 +969,38 @@ edge contact, area-`16` face contact, and volume-`9` overlap. These results are
 bounded polyhedral regressions, not a general self-intersection or collision-
 policy claim.
 
+## v0.38.0
+
+- `solid_region_observations.csv` records 20 constructed and STEP-imported
+  observations for ten material-region controls, including topology, signed and
+  analytic volume, shell gates, solid adjacency, backend validity, and explicit
+  expectation matches.
+- `shell_role_observations.csv` records 44 analysis-local shells with signed
+  volume, deterministic witnesses, local and global containment depth, inferred
+  outer or void role, and orientation agreement.
+- `shell_containment_relations.csv` records 60 directed shell pairs with witness
+  classification, common volume, full-volume coverage, and containment state.
+- `solid_adjacency_observations.csv` records nine solid pairs with shared-face
+  count, common volume, face adjacency, and interior-overlap state.
+- `solid_region_summary.csv` records the control and stage counts, candidate and
+  expectation matches, kernel-valid-but-contract-false counts, container-type
+  changes, and maximum STEP-stage analytic-volume error.
+- `solid_region_contract.json` is the deterministic v0.38.0 control catalog and
+  summary contract for the pinned geometry route.
+- `solid_regions.png` compares signed and analytic volume, material-region gate
+  outcomes, shell roles, and shared-face connectivity.
+- `solid_region_shapes.png` shows cross sections of the ten synthetic shell and
+  solid-region controls.
+
+All ten constructed controls match their declared material-candidate,
+shared-face-count, and solid-component-count expectations. The two overlapping
+voids both retain depth `1` and the expected orientation, but the raw signed
+volume is `522` rather than analytic volume `531`; the partial-overlap gate is
+false. The face-connected composite solid has one shared topological face and
+one component before exchange, then zero shared faces and two components after
+STEP import. These axis-aligned controls do not establish general nonconvex
+containment or cross-translator preservation.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1009,6 +1041,7 @@ python experiments/run_wire_trimming_evaluation.py
 python experiments/run_shell_solid_validity.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
+python experiments/run_solid_region_evaluation.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
