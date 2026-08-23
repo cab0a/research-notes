@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、36件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。画像・JPEG・メタデータ・STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体に加え、隙間と縫合許容差、局所許容差、方向修復、許容差変更の負例を含む検証と互換性境界をまとめています。
+本書は、37件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定した実験条件、CSV・JSON・図、実行環境を再現する手順を定義します。画像・JPEG・メタデータ・STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、許容差付き縫合に加え、辺使用回数、頂点リンク、接触次元、重複、横断交差の検証と互換性境界をまとめています。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -112,6 +112,7 @@ python experiments/run_edge_curve_evaluation.py
 python experiments/run_wire_trimming_evaluation.py
 python experiments/run_shell_solid_validity.py
 python experiments/run_tolerance_sewing_healing.py
+python experiments/run_manifold_self_intersection.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -227,6 +228,11 @@ python experiments/run_tolerance_sewing_healing.py \
   --fixture-dir output/fixtures/tolerance-sewing-healing \
   --output-dir output/tolerance-sewing-healing \
   --refresh-fixtures
+
+python experiments/run_manifold_self_intersection.py \
+  --fixture-dir output/fixtures/manifold-self-intersection \
+  --output-dir output/manifold-self-intersection \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -288,6 +294,13 @@ python experiments/run_tolerance_sewing_healing.py \
   rejected tolerance-cap output. The in-memory operation log is authoritative
   for repair effects because STEP re-import may normalize local tolerance and
   validity state.
+- The v0.37 manifoldness/intersection corpus generates 12 normalized STEP
+  samples for vertex-link topology, single-argument edge/face interference, and
+  geometric relationship controls. Independent topology and measure
+  expectations remain separate from checker, minimum-distance, Boolean common-
+  part, section, and STEP-stage observations. The checker cases aggregate two
+  independent edges or faces; they do not generate one self-crossing
+  parametric curve or supporting surface.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -357,7 +370,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 190 tests cover:
+The 255 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -416,6 +429,17 @@ The 190 tests cover:
 - independent plane and cylinder area, centroid, UV, point, normal, frame, and
   radius truth; constructed and STEP-imported face evaluation; reversed
   orientation; tolerance-stage separation; and deterministic fixture bytes
+- line and circle edge truth, p-curves, parameter spans, oriented uses,
+  periodic seams, ordered wire traversal, planar holes, face reversal,
+  sphere-pole degeneracy, and point classification
+- shell and solid incidence, components, closure, orientability, Euler,
+  signed-volume gates, shell-specific status, and translator normalization
+- requested-versus-stored sewing tolerance, per-subshape inventories,
+  orientation repair, rejected tolerance caps, and geometry-preservation checks
+- vertex-link components and degrees, edge-versus-vertex nonmanifold controls,
+  single-argument edge/edge, edge/face, and face/face interference, geometric
+  contact dimension, common-part measures, section lengths, and STEP-stage
+  preservation
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -441,6 +465,7 @@ The 190 tests cover:
 |   |-- ap242-product-paths/
 |   |-- geometry-kernel-selection/
 |   |-- evaluated-face-geometry/
+|   |-- manifold-self-intersection/
 |   |-- step-graph-queries/
 |   |-- step-express-validation/
 |   |-- step-part21-source-model/
@@ -474,9 +499,10 @@ box round trip, v0.32.0 evaluates three analytic faces, v0.33.0 evaluates
 controlled line and circle edges, p-curves, parameter ranges, and one seam,
 and v0.34.0 evaluates outer and inner wires, face reversal, periodic seams,
 and sphere-pole degeneracy. v0.35.0 evaluates seven shell and solid validity
-conditions, and v0.36.0 evaluates controlled sewing, local tolerance changes,
-and orientation repair on the same route. None implies complete ISO
+conditions, v0.36.0 evaluates controlled sewing, local tolerance changes, and
+orientation repair, and v0.37.0 evaluates bounded polyhedral vertex links and
+shape-pair relationship dimensions on the same route. None implies complete ISO
 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
-redistribution permission, or general trimmed-face, spline, vertex-manifold,
-self-intersection, general repair, manufacturing tolerance, or design-intent
-recovery.
+redistribution permission, or general trimmed-face, spline, curved-shell
+manifoldness, self-intersection, general repair, manufacturing tolerance, or
+design-intent recovery.

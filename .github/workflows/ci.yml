@@ -102,6 +102,8 @@ jobs:
           python experiments/run_shell_solid_validity.py --fixture-dir regenerated-fixtures/shell-solid-validity --output-dir regenerated-shell-solid-fixture-results --refresh-fixtures
           python experiments/run_tolerance_sewing_healing.py --output-dir regenerated-results
           python experiments/run_tolerance_sewing_healing.py --fixture-dir regenerated-fixtures/tolerance-sewing-healing --output-dir regenerated-tolerance-sewing-fixture-results --refresh-fixtures
+          python experiments/run_manifold_self_intersection.py --output-dir regenerated-results
+          python experiments/run_manifold_self_intersection.py --fixture-dir regenerated-fixtures/manifold-self-intersection --output-dir regenerated-manifold-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -263,6 +265,12 @@ jobs:
           diff -u results/tolerance_sewing_operations.csv regenerated-results/tolerance_sewing_operations.csv
           diff -u results/tolerance_sewing_summary.csv regenerated-results/tolerance_sewing_summary.csv
           diff -u results/tolerance_sewing_contract.json regenerated-results/tolerance_sewing_contract.json
+          diff -u results/manifold_intersection_observations.csv regenerated-results/manifold_intersection_observations.csv
+          diff -u results/vertex_link_observations.csv regenerated-results/vertex_link_observations.csv
+          diff -u results/shape_pair_relations.csv regenerated-results/shape_pair_relations.csv
+          diff -u results/self_intersection_observations.csv regenerated-results/self_intersection_observations.csv
+          diff -u results/manifold_intersection_summary.csv regenerated-results/manifold_intersection_summary.csv
+          diff -u results/manifold_intersection_contract.json regenerated-results/manifold_intersection_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -283,6 +291,7 @@ jobs:
           diff -qr fixtures/tolerance-sewing-healing regenerated-fixtures/tolerance-sewing-healing
           diff -qr fixtures/wire-trimming-evaluation regenerated-fixtures/wire-trimming-evaluation
           diff -qr fixtures/shell-solid-validity regenerated-fixtures/shell-solid-validity
+          diff -qr fixtures/manifold-self-intersection regenerated-fixtures/manifold-self-intersection
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -330,6 +339,8 @@ jobs:
           test -s regenerated-results/shell_solid_shapes.png
           test -s regenerated-results/tolerance_sewing_healing.png
           test -s regenerated-results/tolerance_sewing_shapes.png
+          test -s regenerated-results/manifold_self_intersection.png
+          test -s regenerated-results/manifold_self_intersection_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

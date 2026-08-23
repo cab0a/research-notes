@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.36.0では、直方体を構成する独立6面に3段階の隙間を与え、3段階の縫合許容差との全9条件を比較します。隙間 `5e-7` は許容差 `1e-6` 以上、隙間 `5e-5` は `1e-4` だけで閉じましたが、支持平面は移動せず、頂点・辺の局所許容差が増えました。1面反転外殻の方向修復と、許容差を残差未満へ縮小して妥当性を失う負例も記録します。
+v0.37.0では、辺の使用回数だけでなく頂点周囲の接続を調べ、全辺を2面が使っていても共有頂点の近傍が分断された非多様体形状を検出します。また、単一の集約形状内で離れた辺・交差する辺、離れた面・横断する面を比較し、別立体間の点・辺・面接触と体積重複も次元と測定量で区別します。
 
-合成データ、CSV・JSON・PNG、240件のテストを備えます。一般的なSTEP適合、設計意図の回復、製造許容値、頂点近傍の多様体性、自己交差、任意形状の修復は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、255件のテストを備えます。一般的なSTEP適合、設計意図の回復、製造許容値、曲面や任意形状の多様体性・自己交差証明、任意形状の修復は主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.36.0.
+v0.37.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,31 +53,38 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 36 releases to their questions,
+The [study index](docs/studies.md) maps all 37 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.36.0 study crosses three controlled top-face gaps with three requested
-sewing tolerances, then evaluates a targeted orientation repair and an
-intentionally invalid tolerance cap. It separates the operation request from
-stored local tolerances, topology, support-face geometry, generic validity,
-and volume eligibility.
+The v0.37.0 study separates edge incidence, vertex-neighborhood topology, and
+geometric relationship dimension. The same observations are collected before
+and after deterministic STEP exchange rather than treating import success or a
+generic validity flag as a manifoldness or intersection proof.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Coincident boundaries | closed at all requests | Gap `0` closes for `1e-7`, `1e-6`, and `1e-4` |
-| Small gap | threshold crossed | Gap `5e-7` is open at `1e-7` and closed at larger requests |
-| Large gap | threshold crossed | Gap `5e-5` closes only at `1e-4`; maximum stored edge tolerance rises to about `5.25e-5` |
-| Orientation repair | bounded change | The valid shell is a no-op; the one-face-flipped shell changes from one required flip to zero and signed volume `80` to `120` |
-| Tolerance cap | rejected | Reducing the sewn residual tolerance to `1e-5` preserves V/E/F and closure but changes generic validity from true to false |
+| Closed tetrahedron | manifold vertex links | Each of four vertex links is one cycle with maximum degree two |
+| Pinched tetrahedra | vertex nonmanifold | Every edge has two face uses, but the shared vertex link has two components |
+| Three-face fan | edge and vertex nonmanifold | One edge has three face uses and both endpoint links branch with degree three |
+| Edges in one aggregate | self-interference boundary | The separated control has no edge/edge interference; the crossing control has one interior intersection point |
+| Box relationships | dimensions `-1` through `3` | A unit gap, point contact, length-`4` edge contact, area-`16` face contact, and volume-`9` overlap remain distinct |
+| Faces in one aggregate | self-interference boundary | The separated control has no face/face interference; transverse faces have one face/face curve of length `2` |
 
-![Closure matrix, stored tolerances, free boundaries, and repair decisions](results/tolerance_sewing_healing.png)
+![Controlled relationship dimension and nonmanifold counts](results/manifold_self_intersection.png)
 
-These are regression results for one pinned backend and axis-aligned synthetic
-faces. Closing under tolerance does not prove coincident geometry, recovered
-design intent, or manufacturing acceptability. The numeric requests are model-
-unit controls rather than universal CAD-quality thresholds.
+These are regression results for one pinned backend and a bounded polyhedral
+corpus. Two face uses per edge are necessary but insufficient for a manifold
+vertex neighborhood, and zero minimum distance does not identify whether the
+relationship is a point, curve, surface, or volume. A bounded single-argument
+self-interference checker (`BOPAlgo_CheckerSI`) adds direct edge/edge and
+face/face evidence, but the result is not a proof for arbitrary curved, spline,
+tangent, near-contact, or folded geometry.
+All 24 whole-shape observations, 14 pair-relation observations, and eight
+single-argument `BOPAlgo_CheckerSI` observations match their controlled contracts at both
+the constructed and STEP-imported stages, with zero recorded measure error in
+the pinned environment.
 
 ## Current STEP and B-Rep Capability
 
@@ -85,14 +92,16 @@ The current implementation is strongest at source-preserving Part 21 parsing,
 bounded EXPRESS and instance validation, physical-reference graphs, and one
 controlled AP242 product and assembly mapping. It can inventory selected
 declared B-Rep topology and evaluate small analytic face, edge, wire, shell,
-and solid corpora, including controlled invalid cases, but it cannot yet prove
-arbitrary trimmed or self-intersecting geometry or modify a model.
+and solid corpora, including controlled invalid cases. It now checks bounded
+polyhedral vertex links and shape-pair contact dimension, but it cannot prove
+arbitrary trimmed or self-intersecting geometry and does not expose a supported
+general modeling or editing API.
 
 | Capability level | Available now | Not available yet |
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, and controlled tolerance-mediated sewing and orientation repair | Arbitrary curved trims, vertex-manifold and self-intersection proof, B-splines, general healing, tessellation, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and orientation repair, polyhedral vertex links, single-argument edge/face interference, and shape-pair contact dimension | Arbitrary curved or spline manifoldness and self-intersection proof, nested voids, general healing, tessellation, editing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -160,9 +169,17 @@ maps each current field to its evidence, exact limitation, and planned release.
   boundaries.
 - The shell/solid evaluator covers seven synthetic controls and one pinned
   backend. Its edge-incidence, component, orientability, Euler, and volume
-  gates do not establish vertex-neighborhood manifoldness, absence of
-  geometric self-intersection, valid nested void shells, or arbitrary-file
-  solid validity.
+  gates do not by themselves establish vertex-neighborhood manifoldness,
+  absence of geometric self-intersection, valid nested void shells, or
+  arbitrary-file solid validity.
+- The manifoldness and intersection evaluator uses generated polyhedral
+  tetrahedra, boxes, and planar faces. Its combinatorial links and
+  single-argument checker, common-part, and section measurements do not
+  establish a general curved-shell self-intersection proof, tolerance policy,
+  collision policy, or independent-kernel validation.
+- The single-argument checker controls place two independent edges or faces in
+  one aggregate B-Rep. They do not test one parametric curve or one supporting
+  surface intersecting itself.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -202,9 +219,10 @@ confound.
 Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
 AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
-v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming, and
-v0.35.0 shell/solid-validity and v0.36.0 tolerance/sewing/healing studies also write
-deterministic versioned JSON records.
+v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
+v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, and v0.37.0
+manifoldness/self-intersection studies also write deterministic versioned JSON
+records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -223,11 +241,12 @@ The catalog includes the v0.24.0 Part 21 conformance corpus, the v0.25.0 and
 v0.26.0 EXPRESS corpora, the paired v0.27.0 STEP/EXPRESS validation corpus,
 the v0.28.0 physical-reference graph corpus, the v0.29.0 AP242 product-path
 corpus, the v0.30.0 assembly occurrence and placement corpus, the v0.31.0
-OCCT-generated box round-trip fixture, the v0.32.0 analytic face fixture, and
+OCCT-generated box round-trip fixture, the v0.32.0 analytic face fixture,
 the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture, and the
 v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture,
-the seven v0.35.0 shell/solid validity fixtures, and the ten v0.36.0
-tolerance/sewing/healing fixtures.
+the seven v0.35.0 shell/solid validity fixtures, the ten v0.36.0
+tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
+intersection fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -238,7 +257,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-six published studies with explicit questions, controls, results, and
+- Thirty-seven published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -277,6 +296,10 @@ validation evidence.
 - Independent edge-incidence, face-component, orientation-parity, Euler, and
   analytic-volume checks compared with generic, shell-specific, and STEP
   round-trip observations
+- Combinatorial vertex-link checks paired with single-argument self-
+  interference, minimum-distance, common-part, section, and relationship-
+  dimension observations for controlled manifold, contact, overlap, and
+  crossing cases
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -332,6 +355,12 @@ outer from inner loops, winding from material classification, and degenerate
 The shell/solid study then separates incidence closure, orientability, current
 orientation, connectedness, Euler invariants, volume eligibility, generic
 validity, shell-specific failures, and STEP translator normalization.
+The tolerance/sewing study separates requested and stored tolerance, topology,
+support geometry, repair effects, and STEP normalization. The manifoldness and
+intersection study then separates edge-use incidence, vertex-link topology,
+minimum distance, common-part dimension, section evidence, and application-
+dependent contact policy, while a bounded single-argument checker records
+edge/edge, edge/face, and face/face interference counts separately.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -354,7 +383,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 240 tests covering blur metrics and models,
+The repository contains 255 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -382,6 +411,11 @@ The v0.36.0 additions cover controlled gap/tolerance boundaries, per-subshape
 tolerance inventories, explicit sewing operation logs, orientation-repair
 positive and no-op controls, geometry-preservation checks, and an invalidating
 tolerance-cap negative control.
+The v0.37.0 additions cover vertex-link components and degrees, edge-versus-
+vertex nonmanifold controls, disjoint and zero-distance contacts, common-part
+dimension and measure, single-argument edge/edge and face/face interference,
+transverse face sections, STEP-stage preservation, and byte-deterministic
+fixtures.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -399,9 +433,10 @@ geometry-kernel-free. v0.31.0 adds an optional pinned OCCT route, v0.32.0
 evaluates three analytic faces, v0.33.0 evaluates controlled edge curves,
 p-curves, parameter ranges, and one seam, and v0.34.0 evaluates outer and
 inner wires, trimming, face reversal, periodic seams, and degenerate pole
-edges. v0.35.0 evaluates seven controlled shell/solid validity conditions and
-v0.36.0 evaluates controlled sewing and orientation repair on the same Linux
-x64 reference route. These releases do not claim
+edges. v0.35.0 evaluates seven controlled shell/solid validity conditions,
+v0.36.0 evaluates controlled sewing and orientation repair, and v0.37.0
+evaluates bounded polyhedral vertex links and geometric relationship dimensions
+on the same Linux x64 reference route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -415,11 +450,12 @@ p-curves, parameter ranges, and seams, and v0.34.0 adds ordered outer and inner
 wires, trimming, face reversal, and sphere-pole degeneracy. v0.35.0 adds
 layered shell and solid validity, topology invariants, signed-volume gates, and
 STEP normalization evidence, and v0.36.0 adds tolerance-mediated sewing,
-auditable orientation repair, and explicit invalid repair controls. The roadmap
-next proceeds through manifoldness, nested solid regions, face correspondence,
-feature recognition, modeling, STEP round trips, and evidence-backed
-parametric reconstruction. Future versions target import-edit-export
-round trips, and v0.55.0 begins STEP-to-feature reconstruction candidates.
+auditable orientation repair, and explicit invalid repair controls. v0.37.0
+adds vertex-neighborhood manifoldness and separates geometric contact from
+overlap and crossing. The roadmap next proceeds through nested solid regions,
+face correspondence, feature recognition, modeling, STEP round trips, and
+evidence-backed parametric reconstruction. Future versions target import-edit-export
+round trips, and v0.59.0 begins STEP-to-feature reconstruction candidates.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

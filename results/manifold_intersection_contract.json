@@ -1,0 +1,269 @@
+{
+  "binding_distribution_version": "7.9.3.1.1",
+  "binding_module_version": "7.9.3.1",
+  "controls": [
+    {
+      "checker_level": null,
+      "condition": "closed tetrahedron shell",
+      "control_id": "valid_tetrahedron",
+      "expected_contact_dimension": null,
+      "expected_edge_count": 6,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 4,
+      "expected_face_face_interference_count": null,
+      "expected_measure": null,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 4
+    },
+    {
+      "checker_level": null,
+      "condition": "two tetrahedra sharing one topological vertex",
+      "control_id": "pinched_tetrahedra",
+      "expected_contact_dimension": null,
+      "expected_edge_count": 12,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 8,
+      "expected_face_face_interference_count": null,
+      "expected_measure": null,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 1,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 7
+    },
+    {
+      "checker_level": null,
+      "condition": "three triangles sharing one edge",
+      "control_id": "nonmanifold_fan",
+      "expected_contact_dimension": null,
+      "expected_edge_count": 7,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 3,
+      "expected_face_face_interference_count": null,
+      "expected_measure": null,
+      "expected_nonmanifold_edge_count": 1,
+      "expected_nonmanifold_vertex_count": 2,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 5
+    },
+    {
+      "checker_level": 2,
+      "condition": "two independent edges with positive separation in one aggregate B-Rep",
+      "control_id": "separated_edges",
+      "expected_contact_dimension": null,
+      "expected_edge_count": 2,
+      "expected_edge_edge_interference_count": 0,
+      "expected_edge_face_interference_count": 0,
+      "expected_face_count": 0,
+      "expected_face_face_interference_count": 0,
+      "expected_measure": null,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": -1,
+      "expected_self_intersection_quantity": 0.0,
+      "expected_vertex_count": 4
+    },
+    {
+      "checker_level": 2,
+      "condition": "two independent edges crossing at one interior point in one aggregate B-Rep",
+      "control_id": "crossing_edges",
+      "expected_contact_dimension": null,
+      "expected_edge_count": 2,
+      "expected_edge_edge_interference_count": 1,
+      "expected_edge_face_interference_count": 0,
+      "expected_face_count": 0,
+      "expected_face_face_interference_count": 0,
+      "expected_measure": null,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": 0,
+      "expected_self_intersection_quantity": 1.0,
+      "expected_vertex_count": 4
+    },
+    {
+      "checker_level": null,
+      "condition": "two boxes separated by one unit",
+      "control_id": "disjoint_boxes",
+      "expected_contact_dimension": -1,
+      "expected_edge_count": 24,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 12,
+      "expected_face_face_interference_count": null,
+      "expected_measure": 1.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 16
+    },
+    {
+      "checker_level": null,
+      "condition": "two boxes touching at one vertex",
+      "control_id": "vertex_touching_boxes",
+      "expected_contact_dimension": 0,
+      "expected_edge_count": 24,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 12,
+      "expected_face_face_interference_count": null,
+      "expected_measure": 0.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 16
+    },
+    {
+      "checker_level": null,
+      "condition": "two boxes touching along one geometric edge",
+      "control_id": "edge_touching_boxes",
+      "expected_contact_dimension": 1,
+      "expected_edge_count": 24,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 12,
+      "expected_face_face_interference_count": null,
+      "expected_measure": 4.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 16
+    },
+    {
+      "checker_level": null,
+      "condition": "two boxes touching on one geometric face",
+      "control_id": "face_touching_boxes",
+      "expected_contact_dimension": 2,
+      "expected_edge_count": 24,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 12,
+      "expected_face_face_interference_count": null,
+      "expected_measure": 16.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 16
+    },
+    {
+      "checker_level": null,
+      "condition": "two boxes with a nine-unit volumetric overlap",
+      "control_id": "overlapping_boxes",
+      "expected_contact_dimension": 3,
+      "expected_edge_count": 24,
+      "expected_edge_edge_interference_count": null,
+      "expected_edge_face_interference_count": null,
+      "expected_face_count": 12,
+      "expected_face_face_interference_count": null,
+      "expected_measure": 9.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": null,
+      "expected_self_intersection_quantity": null,
+      "expected_vertex_count": 16
+    },
+    {
+      "checker_level": 5,
+      "condition": "two parallel planar faces separated by one unit in one aggregate B-Rep",
+      "control_id": "separated_faces",
+      "expected_contact_dimension": -1,
+      "expected_edge_count": 8,
+      "expected_edge_edge_interference_count": 0,
+      "expected_edge_face_interference_count": 0,
+      "expected_face_count": 2,
+      "expected_face_face_interference_count": 0,
+      "expected_measure": 1.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": -1,
+      "expected_self_intersection_quantity": 0.0,
+      "expected_vertex_count": 8
+    },
+    {
+      "checker_level": 5,
+      "condition": "two independent planar faces crossing in one aggregate B-Rep",
+      "control_id": "crossing_faces",
+      "expected_contact_dimension": 1,
+      "expected_edge_count": 8,
+      "expected_edge_edge_interference_count": 0,
+      "expected_edge_face_interference_count": 2,
+      "expected_face_count": 2,
+      "expected_face_face_interference_count": 1,
+      "expected_measure": 2.0,
+      "expected_nonmanifold_edge_count": 0,
+      "expected_nonmanifold_vertex_count": 0,
+      "expected_self_intersection_dimension": 1,
+      "expected_self_intersection_quantity": 2.0,
+      "expected_vertex_count": 8
+    }
+  ],
+  "platform_label": "linux-x64-reference",
+  "schema_version": "v0.37.0",
+  "summary": [
+    {
+      "metric": "control_count",
+      "scope": "corpus",
+      "value": 12
+    },
+    {
+      "metric": "stage_observation_count",
+      "scope": "corpus",
+      "value": 24
+    },
+    {
+      "metric": "topology_matches",
+      "scope": "constructed",
+      "value": 12
+    },
+    {
+      "metric": "topology_matches",
+      "scope": "step_imported",
+      "value": 12
+    },
+    {
+      "metric": "relationship_matches",
+      "scope": "constructed",
+      "value": 7
+    },
+    {
+      "metric": "relationship_matches",
+      "scope": "step_imported",
+      "value": 7
+    },
+    {
+      "metric": "self_intersection_matches",
+      "scope": "constructed",
+      "value": 4
+    },
+    {
+      "metric": "self_intersection_matches",
+      "scope": "step_imported",
+      "value": 4
+    },
+    {
+      "metric": "nonmanifold_vertex_observations",
+      "scope": "corpus",
+      "value": 6
+    },
+    {
+      "metric": "maximum_measure_absolute_error",
+      "scope": "corpus",
+      "value": 0.0
+    },
+    {
+      "metric": "maximum_self_intersection_quantity_absolute_error",
+      "scope": "corpus",
+      "value": 0.0
+    }
+  ]
+}

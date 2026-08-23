@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,control_count,12
+corpus,stage_observation_count,24
+constructed,topology_matches,12
+step_imported,topology_matches,12
+constructed,relationship_matches,7
+step_imported,relationship_matches,7
+constructed,self_intersection_matches,4
+step_imported,self_intersection_matches,4
+corpus,nonmanifold_vertex_observations,6
+corpus,maximum_measure_absolute_error,0
+corpus,maximum_self_intersection_quantity_absolute_error,0

@@ -1,0 +1,13 @@
+control_id,file_name,source_bytes,source_sha256,binding_distribution_version,binding_module_version,step_processor,writer_status,reader_status,transferred_roots
+valid_tetrahedron,valid_tetrahedron.step,9415,4f92825f59a9698dc8ad172829f9de6f9594f1dc1b5f744ee7584dc4bf189bfe,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+pinched_tetrahedra,pinched_tetrahedra.step,17196,9e73f0001f81441bdef18f3304b00137bd7ff8b20b2fc5627016a5c84bc4dad7,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+nonmanifold_fan,nonmanifold_fan.step,7734,87bb0c4465282fb4f7b4a656218c247dd530e9e180c22593dffe0f6d69f1f056,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+separated_edges,separated_edges.step,5516,d1b6cff0a56cfd1bc51716ca9163c1a45527fa91c1910941bcf708afa9dbc514,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+crossing_edges,crossing_edges.step,5589,7244fbf7e21ff7f56a64de2a132a8f28db8b2c2d50b6497dca42fd56e9907650,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+disjoint_boxes,disjoint_boxes.step,32477,7e678aa0afba90d1868800c00af3f55fc3c5ec792800c240fd35d751e7a71d7b,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+vertex_touching_boxes,vertex_touching_boxes.step,32477,471ed95b7ed27dae9fbdd5e5f1b8b4b7f300b9d04e819087b96b921f6fee1fa8,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+edge_touching_boxes,edge_touching_boxes.step,32477,d49664ab71807b68a96c9a730af24609809b5511bbc5083b5359cc7ebc403528,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+face_touching_boxes,face_touching_boxes.step,32477,28d662153361dde8b68a8d6b92193c15150c4f4fbe3c89eec54603df355c71f2,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+overlapping_boxes,overlapping_boxes.step,32477,7a13118e3af2438d2773e42e72c6a47bd8950b05a2f91c1c035f4088ddf88d46,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+separated_faces,separated_faces.step,10723,eec3e89b621a43f18b5f25a5d58c1f2ec8da61a6c5a92d4ca89c1ce8d8dc2d1f,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+crossing_faces,crossing_faces.step,10723,19f0260f2ab80fc36b5c43609483b9bb899de9d23546bc7ed82e057cbaa33957,7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

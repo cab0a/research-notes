@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.35.0までの構文・意味・製品構成・面・辺・輪郭線・外殻・立体に加え、v0.36.0の独立面、隙間、縫合結果、方向修復、許容差変更の10試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、設計意図の回復、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.36.0までの構文・意味・製品構成・面・辺・輪郭線・外殻・立体・許容差付き縫合に加え、v0.37.0の頂点近傍、点・辺・面接触、体積重複、面交差の試料を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、任意形状の自己交差証明、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -459,6 +459,40 @@ The two nonzero gaps are deliberately exaggerated in the preview. Exact gap,
 requested tolerance, stored local tolerance, closure, and validity evidence
 remain in the CSV and operation log.
 
+## v0.37.0 — Manifoldness and Self-Intersection Samples
+
+Directory: [`fixtures/manifold-self-intersection/`](../fixtures/manifold-self-intersection/)
+
+Manifest: [`manifest.csv`](../fixtures/manifold-self-intersection/manifest.csv)
+
+The normalized files separate combinatorial vertex neighborhoods from
+geometric relationships between otherwise separate shapes. The manifest binds
+each generated input to its exact bytes, backend versions, STEP processor, and
+reader/writer status.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `valid_tetrahedron.step` | 9,415 | `4f92825f59a9698dc8ad172829f9de6f9594f1dc1b5f744ee7584dc4bf189bfe` | Four closed-manifold vertex links |
+| `pinched_tetrahedra.step` | 17,196 | `9e73f0001f81441bdef18f3304b00137bd7ff8b20b2fc5627016a5c84bc4dad7` | Two face uses per edge but a disconnected shared-vertex link |
+| `nonmanifold_fan.step` | 7,734 | `87bb0c4465282fb4f7b4a656218c247dd530e9e180c22593dffe0f6d69f1f056` | One three-use edge and branching endpoint links |
+| `separated_edges.step` | 5,516 | `d1b6cff0a56cfd1bc51716ca9163c1a45527fa91c1910941bcf708afa9dbc514` | No edge/edge interference in one aggregate B-Rep |
+| `crossing_edges.step` | 5,589 | `7244fbf7e21ff7f56a64de2a132a8f28db8b2c2d50b6497dca42fd56e9907650` | One interior edge/edge interference point in one aggregate B-Rep |
+| `disjoint_boxes.step` | 32,477 | `7e678aa0afba90d1868800c00af3f55fc3c5ec792800c240fd35d751e7a71d7b` | Unit separation with no contact |
+| `vertex_touching_boxes.step` | 32,477 | `471ed95b7ed27dae9fbdd5e5f1b8b4b7f300b9d04e819087b96b921f6fee1fa8` | Zero-dimensional contact |
+| `edge_touching_boxes.step` | 32,477 | `d49664ab71807b68a96c9a730af24609809b5511bbc5083b5359cc7ebc403528` | One-dimensional contact of length `4` |
+| `face_touching_boxes.step` | 32,477 | `28d662153361dde8b68a8d6b92193c15150c4f4fbe3c89eec54603df355c71f2` | Two-dimensional contact of area `16` |
+| `overlapping_boxes.step` | 32,477 | `7a13118e3af2438d2773e42e72c6a47bd8950b05a2f91c1c035f4088ddf88d46` | Three-dimensional common volume `9` |
+| `separated_faces.step` | 10,723 | `eec3e89b621a43f18b5f25a5d58c1f2ec8da61a6c5a92d4ca89c1ce8d8dc2d1f` | No face/face interference and unit separation in one aggregate B-Rep |
+| `crossing_faces.step` | 10,723 | `19f0260f2ab80fc36b5c43609483b9bb899de9d23546bc7ed82e057cbaa33957` | Transverse section edge of length `2` |
+
+![Synthetic geometric relationship and aggregate interference controls](../results/manifold_self_intersection_shapes.png)
+
+The STEP files are inspection and regression samples for one pinned route.
+They do not establish a general contact policy, curved-shell self-intersection
+proof, persistent topology identity, or independent-kernel agreement. The
+edge and face pairs are intentionally stored inside one aggregate so the
+single-argument checker result is not inferred from two independent calls.
+
 ## Regeneration
 
 ```bash
@@ -524,6 +558,10 @@ python experiments/run_shell_solid_validity.py \
 
 python experiments/run_tolerance_sewing_healing.py \
   --fixture-dir fixtures/tolerance-sewing-healing \
+  --refresh-fixtures
+
+python experiments/run_manifold_self_intersection.py \
+  --fixture-dir fixtures/manifold-self-intersection \
   --refresh-fixtures
 ```
 

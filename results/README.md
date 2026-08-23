@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、36件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・立体、隙間と縫合許容差、局所許容差、方向修復、許容差変更による妥当性喪失を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
+このディレクトリには、37件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。画像・JPEG・メタデータ・STEP・EXPRESS・AP242の観測に加え、面・辺・輪郭線・外殻・立体、許容差付き縫合、辺使用回数、頂点リンク、接触次元、重複、横断交差を、CSV・JSON・比較図・ハッシュ付き試験データとして研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -932,6 +932,43 @@ reoriented without topology or support-geometry drift. Capping the large-gap
 result below its residual retains closure but changes native validity from
 true to false, so the completed operation is rejected.
 
+## v0.37.0
+
+- `manifold_intersection_observations.csv` records 24 constructed and
+  STEP-imported topology, edge-incidence, nonmanifold-vertex, relationship,
+  and self-interference contract summaries for 12 controls.
+- `vertex_link_observations.csv` records 224 analysis-local vertices, their
+  incident edges and faces, link arcs, link components, degree counts, and
+  manifold classification.
+- `shape_pair_relations.csv` records 14 pair observations with minimum
+  distance, common-part topology and measures, section topology and measures,
+  contact dimension, relationship, expected measure, and absolute error.
+- `self_intersection_observations.csv` records eight single-argument
+  `BOPAlgo_CheckerSI`
+  observations for four controls at constructed and STEP-imported stages,
+  including checker level, edge/edge, edge/face, and face/face interference
+  counts, point/curve evidence, derived intersection dimension and quantity,
+  and contract matches.
+- `manifold_intersection_summary.csv` records corpus size, stage matches,
+  nonmanifold-vertex observations, and maximum pair and self-intersection
+  quantity errors.
+- `manifold_intersection_contract.json` is the deterministic v0.37.0 control
+  and summary contract for the pinned geometry route.
+- `manifold_self_intersection.png` compares relationship dimension,
+  complementary edge- and vertex-nonmanifold detections, and aggregate
+  self-interference counts.
+- `manifold_self_intersection_shapes.png` shows generated box-contact and
+  aggregate edge/face-interference controls schematically.
+
+The pinched tetrahedra have two face uses per edge but a disconnected link at
+their shared vertex. In one aggregate B-Rep, separated edges have no edge/edge
+interference while crossing edges have one interior point; separated faces
+have no face/face interference while transverse faces have one curve of length
+`2`. Separate box controls distinguish a unit gap, point contact, length-`4`
+edge contact, area-`16` face contact, and volume-`9` overlap. These results are
+bounded polyhedral regressions, not a general self-intersection or collision-
+policy claim.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -971,6 +1008,7 @@ python experiments/run_edge_curve_evaluation.py
 python experiments/run_wire_trimming_evaluation.py
 python experiments/run_shell_solid_validity.py
 python experiments/run_tolerance_sewing_healing.py
+python experiments/run_manifold_self_intersection.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

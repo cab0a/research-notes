@@ -1,0 +1,15 @@
+platform_label,stage,control_id,minimum_distance,common_vertex_count,common_edge_count,common_face_count,common_solid_count,common_length,common_area,common_volume,section_edge_count,section_length,section_enclosed_area,contact_dimension,relationship,expected_measure,measure_absolute_error
+linux-x64-reference,constructed,disjoint_boxes,1,0,0,0,0,0,0,0,0,0,0,-1,disjoint,1,0
+linux-x64-reference,step_imported,disjoint_boxes,1,0,0,0,0,0,0,0,0,0,0,-1,disjoint,1,0
+linux-x64-reference,constructed,vertex_touching_boxes,0,0,0,0,0,0,0,0,0,0,0,0,point_contact,0,0
+linux-x64-reference,step_imported,vertex_touching_boxes,0,0,0,0,0,0,0,0,0,0,0,0,point_contact,0,0
+linux-x64-reference,constructed,edge_touching_boxes,0,0,0,0,0,0,0,0,1,4,0,1,edge_contact,4,0
+linux-x64-reference,step_imported,edge_touching_boxes,0,0,0,0,0,0,0,0,1,4,0,1,edge_contact,4,0
+linux-x64-reference,constructed,face_touching_boxes,0,0,0,0,0,0,0,0,4,16,16,2,face_contact,16,0
+linux-x64-reference,step_imported,face_touching_boxes,0,0,0,0,0,0,0,0,4,16,16,2,face_contact,16,0
+linux-x64-reference,constructed,overlapping_boxes,0,8,12,6,1,56,30,9,6,14,0,3,volume_overlap,9,0
+linux-x64-reference,step_imported,overlapping_boxes,0,8,12,6,1,56,30,9,6,14,0,3,volume_overlap,9,0
+linux-x64-reference,constructed,separated_faces,1,0,0,0,0,0,0,0,0,0,0,-1,disjoint,1,0
+linux-x64-reference,step_imported,separated_faces,1,0,0,0,0,0,0,0,0,0,0,-1,disjoint,1,0
+linux-x64-reference,constructed,crossing_faces,0,0,0,0,0,0,0,0,1,2,0,1,proper_crossing,2,0
+linux-x64-reference,step_imported,crossing_faces,0,0,0,0,0,0,0,0,1,2,0,1,proper_crossing,2,0

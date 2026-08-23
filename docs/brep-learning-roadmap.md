@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.36.0では、直方体6面の隙間と縫合許容差を3水準ずつ組み合わせ、閉包、局所許容差、支持面、向き修復、妥当性を分離して記録しました。縫合による閉包は隙間の除去ではなく、修復も設計意図の回復ではありません。[能力表](step-brep-capabilities.md)には実装境界と、v0.37.0以降の多様体性、自己交差、空洞、形状対応、特徴認識を示します。
+v0.37.0では、辺使用回数と頂点リンクを分け、全辺を2面が使っても共有頂点近傍が分断される非多様体を検出します。単一集約形状内の辺・面干渉と、別立体間の離隔・接触・重複も次元と測定量で区別します。[能力表](step-brep-capabilities.md)には実装境界と、v0.38.0以降の空洞、形状対応、特徴認識を示します。
 
 詳細は以下の英語本文に示します。
 
@@ -346,10 +346,20 @@ the decision record rather than being erased by translator normalization.
 
 #### v0.37.0 — Manifoldness and Self-Intersection
 
-Evaluate vertex neighborhoods in addition to edge incidence, and distinguish
-manifold boundaries, nonmanifold junctions, geometric self-intersection, and
-mere contact. Use paired synthetic controls so a topological identification,
-a tangential touch, and a transverse crossing do not collapse into one status.
+Completed with 12 generated controls and 24 constructed/imported stage
+observations. Tetrahedral vertex links, five box-pair relationships, and
+separated/crossing edge and face aggregates are measured before and after
+deterministic STEP exchange. The pinched pair has two uses on every edge but a
+two-component link at its shared vertex; the three-face fan exposes both a
+three-use edge and branching endpoint links.
+
+Answered boundary: minimum distance zero does not distinguish point, curve,
+surface, or volume contact. Single-argument `BOPAlgo_CheckerSI` evidence records one
+crossing-edge point and one transverse face/face curve while paired negative
+controls remain clear. Common-part and section evidence preserve the
+controlled length `4`, area `16`, volume `9`, and transverse section length
+`2` in the pinned route. The result remains a bounded polyhedral contract, not
+a general proof for curved, spline, tangent, near-contact, or folded geometry.
 
 #### v0.38.0 — Voids, Inner Shells, and Composite Solids
 

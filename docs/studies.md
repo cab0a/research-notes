@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体に加え、隙間と許容差の境界、面の縫合、方向修復、局所許容差の変更を扱う36件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的なしきい値、製造許容値、設計意図の回復として扱わない境界も示します。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、許容差付き縫合に加え、頂点近傍の多様体性と形状間の接触・重複・交差を扱う37件の研究を索引化しています。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付け、限定した合成データの結果を一般的なしきい値、製造許容値、設計意図の回復、任意形状の自己交差証明として扱わない境界も示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -875,6 +875,44 @@ python -m pip install -e ".[geometry]"
 python experiments/run_tolerance_sewing_healing.py
 ```
 
+### v0.37.0 — Manifoldness and Self-Intersection
+
+**Question:** Which explicit checks distinguish edge-manifold incidence,
+manifold vertex neighborhoods, lower-dimensional contact, volumetric overlap,
+and geometric self-intersection?
+
+**Representative finding:** The pinched-tetrahedra control has two face uses
+on every edge but two disconnected link components at its shared vertex, so
+edge incidence alone misses the nonmanifold neighborhood. In one aggregate
+B-Rep, the single-argument checker distinguishes separated edges from one
+interior edge/edge point and separated faces from one transverse face/face
+curve of length `2`. Separate box pairs retain a unit gap, point contact,
+edge-contact length `4`, face-contact area `16`, and overlap volume `9` across
+STEP exchange. These bounded polyhedral results do not establish a general
+curved-shape self-intersection proof.
+
+All 24 whole-shape observations, 14 pair-relation observations, and eight
+single-argument `BOPAlgo_CheckerSI` observations match their controls at both stages. The
+maximum recorded pair-measure and self-intersection-quantity errors are zero in
+the pinned reference environment.
+
+- [Complete note](../notes/manifoldness-self-intersection.md)
+- [Whole-shape observations](../results/manifold_intersection_observations.csv)
+- [Vertex-link observations](../results/vertex_link_observations.csv)
+- [Shape-pair relations](../results/shape_pair_relations.csv)
+- [Single-argument self-interference observations](../results/self_intersection_observations.csv)
+- [Summary](../results/manifold_intersection_summary.csv)
+- [Evaluation contract](../results/manifold_intersection_contract.json)
+- [Figure](../results/manifold_self_intersection.png)
+- [Shape preview](../results/manifold_self_intersection_shapes.png)
+- [Generated STEP fixtures](../fixtures/manifold-self-intersection/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_manifold_self_intersection.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -899,6 +937,6 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.35.0 subsets.
+  controlled v0.21.0 through v0.37.0 subsets.
 
 The complete notes contain the narrower limitations for each experiment.

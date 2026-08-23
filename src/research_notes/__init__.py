@@ -166,6 +166,16 @@ from research_notes.tolerance_sewing_healing import (
     sewing_settings,
     tolerance_sewing_controls,
 )
+from research_notes.manifold_self_intersection import (
+    ManifoldControl,
+    ManifoldObservation,
+    ManifoldProbe,
+    PairRelationObservation,
+    SelfIntersectionObservation,
+    VertexLinkObservation,
+    manifold_controls,
+    probe_manifold_self_intersection,
+)
 from research_notes.step_brep import (
     DEFAULT_STEP_PARSE_LIMITS,
     STEPBRepFixture,
@@ -659,4 +669,12 @@ __all__ = [
     "probe_tolerance_sewing_healing",
     "sewing_settings",
     "tolerance_sewing_controls",
+    "ManifoldControl",
+    "ManifoldObservation",
+    "ManifoldProbe",
+    "PairRelationObservation",
+    "SelfIntersectionObservation",
+    "VertexLinkObservation",
+    "manifold_controls",
+    "probe_manifold_self_intersection",
 ]
