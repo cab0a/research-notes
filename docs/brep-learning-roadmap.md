@@ -6,7 +6,7 @@
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.33.0までに仕様解析から面幾何、辺曲線、面上曲線、媒介変数、円筒の継ぎ目まで実装しました。全周円筒では1本の辺を境界で2回使い、面上では `u=0` と `u=2π` の2本としてSTEP往復後にも扱います。公差は段階と出典を記録し、[能力表](step-brep-capabilities.md)には未対応の一般トリム面・穴・退化辺・Bスプライン曲線も示します。
+v0.34.0で仕様解析から面幾何、辺曲線、面上曲線、外周・内周、切り取り、面反転、球面極の縮退辺まで実装しました。平面枠では穴による材料領域の減算と境界向きの反転を分離し、球面では三次元曲線を持たない縮退辺が二次元境界を閉じることをSTEP往復で確認します。[能力表](step-brep-capabilities.md)には未対応の曲線境界・壊れた位相・Bスプラインも示します。
 
 詳細は以下の英語本文に示します。
 
@@ -298,9 +298,17 @@ splines, adaptive checks, and repair remain deferred.
 
 #### v0.34.0 — Wires, Trimming, and Face Orientation
 
-Evaluate ordered wires, outer and inner loops, holes, reversed uses, periodic
-wrap-around, and degenerate boundaries. Demonstrate why an unbounded support
-surface is not the same object as a trimmed face.
+Completed with two planar frames, one full cylinder, one natural sphere,
+independent material and signed-UV truth, and a deterministic STEP round trip.
+The controls separate ordered wires, outer and inner loops, face reversal,
+periodic seams, support domains, face restrictions, and point classification.
+
+Answered boundary: reversing the planar face flips outer and inner loop signs
+without changing area, centroid, or material classification. The sphere needs
+two degenerate pole edges without 3D curves to close its UV boundary. The
+constructed natural-restriction flag does not survive STEP import, so kernel
+flags remain stage-specific observations. Curved p-curve integration, invalid
+wires, nested islands, splines, non-manifold uses, and repair remain deferred.
 
 #### v0.35.0 — Shell and Solid Validity
 

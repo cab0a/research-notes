@@ -1,0 +1,2 @@
+fixture,file_name,source_bytes,source_sha256,generator,binding_distribution_version,binding_module_version,step_processor
+analytic_trimmed_faces,analytic_trimmed_faces.step,22605,224f0d295a684602264ef82e30b6632041570490b5514788ca90fd9796e47366,"two planar frames, one closed cylinder, and one natural sphere",7.9.3.1.1,7.9.3.1,Open CASCADE STEP processor 7.9

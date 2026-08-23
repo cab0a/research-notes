@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文・未解決スキーマモデル、v0.26.0のシンボル・型・継承グラフ、v0.27.0のSTEP・EXPRESS組合せ検証、v0.28.0の物理参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立出現・配置・単位換算、v0.31.0のOpen CASCADE合成箱STEP往復、v0.32.0の面幾何・向き・公差評価、v0.33.0の辺曲線・面上曲線・媒介変数・円筒継ぎ目評価を収録します。形状には目視用画像、構文や意味経路だけを扱うサンプルには構造・関係図を用いますが、完全なスキーマ適合性、AP242適合性、一般的な幾何妥当性、公差保存、形状計算核間の互換性の証明ではありません。詳細は以下の英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.21.0からv0.24.0までの位相・交換構造・原文モデル・版別構文適合性、v0.25.0のEXPRESS字句・構文、v0.26.0のシンボル・型・継承、v0.27.0のSTEP・EXPRESS検証、v0.28.0の参照グラフ、v0.29.0のAP242製品経路、v0.30.0の組立、v0.31.0の形状計算核、v0.32.0の面幾何・公差、v0.33.0の辺曲線・継ぎ目、v0.34.0の外周・内周・切り取り・面反転・縮退辺を収録します。形状には目視用画像、構文や意味経路には関係図を用いますが、完全なスキーマ・AP242適合性、一般的な幾何妥当性、形状計算核間の互換性の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -375,6 +375,35 @@ and one `SEAM_CURVE` instances. These are writer-specific observations. The
 sample does not cover degenerate edges, singularities, inner wires, spline
 curves, adaptive consistency checks, repair, or another shape kernel.
 
+## v0.34.0 — Wire Trimming and Face Orientation Sample
+
+Directory: [`fixtures/wire-trimming-evaluation/`](../fixtures/wire-trimming-evaluation/)
+
+Manifest: [`manifest.csv`](../fixtures/wire-trimming-evaluation/manifest.csv)
+
+`analytic_trimmed_faces.step` contains two planar frames, one full-period
+cylindrical lateral face, and one natural sphere generated from fixed numeric
+controls. It is the first committed geometry fixture with inner wires and
+degenerate pole edges.
+
+| Face | Construction | Intended visual and numeric evidence |
+| --- | --- | --- |
+| `planar_frame_forward` | Outer `[-4,4] × [-3,3]`, hole `[-1,2] × [-1,1]` | Material area `42`; outer/inner signed UV areas `+48/-6` |
+| `planar_frame_reversed` | Translated copy with the face reversed | The same area and classifications; signed UV areas `-48/+6` |
+| `closed_cylinder` | Radius `2`, U `[0,2π]`, V `[-2,2]` | Three unique edges and four uses because the seam occurs twice |
+| `natural_sphere` | Radius `3`, natural U/V bounds | One seam used twice and two degenerate pole edges without 3D curves |
+
+![Generated planar frames, cylinder, sphere, seams, and poles](../results/wire_trimming_shapes.png)
+
+The [parameter-domain evaluation figure](../results/wire_trimming_evaluation.png)
+separately shows winding direction, signed loop areas, and closure evidence.
+
+The 22,605-byte fixture has SHA-256
+`224f0d295a684602264ef82e30b6632041570490b5514788ca90fd9796e47366`.
+All sixteen point classifications match after import. The sample does not
+cover curved p-curve integration, invalid or self-intersecting wires, nested
+islands, splines, non-manifold uses, repair, or another shape kernel.
+
 ## Regeneration
 
 ```bash
@@ -428,6 +457,10 @@ python experiments/run_evaluated_face_geometry.py \
 
 python experiments/run_edge_curve_evaluation.py \
   --fixture-dir fixtures/edge-curve-evaluation \
+  --refresh-fixtures
+
+python experiments/run_wire_trimming_evaluation.py \
+  --fixture-dir fixtures/wire-trimming-evaluation \
   --refresh-fixtures
 ```
 

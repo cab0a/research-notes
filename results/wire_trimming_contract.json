@@ -1,0 +1,113 @@
+{
+  "claim_boundaries": [
+    "The fixtures contain valid analytic faces, not adversarial, self-intersecting, disconnected, or non-manifold wires.",
+    "Signed UV area is a controlled diagnostic for these line-segment parameter loops, not a general classifier for arbitrary curved p-curves.",
+    "A zero-length three-dimensional edge may remain necessary in the parameter domain at a surface singularity.",
+    "The experiment observes validation statuses and does not invoke wire or face repair.",
+    "Numerical limits apply only to the committed fixtures and pinned OCCT binding."
+  ],
+  "fixture": {
+    "faces": [
+      {
+        "face_id": "planar_frame_forward",
+        "natural_restriction": false,
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "radius": null,
+        "restricted_uv_bounds": [
+          -4.0,
+          4.0,
+          -3.0,
+          3.0
+        ],
+        "reversed": false,
+        "surface_type": "plane"
+      },
+      {
+        "face_id": "planar_frame_reversed",
+        "natural_restriction": false,
+        "origin": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "radius": null,
+        "restricted_uv_bounds": [
+          -4.0,
+          4.0,
+          -3.0,
+          3.0
+        ],
+        "reversed": true,
+        "surface_type": "plane"
+      },
+      {
+        "face_id": "closed_cylinder",
+        "natural_restriction": false,
+        "origin": [
+          25.0,
+          0.0,
+          0.0
+        ],
+        "radius": 2.0,
+        "restricted_uv_bounds": [
+          0.0,
+          6.283185307179586,
+          -2.0,
+          2.0
+        ],
+        "reversed": false,
+        "surface_type": "cylinder"
+      },
+      {
+        "face_id": "natural_sphere",
+        "natural_restriction": true,
+        "origin": [
+          40.0,
+          0.0,
+          0.0
+        ],
+        "radius": 3.0,
+        "restricted_uv_bounds": [
+          0.0,
+          6.283185307179586,
+          -1.5707963267948966,
+          1.5707963267948966
+        ],
+        "reversed": false,
+        "surface_type": "sphere"
+      }
+    ],
+    "file": "analytic_trimmed_faces.step",
+    "sha256": "224f0d295a684602264ef82e30b6632041570490b5514788ca90fd9796e47366"
+  },
+  "observed_exchange_boundary": {
+    "constructed_sphere_natural_restriction": true,
+    "meaning": "NaturalRestriction is observed as a kernel flag, not treated as a portable STEP semantic contract.",
+    "step_imported_sphere_natural_restriction": false
+  },
+  "open_questions": [
+    "Which STEP constructs, if any, should map to a kernel NaturalRestriction flag after import?",
+    "How should curved p-curve loop area and winding be evaluated without flattening accuracy loss?",
+    "Which quarantine policy should handle self-intersections, missing p-curves, and inconsistent outer-loop labels before repair?"
+  ],
+  "release": "v0.34.0",
+  "runtime": {
+    "binding_distribution_version": "7.9.3.1.1",
+    "binding_module_version": "7.9.3.1",
+    "platform_label": "linux-x64-reference",
+    "step_processor": "Open CASCADE STEP processor 7.9"
+  },
+  "schema": "research-notes.wire-trimming-evaluation",
+  "schema_version": "1.0",
+  "truth_contract": [
+    "Face area, centroid, restricted UV bounds, and signed loop areas are derived analytically without calling OCCT.",
+    "The planar inner loop subtracts material; reversing the face changes loop signs but not area, centroid, or point classification.",
+    "Ordered edge uses are evaluated at oriented topological vertex parameters, not assumed to follow ascending curve parameters.",
+    "The cylinder uses one seam edge twice, while the sphere additionally uses two degenerate pole edges without three-dimensional curves.",
+    "Support-surface bounds are reported separately from the finite restriction imposed by face wires."
+  ]
+}

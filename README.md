@@ -2,11 +2,11 @@
 
 ## 日本語概要
 
-このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。[現在の能力表](docs/step-brep-capabilities.md)は実装済み・限定対応・未実装を区別します。
+このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.33.0では、解析式から生成した平面、部分円筒面、全周円筒面を使い、位相的な辺、三次元曲線、面上の二次元曲線、媒介変数範囲、境界での向き、継ぎ目を分離して評価します。各段階で11本の固有辺と12回の境界使用を観測し、全周円筒の1本の継ぎ目辺が二次元では `u=0` と `u=2π` の2本として現れることをSTEP再読込後にも確認しました。
+v0.34.0では、外周と穴を持つ平面枠、その反転面、全周円柱面、球面を解析式から生成し、支持曲面と切り取り領域、外周と内周、辺の接続順、面の向き、周期的な継ぎ目、極の縮退辺を分離して評価します。平面枠の面積は `42` のまま、面反転で外周・内周の符号付き媒介変数面積だけが反転しました。球面では三次元曲線を持たない極上の縮退辺2本が二次元境界を閉じることをSTEP再読込後にも確認しました。
 
-合成データ、CSV・JSON・PNG、200件のテストを備えます。一般的なSTEP適合、任意のトリム面、退化辺、Bスプライン曲線への一般化、形状編集は主張しません。詳細は英語本文に示します。
+合成データ、CSV・JSON・PNG、213件のテストを備えます。一般的なSTEP適合、任意の曲線境界、壊れた位相、Bスプライン曲線・曲面、修復、形状編集は主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,7 +38,7 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, and evaluated B-Rep geometry. The current release is
-v0.33.0.
+v0.34.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -53,46 +53,46 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 33 releases to their questions,
+The [study index](docs/studies.md) maps all 34 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.33.0 study evaluates one plane, one partial cylinder, and one full
-cylindrical face against closed-form boundary truth that does not call the
-geometry backend. It separates unique edge topology, 3D curve geometry,
-p-curves, parameter ranges, oriented wire uses, and seam state before and
-after STEP exchange.
+The v0.34.0 study evaluates two planar frames, one full cylinder, and one
+sphere against closed-form truth that does not call the geometry backend. It
+separates support surfaces, trimmed material regions, outer and inner wires,
+ordered edge uses, face orientation, periodic seams, and degenerate pole edges
+before and after STEP exchange.
 
 | Condition | Observed state | Evidence |
 | --- | --- | --- |
-| Analytic controls | independent | Boundary type, length, parameter span, and UV path are derived with Python arithmetic and `math` |
-| Unique edges and wire uses | distinguished | 11 unique edges become 12 ordered uses because one seam edge appears twice in the full-cylinder boundary |
-| STEP-imported geometry | matched | 11/11 curve types match; maximum length error `3.46e-14`; maximum UV-path error `4.14e-13` |
-| Seam representation | preserved | One axial edge has two p-curve branches at `u=0` and `u=2π` |
-| 3D/p-curve consistency | sampled | Maximum STEP-imported distance is `1.24e-12` across 17 samples per p-curve |
+| Analytic controls | independent | Material area, centroid, restricted UV bounds, and signed loop areas are derived with Python arithmetic and `math` |
+| Outer and inner loops | distinguished | The forward planar frame has signed UV areas `+48` and `-6`; face reversal changes them to `-48` and `+6` without changing material area `42` |
+| Ordered wires | closed | All six wires have zero reported defects, topologically identical next vertices, and matching point classifications before and after STEP exchange |
+| Seam representation | retained | Cylinder and sphere each use one seam edge twice at the two periodic U boundaries |
+| Singular boundary | retained | The sphere uses two degenerate pole edges without 3D curves to close its UV boundary |
 
-![Controlled edge curves, parameter-space seam, and residuals](results/edge_curve_evaluation.png)
+![Wire winding, periodic seams, singular pole boundaries, and numeric checks](results/wire_trimming_evaluation.png)
 
-These are regression results for one pinned backend and three generated
+These are regression results for one pinned backend and four generated
 analytic faces. The numeric test limits are not universal CAD quality or
-manufacturing thresholds. A returned planar p-curve is not assumed to have
-been stored, and the study does not repair any curve or tolerance state.
+manufacturing thresholds. The study does not repair invalid wires, and it
+does not generalize signed polygon area to arbitrary curved trim loops.
 
 ## Current STEP and B-Rep Capability
 
 The current implementation is strongest at source-preserving Part 21 parsing,
 bounded EXPRESS and instance validation, physical-reference graphs, and one
 controlled AP242 product and assembly mapping. It can inventory selected
-declared B-Rep topology and evaluate small analytic face and edge corpora,
-including one cylindrical seam, but it cannot yet evaluate general trimmed
-geometry or modify a model.
+declared B-Rep topology and evaluate small analytic face, edge, and wire
+corpora, including holes, periodic seams, and sphere-pole degeneracy, but it
+cannot yet evaluate arbitrary trimmed geometry or modify a model.
 
 | Capability level | Available now | Not available yet |
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, line and circle edges, p-curves, parameter ranges, orientations, and one cylindrical seam before and after STEP exchange | General trimmed faces, holes, degenerate edges, B-splines, tessellation, editing, healing, or supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, outer and inner wires, line and circle edges, p-curves, parameter ranges, orientations, periodic seams, and sphere-pole degenerate edges before and after STEP exchange | Arbitrary curved trims, invalid topology, B-splines, shell and solid validity, tessellation, editing, healing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -153,6 +153,11 @@ maps each current field to its evidence, exact limitation, and planned release.
   accuracy for arbitrary trimmed, periodic, singular, repaired, or spline
   geometry, and imported face tolerance is not assumed to preserve source
   identity.
+- The wire-trimming evaluator covers two planar frames, one full cylinder, and
+  one sphere. Its signed UV areas, point classifications, closure checks, seam
+  uses, and degenerate pole edges do not establish validity for arbitrary
+  curved, nested, self-intersecting, disconnected, non-manifold, or repaired
+  boundaries.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -192,7 +197,7 @@ confound.
 Each study writes observation-level or trial-level CSV files, compact summary
 tables, and one or more explanatory PNG figures. The v0.28.0 graph, v0.29.0
 AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
-v0.32.0 face-geometry, and v0.33.0 edge-geometry studies also write
+v0.32.0 face-geometry, v0.33.0 edge-geometry, and v0.34.0 wire-trimming studies also write
 deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
@@ -213,7 +218,8 @@ v0.26.0 EXPRESS corpora, the paired v0.27.0 STEP/EXPRESS validation corpus,
 the v0.28.0 physical-reference graph corpus, the v0.29.0 AP242 product-path
 corpus, the v0.30.0 assembly occurrence and placement corpus, the v0.31.0
 OCCT-generated box round-trip fixture, the v0.32.0 analytic face fixture, and
-the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture.
+the v0.33.0 plane, partial-cylinder, and full-cylinder edge fixture, and the
+v0.34.0 planar-frame, closed-cylinder, and natural-sphere trimming fixture.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -224,7 +230,7 @@ validation evidence.
 
 ## Key Features
 
-- Thirty-three published studies with explicit questions, controls, results, and
+- Thirty-four published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -257,6 +263,9 @@ validation evidence.
 - Closed-form boundary truth compared with 3D line and circle curves,
   p-curves, parameter ranges, oriented wire uses, and one periodic cylindrical
   seam
+- Closed-form material and parameter-domain truth compared with ordered outer
+  and inner wires, face reversal, point classification, periodic seams, and
+  degenerate sphere-pole edges
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -305,7 +314,10 @@ The face-geometry study then separates analytic truth, backend observation,
 topological orientation, STEP exchange, and tolerance-stage provenance. The
 edge study additionally separates unique topology, 3D curves, p-curves,
 parameter spans, oriented wire traversal, seam branches, and sampled
-3D-to-surface residuals.
+3D-to-surface residuals. The wire-trimming study further separates support
+surface bounds from face restrictions, unique edges from ordered occurrences,
+outer from inner loops, winding from material classification, and degenerate
+3D geometry from necessary UV boundary topology.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -328,7 +340,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 200 tests covering blur metrics and models,
+The repository contains 213 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -345,7 +357,9 @@ round trips, installed-package audits, analytic plane and cylinder truth,
 evaluated face geometry, orientation and tolerance-stage behavior, versioned
 JSON records, analytic edge lengths and parameter spans, 3D curve and p-curve
 agreement, oriented vertex-parameter traversal, periodic seams, experiment
-outputs, and cross-platform summary logic.
+outputs, planar holes, face-reversal winding, support-versus-restriction
+domains, ordered wire closure, UV point classification, sphere-pole
+degeneracy, and cross-platform summary logic.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -360,10 +374,11 @@ Python 3.11 or newer is required. Python 3.12 and the exact runtime versions in
 apply only to the runner images and bundled codec builds recorded in the
 manifests. The v0.21.0 through v0.30.0 STEP and EXPRESS layers remain
 geometry-kernel-free. v0.31.0 adds an optional pinned OCCT route, v0.32.0
-evaluates three analytic faces, and v0.33.0 evaluates controlled edge curves,
-p-curves, parameter ranges, and one seam on the same Linux x64 reference
-route. These releases do not claim compatibility beyond their controlled
-fixtures or change the parser subset.
+evaluates three analytic faces, v0.33.0 evaluates controlled edge curves,
+p-curves, parameter ranges, and one seam, and v0.34.0 evaluates outer and
+inner wires, trimming, face reversal, periodic seams, and degenerate pole
+edges on the same Linux x64 reference route. These releases do not claim
+compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
 
@@ -371,10 +386,12 @@ The [STEP mastery, Python parser, and 3D tool roadmap](docs/brep-learning-roadma
 makes specification knowledge and a source-preserving Python parser the
 foundation. v0.31.0 selects an optional bounded OCCT route after a reproducible
 technical, packaging, and license-layer comparison. v0.32.0 establishes the
-first independently checked face-geometry contract, and v0.33.0 adds edge
-curves, p-curves, parameter ranges, and seams. The roadmap next proceeds
-through ordered wires, trimming, inspection, modeling, STEP round trips,
-feature recognition, and evidence-backed parametric reconstruction. v0.40.0
+first independently checked face-geometry contract, v0.33.0 adds edge curves,
+p-curves, parameter ranges, and seams, and v0.34.0 adds ordered outer and inner
+wires, trimming, face reversal, and sphere-pole degeneracy. The roadmap next
+proceeds through shell and solid validity, repair, inspection, modeling, STEP
+round trips, feature recognition, and evidence-backed parametric
+reconstruction. v0.40.0
 starts new parameter-driven construction, v0.44.0 targets import-edit-export
 round trips, and v0.55.0 begins STEP-to-feature reconstruction candidates.
 Geometry-kernel binary distribution remains a separate license and packaging

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、33件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
+このディレクトリには、34件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。観測値、集約CSV、JSON、比較図、環境別の復号結果、メタデータの監査・保持・資源上限・信頼境界、STEPの原文モデル・交換構造・版別構文適合性・面・辺・シェル・立体・物理参照グラフ・AP242製品・組立経路、形状計算核候補・STEP往復・導入物監査、解析式と比較した面の幾何・向き・公差、辺曲線・面上曲線・媒介変数・継ぎ目、外周・内周・切り取り・面反転・縮退辺、EXPRESSの字句・構文・スキーマモデル・意味グラフ、STEP実体とEXPRESS属性の検証結果を研究版ごとに対応付けています。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -837,6 +837,39 @@ at `u=0` and `u=2π`. All controlled curve types and parameter spans match; the
 maximum imported p-curve-to-3D-curve distance is `1.24e-12`. This is a fixed
 fixture result, not a universal consistency threshold or repair policy.
 
+## v0.34.0
+
+- `wire_trimming_face_observations.csv` records eight face observations: four
+  constructed and four STEP imported. Each row separates restricted UV bounds
+  from support-surface bounds and reports orientation, area, centroid,
+  periodicity, natural-restriction state, and outer/inner wire counts.
+- `wire_trimming_wire_observations.csv` records twelve ordered loops with role,
+  orientation, occurrence and unique-edge counts, seam and degenerate counts,
+  expected and observed signed UV area, closure gaps, topology identity, and
+  independent backend check statuses.
+- `wire_trimming_edge_uses.csv` records 48 ordered edge occurrences with
+  orientation-aware vertex parameters, p-curve endpoints, next-use closure,
+  seam state, degenerate state, and 3D-curve availability.
+- `wire_trimming_classifications.csv` records 32 observations over sixteen
+  material, void, exterior, and boundary samples at both stages.
+- `wire_trimming_summary.csv` records compact face, wire, classification,
+  validity, numeric-error, and STEP entity-count evidence.
+- `wire_trimming_contract.json` is the deterministic
+  `research-notes.wire-trimming-evaluation` version `1.0` truth, exchange,
+  limitation, and open-question contract.
+- `wire_trimming_evaluation.png` visualizes planar winding, periodic seams,
+  singular pole boundaries, and maximum analytic or closure errors.
+- `wire_trimming_shapes.png` renders the generated planar frames, closed
+  cylinder, sphere, seam locations, and degenerate poles for visual review.
+
+The forward planar frame has signed outer and inner UV areas `+48` and `-6`;
+the reversed face has `-48` and `+6` while both retain material area `42` and
+the same classifications. The sphere uses one seam edge twice plus two
+degenerate pole edges without 3D curves. All six wires remain closed and all
+sixteen classifications match after STEP import. The imported sphere no
+longer reports the constructed `NaturalRestriction` flag, so that kernel state
+is not claimed as a portable STEP semantic.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -873,6 +906,7 @@ python experiments/run_ap242_assembly.py
 python experiments/run_geometry_kernel_selection.py
 python experiments/run_evaluated_face_geometry.py
 python experiments/run_edge_curve_evaluation.py
+python experiments/run_wire_trimming_evaluation.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
