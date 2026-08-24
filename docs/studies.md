@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体、対応追跡、形状特徴候補を扱う40件の研究を索引化しています。v0.40.0は9個の合成形状から穴・段差・溝・面取りらしい形状・丸みらしい形状を検出し、14候補の分類と寸法を真値で検証しました。同じ最終境界を持つ異なる作成経路も比較し、幾何候補から設計意図は復元できないことを明示します。各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体、対応追跡、形状特徴候補を扱う40件の研究を索引化しています。v0.40.0は9個の合成形状から穴・段差・溝・面取りらしい形状・丸みらしい形状を検出し、14候補の分類と寸法を真値で検証しました。同じ最終境界を持つ異なる作成経路も比較し、幾何候補から設計意図は復元できないことを明示します。結果確認用の補助文書を含め、各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1015,6 +1015,8 @@ a controlled geometric-candidate study, not feature-history reconstruction or
 a general B-Rep recognizer.
 
 - [Complete note](../notes/rule-based-brep-feature-recognition.md)
+- [Reader-facing result digest](feature-recognition-results.md)
+- [Complete Japanese-language companion](feature-recognition-results-ja.txt)
 - [Face attributes](../results/feature_face_attributes.csv)
 - [Adjacency evidence](../results/feature_adjacency_edges.csv)
 - [Feature candidates](../results/feature_candidates.csv)

@@ -6,7 +6,7 @@
 
 v0.40.0では、穴、段差、溝、面取りらしい形状、丸みらしい形状を9個の合成形状から規則で検出します。構築時とSTEP再読込時の14候補は分類・寸法とも真値に一致し、負例の誤検出は0件でした。同じ最終境界を持つ処理由来の面取りと直接作成した斜面は2段階とも位相・体積・双方向差分が一致しますが、設計意図を証明できた候補は0件です。
 
-合成データ、CSV・JSON・PNG、298件のテストを備えます。これは限定した幾何候補の認識であり、設計履歴の復元、一般的な特徴認識、製造判断は主張しません。v0.41.0以降は未実装です。詳細は英語本文に示します。
+データ、CSV・JSON・PNG、298件のテストと[v0.40.0の日本語完全版](docs/feature-recognition-results-ja.txt)を収録します。限定した幾何候補の認識であり、設計履歴の復元、一般的な特徴認識、製造判断は主張しません。v0.41.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -76,6 +76,11 @@ synthetic controls both before and after STEP exchange.
 | Candidates proving design intent | 0 |
 
 ![Rule-based geometric feature evidence](results/feature_recognition.png)
+
+The [v0.40.0 result digest](docs/feature-recognition-results.md) connects the
+figures to the candidate, dimension, negative-control, equivalent-boundary,
+and claim-boundary evidence. It is an explicit one-release documentation
+exception; the complete research note remains the canonical account.
 
 The equivalent-boundary control is the central limitation: an operation-made
 chamfer and a directly modeled bevel produce the same checked boundary at both
