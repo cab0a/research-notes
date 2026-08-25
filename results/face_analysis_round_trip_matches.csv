@@ -1,0 +1,14 @@
+control_id,constructed_face_index,step_imported_face_index,matched_by,surface_type,area_absolute_difference,centroid_distance,orientation_matches,outer_wire_count_matches,inner_wire_count_matches,boundary_edge_count_matches
+through_hole_solid,1,1,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,2,2,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,3,3,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,4,4,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,5,5,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,6,6,surface_type_then_nearest_centroid,plane,0,0,1,1,1,1
+through_hole_solid,7,7,surface_type_then_nearest_centroid,cylinder,3.1050717552716378e-12,8.2600593032111647e-14,1,1,1,1
+conical_solid,1,1,surface_type_then_nearest_centroid,cone,6.0254023992456496e-12,2.9535772102134982e-13,1,1,1,1
+conical_solid,2,2,surface_type_then_nearest_centroid,plane,3.5527136788005009e-15,1.1209331427304987e-15,1,1,1,1
+conical_solid,3,3,surface_type_then_nearest_centroid,plane,0,1.1832913578315177e-29,1,1,1,1
+spherical_solid,1,1,surface_type_then_nearest_centroid,sphere,0,2.1624159711705094e-17,1,1,1,1
+toroidal_solid,1,1,surface_type_then_nearest_centroid,torus,1.0317080523236655e-11,2.6822988548272655e-13,1,1,1,1
+bspline_shell,1,1,surface_type_then_nearest_centroid,bspline,3.5527136788005009e-15,4.9650683064945462e-16,1,1,1,1

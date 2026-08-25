@@ -110,6 +110,8 @@ jobs:
           python experiments/run_shape_correspondence.py --fixture-dir regenerated-fixtures/shape-correspondence --output-dir regenerated-shape-correspondence-fixture-results --refresh-fixtures
           python experiments/run_feature_recognition.py --output-dir regenerated-results
           python experiments/run_feature_recognition.py --fixture-dir regenerated-fixtures/feature-recognition --output-dir regenerated-feature-recognition-fixture-results --refresh-fixtures
+          python experiments/run_face_level_analysis.py --output-dir regenerated-results
+          python experiments/run_face_level_analysis.py --fixture-dir regenerated-fixtures/face-analysis --output-dir regenerated-face-analysis-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -298,6 +300,10 @@ jobs:
           diff -u results/feature_equivalent_boundary_observations.csv regenerated-results/feature_equivalent_boundary_observations.csv
           diff -u results/feature_recognition_summary.csv regenerated-results/feature_recognition_summary.csv
           diff -u results/feature_recognition_contract.json regenerated-results/feature_recognition_contract.json
+          diff -u results/face_analysis_report.csv regenerated-results/face_analysis_report.csv
+          diff -u results/face_analysis_round_trip_matches.csv regenerated-results/face_analysis_round_trip_matches.csv
+          diff -u results/face_analysis_summary.csv regenerated-results/face_analysis_summary.csv
+          diff -u results/face_analysis_contract.json regenerated-results/face_analysis_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -322,6 +328,7 @@ jobs:
           diff -qr fixtures/solid-regions regenerated-fixtures/solid-regions
           diff -qr fixtures/shape-correspondence regenerated-fixtures/shape-correspondence
           diff -qr fixtures/feature-recognition regenerated-fixtures/feature-recognition
+          diff -qr fixtures/face-analysis regenerated-fixtures/face-analysis
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -377,6 +384,8 @@ jobs:
           test -s regenerated-results/shape_correspondence_shapes.png
           test -s regenerated-results/feature_recognition.png
           test -s regenerated-results/feature_recognition_shapes.png
+          test -s regenerated-results/face_analysis.png
+          test -s regenerated-results/face_analysis_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})
