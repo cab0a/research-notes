@@ -1,0 +1,4 @@
+control_id,file_name,source_bytes,source_sha256,generator,binding_distribution_version,step_processor,writer_status,reader_status,transferred_roots
+meshing_through_hole,meshing_through_hole.step,19001,c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543,experiments/run_tessellation_diagnostics.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+meshing_sphere,meshing_sphere.step,2121,221bec5d9d90a16317294d5d85e34d2e8b551a2aa3a3200e57f7a159e287fb52,experiments/run_tessellation_diagnostics.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+meshing_bspline_shell,meshing_bspline_shell.step,5836,bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6,experiments/run_tessellation_diagnostics.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

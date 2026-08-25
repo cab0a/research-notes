@@ -1,0 +1,220 @@
+{
+  "claim_boundaries": [
+    "requested meshing controls are inputs, not independently certified maximum errors",
+    "one barycentric UV sample per triangle is diagnostic evidence, not a bound over the triangle",
+    "triangle area is an approximation and can lie above or below exact B-Rep surface area",
+    "zero-area pole triangles are retained and have no geometric normal",
+    "face, node, and triangle indices are local to one decoded shape and mesh condition",
+    "STEP source-entity provenance does not provide persistent identity after editing or re-export",
+    "the visual preview is not geometric truth",
+    "the controlled corpus is not general STEP, meshing, or rendering conformance evidence"
+  ],
+  "conditions": [
+    {
+      "angular_deflection_radians": 0.7,
+      "condition_id": "coarse_both",
+      "linear_deflection": 0.8,
+      "parallel_meshing": false,
+      "relative_deflection": false
+    },
+    {
+      "angular_deflection_radians": 0.25,
+      "condition_id": "fine_angular",
+      "linear_deflection": 0.8,
+      "parallel_meshing": false,
+      "relative_deflection": false
+    },
+    {
+      "angular_deflection_radians": 0.7,
+      "condition_id": "fine_linear",
+      "linear_deflection": 0.05,
+      "parallel_meshing": false,
+      "relative_deflection": false
+    },
+    {
+      "angular_deflection_radians": 0.25,
+      "condition_id": "fine_both",
+      "linear_deflection": 0.05,
+      "parallel_meshing": false,
+      "relative_deflection": false
+    }
+  ],
+  "contract_version": "1.0.0",
+  "face_csv": {
+    "file": "tessellation_face_summary.csv",
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "source_file",
+      "source_sha256",
+      "mesh_condition",
+      "requested_linear_deflection",
+      "requested_angular_deflection_radians",
+      "relative_deflection",
+      "parallel_meshing",
+      "mesher_status_flags",
+      "analysis_face_index",
+      "source_entity_id",
+      "source_entity_type",
+      "source_mapping_method",
+      "surface_type",
+      "face_orientation",
+      "node_count",
+      "triangle_count",
+      "degenerate_triangle_count",
+      "has_uv_nodes",
+      "has_normals",
+      "stored_deflection",
+      "exact_surface_area",
+      "mesh_surface_area",
+      "signed_area_difference",
+      "absolute_area_difference",
+      "relative_area_difference",
+      "maximum_sampled_surface_deviation",
+      "mean_sampled_surface_deviation"
+    ],
+    "primary_key": [
+      "control_id",
+      "mesh_condition",
+      "analysis_face_index"
+    ],
+    "row_unit": "one analysis-local face under one control and mesh condition"
+  },
+  "fixture_sha256": {
+    "meshing_bspline_shell.step": "bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6",
+    "meshing_sphere.step": "221bec5d9d90a16317294d5d85e34d2e8b551a2aa3a3200e57f7a159e287fb52",
+    "meshing_through_hole.step": "c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543"
+  },
+  "source_entity_mapping": {
+    "method": "XSControl_TransferReader.EntityFromShapeResult(mode=1):interface_model_position_to_part21_instance",
+    "persistent_identity": false,
+    "scope": "direct OCCT STEP transfer history for each controlled imported face",
+    "source_identity": "Part 21 instance label verified against normalized fixture bytes"
+  },
+  "study_version": "v0.42.0",
+  "summary_csv": {
+    "file": "tessellation_summary.csv",
+    "ordered_fields": [
+      "control_id",
+      "mesh_condition",
+      "requested_linear_deflection",
+      "requested_angular_deflection_radians",
+      "face_count",
+      "source_mapped_face_count",
+      "face_local_node_reference_count",
+      "triangle_count",
+      "degenerate_triangle_count",
+      "exact_surface_area",
+      "mesh_surface_area",
+      "signed_area_difference",
+      "absolute_area_difference",
+      "relative_area_difference",
+      "maximum_sampled_surface_deviation",
+      "mean_sampled_surface_deviation"
+    ],
+    "primary_key": [
+      "control_id",
+      "mesh_condition"
+    ],
+    "row_unit": "one control and mesh condition"
+  },
+  "title": "Tessellation and Visual Diagnostic Contracts",
+  "triangle_csv": {
+    "delimiter": ",",
+    "encoding": "UTF-8",
+    "file": "tessellation_triangles.csv",
+    "line_ending": "LF",
+    "nullable_fields": [
+      "source_entity_id",
+      "source_entity_type",
+      "uv_1_u",
+      "uv_1_v",
+      "uv_2_u",
+      "uv_2_v",
+      "uv_3_u",
+      "uv_3_v",
+      "oriented_normal_x",
+      "oriented_normal_y",
+      "oriented_normal_z",
+      "barycentric_u",
+      "barycentric_v",
+      "sampled_surface_x",
+      "sampled_surface_y",
+      "sampled_surface_z",
+      "sampled_surface_deviation"
+    ],
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "source_file",
+      "source_sha256",
+      "mesh_condition",
+      "requested_linear_deflection",
+      "requested_angular_deflection_radians",
+      "relative_deflection",
+      "parallel_meshing",
+      "mesher_status_flags",
+      "analysis_face_index",
+      "source_entity_id",
+      "source_entity_type",
+      "source_mapping_method",
+      "surface_type",
+      "face_orientation",
+      "analysis_triangle_index",
+      "node_index_1",
+      "node_index_2",
+      "node_index_3",
+      "vertex_1_x",
+      "vertex_1_y",
+      "vertex_1_z",
+      "vertex_2_x",
+      "vertex_2_y",
+      "vertex_2_z",
+      "vertex_3_x",
+      "vertex_3_y",
+      "vertex_3_z",
+      "uv_1_u",
+      "uv_1_v",
+      "uv_2_u",
+      "uv_2_v",
+      "uv_3_u",
+      "uv_3_v",
+      "centroid_x",
+      "centroid_y",
+      "centroid_z",
+      "oriented_normal_x",
+      "oriented_normal_y",
+      "oriented_normal_z",
+      "triangle_area",
+      "is_degenerate",
+      "barycentric_u",
+      "barycentric_v",
+      "sampled_surface_x",
+      "sampled_surface_y",
+      "sampled_surface_z",
+      "sampled_surface_deviation"
+    ],
+    "primary_key": [
+      "control_id",
+      "mesh_condition",
+      "analysis_face_index",
+      "analysis_triangle_index"
+    ],
+    "row_unit": "one face-local triangle under one control and mesh condition"
+  },
+  "triangle_geometry": {
+    "node_coordinates": "face triangulation nodes transformed by the returned TopLoc_Location",
+    "normal": "normalized triangle cross product reversed for a reversed face; blank for zero-area triangles",
+    "sample_is_bound": false,
+    "sampled_surface_deviation": "distance between the triangle centroid and exact surface point at mean vertex UV"
+  },
+  "units": {
+    "requested_angular_deflection_radians": "radians",
+    "requested_linear_deflection": "model units",
+    "sampled_surface_deviation": "model units",
+    "stored_deflection": "model units",
+    "surface_area": "squared model units",
+    "triangle_area": "squared model units",
+    "uv": "surface-parameter units"
+  }
+}
