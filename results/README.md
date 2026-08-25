@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、41件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、幾何、輪郭線、境界辺、公差、隣接面、名前・色の出典を60列のCSV契約へ統合します。面番号は段階内に限定し、取得できない属性は推測せず、契約、比較表、図、STEP試料を収録します。
+このディレクトリには、42件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.42.0は3個の合成STEP形状を4条件で三角形分割し、3,782個の三角形について頂点、媒介変数、面の向きに従う法線、面積、厳密曲面との標本偏差、元のSTEP面への直接対応を記録します。分割条件は入力値であり最大誤差の保証ではなく、プレビューも厳密形状の代用ではありません。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1112,6 +1112,41 @@ distance is `2.9535772102134982e-13` model units. Constructed names and colors
 come from the synthetic manifest; the shape-only STEP route reports no
 imported name or color rather than inferring one.
 
+## v0.42.0
+
+- `tessellation_triangles.csv` contains 3,782 triangle rows with face-local
+  node references, transformed coordinates, available UV coordinates,
+  oriented triangle normals, areas, centroid samples, degeneracy flags, and
+  direct source `ADVANCED_FACE` references.
+- `tessellation_face_summary.csv` contains 36 face-condition rows with exact
+  B-Rep area, summed triangle area, sampled surface deviation, stored mesh
+  deflection, UV and normal availability, and source mapping coverage.
+- `tessellation_summary.csv` contains the 12 control-condition aggregates for
+  the through-hole solid, sphere, and open B-spline shell.
+- `tessellation_contract.json` fixes the 2-by-2 absolute-deflection design,
+  field semantics, fixture hashes, regression relationships, and explicit
+  claim boundaries.
+- `tessellation_diagnostics.png` compares triangle counts, relative area
+  differences, and sampled surface deviations.
+- `tessellation_visual_diagnostics.png` shows face-colored coarse and refined
+  meshes for all three synthetic controls.
+
+The four deterministic conditions combine linear deflections `0.8` and
+`0.05` with angular deflections `0.7` and `0.25` radians. Angular refinement
+changes the through-hole mesh from 88 to 220 triangles and reduces its maximum
+sampled deviation from `0.01687868664140884` to
+`0.0021073878318863216` model units. The sphere changes from 168 to 1,260
+triangles under angular refinement, while linear refinement alone produces
+422 triangles. The B-spline face responds to linear refinement, changing from
+10 to 18 triangles. All 36 face rows map directly to a source STEP face for
+this read operation.
+
+Eight zero-area sphere-pole triangles remain explicit instead of being
+dropped. Requested meshing controls are inputs, not independently certified
+maximum-error bounds; the barycentric UV sample is one diagnostic point per
+triangle, not a supremum; mesh area may fall above or below exact area; and
+local mesh and face identifiers are not persistent names.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1156,6 +1191,7 @@ python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
 python experiments/run_face_level_analysis.py
+python experiments/run_tessellation_diagnostics.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

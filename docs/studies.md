@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う41件の研究を索引化しています。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面について親立体・親殻、6種類の曲面、幾何、輪郭線、辺、公差、隣接面、名前・色の出典を版管理したCSVへ統合します。面番号は段階内だけで有効とし、取得できない属性は推測しません。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う42件の研究を索引化しています。v0.42.0は3個の合成形状を4組の距離・角度条件で三角形分割し、3,782個の三角形を解析用面番号と元の`ADVANCED_FACE`実体番号へ対応付けます。球の極に残る面積ゼロ三角形を明示し、要求値、診断用標本、正確な面積、表示画像を区別します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1072,6 +1072,41 @@ python -m pip install -e ".[geometry]"
 python experiments/run_face_level_analysis.py
 ```
 
+### v0.42.0 — Tessellation and Visual Diagnostic Contracts
+
+**Question:** Can every controlled display triangle be traced to its imported
+face and source Part 21 entity while requested meshing inputs, sampled
+diagnostics, exact B-Rep measurements, and previews remain separate claims?
+
+**Representative finding:** Three generated STEP controls are meshed under a
+two-by-two absolute linear/angular design. The resulting 36 face-condition
+rows and 3,782 triangle rows retain direct source provenance for all nine
+imported faces. Through-hole counts are `88 / 220 / 88 / 220`, sphere counts
+are `168 / 1260 / 422 / 1260`, and B-spline counts are `10 / 10 / 18 / 18`
+for coarse-both, fine-angular, fine-linear, and fine-both respectively.
+
+Angular refinement reduces the through-hole relative area difference from
+`8.6769e-5` to `1.0612e-5`; both selected refinements reduce the sphere result
+from `0.0412249` to `0.00595059`; and linear refinement reduces the B-spline
+result from `0.00742346` to `0.00370206`. Eight zero-area sphere-pole triangles
+remain explicit with blank normals. Requested deflections and one
+UV-barycentric sample per triangle are not certified maximum-error bounds.
+
+- [Complete note](../notes/tessellation-visual-diagnostic-contracts.md)
+- [Triangle observations](../results/tessellation_triangles.csv)
+- [Face observations](../results/tessellation_face_summary.csv)
+- [Summary](../results/tessellation_summary.csv)
+- [Evaluation contract](../results/tessellation_contract.json)
+- [Diagnostic figure](../results/tessellation_diagnostics.png)
+- [Face-colored previews](../results/tessellation_visual_diagnostics.png)
+- [Generated STEP fixtures](../fixtures/tessellation-diagnostics/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_tessellation_diagnostics.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1096,12 +1131,14 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.41.0 subsets;
+  controlled v0.21.0 through v0.42.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
   from the v0.40.0 rule-based geometric candidates.
 - persistent identity, arbitrary-file coverage, or STEP/XCAF metadata recovery
   from the v0.41.0 controlled face-report rows.
+- certified tessellation error bounds, global mesh validity, persistent source
+  identity, or exact geometry from the v0.42.0 diagnostic mesh and previews.
 
 The complete notes contain the narrower limitations for each experiment.

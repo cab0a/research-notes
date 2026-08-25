@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.41.0では、貫通穴立体、円すい立体、球、トーラス、開いたBスプライン殻の5個のSTEP試験ファイルを収録します。構築時と再読込後の各13面で、平面、円筒、円すい、球、トーラス、Bスプラインの構成、親立体・親殻、輪郭線、境界辺、隣接面、公差を確認します。面番号は段階内だけで有効であり、名前・色は取得元がない場合に推測しません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.42.0では、貫通穴立体、球、開いたBスプライン殻の3個のSTEP試験ファイルを4条件で三角形分割します。各三角形の頂点、媒介変数、法線、面積、曲面標本偏差、元のSTEP面への対応を保存し、粗い分割と細かい分割の目視比較も収録します。プレビューは診断補助であり、厳密形状や最大誤差の証明ではありません。詳細は英語本文に示します。
 
 ---
 
@@ -638,6 +638,40 @@ surface coverage, XCAF metadata transfer, or cross-kernel portability.
 
 ![Face-report surface inventory and field coverage](../results/face_analysis.png)
 
+## v0.42.0 — Tessellation Diagnostic Samples
+
+Directory: [`fixtures/tessellation-diagnostics/`](../fixtures/tessellation-diagnostics/)
+
+Manifest: [`manifest.csv`](../fixtures/tessellation-diagnostics/manifest.csv)
+
+Three normalized STEP fixtures isolate analytic curvature, trimmed topology,
+and a non-analytic support surface. The experiment reads each fixture through
+the STEP transfer process before remeshing it under four deterministic
+conditions.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `meshing_through_hole.step` | 19,001 | `c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543` | Seven-face trimmed solid, planar regions, cylindrical curvature, and angular-deflection sensitivity |
+| `meshing_sphere.step` | 2,121 | `221bec5d9d90a16317294d5d85e34d2e8b551a2aa3a3200e57f7a159e287fb52` | Closed analytic curvature, coupled refinement response, and explicit pole degeneracy |
+| `meshing_bspline_shell.step` | 5,836 | `bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6` | Open B-spline face and linear-deflection sensitivity |
+
+![Face-colored coarse and refined diagnostic meshes](../results/tessellation_visual_diagnostics.png)
+
+The fixed design combines linear deflections `0.8` and `0.05` with angular
+deflections `0.7` and `0.25` radians. It yields 3,782 triangle rows and 36
+face-condition rows. Every face row resolves directly to the source
+`ADVANCED_FACE` used by this STEP transfer, but that link is read-history
+provenance rather than a persistent name. The eight zero-area sphere-pole
+triangles are retained and flagged.
+
+![Tessellation count, area, and sampled-deviation diagnostics](../results/tessellation_diagnostics.png)
+
+Requested meshing controls are inputs, not independently certified geometric
+error bounds. The surface-deviation field samples one UV barycenter per
+triangle, so it is not a maximum-over-triangle proof. The preview is useful for
+finding suspicious faces and triangles, but the CSV and exact B-Rep
+observations define the machine-checkable evidence.
+
 ## Regeneration
 
 ```bash
@@ -723,6 +757,10 @@ python experiments/run_feature_recognition.py \
 
 python experiments/run_face_level_analysis.py \
   --fixture-dir fixtures/face-analysis \
+  --refresh-fixtures
+
+python experiments/run_tessellation_diagnostics.py \
+  --fixture-dir fixtures/tessellation-diagnostics \
   --refresh-fixtures
 ```
 

@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.41.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、向き、面積、重心、媒介変数範囲、代表法線、曲面固有値、輪郭線・辺・公差・隣接面、名前・色の出典を60列のCSV契約へ統合します。面番号は段階内に限定し、名前・色は取得元がない場合に推測しません。v0.42.0以降は未実装です。詳細は英語本文に示します。
+本書は、v0.42.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.42.0は3個の合成形状を4組の距離・角度条件で三角形分割し、3,782個の三角形を解析用面番号と元の`ADVANCED_FACE`実体番号へ対応付けます。球の極に残る面積ゼロ三角形を明示し、要求値、診断用標本、正確な面積、表示画像を区別します。v0.43.0以降は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-41 studies through v0.41.0. It separates syntax recognition, schema validation, physical-reference
+42 studies through v0.42.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.42.0 and later roadmap stages remain unimplemented.
+v0.43.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -170,7 +170,7 @@ corpus and its declared provenance.
 | Correspondence across import and healing | Controlled subset | v0.39.0 | Four planar/open-line controls provide face and edge one-to-one, many-to-one, deletion, and ambiguous-abstention evidence across STEP import and one healing operation; geometry, incident-face topology support, operation history, and direct identity are separate, with no split, moving-frame, curved/closed-edge, or persistent-identity claim |
 | Rule-based feature recognition | Controlled subset | v0.40.0 | Nine controls and STEP fixtures produce seven candidates per stage; all 14 match controlled classification and dimensions, with maximum truth errors of `3.9612757518625585e-13` model units and `5.8832938520936295e-12` degrees, zero false positives across the plain block and external boss, and no design-intent claim |
 | Complete face-level report | Controlled subset | v0.41.0 | A 60-field v1 contract covers 26 rows, six surface families, local ownership, evaluated geometry, boundaries, adjacency, tolerance, and source-bounded name/color fields; arbitrary inputs, persistent identity, and XCAF traversal remain excluded |
-| Tessellation and interactive viewing | Not implemented | v0.42.0 | Meshing controls and triangle-to-face provenance |
+| Tessellation and visual diagnostics | Controlled subset | v0.42.0 | Three STEP fixtures, four absolute linear/angular conditions, 36 face rows, 3,782 triangle rows, direct `ADVANCED_FACE` provenance for nine faces, exact-area comparison, sampled surface deviation, eight explicit pole-degenerate triangles, and face-colored previews; no certified error bound, global welded mesh, arbitrary-file coverage, or interactive viewer |
 | Primitive and surface construction | Not implemented | v0.43.0 | Known parameters, export, re-import, and measured comparison |
 | Profiles, extrusion, and revolution | Not implemented | v0.44.0 | Parameter-driven recompute with known construction truth |
 | Sweeps, lofts, and Boolean operations | Not implemented | v0.45.0–v0.46.0 | Controlled success and failure conditions across tolerances |
@@ -240,6 +240,10 @@ corpus and its declared provenance.
   stage across six surface families, and all 13 geometry-matched pairs retain
   orientation and boundary counts. Inspect local index scope, nullable
   type-specific parameters, tolerance reconstruction, and metadata sources.
+- Reproduce the v0.42 tessellation evidence: three fixtures, four independent
+  linear/angular conditions, 36 face rows, 3,782 triangle rows, nine direct
+  `ADVANCED_FACE` mappings, eight explicit sphere-pole degeneracies, exact-area
+  comparisons, sampled deviations, and face-colored previews.
 - Reproduce every published STEP/EXPRESS observation and inspect its CSV, JSON,
   figure, and test evidence.
 - Extend the parser carefully by adding a generated positive/negative corpus,
@@ -264,8 +268,9 @@ corpus and its declared provenance.
   endpoint, length, support, and incident-face evidence, as topological
   identity, a persistent name, STEP-carried operation history, semantic
   provenance, or recovered design intent.
-- Editing, tessellating, rendering, or exporting arbitrary production CAD
-  models through a supported end-user workflow.
+- Editing, interactively rendering, or exporting arbitrary production CAD
+  models through a supported end-user workflow, or applying the controlled
+  tessellation contract as a general meshing policy.
 - Processing untrusted arbitrary STEP files as if resource use or native-code
   safety had been established.
 - Claiming recovered sketches, dimensions, feature history, or design intent
@@ -275,6 +280,9 @@ corpus and its declared provenance.
 - Treating v0.41 local face indices as persistent names, UV bounds as portable
   three-dimensional coordinates, one normal as whole-face proof, or blank
   imported metadata as evidence that no source attribute ever existed.
+- Treating v0.42 requested deflections or one UV-barycentric sample as a
+  certified maximum error, mesh area as one-sided, or a preview as exact B-Rep
+  geometry.
 - Feeding current outputs into an AI system without a separate dataset, label,
   split, calibration, and abstention contract.
 
@@ -305,13 +313,15 @@ python -m pytest \
   tests/test_solid_regions.py \
   tests/test_shape_correspondence.py \
   tests/test_feature_recognition.py \
-  tests/test_face_analysis.py
+  tests/test_face_analysis.py \
+  tests/test_tessellation_diagnostics.py
 python experiments/run_tolerance_sewing_healing.py
 python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
 python experiments/run_face_level_analysis.py
+python experiments/run_tessellation_diagnostics.py
 ```
 
 The complete generated-input catalog is in the

@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、幾何、輪郭線、境界辺、公差、隣接面、名前・色の出典を60列のCSV契約へ統合します。面番号は段階内に限定し、名前・色は取得元がない場合に推測しません。v0.42.0以降は未実装です。
+v0.42.0は3個の合成形状をSTEP再読込後に4組の距離・角度条件で三角形分割し、3,782個の三角形を解析用面番号と元の`ADVANCED_FACE`実体番号へ対応付けます。球の極に残る面積ゼロ三角形を明示し、要求値、診断用の標本値、正確なB-rep面積、表示画像を区別します。v0.43.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.42.0 onward are planned and not implemented at v0.41.0.
+The stages from v0.43.0 onward are planned and not implemented at v0.42.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -452,9 +452,18 @@ face identity, arbitrary-file support, or XCAF attribution.
 
 #### v0.42.0 — Tessellation and Visual Diagnostic Contracts
 
-Generate meshes with explicit chordal and angular controls. Relate selected
-triangles back to faces and source entities, and treat previews as inspection
-aids rather than geometric truth.
+Completed with three normalized STEP fixtures and a two-by-two absolute
+linear/angular meshing design. The experiment records 3,782 triangles across
+36 face-condition observations. Every one of the nine imported faces maps
+through direct transfer history to a verified source `ADVANCED_FACE` instance.
+
+The through-hole triangle count changes from 88 to 220 only under the selected
+angular refinement, the sphere changes from 168 to 422 under linear refinement
+and to 1,260 under angular refinement, and the B-spline patch changes from 10
+to 18 only under linear refinement. Eight zero-area sphere-pole triangles are
+retained with blank geometric normals. Requested deflections and one
+UV-barycentric deviation sample per triangle are diagnostic observations, not
+certified error bounds; face-colored previews are not exact B-Rep geometry.
 
 #### v0.43.0 — Primitive Construction and STEP Round Trips
 

@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.41.0では、各面を一行にした版1.0.0のCSV契約へ、解析用面番号、親立体・親殻、6種類の曲面、向き、面積、重心、媒介変数範囲、代表法線、曲面固有値、輪郭線・辺・公差・隣接面、名前・色の出典を統合します。
+v0.42.0では、穴あき立体、球、Bスプライン殻を、距離条件2水準と角度条件2水準の組合せで三角形分割します。3,782個の三角形を解析用面番号と元のSTEPの`ADVANCED_FACE`実体番号へ対応付け、面積、法線、媒介変数、表面距離の診断値をCSVへ記録します。
 
-5個の合成形状を構築時とSTEP再読込後に評価し、各13面の曲面構成と位相属性が一致しました。最大面積差は1.04×10のマイナス11乗未満、最大重心距離は2.96×10のマイナス13乗未満です。名前・色は推測せず、面番号は段階内だけで有効です。313件のテストを備え、v0.42.0以降は未実装です。詳細は英語本文に示します。
+曲面ごとに支配的な分割条件が異なり、球の極には各条件2個の面積ゼロ三角形が残りました。要求した分割値や三角形内の一点で測った表面距離を最大誤差として主張せず、表示画像を正確なB-rep形状として扱いません。327件のテストを備え、v0.43.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,8 +38,8 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, evaluated B-Rep geometry, controlled correspondence,
-rule-based geometric feature candidates, and stable face-level reports. The
-current release is v0.41.0.
+rule-based geometric feature candidates, stable face-level reports, and
+source-traceable tessellation diagnostics. The current release is v0.42.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -54,35 +54,34 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 41 releases to their questions,
+The [study index](docs/studies.md) maps all 42 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.41.0 study unifies evaluated geometry, topology, type-specific surface
-parameters, tolerance, adjacency, and attributed-source evidence into one
-versioned CSV row per analysis-local face. Five synthetic controls cover six
-surface families before and after STEP exchange.
+The v0.42.0 study evaluates three STEP-derived B-Rep controls under a two-by-two
+absolute linear/angular meshing design. It traces every triangle to an
+analysis-local face and a source `ADVANCED_FACE` instance while keeping exact
+surface measurements separate from mesh diagnostics.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Stable CSV fields | 60 |
-| Constructed / STEP-imported face rows | 13 / 13 |
-| Surface families per stage | 6 |
-| Geometry-matched pairs | 13 |
-| Orientation and boundary-count matches | 13 / 13 |
-| Maximum area difference | `1.03e-11` squared model units |
-| Maximum centroid distance | `2.95e-13` model units |
-| Open-shell faces without a solid parent | 1 per stage |
-| Imported names / colors inferred | 0 / 0 |
+| Synthetic STEP controls | 3 |
+| Mesh conditions | 4 |
+| Face-condition rows | 36 |
+| Triangle rows | 3,782 |
+| Faces mapped to source `ADVANCED_FACE` | 9 / 9 |
+| Through-hole triangles, coarse / fine angular | 88 / 220 |
+| Sphere triangles, coarse / fine both | 168 / 1,260 |
+| B-spline triangles, coarse / fine linear | 10 / 18 |
+| Explicit zero-area sphere-pole triangles | 8 |
 
-![Face-level report evidence](results/face_analysis.png)
+![Tessellation diagnostic evidence](results/tessellation_diagnostics.png)
 
-The report keeps face indices local to one control and stage. It also retains
-the cone semi-angle sign change caused by an equivalent axis parameterization,
-the B-spline tolerance change from `2.0e-4` to `1.0e-7`, and blank imported
-name/color fields from the shape-only STEP route. These are provenance
-boundaries, not missing values to fill by inference.
+Requested deflections are inputs rather than certified maximum errors. The
+reported surface deviation samples one UV-barycentric point per triangle, and
+mesh area can lie above or below exact B-Rep area. The face-colored preview is
+an inspection aid, not geometric truth.
 
 ## Current STEP and B-Rep Capability
 
@@ -97,7 +96,9 @@ and straight-edge correspondence across STEP import and one same-domain merge.
 It reports bounded geometric feature candidates for nine synthetic controls
 and emits a stable 60-field face report across six controlled surface families,
 including parent lists, boundaries, adjacency, tolerance, and attributed-source
-fields. It cannot prove
+fields. It also generates controlled face-colored tessellations, retains
+zero-area triangles explicitly, and connects all nine imported control faces
+to direct Part 21 `ADVANCED_FACE` instances. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -105,7 +106,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, correspondence, bounded rule-based feature candidates, and one stable controlled face-report contract | Persistent naming, XCAF face metadata traversal, recovered feature history, general feature recognition, arbitrary curved or spline correspondence and manifoldness, general healing, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, correspondence, bounded rule-based feature candidates, one stable face-report contract, and source-traceable controlled tessellations | Certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered feature history, general feature recognition, arbitrary curved or spline correspondence and manifoldness, general healing, editing, or a supported export API |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -245,8 +246,8 @@ AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
 v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
 v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
 manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
-correspondence, v0.40.0 feature-recognition, and v0.41.0 face-report studies
-also write deterministic versioned JSON records.
+correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, and v0.42.0
+tessellation-diagnostic studies also write deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -272,7 +273,8 @@ the seven v0.35.0 shell/solid validity fixtures, the ten v0.36.0
 tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
 intersection fixtures, the ten v0.38.0 solid-region fixtures, and the four
 v0.39.0 face-and-edge correspondence fixtures, the nine v0.40.0 geometric
-feature-recognition fixtures, and the five v0.41.0 face-analysis fixtures.
+feature-recognition fixtures, the five v0.41.0 face-analysis fixtures, and the
+three v0.42.0 tessellation-diagnostic fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -283,7 +285,7 @@ validation evidence.
 
 ## Key Features
 
-- Forty-one published studies with explicit questions, controls, results, and
+- Forty-two published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -338,6 +340,9 @@ validation evidence.
 - A versioned 60-field face-report contract covering local parent ownership,
   six surface families, evaluated geometry, boundary topology, adjacency,
   tolerance, and non-inferred name/color provenance
+- A two-by-two absolute meshing experiment with per-triangle face and
+  `ADVANCED_FACE` provenance, exact-area comparison, explicit degeneracy, and
+  face-colored visual diagnostics
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -420,6 +425,10 @@ parameters, boundary counts, tolerance, and attributed-source fields into one
 versioned row contract. It keeps indices stage-local, matches round-trip faces
 by geometry for evaluation only, and leaves STEP-imported names and colors
 blank on the shape-only reader route.
+The tessellation study then varies linear and angular controls independently,
+records every triangle, relates each imported face to its Part 21 source
+entity, preserves sphere-pole degeneracy, and separates requested inputs,
+sampled diagnostics, exact surface values, and visual previews.
 
 Measurements are interpreted inside each controlled design. Detailed results
 for every release are collected in [`docs/studies.md`](docs/studies.md), while
@@ -442,7 +451,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 313 tests covering blur metrics and models,
+The repository contains 327 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -496,6 +505,11 @@ solid and shell lists, six support-surface families, oriented normals,
 surface-specific parameters, inner wires, adjacency, stage-specific
 tolerance, source-attributed constructed metadata, explicit imported metadata
 absence, geometry-based round-trip matching, and deterministic fixtures.
+The v0.42.0 additions cover the two-by-two meshing design, direct STEP
+face-source mappings, location-aware triangle coordinates, UV nodes,
+face-oriented normals, zero-area pole triangles, exact-versus-mesh area,
+sampled surface deviations, per-surface refinement relationships, stable CSV
+contracts, deterministic fixtures, and non-geometric preview boundaries.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -520,8 +534,9 @@ v0.38.0 evaluates ten void-shell and composite-solid controls, and v0.39.0
 evaluates face and straight-edge correspondence on four planar controls across
 STEP import and one same-domain healing operation on the same Linux x64
 reference route. v0.40.0 evaluates nine bounded geometric feature controls on
-that route, and v0.41.0 evaluates five face-report controls with 13 faces per
-stage on the same route. These releases do not claim
+that route, v0.41.0 evaluates five face-report controls with 13 faces per
+stage, and v0.42.0 evaluates three imported shapes under four meshing
+conditions on the same route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -545,11 +560,13 @@ v0.40.0 adds bounded rule-based geometric feature candidates, controlled
 dimensions, two negative controls, and an equivalent-boundary demonstration
 that construction history is not recoverable from final geometry alone.
 v0.41.0 adds the stable face-level report contract, six surface families,
-parent and adjacency evidence, and explicit metadata-source boundaries. The
-roadmap next proceeds through tessellation, modeling, STEP round trips, and
+parent and adjacency evidence, and explicit metadata-source boundaries.
+v0.42.0 adds source-traceable tessellation, independent linear/angular
+controls, explicit degeneracy, and visual-diagnostic claim boundaries. The
+roadmap next proceeds through modeling, STEP round trips, and
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.42.0 and later releases remain unimplemented.
+candidates. v0.43.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 
