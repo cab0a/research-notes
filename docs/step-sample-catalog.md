@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.39.0では4個の合成平面形状について、STEP再読込と同一領域統合をまたぐ面56記述子・37候補・35関係と、開いた直線辺122記述子・79候補・75関係を収録し、幾何、位相による候補支持、処理履歴、直接同一性を分離します。v0.40.0では9個の合成形状とSTEP試験ファイルを用い、面属性136行、面隣接282行、特徴候補14行、形状段階観測18行、等価境界比較2行を記録します。各段階7候補の分類と寸法は14/14で真値に一致し、通常の直方体と外向き円筒突起では誤検出0件です。ただし、これは幾何だけに基づく規則的な候補抽出であり、恒久的な位相同一性、特徴履歴、設計意図、一般的な特徴認識を証明しません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.41.0では、貫通穴立体、円すい立体、球、トーラス、開いたBスプライン殻の5個のSTEP試験ファイルを収録します。構築時と再読込後の各13面で、平面、円筒、円すい、球、トーラス、Bスプラインの構成、親立体・親殻、輪郭線、境界辺、隣接面、公差を確認します。面番号は段階内だけで有効であり、名前・色は取得元がない場合に推測しません。詳細は英語本文に示します。
 
 ---
 
@@ -610,6 +610,34 @@ nor a general feature recognizer.
 
 ![Feature inventory and recovered dimensions](../results/feature_recognition.png)
 
+## v0.41.0 — Face-Level Analysis Samples
+
+Directory: [`fixtures/face-analysis/`](../fixtures/face-analysis/)
+
+Manifest: [`manifest.csv`](../fixtures/face-analysis/manifest.csv)
+
+Five normalized STEP fixtures cover solid ownership, one open-shell case,
+inner planar wires, and six support-surface families. The manifest binds each
+file to the pinned writer, reader, and exact hash.
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `through_hole_solid.step` | 19,001 | `c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543` | Six planes, one cylinder, inner wires, solid/shell parents, and adjacency |
+| `conical_solid.step` | 5,722 | `3afc40ee90a8ab671a249206bbe6bdae57a6a9a6317a4a34c6f85ef1cb8aa8e2` | Two planar caps, one cone, and signed axis/semi-angle parameterization |
+| `spherical_solid.step` | 2,121 | `221bec5d9d90a16317294d5d85e34d2e8b551a2aa3a3200e57f7a159e287fb52` | One complete analytic sphere and periodic self-seam boundary |
+| `toroidal_solid.step` | 4,139 | `163ae8bc3155ac55f0fdc35bcab9b8f4102cabd8c2d886566eda51f1c1a9f104` | One complete torus with major and minor radii |
+| `bspline_shell.step` | 5,836 | `bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6` | One bicubic B-spline face with a shell parent and no solid parent |
+
+![Five synthetic face-analysis controls](../results/face_analysis_shapes.png)
+
+Each stage contains 13 face rows: eight planes and one cylinder, cone, sphere,
+torus, and B-spline. The evaluation matches faces by surface type and nearest
+centroid rather than equating local indices. All 13 pairs retain orientation
+and boundary counts. The samples do not establish persistent naming, arbitrary
+surface coverage, XCAF metadata transfer, or cross-kernel portability.
+
+![Face-report surface inventory and field coverage](../results/face_analysis.png)
+
 ## Regeneration
 
 ```bash
@@ -691,6 +719,10 @@ python experiments/run_shape_correspondence.py \
 
 python experiments/run_feature_recognition.py \
   --fixture-dir fixtures/feature-recognition \
+  --refresh-fixtures
+
+python experiments/run_face_level_analysis.py \
+  --fixture-dir fixtures/face-analysis \
   --refresh-fixtures
 ```
 

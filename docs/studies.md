@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、面・辺・輪郭線・外殻・立体、多様体性・交差、空洞・複合立体、対応追跡、形状特徴候補を扱う40件の研究を索引化しています。v0.40.0は9個の合成形状から穴・段差・溝・面取りらしい形状・丸みらしい形状を検出し、14候補の分類と寸法を真値で検証しました。同じ最終境界を持つ異なる作成経路も比較し、幾何候補から設計意図は復元できないことを明示します。結果確認用の補助文書を含め、各版の問い、代表結果、CSV・JSON・図、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う41件の研究を索引化しています。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面について親立体・親殻、6種類の曲面、幾何、輪郭線、辺、公差、隣接面、名前・色の出典を版管理したCSVへ統合します。面番号は段階内だけで有効とし、取得できない属性は推測しません。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1034,6 +1034,44 @@ python -m pip install -e ".[geometry]"
 python experiments/run_feature_recognition.py
 ```
 
+### v0.41.0 — Face-Level Analysis Reports
+
+**Question:** Can one stable face-row contract integrate local parent
+ownership, evaluated geometry, type-specific parameters, boundary topology,
+adjacency, tolerance, and metadata provenance without claiming persistent
+identity or inferring unavailable STEP attributes?
+
+**Representative finding:** Five generated controls produce 13 constructed and
+13 STEP-imported face rows. Both stages contain eight planes and one cylinder,
+cone, sphere, torus, and B-spline face. All 13 geometry-matched pairs retain
+orientation, outer/inner wire counts, and unique boundary-edge counts. The
+maximum area difference is `1.0317080523236655e-11` squared model units and the
+maximum centroid distance is `2.9535772102134982e-13` model units.
+
+The 60-field CSV contract includes analysis-local face indices, parent solid
+and shell lists, surface family and raw kernel type, orientation, area,
+centroid, UV bounds, representative normal, analytic or B-spline parameters,
+wire and edge counts, tolerance, adjacency, and source-attributed name/color
+fields. The cone semi-angle changes sign with an equivalent imported axis
+parameterization, and the raised B-spline tolerance changes from `2.0e-4` to
+`1.0e-7`. Constructed rows contain manifest-sourced name/color values;
+imported rows contain no inferred metadata on the shape-only reader route.
+
+- [Complete note](../notes/face-level-analysis-reports.md)
+- [Stable face report](../results/face_analysis_report.csv)
+- [Round-trip matches](../results/face_analysis_round_trip_matches.csv)
+- [Summary](../results/face_analysis_summary.csv)
+- [CSV contract](../results/face_analysis_contract.json)
+- [Figure](../results/face_analysis.png)
+- [Shape preview](../results/face_analysis_shapes.png)
+- [Generated STEP fixtures](../fixtures/face-analysis/)
+- [Sample catalog](step-sample-catalog.md)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_face_level_analysis.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1058,10 +1096,12 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.40.0 subsets;
+  controlled v0.21.0 through v0.41.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
   from the v0.40.0 rule-based geometric candidates.
+- persistent identity, arbitrary-file coverage, or STEP/XCAF metadata recovery
+  from the v0.41.0 controlled face-report rows.
 
 The complete notes contain the narrower limitations for each experiment.

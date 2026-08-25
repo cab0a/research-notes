@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、40件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.40.0は9個の合成形状について、構築時とSTEP再読込時の形状特徴候補14件、面・隣接関係、分類・寸法真値、負例、同じ最終境界を持つ異なる作成経路をCSV・JSON・図で記録します。14候補は分類・寸法とも一致し、負例誤検出は0件、同等境界は2段階とも一致しますが、設計意図を証明した候補は0件です。
+このディレクトリには、41件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、幾何、輪郭線、境界辺、公差、隣接面、名前・色の出典を60列のCSV契約へ統合します。面番号は段階内に限定し、取得できない属性は推測せず、契約、比較表、図、STEP試料を収録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1085,6 +1085,33 @@ labels differ and design intent remains unproven for all 14 candidates. These
 are bounded geometric labels, not reconstructed feature history, manufacturing
 semantics, or general recognition evidence.
 
+## v0.41.0
+
+- `face_analysis_report.csv` is the stable 60-field, one-row-per-face contract
+  for all 26 constructed and STEP-imported observations. It includes local
+  source and parent indices, surface and orientation fields, evaluated
+  geometry, type-specific parameters, wire and edge counts, tolerance,
+  adjacency, and attributed name/color sources.
+- `face_analysis_round_trip_matches.csv` contains 13 geometry-matched pairs
+  without treating local indices as persistent identity.
+- `face_analysis_summary.csv` records corpus, surface-family, field-coverage,
+  topology-attribute, tolerance, metadata, and round-trip residual evidence.
+- `face_analysis_contract.json` fixes field order, key scope, nullability,
+  encodings, units, parameter semantics, fixture hashes, metadata policy, and
+  claim boundaries.
+- `face_analysis.png` compares per-stage surface inventory and explicit field
+  coverage.
+- `face_analysis_shapes.png` previews the through-hole, cone, sphere, torus,
+  and open B-spline shell controls.
+
+Both stages contain 13 rows: eight planes and one cylinder, cone, sphere,
+torus, and B-spline face. All 13 geometry-matched pairs retain orientation,
+outer/inner wire counts, and unique boundary-edge counts. Maximum area
+difference is `1.0317080523236655e-11` squared model units, and maximum centroid
+distance is `2.9535772102134982e-13` model units. Constructed names and colors
+come from the synthetic manifest; the shape-only STEP route reports no
+imported name or color rather than inferring one.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1128,6 +1155,7 @@ python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
+python experiments/run_face_level_analysis.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

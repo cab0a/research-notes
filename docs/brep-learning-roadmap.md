@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.39.0は合成4形状の面・辺対応で幾何、位相支持、処理履歴、直接同一性を分離し、恒久同一性を主張しません。v0.40.0は9形状の構築時とSTEP再読込時に各7候補を抽出し、分類・登録寸法14/14一致、2負例の誤検出0件、同等境界比較2/2、設計意図証明0件です。対象は貫通穴、止まり穴、開いた段差、貫通溝、面取り状、丸み状に限定し、特徴履歴復元や一般認識は主張しません。v0.41.0以降は未実装です。
+v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、幾何、輪郭線、境界辺、公差、隣接面、名前・色の出典を60列のCSV契約へ統合します。面番号は段階内に限定し、名前・色は取得元がない場合に推測しません。v0.42.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,14 +430,25 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.41.0 onward are planned and not implemented at v0.40.0.
+The stages from v0.42.0 onward are planned and not implemented at v0.41.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
-Publish face-local indices, parent solid and shell, surface type, orientation,
-area, centroid, UV bounds, representative normal, analytic parameters, wire
-counts, edge counts, tolerance, adjacent faces, and attributed name or color
-sources.
+Completed with five generated controls and normalized STEP fixtures. A
+versioned 60-field CSV records 13 faces per stage: eight planes and one
+cylinder, cone, sphere, torus, and B-spline. It integrates local parent solid
+and shell lists, orientation, area, centroid, UV bounds, representative normal,
+analytic or B-spline parameters, wire and unique-edge counts, tolerance,
+adjacency, and attributed name/color sources.
+
+All 13 geometry-matched round-trip pairs retain orientation and boundary
+counts. Maximum area difference is `1.0317080523236655e-11` squared model units
+and maximum centroid distance is `2.9535772102134982e-13` model units. The cone
+semi-angle sign changes with an equivalent imported axis parameterization, and
+the raised B-spline tolerance changes from `2.0e-4` to `1.0e-7`. Constructed
+metadata is explicitly manifest-sourced; imported metadata remains blank on
+the shape-only reader route. The stable schema does not provide persistent
+face identity, arbitrary-file support, or XCAF attribution.
 
 #### v0.42.0 — Tessellation and Visual Diagnostic Contracts
 

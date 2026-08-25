@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、40件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.40.0は9個の合成形状について、構築時とSTEP再読込時の穴・段差・溝・面取りらしい形状・丸みらしい形状の候補を検証します。14候補の分類・寸法一致、負例の誤検出0件、同じ最終境界を持つ異なる作成経路2段階の位相・体積・双方向差分を再生成します。これは設計履歴や一般的な形状特徴認識の証明ではありません。
+本書は、41件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.41.0は5個の合成形状を構築時とSTEP再読込後に評価し、各13面の親立体・親殻、6種類の曲面、幾何、輪郭線、境界辺、公差、隣接面、名前・色の出典を60列のCSV契約として再生成します。面番号は段階内に限定し、名前・色は取得元がない場合に推測しません。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -116,6 +116,7 @@ python experiments/run_manifold_self_intersection.py
 python experiments/run_solid_region_evaluation.py
 python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
+python experiments/run_face_level_analysis.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -251,6 +252,11 @@ python experiments/run_feature_recognition.py \
   --fixture-dir output/fixtures/feature-recognition \
   --output-dir output/feature-recognition \
   --refresh-fixtures
+
+python experiments/run_face_level_analysis.py \
+  --fixture-dir output/fixtures/face-analysis \
+  --output-dir output/face-analysis \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -335,6 +341,11 @@ python experiments/run_feature_recognition.py \
   the two negative controls must stay empty. The chamfer/direct-bevel pair is
   compared by topology, volume, and bidirectional Boolean differences while
   construction labels and geometric candidates remain separate.
+- The v0.41 face-analysis corpus generates five normalized STEP samples and a
+  60-field row contract. Each stage must retain eight planes plus one cylinder,
+  cone, sphere, torus, and B-spline face. Parent lists, boundary counts,
+  adjacency, tolerance, and metadata-source fields remain explicit; local
+  indices are not used as cross-stage identity.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -404,7 +415,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 298 tests cover:
+The 313 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -486,6 +497,10 @@ The 298 tests cover:
   controlled dimensions; through/blind topology; external-cylinder polarity;
   parent-face evidence; negative controls; equivalent-boundary topology,
   volume, and bidirectional differences; and the design-intent boundary
+- stable face-row keys and field order; parent solid and shell lists; six
+  support-surface families; evaluated geometry; oriented normals; wire, edge,
+  adjacency, and tolerance fields; metadata-source boundaries; and
+  geometry-matched round-trip comparisons
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -507,6 +522,7 @@ The 298 tests cover:
 |   |-- malformed-jpeg-metadata/
 |   |-- express-schema-model/
 |   |-- express-symbol-resolution/
+|   |-- face-analysis/
 |   |-- feature-recognition/
 |   |-- ap242-assemblies/
 |   |-- ap242-product-paths/
@@ -553,10 +569,11 @@ orientation repair, v0.37.0 evaluates bounded polyhedral vertex links and
 shape-pair relationship dimensions, v0.38.0 evaluates ten void-shell and
 composite-solid controls, and v0.39.0 evaluates face and straight-edge
 correspondence on four planar controls on the same route. v0.40.0 evaluates
-nine bounded geometric feature controls on that same route. None implies
+nine bounded geometric feature controls, and v0.41.0 evaluates five
+face-report controls with 13 faces per stage on that same route. None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell
 manifoldness, self-intersection, nonconvex containment, general repair,
 manufacturing tolerance, persistent topological identity, persistent naming,
-general feature recognition, feature-history reconstruction, or design-intent
-recovery.
+general XCAF attribution, general feature recognition, feature-history
+reconstruction, or design-intent recovery.
