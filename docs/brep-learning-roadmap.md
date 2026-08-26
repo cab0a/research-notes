@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.46.0は直方体の和・共通・差を、重なり、非接触、面接触、微小隙間で検証します。既定条件の6例は独立な厳密集合の体積・表面積と一致します。追加許容値は微小隙間をつなぎますが、厳密集合から形状を変え、STEP再読込でも追加の測定差が生じます。v0.47.0以降は未実装です。
+v0.47.0は直方体の同じ辺への丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの位相履歴、STEP往復後の面対応を検証します。正常2例では各26件の履歴を記録します。STEP往復で面番号が全件偶然一致しても直接同一性と演算履歴は失われるため、番号を永続識別子とは扱いません。v0.48.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.47.0 onward are planned and not implemented at v0.46.0.
+The stages from v0.48.0 onward are planned and not implemented at v0.47.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -516,9 +516,17 @@ and area drift after import. No universal robustness tolerance follows.
 
 #### v0.47.0 — Fillets, Chamfers, and Topology History
 
-Record generated, modified, deleted, split, and merged shapes when the backend
-exposes history. Demonstrate why positional face indices are not persistent
-design identities.
+Completed with unit fillet and chamfer controls plus two oversized native
+non-completion cases. Both successful shapes match analytic volume and area at
+construction and after STEP import. Each operation records 26 source-subshape
+rows under the documented query scope: one source edge has a generated face,
+four source faces have modified successors, and no supported deletion, split,
+or merge occurs in these bounded controls.
+
+All fourteen geometry-matched face pairs retain equal local integer indices on
+the pinned writer/reader route, but direct identity and imported operation
+history are both absent. Equal index values are recorded as ordering evidence,
+not persistent naming or recovered design history.
 
 ### Phase F — Interoperability and Defensive Processing
 

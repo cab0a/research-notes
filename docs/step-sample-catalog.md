@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.46.0では、直方体の和・共通・差から作る7個のSTEP試験ファイルを追加します。重なり、非接触、面接触、微小隙間、追加許容値を分離し、厳密集合の真値とSTEP再読込後の測定値を対応付けます。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.47.0では、直方体の同じ辺に丸めと面取りを適用した2個のSTEP試験ファイルを追加します。演算中の位相履歴と、STEP再読込後の幾何対応・面番号・直接同一性・履歴不在を対応付けます。詳細は英語本文に示します。
 
 ---
 
@@ -760,6 +760,24 @@ round-trip contracts. The fuzzy fixture retains one-solid topology but not
 exact-set equivalence or literal measure preservation. None retains the
 original operands, operation order, options, or operation-local history.
 
+## v0.47.0 — Local-Feature and History Samples
+
+Directory: [`fixtures/topology-history/`](../fixtures/topology-history/)
+
+Manifest: [`manifest.csv`](../fixtures/topology-history/manifest.csv)
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `edge_fillet_r1.step` | 19,982 | `c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758` | Radius-1 edge fillet with a generated cylindrical face |
+| `edge_chamfer_d1.step` | 18,884 | `1cf397f42b551b726b788d041595179769b4b87f1ad8bb9837a6ab76924931c7` | Distance-1 symmetric edge chamfer with a generated planar face |
+
+![Imported fillet and chamfer controls](../results/feature_operation_shapes.png)
+
+Oversized failure controls have decision rows but no result fixture. The two
+successful files retain evaluated geometry, and their face ordering happens to
+match the constructed result. They do not contain the input box, selected-edge
+identity, radius or distance command, operation order, or native history.
+
 ## Regeneration
 
 ```bash
@@ -865,6 +883,10 @@ python experiments/run_sweep_loft_modeling.py \
 
 python experiments/run_boolean_robustness.py \
   --fixture-dir fixtures/boolean-robustness \
+  --refresh-fixtures
+
+python experiments/run_topology_history.py \
+  --fixture-dir fixtures/topology-history \
   --refresh-fixtures
 ```
 

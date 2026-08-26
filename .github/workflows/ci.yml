@@ -122,6 +122,8 @@ jobs:
           python experiments/run_sweep_loft_modeling.py --fixture-dir regenerated-fixtures/sweep-loft-modeling --output-dir regenerated-sweep-loft-fixture-results --refresh-fixtures
           python experiments/run_boolean_robustness.py --output-dir regenerated-results
           python experiments/run_boolean_robustness.py --fixture-dir regenerated-fixtures/boolean-robustness --output-dir regenerated-boolean-fixture-results --refresh-fixtures
+          python experiments/run_topology_history.py --output-dir regenerated-results
+          python experiments/run_topology_history.py --fixture-dir regenerated-fixtures/topology-history --output-dir regenerated-topology-history-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -334,6 +336,12 @@ jobs:
           diff -u results/boolean_operation_summary.csv regenerated-results/boolean_operation_summary.csv
           diff -u results/boolean_tolerance_relations.csv regenerated-results/boolean_tolerance_relations.csv
           diff -u results/boolean_operation_contract.json regenerated-results/boolean_operation_contract.json
+          diff -u results/feature_operation_decisions.csv regenerated-results/feature_operation_decisions.csv
+          diff -u results/feature_operation_observations.csv regenerated-results/feature_operation_observations.csv
+          diff -u results/topology_history.csv regenerated-results/topology_history.csv
+          diff -u results/feature_face_round_trip_matches.csv regenerated-results/feature_face_round_trip_matches.csv
+          diff -u results/feature_operation_summary.csv regenerated-results/feature_operation_summary.csv
+          diff -u results/feature_operation_contract.json regenerated-results/feature_operation_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -364,6 +372,7 @@ jobs:
           diff -qr fixtures/profile-modeling regenerated-fixtures/profile-modeling
           diff -qr fixtures/sweep-loft-modeling regenerated-fixtures/sweep-loft-modeling
           diff -qr fixtures/boolean-robustness regenerated-fixtures/boolean-robustness
+          diff -qr fixtures/topology-history regenerated-fixtures/topology-history
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -431,6 +440,8 @@ jobs:
           test -s regenerated-results/sweep_loft_shapes.png
           test -s regenerated-results/boolean_operation_robustness.png
           test -s regenerated-results/boolean_operation_shapes.png
+          test -s regenerated-results/topology_history.png
+          test -s regenerated-results/feature_operation_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

@@ -1,0 +1,15 @@
+contract_version,control_id,constructed_face_index,imported_face_index,surface_type,area_absolute_difference,centroid_distance,index_values_equal,direct_topological_identity,operation_history_available_after_import
+1.0.0,edge_fillet_r1,1,1,plane,0,0,1,0,0
+1.0.0,edge_fillet_r1,2,2,plane,0,0,1,0,0
+1.0.0,edge_fillet_r1,3,3,cylinder,8.2067685980291571e-13,4.7829871682254534e-14,1,0,0
+1.0.0,edge_fillet_r1,4,4,plane,0,0,1,0,0
+1.0.0,edge_fillet_r1,5,5,plane,0,0,1,0,0
+1.0.0,edge_fillet_r1,6,6,plane,0,0,1,0,0
+1.0.0,edge_fillet_r1,7,7,plane,0,0,1,0,0
+1.0.0,edge_chamfer_d1,1,1,plane,0,0,1,0,0
+1.0.0,edge_chamfer_d1,2,2,plane,0,8.8817841970012523e-16,1,0,0
+1.0.0,edge_chamfer_d1,3,3,plane,3.5527136788005009e-15,4.4408920985006262e-16,1,0,0
+1.0.0,edge_chamfer_d1,4,4,plane,0,0,1,0,0
+1.0.0,edge_chamfer_d1,5,5,plane,0,8.8817841970012523e-16,1,0,0
+1.0.0,edge_chamfer_d1,6,6,plane,0,0,1,0,0
+1.0.0,edge_chamfer_d1,7,7,plane,0,0,1,0,0

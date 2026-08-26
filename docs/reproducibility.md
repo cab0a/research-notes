@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、46件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.46.0は直方体の和・共通・差7条件を評価し、14件の段階別観測、7件の往復比較、追加許容値の比較、STEP試料、契約、図を再生成します。厳密集合の真値と追加許容値による形状変更を分離します。
+本書は、47件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.47.0は丸めと面取り4条件を評価し、4件の段階別観測、52件の位相履歴、14件のSTEP面対応、2個のSTEP試料、契約、図を再生成します。面番号の一致、直接同一性、演算履歴を分離します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -122,6 +122,7 @@ python experiments/run_primitive_round_trips.py
 python experiments/run_profile_modeling.py
 python experiments/run_sweep_loft_modeling.py
 python experiments/run_boolean_robustness.py
+python experiments/run_topology_history.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -287,6 +288,11 @@ python experiments/run_boolean_robustness.py \
   --fixture-dir output/fixtures/boolean-robustness \
   --output-dir output/boolean-robustness \
   --refresh-fixtures
+
+python experiments/run_topology_history.py \
+  --fixture-dir output/fixtures/topology-history \
+  --output-dir output/topology-history \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -398,6 +404,11 @@ python experiments/run_boolean_robustness.py \
   Python cell decomposition provides exact cuboid-set volume and area truth;
   operands, options, fuzzy-gap connectivity, tolerance changes, and STEP-stage
   measure drift remain separate observations.
+- The v0.47 local-feature corpus generates two normalized STEP results. Box
+  cross-sections provide analytic truth; history queries follow documented
+  source-kind scopes; direct presence, generated and modified targets, split
+  and merge counts, face matching, local indices, identity, and imported
+  history remain separate fields.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -467,7 +478,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 359 tests cover:
+The 367 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -639,7 +650,8 @@ controls with 13 faces per stage, v0.42.0 evaluates three shapes under four
 deterministic tessellation settings, v0.43.0 evaluates six primitive round
 trips, v0.44.0 evaluates five profile-driven results, and v0.45.0 evaluates
 five accepted sweep, loft, and point-grid surface results plus two
-precondition rejections, and v0.46.0 evaluates seven Boolean results on that
+precondition rejections, v0.46.0 evaluates seven Boolean results, and v0.47.0
+evaluates two successful local features plus two oversized failures on that
 same route.
 None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
@@ -652,4 +664,5 @@ persistent source identity, recovered primitive construction history, literal
 surface-parameter identity, tolerance-invariant bounds, a general sketch or
 constraint system, recovered profile history, arbitrary guide-curve or loft
 behavior, certified surface fitting, general Boolean robustness, a universal
-fuzzy tolerance, or general-purpose visualization correctness.
+fuzzy tolerance, persistent topology naming, cross-STEP operation history, or
+general-purpose visualization correctness.

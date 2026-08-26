@@ -1,0 +1,3 @@
+control_id,topology_matches,surface_counts_match,volume_absolute_difference,surface_area_absolute_difference,surface_centroid_distance,constructed_truth_matches,step_imported_truth_matches,history_source_rows,sources_with_direct_result_presence,sources_with_generated_results,sources_with_modified_results,supported_deleted_sources,modified_split_sources,modified_merge_targets,round_trip_face_matches,equal_face_index_values,direct_face_identities_across_step,imported_history_available,round_trip_passes
+edge_fillet_r1,1,1,6.8212102632969618e-13,7.9580786405131221e-13,1.0841599276764049e-14,1,1,26,15,1,4,0,0,0,7,7,0,0,1
+edge_chamfer_d1,1,1,0,0,8.8817841970012523e-16,1,1,26,15,1,4,0,0,0,7,7,0,0,1

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う46件の研究を索引化しています。v0.46.0は直方体の和・共通・差を独立な厳密集合の体積・表面積と比較し、重なり、非接触、面接触、微小隙間への追加許容値を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う47件の研究を索引化しています。v0.47.0は直方体の同じ辺への丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの位相履歴、STEP往復後の面対応を検証します。面番号の一致と直接同一性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1211,6 +1211,35 @@ python -m pip install -e ".[geometry]"
 python experiments/run_boolean_robustness.py
 ```
 
+### v0.47.0 — Fillets, Chamfers, and Topology History
+
+**Question.** What can operation-local generated, modified, and deleted queries
+say about a controlled fillet and chamfer, and which relationships survive
+STEP exchange?
+
+**Result.** The unit fillet and chamfer match analytic volume and area before
+and after STEP; radius and distance 20 do not complete. Each successful
+operation records 26 source-scoped history rows, including one source with a
+generated result and four with modified results. Fourteen STEP face matches
+retain equal index values, but direct identity and imported operation history
+are zero.
+
+- [Complete note](../notes/fillets-chamfers-topology-history.md)
+- [Operation decisions](../results/feature_operation_decisions.csv)
+- [Stage observations](../results/feature_operation_observations.csv)
+- [Topology history](../results/topology_history.csv)
+- [STEP face matches](../results/feature_face_round_trip_matches.csv)
+- [Summary](../results/feature_operation_summary.csv)
+- [Evaluation contract](../results/feature_operation_contract.json)
+- [History figure](../results/topology_history.png)
+- [Shape previews](../results/feature_operation_shapes.png)
+- [Generated STEP fixtures](../fixtures/topology-history/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_topology_history.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1235,7 +1264,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.46.0 subsets;
+  controlled v0.21.0 through v0.47.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1253,5 +1282,7 @@ failure-mode analysis, but it does not establish:
   bounds, or recovered history from the v0.45.0 construction controls.
 - arbitrary curved or invalid Boolean operands, a universal fuzzy tolerance,
   or exact-set equivalence from the v0.46.0 cuboid controls.
+- general local-feature history, positive split or merge coverage, persistent
+  naming, or history preservation from the v0.47.0 box-edge controls.
 
 The complete notes contain the narrower limitations for each experiment.

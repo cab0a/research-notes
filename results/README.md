@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、46件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.46.0は直方体の和・共通・差について、厳密集合の体積・表面積、入力保持、交換則の限定不変量、追加許容値による隙間接続、STEP往復を検証します。
+このディレクトリには、47件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.47.0は丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの生成・変更・削除履歴、分割・統合数、STEP往復後の面番号・直接同一性・履歴有無を検証します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1228,6 +1228,29 @@ Six literal STEP contracts pass. The fuzzy control bridges the gap and retains
 one-solid topology across STEP, but changes exact measures and exhibits an
 additional imported volume difference of about `0.0000666667`.
 
+## v0.47.0
+
+- `feature_operation_decisions.csv` records two successful unit operations and
+  two oversized native non-completions.
+- `feature_operation_observations.csv` contains four constructed/imported
+  geometric observations with analytic truth.
+- `topology_history.csv` contains 52 source-subshape rows under documented
+  generated/modified/deleted query scopes.
+- `feature_face_round_trip_matches.csv` contains 14 geometry-based STEP face
+  matches with local index, direct identity, and history fields.
+- `feature_operation_summary.csv` aggregates history cardinalities and exchange
+  boundaries.
+- `feature_operation_contract.json` fixes inputs, truth, query scope, schemas,
+  fixture hashes, and claim boundaries.
+- `topology_history.png` compares operation-local history with STEP identity.
+- `feature_operation_shapes.png` previews the imported fillet and chamfer.
+
+Both successful operations and their imports match analytic truth. Each has
+one source edge with a generated face, four source faces with modified results,
+and zero supported deletion, split, or merge observations. All face index
+values happen to match after STEP, while direct identity and imported history
+remain absent.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1277,6 +1300,7 @@ python experiments/run_primitive_round_trips.py
 python experiments/run_profile_modeling.py
 python experiments/run_sweep_loft_modeling.py
 python experiments/run_boolean_robustness.py
+python experiments/run_topology_history.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

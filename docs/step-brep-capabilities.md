@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.46.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.46.0は直方体の和・共通・差を独立な厳密集合の体積・表面積と比較し、重なり、非接触、面接触、微小隙間への追加許容値を検証します。v0.47.0以降は未実装です。詳細は英語本文に示します。
+本書は、v0.47.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.47.0は直方体の同じ辺への丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの位相履歴、STEP往復後の面対応を検証します。面番号の一致と直接同一性を分離します。v0.48.0以降は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-46 studies through v0.46.0. It separates syntax recognition, schema validation, physical-reference
+47 studies through v0.47.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.47.0 and later roadmap stages remain unimplemented.
+v0.48.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -49,7 +49,7 @@ directions, not delivery promises.
 | Rule-based feature recognition | Controlled subset | Nine generated solids and STEP fixtures produce 136 face rows, 282 adjacency rows, 14 candidate rows, 18 stage observations, and two equivalent-boundary rows; all 14 candidates match controlled classification and dimensions, while two negative controls produce no false positives | Feature-history reconstruction, design-intent proof, interacting or arbitrary features, or a general recognizer |
 | Face-level reports | Controlled subset | A versioned 60-field CSV records 13 faces per stage across six surface families with parent lists, geometry, parameters, boundaries, adjacency, tolerance, and attributed metadata source | Persistent identity, arbitrary-file coverage, XCAF metadata traversal, shell-relative material orientation, or cross-kernel portability |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | Bounded controls cover primitives, profiles, extrusion, revolution, sweeps, lofts, one point-grid surface, and seven Boolean overlap/contact/tolerance cases in addition to selected analysis operations | A supported modeling API, parameter editing, sketches, arbitrary guide curves or lofts, general Boolean robustness, general healing, persistent naming, and evaluated export preservation |
+| Geometry modeling | Research evidence | Bounded controls cover primitives, profiles, extrusion, revolution, sweeps, lofts, one point-grid surface, seven Boolean cases, and fillet/chamfer history on one box edge | A supported modeling API, parameter editing, sketches, arbitrary local-feature behavior, history composition, general healing, persistent naming, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -175,7 +175,7 @@ corpus and its declared provenance.
 | Profiles, extrusion, and revolution | Controlled subset | v0.44.0 | Five controls preserve analytic truth, topology, and surfaces across STEP; rectangle height and revolution angle recompute ratios match, while general sketches, constraints, taper, and recovered feature history remain excluded |
 | Sweeps, lofts, and surface construction | Controlled subset | v0.45.0 | Five accepted controls retain validity, topology, surfaces, and measurements across STEP; two invalid preconditions reject without kernel invocation, while arbitrary guide curves, section compatibility, fairness, and certified fitting bounds remain excluded |
 | Boolean operations and robustness | Controlled subset | v0.46.0 | Seven cuboid controls cover union, intersection, subtraction, overlap, disjointness, shared-face contact, and one near-gap fuzzy pair; curved, invalid, sliver, warning, performance, cross-kernel, and universal-tolerance claims remain excluded |
-| Fillets, chamfers, and topology history | Not implemented | v0.47.0 | Generated, modified, deleted, split, and merged-shape evidence |
+| Fillets, chamfers, and topology history | Controlled subset | v0.47.0 | Two successful and two oversized controls record analytic truth, 52 source-scoped history rows, generated and modified results, zero observed deletion/split/merge cases, and 14 STEP face matches with equal indices but zero direct identity; general local-feature history and persistent naming remain excluded |
 | STEP import-edit-export preservation | Not implemented | v0.48.0 | Structure, semantics, geometry, topology, attribute, and tolerance comparison |
 | Independent kernel portability | Not implemented | v0.49.0 | Fixed corpus evaluated by independently selected implementations |
 | Resource-bounded native 3D intake | Not implemented | v0.50.0 | Isolation and budgets for parsing, archives, kernels, topology, meshes, and time |

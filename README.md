@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.46.0では、直方体の和・共通・差を、重なり、非接触、面接触、微小隙間で検証し、追加許容値による位相と形状の変化を調べます。
+v0.47.0では、直方体の同じ辺へ丸めと面取りを適用し、成功・失敗、解析真値、演算中の位相履歴、STEP往復後の面対応を検証します。
 
-既定条件の6例は独立な厳密集合の体積・表面積と一致しました。追加許容値0.0001は5万分の1の隙間をつないで立体数を2から1へ変えましたが、体積・表面積を変え、STEP再読込でも追加の測定差が生じました。追加許容値を万能な修復値とは扱いません。359件のテストを備え、v0.47.0以降は未実装です。詳細は英語本文に示します。
+半径1の丸めと距離1の面取りは解析真値と一致し、半径・距離20は完了せず拒否されました。各正常例で入力26要素の履歴を記録しました。STEP往復で面番号が全件偶然一致しても、直接同一性と演算履歴は0件でした。番号一致を永続識別子とは扱いません。367件のテストを備え、v0.48.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -41,7 +41,8 @@ application semantics, evaluated B-Rep geometry, controlled correspondence,
 rule-based geometric feature candidates, stable face-level reports,
 source-traceable tessellation diagnostics, primitive STEP round trips,
 profile-driven extrusion and revolution, bounded sweep, loft, and surface
-construction, and controlled Boolean robustness. The current release is v0.46.0.
+construction, controlled Boolean robustness, and operation-local topology
+history for fillets and chamfers. The current release is v0.47.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -56,32 +57,32 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 46 releases to their questions,
+The [study index](docs/studies.md) maps all 47 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.46.0 study compares union, intersection, and subtraction on seven pairs
-of axis-aligned cuboids. It separates exact-set truth from fuzzy-tolerance
-behavior and from STEP round-trip preservation.
+The v0.47.0 study applies one fillet and one chamfer to the same box edge,
+rejects two oversized controls, records operation-local history by documented
+source kind, and compares successful results across STEP.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Controls | 7 |
-| Constructed / imported observations | 7 / 7 |
-| Kernel-valid observations | 14 / 14 |
-| Default exact-set measure matches | 12 / 12 stage observations |
-| Literal STEP round-trip contracts passed | 6 / 7 |
-| Operand-preservation checks | 14 / 14 |
-| Near-gap solids, default / fuzzy | 2 / 1 |
-| Fuzzy exact-volume difference | approximately `0.0001333333` |
+| Controls | 4 |
+| Accepted / rejected | 2 / 2 |
+| Constructed / imported observations | 2 / 2 |
+| Analytic volume and area matches | 4 / 4 |
+| Input-history rows | 52 |
+| Generated / modified source rows | 2 / 8 |
+| Geometry-matched STEP faces | 14 / 14 |
+| Equal local indices / direct identities | 14 / 0 |
 
-![Boolean-operation robustness evidence](results/boolean_operation_robustness.png)
+![Topology-history and STEP-identity evidence](results/topology_history.png)
 
-The fuzzy setting bridges a gap smaller than its additional tolerance, but the
-result no longer matches the mathematical union of the original exact boxes.
-Its topology survives STEP while volume and area drift further. Successful
-completion and validity therefore do not establish exact geometric equivalence.
+The pinned writer/reader preserves face ordering in these two fixtures, so all
+local index values remain equal. Every direct identity check is nevertheless
+false and operation history is unavailable after import. Positional equality
+is therefore an observed ordering coincidence, not persistent CAD identity.
 
 ## Current STEP and B-Rep Capability
 
@@ -102,7 +103,8 @@ direct Part 21 `ADVANCED_FACE` instances, constructs and round-trips six
 controlled primitives and surfaces, recomputes bounded extrusion and
 revolution families from explicit profile truth, evaluates two G1 sweeps, two
 section lofts, and one point-grid surface with precondition failures, and checks
-seven bounded Boolean conditions against independent cuboid-set truth. It cannot prove
+seven bounded Boolean conditions against independent cuboid-set truth, and
+records scoped fillet/chamfer history plus STEP identity boundaries. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -110,7 +112,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, face reports, tessellations, construction, and bounded Boolean operations | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered feature history, general feature recognition, arbitrary Boolean robustness, or general healing |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, face reports, tessellations, construction, Boolean controls, and operation-local fillet/chamfer history | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, or general healing |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -217,6 +219,9 @@ maps each current field to its evidence, exact limitation, and planned release.
   and one fuzzy value. It does not establish a universal tolerance, behavior
   for arbitrary curved or invalid operands, or exact-set equivalence after
   fuzzy processing.
+- The topology-history evaluator covers one box edge and source-kind-scoped
+  queries. Equal face-index values across its STEP fixtures are not persistent
+  identity, and zero observed splits or merges is not a general guarantee.
 - The installed Python distribution inventory did not surface an OCCT LGPL
   notice through its standard license-file records. That observation is not a
   noncompliance finding and blocks this project's redistribution until a
@@ -261,8 +266,8 @@ v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
 manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
 correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
 tessellation-diagnostic, v0.43.0 primitive-round-trip, v0.44.0 profile-
-modeling, v0.45.0 sweep/loft/surface, and v0.46.0 Boolean-robustness studies
-also write deterministic versioned JSON records.
+modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, and v0.47.0
+topology-history studies also write deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -292,7 +297,7 @@ feature-recognition fixtures, the five v0.41.0 face-analysis fixtures, and the
 three v0.42.0 tessellation-diagnostic fixtures, and the six v0.43.0 primitive
 round-trip fixtures, the five v0.44.0 profile-modeling fixtures, and the five
 accepted v0.45.0 sweep/loft/surface fixtures, and the seven v0.46.0 Boolean
-result fixtures.
+result fixtures, and the two successful v0.47.0 feature-operation fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -303,7 +308,7 @@ validation evidence.
 
 ## Key Features
 
-- Forty-six published studies with explicit questions, controls, results, and
+- Forty-seven published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -370,6 +375,8 @@ validation evidence.
   admission decisions, analytic truth where available, and envelope evidence
 - Seven Boolean controls with independent cuboid-set truth, operand-preservation
   checks, reversed-operand invariants, and fuzzy-gap distortion evidence
+- Fillet and chamfer success/failure controls with analytic truth, scoped
+  generated/modified/deleted queries, and STEP identity boundaries
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -478,7 +485,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 359 tests covering blur metrics and models,
+The repository contains 367 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -553,6 +560,10 @@ The v0.46.0 additions cover union, intersection, subtraction, independent
 axis-aligned set measures, overlap, separation, face contact, near-gap fuzzy
 bridging, operand preservation, reversed-operand invariants, STEP measure
 drift, and deterministic fixtures.
+The v0.47.0 additions cover fillet and chamfer truth, oversized non-completion,
+documented history-query scope, direct source presence, generated and modified
+targets, split and merge counts, geometry-based STEP face matching, index-value
+coincidence, identity loss, and deterministic fixtures.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -581,8 +592,9 @@ that route, v0.41.0 evaluates five face-report controls with 13 faces per
 stage, v0.42.0 evaluates three imported shapes under four meshing conditions,
 v0.43.0 evaluates six primitive and surface round trips, v0.44.0 evaluates
 five profile-driven results, and v0.45.0 evaluates five accepted sweep, loft,
-and surface results plus two precondition rejections, and v0.46.0 evaluates
-seven Boolean results on the same route. These releases do not claim
+and surface results plus two precondition rejections, v0.46.0 evaluates seven
+Boolean results, and v0.47.0 evaluates two successful local operations plus two
+oversized failures on the same route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -613,10 +625,11 @@ v0.43.0 adds primitive construction truth and measured STEP round trips.
 v0.44.0 adds bounded profile-driven recompute, extrusion, revolution, and wire-
 orientation evidence. v0.45.0 adds bounded sweep, loft, surface construction,
 and precondition evidence. v0.46.0 adds bounded Boolean and fuzzy-tolerance
-evidence. The roadmap next proceeds through topology history and
+evidence. v0.47.0 adds scoped local-operation history and STEP identity
+boundaries. The roadmap next proceeds through
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.47.0 and later releases remain unimplemented.
+candidates. v0.48.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

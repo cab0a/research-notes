@@ -1,0 +1,5 @@
+contract_version,control_id,operation,parameter_name,parameter_value,selected_edge_endpoints,expected_decision,decision,reason,kernel_invoked,is_done,contour_count
+1.0.0,edge_fillet_r1,fillet,radius,1,12.0|0.0|6.0;12.0|8.0|6.0,accept,accept,constructed,1,1,1
+1.0.0,edge_chamfer_d1,chamfer,distance,1,12.0|0.0|6.0;12.0|8.0|6.0,accept,accept,constructed,1,1,1
+1.0.0,edge_fillet_r20,fillet,radius,20,12.0|0.0|6.0;12.0|8.0|6.0,reject,reject,native_not_done,1,0,1
+1.0.0,edge_chamfer_d20,chamfer,distance,20,12.0|0.0|6.0;12.0|8.0|6.0,reject,reject,native_not_done,1,0,1

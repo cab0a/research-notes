@@ -1,0 +1,213 @@
+{
+  "claim_boundaries": [
+    "history queries follow the source-kind scope documented by the selected local-operation APIs",
+    "zero observed splits or merges is not a claim that those events cannot occur",
+    "equal analysis-local face index values across this STEP route are coincidental ordering evidence",
+    "direct topological identity and operation-local history do not cross STEP exchange",
+    "STEP output does not recover the selected edge, radius, distance, or feature order"
+  ],
+  "contract_version": "1.0.0",
+  "controls": [
+    {
+      "control_id": "edge_fillet_r1",
+      "expected_decision": "accept",
+      "expected_surface_area": 428.1371669411541,
+      "expected_volume": 574.2831853071796,
+      "operation": "fillet",
+      "parameter_name": "radius",
+      "parameter_value": 1.0,
+      "selected_edge_endpoints": [
+        [
+          12.0,
+          0.0,
+          6.0
+        ],
+        [
+          12.0,
+          8.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "control_id": "edge_chamfer_d1",
+      "expected_decision": "accept",
+      "expected_surface_area": 426.31370849898474,
+      "expected_volume": 572.0,
+      "operation": "chamfer",
+      "parameter_name": "distance",
+      "parameter_value": 1.0,
+      "selected_edge_endpoints": [
+        [
+          12.0,
+          0.0,
+          6.0
+        ],
+        [
+          12.0,
+          8.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "control_id": "edge_fillet_r20",
+      "expected_decision": "reject",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "operation": "fillet",
+      "parameter_name": "radius",
+      "parameter_value": 20.0,
+      "selected_edge_endpoints": [
+        [
+          12.0,
+          0.0,
+          6.0
+        ],
+        [
+          12.0,
+          8.0,
+          6.0
+        ]
+      ]
+    },
+    {
+      "control_id": "edge_chamfer_d20",
+      "expected_decision": "reject",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "operation": "chamfer",
+      "parameter_name": "distance",
+      "parameter_value": 20.0,
+      "selected_edge_endpoints": [
+        [
+          12.0,
+          0.0,
+          6.0
+        ],
+        [
+          12.0,
+          8.0,
+          6.0
+        ]
+      ]
+    }
+  ],
+  "decision_csv": {
+    "file": "feature_operation_decisions.csv",
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "operation",
+      "parameter_name",
+      "parameter_value",
+      "selected_edge_endpoints",
+      "expected_decision",
+      "decision",
+      "reason",
+      "kernel_invoked",
+      "is_done",
+      "contour_count"
+    ]
+  },
+  "face_match_csv": {
+    "file": "feature_face_round_trip_matches.csv",
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "constructed_face_index",
+      "imported_face_index",
+      "surface_type",
+      "area_absolute_difference",
+      "centroid_distance",
+      "index_values_equal",
+      "direct_topological_identity",
+      "operation_history_available_after_import"
+    ]
+  },
+  "fixture_sha256": {
+    "edge_chamfer_d1.step": "1cf397f42b551b726b788d041595179769b4b87f1ad8bb9837a6ab76924931c7",
+    "edge_fillet_r1.step": "c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758"
+  },
+  "history_csv": {
+    "file": "topology_history.csv",
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "source_kind",
+      "source_index",
+      "query_scope",
+      "direct_result_indices",
+      "generated_result_indices",
+      "modified_result_indices",
+      "is_deleted",
+      "modified_is_split",
+      "modified_target_max_source_count"
+    ]
+  },
+  "history_query_scope": {
+    "edge": [
+      "Generated"
+    ],
+    "face": [
+      "Modified",
+      "IsDeleted"
+    ],
+    "vertex": [
+      "Generated"
+    ]
+  },
+  "observation_csv": {
+    "file": "feature_operation_observations.csv",
+    "ordered_fields": [
+      "contract_version",
+      "stage",
+      "control_id",
+      "source_file",
+      "source_sha256",
+      "vertex_count",
+      "edge_count",
+      "face_count",
+      "shell_count",
+      "solid_count",
+      "absolute_volume",
+      "expected_volume",
+      "volume_absolute_error",
+      "surface_area",
+      "expected_surface_area",
+      "surface_area_absolute_error",
+      "surface_counts",
+      "maximum_vertex_tolerance",
+      "maximum_edge_tolerance",
+      "maximum_face_tolerance",
+      "analyzer_valid"
+    ]
+  },
+  "study_version": "v0.47.0",
+  "summary_csv": {
+    "file": "feature_operation_summary.csv",
+    "ordered_fields": [
+      "control_id",
+      "topology_matches",
+      "surface_counts_match",
+      "volume_absolute_difference",
+      "surface_area_absolute_difference",
+      "surface_centroid_distance",
+      "constructed_truth_matches",
+      "step_imported_truth_matches",
+      "history_source_rows",
+      "sources_with_direct_result_presence",
+      "sources_with_generated_results",
+      "sources_with_modified_results",
+      "supported_deleted_sources",
+      "modified_split_sources",
+      "modified_merge_targets",
+      "round_trip_face_matches",
+      "equal_face_index_values",
+      "direct_face_identities_across_step",
+      "imported_history_available",
+      "round_trip_passes"
+    ]
+  },
+  "title": "Fillets, Chamfers, and Topology History"
+}
