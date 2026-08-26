@@ -1,0 +1,11 @@
+scope,metric,value
+corpus,step_files,3
+parser,implementations,3
+parser,accepted_observations,9
+importer,routes,2
+importer,topology_agreements,3
+importer,geometry_agreements,3
+document,xcaf_name_inventories,3
+document,xcaf_color_inventories,2
+kernel,independent_kernels,0
+claim,cross_kernel_conclusion,0

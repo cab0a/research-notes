@@ -6,7 +6,7 @@ round_trip,constructed_topology,1 solid; 6 faces; 12 edges; 8 vertices
 round_trip,imported_topology,1 solid; 6 faces; 12 edges; 8 vertices
 round_trip,constructed_valid,1
 round_trip,imported_valid,1
-parser_boundary,decision,reject
-parser_boundary,reason,illegal_character
+parser_boundary,decision,accept
+parser_boundary,reason,part21_parsed
 package_audit,recorded_bytes,940567380
 package_audit,occt_lgpl_notice_detected,0

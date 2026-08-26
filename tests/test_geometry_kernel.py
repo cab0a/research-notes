@@ -97,7 +97,7 @@ def test_ocp_box_round_trip_preserves_controlled_topology() -> None:
     importlib.util.find_spec("OCP") is None,
     reason="install the geometry extra to run the native probe",
 )
-def test_ocp_probe_is_byte_deterministic_and_exposes_parser_boundary() -> None:
+def test_ocp_probe_is_byte_deterministic_and_is_accepted_by_current_parser() -> None:
     """Repeated writes should match after timestamp normalization."""
     first = probe_ocp_backend()
     second = probe_ocp_backend()
@@ -105,10 +105,10 @@ def test_ocp_probe_is_byte_deterministic_and_exposes_parser_boundary() -> None:
     assert first.source_bytes == second.source_bytes
     assert first.source_sha256 == second.source_sha256
     assert (first.internal_parser_decision, first.internal_parser_reason) == (
-        "reject",
-        "illegal_character",
+        "accept",
+        "part21_parsed",
     )
-    assert (first.internal_parser_line, first.internal_parser_column) == (38, 38)
+    assert (first.internal_parser_line, first.internal_parser_column) == (None, None)
 
 
 @pytest.mark.skipif(

@@ -22,8 +22,8 @@
       "vertices": 8
     },
     "imported_valid": true,
-    "internal_parser_decision": "reject",
-    "internal_parser_reason": "illegal_character",
+    "internal_parser_decision": "accept",
+    "internal_parser_reason": "part21_parsed",
     "source_sha256": "a418c0ce0f670673348a7bfe054ed3480a1e57b6c5851b63338871d8b8b94bea"
   },
   "disposition": "selected_bounded_research",

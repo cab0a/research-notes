@@ -144,7 +144,7 @@ third-party CAD model is used.
 | Kernel checks | Constructed and imported shapes reported valid |
 | Normalized STEP fixture | 15,416 bytes, SHA-256 `a418c0ce0f670673348a7bfe054ed3480a1e57b6c5851b63338871d8b8b94bea` |
 | Recorded installed files | 940,567,380 bytes across the three pinned distributions |
-| Internal Part 21 decision | Reject at line 38, column 38 with `illegal_character` |
+| Internal Part 21 decision | Accept with `part21_parsed` under the v0.49.0 enumeration-token rule |
 
 ![Geometry-kernel selection evidence](../results/geometry_kernel_selection.png)
 
@@ -161,13 +161,13 @@ shows why this release precedes face-level evaluation. The geometry dependency
 is large, introduces native-code and license boundaries, and can emit syntax
 that the project's strict Part 21 subset does not accept.
 
-The internal parser rejects the OCCT enumeration spelling `.PCURVE_S1.` at
-line 38, column 38. The reviewed public Part 21 edition-3 text describes the
-enumeration sequence using capital letters and digits, while the OCCT writer
-uses an underscore in this value. v0.31.0 records the exact disagreement but
-does not broaden the lexer or declare the writer invalid. Resolving the
-standard edition, schema encoding convention, and real-world compatibility
-impact is a separate parser study.
+The v0.31.0 release originally recorded an internal-parser rejection at the
+OCCT enumeration spelling `.PCURVE_S1.`. The v0.49.0 portability study exposed
+the narrow token-rule omission against a fixed real writer output, expanded
+the enumeration spelling to include underscores, and added a regression test.
+The current regenerated observation therefore accepts the same committed
+bytes. This update records parser evolution; it does not retroactively claim
+that v0.31.0 covered the spelling when first released.
 
 ## Decision
 

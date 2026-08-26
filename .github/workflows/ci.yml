@@ -126,6 +126,7 @@ jobs:
           python experiments/run_topology_history.py --fixture-dir regenerated-fixtures/topology-history --output-dir regenerated-topology-history-fixture-results --refresh-fixtures
           python experiments/run_step_round_trip_preservation.py --output-dir regenerated-results
           python experiments/run_step_round_trip_preservation.py --fixture-dir regenerated-fixtures/step-round-trip-preservation --output-dir regenerated-step-preservation-fixture-results --refresh-fixtures
+          python experiments/run_step_portability.py --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -348,6 +349,11 @@ jobs:
           diff -u results/step_preservation_comparisons.csv regenerated-results/step_preservation_comparisons.csv
           diff -u results/step_preservation_summary.csv regenerated-results/step_preservation_summary.csv
           diff -u results/step_preservation_contract.json regenerated-results/step_preservation_contract.json
+          diff -u results/step_parser_portability.csv regenerated-results/step_parser_portability.csv
+          diff -u results/step_importer_portability.csv regenerated-results/step_importer_portability.csv
+          diff -u results/step_portability_summary.csv regenerated-results/step_portability_summary.csv
+          diff -u results/step_portability_manifest.csv regenerated-results/step_portability_manifest.csv
+          diff -u results/step_portability_contract.json regenerated-results/step_portability_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -451,6 +457,7 @@ jobs:
           test -s regenerated-results/feature_operation_shapes.png
           test -s regenerated-results/step_round_trip_preservation.png
           test -s regenerated-results/step_round_trip_preservation_shapes.png
+          test -s regenerated-results/step_portability.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

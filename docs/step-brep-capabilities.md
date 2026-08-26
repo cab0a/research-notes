@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.48.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.48.0は3種類の合成形状を2世代のSTEP読込で比較し、構造、意味、形状、位相、属性、公差の保持とバイト同一性を分離します。v0.49.0以降は未実装です。詳細は英語本文に示します。
+本書は、v0.49.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.49.0は3つの固定STEP標本を3つの構文解析実装と同一形状計算核の2つの読込経路で比較します。独立した形状計算核は未選定です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-48 studies through v0.48.0. It separates syntax recognition, schema validation, physical-reference
+49 studies through v0.49.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.49.0 and later roadmap stages remain unimplemented.
+v0.50.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -177,7 +177,7 @@ corpus and its declared provenance.
 | Boolean operations and robustness | Controlled subset | v0.46.0 | Seven cuboid controls cover union, intersection, subtraction, overlap, disjointness, shared-face contact, and one near-gap fuzzy pair; curved, invalid, sliver, warning, performance, cross-kernel, and universal-tolerance claims remain excluded |
 | Fillets, chamfers, and topology history | Controlled subset | v0.47.0 | Two successful and two oversized controls record analytic truth, 52 source-scoped history rows, generated and modified results, zero observed deletion/split/merge cases, and 14 STEP face matches with equal indices but zero direct identity; general local-feature history and persistent naming remain excluded |
 | STEP import-edit-export preservation | Controlled subset | v0.48.0 | Three XCAF-aware controls retain structure, semantics, global geometry, topology, color inventory, and maximum tolerances between generations; only one is byte identical and one declared source color is omitted before the first import, while nested assemblies, complete attribute links, and cross-kernel evidence remain excluded |
-| Independent kernel portability | Not implemented | v0.49.0 | Fixed corpus evaluated by independently selected implementations |
+| Independent parser and importer portability | Controlled subset | v0.49.0 | Three fixed files are accepted by three parser implementations and produce matching geometry on two OCCT routes; no independent kernel is included |
 | Resource-bounded native 3D intake | Not implemented | v0.50.0 | Isolation and budgets for parsing, archives, kernels, topology, meshes, and time |
 | Face-adjacency descriptors | Not implemented | v0.51.0 | Attributed graphs with source and calculation provenance |
 | Feature-recognition robustness | Not implemented | v0.52.0 | Deterministic confusion counts and abstention under tolerance, size, orientation, import, and healing perturbations |

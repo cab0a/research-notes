@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う48件の研究を索引化しています。v0.48.0は名称と色を持つ3形状を2世代のSTEP読込で比較し、構造、意味、形状、位相、属性、公差の保持とバイト同一性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う49件の研究を索引化しています。v0.49.0は3つの固定STEP標本を3つの構文解析実装と2つの読込経路で比較し、構文受理、形状転送、文書属性、形状計算核間可搬性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1266,6 +1266,30 @@ python -m pip install -e ".[geometry]"
 python experiments/run_step_round_trip_preservation.py
 ```
 
+### v0.49.0 — Independent Parser and Kernel Portability
+
+**Question.** Which observations remain stable across independently
+implemented Part 21 parsers and distinct import APIs, and which claims require
+a genuinely independent geometry kernel?
+
+**Result.** All three parsers accept all three fixed files. The shape-only and
+XCAF routes agree on topology, volume, area, and support surfaces for all three
+controls. XCAF exposes three name inventories and two color inventories. Both
+routes share one OCCT build, so cross-kernel portability remains false.
+
+- [Complete note](../notes/independent-parser-kernel-portability.md)
+- [Parser observations](../results/step_parser_portability.csv)
+- [Importer observations](../results/step_importer_portability.csv)
+- [Summary](../results/step_portability_summary.csv)
+- [Fixed-corpus manifest](../results/step_portability_manifest.csv)
+- [Evaluation contract](../results/step_portability_contract.json)
+- [Evaluation figure](../results/step_portability.png)
+
+```bash
+python -m pip install -e ".[comparison,geometry]"
+python experiments/run_step_portability.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1290,7 +1314,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.48.0 subsets;
+  controlled v0.21.0 through v0.49.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1312,5 +1336,7 @@ failure-mode analysis, but it does not establish:
   naming, or history preservation from the v0.47.0 box-edge controls.
 - nested-assembly preservation, complete attribute association, pointwise
   geometry equivalence, or cross-kernel portability from the v0.48.0 controls.
+- schema validity, semantic equivalence, or cross-kernel portability from the
+  v0.49.0 parser and same-kernel import-route agreements.
 
 The complete notes contain the narrower limitations for each experiment.

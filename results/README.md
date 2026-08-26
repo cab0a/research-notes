@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、48件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.48.0は名称と色を持つ3形状について、2回のSTEP読込世代における構造、意味、形状、位相、属性、公差、バイト列を個別に比較します。
+このディレクトリには、49件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.49.0は3つの固定STEP標本を3つの構文解析実装と2つの読込経路で比較し、独立した形状計算核が未選定であることも結果として固定します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1270,6 +1270,25 @@ declared color before the source import, then preserves the resulting empty
 color inventory; source-truth agreement is therefore not inferred from stable
 round-trip observations.
 
+## v0.49.0
+
+- `step_parser_portability.csv` records nine outcomes across the internal
+  parser and two pinned public parser implementations.
+- `step_importer_portability.csv` records topology, geometry, support surfaces,
+  names, and colors from shape-only and XCAF import routes.
+- `step_portability_summary.csv` aggregates parser acceptance, route agreement,
+  document attribute availability, and the independent-kernel gap.
+- `step_portability_manifest.csv` binds each observation to the frozen v0.48.0
+  source fixture and SHA-256 digest.
+- `step_portability_contract.json` fixes implementation revisions, comparison
+  semantics, and claim boundaries.
+- `step_portability.png` visualizes parser acceptance and same-kernel import
+  route agreement.
+
+All nine parser observations accept their fixed input. Both OCCT routes agree
+on the measured B-Rep for all three controls. The result explicitly records
+zero independent geometry kernels and makes no cross-kernel conclusion.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1321,6 +1340,7 @@ python experiments/run_sweep_loft_modeling.py
 python experiments/run_boolean_robustness.py
 python experiments/run_topology_history.py
 python experiments/run_step_round_trip_preservation.py
+python experiments/run_step_portability.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

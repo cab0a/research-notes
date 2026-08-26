@@ -1,0 +1,7 @@
+contract_version,control_id,importer,kernel_identity,outcome,vertex_count,edge_count,face_count,shell_count,solid_count,absolute_volume,surface_area,surface_counts,names,colors,topology_matches_other_route,geometry_matches_other_route,surface_inventory_matches_other_route
+1.0.0,named_colored_box,occt_shape_only,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,8,12,6,1,1,23.999999999999996,52,plane:6,,,1,1,1
+1.0.0,named_colored_box,occt_xcaf,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,8,12,6,1,1,23.999999999999996,52,plane:6,Controlled Box,"0.85000002384185791,0.15000000596046448,0.10000000149011612",1,1,1
+1.0.0,named_colored_through_hole,occt_shape_only,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,10,15,7,1,1,546.54756887259634,469.30641276138192,plane:6|cylinder:1,,,1,1,1
+1.0.0,named_colored_through_hole,occt_xcaf,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,10,15,7,1,1,546.54756887259634,469.30641276138192,plane:6|cylinder:1,Controlled Through Hole,,1,1,1
+1.0.0,named_colored_bspline,occt_shape_only,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,4,4,1,1,0,0,9.5815777795114592,bspline:1,,,1,1,1
+1.0.0,named_colored_bspline,occt_xcaf,Open CASCADE Technology via cadquery-ocp 7.9.3.1.1,accept,4,4,1,1,0,0,9.5815777795114592,bspline:1,Controlled B-Spline Shell,"0.15000000596046448,0.30000001192092896,0.85000002384185791",1,1,1

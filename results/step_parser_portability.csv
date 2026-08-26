@@ -1,0 +1,10 @@
+contract_version,control_id,parser,implementation_identity,outcome,diagnostic_class,entity_count,reference_count,exact_source_reconstruction
+1.0.0,named_colored_box,research_notes_part21,repository source at study commit,accept,source_model_parsed,361,416,1
+1.0.0,named_colored_box,steputils,https://github.com/mozman/steputils.git@547860b349a36cf24c564d6c87ffd8f60484f6fb,accept,none,,,
+1.0.0,named_colored_box,ifcopenshell_step_file_parser,https://github.com/IfcOpenShell/step-file-parser.git@9400d243d880dace57490949d74ab1932ce99a09,accept,none,,,
+1.0.0,named_colored_through_hole,research_notes_part21,repository source at study commit,accept,source_model_parsed,457,531,1
+1.0.0,named_colored_through_hole,steputils,https://github.com/mozman/steputils.git@547860b349a36cf24c564d6c87ffd8f60484f6fb,accept,none,,,
+1.0.0,named_colored_through_hole,ifcopenshell_step_file_parser,https://github.com/IfcOpenShell/step-file-parser.git@9400d243d880dace57490949d74ab1932ce99a09,accept,none,,,
+1.0.0,named_colored_bspline,research_notes_part21,repository source at study commit,accept,source_model_parsed,121,132,1
+1.0.0,named_colored_bspline,steputils,https://github.com/mozman/steputils.git@547860b349a36cf24c564d6c87ffd8f60484f6fb,accept,none,,,
+1.0.0,named_colored_bspline,ifcopenshell_step_file_parser,https://github.com/IfcOpenShell/step-file-parser.git@9400d243d880dace57490949d74ab1932ce99a09,accept,none,,,

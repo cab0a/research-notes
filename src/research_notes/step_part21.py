@@ -199,7 +199,7 @@ _INTEGER_RE = re.compile(r"[-+]?\d+")
 _IDENTIFIER_RE = re.compile(r"!?[A-Za-z_][A-Za-z0-9_-]*")
 _KEYWORD_RE = re.compile(r"!?[A-Z][A-Z0-9_]*")
 _CONSTANT_RE = re.compile(r"[A-Z][A-Z0-9]*")
-_ENUMERATION_RE = re.compile(r"[A-Z][A-Z0-9]*")
+_ENUMERATION_RE = re.compile(r"[A-Z][A-Z0-9_]*")
 _TAG_NAME_RE = re.compile(r"[A-Za-z][A-Za-z0-9]*")
 _BINARY_RE = re.compile(r"[0-3][0-9A-F]*")
 

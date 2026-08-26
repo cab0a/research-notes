@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.48.0では、名称と色を宣言した箱、貫通穴形状、Bスプライン殻について、元の出力と再出力の計6個のSTEP試験ファイルを追加します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.49.0はv0.48.0で固定した箱、貫通穴形状、Bスプライン殻の元STEPファイル3個をバイト単位で再利用し、構文解析器と読込経路を比較します。詳細は英語本文に示します。
 
 ---
 
@@ -319,9 +319,10 @@ sample to the round-trip observations.
 The figure includes the candidate gate matrix and the topology counts rather
 than a tessellated rendering. v0.31.0 proves one construction and exchange
 probe, not face geometry, visual equivalence, general STEP compatibility, or
-independent-kernel agreement. The strict internal Part 21 parser rejects the
-writer's `.PCURVE_S1.` spelling; the exact boundary remains visible in the
-probe CSV.
+independent-kernel agreement. The v0.31.0 parser originally rejected the
+writer's `.PCURVE_S1.` spelling; v0.49.0 corrects that token rule and the
+regenerated probe CSV records acceptance while the historical note preserves
+the reason for the change.
 
 ## v0.32.0 — Evaluated Analytic Face Sample
 
@@ -796,6 +797,20 @@ The files do not establish nested-assembly, PMI, layer, material, or complete
 subshape-style preservation. The through-hole source demonstrates an attribute
 omission before the first import.
 
+## v0.49.0 — Portability Fixed Corpus
+
+The portability study reuses these committed source files without copying or
+rewriting them:
+
+- `named_colored_box_source.step`;
+- `named_colored_through_hole_source.step`;
+- `named_colored_bspline_source.step`.
+
+[`step_portability_manifest.csv`](../results/step_portability_manifest.csv)
+records the relative source path, byte count, and SHA-256 for every comparison
+row. No new geometric sample is introduced: fixed-byte reuse isolates parser
+and importer-route variation from fixture-generation variation.
+
 ## Regeneration
 
 ```bash
@@ -906,6 +921,8 @@ python experiments/run_boolean_robustness.py \
 python experiments/run_topology_history.py \
   --fixture-dir fixtures/topology-history \
   --refresh-fixtures
+
+python experiments/run_step_portability.py
 ```
 
 ## Interpretation Boundary

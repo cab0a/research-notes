@@ -1,0 +1,24 @@
+{
+  "claim_boundaries": [
+    "parser acceptance does not imply schema validity or geometric correctness",
+    "the shape-only and XCAF routes share one OCCT kernel implementation",
+    "document attribute availability is not comparable to a shape-only API that does not expose document labels",
+    "three synthetic files do not establish general STEP portability",
+    "cross-kernel portability remains untested until an independent kernel is selected"
+  ],
+  "contract_version": "1.0.0",
+  "cross_kernel_conclusion": false,
+  "fixed_corpus": {
+    "named_colored_box_source.step": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814",
+    "named_colored_bspline_source.step": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851",
+    "named_colored_through_hole_source.step": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a"
+  },
+  "independent_kernel_available": false,
+  "kernel_identity": "Open CASCADE Technology via cadquery-ocp 7.9.3.1.1",
+  "parser_commits": {
+    "ifcopenshell_step_file_parser": "9400d243d880dace57490949d74ab1932ce99a09",
+    "steputils": "547860b349a36cf24c564d6c87ffd8f60484f6fb"
+  },
+  "study_version": "v0.49.0",
+  "title": "Independent Parser and Kernel Portability"
+}

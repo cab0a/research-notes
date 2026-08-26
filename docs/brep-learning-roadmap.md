@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.48.0は名称と色を持つ3種類の合成形状をSTEP出力・拡張文書読込・再出力・再読込し、構造、意味、形状、位相、属性、公差、バイト列を個別に比較します。世代間で安定していても最初の出力前に属性が失われる場合があるため、入力真値への一致と保持性を分離します。v0.49.0以降は未実装です。
+v0.49.0は3つの固定合成STEP標本を内製構文解析器と2つの固定版公開構文解析器で比較し、さらに同じ形状計算核の形状専用経路と文書対応経路を比較します。全標本が受理され測定形状も一致しましたが、独立した形状計算核は未選定なので計算核間可搬性は未確認です。v0.50.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -265,8 +265,8 @@ The study is an engineering decision record, not legal advice.
 Answered boundary: the selected route can construct and validate one box,
 write it to STEP, read it back, and preserve 1 solid, 6 faces, 12 unique edges,
 and 8 unique vertices. It does not yet evaluate face fields. The strict Part 21
-parser's rejection of the writer's `.PCURVE_S1.` spelling is retained as an
-open interoperability question.
+parser's original rejection of the writer's `.PCURVE_S1.` spelling was
+resolved by the v0.49.0 portability study and retained as a regression case.
 
 #### v0.32.0 — Evaluated Face Geometry and Tolerances
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.49.0 onward are planned and not implemented at v0.48.0.
+The stages from v0.50.0 onward are planned and not implemented at v0.49.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -544,8 +544,12 @@ claims.
 
 #### v0.49.0 — Independent Parser and Kernel Portability
 
-Run fixed samples through independently selected parsers, importers, or
-kernels. Treat disagreements as explicit interoperability evidence.
+Completed with three frozen STEP files, the repository parser, two pinned
+public parsers, and two OCCT import routes. All nine parser observations accept
+their inputs, and both import routes agree on topology, volume, area, and
+support surfaces for all three controls. The XCAF route exposes document names
+and selected colors that the shape-only route does not report. Both routes use
+one OCCT build, so the contract records no independent-kernel conclusion.
 
 #### v0.50.0 — Resource-Bounded 3D Intake
 

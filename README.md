@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.48.0では、名称と色を持つ3種類の合成形状について、STEP出力・拡張文書読込・再出力・再読込を行い、構造、意味、形状、位相、属性、公差、バイト列を個別に検証します。
+v0.49.0では、3つの固定合成STEP標本を内製構文解析器と固定版の2つの公開構文解析器で読み、さらに同じ形状計算核の形状専用経路と文書対応経路を比較します。
 
-3条件すべてで名称、形状、位相、公差、再読込された色一覧を保持しましたが、正規化後のバイト列まで一致したのは1条件だけでした。貫通穴形状では宣言した色が最初の出力時点で失われ、その空の色一覧だけが次世代へ保持されました。入力真値への一致と世代間の安定性を分離します。372件のテストを備え、v0.49.0以降は未実装です。詳細は英語本文に示します。
+全9件の構文解析は受理され、2つの読込経路は3標本すべてで位相と大域的な形状測定に一致しました。文書対応経路だけが名前と色を取得します。独立した形状計算核は未選定なので、形状計算核間の可搬性は未確認です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -42,7 +42,8 @@ rule-based geometric feature candidates, stable face-level reports,
 source-traceable tessellation diagnostics, primitive STEP round trips,
 profile-driven extrusion and revolution, bounded sweep, loft, and surface
 construction, controlled Boolean robustness, operation-local topology history,
-and dimension-specific STEP/XCAF preservation. The current release is v0.48.0.
+dimension-specific STEP/XCAF preservation, and independent parser/import-route
+comparison. The current release is v0.49.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -57,30 +58,28 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 48 releases to their questions,
+The [study index](docs/studies.md) maps all 49 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.48.0 study follows three named and colored controls through two XCAF-aware
-STEP import generations and separates source-truth agreement, semantic
-preservation, B-Rep preservation, and normalized byte identity.
+The v0.49.0 study sends three fixed synthetic STEP files through three
+independently implemented parsers and two OCCT import routes.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Controls / committed STEP files | 3 / 6 |
-| Structure, semantics, geometry, topology, attribute, and tolerance preservation | 18 / 18 |
-| Declared source name matches | 3 / 3 |
-| Declared source color matches | 2 / 3 |
-| Normalized byte-identical pairs | 1 / 3 |
-| Analyzer-valid imported stages | 6 / 6 |
+| Fixed STEP files | 3 |
+| Accepted parser observations | 9 / 9 |
+| Import-route topology agreements | 3 / 3 |
+| Import-route geometry agreements | 3 / 3 |
+| XCAF name / color inventories | 3 / 2 |
+| Independent geometry kernels | 0 |
 
-![Dimension-specific STEP preservation evidence](results/step_round_trip_preservation.png)
+![STEP parser and import-route portability evidence](results/step_portability.png)
 
-All three generation pairs preserve the measured semantic and B-Rep dimensions,
-but the through-hole and B-spline files are not byte identical. The through-hole
-source also omits its declared color before the first import; preserving the
-resulting empty color inventory is not success against source truth.
+All parsers accept the fixed files, and both import routes agree on the measured
+B-Rep. This is parser and API-route evidence, not cross-kernel portability:
+both geometric routes share the same pinned OCCT build.
 
 ## Current STEP and B-Rep Capability
 
@@ -265,8 +264,8 @@ manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
 correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
 tessellation-diagnostic, v0.43.0 primitive-round-trip, v0.44.0 profile-
 modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, v0.47.0
-topology-history, and v0.48.0 STEP-preservation studies also write deterministic
-versioned JSON records.
+topology-history, v0.48.0 STEP-preservation, and v0.49.0 parser/import-route
+portability studies also write deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -297,7 +296,8 @@ three v0.42.0 tessellation-diagnostic fixtures, and the six v0.43.0 primitive
 round-trip fixtures, the five v0.44.0 profile-modeling fixtures, and the five
 accepted v0.45.0 sweep/loft/surface fixtures, and the seven v0.46.0 Boolean
 result fixtures, the two successful v0.47.0 feature-operation fixtures, and the
-six v0.48.0 source/re-export preservation fixtures.
+six v0.48.0 source/re-export preservation fixtures. v0.49.0 reuses the three
+source fixtures byte for byte and records their digests in a study manifest.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -308,7 +308,7 @@ validation evidence.
 
 ## Key Features
 
-- Forty-seven published studies with explicit questions, controls, results, and
+- Forty-nine published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -567,6 +567,9 @@ coincidence, identity loss, and deterministic fixtures.
 The v0.48.0 additions cover XCAF-aware names and colors, source-truth checks,
 two imported generations, dimension-specific preservation, normalized byte
 identity, file-size drift, and deterministic source/re-export fixtures.
+The v0.49.0 additions cover three independent Part 21 parser implementations,
+two same-kernel import routes, route-specific document attributes, exact fixed-
+corpus digests, and an explicit absence of cross-kernel evidence.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -597,8 +600,9 @@ v0.43.0 evaluates six primitive and surface round trips, v0.44.0 evaluates
 five profile-driven results, and v0.45.0 evaluates five accepted sweep, loft,
 and surface results plus two precondition rejections, v0.46.0 evaluates seven
 Boolean results, v0.47.0 evaluates two successful local operations plus two
-oversized failures, and v0.48.0 evaluates three repeated XCAF-aware STEP
-exchanges on the same route. These releases do not claim
+oversized failures, v0.48.0 evaluates three repeated XCAF-aware STEP exchanges,
+and v0.49.0 compares three parser implementations and two same-kernel import
+routes. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -631,10 +635,12 @@ orientation evidence. v0.45.0 adds bounded sweep, loft, surface construction,
 and precondition evidence. v0.46.0 adds bounded Boolean and fuzzy-tolerance
 evidence. v0.47.0 adds scoped local-operation history and STEP identity
 boundaries. v0.48.0 separates structure, semantics, geometry, topology,
-attributes, tolerances, and byte identity across repeated exchange. The roadmap next proceeds through
+attributes, tolerances, and byte identity across repeated exchange. v0.49.0
+separates parser acceptance, import-route geometry, document attributes, and
+the still-open independent-kernel question. The roadmap next proceeds through
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.49.0 and later releases remain unimplemented.
+candidates. v0.50.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 
