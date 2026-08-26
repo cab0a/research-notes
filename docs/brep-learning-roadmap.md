@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.45.0は直線・円弧経路の掃引、円形・四角形断面のロフト、点格子からのBスプライン面を検証します。正常な5条件はSTEP再読込後も有効性、位相、曲面、測定値を保持し、折れた経路と断面不足は計算核を呼ぶ前に拒否します。滑らかなロフトの断面間形状が入力断面の最大幅を約1.5倍まで超えるため、補間と設計包絡を区別します。v0.46.0以降は未実装です。
+v0.46.0は直方体の和・共通・差を、重なり、非接触、面接触、微小隙間で検証します。既定条件の6例は独立な厳密集合の体積・表面積と一致します。追加許容値は微小隙間をつなぎますが、厳密集合から形状を変え、STEP再読込でも追加の測定差が生じます。v0.47.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.46.0 onward are planned and not implemented at v0.45.0.
+The stages from v0.47.0 onward are planned and not implemented at v0.46.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -504,8 +504,15 @@ through sections does not imply containment inside their simple envelope.
 
 #### v0.46.0 — Boolean Operations and Robustness
 
-Exercise union, intersection, and subtraction across disjoint, tangent,
-near-coincident, and tolerance-sensitive cases.
+Completed with seven axis-aligned cuboid controls covering union, intersection,
+subtraction, volume overlap, positive separation, face contact, and one
+near-gap default/fuzzy pair. Twelve default stage observations match independent
+cell-decomposition volume and area truth, and all 14 observations are valid.
+
+The additional fuzzy value `0.0001` bridges a gap of `0.00005`, changing two
+solids into one and changing exact-set volume and area. Six literal STEP
+contracts pass; the fuzzy result retains topology but exhibits further volume
+and area drift after import. No universal robustness tolerance follows.
 
 #### v0.47.0 — Fillets, Chamfers, and Topology History
 

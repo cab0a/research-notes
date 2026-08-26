@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う45件の研究を索引化しています。v0.45.0は2種の掃引、2種のロフト、点格子からのBスプライン面を構築し、正常な5条件と事前拒否する2条件を分離します。10件の段階別観測はすべて有効で、滑らかなロフトの包絡超過も記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う46件の研究を索引化しています。v0.46.0は直方体の和・共通・差を独立な厳密集合の体積・表面積と比較し、重なり、非接触、面接触、微小隙間への追加許容値を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1184,6 +1184,33 @@ python -m pip install -e ".[geometry]"
 python experiments/run_sweep_loft_modeling.py
 ```
 
+### v0.46.0 — Boolean Operations and Robustness
+
+**Question.** How do operation type, spatial relationship, and an additional
+fuzzy tolerance change Boolean validity, topology, exact-set measures, and
+STEP round-trip behavior?
+
+**Result.** Seven controls produce 14 analyzer-valid observations. The 12
+default stage observations match independent cuboid-set volume and area truth,
+and six literal STEP contracts pass. A fuzzy value of `0.0001` bridges a
+`0.00005` gap, changes two solids into one, differs from exact union volume by
+about `0.0001333333`, and accumulates further measure drift after STEP import.
+
+- [Complete note](../notes/boolean-operations-robustness.md)
+- [Operation decisions](../results/boolean_operation_decisions.csv)
+- [Stage observations](../results/boolean_operation_observations.csv)
+- [Round-trip summary](../results/boolean_operation_summary.csv)
+- [Tolerance relation](../results/boolean_tolerance_relations.csv)
+- [Evaluation contract](../results/boolean_operation_contract.json)
+- [Evaluation figure](../results/boolean_operation_robustness.png)
+- [Shape previews](../results/boolean_operation_shapes.png)
+- [Generated STEP fixtures](../fixtures/boolean-robustness/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_boolean_robustness.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1208,7 +1235,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.45.0 subsets;
+  controlled v0.21.0 through v0.46.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1224,5 +1251,7 @@ failure-mode analysis, but it does not establish:
   draft, or recovered feature commands from the v0.44.0 profile controls.
 - arbitrary guide curves, loft compatibility, fairness, certified fitting
   bounds, or recovered history from the v0.45.0 construction controls.
+- arbitrary curved or invalid Boolean operands, a universal fuzzy tolerance,
+  or exact-set equivalence from the v0.46.0 cuboid controls.
 
 The complete notes contain the narrower limitations for each experiment.

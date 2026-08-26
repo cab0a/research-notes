@@ -1,0 +1,8 @@
+contract_version,control_id,operation,relationship,first_cuboid,second_cuboid,requested_fuzzy_value,applied_fuzzy_value,is_done,has_history,first_operand_unchanged,second_operand_unchanged,commutative_invariants_match,reverse_volume_difference,reverse_surface_area_difference
+1.0.0,overlap_fuse,fuse,volume_overlap,0.0|0.0|0.0|4.0|4.0|4.0,2.0|1.0|1.0|6.0|5.0|5.0,0,9.9999999999999995e-08,1,1,1,1,1,0,0
+1.0.0,overlap_common,common,volume_overlap,0.0|0.0|0.0|4.0|4.0|4.0,2.0|1.0|1.0|6.0|5.0|5.0,0,9.9999999999999995e-08,1,1,1,1,1,0,0
+1.0.0,overlap_cut,cut,volume_overlap,0.0|0.0|0.0|4.0|4.0|4.0,2.0|1.0|1.0|6.0|5.0|5.0,0,9.9999999999999995e-08,1,1,1,1,,,
+1.0.0,disjoint_fuse,fuse,positive_gap,0.0|0.0|0.0|2.0|2.0|2.0,3.0|0.0|0.0|5.0|2.0|2.0,0,9.9999999999999995e-08,1,1,1,1,1,3.5527136788005009e-15,0
+1.0.0,face_touching_fuse,fuse,shared_face,0.0|0.0|0.0|2.0|2.0|2.0,2.0|0.0|0.0|4.0|2.0|2.0,0,9.9999999999999995e-08,1,1,1,1,1,0,0
+1.0.0,near_gap_fuse_default,fuse,gap_0.00005,0.0|0.0|0.0|2.0|2.0|2.0,2.00005|0.0|0.0|4.00005|2.0|2.0,0,9.9999999999999995e-08,1,1,1,1,1,3.5527136788005009e-15,0
+1.0.0,near_gap_fuse_fuzzy,fuse,gap_0.00005,0.0|0.0|0.0|2.0|2.0|2.0,2.00005|0.0|0.0|4.00005|2.0|2.0,0.0001,0.0001,1,1,1,1,1,0,0

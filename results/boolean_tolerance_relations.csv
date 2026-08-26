@@ -1,0 +1,2 @@
+relation_id,gap,default_requested_fuzzy,fuzzy_requested_fuzzy,default_solid_count,fuzzy_solid_count,solid_count_changed,default_exact_volume_difference,fuzzy_exact_volume_difference,fuzzy_maximum_vertex_tolerance,fuzzy_bridges_gap
+near_gap_default_vs_fuzzy,5.0000000000000002e-05,0,0.0001,2,1,1,7.1054273576010019e-15,0.00013333333333065411,5.0099999999883473e-05,1

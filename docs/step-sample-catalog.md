@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.45.0では、2種の掃引、2種のロフト、点格子からのBスプライン面で作る5個のSTEP試験ファイルを追加します。入力条件、構築判断、再読込後の位相・曲面・測定値、ロフトの包絡超過を対応付けます。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.46.0では、直方体の和・共通・差から作る7個のSTEP試験ファイルを追加します。重なり、非接触、面接触、微小隙間、追加許容値を分離し、厳密集合の真値とSTEP再読込後の測定値を対応付けます。詳細は英語本文に示します。
 
 ---
 
@@ -737,6 +737,29 @@ project contract rejects their documented preconditions before construction.
 The samples preserve evaluated geometry, not their paths, profiles, sections,
 or construction history.
 
+## v0.46.0 — Boolean-Result Samples
+
+Directory: [`fixtures/boolean-robustness/`](../fixtures/boolean-robustness/)
+
+Manifest: [`manifest.csv`](../fixtures/boolean-robustness/manifest.csv)
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `overlap_fuse.step` | 36,124 | `1f28e92d5c2e8c8a0f846f45d2681fcfa2102b072428f90ba7197c8f4ef7e336` | Union of volume-overlapping cuboids |
+| `overlap_common.step` | 16,234 | `90711f218856370d00a9bbe01315a6346a84f95f7639c02f1fddf67ebab2ca95` | Intersection volume and boundary truth |
+| `overlap_cut.step` | 26,175 | `e4817a1b29bf407540bc89111a26e30836b7e6653a7abe6bd2571c014e875ebd` | Subtraction result and independent truth |
+| `disjoint_fuse.step` | 32,477 | `e57ec05663396098eba347fd0346b63daa09883f57248ce5966d24524fa8ba8d` | Positive-gap union retaining two solids |
+| `face_touching_fuse.step` | 24,494 | `a0d4a526e2c5a7e9a563dc3f59d2c0c8976465abf6591c236c128676b42768f5` | Shared-face union becoming one solid |
+| `near_gap_fuse_default.step` | 32,607 | `e6be4478f5b758f79bad461c7043d3abfaa72ee5cb6a45736cffb31ab01a2947` | Gap `0.00005` under default tolerance |
+| `near_gap_fuse_fuzzy.step` | 24,671 | `950e26c9e14f1b28d8a90661568c8b64371e3685e35122113683191ff864cabf` | Same gap under requested fuzzy value `0.0001` |
+
+![Seven imported Boolean results](../results/boolean_operation_shapes.png)
+
+The first six fixtures match independent exact cuboid-set measures and literal
+round-trip contracts. The fuzzy fixture retains one-solid topology but not
+exact-set equivalence or literal measure preservation. None retains the
+original operands, operation order, options, or operation-local history.
+
 ## Regeneration
 
 ```bash
@@ -838,6 +861,10 @@ python experiments/run_profile_modeling.py \
 
 python experiments/run_sweep_loft_modeling.py \
   --fixture-dir fixtures/sweep-loft-modeling \
+  --refresh-fixtures
+
+python experiments/run_boolean_robustness.py \
+  --fixture-dir fixtures/boolean-robustness \
   --refresh-fixtures
 ```
 

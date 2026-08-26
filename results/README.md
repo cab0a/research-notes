@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、45件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.45.0は2種の掃引、2種のロフト、点格子からのBスプライン面について、入力判断、構築、STEP往復、解析真値、包絡超過を検証します。
+このディレクトリには、46件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.46.0は直方体の和・共通・差について、厳密集合の体積・表面積、入力保持、交換則の限定不変量、追加許容値による隙間接続、STEP往復を検証します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1207,6 +1207,27 @@ pass. The six stages with closed-form truth match volume and area within
 The smooth square loft reaches about `1.5` times the largest input half-span,
 so interpolation through sections is not presented as an envelope guarantee.
 
+## v0.46.0
+
+- `boolean_operation_decisions.csv` records seven Boolean inputs, options,
+  completion states, operand-preservation checks, and reversed-operand
+  invariants.
+- `boolean_operation_observations.csv` contains 14 constructed and imported
+  result measurements.
+- `boolean_operation_summary.csv` compares topology, measures, exact-set truth,
+  and literal round-trip contracts.
+- `boolean_tolerance_relations.csv` isolates the default/fuzzy near-gap pair.
+- `boolean_operation_contract.json` fixes inputs, truth, row schemas, fixture
+  hashes, and claim boundaries.
+- `boolean_operation_robustness.png` plots exact-volume differences and solid
+  counts.
+- `boolean_operation_shapes.png` previews all seven imported results.
+
+The 12 default observations match independent exact-set volume and area truth.
+Six literal STEP contracts pass. The fuzzy control bridges the gap and retains
+one-solid topology across STEP, but changes exact measures and exhibits an
+additional imported volume difference of about `0.0000666667`.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1255,6 +1276,7 @@ python experiments/run_tessellation_diagnostics.py
 python experiments/run_primitive_round_trips.py
 python experiments/run_profile_modeling.py
 python experiments/run_sweep_loft_modeling.py
+python experiments/run_boolean_robustness.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
