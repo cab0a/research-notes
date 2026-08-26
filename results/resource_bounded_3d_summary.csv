@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,controls,13
+corpus,fixture_files,7
+expectation,matched_controls,13
+decision,accept,2
+decision,quarantine,5
+decision,reject,6
+terminal_stage,preflight,4
+terminal_stage,parser,3
+terminal_stage,external_policy,1
+terminal_stage,kernel,2
+terminal_stage,tessellation,3

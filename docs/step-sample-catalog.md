@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.49.0はv0.48.0で固定した箱、貫通穴形状、Bスプライン殻の元STEPファイル3個をバイト単位で再利用し、構文解析器と読込経路を比較します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.50.0は箱、貫通穴、外部参照、正常圧縮容器、展開量超過、入れ子、危険な相対経路の7試料を追加し、受入段階ごとの資源上限を検証します。詳細は英語本文に示します。
 
 ---
 
@@ -811,6 +811,22 @@ records the relative source path, byte count, and SHA-256 for every comparison
 row. No new geometric sample is introduced: fixed-byte reuse isolates parser
 and importer-route variation from fixture-generation variation.
 
+## v0.50.0 — Resource-Bounded 3D Intake Samples
+
+Directory: [`fixtures/resource-bounded-3d/`](../fixtures/resource-bounded-3d/)
+
+Manifest: [`manifest.csv`](../fixtures/resource-bounded-3d/manifest.csv)
+
+The directory contains a reused box, a reused through-hole, a syntax-only
+external-reference control, one admitted ZIP container, an over-expansion
+container, a nested container, and a parent-traversing member container. The
+ZIP files use fixed member timestamps and deterministic compression.
+
+![Resource-bounded intake shape controls](../results/resource_bounded_3d_shapes.png)
+
+The preview shows only geometric STEP payloads. It does not visualize archive
+safety, process isolation, or a security property.
+
 ## Regeneration
 
 ```bash
@@ -923,6 +939,10 @@ python experiments/run_topology_history.py \
   --refresh-fixtures
 
 python experiments/run_step_portability.py
+
+python experiments/run_resource_bounded_3d.py \
+  --fixture-dir fixtures/resource-bounded-3d \
+  --refresh-fixtures
 ```
 
 ## Interpretation Boundary

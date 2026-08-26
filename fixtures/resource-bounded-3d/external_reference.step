@@ -1,0 +1,13 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('External reference control'),'3;1');
+FILE_NAME('external_reference.step','2000-01-01T00:00:00',('research-notes'),('research-notes'),'','','');
+FILE_SCHEMA(('CONTROL_SCHEMA'));
+ENDSEC;
+REFERENCE;
+#10=<https://example.invalid/part.step#shape>;
+ENDSEC;
+DATA;
+#1=USE(#10);
+ENDSEC;
+END-ISO-10303-21;

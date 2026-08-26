@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.49.0は3つの固定合成STEP標本を内製構文解析器と2つの固定版公開構文解析器で比較し、さらに同じ形状計算核の形状専用経路と文書対応経路を比較します。全標本が受理され測定形状も一致しましたが、独立した形状計算核は未選定なので計算核間可搬性は未確認です。v0.50.0以降は未実装です。
+v0.50.0はSTEP受入を5段階へ分け、ファイル量、構文量、圧縮容器、外部参照、位相、三角形数、時間の上限を13条件で検証します。構文解析とネイティブ形状処理を別の子プロセスへ分離しますが、安全な隔離環境やメモリ安全性を証明するものではありません。v0.51.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.50.0 onward are planned and not implemented at v0.49.0.
+The stages from v0.51.0 onward are planned and not implemented at v0.50.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -553,9 +553,13 @@ one OCCT build, so the contract records no independent-kernel conclusion.
 
 #### v0.50.0 — Resource-Bounded 3D Intake
 
-Bound file bytes, tokens, entities, references, archive expansion, recursion,
-topology, tessellation output, and operation time. Isolate parsing, external
-resolution, and native-kernel execution.
+Completed with seven deterministic raw STEP and controlled ZIP-container
+fixtures and thirteen policy controls. All expected terminal decisions and
+reason codes match: two accepts, five quarantines, and six rejects. Syntax and
+native geometry execute in separate child processes; external references are
+quarantined without retrieval. Byte, syntax, archive, path, depth, topology,
+triangle, and time limits remain policy evidence rather than a native security
+or memory-safety proof.
 
 ### Phase G — 3D Features and AI-Ready Evidence
 

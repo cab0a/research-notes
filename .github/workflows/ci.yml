@@ -127,6 +127,8 @@ jobs:
           python experiments/run_step_round_trip_preservation.py --output-dir regenerated-results
           python experiments/run_step_round_trip_preservation.py --fixture-dir regenerated-fixtures/step-round-trip-preservation --output-dir regenerated-step-preservation-fixture-results --refresh-fixtures
           python experiments/run_step_portability.py --output-dir regenerated-results
+          python experiments/run_resource_bounded_3d.py --output-dir regenerated-results
+          python experiments/run_resource_bounded_3d.py --fixture-dir regenerated-fixtures/resource-bounded-3d --output-dir regenerated-resource-bounded-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -354,6 +356,10 @@ jobs:
           diff -u results/step_portability_summary.csv regenerated-results/step_portability_summary.csv
           diff -u results/step_portability_manifest.csv regenerated-results/step_portability_manifest.csv
           diff -u results/step_portability_contract.json regenerated-results/step_portability_contract.json
+          diff -u results/resource_bounded_3d_stages.csv regenerated-results/resource_bounded_3d_stages.csv
+          diff -u results/resource_bounded_3d_decisions.csv regenerated-results/resource_bounded_3d_decisions.csv
+          diff -u results/resource_bounded_3d_summary.csv regenerated-results/resource_bounded_3d_summary.csv
+          diff -u results/resource_bounded_3d_contract.json regenerated-results/resource_bounded_3d_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -374,6 +380,7 @@ jobs:
           diff -qr fixtures/tolerance-sewing-healing regenerated-fixtures/tolerance-sewing-healing
           diff -qr fixtures/wire-trimming-evaluation regenerated-fixtures/wire-trimming-evaluation
           diff -qr fixtures/shell-solid-validity regenerated-fixtures/shell-solid-validity
+          diff -qr fixtures/resource-bounded-3d regenerated-fixtures/resource-bounded-3d
           diff -qr fixtures/manifold-self-intersection regenerated-fixtures/manifold-self-intersection
           diff -qr fixtures/solid-regions regenerated-fixtures/solid-regions
           diff -qr fixtures/shape-correspondence regenerated-fixtures/shape-correspondence
@@ -458,6 +465,8 @@ jobs:
           test -s regenerated-results/step_round_trip_preservation.png
           test -s regenerated-results/step_round_trip_preservation_shapes.png
           test -s regenerated-results/step_portability.png
+          test -s regenerated-results/resource_bounded_3d.png
+          test -s regenerated-results/resource_bounded_3d_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

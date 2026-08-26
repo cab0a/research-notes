@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、49件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.49.0は3つの固定STEP標本を3つの構文解析実装と2つの読込経路で比較し、独立した形状計算核が未選定であることも結果として固定します。
+このディレクトリには、50件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.50.0はSTEP受入を5段階へ分け、13条件の資源上限、停止理由、子プロセス分離を記録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1289,6 +1289,23 @@ All nine parser observations accept their fixed input. Both OCCT routes agree
 on the measured B-Rep for all three controls. The result explicitly records
 zero independent geometry kernels and makes no cross-kernel conclusion.
 
+## v0.50.0
+
+- `resource_bounded_3d_stages.csv` records a complete five-stage row set for
+  every control, including explicit `not_run` stages.
+- `resource_bounded_3d_decisions.csv` records terminal decisions, reason codes,
+  input and selected-payload digests, and admitted syntax/topology/mesh counts.
+- `resource_bounded_3d_summary.csv` aggregates decisions and terminal stages.
+- `resource_bounded_3d_contract.json` fixes control limits, expected outcomes,
+  fixture hashes, stage order, and security claim boundaries.
+- `resource_bounded_3d.png` plots decisions and stopping stages.
+- `resource_bounded_3d_shapes.png` previews the box and through-hole geometry
+  used by accepted and mesh-limit controls.
+
+All thirteen controls match their declared decision and reason code. Two paths
+are accepted, five quarantined, and six rejected. Process isolation and
+timeouts are observable policy boundaries, not a memory-safety proof.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1341,6 +1358,7 @@ python experiments/run_boolean_robustness.py
 python experiments/run_topology_history.py
 python experiments/run_step_round_trip_preservation.py
 python experiments/run_step_portability.py
+python experiments/run_resource_bounded_3d.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

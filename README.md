@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.49.0では、3つの固定合成STEP標本を内製構文解析器と固定版の2つの公開構文解析器で読み、さらに同じ形状計算核の形状専用経路と文書対応経路を比較します。
+v0.50.0では、STEPと制御した圧縮容器の受入を5段階に分け、ファイル量、構文量、外部参照、展開量、入れ子、経路、位相、三角形数、実行時間の上限を検証します。
 
-全9件の構文解析は受理され、2つの読込経路は3標本すべてで位相と大域的な形状測定に一致しました。文書対応経路だけが名前と色を取得します。独立した形状計算核は未選定なので、形状計算核間の可搬性は未確認です。詳細は英語本文に示します。
+13条件すべてが予定した理由で停止または受理され、2件を受理、5件を隔離、6件を拒否しました。構文解析とネイティブ形状処理は別の子プロセスで実行します。ただし、これはメモリ安全性や任意の悪意あるファイルへの安全性を証明しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -42,8 +42,9 @@ rule-based geometric feature candidates, stable face-level reports,
 source-traceable tessellation diagnostics, primitive STEP round trips,
 profile-driven extrusion and revolution, bounded sweep, loft, and surface
 construction, controlled Boolean robustness, operation-local topology history,
-dimension-specific STEP/XCAF preservation, and independent parser/import-route
-comparison. The current release is v0.49.0.
+dimension-specific STEP/XCAF preservation, independent parser/import-route
+comparison, and staged resource-bounded 3D intake. The current release is
+v0.50.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -58,28 +59,28 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 49 releases to their questions,
+The [study index](docs/studies.md) maps all 50 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.49.0 study sends three fixed synthetic STEP files through three
-independently implemented parsers and two OCCT import routes.
+The v0.50.0 study stages STEP intake across preflight, parsing, external-
+reference policy, native transfer, and tessellation.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Fixed STEP files | 3 |
-| Accepted parser observations | 9 / 9 |
-| Import-route topology agreements | 3 / 3 |
-| Import-route geometry agreements | 3 / 3 |
-| XCAF name / color inventories | 3 / 2 |
-| Independent geometry kernels | 0 |
+| Controls / fixture files | 13 / 7 |
+| Expected terminal decisions | 13 / 13 |
+| Accept / quarantine / reject | 2 / 5 / 6 |
+| Preflight / parser stops | 4 / 3 |
+| External-policy / kernel stops | 1 / 2 |
+| Tessellation terminals, including accepts | 3 |
 
-![STEP parser and import-route portability evidence](results/step_portability.png)
+![Resource-bounded STEP intake outcomes](results/resource_bounded_3d.png)
 
-All parsers accept the fixed files, and both import routes agree on the measured
-B-Rep. This is parser and API-route evidence, not cross-kernel portability:
-both geometric routes share the same pinned OCCT build.
+Every control stops or admits at the declared stage and reason. Child-process
+timeouts and counters make policy boundaries observable; they are not an
+operating-system sandbox or a proof of native memory safety.
 
 ## Current STEP and B-Rep Capability
 
@@ -145,6 +146,9 @@ maps each current field to its evidence, exact limitation, and planned release.
   It is not an ISO certification suite, complete Wirth Syntax Notation
   coverage, EXPRESS validation, external-resource resolver, CMS verifier, or
   proof of support for arbitrary STEP files.
+- The v0.50.0 intake counters and child-process timeouts are staged policy
+  evidence. They do not provide an operating-system sandbox, memory or CPU
+  quota, native-code memory-safety proof, or safe arbitrary hostile-file claim.
 - The EXPRESS resolver supports a controlled ASCII declaration subset and
   direct imports from schemas in the same document. It does not implement
   complete visibility, transitive re-export, external schema loading,
@@ -264,8 +268,9 @@ manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
 correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
 tessellation-diagnostic, v0.43.0 primitive-round-trip, v0.44.0 profile-
 modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, v0.47.0
-topology-history, v0.48.0 STEP-preservation, and v0.49.0 parser/import-route
-portability studies also write deterministic versioned JSON records.
+topology-history, v0.48.0 STEP-preservation, v0.49.0 parser/import-route
+portability, and v0.50.0 resource-bounded intake studies also write
+deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -298,6 +303,7 @@ accepted v0.45.0 sweep/loft/surface fixtures, and the seven v0.46.0 Boolean
 result fixtures, the two successful v0.47.0 feature-operation fixtures, and the
 six v0.48.0 source/re-export preservation fixtures. v0.49.0 reuses the three
 source fixtures byte for byte and records their digests in a study manifest.
+v0.50.0 adds seven raw STEP and controlled ZIP-container intake fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -308,7 +314,7 @@ validation evidence.
 
 ## Key Features
 
-- Forty-nine published studies with explicit questions, controls, results, and
+- Fifty published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -570,6 +576,9 @@ identity, file-size drift, and deterministic source/re-export fixtures.
 The v0.49.0 additions cover three independent Part 21 parser implementations,
 two same-kernel import routes, route-specific document attributes, exact fixed-
 corpus digests, and an explicit absence of cross-kernel evidence.
+The v0.50.0 additions cover bounded raw and ZIP-container intake, path and
+nesting rejection, isolated syntax and native workers, disabled external
+resolution, topology and mesh-output budgets, and timeout quarantine.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -601,8 +610,9 @@ five profile-driven results, and v0.45.0 evaluates five accepted sweep, loft,
 and surface results plus two precondition rejections, v0.46.0 evaluates seven
 Boolean results, v0.47.0 evaluates two successful local operations plus two
 oversized failures, v0.48.0 evaluates three repeated XCAF-aware STEP exchanges,
-and v0.49.0 compares three parser implementations and two same-kernel import
-routes. These releases do not claim
+v0.49.0 compares three parser implementations and two same-kernel import
+routes, and v0.50.0 evaluates thirteen staged resource-boundary controls.
+These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -637,10 +647,11 @@ evidence. v0.47.0 adds scoped local-operation history and STEP identity
 boundaries. v0.48.0 separates structure, semantics, geometry, topology,
 attributes, tolerances, and byte identity across repeated exchange. v0.49.0
 separates parser acceptance, import-route geometry, document attributes, and
-the still-open independent-kernel question. The roadmap next proceeds through
+the still-open independent-kernel question. v0.50.0 adds staged input budgets
+and process timeouts without making a native security claim. The roadmap next proceeds through
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.50.0 and later releases remain unimplemented.
+candidates. v0.51.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

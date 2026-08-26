@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う49件の研究を索引化しています。v0.49.0は3つの固定STEP標本を3つの構文解析実装と2つの読込経路で比較し、構文受理、形状転送、文書属性、形状計算核間可搬性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う50件の研究を索引化しています。v0.50.0はSTEP受入を事前検査、構文解析、外部参照方針、形状計算核、三角形化へ分け、13条件の資源上限と停止理由を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1290,6 +1290,31 @@ python -m pip install -e ".[comparison,geometry]"
 python experiments/run_step_portability.py
 ```
 
+### v0.50.0 — Resource-Bounded 3D Intake
+
+**Question.** Can raw STEP and controlled ZIP-container intake expose explicit
+file, syntax, archive, external-reference, topology, mesh-output, and time
+boundaries before geometry is admitted?
+
+**Result.** All 13 controls match their declared decision and reason: two are
+accepted, five quarantined, and six rejected. Syntax and native-kernel work run
+in separate child processes. The archive and raw paths admit the same box
+payload and measurements; external references stop before native transfer.
+
+- [Complete note](../notes/resource-bounded-3d-intake.md)
+- [Stage observations](../results/resource_bounded_3d_stages.csv)
+- [Terminal decisions](../results/resource_bounded_3d_decisions.csv)
+- [Summary](../results/resource_bounded_3d_summary.csv)
+- [Evaluation contract](../results/resource_bounded_3d_contract.json)
+- [Decision figure](../results/resource_bounded_3d.png)
+- [Shape previews](../results/resource_bounded_3d_shapes.png)
+- [Generated fixtures](../fixtures/resource-bounded-3d/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_resource_bounded_3d.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1314,7 +1339,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.49.0 subsets;
+  controlled v0.21.0 through v0.50.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1338,5 +1363,7 @@ failure-mode analysis, but it does not establish:
   geometry equivalence, or cross-kernel portability from the v0.48.0 controls.
 - schema validity, semantic equivalence, or cross-kernel portability from the
   v0.49.0 parser and same-kernel import-route agreements.
+- memory safety, exploit resistance, operating-system sandboxing, or safe
+  arbitrary hostile-file handling from the v0.50.0 counters and timeouts.
 
 The complete notes contain the narrower limitations for each experiment.
