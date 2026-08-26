@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.51.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.51.0は4形状の面隣接グラフ、幾何記述子、列ごとの由来、STEP読込前後の構造比較を実装します。永続識別や一般形状認識は未実装です。詳細は英語本文に示します。
+本書は、v0.52.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.52.0は32個の合成条件で形状特徴規則の縮尺、回転、許容差・修復、STEP往復への反応を評価し、拒否と判定保留を分離します。一般形状認識は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-51 studies through v0.51.0. It separates syntax recognition, schema validation, physical-reference
+52 studies through v0.52.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 v0.52.0 and later roadmap stages remain unimplemented.
@@ -180,7 +180,7 @@ corpus and its declared provenance.
 | Independent parser and importer portability | Controlled subset | v0.49.0 | Three fixed files are accepted by three parser implementations and produce matching geometry on two OCCT routes; no independent kernel is included |
 | Resource-bounded native 3D intake | Controlled subset | v0.50.0 | Five ordered stages cover raw and controlled ZIP inputs, parser counters, disabled external retrieval, child-process timeouts, topology, and triangle limits; no OS sandbox or memory-safety claim |
 | Face-adjacency descriptors | Controlled subset | v0.51.0 | Four constructed/imported graph pairs expose attributed face nodes, distinct-face shared-edge relations, incidence classes, structural summaries, and field provenance; IDs remain analysis-local |
-| Feature-recognition robustness | Not implemented | v0.52.0 | Deterministic confusion counts and abstention under tolerance, size, orientation, import, and healing perturbations |
+| Feature-recognition robustness | Controlled subset | v0.52.0 | Thirty-two generated cases and 64 observations separate accepts, negative-control rejects, rotation-related abstentions, and zero STEP-induced decision changes |
 | AI-ready 3D dataset | Not implemented | v0.53.0 | Grouped splits, leakage checks, labels, and complete provenance |
 | Learned 3D assistance | Not implemented | v0.54.0 | Baselines, calibration, robustness, evidence links, and abstention |
 | Parametric feature model and constraints | Not implemented | v0.55.0–v0.58.0 | Versioned feature graphs, solver states, and deterministic recompute |

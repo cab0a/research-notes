@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.51.0は箱、貫通穴、段差、丸み付けの4つのSTEP試料と形状画像を追加し、面隣接グラフと幾何記述子を目視形状へ対応付けます。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.52.0は8形状群と4種類の変動を組み合わせた32個のSTEP試料と基準形状画像を追加します。詳細は英語本文に示します。
 
 ---
 
@@ -843,6 +843,21 @@ B-Rep geometry used for the second analysis stage.
 Face colors are diagnostic. Local graph IDs do not identify persistent faces
 across the displayed samples or exchange stages.
 
+## v0.52.0 — Feature Recognition Benchmark Samples
+
+Directory: [`fixtures/feature-recognition-benchmark/`](../fixtures/feature-recognition-benchmark/)
+
+Manifest: [`manifest.csv`](../fixtures/feature-recognition-benchmark/manifest.csv)
+
+The 32 normalized STEP files cross eight shape families with baseline,
+half-scale, rotated, and tolerance/healing conditions. The preview shows one
+baseline import per family; the decision figure records all imported outcomes.
+
+![Feature benchmark baseline controls](../results/feature_benchmark_shapes.png)
+
+Construction labels are external synthetic truth. File names and previews do
+not establish recovered STEP feature history.
+
 ## Regeneration
 
 ```bash
@@ -962,6 +977,10 @@ python experiments/run_resource_bounded_3d.py \
 
 python experiments/run_face_adjacency_graphs.py \
   --fixture-dir fixtures/face-adjacency-graphs \
+  --refresh-fixtures
+
+python experiments/run_feature_recognition_benchmark.py \
+  --fixture-dir fixtures/feature-recognition-benchmark \
   --refresh-fixtures
 ```
 

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う51件の研究を索引化しています。v0.51.0は4形状の面を節、異なる2面が共有する辺を関係とするグラフを作り、幾何記述子、由来、STEP読込前後の構造一致を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う52件の研究を索引化しています。v0.52.0は32個の合成条件で形状特徴規則の縮尺、回転、許容差・修復、STEP往復への反応を評価します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1343,6 +1343,30 @@ python -m pip install -e ".[geometry]"
 python experiments/run_face_adjacency_graphs.py
 ```
 
+### v0.52.0 — Feature Recognition Robustness and Benchmarking
+
+**Question.** Which bounded feature rules survive controlled scale,
+orientation, tolerance, healing, and STEP perturbations, and where should the
+analyzer reject or abstain?
+
+**Result.** The 32-case corpus yields 22 accepts, eight negative-control
+rejects, two rotation-related abstentions, and zero incorrect outcomes per
+stage. Constructed and imported decisions agree for all cases.
+
+- [Complete note](../notes/feature-recognition-robustness.md)
+- [Observations](../results/feature_benchmark_observations.csv)
+- [Confusion counts](../results/feature_benchmark_confusion.csv)
+- [Summary](../results/feature_benchmark_summary.csv)
+- [Evaluation contract](../results/feature_benchmark_contract.json)
+- [Outcome figure](../results/feature_benchmark.png)
+- [Shape previews](../results/feature_benchmark_shapes.png)
+- [Generated fixtures](../fixtures/feature-recognition-benchmark/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_feature_recognition_benchmark.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1367,7 +1391,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.51.0 subsets;
+  controlled v0.21.0 through v0.52.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

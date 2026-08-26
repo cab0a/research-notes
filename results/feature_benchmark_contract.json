@@ -1,0 +1,56 @@
+{
+  "claim_boundaries": [
+    "construction labels are synthetic truth and not recovered STEP history",
+    "the benchmark covers eight shape families and four perturbations only",
+    "an abstention records a bounded rule limitation rather than an unknown universal class",
+    "assigned tolerance and healing do not simulate arbitrary damaged production geometry",
+    "accuracy on generated controls is not evidence of production feature-recognition accuracy"
+  ],
+  "contract_version": "1.0.0",
+  "fixtures": {
+    "benchmark_blind_hole_baseline.step": "2ba0b742af5bf8874941c2302e82dee76442897a737ed4a30f8b17733d0aa152",
+    "benchmark_blind_hole_rotated_z_30.step": "263f142dc08308c8e64b45080d1b77f1e4374453c39bc81aa5e1cef4a0fdab7b",
+    "benchmark_blind_hole_small_scale.step": "92d3ae1eefa3131cb1e580418f9856674cb06ce01e6333f37d6c0ef1db08ae50",
+    "benchmark_blind_hole_tolerance_healed.step": "2ba0b742af5bf8874941c2302e82dee76442897a737ed4a30f8b17733d0aa152",
+    "benchmark_chamfer_operation_baseline.step": "7dbfe555849e6d7868830ef0bb5527a96106836ac1d32603c8e247fbb057074e",
+    "benchmark_chamfer_operation_rotated_z_30.step": "30769de2cfac6a58ad45ca6cf6bcba15fc605c2070ddff38a95eb29ba93010e4",
+    "benchmark_chamfer_operation_small_scale.step": "e62b534e551a9c6ee41ac13bd95e0d481795bcab2a5d12522c97a1e2ec11f3d2",
+    "benchmark_chamfer_operation_tolerance_healed.step": "66ac13c334f232de07c9da118c533f8ba811b08cbc8ce4c4c30058793498a887",
+    "benchmark_cylindrical_boss_baseline.step": "091b7c838b12d51f0c256961e23818847a76ca0c0ba09c0decab42e47df9f8c4",
+    "benchmark_cylindrical_boss_rotated_z_30.step": "46bc847929ed5e93bd9e52239d934c3b3bb3943b1a4ec61c35be0a55bc77faf7",
+    "benchmark_cylindrical_boss_small_scale.step": "693e6777b9f5b61e618208aea14a116278f68dace408b9d46c434645e2442c95",
+    "benchmark_cylindrical_boss_tolerance_healed.step": "091b7c838b12d51f0c256961e23818847a76ca0c0ba09c0decab42e47df9f8c4",
+    "benchmark_fillet_operation_baseline.step": "77f8eabeaba3bc9a91d4330ae9af68a42951ff8969f5d39413d23349a11435b1",
+    "benchmark_fillet_operation_rotated_z_30.step": "a8dd98f8ae9155d4cfdde3f5dfe13fa7229b22cecb98c34f30dce35bf6b69031",
+    "benchmark_fillet_operation_small_scale.step": "486c4a38cd4b17da2404f5f1c3fb3e084fe9bfe158430e50db348f6a72ddd3dd",
+    "benchmark_fillet_operation_tolerance_healed.step": "ab576e64532bdbb669c0d57260620adc9e8d5cb05d2a1b0ba21d6708b5e15e06",
+    "benchmark_plain_block_baseline.step": "1e7a3ecda9402ee740bf40fbae47a384f4c8bbf6dd5a131bc8f2b06b1bcea0e3",
+    "benchmark_plain_block_rotated_z_30.step": "d1af657245c4c7751f11a71f5c3271aa0409ff041c11d54bc6f991334b56b5bf",
+    "benchmark_plain_block_small_scale.step": "54e43a23156c69253b0dcb8d39be0c35f712e242f284ba566a1dbf0b27ea59c7",
+    "benchmark_plain_block_tolerance_healed.step": "5ef2817d6f80d670dc356b57c09311269a9c6b394f6c8755d1f78fded4a12dfe",
+    "benchmark_stepped_block_baseline.step": "d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d",
+    "benchmark_stepped_block_rotated_z_30.step": "12e6f3e13c6eebaaac5d7a331a2cfc7bfdd1b66c70565bace56a8ceb4c20c75f",
+    "benchmark_stepped_block_small_scale.step": "f02923800e76a1c14ef09a709df3b00c3ed90cfc0d067fbdf5c0ebfc570ac55e",
+    "benchmark_stepped_block_tolerance_healed.step": "070cf23bb1bc0b5dc4b5f28e27af63bb644c2eeda0a573422a1be16e4b6284df",
+    "benchmark_through_hole_baseline.step": "97eebf706ab49d24a40626ed88bfc3b222663fa9878a38b990f2e26c28a2967e",
+    "benchmark_through_hole_rotated_z_30.step": "9cb6a72d4ca186fa2907149ced7b9b3696355c36a8f566e83a30b15c274be672",
+    "benchmark_through_hole_small_scale.step": "652041dc1c00855cc30f854126bfb35f6deb685bd642e7475d67759038da969c",
+    "benchmark_through_hole_tolerance_healed.step": "97eebf706ab49d24a40626ed88bfc3b222663fa9878a38b990f2e26c28a2967e",
+    "benchmark_through_slot_baseline.step": "7bad2742a1a43cae093fc186ac85cd1d7497d46f27df6272f61f4611475b6829",
+    "benchmark_through_slot_rotated_z_30.step": "2694705a37dc067bc90b9cead1b0a29aec9144852721c1b6118c06f3482f03b5",
+    "benchmark_through_slot_small_scale.step": "00311bd5da9223aa95841917be5e69d77efa4b2c18dda315ea34340323f20226",
+    "benchmark_through_slot_tolerance_healed.step": "d4368b1a220ec1df90efa841389b56c9a5860ebe5c0de909885043e1e9690250"
+  },
+  "perturbations": [
+    "baseline",
+    "rotated_z_30",
+    "small_scale",
+    "tolerance_healed"
+  ],
+  "primary_key": [
+    "case_id",
+    "stage"
+  ],
+  "study_version": "v0.52.0",
+  "title": "Feature Recognition Robustness and Benchmarking"
+}

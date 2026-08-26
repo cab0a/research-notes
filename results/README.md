@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、51件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.51.0は4形状の面隣接グラフ、幾何記述子、由来、STEP読込前後の比較、図を記録します。
+このディレクトリには、52件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.52.0は32個の合成形状条件について、縮尺、回転、許容差・修復、STEP往復に対する形状特徴規則の正答、拒否、判定保留を記録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1328,6 +1328,17 @@ relations. All four pairs retain the selected graph invariants and structural
 signature after STEP. The one through-hole seam is not treated as an open
 boundary or as adjacency between different faces.
 
+## v0.52.0
+
+- `feature_benchmark_observations.csv` records 64 constructed/imported rule outcomes with perturbation, truth, decision, and reason fields.
+- `feature_benchmark_confusion.csv` records expected and observed label counts by stage.
+- `feature_benchmark_summary.csv` aggregates accepted, rejected, abstained, incorrect, and perturbation-specific correct outcomes.
+- `feature_benchmark_contract.json` fixes the corpus, fixture hashes, primary key, and claim boundaries.
+- `feature_benchmark.png` compares STEP-imported terminal decisions by perturbation.
+- `feature_benchmark_shapes.png` previews the eight baseline shape families.
+
+The 32-case corpus produces 22 accepts, eight negative-control rejects, two rotation-related abstentions, and zero incorrect outcomes per stage. Constructed and STEP-imported decisions agree for every case.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1382,6 +1393,7 @@ python experiments/run_step_round_trip_preservation.py
 python experiments/run_step_portability.py
 python experiments/run_resource_bounded_3d.py
 python experiments/run_face_adjacency_graphs.py
+python experiments/run_feature_recognition_benchmark.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

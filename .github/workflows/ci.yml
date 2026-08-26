@@ -131,6 +131,8 @@ jobs:
           python experiments/run_resource_bounded_3d.py --fixture-dir regenerated-fixtures/resource-bounded-3d --output-dir regenerated-resource-bounded-fixture-results --refresh-fixtures
           python experiments/run_face_adjacency_graphs.py --output-dir regenerated-results
           python experiments/run_face_adjacency_graphs.py --fixture-dir regenerated-fixtures/face-adjacency-graphs --output-dir regenerated-face-graph-fixture-results --refresh-fixtures
+          python experiments/run_feature_recognition_benchmark.py --output-dir regenerated-results
+          python experiments/run_feature_recognition_benchmark.py --fixture-dir regenerated-fixtures/feature-recognition-benchmark --output-dir regenerated-feature-benchmark-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -367,6 +369,12 @@ jobs:
           diff -u results/face_graph_descriptors.csv regenerated-results/face_graph_descriptors.csv
           diff -u results/face_graph_round_trip_comparisons.csv regenerated-results/face_graph_round_trip_comparisons.csv
           diff -u results/face_graph_summary.csv regenerated-results/face_graph_summary.csv
+          diff -u results/feature_benchmark_observations.csv regenerated-results/feature_benchmark_observations.csv
+          diff -u results/feature_benchmark_confusion.csv regenerated-results/feature_benchmark_confusion.csv
+          diff -u results/feature_benchmark_summary.csv regenerated-results/feature_benchmark_summary.csv
+          diff -u results/feature_benchmark_contract.json regenerated-results/feature_benchmark_contract.json
+          test -s regenerated-results/feature_benchmark.png
+          test -s regenerated-results/feature_benchmark_shapes.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
@@ -391,6 +399,7 @@ jobs:
           diff -qr fixtures/shell-solid-validity regenerated-fixtures/shell-solid-validity
           diff -qr fixtures/resource-bounded-3d regenerated-fixtures/resource-bounded-3d
           diff -qr fixtures/face-adjacency-graphs regenerated-fixtures/face-adjacency-graphs
+          diff -qr fixtures/feature-recognition-benchmark regenerated-fixtures/feature-recognition-benchmark
           diff -qr fixtures/manifold-self-intersection regenerated-fixtures/manifold-self-intersection
           diff -qr fixtures/solid-regions regenerated-fixtures/solid-regions
           diff -qr fixtures/shape-correspondence regenerated-fixtures/shape-correspondence
