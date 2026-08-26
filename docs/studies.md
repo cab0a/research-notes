@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う44件の研究を索引化しています。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭から構築し、10件の段階別観測すべてで解析真値、位相、曲面構成を保持します。高さと回転角を変えた体積比も再現し、内周方向を穴の意味の一部として扱います。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う45件の研究を索引化しています。v0.45.0は2種の掃引、2種のロフト、点格子からのBスプライン面を構築し、正常な5条件と事前拒否する2条件を分離します。10件の段階別観測はすべて有効で、滑らかなロフトの包絡超過も記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1157,6 +1157,33 @@ python -m pip install -e ".[geometry]"
 python experiments/run_profile_modeling.py
 ```
 
+### v0.45.0 — Sweeps, Lofts, and Surface Construction
+
+**Question.** Which bounded sweep, loft, and point-grid surface claims remain
+reproducible when preconditions, native outcomes, evaluated geometry, and STEP
+exchange are recorded separately?
+
+**Result.** Five accepted controls produce ten analyzer-valid observations and
+all five constructed/imported pairs retain topology, surface inventories, and
+measurements. Six analytic stage observations match independent volume and
+area truth within `1e-8`. A C0 corner spine and one-section loft are rejected
+before kernel invocation. The smooth square loft reaches approximately `1.5`
+times the largest input half-span despite remaining valid.
+
+- [Complete note](../notes/sweeps-lofts-surface-construction.md)
+- [Admission decisions](../results/sweep_loft_decisions.csv)
+- [Stage observations](../results/sweep_loft_observations.csv)
+- [Round-trip summary](../results/sweep_loft_summary.csv)
+- [Evaluation contract](../results/sweep_loft_contract.json)
+- [Evaluation figure](../results/sweep_loft_modeling.png)
+- [Shape previews](../results/sweep_loft_shapes.png)
+- [Generated STEP fixtures](../fixtures/sweep-loft-modeling/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_sweep_loft_modeling.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1181,7 +1208,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.44.0 subsets;
+  controlled v0.21.0 through v0.45.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1195,5 +1222,7 @@ failure-mode analysis, but it does not establish:
   primitive round trips.
 - general sketch validity, constraint solving, open-profile operations, taper,
   draft, or recovered feature commands from the v0.44.0 profile controls.
+- arbitrary guide curves, loft compatibility, fairness, certified fitting
+  bounds, or recovered history from the v0.45.0 construction controls.
 
 The complete notes contain the narrower limitations for each experiment.

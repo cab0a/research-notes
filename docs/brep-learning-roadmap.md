@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.44.0は長方形と穴付き円環を押し出し、半径方向の輪郭を全回転・半回転します。5個の結果は構築時とSTEP再読込後に解析真値、位相、曲面構成を保持し、高さと回転角を変えた体積比も再現します。内周方向を穴の意味の一部として扱います。v0.45.0以降は未実装です。
+v0.45.0は直線・円弧経路の掃引、円形・四角形断面のロフト、点格子からのBスプライン面を検証します。正常な5条件はSTEP再読込後も有効性、位相、曲面、測定値を保持し、折れた経路と断面不足は計算核を呼ぶ前に拒否します。滑らかなロフトの断面間形状が入力断面の最大幅を約1.5倍まで超えるため、補間と設計包絡を区別します。v0.46.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.45.0 onward are planned and not implemented at v0.44.0.
+The stages from v0.46.0 onward are planned and not implemented at v0.45.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -491,8 +491,16 @@ outer wire; loop direction is construction semantics, not incidental ordering.
 
 #### v0.45.0 — Sweeps, Lofts, and Surface Construction
 
-Study guide curves, section compatibility, parameterization, continuity, and
-controlled failure conditions.
+Completed with two pipe sweeps, two section lofts, one point-grid B-spline
+surface, and two precondition rejections. All ten accepted stage observations
+are analyzer-valid, and all five pairs retain topology and support-surface
+inventories across STEP. The three analytic controls match independent volume
+and area truth within `1e-8`.
+
+The C0 corner spine and single-section loft are rejected before native
+construction. The smooth square loft remains valid but reaches approximately
+`1.5` times the largest input half-span, demonstrating that interpolation
+through sections does not imply containment inside their simple envelope.
 
 #### v0.46.0 — Boolean Operations and Robustness
 

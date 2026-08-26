@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.44.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭と操作パラメーターから構築し、STEP往復後の解析真値と再計算関係を検証します。内周方向を穴の意味の一部として扱います。v0.45.0以降は未実装です。詳細は英語本文に示します。
+本書は、v0.45.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.45.0は直線・円弧経路の掃引、円形・四角形断面のロフト、点格子からのBスプライン面を検証します。正常な5条件と事前拒否する2条件を分離し、滑らかなロフトの包絡超過も記録します。v0.46.0以降は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-44 studies through v0.44.0. It separates syntax recognition, schema validation, physical-reference
+45 studies through v0.45.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.45.0 and later roadmap stages remain unimplemented.
+v0.46.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -49,7 +49,7 @@ directions, not delivery promises.
 | Rule-based feature recognition | Controlled subset | Nine generated solids and STEP fixtures produce 136 face rows, 282 adjacency rows, 14 candidate rows, 18 stage observations, and two equivalent-boundary rows; all 14 candidates match controlled classification and dimensions, while two negative controls produce no false positives | Feature-history reconstruction, design-intent proof, interacting or arbitrary features, or a general recognizer |
 | Face-level reports | Controlled subset | A versioned 60-field CSV records 13 faces per stage across six surface families with parent lists, geometry, parameters, boundaries, adjacency, tolerance, and attributed metadata source | Persistent identity, arbitrary-file coverage, XCAF metadata traversal, shell-relative material orientation, or cross-kernel portability |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | The v0.31 through v0.41 experiments construct bounded analytic and polyhedral controls and apply selected Boolean, chamfer, fillet, sewing, repair, common-part, section, shell-nesting, cell-adjacency, same-domain-unification, and face-report operations for exchange studies | A supported modeling API, parameter editing, sketches, sweeps, general Boolean modeling, general healing, persistent naming, and evaluated export preservation |
+| Geometry modeling | Research evidence | Bounded controls cover primitives, profiles, extrusion, revolution, two G1 sweeps, two section lofts, one point-grid surface, and explicit precondition rejection in addition to selected analysis operations | A supported modeling API, parameter editing, sketches, arbitrary guide curves or lofts, general Boolean modeling, general healing, persistent naming, and evaluated export preservation |
 | AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
 
 ## Part 21 and Container Capabilities
@@ -173,7 +173,8 @@ corpus and its declared provenance.
 | Tessellation and visual diagnostics | Controlled subset | v0.42.0 | Three STEP fixtures, four absolute linear/angular conditions, 36 face rows, 3,782 triangle rows, direct `ADVANCED_FACE` provenance for nine faces, exact-area comparison, sampled surface deviation, eight explicit pole-degenerate triangles, and face-colored previews; no certified error bound, global welded mesh, arbitrary-file coverage, or interactive viewer |
 | Primitive and surface construction | Controlled subset | v0.43.0 | Six controls retain topology and surface inventories across STEP; five analytic solids match independent volume/area truth, while equivalent cone parameterization and B-spline tolerance drift remain explicit; no supported general modeling API or feature-history recovery |
 | Profiles, extrusion, and revolution | Controlled subset | v0.44.0 | Five controls preserve analytic truth, topology, and surfaces across STEP; rectangle height and revolution angle recompute ratios match, while general sketches, constraints, taper, and recovered feature history remain excluded |
-| Sweeps, lofts, and Boolean operations | Not implemented | v0.45.0–v0.46.0 | Controlled success and failure conditions across tolerances |
+| Sweeps, lofts, and surface construction | Controlled subset | v0.45.0 | Five accepted controls retain validity, topology, surfaces, and measurements across STEP; two invalid preconditions reject without kernel invocation, while arbitrary guide curves, section compatibility, fairness, and certified fitting bounds remain excluded |
+| Boolean operations and robustness | Not implemented | v0.46.0 | Controlled disjoint, overlapping, tangent, and tolerance-sensitive conditions |
 | Fillets, chamfers, and topology history | Not implemented | v0.47.0 | Generated, modified, deleted, split, and merged-shape evidence |
 | STEP import-edit-export preservation | Not implemented | v0.48.0 | Structure, semantics, geometry, topology, attribute, and tolerance comparison |
 | Independent kernel portability | Not implemented | v0.49.0 | Fixed corpus evaluated by independently selected implementations |

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.44.0では、押し出しと回転で作る5個のSTEP試験ファイルを追加します。輪郭の外周・内周、操作量、構築直後と再読込後の位相・曲面・測定値を対応付け、距離と角度を変えた再計算関係も検証します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.45.0では、2種の掃引、2種のロフト、点格子からのBスプライン面で作る5個のSTEP試験ファイルを追加します。入力条件、構築判断、再読込後の位相・曲面・測定値、ロフトの包絡超過を対応付けます。詳細は英語本文に示します。
 
 ---
 
@@ -715,6 +715,28 @@ contracts. The controls retain profile and operation parameters as separate
 construction truth. They do not claim that a STEP reader can recover sketches,
 constraints, or feature history from the resulting boundary representation.
 
+## v0.45.0 — Sweep, Loft, and Surface Samples
+
+Directory: [`fixtures/sweep-loft-modeling/`](../fixtures/sweep-loft-modeling/)
+
+Manifest: [`manifest.csv`](../fixtures/sweep-loft-modeling/manifest.csv)
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `straight_circular_sweep.step` | 5,844 | `4ab00213f42be4275e356671e78f44df8aed0348076fa89a8aee4f5070ebae5f` | Analytic straight circular pipe sweep |
+| `quarter_bend_sweep.step` | 7,099 | `04b4f81582975862e7bb9a1bcb2bb540ffe913a8202ba2963fe6c12d19391c4c` | G1 quarter-circle spine and toroidal side |
+| `ruled_circular_loft.step` | 5,831 | `06e36132a5288bba39f5bc6743028bae11fcd5e1288b7fc2d257f97a1f0834f6` | Two-section ruled frustum with analytic truth |
+| `smooth_square_loft.step` | 18,205 | `9ec34f92c4341dc8150d5c0a2fd6ff8e551810c498a344082ec62225b5190eee` | Three-section smooth loft and measured envelope overshoot |
+| `interpolated_bspline_surface.step` | 5,836 | `bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6` | One point-grid B-spline support surface |
+
+![Five imported sweep, loft, and surface controls](../results/sweep_loft_shapes.png)
+
+Only accepted controls have STEP fixtures. The C0-corner sweep and
+single-section loft remain decision rows with `kernel_invoked=0`, because the
+project contract rejects their documented preconditions before construction.
+The samples preserve evaluated geometry, not their paths, profiles, sections,
+or construction history.
+
 ## Regeneration
 
 ```bash
@@ -812,6 +834,10 @@ python experiments/run_primitive_round_trips.py \
 
 python experiments/run_profile_modeling.py \
   --fixture-dir fixtures/profile-modeling \
+  --refresh-fixtures
+
+python experiments/run_sweep_loft_modeling.py \
+  --fixture-dir fixtures/sweep-loft-modeling \
   --refresh-fixtures
 ```
 

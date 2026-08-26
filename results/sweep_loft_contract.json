@@ -1,0 +1,161 @@
+{
+  "claim_boundaries": [
+    "only two G1 pipe spines and two controlled loft families are accepted",
+    "C0 spine and insufficient-section inputs are rejected before native construction",
+    "smooth interpolation may leave the envelope of its input sections",
+    "B-spline support retention does not prove interpolation error over the full surface",
+    "STEP output does not recover sweep paths, profiles, sections, or construction history"
+  ],
+  "contract_version": "1.0.0",
+  "controls": [
+    {
+      "control_id": "straight_circular_sweep",
+      "expected_decision": "accept",
+      "expected_reason": "constructed",
+      "expected_surface_area": 43.982297150257104,
+      "expected_volume": 18.84955592153876,
+      "input_description": "radius-1 disk along a length-6 straight spine",
+      "operation": "pipe_sweep",
+      "section_count": 1,
+      "spine_continuity": "G1"
+    },
+    {
+      "control_id": "quarter_bend_sweep",
+      "expected_decision": "accept",
+      "expected_reason": "constructed",
+      "expected_surface_area": 31.870759913852726,
+      "expected_volume": 8.882643960980422,
+      "input_description": "radius-0.6 disk along a radius-5 quarter-circle spine",
+      "operation": "pipe_sweep",
+      "section_count": 1,
+      "spine_continuity": "G1"
+    },
+    {
+      "control_id": "ruled_circular_loft",
+      "expected_decision": "accept",
+      "expected_reason": "constructed",
+      "expected_surface_area": 54.567318298194536,
+      "expected_volume": 29.321531433504735,
+      "input_description": "radius-1 and radius-2 circles separated by four length units",
+      "operation": "section_loft",
+      "section_count": 2,
+      "spine_continuity": "not_applicable"
+    },
+    {
+      "control_id": "smooth_square_loft",
+      "expected_decision": "accept",
+      "expected_reason": "constructed",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "input_description": "square half-spans 1, 2, 1 at heights 0, 3, 6",
+      "operation": "section_loft",
+      "section_count": 3,
+      "spine_continuity": "not_applicable"
+    },
+    {
+      "control_id": "interpolated_bspline_surface",
+      "expected_decision": "accept",
+      "expected_reason": "constructed",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "input_description": "4-by-4 deterministic point grid",
+      "operation": "point_grid_surface",
+      "section_count": 0,
+      "spine_continuity": "not_applicable"
+    },
+    {
+      "control_id": "c0_corner_sweep",
+      "expected_decision": "reject",
+      "expected_reason": "spine_not_g1",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "input_description": "two straight spine edges meeting at a right angle",
+      "operation": "pipe_sweep",
+      "section_count": 1,
+      "spine_continuity": "C0"
+    },
+    {
+      "control_id": "single_section_loft",
+      "expected_decision": "reject",
+      "expected_reason": "insufficient_sections",
+      "expected_surface_area": null,
+      "expected_volume": null,
+      "input_description": "one circular section",
+      "operation": "section_loft",
+      "section_count": 1,
+      "spine_continuity": "not_applicable"
+    }
+  ],
+  "decision_csv": {
+    "file": "sweep_loft_decisions.csv",
+    "ordered_fields": [
+      "contract_version",
+      "control_id",
+      "operation",
+      "input_description",
+      "spine_continuity",
+      "section_count",
+      "expected_decision",
+      "decision",
+      "reason",
+      "kernel_invoked",
+      "builder_status",
+      "error_on_surface"
+    ]
+  },
+  "fixture_sha256": {
+    "interpolated_bspline_surface.step": "bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6",
+    "quarter_bend_sweep.step": "04b4f81582975862e7bb9a1bcb2bb540ffe913a8202ba2963fe6c12d19391c4c",
+    "ruled_circular_loft.step": "06e36132a5288bba39f5bc6743028bae11fcd5e1288b7fc2d257f97a1f0834f6",
+    "smooth_square_loft.step": "9ec34f92c4341dc8150d5c0a2fd6ff8e551810c498a344082ec62225b5190eee",
+    "straight_circular_sweep.step": "4ab00213f42be4275e356671e78f44df8aed0348076fa89a8aee4f5070ebae5f"
+  },
+  "observation_csv": {
+    "file": "sweep_loft_observations.csv",
+    "ordered_fields": [
+      "contract_version",
+      "stage",
+      "control_id",
+      "source_file",
+      "source_sha256",
+      "vertex_count",
+      "edge_count",
+      "face_count",
+      "shell_count",
+      "solid_count",
+      "absolute_volume",
+      "expected_volume",
+      "volume_absolute_error",
+      "surface_area",
+      "expected_surface_area",
+      "surface_area_absolute_error",
+      "surface_centroid_x",
+      "surface_centroid_y",
+      "surface_centroid_z",
+      "bounds_min",
+      "bounds_max",
+      "surface_counts",
+      "maximum_vertex_tolerance",
+      "maximum_edge_tolerance",
+      "maximum_face_tolerance",
+      "analyzer_valid"
+    ]
+  },
+  "study_version": "v0.45.0",
+  "summary_csv": {
+    "file": "sweep_loft_summary.csv",
+    "ordered_fields": [
+      "control_id",
+      "topology_matches",
+      "surface_counts_match",
+      "volume_absolute_difference",
+      "surface_area_absolute_difference",
+      "surface_centroid_distance",
+      "constructed_truth_matches",
+      "step_imported_truth_matches",
+      "input_envelope_ratio",
+      "round_trip_passes"
+    ]
+  },
+  "title": "Sweeps, Lofts, and Surface Construction"
+}

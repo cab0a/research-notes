@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、44件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭から構築し、STEP往復後の解析真値、位相、曲面構成、再計算比を検証します。内周方向を穴の意味の一部として扱います。
+このディレクトリには、45件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.45.0は2種の掃引、2種のロフト、点格子からのBスプライン面について、入力判断、構築、STEP往復、解析真値、包絡超過を検証します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1188,6 +1188,25 @@ The rectangle height relation yields volume ratio `1.4`; the full-to-half
 revolution relation yields `0.5`. The half revolution adds two radial end
 faces. Profile truth is stored separately and is not inferred from STEP.
 
+## v0.45.0
+
+- `sweep_loft_decisions.csv` records seven admission and construction outcomes,
+  including whether the kernel was invoked.
+- `sweep_loft_observations.csv` contains ten constructed and imported shape
+  measurements.
+- `sweep_loft_summary.csv` contains five round-trip comparisons and the smooth
+  loft's input-envelope ratio.
+- `sweep_loft_contract.json` fixes inputs, expected routes, schemas, fixture
+  hashes, and claim boundaries.
+- `sweep_loft_modeling.png` compares decisions and round-trip residuals.
+- `sweep_loft_shapes.png` previews the five imported accepted results.
+
+All ten observations are analyzer-valid, and all five round-trip contracts
+pass. The six stages with closed-form truth match volume and area within
+`1e-8`. Both documented precondition failures stop before native construction.
+The smooth square loft reaches about `1.5` times the largest input half-span,
+so interpolation through sections is not presented as an envelope guarantee.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1235,6 +1254,7 @@ python experiments/run_face_level_analysis.py
 python experiments/run_tessellation_diagnostics.py
 python experiments/run_primitive_round_trips.py
 python experiments/run_profile_modeling.py
+python experiments/run_sweep_loft_modeling.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

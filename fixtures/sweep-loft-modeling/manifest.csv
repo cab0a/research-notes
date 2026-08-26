@@ -1,0 +1,6 @@
+control_id,file_name,source_bytes,source_sha256,generator,binding_distribution_version,step_processor,writer_status,reader_status,transferred_roots
+straight_circular_sweep,straight_circular_sweep.step,5844,4ab00213f42be4275e356671e78f44df8aed0348076fa89a8aee4f5070ebae5f,experiments/run_sweep_loft_modeling.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+quarter_bend_sweep,quarter_bend_sweep.step,7099,04b4f81582975862e7bb9a1bcb2bb540ffe913a8202ba2963fe6c12d19391c4c,experiments/run_sweep_loft_modeling.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+ruled_circular_loft,ruled_circular_loft.step,5831,06e36132a5288bba39f5bc6743028bae11fcd5e1288b7fc2d257f97a1f0834f6,experiments/run_sweep_loft_modeling.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+smooth_square_loft,smooth_square_loft.step,18205,9ec34f92c4341dc8150d5c0a2fd6ff8e551810c498a344082ec62225b5190eee,experiments/run_sweep_loft_modeling.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+interpolated_bspline_surface,interpolated_bspline_surface.step,5836,bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6,experiments/run_sweep_loft_modeling.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

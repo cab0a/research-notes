@@ -118,6 +118,8 @@ jobs:
           python experiments/run_primitive_round_trips.py --fixture-dir regenerated-fixtures/primitive-round-trips --output-dir regenerated-primitive-fixture-results --refresh-fixtures
           python experiments/run_profile_modeling.py --output-dir regenerated-results
           python experiments/run_profile_modeling.py --fixture-dir regenerated-fixtures/profile-modeling --output-dir regenerated-profile-fixture-results --refresh-fixtures
+          python experiments/run_sweep_loft_modeling.py --output-dir regenerated-results
+          python experiments/run_sweep_loft_modeling.py --fixture-dir regenerated-fixtures/sweep-loft-modeling --output-dir regenerated-sweep-loft-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -321,6 +323,10 @@ jobs:
           diff -u results/profile_modeling_summary.csv regenerated-results/profile_modeling_summary.csv
           diff -u results/profile_recompute_relations.csv regenerated-results/profile_recompute_relations.csv
           diff -u results/profile_modeling_contract.json regenerated-results/profile_modeling_contract.json
+          diff -u results/sweep_loft_decisions.csv regenerated-results/sweep_loft_decisions.csv
+          diff -u results/sweep_loft_observations.csv regenerated-results/sweep_loft_observations.csv
+          diff -u results/sweep_loft_summary.csv regenerated-results/sweep_loft_summary.csv
+          diff -u results/sweep_loft_contract.json regenerated-results/sweep_loft_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -349,6 +355,7 @@ jobs:
           diff -qr fixtures/tessellation-diagnostics regenerated-fixtures/tessellation-diagnostics
           diff -qr fixtures/primitive-round-trips regenerated-fixtures/primitive-round-trips
           diff -qr fixtures/profile-modeling regenerated-fixtures/profile-modeling
+          diff -qr fixtures/sweep-loft-modeling regenerated-fixtures/sweep-loft-modeling
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -412,6 +419,8 @@ jobs:
           test -s regenerated-results/primitive_round_trip_shapes.png
           test -s regenerated-results/profile_modeling.png
           test -s regenerated-results/profile_modeling_shapes.png
+          test -s regenerated-results/sweep_loft_modeling.png
+          test -s regenerated-results/sweep_loft_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

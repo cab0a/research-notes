@@ -1,0 +1,6 @@
+control_id,topology_matches,surface_counts_match,volume_absolute_difference,surface_area_absolute_difference,surface_centroid_distance,constructed_truth_matches,step_imported_truth_matches,input_envelope_ratio,round_trip_passes
+straight_circular_sweep,1,1,0,2.4868995751603507e-12,5.6527956713601715e-14,1,1,,1
+quarter_bend_sweep,1,1,4.7428727611986687e-13,1.9539925233402755e-12,2.2501840766482236e-13,1,1,,1
+ruled_circular_loft,1,1,7.2546413321106229e-12,6.2385652199736796e-12,7.8697389623993247e-14,1,1,,1
+smooth_square_loft,1,1,0,0,2.5447002129168875e-18,,,1.5000000499999999,1
+interpolated_bspline_surface,1,1,0,3.5527136788005009e-15,4.9650683064945462e-16,,,,1

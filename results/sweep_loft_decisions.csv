@@ -1,0 +1,8 @@
+contract_version,control_id,operation,input_description,spine_continuity,section_count,expected_decision,decision,reason,kernel_invoked,builder_status,error_on_surface
+1.0.0,straight_circular_sweep,pipe_sweep,radius-1 disk along a length-6 straight spine,G1,1,accept,accept,constructed,1,done,0
+1.0.0,quarter_bend_sweep,pipe_sweep,radius-0.6 disk along a radius-5 quarter-circle spine,G1,1,accept,accept,constructed,1,done,0
+1.0.0,ruled_circular_loft,section_loft,radius-1 and radius-2 circles separated by four length units,not_applicable,2,accept,accept,constructed,1,BRepFill_ThruSectionErrorStatus_Done,
+1.0.0,smooth_square_loft,section_loft,"square half-spans 1, 2, 1 at heights 0, 3, 6",not_applicable,3,accept,accept,constructed,1,BRepFill_ThruSectionErrorStatus_Done,
+1.0.0,interpolated_bspline_surface,point_grid_surface,4-by-4 deterministic point grid,not_applicable,0,accept,accept,constructed,1,done,
+1.0.0,c0_corner_sweep,pipe_sweep,two straight spine edges meeting at a right angle,C0,1,reject,reject,spine_not_g1,0,not_invoked,
+1.0.0,single_section_loft,section_loft,one circular section,not_applicable,1,reject,reject,insufficient_sections,0,not_invoked,
