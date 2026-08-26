@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.50.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.50.0はSTEP受入を5段階へ分け、13条件で資源上限、外部参照遮断、子プロセス時間切れを検証します。安全な隔離環境やメモリ安全性は未実装です。詳細は英語本文に示します。
+本書は、v0.51.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.51.0は4形状の面隣接グラフ、幾何記述子、列ごとの由来、STEP読込前後の構造比較を実装します。永続識別や一般形状認識は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-50 studies through v0.50.0. It separates syntax recognition, schema validation, physical-reference
+51 studies through v0.51.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.51.0 and later roadmap stages remain unimplemented.
+v0.52.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -179,7 +179,7 @@ corpus and its declared provenance.
 | STEP import-edit-export preservation | Controlled subset | v0.48.0 | Three XCAF-aware controls retain structure, semantics, global geometry, topology, color inventory, and maximum tolerances between generations; only one is byte identical and one declared source color is omitted before the first import, while nested assemblies, complete attribute links, and cross-kernel evidence remain excluded |
 | Independent parser and importer portability | Controlled subset | v0.49.0 | Three fixed files are accepted by three parser implementations and produce matching geometry on two OCCT routes; no independent kernel is included |
 | Resource-bounded native 3D intake | Controlled subset | v0.50.0 | Five ordered stages cover raw and controlled ZIP inputs, parser counters, disabled external retrieval, child-process timeouts, topology, and triangle limits; no OS sandbox or memory-safety claim |
-| Face-adjacency descriptors | Not implemented | v0.51.0 | Attributed graphs with source and calculation provenance |
+| Face-adjacency descriptors | Controlled subset | v0.51.0 | Four constructed/imported graph pairs expose attributed face nodes, distinct-face shared-edge relations, incidence classes, structural summaries, and field provenance; IDs remain analysis-local |
 | Feature-recognition robustness | Not implemented | v0.52.0 | Deterministic confusion counts and abstention under tolerance, size, orientation, import, and healing perturbations |
 | AI-ready 3D dataset | Not implemented | v0.53.0 | Grouped splits, leakage checks, labels, and complete provenance |
 | Learned 3D assistance | Not implemented | v0.54.0 | Baselines, calibration, robustness, evidence links, and abstention |

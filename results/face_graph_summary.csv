@@ -1,0 +1,12 @@
+scope,metric,value
+corpus,controls,4
+corpus,step_files,4
+constructed,nodes,28
+constructed,relations,59
+round_trip,structural_signature_matches,4
+round_trip,topology_count_matches,4
+round_trip,surface_histogram_matches,4
+round_trip,degree_histogram_matches,4
+constructed,seam_edges,1
+constructed,boundary_edges,0
+constructed,nonmanifold_edges,0

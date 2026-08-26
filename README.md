@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.50.0では、STEPと制御した圧縮容器の受入を5段階に分け、ファイル量、構文量、外部参照、展開量、入れ子、経路、位相、三角形数、実行時間の上限を検証します。
+v0.51.0では、箱、貫通穴、段差、丸み付けの4形状について、各面を節、異なる2面が共有する辺を関係とする面隣接グラフを生成します。
 
-13条件すべてが予定した理由で停止または受理され、2件を受理、5件を隔離、6件を拒否しました。構文解析とネイティブ形状処理は別の子プロセスで実行します。ただし、これはメモリ安全性や任意の悪意あるファイルへの安全性を証明しません。詳細は英語本文に示します。
+構築時の合計28面・59関係について、4形状すべてがSTEP読込後も節数、関係数、曲面構成、次数構成、関係構成、粗い構造署名を保持しました。各列の由来を契約化しますが、局所面番号は永続識別子ではなく、形状特徴や設計意図を認識したとは主張しません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -43,8 +43,8 @@ source-traceable tessellation diagnostics, primitive STEP round trips,
 profile-driven extrusion and revolution, bounded sweep, loft, and surface
 construction, controlled Boolean robustness, operation-local topology history,
 dimension-specific STEP/XCAF preservation, independent parser/import-route
-comparison, and staged resource-bounded 3D intake. The current release is
-v0.50.0.
+comparison, staged resource-bounded 3D intake, and provenance-bound face-
+adjacency graphs. The current release is v0.51.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -59,28 +59,28 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 50 releases to their questions,
+The [study index](docs/studies.md) maps all 51 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.50.0 study stages STEP intake across preflight, parsing, external-
-reference policy, native transfer, and tessellation.
+The v0.51.0 study represents faces as attributed nodes and distinct-face
+shared edges as attributed relations for four controlled B-Reps.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Controls / fixture files | 13 / 7 |
-| Expected terminal decisions | 13 / 13 |
-| Accept / quarantine / reject | 2 / 5 / 6 |
-| Preflight / parser stops | 4 / 3 |
-| External-policy / kernel stops | 1 / 2 |
-| Tessellation terminals, including accepts | 3 |
+| Controls / committed STEP files | 4 / 4 |
+| Constructed face nodes / relations | 28 / 59 |
+| Structural-signature round-trip matches | 4 / 4 |
+| Topology-count round-trip matches | 4 / 4 |
+| Constructed boundary / seam / non-manifold edges | 0 / 1 / 0 |
+| Maximum surface-area difference | `3.13e-12` |
 
-![Resource-bounded STEP intake outcomes](results/resource_bounded_3d.png)
+![Constructed face-adjacency graphs](results/face_adjacency_graph.png)
 
-Every control stops or admits at the declared stage and reason. Child-process
-timeouts and counters make policy boundaries observable; they are not an
-operating-system sandbox or a proof of native memory safety.
+All four graph structures retain the selected discrete invariants after STEP.
+This establishes a controlled representation for later recognition studies;
+it does not establish persistent face identity or recovered feature intent.
 
 ## Current STEP and B-Rep Capability
 
@@ -101,8 +101,9 @@ direct Part 21 `ADVANCED_FACE` instances, constructs and round-trips six
 controlled primitives and surfaces, recomputes bounded extrusion and
 revolution families from explicit profile truth, evaluates two G1 sweeps, two
 section lofts, and one point-grid surface with precondition failures, and checks
-seven bounded Boolean conditions against independent cuboid-set truth, and
-records scoped fillet/chamfer history plus STEP identity boundaries. It cannot prove
+seven bounded Boolean conditions against independent cuboid-set truth, records
+scoped fillet/chamfer history plus STEP identity boundaries, stages defensive
+3D intake, and emits provenance-bound face-adjacency graphs. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -110,7 +111,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, face reports, tessellations, construction, Boolean controls, and operation-local fillet/chamfer history | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, or general healing |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, or general healing |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -149,6 +150,10 @@ maps each current field to its evidence, exact limitation, and planned release.
 - The v0.50.0 intake counters and child-process timeouts are staged policy
   evidence. They do not provide an operating-system sandbox, memory or CPU
   quota, native-code memory-safety proof, or safe arbitrary hostile-file claim.
+- The v0.51.0 graph uses analysis-local face and edge indices, representative
+  geometric samples, and a coarse structural signature. It is not persistent
+  naming, complete graph isomorphism, feature recognition, or design-intent
+  recovery.
 - The EXPRESS resolver supports a controlled ASCII declaration subset and
   direct imports from schemas in the same document. It does not implement
   complete visibility, transitive re-export, external schema loading,
@@ -269,8 +274,8 @@ correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
 tessellation-diagnostic, v0.43.0 primitive-round-trip, v0.44.0 profile-
 modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, v0.47.0
 topology-history, v0.48.0 STEP-preservation, v0.49.0 parser/import-route
-portability, and v0.50.0 resource-bounded intake studies also write
-deterministic versioned JSON records.
+portability, v0.50.0 resource-bounded intake, and v0.51.0 face-graph studies
+also write deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -304,6 +309,8 @@ result fixtures, the two successful v0.47.0 feature-operation fixtures, and the
 six v0.48.0 source/re-export preservation fixtures. v0.49.0 reuses the three
 source fixtures byte for byte and records their digests in a study manifest.
 v0.50.0 adds seven raw STEP and controlled ZIP-container intake fixtures.
+v0.51.0 adds four STEP fixtures for planar, through-hole, stepped, and filleted
+face-adjacency graphs.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -314,7 +321,7 @@ validation evidence.
 
 ## Key Features
 
-- Fifty published studies with explicit questions, controls, results, and
+- Fifty-one published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -579,6 +586,9 @@ corpus digests, and an explicit absence of cross-kernel evidence.
 The v0.50.0 additions cover bounded raw and ZIP-container intake, path and
 nesting rejection, isolated syntax and native workers, disabled external
 resolution, topology and mesh-output budgets, and timeout quarantine.
+The v0.51.0 additions cover face nodes, distinct-face shared-edge relations,
+surface and degree histograms, explicit seam incidence, structural signatures,
+field-level provenance routing, STEP comparison, and graph visualization.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -611,7 +621,8 @@ and surface results plus two precondition rejections, v0.46.0 evaluates seven
 Boolean results, v0.47.0 evaluates two successful local operations plus two
 oversized failures, v0.48.0 evaluates three repeated XCAF-aware STEP exchanges,
 v0.49.0 compares three parser implementations and two same-kernel import
-routes, and v0.50.0 evaluates thirteen staged resource-boundary controls.
+routes, v0.50.0 evaluates thirteen staged resource-boundary controls, and
+v0.51.0 evaluates four face-adjacency graph pairs.
 These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
@@ -648,10 +659,12 @@ boundaries. v0.48.0 separates structure, semantics, geometry, topology,
 attributes, tolerances, and byte identity across repeated exchange. v0.49.0
 separates parser acceptance, import-route geometry, document attributes, and
 the still-open independent-kernel question. v0.50.0 adds staged input budgets
-and process timeouts without making a native security claim. The roadmap next proceeds through
+and process timeouts without making a native security claim. v0.51.0 adds
+provenance-bound face-adjacency graphs and geometric descriptors without a
+feature-recognition claim. The roadmap next proceeds through
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.51.0 and later releases remain unimplemented.
+candidates. v0.52.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.50.0はSTEP受入を5段階へ分け、ファイル量、構文量、圧縮容器、外部参照、位相、三角形数、時間の上限を13条件で検証します。構文解析とネイティブ形状処理を別の子プロセスへ分離しますが、安全な隔離環境やメモリ安全性を証明するものではありません。v0.51.0以降は未実装です。
+v0.51.0は箱、貫通穴、段差、丸み付けの4形状を面隣接グラフへ変換し、合計28面・59関係の幾何記述子と由来を固定します。4形状すべてがSTEP読込後も選択した構造指標を保持しますが、局所番号を永続識別子や設計意図とは扱いません。v0.52.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.51.0 onward are planned and not implemented at v0.50.0.
+The stages from v0.52.0 onward are planned and not implemented at v0.51.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -565,8 +565,13 @@ or memory-safety proof.
 
 #### v0.51.0 — Face-Adjacency Graphs and Geometric Descriptors
 
-Represent faces as attributed nodes and shared edges as attributed relations,
-with source and calculation provenance for every field.
+Completed with four constructed and STEP-imported graph pairs. The constructed
+corpus contains 28 face nodes and 59 distinct-face shared-edge relations. All
+pairs retain selected topology, surface, degree, relation, seam, boundary,
+non-manifold, and coarse structural-signature invariants. Every CSV field is
+routed to contract, topology, geometry, or exchange provenance. Local IDs,
+representative samples, and the structural signature are not persistent naming,
+complete graph isomorphism, or recovered design intent.
 
 #### v0.52.0 — Feature Recognition Robustness and Benchmarking
 

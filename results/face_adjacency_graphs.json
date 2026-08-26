@@ -1,0 +1,1271 @@
+{
+  "contract_version": "1.0.0",
+  "graphs": [
+    {
+      "control_id": "plain_block",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e10",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f6"
+        }
+      ],
+      "source_file": null,
+      "source_sha256": null,
+      "stage": "constructed",
+      "structural_signature_sha256": "fd85e59695252d429b4cdb05986d5a59990995c97aab8fd4fc2743a4d1c3384e"
+    },
+    {
+      "control_id": "plain_block",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e10",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f6"
+        }
+      ],
+      "source_file": "graph_plain_block.step",
+      "source_sha256": "1e7a3ecda9402ee740bf40fbae47a384f4c8bbf6dd5a131bc8f2b06b1bcea0e3",
+      "stage": "step_imported",
+      "structural_signature_sha256": "fd85e59695252d429b4cdb05986d5a59990995c97aab8fd4fc2743a4d1c3384e"
+    },
+    {
+      "control_id": "through_hole",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 91.09126147876594,
+          "degree": 5,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 91.09126147876594,
+          "degree": 5,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 47.1238898038469,
+          "degree": 2,
+          "id": "f7",
+          "surface_type": "cylinder"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e10",
+          "length": 7.853981633974483,
+          "source": "f3",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 6.0,
+          "source": "f4",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 8.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e14",
+          "length": 7.853981633974483,
+          "source": "f5",
+          "target": "f7"
+        }
+      ],
+      "source_file": null,
+      "source_sha256": null,
+      "stage": "constructed",
+      "structural_signature_sha256": "117789f8c20e41f902b18e53d9093285f0f71179c16bd02daaede857f6260a14"
+    },
+    {
+      "control_id": "through_hole",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 91.09126147876594,
+          "degree": 5,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 72.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 91.09126147876594,
+          "degree": 5,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 47.123889803850005,
+          "degree": 2,
+          "id": "f7",
+          "surface_type": "cylinder"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 6.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 12.0,
+          "source": "f3",
+          "target": "f4"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e10",
+          "length": 7.853981633974483,
+          "source": "f3",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 6.0,
+          "source": "f4",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 8.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e14",
+          "length": 7.853981633974483,
+          "source": "f5",
+          "target": "f7"
+        }
+      ],
+      "source_file": "graph_through_hole.step",
+      "source_sha256": "c968f97ab06be32a631aedb3fd526d43e3de49f40154b3c7508b4e118bb54543",
+      "stage": "step_imported",
+      "structural_signature_sha256": "117789f8c20e41f902b18e53d9093285f0f71179c16bd02daaede857f6260a14"
+    },
+    {
+      "control_id": "stepped_block",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 24.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 55.999999999999986,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 16.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 45.999999999999986,
+          "degree": 6,
+          "id": "f7",
+          "surface_type": "plane"
+        },
+        {
+          "area": 45.999999999999986,
+          "degree": 6,
+          "id": "f8",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 12.0,
+          "source": "f1",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 12.0,
+          "source": "f1",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 3.0,
+          "source": "f2",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 3.0,
+          "source": "f2",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 7.0,
+          "source": "f3",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e10",
+          "length": 7.0,
+          "source": "f3",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 8.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 2.0,
+          "source": "f4",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 2.0,
+          "source": "f4",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e14",
+          "length": 8.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e15",
+          "length": 5.0,
+          "source": "f5",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e16",
+          "length": 5.0,
+          "source": "f5",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e17",
+          "length": 5.0,
+          "source": "f6",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e18",
+          "length": 5.0,
+          "source": "f6",
+          "target": "f8"
+        }
+      ],
+      "source_file": null,
+      "source_sha256": null,
+      "stage": "constructed",
+      "structural_signature_sha256": "e7b1d4a22a7b713f5be1c3d2f5aa674efe5ff34d6df0cddb0aea71e70012a82e"
+    },
+    {
+      "control_id": "stepped_block",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 24.0,
+          "degree": 4,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 55.999999999999986,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "plane"
+        },
+        {
+          "area": 16.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 45.999999999999986,
+          "degree": 6,
+          "id": "f7",
+          "surface_type": "plane"
+        },
+        {
+          "area": 45.999999999999986,
+          "degree": 6,
+          "id": "f8",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 12.0,
+          "source": "f1",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 12.0,
+          "source": "f1",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 3.0,
+          "source": "f2",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 8.0,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 3.0,
+          "source": "f2",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 7.0,
+          "source": "f3",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e10",
+          "length": 7.0,
+          "source": "f3",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 2.0,
+          "source": "f4",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 8.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 2.0,
+          "source": "f4",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e14",
+          "length": 5.0,
+          "source": "f5",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e15",
+          "length": 8.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e16",
+          "length": 5.0,
+          "source": "f5",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e17",
+          "length": 5.0,
+          "source": "f6",
+          "target": "f8"
+        },
+        {
+          "curve_type": "line",
+          "id": "e18",
+          "length": 5.0,
+          "source": "f6",
+          "target": "f7"
+        }
+      ],
+      "source_file": "graph_stepped_block.step",
+      "source_sha256": "d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d",
+      "stage": "step_imported",
+      "structural_signature_sha256": "e7b1d4a22a7b713f5be1c3d2f5aa674efe5ff34d6df0cddb0aea71e70012a82e"
+    },
+    {
+      "control_id": "fillet_operation",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 71.78539816339745,
+          "degree": 5,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 12.566370614359172,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "cylinder"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 71.78539816339745,
+          "degree": 5,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 88.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f7",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 5.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 5.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e5",
+          "length": 1.5707963267948966,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 11.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e8",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e9",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e10",
+          "length": 1.5707963267948966,
+          "source": "f3",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 8.0,
+          "source": "f4",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 11.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e14",
+          "length": 6.0,
+          "source": "f5",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e15",
+          "length": 8.0,
+          "source": "f6",
+          "target": "f7"
+        }
+      ],
+      "source_file": null,
+      "source_sha256": null,
+      "stage": "constructed",
+      "structural_signature_sha256": "f62d823d9df57d9801b28a40314375b23a03f32830f8c19fd979bebd6013bc21"
+    },
+    {
+      "control_id": "fillet_operation",
+      "directed": false,
+      "multigraph": false,
+      "nodes": [
+        {
+          "area": 39.99999999999999,
+          "degree": 4,
+          "id": "f1",
+          "surface_type": "plane"
+        },
+        {
+          "area": 71.78539816339745,
+          "degree": 5,
+          "id": "f2",
+          "surface_type": "plane"
+        },
+        {
+          "area": 12.566370614359993,
+          "degree": 4,
+          "id": "f3",
+          "surface_type": "cylinder"
+        },
+        {
+          "area": 96.0,
+          "degree": 4,
+          "id": "f4",
+          "surface_type": "plane"
+        },
+        {
+          "area": 71.78539816339745,
+          "degree": 5,
+          "id": "f5",
+          "surface_type": "plane"
+        },
+        {
+          "area": 88.0,
+          "degree": 4,
+          "id": "f6",
+          "surface_type": "plane"
+        },
+        {
+          "area": 48.0,
+          "degree": 4,
+          "id": "f7",
+          "surface_type": "plane"
+        }
+      ],
+      "relations": [
+        {
+          "curve_type": "line",
+          "id": "e1",
+          "length": 5.0,
+          "source": "f1",
+          "target": "f2"
+        },
+        {
+          "curve_type": "line",
+          "id": "e2",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e3",
+          "length": 5.0,
+          "source": "f1",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e4",
+          "length": 8.0,
+          "source": "f1",
+          "target": "f3"
+        },
+        {
+          "curve_type": "line",
+          "id": "e5",
+          "length": 12.0,
+          "source": "f2",
+          "target": "f4"
+        },
+        {
+          "curve_type": "line",
+          "id": "e6",
+          "length": 6.0,
+          "source": "f2",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e7",
+          "length": 11.0,
+          "source": "f2",
+          "target": "f6"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e8",
+          "length": 1.5707963267948966,
+          "source": "f2",
+          "target": "f3"
+        },
+        {
+          "curve_type": "circle",
+          "id": "e9",
+          "length": 1.5707963267948966,
+          "source": "f3",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e10",
+          "length": 8.0,
+          "source": "f3",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e11",
+          "length": 8.0,
+          "source": "f4",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e12",
+          "length": 12.0,
+          "source": "f4",
+          "target": "f5"
+        },
+        {
+          "curve_type": "line",
+          "id": "e13",
+          "length": 6.0,
+          "source": "f5",
+          "target": "f7"
+        },
+        {
+          "curve_type": "line",
+          "id": "e14",
+          "length": 11.0,
+          "source": "f5",
+          "target": "f6"
+        },
+        {
+          "curve_type": "line",
+          "id": "e15",
+          "length": 8.0,
+          "source": "f6",
+          "target": "f7"
+        }
+      ],
+      "source_file": "graph_fillet_operation.step",
+      "source_sha256": "c10fee8a84fc0205bc5afd8dfbb089f8f41d0e2c1fe6e19cb2b29020729b5758",
+      "stage": "step_imported",
+      "structural_signature_sha256": "f62d823d9df57d9801b28a40314375b23a03f32830f8c19fd979bebd6013bc21"
+    }
+  ]
+}

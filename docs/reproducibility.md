@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、50件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.50.0は7個のSTEP・制御圧縮容器試料と13条件から、事前検査、構文解析、外部参照方針、形状計算核、三角形化の停止位置を再現します。
+本書は、51件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.51.0は4形状の構築時・STEP読込後の面隣接グラフ、幾何記述子、構造署名、由来、図を再生成します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -425,6 +425,9 @@ python experiments/run_step_round_trip_preservation.py \
 - The v0.50 intake corpus generates seven raw STEP or controlled ZIP-container
   files. Thirteen controls vary byte, parser, archive, external-reference,
   topology, triangle, and wall-clock limits while preserving stage order.
+- The v0.51 graph corpus generates four normalized STEP files and evaluates
+  each constructed/imported pair with graph-local nodes, distinct-face shared-
+  edge relations, incidence classes, geometric descriptors, and provenance.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -669,7 +672,8 @@ five accepted sweep, loft, and point-grid surface results plus two
 precondition rejections, v0.46.0 evaluates seven Boolean results, v0.47.0
 evaluates two local operations, v0.48.0 evaluates three repeated exchanges,
 v0.49.0 compares three parser implementations and two same-kernel import
-routes, and v0.50.0 evaluates thirteen staged resource-boundary controls.
+routes, v0.50.0 evaluates thirteen staged resource-boundary controls, and
+v0.51.0 evaluates four constructed/imported face-adjacency graph pairs.
 None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell

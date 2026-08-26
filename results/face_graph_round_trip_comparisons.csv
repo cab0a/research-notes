@@ -1,0 +1,5 @@
+contract_version,control_id,node_count_matches,relation_count_matches,component_count_matches,boundary_count_matches,seam_count_matches,nonmanifold_count_matches,surface_histogram_matches,degree_histogram_matches,relation_histogram_matches,structural_signature_matches,topology_counts_match,volume_absolute_difference,surface_area_absolute_difference,curved_area_ratio_absolute_difference
+1.0.0,plain_block,1,1,1,1,1,1,1,1,1,1,1,0,0,0
+1.0.0,through_hole,1,1,1,1,1,1,1,1,1,1,1,6.8212102632969618e-13,3.1263880373444408e-12,5.9396931817445875e-15
+1.0.0,stepped_block,1,1,1,1,1,1,1,1,1,1,1,0,0,0
+1.0.0,fillet_operation,1,1,1,1,1,1,1,1,1,1,1,6.8212102632969618e-13,7.9580786405131221e-13,1.8630930131990908e-15

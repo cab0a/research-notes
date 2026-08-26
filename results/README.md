@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、50件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.50.0はSTEP受入を5段階へ分け、13条件の資源上限、停止理由、子プロセス分離を記録します。
+このディレクトリには、51件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.51.0は4形状の面隣接グラフ、幾何記述子、由来、STEP読込前後の比較、図を記録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1306,6 +1306,28 @@ All thirteen controls match their declared decision and reason code. Two paths
 are accepted, five quarantined, and six rejected. Process isolation and
 timeouts are observable policy boundaries, not a memory-safety proof.
 
+## v0.51.0
+
+- `face_graph_nodes.csv` contains attributed face nodes with graph-local IDs,
+  geometry, topology, adjacency, tolerance, source, and provenance fields.
+- `face_graph_relations.csv` contains distinct-face shared-edge relations with
+  curve, length, tolerance, and representative-normal fields.
+- `face_graph_descriptors.csv` records incidence classes, graph histograms,
+  structural signatures, curved-area ratio, and whole-shape measurements.
+- `face_graph_round_trip_comparisons.csv` compares constructed and imported
+  graph invariants without a persistent-ID claim.
+- `face_graph_summary.csv` aggregates corpus size and preservation counts.
+- `face_adjacency_graphs.json` exports compact node-link graphs.
+- `face_graph_contract.json` maps every CSV field to a provenance class and
+  fixes keys, fixture hashes, and claim boundaries.
+- `face_adjacency_graph.png` visualizes all four constructed graphs.
+- `face_adjacency_graph_shapes.png` previews the imported controls.
+
+The constructed corpus contains 28 face nodes and 59 distinct-face shared-edge
+relations. All four pairs retain the selected graph invariants and structural
+signature after STEP. The one through-hole seam is not treated as an open
+boundary or as adjacency between different faces.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1359,6 +1381,7 @@ python experiments/run_topology_history.py
 python experiments/run_step_round_trip_preservation.py
 python experiments/run_step_portability.py
 python experiments/run_resource_bounded_3d.py
+python experiments/run_face_adjacency_graphs.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

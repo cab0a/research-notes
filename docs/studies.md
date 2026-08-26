@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う50件の研究を索引化しています。v0.50.0はSTEP受入を事前検査、構文解析、外部参照方針、形状計算核、三角形化へ分け、13条件の資源上限と停止理由を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う51件の研究を索引化しています。v0.51.0は4形状の面を節、異なる2面が共有する辺を関係とするグラフを作り、幾何記述子、由来、STEP読込前後の構造一致を検証します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1315,6 +1315,34 @@ python -m pip install -e ".[geometry]"
 python experiments/run_resource_bounded_3d.py
 ```
 
+### v0.51.0 — Face-Adjacency Graphs and Geometric Descriptors
+
+**Question.** Can face geometry and shared-edge topology form a deterministic,
+provenance-bound graph that remains structurally comparable after STEP without
+treating local indices as persistent identity?
+
+**Result.** Four constructed controls contain 28 face nodes and 59 distinct-
+face shared-edge relations. All four STEP pairs retain the selected topology,
+surface, degree, relation, incidence, and coarse structural-signature fields.
+The through-hole seam is counted separately from an open boundary.
+
+- [Complete note](../notes/face-adjacency-graphs-geometric-descriptors.md)
+- [Face nodes](../results/face_graph_nodes.csv)
+- [Shared-edge relations](../results/face_graph_relations.csv)
+- [Graph descriptors](../results/face_graph_descriptors.csv)
+- [Round-trip comparisons](../results/face_graph_round_trip_comparisons.csv)
+- [Summary](../results/face_graph_summary.csv)
+- [Graph JSON](../results/face_adjacency_graphs.json)
+- [Evaluation contract](../results/face_graph_contract.json)
+- [Adjacency figure](../results/face_adjacency_graph.png)
+- [Shape previews](../results/face_adjacency_graph_shapes.png)
+- [Generated fixtures](../fixtures/face-adjacency-graphs/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_face_adjacency_graphs.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1339,7 +1367,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.50.0 subsets;
+  controlled v0.21.0 through v0.51.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1365,5 +1393,7 @@ failure-mode analysis, but it does not establish:
   v0.49.0 parser and same-kernel import-route agreements.
 - memory safety, exploit resistance, operating-system sandboxing, or safe
   arbitrary hostile-file handling from the v0.50.0 counters and timeouts.
+- persistent naming, complete graph isomorphism, feature recognition, or
+  design-intent recovery from the v0.51.0 analysis-local graph descriptors.
 
 The complete notes contain the narrower limitations for each experiment.

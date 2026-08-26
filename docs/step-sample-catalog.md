@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.50.0は箱、貫通穴、外部参照、正常圧縮容器、展開量超過、入れ子、危険な相対経路の7試料を追加し、受入段階ごとの資源上限を検証します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.51.0は箱、貫通穴、段差、丸み付けの4つのSTEP試料と形状画像を追加し、面隣接グラフと幾何記述子を目視形状へ対応付けます。詳細は英語本文に示します。
 
 ---
 
@@ -827,6 +827,22 @@ ZIP files use fixed member timestamps and deterministic compression.
 The preview shows only geometric STEP payloads. It does not visualize archive
 safety, process isolation, or a security property.
 
+## v0.51.0 — Face-Adjacency Graph Samples
+
+Directory: [`fixtures/face-adjacency-graphs/`](../fixtures/face-adjacency-graphs/)
+
+Manifest: [`manifest.csv`](../fixtures/face-adjacency-graphs/manifest.csv)
+
+The four normalized STEP files contain a plain block, a cylindrical through-
+hole, a stepped prism, and a single-edge fillet result. The graph figure shows
+the constructed face relations, while the shape preview shows the imported
+B-Rep geometry used for the second analysis stage.
+
+![Face-adjacency graph shape controls](../results/face_adjacency_graph_shapes.png)
+
+Face colors are diagnostic. Local graph IDs do not identify persistent faces
+across the displayed samples or exchange stages.
+
 ## Regeneration
 
 ```bash
@@ -942,6 +958,10 @@ python experiments/run_step_portability.py
 
 python experiments/run_resource_bounded_3d.py \
   --fixture-dir fixtures/resource-bounded-3d \
+  --refresh-fixtures
+
+python experiments/run_face_adjacency_graphs.py \
+  --fixture-dir fixtures/face-adjacency-graphs \
   --refresh-fixtures
 ```
 
