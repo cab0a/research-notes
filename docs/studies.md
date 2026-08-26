@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う53件の研究を索引化しています。v0.53.0は36個の合成STEP試料を形状系列単位で分割し、正解ラベル、面隣接グラフ、B-rep計測値、元ファイルの要約値を結び付けます。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う54件の研究を索引化しています。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式を系列分離済み合成データで比較し、確信度、判定保留、根拠、確率調整を記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1388,6 +1388,24 @@ python -m pip install -e ".[geometry]"
 python experiments/run_synthetic_3d_dataset.py
 ```
 
+### v0.54.0 — Learned Baselines and Explainable 3D Assistance
+
+**Question.** Can small learned baselines add measurable assistance while retaining split discipline, descriptor evidence, calibration limits, and abstention?
+
+**Result.** Rule and combined tabular baselines decide all eight held-out samples correctly. The graph baseline gets all raw labels right but decides four; the geometry baseline has 12.5% raw accuracy and all four selective decisions are wrong.
+
+- [Complete note](../notes/learned-baselines-explainable-3d-assistance.md)
+- [Predictions](../results/learned_3d_predictions.csv)
+- [Summary](../results/learned_3d_summary.csv)
+- [Calibration bins](../results/learned_3d_calibration.csv)
+- [Perturbation robustness](../results/learned_3d_robustness.csv)
+- [Model contract](../results/learned_3d_model_contract.json)
+- [Comparison figure](../results/learned_3d_baselines.png)
+
+```bash
+python experiments/run_learned_3d_baselines.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1412,7 +1430,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.53.0 subsets;
+  controlled v0.21.0 through v0.54.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.53.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.53.0は36個の合成STEP試料を形状系列単位で分割し、正解ラベル、面隣接グラフ、B-rep計測値、元ファイルの要約値を結び付けます。一般形状認識は未実装です。詳細は英語本文に示します。
+本書は、v0.54.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式を、学習・調整・試験に分離した合成データで比較し、根拠と判定保留を記録します。一般形状認識は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-53 studies through v0.53.0. It separates syntax recognition, schema validation, physical-reference
+54 studies through v0.54.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 v0.52.0 and later roadmap stages remain unimplemented.
@@ -182,7 +182,7 @@ corpus and its declared provenance.
 | Face-adjacency descriptors | Controlled subset | v0.51.0 | Four constructed/imported graph pairs expose attributed face nodes, distinct-face shared-edge relations, incidence classes, structural summaries, and field provenance; IDs remain analysis-local |
 | Feature-recognition robustness | Controlled subset | v0.52.0 | Thirty-two generated cases and 64 observations separate accepts, negative-control rejects, rotation-related abstentions, and zero STEP-induced decision changes |
 | AI-ready 3D dataset | Controlled subset | v0.53.0 | Thirty-six STEP-backed samples, nine family groups, fixed splits, graph/B-Rep features, labels, digests, and five zero-violation leakage checks |
-| Learned 3D assistance | Not implemented | v0.54.0 | Baselines, calibration, robustness, evidence links, and abstention |
+| Learned 3D assistance | Research demonstration | v0.54.0 | Four binary baselines retain train/calibration/test separation, source-linked evidence, confidence, abstention, calibration bins, and perturbation stability; industrial transfer is untested |
 | Parametric feature model and constraints | Not implemented | v0.55.0–v0.58.0 | Versioned feature graphs, solver states, and deterministic recompute |
 | STEP-to-feature reconstruction | Not implemented | v0.59.0 | Residuals, ambiguity, alternatives, confidence, and no design-history claim |
 | Assisted parametric modeling tool | Not implemented | v0.60.0 | Bounded import, inspection, candidate selection, editing, recompute, comparison, and export |

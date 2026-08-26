@@ -134,6 +134,7 @@ jobs:
           python experiments/run_feature_recognition_benchmark.py --output-dir regenerated-results
           python experiments/run_feature_recognition_benchmark.py --fixture-dir regenerated-fixtures/feature-recognition-benchmark --output-dir regenerated-feature-benchmark-fixture-results --refresh-fixtures
           python experiments/run_synthetic_3d_dataset.py --source-fixture-dir regenerated-fixtures/feature-recognition-benchmark --fixture-dir regenerated-fixtures/synthetic-3d-dataset --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_learned_3d_baselines.py --dataset-csv regenerated-results/synthetic_3d_samples.csv --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -383,6 +384,12 @@ jobs:
           diff -u results/synthetic_3d_dataset_contract.json regenerated-results/synthetic_3d_dataset_contract.json
           test -s regenerated-results/synthetic_3d_dataset.png
           test -s regenerated-results/synthetic_3d_dataset_shapes.png
+          diff -u results/learned_3d_predictions.csv regenerated-results/learned_3d_predictions.csv
+          diff -u results/learned_3d_summary.csv regenerated-results/learned_3d_summary.csv
+          diff -u results/learned_3d_calibration.csv regenerated-results/learned_3d_calibration.csv
+          diff -u results/learned_3d_robustness.csv regenerated-results/learned_3d_robustness.csv
+          diff -u results/learned_3d_model_contract.json regenerated-results/learned_3d_model_contract.json
+          test -s regenerated-results/learned_3d_baselines.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

@@ -874,6 +874,9 @@ family-isolated partitions.
 The manifest is a dataset contract, not evidence that construction labels were
 recovered from STEP geometry.
 
+v0.54.0 adds no STEP files. Its four baseline methods consume the fixed
+v0.53.0 sample table and retain each source digest in every prediction row.
+
 ## Regeneration
 
 ```bash

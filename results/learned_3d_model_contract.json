@@ -1,0 +1,178 @@
+{
+  "calibration_split": "validation",
+  "claim_boundaries": [
+    "the binary target is support by bounded repository rules, not manufacturing feature truth",
+    "training and calibration use small synthetic family-isolated partitions",
+    "temperature selection on validation is not a guarantee of probability calibration",
+    "evidence fields explain descriptor influence rather than causal geometry",
+    "test results do not establish performance on industrial CAD or unseen exchange routes",
+    "abstention is a local policy and not an uncertainty proof"
+  ],
+  "contract_version": "1.0.0",
+  "evaluation_split": "test",
+  "fit_split": "train",
+  "label": "supported_feature",
+  "models": [
+    {
+      "abstention_threshold": 0.7,
+      "feature_names": [],
+      "means": [],
+      "model_id": "bounded_rule",
+      "model_kind": "bounded_rule",
+      "negative_centroid": [],
+      "positive_centroid": [],
+      "scales": [],
+      "temperature": 1.0
+    },
+    {
+      "abstention_threshold": 0.7,
+      "feature_names": [
+        "curved_area_ratio",
+        "absolute_volume",
+        "surface_area"
+      ],
+      "means": [
+        0.03721284309918115,
+        401.47499894239274,
+        349.23231714648125
+      ],
+      "model_id": "geometry_centroid",
+      "model_kind": "nearest_centroid",
+      "negative_centroid": [
+        -0.8966470946337568,
+        0.2330830358584048,
+        0.012278641673343249
+      ],
+      "positive_centroid": [
+        0.2988823648779189,
+        -0.07769434528613503,
+        -0.004092880557781363
+      ],
+      "scales": [
+        0.041502217898091845,
+        208.1876138214133,
+        143.96403939033502
+      ],
+      "temperature": 8.0
+    },
+    {
+      "abstention_threshold": 0.7,
+      "feature_names": [
+        "face_count",
+        "relation_count",
+        "plane_face_count",
+        "cylinder_face_count",
+        "other_curved_face_count",
+        "mean_degree"
+      ],
+      "means": [
+        7.25,
+        14.5,
+        6.75,
+        0.5,
+        0.0,
+        4.0
+      ],
+      "model_id": "graph_centroid",
+      "model_kind": "nearest_centroid",
+      "negative_centroid": [
+        -1.507556722888818,
+        -1.1470786693528088,
+        -0.9045340337332909,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "positive_centroid": [
+        0.502518907629606,
+        0.38235955645093617,
+        0.3015113445777637,
+        0.3333333333333333,
+        0.0,
+        0.0
+      ],
+      "scales": [
+        0.82915619758885,
+        2.179449471770337,
+        0.82915619758885,
+        0.5,
+        1.0,
+        0.3535533905932738
+      ],
+      "temperature": 8.0
+    },
+    {
+      "abstention_threshold": 0.7,
+      "feature_names": [
+        "face_count",
+        "relation_count",
+        "plane_face_count",
+        "cylinder_face_count",
+        "other_curved_face_count",
+        "mean_degree",
+        "curved_area_ratio",
+        "absolute_volume",
+        "surface_area",
+        "vertex_count",
+        "edge_count"
+      ],
+      "means": [
+        7.25,
+        14.5,
+        6.75,
+        0.5,
+        0.0,
+        4.0,
+        0.03721284309918115,
+        401.47499894239274,
+        349.23231714648125,
+        10.0,
+        15.0
+      ],
+      "model_id": "tabular_centroid",
+      "model_kind": "nearest_centroid",
+      "negative_centroid": [
+        -1.507556722888818,
+        -1.1470786693528088,
+        -0.9045340337332909,
+        -1.0,
+        0.0,
+        0.0,
+        -0.8966470946337568,
+        0.2330830358584048,
+        0.012278641673343249,
+        -1.414213562373095,
+        -1.4142135623730951
+      ],
+      "positive_centroid": [
+        0.502518907629606,
+        0.38235955645093617,
+        0.3015113445777637,
+        0.3333333333333333,
+        0.0,
+        0.0,
+        0.2988823648779189,
+        -0.07769434528613503,
+        -0.004092880557781363,
+        0.4714045207910316,
+        0.47140452079103173
+      ],
+      "scales": [
+        0.82915619758885,
+        2.179449471770337,
+        0.82915619758885,
+        0.5,
+        1.0,
+        0.3535533905932738,
+        0.041502217898091845,
+        208.1876138214133,
+        143.96403939033502,
+        1.4142135623730951,
+        2.1213203435596424
+      ],
+      "temperature": 8.0
+    }
+  ],
+  "study_version": "v0.54.0",
+  "title": "Learned Baselines and Explainable 3D Assistance"
+}

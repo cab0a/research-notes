@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、53件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.53.0は36個の合成STEP試料について、形状系列単位の分割、正解ラベル、面隣接グラフ、B-rep計測値、元ファイルの要約値、漏えい検査を記録します。
+このディレクトリには、54件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式について、判断、確信度、判定保留、根拠、確率調整、変動安定性を記録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1351,6 +1351,17 @@ The 32-case corpus produces 22 accepts, eight negative-control rejects, two rota
 
 All five leakage checks report zero violations. The dataset contains 16 train, 12 validation, and eight test samples. It is a small generated contract, not a representative industrial CAD benchmark.
 
+## v0.54.0
+
+- `learned_3d_predictions.csv` records 144 source-linked probabilities, decisions, abstentions, and descriptor explanations.
+- `learned_3d_summary.csv` reports raw accuracy, selective accuracy, coverage, Brier score, temperature, and threshold by model and split.
+- `learned_3d_calibration.csv` records confidence-bin observations for validation and test.
+- `learned_3d_robustness.csv` records within-family prediction and decision stability across perturbations.
+- `learned_3d_model_contract.json` fixes fit, calibration, evaluation, feature, model, and claim boundaries.
+- `learned_3d_baselines.png` compares test selective accuracy and coverage.
+
+The rule and combined tabular baselines decide all eight test samples correctly. The graph baseline classifies all raw labels correctly but decides four. The geometry-only baseline has 12.5% raw test accuracy and makes four decisions, all incorrect. These results demonstrate failure reporting, not industrial performance.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1407,6 +1418,7 @@ python experiments/run_resource_bounded_3d.py
 python experiments/run_face_adjacency_graphs.py
 python experiments/run_feature_recognition_benchmark.py
 python experiments/run_synthetic_3d_dataset.py
+python experiments/run_learned_3d_baselines.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.
