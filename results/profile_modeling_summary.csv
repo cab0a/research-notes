@@ -1,0 +1,6 @@
+control_id,topology_matches,surface_counts_match,volume_absolute_difference,surface_area_absolute_difference,surface_centroid_distance,constructed_truth_matches,step_imported_truth_matches,round_trip_passes
+extruded_rectangle_h5,1,1,0,0,0,1,1,1
+extruded_rectangle_h7,1,1,0,0,0,1,1,1
+extruded_annulus,1,1,2.2168933355715126e-12,6.6222582972841337e-12,1.0972794393489981e-13,1,1,1
+revolved_annulus_full,1,1,8.5265128291212022e-13,2.5011104298755527e-12,7.940439743273074e-14,1,1,1
+revolved_annulus_half,1,1,2.4797941478027496e-12,3.723243935382925e-12,1.3332488154168426e-13,1,1,1

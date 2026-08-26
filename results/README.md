@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、43件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP往復後の位相、曲面、体積、表面積、公差、境界、媒介化を比較します。全形状で位相と曲面構成を保持し、円すいの同値な半角符号反転とBスプライン面の公差正規化を明示します。
+このディレクトリには、44件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭から構築し、STEP往復後の解析真値、位相、曲面構成、再計算比を検証します。内周方向を穴の意味の一部として扱います。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1169,6 +1169,25 @@ normalization changes tolerance-inflated bounds by `0.0001999` model units.
 Construction parameters are external synthetic truth, not recovered feature
 history.
 
+## v0.44.0
+
+- `profile_modeling_observations.csv` contains ten constructed and imported
+  observations with profile, operation, topology, measurement, and STEP
+  evidence.
+- `profile_modeling_summary.csv` contains five round-trip comparisons.
+- `profile_recompute_relations.csv` records the two one-parameter volume-ratio
+  checks.
+- `profile_modeling_contract.json` fixes profile loops, parameters, truth,
+  schemas, fixture hashes, and claim boundaries.
+- `profile_modeling.png` compares analytic residuals and recompute response.
+- `profile_modeling_shapes.png` previews the five imported results.
+
+All ten observations are analyzer-valid and match analytic volume and surface
+area within `1e-8`. All five pairs retain topology and surface inventories.
+The rectangle height relation yields volume ratio `1.4`; the full-to-half
+revolution relation yields `0.5`. The half revolution adds two radial end
+faces. Profile truth is stored separately and is not inferred from STEP.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1215,6 +1234,7 @@ python experiments/run_feature_recognition.py
 python experiments/run_face_level_analysis.py
 python experiments/run_tessellation_diagnostics.py
 python experiments/run_primitive_round_trips.py
+python experiments/run_profile_modeling.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

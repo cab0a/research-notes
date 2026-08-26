@@ -116,6 +116,8 @@ jobs:
           python experiments/run_tessellation_diagnostics.py --fixture-dir regenerated-fixtures/tessellation-diagnostics --output-dir regenerated-tessellation-fixture-results --refresh-fixtures
           python experiments/run_primitive_round_trips.py --output-dir regenerated-results
           python experiments/run_primitive_round_trips.py --fixture-dir regenerated-fixtures/primitive-round-trips --output-dir regenerated-primitive-fixture-results --refresh-fixtures
+          python experiments/run_profile_modeling.py --output-dir regenerated-results
+          python experiments/run_profile_modeling.py --fixture-dir regenerated-fixtures/profile-modeling --output-dir regenerated-profile-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -315,6 +317,10 @@ jobs:
           diff -u results/primitive_round_trip_observations.csv regenerated-results/primitive_round_trip_observations.csv
           diff -u results/primitive_round_trip_summary.csv regenerated-results/primitive_round_trip_summary.csv
           diff -u results/primitive_round_trip_contract.json regenerated-results/primitive_round_trip_contract.json
+          diff -u results/profile_modeling_observations.csv regenerated-results/profile_modeling_observations.csv
+          diff -u results/profile_modeling_summary.csv regenerated-results/profile_modeling_summary.csv
+          diff -u results/profile_recompute_relations.csv regenerated-results/profile_recompute_relations.csv
+          diff -u results/profile_modeling_contract.json regenerated-results/profile_modeling_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -342,6 +348,7 @@ jobs:
           diff -qr fixtures/face-analysis regenerated-fixtures/face-analysis
           diff -qr fixtures/tessellation-diagnostics regenerated-fixtures/tessellation-diagnostics
           diff -qr fixtures/primitive-round-trips regenerated-fixtures/primitive-round-trips
+          diff -qr fixtures/profile-modeling regenerated-fixtures/profile-modeling
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -403,6 +410,8 @@ jobs:
           test -s regenerated-results/tessellation_visual_diagnostics.png
           test -s regenerated-results/primitive_round_trip.png
           test -s regenerated-results/primitive_round_trip_shapes.png
+          test -s regenerated-results/profile_modeling.png
+          test -s regenerated-results/profile_modeling_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

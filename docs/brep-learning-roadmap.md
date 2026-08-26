@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP出力・再読込後の位相、曲面、体積、表面積、公差、境界、曲面パラメーターを比較します。全形状で位相と曲面構成を保持しましたが、円すいの同値な媒介化とBスプライン面の公差正規化を明示します。v0.44.0以降は未実装です。
+v0.44.0は長方形と穴付き円環を押し出し、半径方向の輪郭を全回転・半回転します。5個の結果は構築時とSTEP再読込後に解析真値、位相、曲面構成を保持し、高さと回転角を変えた体積比も再現します。内周方向を穴の意味の一部として扱います。v0.45.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.44.0 onward are planned and not implemented at v0.43.0.
+The stages from v0.45.0 onward are planned and not implemented at v0.44.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -480,8 +480,14 @@ truth; they are not inferred feature history.
 
 #### v0.44.0 — Profiles, Extrusion, and Revolution
 
-Build profiles with holes, extrude and revolve them, and preserve synthetic
-construction parameters as ground truth.
+Completed with five profile-driven controls and STEP fixtures. All ten stage
+observations are analyzer-valid and match analytic volume and area within
+`1e-8`; every pair retains topology and support-surface inventories.
+
+The rectangle height change from `5` to `7` retains the expected volume ratio
+`1.4`, and changing the annular revolution from `360°` to `180°` retains ratio
+`0.5` at both stages. The inner annulus wire is explicitly opposite to the
+outer wire; loop direction is construction semantics, not incidental ordering.
 
 #### v0.45.0 — Sweeps, Lofts, and Surface Construction
 

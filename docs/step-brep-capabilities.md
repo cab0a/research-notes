@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.43.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP往復後の位相、曲面、測定値、公差、媒介化を比較します。全形状で位相と曲面構成を保持し、円すいの同値な半角符号反転とBスプライン面の公差正規化を明示します。v0.44.0以降は未実装です。詳細は英語本文に示します。
+本書は、v0.44.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭と操作パラメーターから構築し、STEP往復後の解析真値と再計算関係を検証します。内周方向を穴の意味の一部として扱います。v0.45.0以降は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-43 studies through v0.43.0. It separates syntax recognition, schema validation, physical-reference
+44 studies through v0.44.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.44.0 and later roadmap stages remain unimplemented.
+v0.45.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -172,7 +172,7 @@ corpus and its declared provenance.
 | Complete face-level report | Controlled subset | v0.41.0 | A 60-field v1 contract covers 26 rows, six surface families, local ownership, evaluated geometry, boundaries, adjacency, tolerance, and source-bounded name/color fields; arbitrary inputs, persistent identity, and XCAF traversal remain excluded |
 | Tessellation and visual diagnostics | Controlled subset | v0.42.0 | Three STEP fixtures, four absolute linear/angular conditions, 36 face rows, 3,782 triangle rows, direct `ADVANCED_FACE` provenance for nine faces, exact-area comparison, sampled surface deviation, eight explicit pole-degenerate triangles, and face-colored previews; no certified error bound, global welded mesh, arbitrary-file coverage, or interactive viewer |
 | Primitive and surface construction | Controlled subset | v0.43.0 | Six controls retain topology and surface inventories across STEP; five analytic solids match independent volume/area truth, while equivalent cone parameterization and B-spline tolerance drift remain explicit; no supported general modeling API or feature-history recovery |
-| Profiles, extrusion, and revolution | Not implemented | v0.44.0 | Parameter-driven recompute with known construction truth |
+| Profiles, extrusion, and revolution | Controlled subset | v0.44.0 | Five controls preserve analytic truth, topology, and surfaces across STEP; rectangle height and revolution angle recompute ratios match, while general sketches, constraints, taper, and recovered feature history remain excluded |
 | Sweeps, lofts, and Boolean operations | Not implemented | v0.45.0–v0.46.0 | Controlled success and failure conditions across tolerances |
 | Fillets, chamfers, and topology history | Not implemented | v0.47.0 | Generated, modified, deleted, split, and merged-shape evidence |
 | STEP import-edit-export preservation | Not implemented | v0.48.0 | Structure, semantics, geometry, topology, attribute, and tolerance comparison |

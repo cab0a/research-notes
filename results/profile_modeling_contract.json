@@ -1,0 +1,171 @@
+{
+  "claim_boundaries": [
+    "profile and operation parameters are synthetic construction truth",
+    "STEP output does not recover the original sketch or feature command",
+    "only planar rectangle, annulus, and radial-rectangle profiles are covered",
+    "recompute evidence changes one declared parameter in two bounded families",
+    "local topology indices are not persistent feature identities"
+  ],
+  "contract_version": "1.0.0",
+  "controls": [
+    {
+      "control_id": "extruded_rectangle_h5",
+      "expected_surface_area": 94.0,
+      "expected_volume": 60.0,
+      "inner_wire_count": 0,
+      "operation": "linear_extrusion",
+      "outer_wire_count": 1,
+      "parameters": {
+        "depth": 3.0,
+        "height": 5.0,
+        "width": 4.0
+      },
+      "profile_edge_count": 4,
+      "profile_type": "rectangle",
+      "recompute_family": "rectangle_height"
+    },
+    {
+      "control_id": "extruded_rectangle_h7",
+      "expected_surface_area": 122.0,
+      "expected_volume": 84.0,
+      "inner_wire_count": 0,
+      "operation": "linear_extrusion",
+      "outer_wire_count": 1,
+      "parameters": {
+        "depth": 3.0,
+        "height": 7.0,
+        "width": 4.0
+      },
+      "profile_edge_count": 4,
+      "profile_type": "rectangle",
+      "recompute_family": "rectangle_height"
+    },
+    {
+      "control_id": "extruded_annulus",
+      "expected_surface_area": 150.79644737231007,
+      "expected_volume": 100.53096491487338,
+      "inner_wire_count": 1,
+      "operation": "linear_extrusion",
+      "outer_wire_count": 1,
+      "parameters": {
+        "height": 4.0,
+        "inner_radius": 1.0,
+        "outer_radius": 3.0
+      },
+      "profile_edge_count": 2,
+      "profile_type": "annulus",
+      "recompute_family": "annulus_extrusion"
+    },
+    {
+      "control_id": "revolved_annulus_full",
+      "expected_surface_area": 188.49555921538757,
+      "expected_volume": 113.09733552923255,
+      "inner_wire_count": 0,
+      "operation": "axis_revolution",
+      "outer_wire_count": 1,
+      "parameters": {
+        "angle_degrees": 360.0,
+        "height": 3.0,
+        "inner_radius": 2.0,
+        "outer_radius": 4.0
+      },
+      "profile_edge_count": 4,
+      "profile_type": "radial_rectangle",
+      "recompute_family": "annular_revolution_angle"
+    },
+    {
+      "control_id": "revolved_annulus_half",
+      "expected_surface_area": 106.24777960769379,
+      "expected_volume": 56.548667764616276,
+      "inner_wire_count": 0,
+      "operation": "axis_revolution",
+      "outer_wire_count": 1,
+      "parameters": {
+        "angle_degrees": 180.0,
+        "height": 3.0,
+        "inner_radius": 2.0,
+        "outer_radius": 4.0
+      },
+      "profile_edge_count": 4,
+      "profile_type": "radial_rectangle",
+      "recompute_family": "annular_revolution_angle"
+    }
+  ],
+  "fixture_sha256": {
+    "extruded_annulus.step": "dd2e7fc423925ab7cf855b20cba4c754ff22c26845dd02260772e27cd47a1ac9",
+    "extruded_rectangle_h5.step": "730761b8d9de6357b37e67aa38090e03fc655f091a9c4fc49a3cda02b90cab23",
+    "extruded_rectangle_h7.step": "23efa1738f5ee28d5c59609c5e0306352849b7d7e7b0d2d031a7c8deedde8b22",
+    "revolved_annulus_full.step": "92910c553a4637c4343b6a488e572fb4fa17215a0adfe4723eee945caa334534",
+    "revolved_annulus_half.step": "0397236af0a8a7cd76819aaa63c13e96e39e56415b8ebd492b3c64b09d97bb0a"
+  },
+  "observation_csv": {
+    "file": "profile_modeling_observations.csv",
+    "ordered_fields": [
+      "contract_version",
+      "stage",
+      "control_id",
+      "recompute_family",
+      "operation",
+      "profile_type",
+      "construction_parameters",
+      "profile_outer_wire_count",
+      "profile_inner_wire_count",
+      "profile_edge_count",
+      "source_file",
+      "source_sha256",
+      "vertex_count",
+      "edge_count",
+      "face_count",
+      "shell_count",
+      "solid_count",
+      "absolute_volume",
+      "expected_volume",
+      "volume_absolute_error",
+      "surface_area",
+      "expected_surface_area",
+      "surface_area_absolute_error",
+      "surface_centroid_x",
+      "surface_centroid_y",
+      "surface_centroid_z",
+      "surface_counts",
+      "maximum_vertex_tolerance",
+      "maximum_edge_tolerance",
+      "maximum_face_tolerance",
+      "analyzer_valid",
+      "step_advanced_face_count"
+    ]
+  },
+  "recompute_csv": {
+    "file": "profile_recompute_relations.csv",
+    "ordered_fields": [
+      "relation_id",
+      "baseline_control_id",
+      "changed_control_id",
+      "changed_parameter",
+      "baseline_parameter",
+      "changed_parameter_value",
+      "expected_volume_ratio",
+      "observed_constructed_volume_ratio",
+      "observed_step_imported_volume_ratio",
+      "constructed_ratio_error",
+      "step_imported_ratio_error",
+      "recompute_relation_passes"
+    ]
+  },
+  "study_version": "v0.44.0",
+  "summary_csv": {
+    "file": "profile_modeling_summary.csv",
+    "ordered_fields": [
+      "control_id",
+      "topology_matches",
+      "surface_counts_match",
+      "volume_absolute_difference",
+      "surface_area_absolute_difference",
+      "surface_centroid_distance",
+      "constructed_truth_matches",
+      "step_imported_truth_matches",
+      "round_trip_passes"
+    ]
+  },
+  "title": "Profiles, Extrusion, and Revolution"
+}

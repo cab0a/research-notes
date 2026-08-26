@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.43.0では、箱、円柱、円すい台、球、トーラス、Bスプライン面の6個のSTEP試験ファイルを収録します。構築直後と再読込後の位相、曲面、測定値、公差、境界、媒介化を比較し、円すいの同値な半角符号反転とBスプライン面の公差正規化を明示します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.44.0では、押し出しと回転で作る5個のSTEP試験ファイルを追加します。輪郭の外周・内周、操作量、構築直後と再読込後の位相・曲面・測定値を対応付け、距離と角度を変えた再計算関係も検証します。詳細は英語本文に示します。
 
 ---
 
@@ -693,6 +693,28 @@ All six samples retain topology and support-surface inventories on the pinned
 route. The manifest binds exact normalized bytes; it does not make STEP byte
 identity a semantic interoperability requirement.
 
+## v0.44.0 — Profile-Modeling Samples
+
+Directory: [`fixtures/profile-modeling/`](../fixtures/profile-modeling/)
+
+Manifest: [`manifest.csv`](../fixtures/profile-modeling/manifest.csv)
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `extruded_rectangle_h5.step` | 15,404 | `730761b8d9de6357b37e67aa38090e03fc655f091a9c4fc49a3cda02b90cab23` | Rectangular profile extruded by five length units |
+| `extruded_rectangle_h7.step` | 15,404 | `23efa1738f5ee28d5c59609c5e0306352849b7d7e7b0d2d031a7c8deedde8b22` | One-parameter recompute control with extrusion height seven |
+| `extruded_annulus.step` | 9,407 | `dd2e7fc423925ab7cf855b20cba4c754ff22c26845dd02260772e27cd47a1ac9` | Oppositely oriented inner wire retained as a through void |
+| `revolved_annulus_full.step` | 9,198 | `92910c553a4637c4343b6a488e572fb4fa17215a0adfe4723eee945caa334534` | Full revolution of a radial rectangular profile |
+| `revolved_annulus_half.step` | 16,004 | `0397236af0a8a7cd76819aaa63c13e96e39e56415b8ebd492b3c64b09d97bb0a` | Half-angle recompute control with two radial end faces |
+
+![Five imported profile-driven controls](../results/profile_modeling_shapes.png)
+
+The five imported solids remain kernel-valid, match independent analytic
+volume and area truth, and satisfy their topology and surface-inventory
+contracts. The controls retain profile and operation parameters as separate
+construction truth. They do not claim that a STEP reader can recover sketches,
+constraints, or feature history from the resulting boundary representation.
+
 ## Regeneration
 
 ```bash
@@ -786,6 +808,10 @@ python experiments/run_tessellation_diagnostics.py \
 
 python experiments/run_primitive_round_trips.py \
   --fixture-dir fixtures/primitive-round-trips \
+  --refresh-fixtures
+
+python experiments/run_profile_modeling.py \
+  --fixture-dir fixtures/profile-modeling \
   --refresh-fixtures
 ```
 

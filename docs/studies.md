@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う43件の研究を索引化しています。v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP往復後の位相、曲面、体積、表面積、公差、境界、媒介化を比較します。円すいの同値な半角符号反転とBスプライン面の公差正規化を、幾何破損とは別の表現差として記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う44件の研究を索引化しています。v0.44.0は長方形と穴付き円環の押出し、全回転・半回転を既知の輪郭から構築し、10件の段階別観測すべてで解析真値、位相、曲面構成を保持します。高さと回転角を変えた体積比も再現し、内周方向を穴の意味の一部として扱います。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1132,6 +1132,31 @@ python -m pip install -e ".[geometry]"
 python experiments/run_primitive_round_trips.py
 ```
 
+### v0.44.0 — Profiles, Extrusion, and Revolution
+
+**Question.** Can explicit profile loops and operation parameters drive
+reproducible extrusion, revolution, recompute, and STEP exchange?
+
+**Result.** Five constructed/imported pairs remain analyzer-valid, match
+analytic volume and area within `1e-8`, and retain topology and support-surface
+inventories. Height `5 -> 7` produces volume ratio `1.4`, and revolution angle
+`360° -> 180°` produces ratio `0.5` at both stages. The annular profile retains
+one oppositely oriented inner wire as explicit hole truth.
+
+- [Complete note](../notes/profiles-extrusion-revolution.md)
+- [Stage observations](../results/profile_modeling_observations.csv)
+- [Round-trip summary](../results/profile_modeling_summary.csv)
+- [Recompute relations](../results/profile_recompute_relations.csv)
+- [Evaluation contract](../results/profile_modeling_contract.json)
+- [Evaluation figure](../results/profile_modeling.png)
+- [Shape previews](../results/profile_modeling_shapes.png)
+- [Generated STEP fixtures](../fixtures/profile-modeling/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_profile_modeling.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1156,7 +1181,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.43.0 subsets;
+  controlled v0.21.0 through v0.44.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1168,5 +1193,7 @@ failure-mode analysis, but it does not establish:
 - recovered construction history, literal analytic-parameter identity, exact
   tolerance-invariant bounds, or cross-kernel portability from the v0.43.0
   primitive round trips.
+- general sketch validity, constraint solving, open-profile operations, taper,
+  draft, or recovered feature commands from the v0.44.0 profile controls.
 
 The complete notes contain the narrower limitations for each experiment.
