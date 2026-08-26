@@ -1,0 +1,4 @@
+contract_version,control_id,source_semantics_match_truth,source_attributes_match_truth,structure_preserved,semantics_preserved,geometry_preserved,topology_preserved,attributes_preserved,tolerances_preserved,normalized_bytes_identical,file_size_delta,volume_absolute_difference,surface_area_absolute_difference,maximum_tolerance_difference
+1.0.0,named_colored_box,1,1,1,1,1,1,1,1,1,0,0,0,0
+1.0.0,named_colored_through_hole,1,0,1,1,1,1,1,1,0,-1,0,0,0
+1.0.0,named_colored_bspline,1,1,1,1,1,1,1,1,0,0,0,0,0

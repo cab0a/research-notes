@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う47件の研究を索引化しています。v0.47.0は直方体の同じ辺への丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの位相履歴、STEP往復後の面対応を検証します。面番号の一致と直接同一性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う48件の研究を索引化しています。v0.48.0は名称と色を持つ3形状を2世代のSTEP読込で比較し、構造、意味、形状、位相、属性、公差の保持とバイト同一性を分離します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1240,6 +1240,32 @@ python -m pip install -e ".[geometry]"
 python experiments/run_topology_history.py
 ```
 
+### v0.48.0 — STEP Round-Trip Preservation
+
+**Question.** Which structural, semantic, geometric, topological, attribute,
+tolerance, and physical-file dimensions survive a controlled XCAF-aware
+import-export-import cycle?
+
+**Result.** All three controls retain the six semantic and B-Rep preservation
+dimensions between imported generations, while only one pair is byte
+identical. The through-hole source omits its declared color before the first
+import, demonstrating that stable later generations do not prove agreement
+with source attribute truth.
+
+- [Complete note](../notes/step-round-trip-preservation.md)
+- [Stage observations](../results/step_preservation_observations.csv)
+- [Dimension comparisons](../results/step_preservation_comparisons.csv)
+- [Summary](../results/step_preservation_summary.csv)
+- [Evaluation contract](../results/step_preservation_contract.json)
+- [Preservation figure](../results/step_round_trip_preservation.png)
+- [Shape previews](../results/step_round_trip_preservation_shapes.png)
+- [Generated STEP fixtures](../fixtures/step-round-trip-preservation/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_step_round_trip_preservation.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1264,7 +1290,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.47.0 subsets;
+  controlled v0.21.0 through v0.48.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1284,5 +1310,7 @@ failure-mode analysis, but it does not establish:
   or exact-set equivalence from the v0.46.0 cuboid controls.
 - general local-feature history, positive split or merge coverage, persistent
   naming, or history preservation from the v0.47.0 box-edge controls.
+- nested-assembly preservation, complete attribute association, pointwise
+  geometry equivalence, or cross-kernel portability from the v0.48.0 controls.
 
 The complete notes contain the narrower limitations for each experiment.

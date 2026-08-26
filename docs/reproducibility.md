@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、47件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.47.0は丸めと面取り4条件を評価し、4件の段階別観測、52件の位相履歴、14件のSTEP面対応、2個のSTEP試料、契約、図を再生成します。面番号の一致、直接同一性、演算履歴を分離します。
+本書は、48件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.48.0は名称と色を持つ3形状から6個のSTEP試料を生成し、2世代の読込結果について構造、意味、形状、位相、属性、公差、バイト列を比較します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -123,6 +123,7 @@ python experiments/run_profile_modeling.py
 python experiments/run_sweep_loft_modeling.py
 python experiments/run_boolean_robustness.py
 python experiments/run_topology_history.py
+python experiments/run_step_round_trip_preservation.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -293,6 +294,11 @@ python experiments/run_topology_history.py \
   --fixture-dir output/fixtures/topology-history \
   --output-dir output/topology-history \
   --refresh-fixtures
+
+python experiments/run_step_round_trip_preservation.py \
+  --fixture-dir output/fixtures/step-round-trip-preservation \
+  --output-dir output/step-round-trip-preservation \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -409,6 +415,10 @@ python experiments/run_topology_history.py \
   source-kind scopes; direct presence, generated and modified targets, split
   and merge counts, face matching, local indices, identity, and imported
   history remain separate fields.
+- The v0.48 preservation corpus generates source and re-export STEP files for
+  three named and colored XCAF documents. Source-truth agreement, repeated-
+  generation preservation, normalized byte identity, and file-size drift are
+  separate observations.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -650,9 +660,9 @@ controls with 13 faces per stage, v0.42.0 evaluates three shapes under four
 deterministic tessellation settings, v0.43.0 evaluates six primitive round
 trips, v0.44.0 evaluates five profile-driven results, and v0.45.0 evaluates
 five accepted sweep, loft, and point-grid surface results plus two
-precondition rejections, v0.46.0 evaluates seven Boolean results, and v0.47.0
-evaluates two successful local features plus two oversized failures on that
-same route.
+precondition rejections, v0.46.0 evaluates seven Boolean results, v0.47.0
+evaluates two local operations, and v0.48.0 evaluates three repeated exchanges
+on that same route.
 None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell

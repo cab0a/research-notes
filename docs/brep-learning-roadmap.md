@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.47.0は直方体の同じ辺への丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの位相履歴、STEP往復後の面対応を検証します。正常2例では各26件の履歴を記録します。STEP往復で面番号が全件偶然一致しても直接同一性と演算履歴は失われるため、番号を永続識別子とは扱いません。v0.48.0以降は未実装です。
+v0.48.0は名称と色を持つ3種類の合成形状をSTEP出力・拡張文書読込・再出力・再読込し、構造、意味、形状、位相、属性、公差、バイト列を個別に比較します。世代間で安定していても最初の出力前に属性が失われる場合があるため、入力真値への一致と保持性を分離します。v0.49.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.48.0 onward are planned and not implemented at v0.47.0.
+The stages from v0.49.0 onward are planned and not implemented at v0.48.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -532,9 +532,15 @@ not persistent naming or recovered design history.
 
 #### v0.48.0 — STEP Round-Trip Preservation
 
-Compare import-export-import cycles for structure, semantics, geometry,
-topology, attributes, tolerances, and file size. Separate semantic preservation
-from byte identity.
+Completed with three named and colored XCAF documents and six normalized STEP
+files. All pairs retain free-shape/product counts, imported names, global
+geometry, topology, color-table inventory, and maximum subshape tolerances
+between generations. Only the box pair is byte identical.
+
+The compound through-hole control loses its declared color before the source
+import and then preserves the empty color inventory. Source-truth agreement,
+generation stability, and physical byte identity are therefore three separate
+claims.
 
 #### v0.49.0 — Independent Parser and Kernel Portability
 

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、47件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.47.0は丸めと面取りについて、成功・失敗、解析真値、入力要素ごとの生成・変更・削除履歴、分割・統合数、STEP往復後の面番号・直接同一性・履歴有無を検証します。
+このディレクトリには、48件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.48.0は名称と色を持つ3形状について、2回のSTEP読込世代における構造、意味、形状、位相、属性、公差、バイト列を個別に比較します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1251,6 +1251,25 @@ and zero supported deletion, split, or merge observations. All face index
 values happen to match after STEP, while direct identity and imported history
 remain absent.
 
+## v0.48.0
+
+- `step_preservation_observations.csv` contains six XCAF-imported structure,
+  semantic, attribute, geometry, topology, and tolerance observations.
+- `step_preservation_comparisons.csv` separates declared source truth,
+  generation-to-generation preservation, file-size change, and byte identity.
+- `step_preservation_summary.csv` aggregates dimension-specific pass counts.
+- `step_preservation_contract.json` defines the measurements, keys, fixture
+  hashes, and claim boundaries.
+- `step_round_trip_preservation.png` compares preservation dimensions and
+  normalized file-size changes.
+- `step_round_trip_preservation_shapes.png` previews both imported generations.
+
+All three controls retain the six declared preservation dimensions between
+imports. Only the box is byte identical. The through-hole control loses its
+declared color before the source import, then preserves the resulting empty
+color inventory; source-truth agreement is therefore not inferred from stable
+round-trip observations.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1301,6 +1320,7 @@ python experiments/run_profile_modeling.py
 python experiments/run_sweep_loft_modeling.py
 python experiments/run_boolean_robustness.py
 python experiments/run_topology_history.py
+python experiments/run_step_round_trip_preservation.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

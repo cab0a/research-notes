@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.47.0では、直方体の同じ辺に丸めと面取りを適用した2個のSTEP試験ファイルを追加します。演算中の位相履歴と、STEP再読込後の幾何対応・面番号・直接同一性・履歴不在を対応付けます。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.48.0では、名称と色を宣言した箱、貫通穴形状、Bスプライン殻について、元の出力と再出力の計6個のSTEP試験ファイルを追加します。詳細は英語本文に示します。
 
 ---
 
@@ -777,6 +777,24 @@ Oversized failure controls have decision rows but no result fixture. The two
 successful files retain evaluated geometry, and their face ordering happens to
 match the constructed result. They do not contain the input box, selected-edge
 identity, radius or distance command, operation order, or native history.
+
+## v0.48.0 — STEP Preservation Samples
+
+Directory: [`fixtures/step-round-trip-preservation/`](../fixtures/step-round-trip-preservation/)
+
+Manifest: [`manifest.csv`](../fixtures/step-round-trip-preservation/manifest.csv)
+
+The directory contains a normalized source and re-export for each named box,
+through-hole, and B-spline-shell control. Exact byte counts and SHA-256 values
+are recorded in the generated manifest. The pairs support structure,
+semantics, geometry, topology, color-inventory, tolerance, file-size, and byte-
+identity comparisons.
+
+![Imported preservation stages](../results/step_round_trip_preservation_shapes.png)
+
+The files do not establish nested-assembly, PMI, layer, material, or complete
+subshape-style preservation. The through-hole source demonstrates an attribute
+omission before the first import.
 
 ## Regeneration
 

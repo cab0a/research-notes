@@ -1,0 +1,80 @@
+{
+  "claim_boundaries": [
+    "semantic preservation is evaluated separately from byte identity",
+    "the corpus contains one free shape per document and is not a general assembly test",
+    "the color inventory does not prove every subshape color association",
+    "the compound through-hole control demonstrates that declared source attributes may fail before the first import",
+    "one pinned XCAF route is not cross-kernel portability evidence"
+  ],
+  "comparison_primary_key": [
+    "control_id"
+  ],
+  "contract_version": "1.0.0",
+  "controls": [
+    {
+      "condition": "one named red analytic solid",
+      "control_id": "named_colored_box",
+      "expected_colors": [
+        [
+          0.85,
+          0.15,
+          0.1
+        ]
+      ],
+      "expected_names": [
+        "Controlled Box"
+      ]
+    },
+    {
+      "condition": "one named green Boolean solid",
+      "control_id": "named_colored_through_hole",
+      "expected_colors": [
+        [
+          0.15,
+          0.7,
+          0.25
+        ]
+      ],
+      "expected_names": [
+        "Controlled Through Hole"
+      ]
+    },
+    {
+      "condition": "one named blue free-form shell",
+      "control_id": "named_colored_bspline",
+      "expected_colors": [
+        [
+          0.15,
+          0.3,
+          0.85
+        ]
+      ],
+      "expected_names": [
+        "Controlled B-Spline Shell"
+      ]
+    }
+  ],
+  "dimension_rules": {
+    "attributes": "XCAF color-table RGB inventory",
+    "bytes": "normalized physical-file bytes",
+    "geometry": "volume, area, and support-surface inventory",
+    "semantics": "XCAF-imported free-shape names",
+    "structure": "top-level shape and PRODUCT_DEFINITION counts",
+    "tolerances": "maximum vertex, edge, and face tolerances",
+    "topology": "unique vertex, edge, face, shell, and solid counts"
+  },
+  "files": {
+    "named_colored_box_reexport.step": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814",
+    "named_colored_box_source.step": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814",
+    "named_colored_bspline_reexport.step": "cae1651d21aae78d8051d5ec9fbba7f48cc7578dcdf01e1e629fa173f61557af",
+    "named_colored_bspline_source.step": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851",
+    "named_colored_through_hole_reexport.step": "d81ba0b507b72caa53be7a317895cd380cb870e3dec6d445c930b5568e08561b",
+    "named_colored_through_hole_source.step": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a"
+  },
+  "observation_primary_key": [
+    "control_id",
+    "stage"
+  ],
+  "study_version": "v0.48.0",
+  "title": "STEP Round-Trip Preservation"
+}

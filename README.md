@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.47.0では、直方体の同じ辺へ丸めと面取りを適用し、成功・失敗、解析真値、演算中の位相履歴、STEP往復後の面対応を検証します。
+v0.48.0では、名称と色を持つ3種類の合成形状について、STEP出力・拡張文書読込・再出力・再読込を行い、構造、意味、形状、位相、属性、公差、バイト列を個別に検証します。
 
-半径1の丸めと距離1の面取りは解析真値と一致し、半径・距離20は完了せず拒否されました。各正常例で入力26要素の履歴を記録しました。STEP往復で面番号が全件偶然一致しても、直接同一性と演算履歴は0件でした。番号一致を永続識別子とは扱いません。367件のテストを備え、v0.48.0以降は未実装です。詳細は英語本文に示します。
+3条件すべてで名称、形状、位相、公差、再読込された色一覧を保持しましたが、正規化後のバイト列まで一致したのは1条件だけでした。貫通穴形状では宣言した色が最初の出力時点で失われ、その空の色一覧だけが次世代へ保持されました。入力真値への一致と世代間の安定性を分離します。372件のテストを備え、v0.49.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -41,8 +41,8 @@ application semantics, evaluated B-Rep geometry, controlled correspondence,
 rule-based geometric feature candidates, stable face-level reports,
 source-traceable tessellation diagnostics, primitive STEP round trips,
 profile-driven extrusion and revolution, bounded sweep, loft, and surface
-construction, controlled Boolean robustness, and operation-local topology
-history for fillets and chamfers. The current release is v0.47.0.
+construction, controlled Boolean robustness, operation-local topology history,
+and dimension-specific STEP/XCAF preservation. The current release is v0.48.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -57,32 +57,30 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 47 releases to their questions,
+The [study index](docs/studies.md) maps all 48 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.47.0 study applies one fillet and one chamfer to the same box edge,
-rejects two oversized controls, records operation-local history by documented
-source kind, and compares successful results across STEP.
+The v0.48.0 study follows three named and colored controls through two XCAF-aware
+STEP import generations and separates source-truth agreement, semantic
+preservation, B-Rep preservation, and normalized byte identity.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Controls | 4 |
-| Accepted / rejected | 2 / 2 |
-| Constructed / imported observations | 2 / 2 |
-| Analytic volume and area matches | 4 / 4 |
-| Input-history rows | 52 |
-| Generated / modified source rows | 2 / 8 |
-| Geometry-matched STEP faces | 14 / 14 |
-| Equal local indices / direct identities | 14 / 0 |
+| Controls / committed STEP files | 3 / 6 |
+| Structure, semantics, geometry, topology, attribute, and tolerance preservation | 18 / 18 |
+| Declared source name matches | 3 / 3 |
+| Declared source color matches | 2 / 3 |
+| Normalized byte-identical pairs | 1 / 3 |
+| Analyzer-valid imported stages | 6 / 6 |
 
-![Topology-history and STEP-identity evidence](results/topology_history.png)
+![Dimension-specific STEP preservation evidence](results/step_round_trip_preservation.png)
 
-The pinned writer/reader preserves face ordering in these two fixtures, so all
-local index values remain equal. Every direct identity check is nevertheless
-false and operation history is unavailable after import. Positional equality
-is therefore an observed ordering coincidence, not persistent CAD identity.
+All three generation pairs preserve the measured semantic and B-Rep dimensions,
+but the through-hole and B-spline files are not byte identical. The through-hole
+source also omits its declared color before the first import; preserving the
+resulting empty color inventory is not success against source truth.
 
 ## Current STEP and B-Rep Capability
 
@@ -266,8 +264,9 @@ v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
 manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
 correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
 tessellation-diagnostic, v0.43.0 primitive-round-trip, v0.44.0 profile-
-modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, and v0.47.0
-topology-history studies also write deterministic versioned JSON records.
+modeling, v0.45.0 sweep/loft/surface, v0.46.0 Boolean-robustness, v0.47.0
+topology-history, and v0.48.0 STEP-preservation studies also write deterministic
+versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -297,7 +296,8 @@ feature-recognition fixtures, the five v0.41.0 face-analysis fixtures, and the
 three v0.42.0 tessellation-diagnostic fixtures, and the six v0.43.0 primitive
 round-trip fixtures, the five v0.44.0 profile-modeling fixtures, and the five
 accepted v0.45.0 sweep/loft/surface fixtures, and the seven v0.46.0 Boolean
-result fixtures, and the two successful v0.47.0 feature-operation fixtures.
+result fixtures, the two successful v0.47.0 feature-operation fixtures, and the
+six v0.48.0 source/re-export preservation fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -564,6 +564,9 @@ The v0.47.0 additions cover fillet and chamfer truth, oversized non-completion,
 documented history-query scope, direct source presence, generated and modified
 targets, split and merge counts, geometry-based STEP face matching, index-value
 coincidence, identity loss, and deterministic fixtures.
+The v0.48.0 additions cover XCAF-aware names and colors, source-truth checks,
+two imported generations, dimension-specific preservation, normalized byte
+identity, file-size drift, and deterministic source/re-export fixtures.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -593,8 +596,9 @@ stage, v0.42.0 evaluates three imported shapes under four meshing conditions,
 v0.43.0 evaluates six primitive and surface round trips, v0.44.0 evaluates
 five profile-driven results, and v0.45.0 evaluates five accepted sweep, loft,
 and surface results plus two precondition rejections, v0.46.0 evaluates seven
-Boolean results, and v0.47.0 evaluates two successful local operations plus two
-oversized failures on the same route. These releases do not claim
+Boolean results, v0.47.0 evaluates two successful local operations plus two
+oversized failures, and v0.48.0 evaluates three repeated XCAF-aware STEP
+exchanges on the same route. These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -626,10 +630,11 @@ v0.44.0 adds bounded profile-driven recompute, extrusion, revolution, and wire-
 orientation evidence. v0.45.0 adds bounded sweep, loft, surface construction,
 and precondition evidence. v0.46.0 adds bounded Boolean and fuzzy-tolerance
 evidence. v0.47.0 adds scoped local-operation history and STEP identity
-boundaries. The roadmap next proceeds through
+boundaries. v0.48.0 separates structure, semantics, geometry, topology,
+attributes, tolerances, and byte identity across repeated exchange. The roadmap next proceeds through
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.48.0 and later releases remain unimplemented.
+candidates. v0.49.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

@@ -124,6 +124,8 @@ jobs:
           python experiments/run_boolean_robustness.py --fixture-dir regenerated-fixtures/boolean-robustness --output-dir regenerated-boolean-fixture-results --refresh-fixtures
           python experiments/run_topology_history.py --output-dir regenerated-results
           python experiments/run_topology_history.py --fixture-dir regenerated-fixtures/topology-history --output-dir regenerated-topology-history-fixture-results --refresh-fixtures
+          python experiments/run_step_round_trip_preservation.py --output-dir regenerated-results
+          python experiments/run_step_round_trip_preservation.py --fixture-dir regenerated-fixtures/step-round-trip-preservation --output-dir regenerated-step-preservation-fixture-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -342,6 +344,10 @@ jobs:
           diff -u results/feature_face_round_trip_matches.csv regenerated-results/feature_face_round_trip_matches.csv
           diff -u results/feature_operation_summary.csv regenerated-results/feature_operation_summary.csv
           diff -u results/feature_operation_contract.json regenerated-results/feature_operation_contract.json
+          diff -u results/step_preservation_observations.csv regenerated-results/step_preservation_observations.csv
+          diff -u results/step_preservation_comparisons.csv regenerated-results/step_preservation_comparisons.csv
+          diff -u results/step_preservation_summary.csv regenerated-results/step_preservation_summary.csv
+          diff -u results/step_preservation_contract.json regenerated-results/step_preservation_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
           diff -qr fixtures/advanced-jpeg-syntax regenerated-fixtures/advanced-jpeg-syntax
           diff -qr fixtures/color-metadata-contracts regenerated-fixtures/color-metadata-contracts
@@ -373,6 +379,7 @@ jobs:
           diff -qr fixtures/sweep-loft-modeling regenerated-fixtures/sweep-loft-modeling
           diff -qr fixtures/boolean-robustness regenerated-fixtures/boolean-robustness
           diff -qr fixtures/topology-history regenerated-fixtures/topology-history
+          diff -qr fixtures/step-round-trip-preservation regenerated-fixtures/step-round-trip-preservation
           test -s regenerated-results/laplacian_variance.png
           test -s regenerated-results/focus_metric_comparison.png
           test -s regenerated-results/local_blur_example.png
@@ -442,6 +449,8 @@ jobs:
           test -s regenerated-results/boolean_operation_shapes.png
           test -s regenerated-results/topology_history.png
           test -s regenerated-results/feature_operation_shapes.png
+          test -s regenerated-results/step_round_trip_preservation.png
+          test -s regenerated-results/step_round_trip_preservation_shapes.png
 
   jpeg-decoder-contracts:
     name: JPEG contracts (${{ matrix.label }})

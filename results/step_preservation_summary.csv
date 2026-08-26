@@ -1,0 +1,11 @@
+scope,metric,value
+corpus,controls,3
+corpus,step_files,6
+source_truth,attribute_matches,2
+bytes,identical_pairs,1
+preservation,structure_preserved,3
+preservation,semantics_preserved,3
+preservation,geometry_preserved,3
+preservation,topology_preserved,3
+preservation,attributes_preserved,3
+preservation,tolerances_preserved,3
