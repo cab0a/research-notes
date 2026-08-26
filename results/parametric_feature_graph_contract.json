@@ -1,0 +1,37 @@
+{
+  "all_validations_pass": true,
+  "claim_boundaries": [
+    "explicit construction graphs are authored in repository code and are not inferred from STEP",
+    "the imported STEP graph contains an unconfirmed candidate and no generated result node",
+    "graph node IDs are application identifiers and not persistent B-Rep subshape names",
+    "the graph records initial parameters but does not yet provide a constraint solver or general recompute engine",
+    "STEP round-trip agreement does not recover original CAD authoring history",
+    "three generated controls do not establish a general parametric modeling API"
+  ],
+  "contract_version": "1.0.0",
+  "dependency_direction": "dependent_node_id references dependency_node_id",
+  "edge_primary_key": [
+    "graph_id",
+    "edge_id"
+  ],
+  "fixtures": {
+    "parametric_explicit_plate.step": "4cdaab44dac7c2f1b046fd7c40805ea53de7aadac9ae739da4636b541616ffc3",
+    "parametric_explicit_plate_with_hole.step": "a38abdfe7ed9fdf3cc986f968b5c0727d05eb649d6438295240542cd26850545",
+    "parametric_explicit_stepped_prism.step": "d3dbec2139d94d6bb4efbbed5453759ad2d243c2ec6fa9e49cf6cd2018606b9d"
+  },
+  "graph_types": [
+    "explicit_construction",
+    "import_reconstruction_candidate"
+  ],
+  "import_reference": {
+    "file_name": "benchmark_through_hole_baseline.step",
+    "source_sha256": "97eebf706ab49d24a40626ed88bfc3b222663fa9878a38b990f2e26c28a2967e"
+  },
+  "node_primary_key": [
+    "graph_id",
+    "graph_revision",
+    "node_id"
+  ],
+  "study_version": "v0.55.0",
+  "title": "Parametric Feature Graph"
+}

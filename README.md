@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.54.0では、限定規則方式、幾何量方式、面隣接グラフ方式、両者を使う表形式方式を、v0.53.0の系列分離済み合成データで比較します。
+v0.55.0では、基準面、寸法、スケッチ、形状操作、結果形状を版番号付きの非巡回依存グラフとして表し、明示的に作成した3形状をSTEPへ出力します。
 
-試験8件では限定規則方式と表形式方式が全件を正答し、面隣接グラフ方式は全件の分類が正しい一方で4件を判定保留にしました。幾何量方式は正答率12.5%で、確信して判断した4件もすべて誤りました。小規模な二値評価であり、実製品性能や確率の正しさを保証しません。詳細は英語本文に示します。
+板、穴付き板、段差付き角柱は独立な体積・表面積の真値と一致し、STEP読込後も位相数と計測値を保持しました。16件のグラフ検査は全件成功しました。読込STEPから得た穴候補は未確認のまま結果形状と分離し、元の作成履歴とは扱いません。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,8 +45,8 @@ construction, controlled Boolean robustness, operation-local topology history,
 dimension-specific STEP/XCAF preservation, independent parser/import-route
 comparison, staged resource-bounded 3D intake, and provenance-bound face-
 adjacency graphs, a perturbation-aware feature-rule benchmark, a provenance-
-bound synthetic 3D dataset, and explainable binary baselines. The current
-release is v0.54.0.
+bound synthetic 3D dataset, explainable binary baselines, and a versioned
+parametric feature graph. The current release is v0.55.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -61,29 +61,29 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 54 releases to their questions,
+The [study index](docs/studies.md) maps all 55 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.54.0 study compares one bounded rule with geometry, graph, and combined
-nearest-centroid baselines on family-isolated synthetic STEP descriptors.
+The v0.55.0 study represents explicit construction and imported reconstruction
+candidates as separate versioned dependency graphs.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Models / test samples | 4 / 8 |
-| Rule test raw accuracy / coverage | 100% / 100% |
-| Combined tabular test raw accuracy / coverage | 100% / 100% |
-| Graph test raw accuracy / coverage | 100% / 50% |
-| Geometry test raw accuracy / coverage | 12.5% / 50% |
-| Geometry correct selective decisions | 0 / 4 |
+| Graphs / explicit generated results | 4 / 3 |
+| Graph structural checks passed | 16 / 16 |
+| Independent volume/area checks passed | 6 / 6 |
+| STEP topology-count matches | 3 / 3 |
+| Maximum STEP volume difference | `2.27e-13` |
+| Maximum STEP surface-area difference | `7.96e-13` |
 
-![Explainable 3D baseline results](results/learned_3d_baselines.png)
+![Parametric feature graphs](results/parametric_feature_graph.png)
 
-Accuracy and coverage lead to different conclusions: the graph baseline gets
-all raw labels right but withholds half of its test decisions, while the
-geometry-only baseline is confidently wrong on four samples. These are local
-binary results, not industrial feature-recognition performance.
+Explicit construction graphs end in generated B-Reps; the imported STEP graph
+ends in an unconfirmed candidate and contains no generated-result node. This is
+a representation foundation, not yet a sketch solver, recompute engine, or
+general parametric modeling API.
 
 ## Current STEP and B-Rep Capability
 
@@ -108,7 +108,8 @@ seven bounded Boolean conditions against independent cuboid-set truth, records
 scoped fillet/chamfer history plus STEP identity boundaries, stages defensive
 3D intake, emits provenance-bound face-adjacency graphs, benchmarks bounded
 feature rules under four perturbations, publishes family-isolated synthetic
-dataset records, and compares explainable binary baselines. It cannot prove
+dataset records, compares explainable binary baselines, and represents bounded
+explicit construction in versioned feature graphs. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -116,7 +117,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, feature-rule perturbations, family-isolated synthetic data, explainable binary baselines, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, or general healing |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, feature-rule perturbations, family-isolated synthetic data, explainable binary baselines, versioned parametric feature graphs, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, general recompute, or general healing |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -319,7 +320,8 @@ face-adjacency graphs. v0.52.0 adds 32 STEP fixtures spanning eight shape
 families and four declared feature-rule perturbations. v0.53.0 reuses those
 files by digest and adds four toroidal negative STEP fixtures plus one unified
 dataset manifest. v0.54.0 reuses the fixed v0.53.0 CSV contract and adds no new
-geometry files.
+geometry files. v0.55.0 adds three explicit parametric-result STEP fixtures and
+reuses one v0.52.0 input reference by digest.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -330,7 +332,7 @@ validation evidence.
 
 ## Key Features
 
-- Fifty-four published studies with explicit questions, controls, results, and
+- Fifty-five published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -634,7 +636,8 @@ routes, v0.50.0 evaluates thirteen staged resource-boundary controls,
 v0.51.0 evaluates four face-adjacency graph pairs, v0.52.0 evaluates 32
 feature-rule benchmark cases before and after STEP, v0.53.0 binds 36 STEP
 samples to family-isolated dataset records, and v0.54.0 compares four binary
-baselines.
+baselines. v0.55.0 evaluates four versioned feature graphs and three generated
+STEP results.
 These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
@@ -678,8 +681,10 @@ healing, and STEP perturbations with explicit reject and abstain outcomes.
 v0.53.0 adds family-isolated splits, graph/B-Rep features, labels, digests, and
 leakage checks. v0.54.0 adds rule, geometry, graph, and combined baselines with
 separate fit, calibration, evaluation, evidence, and abstention records. The
-roadmap next proceeds through evidence-backed parametric reconstruction.
-v0.55.0 and later releases remain unimplemented.
+v0.55.0 adds explicit datum, parameter, sketch, feature, result, dependency,
+and imported-candidate graph contracts. The roadmap next proceeds through
+sketch constraints, explicit parametric features, and deterministic recompute.
+v0.56.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

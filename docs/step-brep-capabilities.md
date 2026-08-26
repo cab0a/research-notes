@@ -2,14 +2,14 @@
 
 ## 日本語概要
 
-本書は、v0.54.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式を、学習・調整・試験に分離した合成データで比較し、根拠と判定保留を記録します。一般形状認識は未実装です。詳細は英語本文に示します。
+本書は、v0.55.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付き非巡回グラフとして表します。拘束条件と一般再計算は未実装です。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-54 studies through v0.54.0. It separates syntax recognition, schema validation, physical-reference
+55 studies through v0.55.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
 v0.52.0 and later roadmap stages remain unimplemented.
@@ -183,7 +183,8 @@ corpus and its declared provenance.
 | Feature-recognition robustness | Controlled subset | v0.52.0 | Thirty-two generated cases and 64 observations separate accepts, negative-control rejects, rotation-related abstentions, and zero STEP-induced decision changes |
 | AI-ready 3D dataset | Controlled subset | v0.53.0 | Thirty-six STEP-backed samples, nine family groups, fixed splits, graph/B-Rep features, labels, digests, and five zero-violation leakage checks |
 | Learned 3D assistance | Research demonstration | v0.54.0 | Four binary baselines retain train/calibration/test separation, source-linked evidence, confidence, abstention, calibration bins, and perturbation stability; industrial transfer is untested |
-| Parametric feature model and constraints | Not implemented | v0.55.0–v0.58.0 | Versioned feature graphs, solver states, and deterministic recompute |
+| Parametric feature graph | Research demonstration | v0.55.0 | Four revisioned DAGs cover datum, parameter, sketch, feature, result, dependency, import reference, observation, and unconfirmed-candidate nodes; three generated B-Reps match truth and STEP |
+| Parametric constraints and recompute | Not implemented | v0.56.0–v0.58.0 | Solver states, explicit feature families, and deterministic dependency recompute |
 | STEP-to-feature reconstruction | Not implemented | v0.59.0 | Residuals, ambiguity, alternatives, confidence, and no design-history claim |
 | Assisted parametric modeling tool | Not implemented | v0.60.0 | Bounded import, inspection, candidate selection, editing, recompute, comparison, and export |
 

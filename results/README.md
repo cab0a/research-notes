@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、54件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式について、判断、確信度、判定保留、根拠、確率調整、変動安定性を記録します。
+このディレクトリには、55件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付きグラフとして記録し、3個の生成形状を真値とSTEP往復で評価します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1362,6 +1362,19 @@ All five leakage checks report zero violations. The dataset contains 16 train, 1
 
 The rule and combined tabular baselines decide all eight test samples correctly. The graph baseline classifies all raw labels correctly but decides four. The geometry-only baseline has 12.5% raw test accuracy and makes four decisions, all incorrect. These results demonstrate failure reporting, not industrial performance.
 
+## v0.55.0
+
+- `parametric_feature_nodes.csv` records revisioned datum, parameter, sketch, feature, result, import-reference, observation, and candidate nodes.
+- `parametric_feature_edges.csv` records typed dependencies from dependent nodes to prerequisites.
+- `parametric_feature_evaluations.csv` compares three generated B-Reps with analytic truth and imported results.
+- `parametric_feature_validations.csv` records 16 identity, endpoint, acyclicity, and import-boundary checks.
+- `parametric_feature_graphs.json` serializes four complete graph revisions and fingerprints.
+- `parametric_feature_graph_contract.json` fixes keys, dependency direction, fixture hashes, import reference, and claim boundaries.
+- `parametric_feature_graph.png` visualizes the four dependency graphs.
+- `parametric_feature_graph_shapes.png` previews the three imported generated results.
+
+All 16 graph checks and all six independent volume/area truth checks pass. Three STEP results retain topology counts with maximum volume and area differences below `1e-12`. The imported hole candidate remains unconfirmed and has no generated-result node.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1419,6 +1432,7 @@ python experiments/run_face_adjacency_graphs.py
 python experiments/run_feature_recognition_benchmark.py
 python experiments/run_synthetic_3d_dataset.py
 python experiments/run_learned_3d_baselines.py
+python experiments/run_parametric_feature_graphs.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

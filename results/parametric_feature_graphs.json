@@ -1,0 +1,498 @@
+{
+  "contract_version": "1.0.0",
+  "graphs": [
+    {
+      "edges": [
+        {
+          "dependency_node_id": "datum_xy",
+          "dependent_node_id": "profile",
+          "edge_id": "e1",
+          "relation_type": "located_on"
+        },
+        {
+          "dependency_node_id": "width",
+          "dependent_node_id": "profile",
+          "edge_id": "e2",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "height",
+          "dependent_node_id": "profile",
+          "edge_id": "e3",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "profile",
+          "dependent_node_id": "extrude",
+          "edge_id": "e4",
+          "relation_type": "uses_profile"
+        },
+        {
+          "dependency_node_id": "thickness",
+          "dependent_node_id": "extrude",
+          "edge_id": "e5",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "extrude",
+          "dependent_node_id": "result",
+          "edge_id": "e6",
+          "relation_type": "generated_by"
+        }
+      ],
+      "fingerprint_sha256": "fc0e55dc7dee9bf143178c8913ef00a5c4271a41e396484acff44cbed8fb1653",
+      "graph_id": "explicit_plate",
+      "graph_kind": "explicit_construction",
+      "graph_revision": 1,
+      "nodes": [
+        {
+          "attributes": {
+            "normal": "0|0|1",
+            "origin": "0|0|0"
+          },
+          "name": "XY datum",
+          "node_id": "datum_xy",
+          "node_type": "datum_plane",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 12.0
+          },
+          "name": "Plate width",
+          "node_id": "width",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 8.0
+          },
+          "name": "Plate height",
+          "node_id": "height",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 2.0
+          },
+          "name": "Plate thickness",
+          "node_id": "thickness",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "closed": true,
+            "primitive": "rectangle"
+          },
+          "name": "Rectangle profile",
+          "node_id": "profile",
+          "node_type": "sketch",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "direction": "0|0|1",
+            "operation": "extrusion"
+          },
+          "name": "Pad",
+          "node_id": "extrude",
+          "node_type": "feature",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "representation": "TopoDS_Shape"
+          },
+          "name": "Plate B-Rep",
+          "node_id": "result",
+          "node_type": "result",
+          "provenance": "explicit repository parametric construction"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "dependency_node_id": "datum_xy",
+          "dependent_node_id": "profile",
+          "edge_id": "e1",
+          "relation_type": "located_on"
+        },
+        {
+          "dependency_node_id": "width",
+          "dependent_node_id": "profile",
+          "edge_id": "e2",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "height",
+          "dependent_node_id": "profile",
+          "edge_id": "e3",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "profile",
+          "dependent_node_id": "extrude",
+          "edge_id": "e4",
+          "relation_type": "uses_profile"
+        },
+        {
+          "dependency_node_id": "thickness",
+          "dependent_node_id": "extrude",
+          "edge_id": "e5",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "extrude",
+          "dependent_node_id": "hole",
+          "edge_id": "e6",
+          "relation_type": "modifies_result_of"
+        },
+        {
+          "dependency_node_id": "hole_x",
+          "dependent_node_id": "hole",
+          "edge_id": "e7",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "hole_y",
+          "dependent_node_id": "hole",
+          "edge_id": "e8",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "hole_radius",
+          "dependent_node_id": "hole",
+          "edge_id": "e9",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "hole",
+          "dependent_node_id": "result",
+          "edge_id": "e10",
+          "relation_type": "generated_by"
+        }
+      ],
+      "fingerprint_sha256": "20fa4966d1578395c93af05d0bf6e3347117dead553eff8cfdca15dd89dbfe85",
+      "graph_id": "explicit_plate_with_hole",
+      "graph_kind": "explicit_construction",
+      "graph_revision": 1,
+      "nodes": [
+        {
+          "attributes": {
+            "normal": "0|0|1",
+            "origin": "0|0|0"
+          },
+          "name": "XY datum",
+          "node_id": "datum_xy",
+          "node_type": "datum_plane",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 12.0
+          },
+          "name": "Plate width",
+          "node_id": "width",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 8.0
+          },
+          "name": "Plate height",
+          "node_id": "height",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 2.0
+          },
+          "name": "Plate thickness",
+          "node_id": "thickness",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 4.0
+          },
+          "name": "Hole X",
+          "node_id": "hole_x",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 4.0
+          },
+          "name": "Hole Y",
+          "node_id": "hole_y",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 1.0
+          },
+          "name": "Hole radius",
+          "node_id": "hole_radius",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "closed": true,
+            "primitive": "rectangle"
+          },
+          "name": "Rectangle profile",
+          "node_id": "profile",
+          "node_type": "sketch",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "direction": "0|0|1",
+            "operation": "extrusion"
+          },
+          "name": "Pad",
+          "node_id": "extrude",
+          "node_type": "feature",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "extent": "through_all",
+            "operation": "subtractive_cylinder"
+          },
+          "name": "Through hole",
+          "node_id": "hole",
+          "node_type": "feature",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "representation": "TopoDS_Shape"
+          },
+          "name": "Holed plate B-Rep",
+          "node_id": "result",
+          "node_type": "result",
+          "provenance": "explicit repository parametric construction"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "dependency_node_id": "datum_xz",
+          "dependent_node_id": "profile",
+          "edge_id": "e1",
+          "relation_type": "located_on"
+        },
+        {
+          "dependency_node_id": "length",
+          "dependent_node_id": "profile",
+          "edge_id": "e2",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "lower_height",
+          "dependent_node_id": "profile",
+          "edge_id": "e3",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "step_height",
+          "dependent_node_id": "profile",
+          "edge_id": "e4",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "step_position",
+          "dependent_node_id": "profile",
+          "edge_id": "e5",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "profile",
+          "dependent_node_id": "extrude",
+          "edge_id": "e6",
+          "relation_type": "uses_profile"
+        },
+        {
+          "dependency_node_id": "depth",
+          "dependent_node_id": "extrude",
+          "edge_id": "e7",
+          "relation_type": "uses_parameter"
+        },
+        {
+          "dependency_node_id": "extrude",
+          "dependent_node_id": "result",
+          "edge_id": "e8",
+          "relation_type": "generated_by"
+        }
+      ],
+      "fingerprint_sha256": "3c96e6021d901e3c31dc5ecf79c46319b778846754e6d2b9e21b79ae4dae0a35",
+      "graph_id": "explicit_stepped_prism",
+      "graph_kind": "explicit_construction",
+      "graph_revision": 1,
+      "nodes": [
+        {
+          "attributes": {
+            "normal": "0|1|0",
+            "origin": "0|0|0"
+          },
+          "name": "XZ datum",
+          "node_id": "datum_xz",
+          "node_type": "datum_plane",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 12.0
+          },
+          "name": "Overall length",
+          "node_id": "length",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 3.0
+          },
+          "name": "Lower height",
+          "node_id": "lower_height",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 2.0
+          },
+          "name": "Step height",
+          "node_id": "step_height",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 5.0
+          },
+          "name": "Step position",
+          "node_id": "step_position",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "unit": "mm",
+            "value": 8.0
+          },
+          "name": "Prism depth",
+          "node_id": "depth",
+          "node_type": "parameter",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "closed": true,
+            "primitive": "closed_polyline"
+          },
+          "name": "Stepped profile",
+          "node_id": "profile",
+          "node_type": "sketch",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "direction": "0|1|0",
+            "operation": "extrusion"
+          },
+          "name": "Stepped extrusion",
+          "node_id": "extrude",
+          "node_type": "feature",
+          "provenance": "explicit repository parametric construction"
+        },
+        {
+          "attributes": {
+            "representation": "TopoDS_Shape"
+          },
+          "name": "Stepped B-Rep",
+          "node_id": "result",
+          "node_type": "result",
+          "provenance": "explicit repository parametric construction"
+        }
+      ]
+    },
+    {
+      "edges": [
+        {
+          "dependency_node_id": "input",
+          "dependent_node_id": "face_graph",
+          "edge_id": "e1",
+          "relation_type": "measured_from"
+        },
+        {
+          "dependency_node_id": "face_graph",
+          "dependent_node_id": "hole_candidate",
+          "edge_id": "e2",
+          "relation_type": "supported_by"
+        }
+      ],
+      "fingerprint_sha256": "efa9830f3172bf90489521bdd30c3dba49af71257784dbd34d45417cb3fa66a0",
+      "graph_id": "imported_hole_candidate",
+      "graph_kind": "import_reconstruction_candidate",
+      "graph_revision": 1,
+      "nodes": [
+        {
+          "attributes": {
+            "access": "read_only",
+            "file_name": "benchmark_through_hole_baseline.step",
+            "sha256": "97eebf706ab49d24a40626ed88bfc3b222663fa9878a38b990f2e26c28a2967e"
+          },
+          "name": "Imported STEP",
+          "node_id": "input",
+          "node_type": "import_reference",
+          "provenance": "committed STEP input reference"
+        },
+        {
+          "attributes": {
+            "representation": "v0.51.0-compatible descriptors"
+          },
+          "name": "Attributed face graph",
+          "node_id": "face_graph",
+          "node_type": "observation",
+          "provenance": "bounded geometric inference; user confirmation required"
+        },
+        {
+          "attributes": {
+            "candidate_type": "hole:through",
+            "status": "unconfirmed"
+          },
+          "name": "Through-hole candidate",
+          "node_id": "hole_candidate",
+          "node_type": "reconstruction_candidate",
+          "provenance": "bounded geometric inference; user confirmation required"
+        }
+      ]
+    }
+  ]
+}

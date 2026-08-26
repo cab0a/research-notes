@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式を系列分離済み合成データで比較します。試験8件では限定規則と表形式が全件正答、面隣接グラフは全件分類正答・判断範囲50%、幾何量は正答率12.5%・判断4件すべて誤りでした。実製品性能や確率の正しさは保証しません。v0.55.0以降は未実装です。
+v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状を版番号付き非巡回依存グラフとして表します。明示的な3形状は真値と一致し、STEP読込後も位相数と計測値を保持しました。読込STEPの穴候補は未確認のまま結果形状と分離します。拘束条件と再計算は未実装です。v0.56.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.55.0 onward are planned and not implemented at v0.54.0.
+The stages from v0.56.0 onward are planned and not implemented at v0.55.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -600,9 +600,11 @@ so accuracy, coverage, and held-out families remain inseparable.
 
 #### v0.55.0 — Parametric Feature Graph
 
-Represent sketches, construction planes, dimensions, features, dependencies,
-and generated B-Rep results as a versioned graph. Imported STEP topology is an
-input reference; it is not silently relabeled as recovered design history.
+Completed with three explicit construction graphs and one isolated imported
+candidate graph. Sixteen structural validations pass, three generated B-Reps
+match independent truth and STEP measurements, and the imported hole candidate
+remains unconfirmed without a result node. Constraint solving and recompute are
+deferred.
 
 #### v0.56.0 — Two-Dimensional Sketches and Geometric Constraints
 

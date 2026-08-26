@@ -135,6 +135,7 @@ jobs:
           python experiments/run_feature_recognition_benchmark.py --fixture-dir regenerated-fixtures/feature-recognition-benchmark --output-dir regenerated-feature-benchmark-fixture-results --refresh-fixtures
           python experiments/run_synthetic_3d_dataset.py --source-fixture-dir regenerated-fixtures/feature-recognition-benchmark --fixture-dir regenerated-fixtures/synthetic-3d-dataset --output-dir regenerated-results --refresh-fixtures
           python experiments/run_learned_3d_baselines.py --dataset-csv regenerated-results/synthetic_3d_samples.csv --output-dir regenerated-results
+          python experiments/run_parametric_feature_graphs.py --import-reference regenerated-fixtures/feature-recognition-benchmark/benchmark_through_hole_baseline.step --fixture-dir regenerated-fixtures/parametric-feature-graphs --output-dir regenerated-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -390,6 +391,14 @@ jobs:
           diff -u results/learned_3d_robustness.csv regenerated-results/learned_3d_robustness.csv
           diff -u results/learned_3d_model_contract.json regenerated-results/learned_3d_model_contract.json
           test -s regenerated-results/learned_3d_baselines.png
+          diff -u results/parametric_feature_nodes.csv regenerated-results/parametric_feature_nodes.csv
+          diff -u results/parametric_feature_edges.csv regenerated-results/parametric_feature_edges.csv
+          diff -u results/parametric_feature_evaluations.csv regenerated-results/parametric_feature_evaluations.csv
+          diff -u results/parametric_feature_validations.csv regenerated-results/parametric_feature_validations.csv
+          diff -u results/parametric_feature_graphs.json regenerated-results/parametric_feature_graphs.json
+          diff -u results/parametric_feature_graph_contract.json regenerated-results/parametric_feature_graph_contract.json
+          test -s regenerated-results/parametric_feature_graph.png
+          test -s regenerated-results/parametric_feature_graph_shapes.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
@@ -416,6 +425,7 @@ jobs:
           diff -qr fixtures/face-adjacency-graphs regenerated-fixtures/face-adjacency-graphs
           diff -qr fixtures/feature-recognition-benchmark regenerated-fixtures/feature-recognition-benchmark
           diff -qr fixtures/synthetic-3d-dataset regenerated-fixtures/synthetic-3d-dataset
+          diff -qr fixtures/parametric-feature-graphs regenerated-fixtures/parametric-feature-graphs
           diff -qr fixtures/manifold-self-intersection regenerated-fixtures/manifold-self-intersection
           diff -qr fixtures/solid-regions regenerated-fixtures/solid-regions
           diff -qr fixtures/shape-correspondence regenerated-fixtures/shape-correspondence

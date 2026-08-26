@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う54件の研究を索引化しています。v0.54.0は限定規則、幾何量、面隣接グラフ、表形式の4方式を系列分離済み合成データで比較し、確信度、判定保留、根拠、確率調整を記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う55件の研究を索引化しています。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付き非巡回グラフとして表し、3個の生成形状を真値とSTEP往復で評価します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1406,6 +1406,28 @@ python experiments/run_synthetic_3d_dataset.py
 python experiments/run_learned_3d_baselines.py
 ```
 
+### v0.55.0 — Parametric Feature Graph
+
+**Question.** Can explicit parametric construction and imported reconstruction evidence share one auditable graph contract without converting STEP geometry into authoring history?
+
+**Result.** Four revisioned DAGs pass 16 structural checks. Three explicit B-Reps match independent volume and area truth and retain topology and measurements across STEP. The imported hole candidate remains unconfirmed and has no result node.
+
+- [Complete note](../notes/parametric-feature-graph.md)
+- [Graph nodes](../results/parametric_feature_nodes.csv)
+- [Graph dependencies](../results/parametric_feature_edges.csv)
+- [Geometry evaluations](../results/parametric_feature_evaluations.csv)
+- [Structural validations](../results/parametric_feature_validations.csv)
+- [Graph JSON](../results/parametric_feature_graphs.json)
+- [Graph contract](../results/parametric_feature_graph_contract.json)
+- [Dependency figure](../results/parametric_feature_graph.png)
+- [Shape previews](../results/parametric_feature_graph_shapes.png)
+- [Generated fixtures](../fixtures/parametric-feature-graphs/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_parametric_feature_graphs.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1430,7 +1452,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.54.0 subsets;
+  controlled v0.21.0 through v0.55.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

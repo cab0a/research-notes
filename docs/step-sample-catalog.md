@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.53.0はv0.52.0の32試料を要約値で参照し、4個の円環面負例と統一データ集合一覧を追加します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.55.0は明示的な特徴グラフから生成した板、穴付き板、段差付き角柱の3試料と形状画像を追加し、読込候補グラフは既存STEPを要約値で参照します。詳細は英語本文に示します。
 
 ---
 
@@ -877,6 +877,21 @@ recovered from STEP geometry.
 v0.54.0 adds no STEP files. Its four baseline methods consume the fixed
 v0.53.0 sample table and retain each source digest in every prediction row.
 
+## v0.55.0 — Parametric Feature Graph Samples
+
+Directory: [`fixtures/parametric-feature-graphs/`](../fixtures/parametric-feature-graphs/)
+
+Manifest: [`manifest.csv`](../fixtures/parametric-feature-graphs/manifest.csv)
+
+Three normalized STEP files contain the explicit plate, through-hole plate, and
+stepped-prism graph results. The fourth graph references the existing v0.52.0
+through-hole input by digest and deliberately produces no new STEP result.
+
+![Parametric feature graph result shapes](../results/parametric_feature_graph_shapes.png)
+
+The result files prove explicit repository construction and exchange behavior;
+they do not prove that the same feature graphs can be recovered from STEP.
+
 ## Regeneration
 
 ```bash
@@ -1005,6 +1020,11 @@ python experiments/run_feature_recognition_benchmark.py \
 python experiments/run_synthetic_3d_dataset.py \
   --source-fixture-dir fixtures/feature-recognition-benchmark \
   --fixture-dir fixtures/synthetic-3d-dataset \
+  --refresh-fixtures
+
+python experiments/run_parametric_feature_graphs.py \
+  --import-reference fixtures/feature-recognition-benchmark/benchmark_through_hole_baseline.step \
+  --fixture-dir fixtures/parametric-feature-graphs \
   --refresh-fixtures
 ```
 

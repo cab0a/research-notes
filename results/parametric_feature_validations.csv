@@ -1,0 +1,17 @@
+graph_id,check_id,passed,detail
+explicit_plate,unique_node_ids,1,node IDs are unique inside one graph revision
+explicit_plate,resolved_edge_endpoints,1,every dependency endpoint resolves locally
+explicit_plate,acyclic_dependencies,1,dependency edges form a directed acyclic graph
+explicit_plate,import_candidate_boundary,1,imported candidates remain unconfirmed and do not become generated results
+explicit_plate_with_hole,unique_node_ids,1,node IDs are unique inside one graph revision
+explicit_plate_with_hole,resolved_edge_endpoints,1,every dependency endpoint resolves locally
+explicit_plate_with_hole,acyclic_dependencies,1,dependency edges form a directed acyclic graph
+explicit_plate_with_hole,import_candidate_boundary,1,imported candidates remain unconfirmed and do not become generated results
+explicit_stepped_prism,unique_node_ids,1,node IDs are unique inside one graph revision
+explicit_stepped_prism,resolved_edge_endpoints,1,every dependency endpoint resolves locally
+explicit_stepped_prism,acyclic_dependencies,1,dependency edges form a directed acyclic graph
+explicit_stepped_prism,import_candidate_boundary,1,imported candidates remain unconfirmed and do not become generated results
+imported_hole_candidate,unique_node_ids,1,node IDs are unique inside one graph revision
+imported_hole_candidate,resolved_edge_endpoints,1,every dependency endpoint resolves locally
+imported_hole_candidate,acyclic_dependencies,1,dependency edges form a directed acyclic graph
+imported_hole_candidate,import_candidate_boundary,1,imported candidates remain unconfirmed and do not become generated results
