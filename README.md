@@ -10,6 +10,8 @@ v0.55.0では、基準面、寸法、スケッチ、形状操作、結果形状�
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
+v1.0.0を安定研究版の目標とし、STEP読込、製品構成・B-rep解析、形状構成候補、寸法・拘束編集、決定論的再計算、変更検証、STEP再出力、根拠付きAI支援を一貫して扱います。v0.56.0以降は計画段階であり、実装済み機能ではありません。
+
 ---
 
 Reproducible image-processing and STEP/B-Rep studies that connect a focused
@@ -680,11 +682,16 @@ feature-recognition claim. v0.52.0 adds bounded scale, orientation, tolerance,
 healing, and STEP perturbations with explicit reject and abstain outcomes.
 v0.53.0 adds family-isolated splits, graph/B-Rep features, labels, digests, and
 leakage checks. v0.54.0 adds rule, geometry, graph, and combined baselines with
-separate fit, calibration, evaluation, evidence, and abstention records. The
+separate fit, calibration, evaluation, evidence, and abstention records.
 v0.55.0 adds explicit datum, parameter, sketch, feature, result, dependency,
 and imported-candidate graph contracts. The roadmap next proceeds through
-sketch constraints, explicit parametric features, and deterministic recompute.
-v0.56.0 and later releases remain unimplemented.
+sketch constraints, explicit parametric features, deterministic recompute,
+persistent topology references, assemblies, precision surfaces, engineering
+analysis, evidence-bounded AI assistance, public-corpus generalization,
+interoperability, and reliability evaluation. v1.0.0 is the planned first
+stable research contract for an end-to-end STEP analysis, assisted modeling,
+verification, and export workflow. v0.56.0 and later releases remain
+unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

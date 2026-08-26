@@ -12,7 +12,7 @@ This document states what the STEP and B-Rep track can and cannot claim across
 55 studies through v0.55.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.52.0 and later roadmap stages remain unimplemented.
+v0.56.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 

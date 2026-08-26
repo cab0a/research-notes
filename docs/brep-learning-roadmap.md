@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状を版番号付き非巡回依存グラフとして表します。明示的な3形状は真値と一致し、STEP読込後も位相数と計測値を保持しました。読込STEPの穴候補は未確認のまま結果形状と分離します。拘束条件と再計算は未実装です。v0.56.0以降は未実装です。
+v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状を版番号付き非巡回依存グラフとして表します。3形状は真値と一致し、再読込後も位相数と計測値を保持しました。読込STEPの穴候補は未確認のまま結果と分離します。v0.56.0以降は未実装です。v1.0.0までの計画は、スケッチ拘束、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
 
 詳細は以下の英語本文に示します。
 
@@ -637,6 +637,278 @@ visual comparison, and STEP export through a bounded Python API and a focused
 interactive tool. Require explicit user confirmation before replacing inferred
 features or repaired geometry.
 
+### Phase I — Stable Parametric Editing and Assemblies
+
+#### v0.61.0 — Persistent Topological References
+
+Track faces and edges across controlled parameter changes, recompute, repair,
+and STEP exchange. Record one-to-one, split, merge, deletion, and ambiguous
+relations without presenting a geometric match as permanent identity.
+
+#### v0.62.0 — Parameter Expressions, Units, and Domains
+
+Evaluate named parameter expressions with explicit dimensions, unit
+conversion, lower and upper bounds, invalid-value diagnostics, and cycle
+detection. Keep source spelling separate from normalized values.
+
+#### v0.63.0 — Feature-History Editing and Configurations
+
+Support bounded feature suppression, reactivation, reordering, rollback, and
+named configurations. Compare affected dependency paths and generated B-Reps
+against independently constructed truth.
+
+#### v0.64.0 — Assembly Constraints and Reusable Components
+
+Represent reusable components, occurrences, coordinate frames, and bounded
+fixed, coincident, concentric, and distance constraints. Preserve definition,
+occurrence, placement, and unit provenance as separate records.
+
+#### v0.65.0 — Assembly Recompute and Degrees of Freedom
+
+Recompute controlled assemblies, identify under-constrained and over-
+constrained placements, report remaining motion, and connect placement changes
+to bounded interference observations.
+
+### Phase J — Precision Geometry and Auditable Repair
+
+#### v0.66.0 — Semantic PMI, Datums, and Tolerances
+
+Study controlled AP242 product-manufacturing-information paths for dimensions,
+geometric tolerances, datums, and annotations. Separate display text and
+presentation geometry from semantic meaning and direct source provenance.
+
+#### v0.67.0 — B-Spline and NURBS Curves and Surfaces
+
+Evaluate degree, poles, knots, multiplicities, weights, periodicity, and
+derivatives for bounded B-spline and NURBS controls. Compare implementation
+results with independent mathematical truth and retain parameterization
+differences after STEP exchange.
+
+#### v0.68.0 — Differential Geometry and Surface Continuity
+
+Measure tangent frames, principal curvatures, Gaussian and mean curvature, and
+bounded positional, tangent, and curvature continuity. Visualize discontinuity
+evidence without treating samples as a certified whole-surface proof.
+
+#### v0.69.0 — Curve-Surface Intersections and Trimming Validity
+
+Evaluate bounded curve-curve, curve-surface, and surface-surface intersections.
+Verify three-dimensional intersection curves, p-curves, loop closure, trim
+orientation, residuals, multiplicity, and tolerance-sensitive ambiguity.
+
+#### v0.70.0 — Auditable Shape Repair Policies
+
+Compare explicit policies for gap closure, edge and face unification,
+orientation correction, and small-feature removal. Record every changed
+subshape, tolerance increase, lost attribute, geometric deviation, rejected
+operation, and rollback instead of silently healing input.
+
+### Phase K — Engineering Analysis and Scalable Evidence
+
+#### v0.71.0 — Mass Properties and Inertia Tensors
+
+Evaluate volume, area, centroid, mass, inertia tensor, principal moments, and
+principal axes for closed synthetic solids with explicit density and units.
+Abstain when material, unit, closure, orientation, or validity evidence is
+insufficient.
+
+#### v0.72.0 — Distance, Contact, Interference, and Clearance
+
+Distinguish separation, touching, penetration, containment, and clearance for
+bounded part and assembly controls. Measure tolerance sensitivity and retain
+the supporting faces, edges, points, and transform provenance.
+
+#### v0.73.0 — Large STEP Files and Spatial Indexing
+
+Add staged parsing, lazy geometry evaluation, bounding-volume indexes, and
+explicit byte, entity, topology, memory, and time budgets for large synthetic
+assemblies. Report partial and quarantined results without claiming a native-
+code security boundary.
+
+#### v0.74.0 — Independent Geometry Validation and Kernel Portability
+
+Compare the selected kernel with independent analytic evaluators and, where a
+license-compatible implementation is technically adequate, an independent
+geometry route. Record agreement and disagreement for topology, geometry,
+mass properties, intersections, and repairs without treating one backend as an
+oracle.
+
+#### v0.75.0 — Parametric Change-Pair Dataset
+
+Publish provenance-bound before-and-after pairs containing parameter edits,
+feature dependencies, B-Reps, STEP files, topology correspondence, graph
+descriptors, measurements, previews, and construction truth. Split by
+construction lineage and test identity and derivation leakage.
+
+### Phase L — Evidence-Bounded 3D AI Assistance
+
+#### v0.76.0 — 3D Representation Learning Baselines
+
+Compare simple geometry tables, attributed face graphs, tessellations, and
+feature-history descriptors under fixed family-isolated splits. Preserve strong
+non-learned baselines, calibration evidence, abstention, and failure cases.
+
+#### v0.77.0 — Learned Feature-Candidate Ranking
+
+Rank bounded hole, pocket, slot, step, chamfer, fillet, boss, and rib
+candidates. Every output links confidence and descriptor influence to the
+supporting faces and edges; high-confidence errors remain first-class evidence.
+
+#### v0.78.0 — Assisted Design-Reconstruction Proposals
+
+Generate multiple editable sketch and feature-graph proposals from imported
+B-Rep evidence. Compare residual, complexity, stability, and alternative
+explanations, and require human selection before a proposal becomes modeled
+history.
+
+#### v0.79.0 — Conversational Analysis and Edit Proposals
+
+Translate bounded natural-language requests into inspectable analysis queries
+or proposed parameter and feature edits. Show the selected entities,
+assumptions, expected effects, and before-and-after checks before execution.
+
+#### v0.80.0 — Integrated 3D Analysis and Modeling Foundation
+
+Connect STEP syntax, schema and application semantics, B-Rep analysis,
+parametric recompute, visual diagnostics, engineering measurements, and AI-
+assisted proposals through one bounded workflow. This is an integration
+milestone, not yet the stable v1 contract.
+
+### Phase M — Generalization Beyond the Controlled Core
+
+#### v0.81.0 — Public STEP Conformance Corpus
+
+Add redistribution-compatible or fetch-by-explicit-action public STEP samples
+with recorded provenance and licenses. Preserve expected, unsupported, and
+disputed behavior instead of using third-party acceptance as a conformance
+oracle.
+
+#### v0.82.0 — AP203, AP214, and AP242 Semantic Portability
+
+Compare controlled product, shape, unit, assembly, attribute, and
+representation paths across the selected application protocols. Do not infer
+semantic equivalence from similar entity names.
+
+#### v0.83.0 — Complex Product Structures and Multiple Representations
+
+Evaluate nested reuse, alternative representations, multiple shape models,
+context-dependent representations, and representation relationships. Make
+selection rules and unresolved ambiguity observable.
+
+#### v0.84.0 — Persistent-Reference Robustness Benchmark
+
+Benchmark face and edge tracking across scale, rotation, feature edits,
+reordering, Boolean changes, repair, tessellation, and STEP exchange. Report
+coverage, incorrect relations, abstention, split, merge, and deletion by
+perturbation family.
+
+#### v0.85.0 — Constraint-Solver Robustness Benchmark
+
+Evaluate sketch and assembly solvers across initial conditions, coordinate
+scale, redundant constraints, near-singular systems, conflicting constraints,
+and numerical perturbations. Separate convergence from correctness and
+uniqueness.
+
+### Phase N — Stable Operations and Interoperability
+
+#### v0.86.0 — Transactional Recompute and Rollback
+
+Make recompute atomic at declared dependency boundaries. Retain the last valid
+result, isolate failed branches, expose stale outputs, and provide deterministic
+rollback and diagnostic records.
+
+#### v0.87.0 — Stable Python API Contracts
+
+Freeze a bounded Python interface for input, queries, candidate selection,
+edits, recompute, comparison, and export. Version result records and define
+exceptions, warnings, abstentions, and resource-limit outcomes.
+
+#### v0.88.0 — Diagnostic Modeling Workspace
+
+Integrate face and edge selection, provenance, dependency views, candidate
+comparison, constraint state, and geometric differences in a focused research
+workspace. Keep exact regeneration possible without the interface.
+
+#### v0.89.0 — STEP Writer Modes and Round-Trip Policies
+
+Separate exact source preservation, controlled canonicalization, and modeled
+reconstruction into explicit writer modes. Validate structure, semantics,
+geometry, topology, attributes, tolerances, and byte identity independently.
+
+#### v0.90.0 — Parser, Importer, and Geometry Portability Benchmark
+
+Compare pinned public parsers, importers, and eligible geometry routes across a
+fixed corpus and recorded environments. Classify syntax, schema, semantic,
+geometry, and attribute disagreements without majority-vote truth.
+
+### Phase O — Trust, Scale, and Human Oversight
+
+#### v0.91.0 — Cross-Platform Reproducibility
+
+Run the declared parser, geometry, modeling, and artifact contracts on Windows,
+Linux, and macOS. Record decoded geometry and numeric drift with explicit
+environment fingerprints and platform-independent claim boundaries.
+
+#### v0.92.0 — Grammar and Geometry Fuzzing
+
+Generate bounded malformed Part 21, EXPRESS, topology, trim, placement, and
+parameter-graph inputs. Minimize failures, enforce resource budgets, and add
+every accepted defect to the deterministic regression corpus.
+
+#### v0.93.0 — Performance and Resource Contracts
+
+Publish scale curves and declared budgets for bytes, records, references,
+faces, edges, triangles, constraints, recompute nodes, memory, and time. Treat
+budget exhaustion as a defined outcome rather than an exceptional success or
+failure.
+
+#### v0.94.0 — Blinded AI-Assistance Evaluation
+
+Freeze labels and evaluation rules before running feature ranking and
+reconstruction assistance on held-out families. Measure accuracy, coverage,
+calibration, high-confidence errors, evidence completeness, and abstention.
+
+#### v0.95.0 — Human-Review Workflow Study
+
+Evaluate whether a user can inspect evidence, compare alternatives, correct a
+proposal, and reject unsupported edits without hidden state. Record task
+outcomes and interaction limitations without inventing productivity claims.
+
+### Phase P — v1.0 Stabilization and Audit
+
+#### v0.96.0 — End-to-End Import, Edit, Recompute, and Export
+
+Exercise the complete bounded workflow on synthetic and licensed public
+controls. Verify every transition from source bytes through interpretation,
+candidate selection, edit, B-Rep recompute, comparison, and STEP output.
+
+#### v0.97.0 — Specification-to-Evidence Traceability
+
+Map each supported claim to its governing public specification or primary
+source, implementation entry point, fixture, observation, test, and limitation.
+Keep unsupported and partially supported requirements visible.
+
+#### v0.98.0 — Contract Freeze and Compatibility Audit
+
+Freeze the intended v1 Python API, command behavior, CSV and JSON schemas,
+diagnostic categories, resource outcomes, and reproduction commands. Audit
+compatibility, licenses, notices, packaging, and documentation.
+
+#### v0.99.0 — v1.0 Release Candidate
+
+Regenerate all fixtures and reference artifacts from clean environments, run
+the complete cross-platform suite, resolve release-blocking discrepancies, and
+publish an explicit accepted-risk and known-limitations record.
+
+#### v1.0.0 — Research-Grade 3D Master Foundation
+
+Publish the first stable, evidence-bounded release connecting STEP parsing,
+semantic product structure, B-Rep analysis, parametric modeling, deterministic
+recompute, engineering checks, visual comparison, auditable AI assistance, and
+STEP export. Stability applies only to the declared contracts and supported
+corpus; it does not imply complete STEP conformance, recovered proprietary CAD
+history, production-CAD replacement, or unrestricted commercial use.
+
 ## Parametric Modeling Milestones
 
 The phrase "parametric STEP editing" has three distinct meanings:
@@ -646,11 +918,39 @@ The phrase "parametric STEP editing" has three distinct meanings:
 | Construct new parameter-driven geometry | v0.44.0 | Profiles, extrusion, and revolution recompute from explicit user parameters |
 | Import STEP, add modeled operations, and export STEP | v0.47.0–v0.48.0 | The imported B-Rep is a base shape; no original feature history is implied |
 | Infer an editable feature model from imported STEP | v0.59.0–v0.60.0 | Outputs are evidence-backed reconstruction candidates, not recovered authoring history |
+| Provide a stable evidence-bounded analysis and modeling workflow | v1.0.0 | Stability covers declared interfaces and corpora, not arbitrary STEP files or recovered authoring history |
 
 A normal STEP exchange can preserve final product geometry without preserving
 the originating CAD system's sketches, constraints, feature order, or design
 intent. The project therefore distinguishes deterministic modeling operations
 from reverse-engineered feature hypotheses throughout its APIs and evidence.
+
+## v1.0.0 Acceptance Contract
+
+The v1.0.0 release is allowed only when the repository can demonstrate all of
+the following within a precisely declared support boundary:
+
+- identify supported and unsupported Part 21 and schema behavior;
+- keep product structure, placement, units, attributes, geometry, and topology
+  as separately inspectable evidence layers;
+- produce provenance-linked face, edge, shell, and solid reports;
+- generate editable reconstruction proposals without calling them recovered
+  authoring history;
+- apply parameter and constraint edits through deterministic recompute;
+- compare pre-edit and post-edit geometry, topology, attributes, and tolerance;
+- export STEP and validate the resulting declared contract;
+- return unsupported, ambiguous, invalid, stale, and resource-exhausted states
+  without guessed success;
+- reproduce every reference artifact from documented clean-environment
+  commands;
+- trace every AI-assisted result back to source observations and preserve
+  abstention and high-confidence errors; and
+- retain the PolyForm Noncommercial 1.0.0 public license boundary, third-party
+  notices, and separate written-license requirement for commercial use.
+
+Version 1.0 is therefore the first stable research release, not the end of the
+research program and not a claim of complete ISO 10303 or commercial CAD
+coverage.
 
 ## Sample and Visual Evidence Contract
 
