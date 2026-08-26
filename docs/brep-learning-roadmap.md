@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.52.0は8形状群と4種類の変動を組み合わせた32条件を構築時とSTEP読込後に評価します。各段階で22件を受理、8件の負例を拒否し、30度回転で軸整列前提を外れた2件を判定保留にしました。一般的な認識精度や設計履歴の復元は主張しません。v0.53.0以降は未実装です。
+v0.53.0は36個の合成STEP試料を9形状系列単位で学習用、調整用、試験用に分け、正解ラベル、面隣接グラフ、B-rep計測値、画像、元ファイルの要約値を結び付けます。5種類の漏えい検査はすべて違反0件です。実製品の分布や設計履歴は表しません。v0.54.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.53.0 onward are planned and not implemented at v0.52.0.
+The stages from v0.54.0 onward are planned and not implemented at v0.53.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -583,8 +583,10 @@ exchange changes no decision. Generated truth is not recovered CAD history.
 
 #### v0.53.0 — Synthetic 3D Dataset and Label Contracts
 
-Generate controlled model families, negative examples, grouped splits, and
-leakage checks. Preserve STEP, graph, B-Rep, preview, and label provenance.
+Completed with 36 STEP-backed samples from nine construction families. Fixed
+family-isolated train, validation, and test partitions retain labels, STEP
+digests, B-Rep measurements, face graphs, previews, and provenance. Five
+identity, family, source, and provenance leakage checks report zero violations.
 
 #### v0.54.0 — Learned Baselines and Explainable 3D Assistance
 

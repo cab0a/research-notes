@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、52件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.52.0は32個の合成形状条件について、縮尺、回転、許容差・修復、STEP往復に対する形状特徴規則の正答、拒否、判定保留を記録します。
+このディレクトリには、53件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.53.0は36個の合成STEP試料について、形状系列単位の分割、正解ラベル、面隣接グラフ、B-rep計測値、元ファイルの要約値、漏えい検査を記録します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1339,6 +1339,18 @@ boundary or as adjacency between different faces.
 
 The 32-case corpus produces 22 accepts, eight negative-control rejects, two rotation-related abstentions, and zero incorrect outcomes per stage. Constructed and STEP-imported decisions agree for every case.
 
+## v0.53.0
+
+- `synthetic_3d_samples.csv` binds 36 STEP files to labels, splits, digests, B-Rep measures, and graph descriptors.
+- `synthetic_3d_split_summary.csv` exposes label counts in the family-isolated train, validation, and test partitions.
+- `synthetic_3d_leakage_checks.csv` records five lineage, digest, path, identity, and provenance checks.
+- `synthetic_3d_graphs.json` contains one attributed face graph per sample.
+- `synthetic_3d_dataset_contract.json` fixes feature columns, the group key, split policy, and claim boundaries.
+- `synthetic_3d_dataset.png` visualizes the fixed split distribution.
+- `synthetic_3d_dataset_shapes.png` previews the nine baseline construction families.
+
+All five leakage checks report zero violations. The dataset contains 16 train, 12 validation, and eight test samples. It is a small generated contract, not a representative industrial CAD benchmark.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1394,6 +1406,7 @@ python experiments/run_step_portability.py
 python experiments/run_resource_bounded_3d.py
 python experiments/run_face_adjacency_graphs.py
 python experiments/run_feature_recognition_benchmark.py
+python experiments/run_synthetic_3d_dataset.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

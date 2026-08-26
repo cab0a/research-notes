@@ -133,6 +133,7 @@ jobs:
           python experiments/run_face_adjacency_graphs.py --fixture-dir regenerated-fixtures/face-adjacency-graphs --output-dir regenerated-face-graph-fixture-results --refresh-fixtures
           python experiments/run_feature_recognition_benchmark.py --output-dir regenerated-results
           python experiments/run_feature_recognition_benchmark.py --fixture-dir regenerated-fixtures/feature-recognition-benchmark --output-dir regenerated-feature-benchmark-fixture-results --refresh-fixtures
+          python experiments/run_synthetic_3d_dataset.py --source-fixture-dir regenerated-fixtures/feature-recognition-benchmark --fixture-dir regenerated-fixtures/synthetic-3d-dataset --output-dir regenerated-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -375,6 +376,13 @@ jobs:
           diff -u results/feature_benchmark_contract.json regenerated-results/feature_benchmark_contract.json
           test -s regenerated-results/feature_benchmark.png
           test -s regenerated-results/feature_benchmark_shapes.png
+          diff -u results/synthetic_3d_samples.csv regenerated-results/synthetic_3d_samples.csv
+          diff -u results/synthetic_3d_split_summary.csv regenerated-results/synthetic_3d_split_summary.csv
+          diff -u results/synthetic_3d_leakage_checks.csv regenerated-results/synthetic_3d_leakage_checks.csv
+          diff -u results/synthetic_3d_graphs.json regenerated-results/synthetic_3d_graphs.json
+          diff -u results/synthetic_3d_dataset_contract.json regenerated-results/synthetic_3d_dataset_contract.json
+          test -s regenerated-results/synthetic_3d_dataset.png
+          test -s regenerated-results/synthetic_3d_dataset_shapes.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts
@@ -400,6 +408,7 @@ jobs:
           diff -qr fixtures/resource-bounded-3d regenerated-fixtures/resource-bounded-3d
           diff -qr fixtures/face-adjacency-graphs regenerated-fixtures/face-adjacency-graphs
           diff -qr fixtures/feature-recognition-benchmark regenerated-fixtures/feature-recognition-benchmark
+          diff -qr fixtures/synthetic-3d-dataset regenerated-fixtures/synthetic-3d-dataset
           diff -qr fixtures/manifold-self-intersection regenerated-fixtures/manifold-self-intersection
           diff -qr fixtures/solid-regions regenerated-fixtures/solid-regions
           diff -qr fixtures/shape-correspondence regenerated-fixtures/shape-correspondence

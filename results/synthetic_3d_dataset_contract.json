@@ -1,0 +1,37 @@
+{
+  "added_fixtures": {
+    "dataset_toroidal_surface_baseline.step": "294d9d87f7bfbcf78022b44d829e61274e6ca3905bf17b862afe1a9490bcb6af",
+    "dataset_toroidal_surface_rotated_x_30.step": "5e81ec277566830432e53ad863afe0c2e663e02233832e908ca18f94745baf19",
+    "dataset_toroidal_surface_small_scale.step": "c8bf00425df4802cf490c94e371127d42d0677b92d1b95aeb6d1cfcd3430eb50",
+    "dataset_toroidal_surface_tolerance_healed.step": "8722fbe1945951e8ad242ee14c3a2165896a10c7082042b1f32e8f3dafc63652"
+  },
+  "all_leakage_checks_pass": true,
+  "claim_boundaries": [
+    "labels are generated construction truth and not recovered STEP history",
+    "the dataset is small, synthetic, and intentionally nonrepresentative",
+    "family-isolated splits measure transfer to held-out families rather than random-sample accuracy",
+    "graph signatures are coarse descriptors and not persistent topology names",
+    "the dataset does not license or redistribute third-party CAD data"
+  ],
+  "contract_version": "1.0.0",
+  "feature_columns": [
+    "vertex_count",
+    "edge_count",
+    "face_count",
+    "relation_count",
+    "plane_face_count",
+    "cylinder_face_count",
+    "other_curved_face_count",
+    "mean_degree",
+    "curved_area_ratio",
+    "absolute_volume",
+    "surface_area"
+  ],
+  "group_key": "family_id",
+  "sample_primary_key": [
+    "sample_id"
+  ],
+  "split_policy": "construction families are assigned wholly to train, validation, or test",
+  "study_version": "v0.53.0",
+  "title": "Synthetic 3D Dataset and Label Contracts"
+}

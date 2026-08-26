@@ -1,0 +1,6 @@
+check_id,scope,violation_count,passed,interpretation
+unique_sample_id,dataset,0,1,sample identifiers are unique
+family_group_isolation,split,0,1,one construction family appears in only one split
+source_digest_isolation,split,0,1,identical STEP bytes do not cross splits
+source_file_isolation,split,0,1,one source path does not cross splits
+required_provenance,dataset,0,1,every sample has label and STEP digest provenance

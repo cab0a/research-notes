@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う52件の研究を索引化しています。v0.52.0は32個の合成条件で形状特徴規則の縮尺、回転、許容差・修復、STEP往復への反応を評価します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う53件の研究を索引化しています。v0.53.0は36個の合成STEP試料を形状系列単位で分割し、正解ラベル、面隣接グラフ、B-rep計測値、元ファイルの要約値を結び付けます。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1367,6 +1367,27 @@ python -m pip install -e ".[geometry]"
 python experiments/run_feature_recognition_benchmark.py
 ```
 
+### v0.53.0 — Synthetic 3D Dataset and Label Contracts
+
+**Question.** Can generated STEP controls become an auditable dataset while keeping construction truth, measured geometry, exchange bytes, and later predictions separate?
+
+**Result.** Thirty-six STEP samples from nine construction families are assigned wholly to train, validation, or test. Five identity, family, source, and provenance leakage checks report zero violations.
+
+- [Complete note](../notes/synthetic-3d-dataset-label-contracts.md)
+- [Samples](../results/synthetic_3d_samples.csv)
+- [Split summary](../results/synthetic_3d_split_summary.csv)
+- [Leakage checks](../results/synthetic_3d_leakage_checks.csv)
+- [Attributed graphs](../results/synthetic_3d_graphs.json)
+- [Dataset contract](../results/synthetic_3d_dataset_contract.json)
+- [Split figure](../results/synthetic_3d_dataset.png)
+- [Shape previews](../results/synthetic_3d_dataset_shapes.png)
+- [Added fixtures](../fixtures/synthetic-3d-dataset/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_synthetic_3d_dataset.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1391,7 +1412,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.52.0 subsets;
+  controlled v0.21.0 through v0.53.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

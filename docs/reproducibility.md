@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、52件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.52.0は32個の形状特徴評価条件、64観測、混同行列、判断理由、図を再生成します。
+本書は、53件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.53.0は36個の合成STEP試料、固定分割、ラベル、面隣接グラフ、B-rep計測値、漏えい検査、図を再生成します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -128,6 +128,7 @@ python experiments/run_step_portability.py
 python experiments/run_resource_bounded_3d.py
 python experiments/run_face_adjacency_graphs.py
 python experiments/run_feature_recognition_benchmark.py
+python experiments/run_synthetic_3d_dataset.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -678,7 +679,8 @@ evaluates two local operations, v0.48.0 evaluates three repeated exchanges,
 v0.49.0 compares three parser implementations and two same-kernel import
 routes, v0.50.0 evaluates thirteen staged resource-boundary controls,
 v0.51.0 evaluates four constructed/imported face-adjacency graph pairs, and
-v0.52.0 evaluates 32 feature-rule cases before and after STEP exchange.
+v0.52.0 evaluates 32 feature-rule cases before and after STEP exchange, and
+v0.53.0 binds 36 STEP samples to family-isolated dataset records.
 None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell

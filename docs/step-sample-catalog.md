@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.52.0は8形状群と4種類の変動を組み合わせた32個のSTEP試料と基準形状画像を追加します。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.53.0はv0.52.0の32試料を要約値で参照し、4個の円環面負例と統一データ集合一覧を追加します。詳細は英語本文に示します。
 
 ---
 
@@ -858,6 +858,22 @@ baseline import per family; the decision figure records all imported outcomes.
 Construction labels are external synthetic truth. File names and previews do
 not establish recovered STEP feature history.
 
+## v0.53.0 — Synthetic 3D Dataset Samples
+
+Directory: [`fixtures/synthetic-3d-dataset/`](../fixtures/synthetic-3d-dataset/)
+
+Manifest: [`manifest.csv`](../fixtures/synthetic-3d-dataset/manifest.csv)
+
+The unified manifest references all 32 v0.52.0 files by digest and adds four
+toroidal negative files without duplicating the earlier fixtures. Nine baseline
+families are shown in the preview, while the split figure exposes the fixed
+family-isolated partitions.
+
+![Synthetic 3D dataset baseline families](../results/synthetic_3d_dataset_shapes.png)
+
+The manifest is a dataset contract, not evidence that construction labels were
+recovered from STEP geometry.
+
 ## Regeneration
 
 ```bash
@@ -981,6 +997,11 @@ python experiments/run_face_adjacency_graphs.py \
 
 python experiments/run_feature_recognition_benchmark.py \
   --fixture-dir fixtures/feature-recognition-benchmark \
+  --refresh-fixtures
+
+python experiments/run_synthetic_3d_dataset.py \
+  --source-fixture-dir fixtures/feature-recognition-benchmark \
+  --fixture-dir fixtures/synthetic-3d-dataset \
   --refresh-fixtures
 ```
 

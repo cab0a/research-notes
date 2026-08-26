@@ -1,0 +1,10 @@
+split,feature_label,sample_count
+test,fillet_like:constant_radius,4
+test,none,4
+train,hole:blind,4
+train,hole:through,4
+train,none,4
+train,step:open,4
+validation,chamfer_like:symmetric,4
+validation,none,4
+validation,slot:through,4
