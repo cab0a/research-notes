@@ -4,9 +4,9 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.42.0では、穴あき立体、球、Bスプライン殻を、距離条件2水準と角度条件2水準の組合せで三角形分割します。3,782個の三角形を解析用面番号と元のSTEPの`ADVANCED_FACE`実体番号へ対応付け、面積、法線、媒介変数、表面距離の診断値をCSVへ記録します。
+v0.43.0では、箱、円柱、円すい台、球、トーラス、Bスプライン面を既知のパラメーターから構築し、STEP出力・再読込後の位相、曲面、体積、表面積、公差、境界、曲面パラメーターを比較します。
 
-曲面ごとに支配的な分割条件が異なり、球の極には各条件2個の面積ゼロ三角形が残りました。要求した分割値や三角形内の一点で測った表面距離を最大誤差として主張せず、表示画像を正確なB-rep形状として扱いません。327件のテストを備え、v0.43.0以降は未実装です。詳細は英語本文に示します。
+6形状すべてが有効な形状として再読込され、位相数と曲面構成を保持しました。一方、円すいの半角符号は同値な媒介化によって反転し、Bスプライン面では公差の正規化により境界箱が約0.0001999変化しました。構築パラメーターは合成真値であり、STEPから復元した設計履歴とは扱いません。335件のテストを備え、v0.44.0以降は未実装です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -38,8 +38,9 @@ metadata-family coverage and digest-bound transform integrity before composing
 those controls into explainable routing policies. The current track develops a
 dependency-free STEP Part 21 parser foundation before advancing into EXPRESS,
 application semantics, evaluated B-Rep geometry, controlled correspondence,
-rule-based geometric feature candidates, stable face-level reports, and
-source-traceable tessellation diagnostics. The current release is v0.42.0.
+rule-based geometric feature candidates, stable face-level reports,
+source-traceable tessellation diagnostics, and controlled primitive STEP round
+trips. The current release is v0.43.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -54,34 +55,34 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 42 releases to their questions,
+The [study index](docs/studies.md) maps all 43 releases to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.42.0 study evaluates three STEP-derived B-Rep controls under a two-by-two
-absolute linear/angular meshing design. It traces every triangle to an
-analysis-local face and a source `ADVANCED_FACE` instance while keeping exact
-surface measurements separate from mesh diagnostics.
+The v0.43.0 study constructs six controlled primitives and surfaces, exports
+them to normalized STEP, re-imports them, and compares topology, geometry,
+tolerances, bounds, and support parameters with construction truth kept
+outside the exchange result.
 
 | Evidence | Observed result |
 | --- | ---: |
-| Synthetic STEP controls | 3 |
-| Mesh conditions | 4 |
-| Face-condition rows | 36 |
-| Triangle rows | 3,782 |
-| Faces mapped to source `ADVANCED_FACE` | 9 / 9 |
-| Through-hole triangles, coarse / fine angular | 88 / 220 |
-| Sphere triangles, coarse / fine both | 168 / 1,260 |
-| B-spline triangles, coarse / fine linear | 10 / 18 |
-| Explicit zero-area sphere-pole triangles | 8 |
+| Controlled shapes | 6 |
+| Constructed / imported observations | 6 / 6 |
+| Kernel-valid observations | 12 / 12 |
+| Topology inventories preserved | 6 / 6 |
+| Surface inventories preserved | 6 / 6 |
+| Strict literal contracts passed | 4 / 6 |
+| Cone semi-angle absolute change | `0.927295218` radians |
+| B-spline tolerance-inflated bounds change | `0.0001999` model units |
 
-![Tessellation diagnostic evidence](results/tessellation_diagnostics.png)
+![Primitive round-trip evidence](results/primitive_round_trip.png)
 
-Requested deflections are inputs rather than certified maximum errors. The
-reported surface deviation samples one UV-barycentric point per triangle, and
-mesh area can lie above or below exact B-Rep area. The face-colored preview is
-an inspection aid, not geometric truth.
+The cone's signed parameter change is an equivalent support-surface
+parameterization, while the B-spline difference follows tolerance
+normalization. Neither is hidden behind a geometry-only pass. Construction
+parameters remain synthetic ground truth rather than recovered feature
+history.
 
 ## Current STEP and B-Rep Capability
 
@@ -97,8 +98,9 @@ It reports bounded geometric feature candidates for nine synthetic controls
 and emits a stable 60-field face report across six controlled surface families,
 including parent lists, boundaries, adjacency, tolerance, and attributed-source
 fields. It also generates controlled face-colored tessellations, retains
-zero-area triangles explicitly, and connects all nine imported control faces
-to direct Part 21 `ADVANCED_FACE` instances. It cannot prove
+zero-area triangles explicitly, connects all nine imported control faces to
+direct Part 21 `ADVANCED_FACE` instances, and constructs and round-trips six
+controlled primitives and surfaces. It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -106,7 +108,7 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, correspondence, bounded rule-based feature candidates, one stable face-report contract, and source-traceable controlled tessellations | Certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered feature history, general feature recognition, arbitrary curved or spline correspondence and manifoldness, general healing, editing, or a supported export API |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, controlled sewing and repair, vertex links, interference, void-shell containment, composite-solid adjacency, correspondence, bounded rule-based feature candidates, one stable face-report contract, source-traceable tessellations, and six primitive STEP round trips | A supported parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered feature history, general feature recognition, arbitrary curved or spline correspondence and manifoldness, or general healing |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
@@ -246,8 +248,9 @@ AP242 product-path, v0.30.0 assembly, v0.31.0 geometry-kernel decision,
 v0.32.0 face-geometry, v0.33.0 edge-geometry, v0.34.0 wire-trimming,
 v0.35.0 shell/solid-validity, v0.36.0 tolerance/sewing/healing, v0.37.0
 manifoldness/self-intersection, v0.38.0 solid-region, v0.39.0 face-and-edge
-correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, and v0.42.0
-tessellation-diagnostic studies also write deterministic versioned JSON records.
+correspondence, v0.40.0 feature-recognition, v0.41.0 face-report, v0.42.0
+tessellation-diagnostic, and v0.43.0 primitive-round-trip studies also write
+deterministic versioned JSON records.
 JPEG studies write fixture, codec, runtime, syntax, decoded-pixel, and
 pair-comparison manifests.
 The STEP studies commit generated Part 21 and EXPRESS fixtures, token and
@@ -274,7 +277,8 @@ tolerance/sewing/healing fixtures, and the generated v0.37.0 manifoldness and
 intersection fixtures, the ten v0.38.0 solid-region fixtures, and the four
 v0.39.0 face-and-edge correspondence fixtures, the nine v0.40.0 geometric
 feature-recognition fixtures, the five v0.41.0 face-analysis fixtures, and the
-three v0.42.0 tessellation-diagnostic fixtures.
+three v0.42.0 tessellation-diagnostic fixtures, and the six v0.43.0 primitive
+round-trip fixtures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -285,7 +289,7 @@ validation evidence.
 
 ## Key Features
 
-- Forty-two published studies with explicit questions, controls, results, and
+- Forty-three published studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -343,6 +347,9 @@ validation evidence.
 - A two-by-two absolute meshing experiment with per-triangle face and
   `ADVANCED_FACE` provenance, exact-area comparison, explicit degeneracy, and
   face-colored visual diagnostics
+- Six parameter-declared primitive and surface controls compared across STEP
+  exchange with independent analytic truth and explicit parameter/tolerance
+  drift
 - Observation-level CSV files alongside summaries and figures from the same
   runs
 - Deterministic seeds, pinned runtime dependencies, hashed fixtures, and
@@ -451,7 +458,7 @@ repository layout are documented in
 
 ## Development and Testing
 
-The repository contains 327 tests covering blur metrics and models,
+The repository contains 335 tests covering blur metrics and models,
 preprocessing and photometric transforms, JPEG parsing, fixed-fixture
 contracts, repeated and field-level metadata policies, resource-boundary
 routing, the unified source-preserving Part 21 parser, edition and
@@ -510,6 +517,10 @@ face-source mappings, location-aware triangle coordinates, UV nodes,
 face-oriented normals, zero-area pole triangles, exact-versus-mesh area,
 sampled surface deviations, per-surface refinement relationships, stable CSV
 contracts, deterministic fixtures, and non-geometric preview boundaries.
+The v0.43.0 additions cover six primitive controls, independent analytic
+volume and area truth, STEP entity inventories, topology and surface-family
+preservation, support-parameter comparison, equivalent cone parameterization,
+B-spline tolerance drift, and deterministic fixture regeneration.
 
 GitHub Actions runs the README Quick Start, checks its summary CSV and figure,
 then runs the tests and regenerates the reference evidence on Ubuntu with
@@ -535,8 +546,9 @@ evaluates face and straight-edge correspondence on four planar controls across
 STEP import and one same-domain healing operation on the same Linux x64
 reference route. v0.40.0 evaluates nine bounded geometric feature controls on
 that route, v0.41.0 evaluates five face-report controls with 13 faces per
-stage, and v0.42.0 evaluates three imported shapes under four meshing
-conditions on the same route. These releases do not claim
+stage, v0.42.0 evaluates three imported shapes under four meshing conditions,
+and v0.43.0 evaluates six primitive and surface round trips on the same route.
+These releases do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -562,11 +574,12 @@ that construction history is not recoverable from final geometry alone.
 v0.41.0 adds the stable face-level report contract, six surface families,
 parent and adjacency evidence, and explicit metadata-source boundaries.
 v0.42.0 adds source-traceable tessellation, independent linear/angular
-controls, explicit degeneracy, and visual-diagnostic claim boundaries. The
-roadmap next proceeds through modeling, STEP round trips, and
+controls, explicit degeneracy, and visual-diagnostic claim boundaries.
+v0.43.0 adds primitive construction truth and measured STEP round trips. The
+roadmap next proceeds through profiles, sweeps, Boolean operations, and
 evidence-backed parametric reconstruction. Future versions target import-edit-
 export round trips, and v0.59.0 begins STEP-to-feature reconstruction
-candidates. v0.43.0 and later releases remain unimplemented.
+candidates. v0.44.0 and later releases remain unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 

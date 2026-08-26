@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う42件の研究を索引化しています。v0.42.0は3個の合成形状を4組の距離・角度条件で三角形分割し、3,782個の三角形を解析用面番号と元の`ADVANCED_FACE`実体番号へ対応付けます。球の極に残る面積ゼロ三角形を明示し、要求値、診断用標本、正確な面積、表示画像を区別します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う43件の研究を索引化しています。v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP往復後の位相、曲面、体積、表面積、公差、境界、媒介化を比較します。円すいの同値な半角符号反転とBスプライン面の公差正規化を、幾何破損とは別の表現差として記録します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1107,6 +1107,31 @@ python -m pip install -e ".[geometry]"
 python experiments/run_tessellation_diagnostics.py
 ```
 
+### v0.43.0 — Primitive Construction and STEP Round Trips
+
+**Question.** Which parameter, topology, geometry, tolerance, and exchange
+properties survive one controlled primitive STEP round trip?
+
+**Result.** Six shapes produce twelve analyzer-valid stage observations. Every
+pair retains topology and support-surface inventories, and five analytic solids
+match independent volume and area truth within `2e-8`. Four strict literal
+contracts pass. The cone retains geometry while its equivalent semi-angle
+changes sign, and B-spline tolerance normalization moves inflated bounds by
+`0.0001999` model units.
+
+- [Complete note](../notes/primitive-construction-step-round-trips.md)
+- [Stage observations](../results/primitive_round_trip_observations.csv)
+- [Round-trip summary](../results/primitive_round_trip_summary.csv)
+- [Evaluation contract](../results/primitive_round_trip_contract.json)
+- [Residual figure](../results/primitive_round_trip.png)
+- [Imported shape previews](../results/primitive_round_trip_shapes.png)
+- [Generated STEP fixtures](../fixtures/primitive-round-trips/)
+
+```bash
+python -m pip install -e ".[geometry]"
+python experiments/run_primitive_round_trips.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1131,7 +1156,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.42.0 subsets;
+  controlled v0.21.0 through v0.43.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1140,5 +1165,8 @@ failure-mode analysis, but it does not establish:
   from the v0.41.0 controlled face-report rows.
 - certified tessellation error bounds, global mesh validity, persistent source
   identity, or exact geometry from the v0.42.0 diagnostic mesh and previews.
+- recovered construction history, literal analytic-parameter identity, exact
+  tolerance-invariant bounds, or cross-kernel portability from the v0.43.0
+  primitive round trips.
 
 The complete notes contain the narrower limitations for each experiment.

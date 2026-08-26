@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.42.0は3個の合成形状をSTEP再読込後に4組の距離・角度条件で三角形分割し、3,782個の三角形を解析用面番号と元の`ADVANCED_FACE`実体番号へ対応付けます。球の極に残る面積ゼロ三角形を明示し、要求値、診断用の標本値、正確なB-rep面積、表示画像を区別します。v0.43.0以降は未実装です。
+v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP出力・再読込後の位相、曲面、体積、表面積、公差、境界、曲面パラメーターを比較します。全形状で位相と曲面構成を保持しましたが、円すいの同値な媒介化とBスプライン面の公差正規化を明示します。v0.44.0以降は未実装です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,7 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.43.0 onward are planned and not implemented at v0.42.0.
+The stages from v0.44.0 onward are planned and not implemented at v0.43.0.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -467,9 +467,16 @@ certified error bounds; face-colored previews are not exact B-Rep geometry.
 
 #### v0.43.0 — Primitive Construction and STEP Round Trips
 
-Construct controlled primitives and B-spline patches, export them, re-import
-them, and compare parameters, topology counts, measurements, tolerances, and
-exchange structure.
+Completed with six constructed and STEP-imported controls. All twelve stage
+observations are analyzer-valid, and all six pairs retain unique topology and
+support-surface inventories. The five analytic solids agree with independent
+volume and area truth within `2e-8` at both stages.
+
+Four pairs meet the intentionally literal contract. The cone's semi-angle
+changes sign under an equivalent imported axis convention, and the B-spline
+face tolerance changes from `2e-4` to `1e-7`, moving its tolerance-inflated
+bounds by `0.0001999`. Construction parameters remain external synthetic
+truth; they are not inferred feature history.
 
 #### v0.44.0 — Profiles, Extrusion, and Revolution
 

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.42.0では、貫通穴立体、球、開いたBスプライン殻の3個のSTEP試験ファイルを4条件で三角形分割します。各三角形の頂点、媒介変数、法線、面積、曲面標本偏差、元のSTEP面への対応を保存し、粗い分割と細かい分割の目視比較も収録します。プレビューは診断補助であり、厳密形状や最大誤差の証明ではありません。詳細は英語本文に示します。
+本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.43.0では、箱、円柱、円すい台、球、トーラス、Bスプライン面の6個のSTEP試験ファイルを収録します。構築直後と再読込後の位相、曲面、測定値、公差、境界、媒介化を比較し、円すいの同値な半角符号反転とBスプライン面の公差正規化を明示します。詳細は英語本文に示します。
 
 ---
 
@@ -672,6 +672,27 @@ triangle, so it is not a maximum-over-triangle proof. The preview is useful for
 finding suspicious faces and triangles, but the CSV and exact B-Rep
 observations define the machine-checkable evidence.
 
+## v0.43.0 — Primitive Round-Trip Samples
+
+Directory: [`fixtures/primitive-round-trips/`](../fixtures/primitive-round-trips/)
+
+Manifest: [`manifest.csv`](../fixtures/primitive-round-trips/manifest.csv)
+
+| Sample | Bytes | SHA-256 | Intended evidence |
+| --- | ---: | --- | --- |
+| `primitive_box.step` | 15,377 | `6658dc9001c95aca2201a397758bd0446fd5853c8d19ccd70bd833c73c54ece7` | Six planar faces and exact box truth |
+| `primitive_cylinder.step` | 5,652 | `adaa033082176dcbd893d7c060bdcde81f994236709b8a159eec773c357da4a6` | Radius, height, caps, and cylindrical support |
+| `primitive_cone.step` | 5,714 | `f2842e6bb527afd609c36d6b7d82a197d14fcdda50cedd7816cd63d892d5e132` | Frustum truth and equivalent signed semi-angle parameterization |
+| `primitive_sphere.step` | 2,123 | `063c9e6c4b4e85ffe0352b34b14608ac9df3fade0e12dda3fdd470f338ba6a1e` | Complete sphere and analytic truth |
+| `primitive_torus.step` | 4,139 | `163ae8bc3155ac55f0fdc35bcab9b8f4102cabd8c2d886566eda51f1c1a9f104` | Major/minor radii and analytic truth |
+| `primitive_bspline_patch.step` | 5,836 | `bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6` | Open B-spline face and tolerance normalization |
+
+![Six imported primitive controls](../results/primitive_round_trip_shapes.png)
+
+All six samples retain topology and support-surface inventories on the pinned
+route. The manifest binds exact normalized bytes; it does not make STEP byte
+identity a semantic interoperability requirement.
+
 ## Regeneration
 
 ```bash
@@ -761,6 +782,10 @@ python experiments/run_face_level_analysis.py \
 
 python experiments/run_tessellation_diagnostics.py \
   --fixture-dir fixtures/tessellation-diagnostics \
+  --refresh-fixtures
+
+python experiments/run_primitive_round_trips.py \
+  --fixture-dir fixtures/primitive-round-trips \
   --refresh-fixtures
 ```
 

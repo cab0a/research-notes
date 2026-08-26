@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、42件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.42.0は3個の合成STEP形状を4条件で三角形分割し、3,782個の三角形について頂点、媒介変数、面の向きに従う法線、面積、厳密曲面との標本偏差、元のSTEP面への直接対応を記録します。分割条件は入力値であり最大誤差の保証ではなく、プレビューも厳密形状の代用ではありません。
+このディレクトリには、43件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.43.0は6個の基本形状と曲面を既知のパラメーターから構築し、STEP往復後の位相、曲面、体積、表面積、公差、境界、媒介化を比較します。全形状で位相と曲面構成を保持し、円すいの同値な半角符号反転とBスプライン面の公差正規化を明示します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1147,6 +1147,28 @@ maximum-error bounds; the barycentric UV sample is one diagnostic point per
 triangle, not a supremum; mesh area may fall above or below exact area; and
 local mesh and face identifiers are not persistent names.
 
+## v0.43.0
+
+- `primitive_round_trip_observations.csv` contains twelve constructed and
+  STEP-imported stage rows across six controlled primitives and surfaces.
+- `primitive_round_trip_summary.csv` compares topology, support surfaces,
+  volume, area, centroid, bounds, and selected support parameters for each
+  pair.
+- `primitive_round_trip_contract.json` binds construction truth, fixture
+  hashes, row schemas, and non-recovery claim boundaries.
+- `primitive_round_trip.png` plots round-trip residuals and imported face
+  inventories.
+- `primitive_round_trip_shapes.png` previews the six imported controls.
+
+All twelve stage observations are analyzer-valid, and every pair preserves
+unique topology and support-surface inventories. The five analytic solids
+match independent volume and surface-area truth within `2e-8`. Four of six
+strict literal contracts pass. The cone semi-angle changes sign under an
+equivalent imported parameterization, while B-spline face-tolerance
+normalization changes tolerance-inflated bounds by `0.0001999` model units.
+Construction parameters are external synthetic truth, not recovered feature
+history.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1192,6 +1214,7 @@ python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
 python experiments/run_face_level_analysis.py
 python experiments/run_tessellation_diagnostics.py
+python experiments/run_primitive_round_trips.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

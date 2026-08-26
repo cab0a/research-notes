@@ -1,0 +1,7 @@
+control_id,constructed_topology,step_imported_topology,topology_matches,constructed_surface_counts,step_imported_surface_counts,surface_counts_match,volume_absolute_difference,surface_area_absolute_difference,surface_centroid_distance,bounds_maximum_absolute_difference,support_parameter_maximum_absolute_difference,constructed_analyzer_valid,step_imported_analyzer_valid,round_trip_contract_passes
+primitive_box,V=8|E=12|F=6|Sh=1|So=1,V=8|E=12|F=6|Sh=1|So=1,1,plane:6,plane:6,1,0,0,0,0,0,1,1,1
+primitive_cylinder,V=2|E=3|F=3|Sh=1|So=1,V=2|E=3|F=3|Sh=1|So=1,1,plane:2|cylinder:1,plane:2|cylinder:1,1,0,4.1353587221237831e-12,9.3894221994300046e-14,0,0,1,1,1
+primitive_cone,V=2|E=3|F=3|Sh=1|So=1,V=2|E=3|F=3|Sh=1|So=1,1,plane:2|cone:1,plane:2|cone:1,1,1.7877255231724121e-11,7.1764816311770119e-12,2.8055979680858574e-13,8.8817841970012523e-16,0.92729521800180614,1,1,0
+primitive_sphere,V=2|E=3|F=1|Sh=1|So=1,V=2|E=3|F=1|Sh=1|So=1,1,sphere:1,sphere:1,1,1.4210854715202004e-14,0,1.106535915594925e-16,0,0,1,1,1
+primitive_torus,V=1|E=2|F=1|Sh=1|So=1,V=1|E=2|F=1|Sh=1|So=1,1,torus:1,torus:1,1,3.0411229090532288e-12,1.0317080523236655e-11,2.6822988548272655e-13,0,0,1,1,1
+primitive_bspline_patch,V=4|E=4|F=1|Sh=1|So=0,V=4|E=4|F=1|Sh=1|So=0,1,bspline:1,bspline:1,1,0,3.5527136788005009e-15,4.9650683064945462e-16,0.00019990000000058572,0,1,1,0

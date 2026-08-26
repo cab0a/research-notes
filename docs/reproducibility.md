@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、42件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.42.0は貫通穴立体、球、開いたBスプライン殻を4条件で三角形分割し、3,782個の三角形と36件の面別集計を再生成します。元のSTEP面への直接対応と球の極に生じる退化三角形を明示し、指定した分割偏差や曲面上の一点標本を最大誤差保証として扱いません。
+本書は、43件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.43.0は6個の基本形状と曲面を構築し、正規化したSTEP試料、12件の段階別観測、6件の往復比較、契約、図を再生成します。構築パラメーター、独立した解析真値、計算核の測定値、交換表現を分離します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -118,6 +118,7 @@ python experiments/run_shape_correspondence.py
 python experiments/run_feature_recognition.py
 python experiments/run_face_level_analysis.py
 python experiments/run_tessellation_diagnostics.py
+python experiments/run_primitive_round_trips.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -263,6 +264,11 @@ python experiments/run_tessellation_diagnostics.py \
   --fixture-dir output/fixtures/tessellation-diagnostics \
   --output-dir output/tessellation-diagnostics \
   --refresh-fixtures
+
+python experiments/run_primitive_round_trips.py \
+  --fixture-dir output/fixtures/primitive-round-trips \
+  --output-dir output/primitive-round-trips \
+  --refresh-fixtures
 ```
 
 ## Deterministic Controls
@@ -359,6 +365,10 @@ python experiments/run_tessellation_diagnostics.py \
   normal or explicit degeneracy, one exact-surface sample, and a directly
   resolved source STEP face. Requested controls and samples are diagnostics,
   not certified maximum-error bounds.
+- The v0.43 primitive corpus generates six normalized STEP samples. Analytic
+  truth is declared independently for five solids, while B-spline area remains
+  a kernel observation. Literal cone-parameter and tolerance-inflated-bound
+  differences remain explicit rather than being normalized away.
 - The v0.24 corpus generates 34 exact edition, lexical, section, declaration,
   signature, and ZIP inputs with SHA-256 hashes and expected reason codes.
 - External parser comparisons run each fixture in an isolated child process
@@ -428,7 +438,7 @@ substitute for the five runner environments.
 python -m pytest
 ```
 
-The 327 tests cover:
+The 335 tests cover:
 
 - Laplacian variance and Tenengrad behavior
 - tiled and sliding-window aggregation
@@ -518,6 +528,9 @@ The 327 tests cover:
   transformed coordinates; UV availability; oriented normals; exact-versus-
   mesh area; sampled surface deviation; pole degeneracy; direct STEP-face
   provenance; and explicit visual-diagnostic claim boundaries
+- primitive construction parameters; independent analytic volume and area;
+  STEP topology, support-surface, entity, tolerance, bounds, and parameter
+  comparisons; equivalent cone parameterization; and B-spline tolerance drift
 - experiment output schemas
 - cross-platform summary and aggregation logic
 
@@ -542,6 +555,7 @@ The 327 tests cover:
 |   |-- face-analysis/
 |   |-- feature-recognition/
 |   |-- tessellation-diagnostics/
+|   |-- primitive-round-trips/
 |   |-- ap242-assemblies/
 |   |-- ap242-product-paths/
 |   |-- geometry-kernel-selection/
@@ -588,12 +602,15 @@ shape-pair relationship dimensions, v0.38.0 evaluates ten void-shell and
 composite-solid controls, and v0.39.0 evaluates face and straight-edge
 correspondence on four planar controls on the same route. v0.40.0 evaluates
 nine bounded geometric feature controls, v0.41.0 evaluates five face-report
-controls with 13 faces per stage, and v0.42.0 evaluates three shapes under four
-deterministic tessellation settings on that same route. None implies
+controls with 13 faces per stage, v0.42.0 evaluates three shapes under four
+deterministic tessellation settings, and v0.43.0 evaluates six primitive round
+trips on that same route. None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell
 manifoldness, self-intersection, nonconvex containment, general repair,
 manufacturing tolerance, persistent topological identity, persistent naming,
 general XCAF attribution, general feature recognition, feature-history
 reconstruction, design-intent recovery, a certified meshing error bound,
-persistent source identity, or general-purpose visualization correctness.
+persistent source identity, recovered primitive construction history, literal
+surface-parameter identity, tolerance-invariant bounds, or general-purpose
+visualization correctness.

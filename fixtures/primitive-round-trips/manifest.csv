@@ -1,0 +1,7 @@
+control_id,file_name,source_bytes,source_sha256,generator,binding_distribution_version,step_processor,writer_status,reader_status,transferred_roots
+primitive_box,primitive_box.step,15377,6658dc9001c95aca2201a397758bd0446fd5853c8d19ccd70bd833c73c54ece7,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+primitive_cylinder,primitive_cylinder.step,5652,adaa033082176dcbd893d7c060bdcde81f994236709b8a159eec773c357da4a6,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+primitive_cone,primitive_cone.step,5714,f2842e6bb527afd609c36d6b7d82a197d14fcdda50cedd7816cd63d892d5e132,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+primitive_sphere,primitive_sphere.step,2123,063c9e6c4b4e85ffe0352b34b14608ac9df3fade0e12dda3fdd470f338ba6a1e,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+primitive_torus,primitive_torus.step,4139,163ae8bc3155ac55f0fdc35bcab9b8f4102cabd8c2d886566eda51f1c1a9f104,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1
+primitive_bspline_patch,primitive_bspline_patch.step,5836,bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6,experiments/run_primitive_round_trips.py,7.9.3.1.1,Open CASCADE STEP processor 7.9,IFSelect_RetDone,IFSelect_RetDone,1

@@ -1,0 +1,178 @@
+{
+  "claim_boundaries": [
+    "construction parameters are synthetic ground truth, not recovered feature history",
+    "B-spline area has no independent closed-form truth in this study",
+    "topology counts and local indices are not persistent CAD identities",
+    "one pinned OCCT STEP route is not cross-kernel portability evidence",
+    "normalized STEP bytes are deterministic fixtures, not semantic byte-identity requirements",
+    "diagnostic previews are not exact B-Rep geometry"
+  ],
+  "contract_version": "1.0.0",
+  "controls": [
+    {
+      "construction": "axis-aligned box",
+      "control_id": "primitive_box",
+      "expected_solid_count": 1,
+      "expected_surface_area": 52.0,
+      "expected_surface_counts": {
+        "plane": 6
+      },
+      "expected_volume": 24.0,
+      "parameters": {
+        "length_x": 4.0,
+        "length_y": 3.0,
+        "length_z": 2.0
+      }
+    },
+    {
+      "construction": "right circular cylinder",
+      "control_id": "primitive_cylinder",
+      "expected_solid_count": 1,
+      "expected_surface_area": 87.96459430051421,
+      "expected_surface_counts": {
+        "cylinder": 1,
+        "plane": 2
+      },
+      "expected_volume": 62.83185307179586,
+      "parameters": {
+        "height": 5.0,
+        "radius": 2.0
+      }
+    },
+    {
+      "construction": "right circular conical frustum",
+      "control_id": "primitive_cone",
+      "expected_solid_count": 1,
+      "expected_surface_area": 87.61444438422375,
+      "expected_surface_counts": {
+        "cone": 1,
+        "plane": 2
+      },
+      "expected_volume": 54.45427266222308,
+      "parameters": {
+        "base_radius": 3.0,
+        "height": 4.0,
+        "top_radius": 1.0
+      }
+    },
+    {
+      "construction": "complete sphere",
+      "control_id": "primitive_sphere",
+      "expected_solid_count": 1,
+      "expected_surface_area": 78.53981633974483,
+      "expected_surface_counts": {
+        "sphere": 1
+      },
+      "expected_volume": 65.44984694978736,
+      "parameters": {
+        "radius": 2.5
+      }
+    },
+    {
+      "construction": "complete ring torus",
+      "control_id": "primitive_torus",
+      "expected_solid_count": 1,
+      "expected_surface_area": 157.91367041742973,
+      "expected_surface_counts": {
+        "torus": 1
+      },
+      "expected_volume": 78.95683520871486,
+      "parameters": {
+        "major_radius": 4.0,
+        "minor_radius": 1.0
+      }
+    },
+    {
+      "construction": "bounded bicubic B-spline face in an open shell",
+      "control_id": "primitive_bspline_patch",
+      "expected_solid_count": 0,
+      "expected_surface_area": null,
+      "expected_surface_counts": {
+        "bspline": 1
+      },
+      "expected_volume": null,
+      "parameters": {
+        "u_poles": 4.0,
+        "v_poles": 4.0
+      }
+    }
+  ],
+  "fixture_sha256": {
+    "primitive_box.step": "6658dc9001c95aca2201a397758bd0446fd5853c8d19ccd70bd833c73c54ece7",
+    "primitive_bspline_patch.step": "bd5045460f860f81cd0593eeb81fbb18df91665c6d0a579b721ec040fb67e7e6",
+    "primitive_cone.step": "f2842e6bb527afd609c36d6b7d82a197d14fcdda50cedd7816cd63d892d5e132",
+    "primitive_cylinder.step": "adaa033082176dcbd893d7c060bdcde81f994236709b8a159eec773c357da4a6",
+    "primitive_sphere.step": "063c9e6c4b4e85ffe0352b34b14608ac9df3fade0e12dda3fdd470f338ba6a1e",
+    "primitive_torus.step": "163ae8bc3155ac55f0fdc35bcab9b8f4102cabd8c2d886566eda51f1c1a9f104"
+  },
+  "observation_csv": {
+    "file": "primitive_round_trip_observations.csv",
+    "ordered_fields": [
+      "contract_version",
+      "stage",
+      "control_id",
+      "source_file",
+      "source_sha256",
+      "construction_parameters",
+      "vertex_count",
+      "edge_count",
+      "face_count",
+      "shell_count",
+      "solid_count",
+      "absolute_volume",
+      "expected_volume",
+      "volume_absolute_error",
+      "surface_area",
+      "expected_surface_area",
+      "surface_area_absolute_error",
+      "surface_centroid_x",
+      "surface_centroid_y",
+      "surface_centroid_z",
+      "bounds_min_x",
+      "bounds_min_y",
+      "bounds_min_z",
+      "bounds_max_x",
+      "bounds_max_y",
+      "bounds_max_z",
+      "maximum_vertex_tolerance",
+      "maximum_edge_tolerance",
+      "maximum_face_tolerance",
+      "surface_counts",
+      "support_parameters",
+      "surface_inventory_matches",
+      "solid_count_matches",
+      "analyzer_valid",
+      "step_entity_count",
+      "step_advanced_face_count"
+    ],
+    "primary_key": [
+      "control_id",
+      "stage"
+    ]
+  },
+  "study_version": "v0.43.0",
+  "summary_csv": {
+    "file": "primitive_round_trip_summary.csv",
+    "ordered_fields": [
+      "control_id",
+      "constructed_topology",
+      "step_imported_topology",
+      "topology_matches",
+      "constructed_surface_counts",
+      "step_imported_surface_counts",
+      "surface_counts_match",
+      "volume_absolute_difference",
+      "surface_area_absolute_difference",
+      "surface_centroid_distance",
+      "bounds_maximum_absolute_difference",
+      "support_parameter_maximum_absolute_difference",
+      "constructed_analyzer_valid",
+      "step_imported_analyzer_valid",
+      "round_trip_contract_passes"
+    ],
+    "primary_key": [
+      "control_id"
+    ]
+  },
+  "title": "Primitive Construction and STEP Round Trips"
+}
