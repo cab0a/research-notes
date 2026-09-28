@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+from dataclasses import asdict
 
 from research_notes.robustness_studies import ROOT
 
@@ -92,6 +93,12 @@ def evaluate_blinded():
     from research_notes.brep_runtime import step_round_trip
     from research_notes.modeling_common import measure_shape
     registration = preregistration()
+    from research_notes.artifact_contracts import verify_manifest
+    from research_notes.cad_platform import numeric_differences
+    from research_notes.public_step import read_step_for_inspection
+    corpus = ROOT / "fixtures/blinded-assistance-evaluation"
+    if (corpus / "manifest.csv").exists():
+        verify_manifest(corpus)
     protocol = json.loads((ROOT / "fixtures/blinded-assistance/protocol.json").read_text())
     model = RepresentationModel(**json.loads((ROOT / protocol["training_checkpoint"]).read_text()))
     if model.abstention_threshold != protocol["abstention_threshold"]:
@@ -105,12 +112,23 @@ def evaluate_blinded():
             if not measure_shape(shape).analyzer_valid:
                 raise ValueError("invalid authored holdout shape")
             fixture = step_round_trip(shape, identifier, writer_uncertainty=1e-7)
-            if fixture.source_sha256 in training_sources:
+            payload, imported_shape = fixture.source_bytes, fixture.imported_shape
+            fixed = corpus / fixture.file_name
+            if fixed.exists():
+                frozen = read_step_for_inspection(fixed).imported
+                differences = numeric_differences(asdict(measure_shape(imported_shape)), asdict(frozen.metrics))
+                if differences:
+                    raise ValueError("regenerated holdout geometry differs: " + str(differences[:3]))
+                # Native STEP spelling may differ across platforms. Predict the
+                # same hash-verified held-out input on every runner.
+                payload, imported_shape = frozen.source_bytes, frozen.shape
+            source_sha256 = hashlib.sha256(payload).hexdigest()
+            if source_sha256 in training_sources:
                 raise ValueError("training/test source identity leakage")
-            values, support = ranking_descriptor(fixture.imported_shape, identifier)
-            features.append({"sample_id": identifier, "values": values, "source_sha256": fixture.source_sha256, "support": support})
+            values, support = ranking_descriptor(imported_shape, identifier)
+            features.append({"sample_id": identifier, "values": values, "source_sha256": source_sha256, "support": support})
             truths[identifier] = {"truth": family["truth"], "family": family["family"], "variant": variant}
-            payloads[fixture.file_name] = fixture.source_bytes
+            payloads[fixture.file_name] = payload
     # Truth is joined only after all predictions have been made with frozen parameters.
     predictions = [{**p, **truths[p["sample_id"]]} for p in blind_predict(model, features)]
     rows = [{"control_id": p["sample_id"], "family": p["family"], "truth": p["truth"],

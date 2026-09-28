@@ -2,7 +2,7 @@
   {
     "claim_id": "part21",
     "entry_point": "lex_part21",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/step_part21_source_model_observations.csv",
     "fixture": "fixtures/step-part21-source-model",
     "implementation": "src/research_notes/step_part21.py",
     "limitation": "Transport control filtering, full schema conformance and external resolution are outside the profile.",
@@ -13,7 +13,7 @@
   {
     "claim_id": "product_paths",
     "entry_point": "inspect_step_semantics",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/ap_portability_evidence.json",
     "fixture": "fixtures/ap-portability",
     "implementation": "src/research_notes/portable_step.py",
     "limitation": "Recognized AP paths do not establish complete AP conformance or PMI support.",
@@ -24,7 +24,7 @@
   {
     "claim_id": "geometry",
     "entry_point": "read_step_for_inspection",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/public_step_corpus_evidence.json",
     "fixture": "fixtures/public-step-corpus",
     "implementation": "src/research_notes/public_step.py",
     "limitation": "Complex face analysis can be partial; persistent face identity is not promised.",
@@ -35,7 +35,7 @@
   {
     "claim_id": "transactions",
     "entry_point": "TransactionalModel",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/transactional_recompute_evidence.json",
     "fixture": "fixtures/transactional-recompute",
     "implementation": "src/research_notes/transactional_recompute.py",
     "limitation": "Only valid supported DAGs commit; no native process isolation in the API.",
@@ -46,7 +46,7 @@
   {
     "claim_id": "review",
     "entry_point": "CadWorkspace",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/cad_review_workflow_evidence.json",
     "fixture": "fixtures/cad-review-workflow",
     "implementation": "src/research_notes/cad_api.py",
     "limitation": "Scripted usability controls are not a human participant study.",
@@ -57,7 +57,7 @@
   {
     "claim_id": "writer",
     "entry_point": "write_step",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/step_writer_modes_evidence.json",
     "fixture": "fixtures/step-writer-modes",
     "implementation": "src/research_notes/step_writer_modes.py",
     "limitation": "Reconstruct mode preserves measured geometry, not original history, attributes or exact topology IDs.",
@@ -68,7 +68,7 @@
   {
     "claim_id": "ai_assistance",
     "entry_point": "blind_predict",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/blinded_assistance_evaluation_evidence.json",
     "fixture": "fixtures/blinded-assistance-evaluation",
     "implementation": "src/research_notes/blinded_assistance.py",
     "limitation": "Frozen synthetic holdout; inaccurate high-confidence predictions remain.",
@@ -79,7 +79,7 @@
   {
     "claim_id": "resources",
     "entry_point": "run_workload",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/cad_resource_contracts_evidence.json",
     "fixture": "fixtures/cad-resource-contracts",
     "implementation": "src/research_notes/cad_resources.py",
     "limitation": "Worker timeout includes startup; estimated memory admission is not an RSS cap.",
@@ -90,7 +90,7 @@
   {
     "claim_id": "authoring_history",
     "entry_point": "reconstruct_step",
-    "evidence": "results/cad_claim_traceability_evidence.json",
+    "evidence": "results/cad_end_to_end_evidence.json",
     "fixture": "fixtures/step-reconstruction",
     "implementation": "src/research_notes/step_reconstruction.py",
     "limitation": "No recovered proprietary CAD history; only explicitly selected reconstructed hypotheses.",

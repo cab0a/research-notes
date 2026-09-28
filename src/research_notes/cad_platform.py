@@ -98,8 +98,16 @@ def numeric_differences(actual, expected, path="", *, relative=1e-6, absolute=1e
         for i, (a, b) in enumerate(zip(actual, expected)):
             differences.extend(numeric_differences(a, b, path + "/" + str(i), relative=relative, absolute=absolute))
     elif isinstance(expected, float) and isinstance(actual, (int, float)) and not isinstance(actual, bool):
-        if not math.isfinite(actual) or not math.isclose(actual, expected, rel_tol=relative, abs_tol=absolute):
+        leaf_absolute = 1e-25 if any(s in path for s in ("inertia_about_centroid_kg_m2", "principal_moments_kg_m2")) else absolute
+        if not math.isfinite(actual) or not math.isclose(actual, expected, rel_tol=relative, abs_tol=leaf_absolute):
             differences.append({"path": path, "kind": "numeric", "actual": actual, "expected": expected})
+    elif isinstance(actual, str) and isinstance(expected, str) and path.endswith("/value_expression"):
+        import re
+        pattern = r"([-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?) \* (mm|cm|m)"
+        a, b = re.fullmatch(pattern, actual), re.fullmatch(pattern, expected)
+        equivalent = a and b and a[2] == b[2] and math.isclose(float(a[1]), float(b[1]), rel_tol=1e-14, abs_tol=1e-20)
+        if actual != expected and not equivalent:
+            differences.append({"path": path, "kind": "value", "actual": actual, "expected": expected})
     elif type(actual) is not type(expected) or actual != expected:
         differences.append({"path": path, "kind": "value", "actual": actual, "expected": expected})
     return differences

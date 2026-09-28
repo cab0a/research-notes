@@ -70,6 +70,16 @@ def test_evidence_comparison_does_not_ignore_classification_or_geometry_changes(
     assert evidence_differences({"volume": 24.1}, {"volume": 24.})
     assert evidence_differences({"checks_pass": False}, {"checks_pass": True})
     assert not evidence_differences({"volume": 24.+1e-9}, {"volume": 24.})
+    assert evidence_differences({"principal_moments_kg_m2": [2e-16]}, {"principal_moments_kg_m2": [1e-16]})
+
+
+def test_unoriented_principal_directions_and_ulp_expressions():
+    from research_notes.artifact_contracts import evidence_differences
+    assert not evidence_differences({"principal_directions": [[1., 0., 0.]]}, {"principal_directions": [[-1., 0., 0.]]})
+    assert evidence_differences({"principal_directions": [[1., 0., 0.]]}, {"principal_directions": [[0., 1., 0.]]})
+    assert not evidence_differences({"value_expression": "3.0000174528355927 * mm"}, {"value_expression": "3.0000174528355932 * mm"})
+    assert evidence_differences({"value_expression": "3.001 * mm"}, {"value_expression": "3.0 * mm"})
+    assert evidence_differences({"value_expression": "3.0 * m"}, {"value_expression": "3.0 * mm"})
 
 
 def test_final_api_contract_remains_v087_compatible():

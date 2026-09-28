@@ -144,9 +144,14 @@ def claims():
         ("resources", "bounded", "https://docs.python.org/3/library/subprocess.html#subprocess.run", "cad_resources.py", "run_workload", "fixtures/cad-resource-contracts", "tests/test_release_studies.py", "Worker timeout includes startup; estimated memory admission is not an RSS cap."),
         ("authoring_history", "unsupported", base, "step_reconstruction.py", "reconstruct_step", "fixtures/step-reconstruction", "tests/test_operational_studies.py", "No recovered proprietary CAD history; only explicitly selected reconstructed hypotheses."),
     ]
+    evidence = {"part21": "step_part21_source_model_observations.csv", "product_paths": "ap_portability_evidence.json",
+                "geometry": "public_step_corpus_evidence.json", "transactions": "transactional_recompute_evidence.json",
+                "review": "cad_review_workflow_evidence.json", "writer": "step_writer_modes_evidence.json",
+                "ai_assistance": "blinded_assistance_evaluation_evidence.json", "resources": "cad_resource_contracts_evidence.json",
+                "authoring_history": "cad_end_to_end_evidence.json"}
     return [{"claim_id": c, "support": status, "primary_source": source, "implementation": "src/research_notes/" + module,
              "entry_point": symbol, "fixture": fixture, "test": test, "limitation": limitation,
-             "evidence": "results/cad_claim_traceability_evidence.json"} for c, status, source, module, symbol, fixture, test, limitation in data]
+             "evidence": "results/" + evidence[c]} for c, status, source, module, symbol, fixture, test, limitation in data]
 
 
 def freeze_contract():
@@ -188,7 +193,7 @@ def run_study(name, output, fixtures, *, refresh=False):
         rows, detail, inputs = end_to_end_study(output)
     elif name == "cad_claim_traceability":
         detail = claims()
-        rows = [record(c["claim_id"], (ROOT/c["implementation"]).is_file() and c["entry_point"] in (ROOT/c["implementation"]).read_text(encoding="utf-8") and (ROOT/c["fixture"]).exists() and (ROOT/c["test"]).is_file(), c["support"]) for c in detail]
+        rows = [record(c["claim_id"], (ROOT/c["implementation"]).is_file() and c["entry_point"] in (ROOT/c["implementation"]).read_text(encoding="utf-8") and (ROOT/c["fixture"]).exists() and (ROOT/c["test"]).is_file() and (ROOT/c["evidence"]).is_file(), c["support"]) for c in detail]
         inputs = {"claims.json": evidence_bytes(detail)}
     elif name == "cad_contract_freeze":
         detail = freeze_contract()
@@ -201,12 +206,17 @@ def run_study(name, output, fixtures, *, refresh=False):
     elif name in {"cad_release_candidate", "cad_stable_release"}:
         from research_notes.cad_platform import runtime_digest
         _, platform, _ = platform_study()
+        validation = json.loads((ROOT/"results/cad-release-validation.json").read_bytes())
         contracts = [json.loads((output/(n+"_contract.json")).read_bytes()) for n in STUDIES if STUDIES[n] < 99]
         rows = [record("measured_platform_matrix", platform["checks_pass"]), record("tested_runtime_identity", platform["runtime_sha256"] == runtime_digest()),
                 record("eight_study_gates", all(c["checks_pass"] for c in contracts)),
-                record("published_support_boundary", (ROOT/"docs/cad-v1-support.md").exists())]
+                record("published_support_boundary", (ROOT/"docs/cad-v1-support.md").exists()),
+                record("full_suite_and_wheel", validation["runtime_sha256"] == runtime_digest() and
+                       validation["ci"]["conclusion"] == "success" and validation["ci"]["status"] == "completed" and
+                       validation["packaging"]["runtime_sha256"] == runtime_digest() and
+                       validation["packaging"]["isolated_interpreter"] and not validation["packaging"]["editable_install"])]
         detail = {"runtime_sha256": runtime_digest(), "platforms": platform, "contracts": contracts, "accepted_limitations": LIMITATIONS,
-                  "full_suite_ci": "See results/cad-release-validation.json; a local study does not attest to a remote test run."}
+                  "validation": validation}
         inputs = {"acceptance.json": evidence_bytes({"required_studies": list(STUDIES)[:8], "required_platforms": platform["expected_labels"], "limitations": LIMITATIONS})}
     else:
         raise ValueError("unknown release study")

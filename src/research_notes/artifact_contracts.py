@@ -9,7 +9,14 @@ from pathlib import Path
 
 def canonical_evidence(value):
     if isinstance(value, dict):
-        return {k: canonical_evidence(v) for k, v in value.items()}
+        result = {k: canonical_evidence(v) for k, v in value.items()}
+        if "principal_directions" in result:
+            vectors = result["principal_directions"]
+            if vectors is not None:
+                result["principal_directions"] = [
+                    [x * (-1 if v[max(range(len(v)), key=lambda i: abs(v[i]))] < 0 else 1) for x in v]
+                    for v in vectors]
+        return result
     if isinstance(value, list):
         items = [canonical_evidence(v) for v in value]
         if items and all(isinstance(v, dict) and "solid_index" in v and "unit_density_properties" in v for v in items):
