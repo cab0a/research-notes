@@ -1,0 +1,14 @@
+{
+  "boundaries": [
+    "Direct associations and non-transformed shape relationships enumerate alternatives; only unique or explicit candidates are selected.",
+    "Traversal uses visited IDs and candidate/link budgets, including cycles; related representations are not declared equivalent.",
+    "Multiple model items remain separate. Reused definitions retain distinct occurrence paths and composed transforms.",
+    "Alternative representations on assembly definitions remain a placement ambiguity; explicit product selection does not silently rewrite assembly paths."
+  ],
+  "checks_pass": true,
+  "control_count": 12,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "complex_product_structures",
+  "version": "v0.83.0"
+}

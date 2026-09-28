@@ -10,7 +10,7 @@ from research_notes.assembly_tool import AssemblyShell
 
 class IntegratedShell(ModelingShell):
     prompt="3d> "
-    intro="3D research workspace v0.81. Type help. Use open PATH --inspect-only for broader public geometry."
+    intro="3D research workspace v0.85. Type help. Use semantics PATH or benchmark solver for the new evaluations."
     def __init__(self,output_dir,**kwargs):
         super().__init__(output_dir,**kwargs);self.session=IntegratedSession();self.assembly=AssemblyShell(output_dir/"assembly",stdout=self.stdout)
 
@@ -19,6 +19,47 @@ class IntegratedShell(ModelingShell):
         args=shlex.split(arg)
         if len(args) not in (1,2):raise ValueError("usage: scan STEP [EXPRESS]")
         self._emit(source_layers(Path(args[0]),schema_path=Path(args[1]) if len(args)==2 else None))
+
+    def do_semantics(self, arg):
+        """semantics PATH [DEFINITION_ID=REPRESENTATION_ID ...]: inspect AP roles and explicit shape selection."""
+        from research_notes.portable_step import inspect_step_file
+        from research_notes.robustness_studies import evidence_bytes
+        args = shlex.split(arg)
+        if not args:
+            raise ValueError("usage: semantics PATH [DEFINITION_ID=REPRESENTATION_ID ...]")
+        selections = {}
+        for item in args[1:]:
+            parts = item.split("=")
+            if len(parts) != 2:
+                raise ValueError("selection requires DEFINITION_ID=REPRESENTATION_ID")
+            key, value = (int(p) for p in parts)
+            if key in selections:
+                raise ValueError("duplicate definition selection")
+            selections[key] = value
+        report = inspect_step_file(Path(args[0]), selections=selections)
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        destination = self.output_dir / "semantics.json"
+        destination.write_bytes(evidence_bytes(report))
+        self._emit({"status": report["status"], "schema": report["schema"], "products": report["products"],
+                    "diagnostics": report["diagnostics"], "evidence": str(destination)})
+
+    def do_benchmark(self, arg):
+        """benchmark solver|references|ap|structure|all: save offline robustness CSV, HTML and detailed evidence."""
+        from collections import Counter
+        from research_notes.robustness_studies import run_study, STUDIES
+        names = {"solver": "solver_robustness", "references": "reference_robustness",
+                 "ap": "ap_portability", "structure": "complex_product_structures"}
+        requested = arg.strip()
+        if requested != "all" and requested not in names:
+            raise ValueError("usage: benchmark solver|references|ap|structure|all")
+        output = self.output_dir / "benchmarks"
+        for name in STUDIES if requested == "all" else (names[requested],):
+            rows = run_study(name, output)
+            self._emit({"study": name, "cases": len(rows), "contracts_matched": sum(r["checks_pass"] for r in rows),
+                        "assessments": dict(Counter(r.get("assessment", r.get("status", "scored")) for r in rows)),
+                        "report": str(output / (name + ".html"))})
+            if not all(r["checks_pass"] for r in rows):
+                raise ValueError("benchmark contract mismatch; inspect the saved report")
 
     def do_open(self,arg):
         """open PATH [--inspect-only]: inspect public geometry, or infer bounded editable proposals."""

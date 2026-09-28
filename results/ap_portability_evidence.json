@@ -1,0 +1,4349 @@
+[
+  {
+    "assembly": null,
+    "control_id": "ap203_product",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 540,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 540,
+          "start_byte": 499,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 499
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP203 legacy product/shape subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 683,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 683,
+          "start_byte": 624,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 624
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 681,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 681,
+              "start_byte": 678,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 678
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 929,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 929,
+              "start_byte": 926,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 926
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "CONFIG_CONTROL_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "8713f1fbadefe320005dd5467355891af472210ae9a91ab58bc9d94ac8017a5c",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap203_formation_subtype",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": "MADE",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 569,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 569,
+          "start_byte": 528,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 528
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP203 legacy product/shape subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 712,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 712,
+          "start_byte": 653,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 653
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 710,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 710,
+              "start_byte": 707,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 707
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 958,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 958,
+              "start_byte": 955,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 955
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "CONFIG_CONTROL_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "ec3ebfb1904119526866af1638a5c7bdcf61663e0d473ec469d2e03a4df17f0a",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap203_metre",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 540,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 540,
+          "start_byte": 499,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 499
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP203 legacy product/shape subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1000.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 683,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 683,
+          "start_byte": 624,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 624
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 681,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 681,
+              "start_byte": 678,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 678
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 929,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 929,
+              "start_byte": 926,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 926
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "CONFIG_CONTROL_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "45e9dc51b85a4fe5dea2c6811591468159cccd664266b29c2132ec3ccd521fbd",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap203_assembly",
+    "diagnostics": [
+      {
+        "code": "assembly_placement_outside_profile",
+        "detail": "Legacy AP203 occurrences are retained as syntax; placement is deferred.",
+        "entity_id": null,
+        "source_span": null
+      }
+    ],
+    "products": [
+      {
+        "candidate_ids": [
+          105
+        ],
+        "definition_context_id": 3,
+        "definition_id": 102,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 104,
+            "representation_id": 105,
+            "shape_id": 103
+          }
+        ],
+        "formation_id": 101,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "ROOT",
+        "name": "Root assembly",
+        "product_id": 100,
+        "selected_representation_id": 105,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 544,
+          "end_column": 47,
+          "end_line": 13,
+          "end_offset": 544,
+          "start_byte": 498,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 498
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          205
+        ],
+        "definition_context_id": 3,
+        "definition_id": 202,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 204,
+            "representation_id": 205,
+            "shape_id": 203
+          }
+        ],
+        "formation_id": 201,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "CHILD",
+        "name": "Reusable child",
+        "product_id": 200,
+        "selected_representation_id": 205,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 1353,
+          "end_column": 48,
+          "end_line": 28,
+          "end_offset": 1353,
+          "start_byte": 1306,
+          "start_column": 1,
+          "start_line": 28,
+          "start_offset": 1306
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP203 legacy product/shape subset",
+    "relationships": [
+      {
+        "entity_id": 1003,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          205,
+          105
+        ],
+        "source_span": {
+          "end_byte": 2362,
+          "end_column": 143,
+          "end_line": 44,
+          "end_offset": 2362,
+          "start_byte": 2220,
+          "start_column": 1,
+          "start_line": 44,
+          "start_offset": 2220
+        }
+      }
+    ],
+    "representations": [
+      {
+        "context_id": 111,
+        "entity_id": 105,
+        "item_ids": [
+          106,
+          107,
+          1006
+        ],
+        "length_unit_id": 112,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          107
+        ],
+        "name": "Root assembly",
+        "source_span": {
+          "end_byte": 703,
+          "end_column": 67,
+          "end_line": 16,
+          "end_offset": 703,
+          "start_byte": 637,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 637
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 12,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 105,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 701,
+              "end_column": 65,
+              "end_line": 16,
+              "end_offset": 701,
+              "start_byte": 697,
+              "start_column": 61,
+              "start_line": 16,
+              "start_offset": 697
+            },
+            "target_entity_id": 111,
+            "target_node_index": 14,
+            "target_occurrence": "#111",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 17,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 111,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 974,
+              "end_column": 76,
+              "end_line": 22,
+              "end_offset": 974,
+              "start_byte": 970,
+              "start_column": 72,
+              "start_line": 22,
+              "start_offset": 970
+            },
+            "target_entity_id": 112,
+            "target_node_index": 15,
+            "target_occurrence": "#112",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 211,
+        "entity_id": 205,
+        "item_ids": [
+          206,
+          207,
+          1005
+        ],
+        "length_unit_id": 212,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          207
+        ],
+        "name": "Reusable child",
+        "source_span": {
+          "end_byte": 1513,
+          "end_column": 68,
+          "end_line": 31,
+          "end_offset": 1513,
+          "start_byte": 1446,
+          "start_column": 1,
+          "start_line": 31,
+          "start_offset": 1446
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 30,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 205,
+            "source_node_index": 23,
+            "source_span": {
+              "end_byte": 1511,
+              "end_column": 66,
+              "end_line": 31,
+              "end_offset": 1511,
+              "start_byte": 1507,
+              "start_column": 62,
+              "start_line": 31,
+              "start_offset": 1507
+            },
+            "target_entity_id": 211,
+            "target_node_index": 29,
+            "target_occurrence": "#211",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 35,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 211,
+            "source_node_index": 29,
+            "source_span": {
+              "end_byte": 1785,
+              "end_column": 76,
+              "end_line": 37,
+              "end_offset": 1785,
+              "start_byte": 1781,
+              "start_column": 72,
+              "start_line": 37,
+              "start_offset": 1781
+            },
+            "target_entity_id": 212,
+            "target_node_index": 30,
+            "target_occurrence": "#212",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "CONFIG_CONTROL_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "3c3925ebfd578794d3822c54523bda705a62bce4af18173d3a7e6738dd20bd5b",
+    "status": "partial"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap214_product",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 536,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 536,
+          "start_byte": 495,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 495
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 679,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 679,
+          "start_byte": 620,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 620
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 677,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 677,
+              "start_byte": 674,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 674
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 925,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 925,
+              "start_byte": 922,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 922
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "17cabda24886c215a46b8076a7ac25cf6455ee61792c58654079a87d39f81060",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap214_formation_subtype",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": "MADE",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 565,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 565,
+          "start_byte": 524,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 524
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 708,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 708,
+          "start_byte": 649,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 649
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 706,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 706,
+              "start_byte": 703,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 703
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 954,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 954,
+              "start_byte": 951,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 951
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "5bb81edd7279114bd59bbd1ebcf847436b07105650f10007ed777709cb804fa0",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap214_metre",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 536,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 536,
+          "start_byte": 495,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 495
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1000.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 679,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 679,
+          "start_byte": 620,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 620
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 677,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 677,
+              "start_byte": 674,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 674
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 925,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 925,
+              "start_byte": 922,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 922
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "bc4e11f09a571ebdf13dc021e88e975beb9ea03bbd808485d342fc82d0c3124e",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": {
+      "decision": "accept",
+      "diagnostics": [],
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "child_representation_entity_id": 205,
+          "child_scale_to_millimetre": 1.0,
+          "child_unit_name": "millimetre",
+          "context_dependent_shape_representation_entity_id": 1002,
+          "entity_id": 1000,
+          "identifier": "O-1000",
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "name": "Reusable child in Root assembly",
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "parent_representation_entity_id": 105,
+          "parent_scale_to_millimetre": 1.0,
+          "parent_unit_name": "millimetre",
+          "product_definition_shape_entity_id": 1001,
+          "reference_designator": "C1",
+          "representation_relationship_entity_id": 1003,
+          "rotation_determinant": 1.0,
+          "source_placement_entity_id": 1005,
+          "source_span": {
+            "end_byte": 2111,
+            "end_column": 100,
+            "end_line": 41,
+            "end_offset": 2111,
+            "start_byte": 2012,
+            "start_column": 1,
+            "start_line": 41,
+            "start_offset": 2012
+          },
+          "target_placement_entity_id": 1006,
+          "transformation_entity_id": 1004
+        }
+      ],
+      "paths": [
+        {
+          "depth": 1,
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "leaf_product_definition_entity_id": 202,
+          "occurrence_entity_ids": [
+            1000
+          ],
+          "occurrence_indices": [
+            0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "C1"
+          ],
+          "root_product_definition_entity_id": 102,
+          "rotation_determinant": 1.0
+        }
+      ]
+    },
+    "control_id": "ap214_assembly",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          105
+        ],
+        "definition_context_id": 3,
+        "definition_id": 102,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 104,
+            "representation_id": 105,
+            "shape_id": 103
+          }
+        ],
+        "formation_id": 101,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "ROOT",
+        "name": "Root assembly",
+        "product_id": 100,
+        "selected_representation_id": 105,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 540,
+          "end_column": 47,
+          "end_line": 13,
+          "end_offset": 540,
+          "start_byte": 494,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 494
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          205
+        ],
+        "definition_context_id": 3,
+        "definition_id": 202,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 204,
+            "representation_id": 205,
+            "shape_id": 203
+          }
+        ],
+        "formation_id": 201,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "CHILD",
+        "name": "Reusable child",
+        "product_id": 200,
+        "selected_representation_id": 205,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 1349,
+          "end_column": 48,
+          "end_line": 28,
+          "end_offset": 1349,
+          "start_byte": 1302,
+          "start_column": 1,
+          "start_line": 28,
+          "start_offset": 1302
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset",
+    "relationships": [
+      {
+        "entity_id": 1003,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          205,
+          105
+        ],
+        "source_span": {
+          "end_byte": 2358,
+          "end_column": 143,
+          "end_line": 44,
+          "end_offset": 2358,
+          "start_byte": 2216,
+          "start_column": 1,
+          "start_line": 44,
+          "start_offset": 2216
+        }
+      }
+    ],
+    "representations": [
+      {
+        "context_id": 111,
+        "entity_id": 105,
+        "item_ids": [
+          106,
+          107,
+          1006
+        ],
+        "length_unit_id": 112,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          107
+        ],
+        "name": "Root assembly",
+        "source_span": {
+          "end_byte": 699,
+          "end_column": 67,
+          "end_line": 16,
+          "end_offset": 699,
+          "start_byte": 633,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 633
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 12,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 105,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 697,
+              "end_column": 65,
+              "end_line": 16,
+              "end_offset": 697,
+              "start_byte": 693,
+              "start_column": 61,
+              "start_line": 16,
+              "start_offset": 693
+            },
+            "target_entity_id": 111,
+            "target_node_index": 14,
+            "target_occurrence": "#111",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 17,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 111,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 970,
+              "end_column": 76,
+              "end_line": 22,
+              "end_offset": 970,
+              "start_byte": 966,
+              "start_column": 72,
+              "start_line": 22,
+              "start_offset": 966
+            },
+            "target_entity_id": 112,
+            "target_node_index": 15,
+            "target_occurrence": "#112",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 211,
+        "entity_id": 205,
+        "item_ids": [
+          206,
+          207,
+          1005
+        ],
+        "length_unit_id": 212,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          207
+        ],
+        "name": "Reusable child",
+        "source_span": {
+          "end_byte": 1509,
+          "end_column": 68,
+          "end_line": 31,
+          "end_offset": 1509,
+          "start_byte": 1442,
+          "start_column": 1,
+          "start_line": 31,
+          "start_offset": 1442
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 30,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 205,
+            "source_node_index": 23,
+            "source_span": {
+              "end_byte": 1507,
+              "end_column": 66,
+              "end_line": 31,
+              "end_offset": 1507,
+              "start_byte": 1503,
+              "start_column": 62,
+              "start_line": 31,
+              "start_offset": 1503
+            },
+            "target_entity_id": 211,
+            "target_node_index": 29,
+            "target_occurrence": "#211",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 35,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 211,
+            "source_node_index": 29,
+            "source_span": {
+              "end_byte": 1781,
+              "end_column": 76,
+              "end_line": 37,
+              "end_offset": 1781,
+              "start_byte": 1777,
+              "start_column": 72,
+              "start_line": 37,
+              "start_offset": 1777
+            },
+            "target_entity_id": 212,
+            "target_node_index": 30,
+            "target_occurrence": "#212",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "15c297b2837cc20dec44f39ec493e95183571fa456c893ca07d3b855b24fb0a7",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap242_product",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 566,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 566,
+          "start_byte": 525,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 525
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 709,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 709,
+          "start_byte": 650,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 650
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 707,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 707,
+              "start_byte": 704,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 704
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 955,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 955,
+              "start_byte": 952,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 952
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "60161041f3890d6dc46e5e11b0ab0bcca3f0c5c60c90f34a78f5b54b52a5fd21",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap242_formation_subtype",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": "MADE",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 595,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 595,
+          "start_byte": 554,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 554
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 738,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 738,
+          "start_byte": 679,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 679
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 736,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 736,
+              "start_byte": 733,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 733
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 984,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 984,
+              "start_byte": 981,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 981
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "8e63d78a213098a987b83325fe3200fbceb469f95b118e45e16dfb632d5eff96",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "ap242_metre",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          20
+        ],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": 20,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 566,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 566,
+          "start_byte": 525,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 525
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1000.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 709,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 709,
+          "start_byte": 650,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 650
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 707,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 707,
+              "start_byte": 704,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 704
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 955,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 955,
+              "start_byte": 952,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 952
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "97d96af47fa6e26d511bbdc0a53bf5771e71e82a713d93db4ab97c739131fcfc",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": {
+      "decision": "accept",
+      "diagnostics": [],
+      "occurrences": [
+        {
+          "child_product_definition_entity_id": 202,
+          "child_representation_entity_id": 205,
+          "child_scale_to_millimetre": 1.0,
+          "child_unit_name": "millimetre",
+          "context_dependent_shape_representation_entity_id": 1002,
+          "entity_id": 1000,
+          "identifier": "O-1000",
+          "local_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "local_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "name": "Reusable child in Root assembly",
+          "occurrence_index": 0,
+          "parent_product_definition_entity_id": 102,
+          "parent_representation_entity_id": 105,
+          "parent_scale_to_millimetre": 1.0,
+          "parent_unit_name": "millimetre",
+          "product_definition_shape_entity_id": 1001,
+          "reference_designator": "C1",
+          "representation_relationship_entity_id": 1003,
+          "rotation_determinant": 1.0,
+          "source_placement_entity_id": 1005,
+          "source_span": {
+            "end_byte": 2141,
+            "end_column": 100,
+            "end_line": 41,
+            "end_offset": 2141,
+            "start_byte": 2042,
+            "start_column": 1,
+            "start_line": 41,
+            "start_offset": 2042
+          },
+          "target_placement_entity_id": 1006,
+          "transformation_entity_id": 1004
+        }
+      ],
+      "paths": [
+        {
+          "depth": 1,
+          "global_matrix": [
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            1.0,
+            0.0,
+            20.0,
+            0.0,
+            0.0,
+            1.0,
+            30.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "global_translation_mm": [
+            10.0,
+            20.0,
+            30.0
+          ],
+          "leaf_product_definition_entity_id": 202,
+          "occurrence_entity_ids": [
+            1000
+          ],
+          "occurrence_indices": [
+            0
+          ],
+          "path_index": 0,
+          "reference_designators": [
+            "C1"
+          ],
+          "root_product_definition_entity_id": 102,
+          "rotation_determinant": 1.0
+        }
+      ]
+    },
+    "control_id": "ap242_assembly",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          105
+        ],
+        "definition_context_id": 3,
+        "definition_id": 102,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 104,
+            "representation_id": 105,
+            "shape_id": 103
+          }
+        ],
+        "formation_id": 101,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "ROOT",
+        "name": "Root assembly",
+        "product_id": 100,
+        "selected_representation_id": 105,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 570,
+          "end_column": 47,
+          "end_line": 13,
+          "end_offset": 570,
+          "start_byte": 524,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 524
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          205
+        ],
+        "definition_context_id": 3,
+        "definition_id": 202,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 204,
+            "representation_id": 205,
+            "shape_id": 203
+          }
+        ],
+        "formation_id": 201,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "CHILD",
+        "name": "Reusable child",
+        "product_id": 200,
+        "selected_representation_id": 205,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 1379,
+          "end_column": 48,
+          "end_line": 28,
+          "end_offset": 1379,
+          "start_byte": 1332,
+          "start_column": 1,
+          "start_line": 28,
+          "start_offset": 1332
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [
+      {
+        "entity_id": 1003,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          205,
+          105
+        ],
+        "source_span": {
+          "end_byte": 2388,
+          "end_column": 143,
+          "end_line": 44,
+          "end_offset": 2388,
+          "start_byte": 2246,
+          "start_column": 1,
+          "start_line": 44,
+          "start_offset": 2246
+        }
+      }
+    ],
+    "representations": [
+      {
+        "context_id": 111,
+        "entity_id": 105,
+        "item_ids": [
+          106,
+          107,
+          1006
+        ],
+        "length_unit_id": 112,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          107
+        ],
+        "name": "Root assembly",
+        "source_span": {
+          "end_byte": 729,
+          "end_column": 67,
+          "end_line": 16,
+          "end_offset": 729,
+          "start_byte": 663,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 663
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 12,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 105,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 727,
+              "end_column": 65,
+              "end_line": 16,
+              "end_offset": 727,
+              "start_byte": 723,
+              "start_column": 61,
+              "start_line": 16,
+              "start_offset": 723
+            },
+            "target_entity_id": 111,
+            "target_node_index": 14,
+            "target_occurrence": "#111",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 17,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 111,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 1000,
+              "end_column": 76,
+              "end_line": 22,
+              "end_offset": 1000,
+              "start_byte": 996,
+              "start_column": 72,
+              "start_line": 22,
+              "start_offset": 996
+            },
+            "target_entity_id": 112,
+            "target_node_index": 15,
+            "target_occurrence": "#112",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 211,
+        "entity_id": 205,
+        "item_ids": [
+          206,
+          207,
+          1005
+        ],
+        "length_unit_id": 212,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          207
+        ],
+        "name": "Reusable child",
+        "source_span": {
+          "end_byte": 1539,
+          "end_column": 68,
+          "end_line": 31,
+          "end_offset": 1539,
+          "start_byte": 1472,
+          "start_column": 1,
+          "start_line": 31,
+          "start_offset": 1472
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 30,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 205,
+            "source_node_index": 23,
+            "source_span": {
+              "end_byte": 1537,
+              "end_column": 66,
+              "end_line": 31,
+              "end_offset": 1537,
+              "start_byte": 1533,
+              "start_column": 62,
+              "start_line": 31,
+              "start_offset": 1533
+            },
+            "target_entity_id": 211,
+            "target_node_index": 29,
+            "target_occurrence": "#211",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 35,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 211,
+            "source_node_index": 29,
+            "source_span": {
+              "end_byte": 1811,
+              "end_column": 76,
+              "end_line": 37,
+              "end_offset": 1811,
+              "start_byte": 1807,
+              "start_column": 72,
+              "start_line": 37,
+              "start_offset": 1807
+            },
+            "target_entity_id": 212,
+            "target_node_index": 30,
+            "target_occurrence": "#212",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "0eaf3ed3b8ced5068347e8f669dec859e2a53a477235edef37b2d411486a21dd",
+    "status": "resolved_subset"
+  },
+  {
+    "assembly": null,
+    "control_id": "unknown_schema",
+    "diagnostics": [
+      {
+        "code": "unsupported_application_schema",
+        "detail": "",
+        "entity_id": null,
+        "source_span": null
+      }
+    ],
+    "products": [],
+    "profile": null,
+    "relationships": [],
+    "representations": [],
+    "schema": "AUTOMOTIVE_DESIGN_FAKE",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "982053415abea1d6c6bfbadd9735282c12e934c9b20d743bcd8c8ea6806c01c7",
+    "status": "unsupported"
+  },
+  {
+    "assembly": null,
+    "control_id": "wrong_formation",
+    "diagnostics": [
+      {
+        "code": "unexpected_target_type",
+        "detail": "",
+        "entity_id": 6,
+        "source_span": {
+          "end_byte": 566,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 566,
+          "start_byte": 525,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 525
+        }
+      },
+      {
+        "code": "product_definition_path_not_found",
+        "detail": "",
+        "entity_id": null,
+        "source_span": null
+      }
+    ],
+    "products": [],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 40,
+        "entity_id": 20,
+        "item_ids": [
+          30,
+          31
+        ],
+        "length_unit_id": 41,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          31
+        ],
+        "name": "controlled shape",
+        "source_span": {
+          "end_byte": 709,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 709,
+          "start_byte": 650,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 650
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 11,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 20,
+            "source_node_index": 8,
+            "source_span": {
+              "end_byte": 707,
+              "end_column": 58,
+              "end_line": 16,
+              "end_offset": 707,
+              "start_byte": 704,
+              "start_column": 55,
+              "start_line": 16,
+              "start_offset": 704
+            },
+            "target_entity_id": 40,
+            "target_node_index": 14,
+            "target_occurrence": "#40",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 16,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 1,
+            "reference_kind": "entity",
+            "source_entity_id": 40,
+            "source_node_index": 14,
+            "source_span": {
+              "end_byte": 955,
+              "end_column": 74,
+              "end_line": 22,
+              "end_offset": 955,
+              "start_byte": 952,
+              "start_column": 71,
+              "start_line": 22,
+              "start_offset": 952
+            },
+            "target_entity_id": 41,
+            "target_node_index": 15,
+            "target_occurrence": "#41",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "6f70283c43d3dca81e7266c94212432f72017c6887558510c499950cd4591710",
+    "status": "partial"
+  },
+  {
+    "assembly": null,
+    "control_id": "missing_units",
+    "diagnostics": [
+      {
+        "code": "global_units_not_available",
+        "detail": "",
+        "entity_id": 20,
+        "source_span": {
+          "end_byte": 709,
+          "end_column": 60,
+          "end_line": 16,
+          "end_offset": 709,
+          "start_byte": 650,
+          "start_column": 1,
+          "start_line": 16,
+          "start_offset": 650
+        }
+      }
+    ],
+    "products": [
+      {
+        "candidate_ids": [],
+        "definition_context_id": 5,
+        "definition_id": 6,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 8,
+            "representation_id": 20,
+            "shape_id": 7
+          }
+        ],
+        "formation_id": 4,
+        "formation_source": null,
+        "formation_type": "PRODUCT_DEFINITION_FORMATION",
+        "identifier": "P-001",
+        "name": "Controlled block",
+        "product_id": 3,
+        "selected_representation_id": null,
+        "selection": "unresolved",
+        "source_span": {
+          "end_byte": 566,
+          "end_column": 42,
+          "end_line": 13,
+          "end_offset": 566,
+          "start_byte": 525,
+          "start_column": 1,
+          "start_line": 13,
+          "start_offset": 525
+        },
+        "unqualified_candidate_ids": [
+          20
+        ]
+      }
+    ],
+    "profile": "AP242 MIM product/shape/occurrence subset",
+    "relationships": [],
+    "representations": [],
+    "schema": "AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "2b399627be0580715a013c119b8f61d42cc2a07f28c275d39df9b6b23468e01d",
+    "status": "partial"
+  },
+  {
+    "assembly": null,
+    "control_id": "ublox_sam_ap203",
+    "diagnostics": [
+      {
+        "code": "assembly_placement_outside_profile",
+        "detail": "Legacy AP203 occurrences are retained as syntax; placement is deferred.",
+        "entity_id": null,
+        "source_span": null
+      }
+    ],
+    "products": [
+      {
+        "candidate_ids": [
+          675,
+          2178
+        ],
+        "definition_context_id": 2983,
+        "definition_id": 260,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 3462,
+            "representation_id": 2178,
+            "shape_id": 347
+          }
+        ],
+        "formation_id": 1355,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM PCB",
+        "name": "SAM PCB",
+        "product_id": 4113,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 22643,
+          "end_column": 60,
+          "end_line": 342,
+          "end_offset": 22643,
+          "start_byte": 22584,
+          "start_column": 1,
+          "start_line": 342,
+          "start_offset": 22584
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          408,
+          3427
+        ],
+        "definition_context_id": 575,
+        "definition_id": 801,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 66,
+            "representation_id": 408,
+            "shape_id": 2232
+          }
+        ],
+        "formation_id": 1900,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM ANT",
+        "name": "SAM ANT",
+        "product_id": 2477,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 66572,
+          "end_column": 59,
+          "end_line": 999,
+          "end_offset": 66572,
+          "start_byte": 66514,
+          "start_column": 1,
+          "start_line": 999,
+          "start_offset": 66514
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          2945
+        ],
+        "definition_context_id": 1666,
+        "definition_id": 1301,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 1111,
+            "representation_id": 2945,
+            "shape_id": 4084
+          }
+        ],
+        "formation_id": 2430,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM Assembled_203",
+        "name": "SAM Assembled_203",
+        "product_id": 1091,
+        "selected_representation_id": 2945,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 107344,
+          "end_column": 61,
+          "end_line": 1619,
+          "end_offset": 107344,
+          "start_byte": 107284,
+          "start_column": 1,
+          "start_line": 1619,
+          "start_offset": 107284
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          1391,
+          2223
+        ],
+        "definition_context_id": 1126,
+        "definition_id": 4003,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 2605,
+            "representation_id": 1391,
+            "shape_id": 2796
+          }
+        ],
+        "formation_id": 852,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "Sam cavity",
+        "name": "Sam cavity",
+        "product_id": 1781,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 336126,
+          "end_column": 60,
+          "end_line": 4975,
+          "end_offset": 336126,
+          "start_byte": 336067,
+          "start_column": 1,
+          "start_line": 4975,
+          "start_offset": 336067
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP203 legacy product/shape subset",
+    "relationships": [
+      {
+        "entity_id": 22,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          2945,
+          408
+        ],
+        "source_span": {
+          "end_byte": 1996,
+          "end_column": 162,
+          "end_line": 37,
+          "end_offset": 1996,
+          "start_byte": 1835,
+          "start_column": 1,
+          "start_line": 37,
+          "start_offset": 1835
+        }
+      },
+      {
+        "entity_id": 1453,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          2945,
+          2178
+        ],
+        "source_span": {
+          "end_byte": 119975,
+          "end_column": 164,
+          "end_line": 1801,
+          "end_offset": 119975,
+          "start_byte": 119812,
+          "start_column": 1,
+          "start_line": 1801,
+          "start_offset": 119812
+        }
+      },
+      {
+        "entity_id": 1665,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          1391,
+          2223
+        ],
+        "source_span": {
+          "end_byte": 138370,
+          "end_column": 80,
+          "end_line": 2086,
+          "end_offset": 138370,
+          "start_byte": 138291,
+          "start_column": 1,
+          "start_line": 2086,
+          "start_offset": 138291
+        }
+      },
+      {
+        "entity_id": 2029,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          408,
+          3427
+        ],
+        "source_span": {
+          "end_byte": 168562,
+          "end_column": 79,
+          "end_line": 2531,
+          "end_offset": 168562,
+          "start_byte": 168484,
+          "start_column": 1,
+          "start_line": 2531,
+          "start_offset": 168484
+        }
+      },
+      {
+        "entity_id": 2444,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          2945,
+          1391
+        ],
+        "source_span": {
+          "end_byte": 205256,
+          "end_column": 165,
+          "end_line": 3053,
+          "end_offset": 205256,
+          "start_byte": 205092,
+          "start_column": 1,
+          "start_line": 3053,
+          "start_offset": 205092
+        }
+      },
+      {
+        "entity_id": 3969,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          2178,
+          675
+        ],
+        "source_span": {
+          "end_byte": 333434,
+          "end_column": 79,
+          "end_line": 4936,
+          "end_offset": 333434,
+          "start_byte": 333356,
+          "start_column": 1,
+          "start_line": 4936,
+          "start_offset": 333356
+        }
+      }
+    ],
+    "representations": [
+      {
+        "context_id": 2507,
+        "entity_id": 408,
+        "item_ids": [
+          2057
+        ],
+        "length_unit_id": 2974,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM ANT",
+        "source_span": {
+          "end_byte": 34238,
+          "end_column": 62,
+          "end_line": 520,
+          "end_offset": 34238,
+          "start_byte": 34177,
+          "start_column": 1,
+          "start_line": 520,
+          "start_offset": 34177
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 482,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 408,
+            "source_node_index": 407,
+            "source_span": {
+              "end_byte": 34234,
+              "end_column": 58,
+              "end_line": 520,
+              "end_offset": 34234,
+              "start_byte": 34229,
+              "start_column": 53,
+              "start_line": 520,
+              "start_offset": 34229
+            },
+            "target_entity_id": 2507,
+            "target_node_index": 2506,
+            "target_occurrence": "#2507",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 2930,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2507,
+            "source_node_index": 2506,
+            "source_span": {
+              "end_byte": 210657,
+              "end_column": 137,
+              "end_line": 3131,
+              "end_offset": 210657,
+              "start_byte": 210652,
+              "start_column": 132,
+              "start_line": 3131,
+              "start_offset": 210652
+            },
+            "target_entity_id": 2974,
+            "target_node_index": 2973,
+            "target_occurrence": "#2974",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 2279,
+        "entity_id": 675,
+        "item_ids": [
+          3350,
+          2057
+        ],
+        "length_unit_id": 2314,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          3350
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 55695,
+          "end_column": 76,
+          "end_line": 843,
+          "end_offset": 55695,
+          "start_byte": 55620,
+          "start_column": 1,
+          "start_line": 843,
+          "start_offset": 55620
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 836,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 675,
+            "source_node_index": 674,
+            "source_span": {
+              "end_byte": 55691,
+              "end_column": 72,
+              "end_line": 843,
+              "end_offset": 55691,
+              "start_byte": 55686,
+              "start_column": 67,
+              "start_line": 843,
+              "start_offset": 55686
+            },
+            "target_entity_id": 2279,
+            "target_node_index": 2278,
+            "target_occurrence": "#2279",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 2656,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2279,
+            "source_node_index": 2278,
+            "source_span": {
+              "end_byte": 190188,
+              "end_column": 137,
+              "end_line": 2842,
+              "end_offset": 190188,
+              "start_byte": 190183,
+              "start_column": 132,
+              "start_line": 2842,
+              "start_offset": 190183
+            },
+            "target_entity_id": 2314,
+            "target_node_index": 2313,
+            "target_occurrence": "#2314",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 955,
+        "entity_id": 1391,
+        "item_ids": [
+          2057
+        ],
+        "length_unit_id": 3280,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "Sam cavity",
+        "source_span": {
+          "end_byte": 114486,
+          "end_column": 65,
+          "end_line": 1724,
+          "end_offset": 114486,
+          "start_byte": 114422,
+          "start_column": 1,
+          "start_line": 1724,
+          "start_offset": 114422
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 1597,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 1391,
+            "source_node_index": 1390,
+            "source_span": {
+              "end_byte": 114482,
+              "end_column": 61,
+              "end_line": 1724,
+              "end_offset": 114482,
+              "start_byte": 114478,
+              "start_column": 57,
+              "start_line": 1724,
+              "start_offset": 114478
+            },
+            "target_entity_id": 955,
+            "target_node_index": 954,
+            "target_occurrence": "#955",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 1124,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 955,
+            "source_node_index": 954,
+            "source_span": {
+              "end_byte": 79151,
+              "end_column": 136,
+              "end_line": 1193,
+              "end_offset": 79151,
+              "start_byte": 79146,
+              "start_column": 131,
+              "start_line": 1193,
+              "start_offset": 79146
+            },
+            "target_entity_id": 3280,
+            "target_node_index": 3279,
+            "target_occurrence": "#3280",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 2279,
+        "entity_id": 2178,
+        "item_ids": [
+          2057
+        ],
+        "length_unit_id": 2314,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM PCB",
+        "source_span": {
+          "end_byte": 181418,
+          "end_column": 63,
+          "end_line": 2715,
+          "end_offset": 181418,
+          "start_byte": 181356,
+          "start_column": 1,
+          "start_line": 2715,
+          "start_offset": 181356
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 2507,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 2178,
+            "source_node_index": 2177,
+            "source_span": {
+              "end_byte": 181414,
+              "end_column": 59,
+              "end_line": 2715,
+              "end_offset": 181414,
+              "start_byte": 181409,
+              "start_column": 54,
+              "start_line": 2715,
+              "start_offset": 181409
+            },
+            "target_entity_id": 2279,
+            "target_node_index": 2278,
+            "target_occurrence": "#2279",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 2656,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2279,
+            "source_node_index": 2278,
+            "source_span": {
+              "end_byte": 190188,
+              "end_column": 137,
+              "end_line": 2842,
+              "end_offset": 190188,
+              "start_byte": 190183,
+              "start_column": 132,
+              "start_line": 2842,
+              "start_offset": 190183
+            },
+            "target_entity_id": 2314,
+            "target_node_index": 2313,
+            "target_occurrence": "#2314",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 955,
+        "entity_id": 2223,
+        "item_ids": [
+          4116,
+          2057
+        ],
+        "length_unit_id": 3280,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          4116
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 185697,
+          "end_column": 76,
+          "end_line": 2776,
+          "end_offset": 185697,
+          "start_byte": 185622,
+          "start_column": 1,
+          "start_line": 2776,
+          "start_offset": 185622
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 2577,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 2223,
+            "source_node_index": 2222,
+            "source_span": {
+              "end_byte": 185693,
+              "end_column": 72,
+              "end_line": 2776,
+              "end_offset": 185693,
+              "start_byte": 185689,
+              "start_column": 68,
+              "start_line": 2776,
+              "start_offset": 185689
+            },
+            "target_entity_id": 955,
+            "target_node_index": 954,
+            "target_occurrence": "#955",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 1124,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 955,
+            "source_node_index": 954,
+            "source_span": {
+              "end_byte": 79151,
+              "end_column": 136,
+              "end_line": 1193,
+              "end_offset": 79151,
+              "start_byte": 79146,
+              "start_column": 131,
+              "start_line": 1193,
+              "start_offset": 79146
+            },
+            "target_entity_id": 3280,
+            "target_node_index": 3279,
+            "target_occurrence": "#3280",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 3808,
+        "entity_id": 2945,
+        "item_ids": [
+          4246,
+          3159,
+          3369,
+          3580
+        ],
+        "length_unit_id": 1338,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM Assembled_203",
+        "source_span": {
+          "end_byte": 247266,
+          "end_column": 94,
+          "end_line": 3665,
+          "end_offset": 247266,
+          "start_byte": 247173,
+          "start_column": 1,
+          "start_line": 3665,
+          "start_offset": 247173
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 3454,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 2945,
+            "source_node_index": 2944,
+            "source_span": {
+              "end_byte": 247262,
+              "end_column": 90,
+              "end_line": 3665,
+              "end_offset": 247262,
+              "start_byte": 247257,
+              "start_column": 85,
+              "start_line": 3665,
+              "start_offset": 247257
+            },
+            "target_entity_id": 3808,
+            "target_node_index": 3807,
+            "target_occurrence": "#3808",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 4418,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 3808,
+            "source_node_index": 3807,
+            "source_span": {
+              "end_byte": 318530,
+              "end_column": 137,
+              "end_line": 4713,
+              "end_offset": 318530,
+              "start_byte": 318525,
+              "start_column": 132,
+              "start_line": 4713,
+              "start_offset": 318525
+            },
+            "target_entity_id": 1338,
+            "target_node_index": 1337,
+            "target_occurrence": "#1338",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 2507,
+        "entity_id": 3427,
+        "item_ids": [
+          619,
+          2057
+        ],
+        "length_unit_id": 2974,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          619
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 287517,
+          "end_column": 76,
+          "end_line": 4247,
+          "end_offset": 287517,
+          "start_byte": 287442,
+          "start_column": 1,
+          "start_line": 4247,
+          "start_offset": 287442
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 3980,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 3427,
+            "source_node_index": 3426,
+            "source_span": {
+              "end_byte": 287513,
+              "end_column": 72,
+              "end_line": 4247,
+              "end_offset": 287513,
+              "start_byte": 287508,
+              "start_column": 67,
+              "start_line": 4247,
+              "start_offset": 287508
+            },
+            "target_entity_id": 2507,
+            "target_node_index": 2506,
+            "target_occurrence": "#2507",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 2930,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2507,
+            "source_node_index": 2506,
+            "source_span": {
+              "end_byte": 210657,
+              "end_column": 137,
+              "end_line": 3131,
+              "end_offset": 210657,
+              "start_byte": 210652,
+              "start_column": 132,
+              "start_line": 3131,
+              "start_offset": 210652
+            },
+            "target_entity_id": 2974,
+            "target_node_index": 2973,
+            "target_occurrence": "#2974",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "CONFIG_CONTROL_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+    "status": "partial"
+  },
+  {
+    "assembly": {
+      "decision": "reject",
+      "diagnostics": [
+        {
+          "detail": "the controlled semantic attribute requires an encoded string",
+          "entity_id": 4935,
+          "reason_code": "semantic_string_required",
+          "role": "assembly_occurrence.reference_designator",
+          "severity": "invalid",
+          "source_line": 5983
+        },
+        {
+          "detail": "the controlled semantic attribute requires an encoded string",
+          "entity_id": 4936,
+          "reason_code": "semantic_string_required",
+          "role": "assembly_occurrence.reference_designator",
+          "severity": "invalid",
+          "source_line": 5984
+        },
+        {
+          "detail": "the controlled semantic attribute requires an encoded string",
+          "entity_id": 4937,
+          "reason_code": "semantic_string_required",
+          "role": "assembly_occurrence.reference_designator",
+          "severity": "invalid",
+          "source_line": 5985
+        }
+      ],
+      "occurrences": [],
+      "paths": []
+    },
+    "control_id": "ublox_sam_ap214",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          3143
+        ],
+        "definition_context_id": 1654,
+        "definition_id": 76,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 2921,
+            "representation_id": 3143,
+            "shape_id": 4396
+          }
+        ],
+        "formation_id": 356,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM Assembled_AP214",
+        "name": "SAM Assembled_AP214",
+        "product_id": 3126,
+        "selected_representation_id": 3143,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 6376,
+          "end_column": 58,
+          "end_line": 101,
+          "end_offset": 6376,
+          "start_byte": 6319,
+          "start_column": 1,
+          "start_line": 101,
+          "start_offset": 6319
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          209,
+          4534
+        ],
+        "definition_context_id": 339,
+        "definition_id": 4004,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 1937,
+            "representation_id": 209,
+            "shape_id": 2302
+          }
+        ],
+        "formation_id": 872,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM ANT",
+        "name": "SAM ANT",
+        "product_id": 2757,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 336875,
+          "end_column": 59,
+          "end_line": 4869,
+          "end_offset": 336875,
+          "start_byte": 336817,
+          "start_column": 1,
+          "start_line": 4869,
+          "start_offset": 336817
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          2290,
+          2298
+        ],
+        "definition_context_id": 3136,
+        "definition_id": 4263,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 894,
+            "representation_id": 2290,
+            "shape_id": 83
+          }
+        ],
+        "formation_id": 1403,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "SAM PCB",
+        "name": "SAM PCB",
+        "product_id": 2004,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 358772,
+          "end_column": 61,
+          "end_line": 5169,
+          "end_offset": 358772,
+          "start_byte": 358712,
+          "start_column": 1,
+          "start_line": 5169,
+          "start_offset": 358712
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          1377,
+          4802
+        ],
+        "definition_context_id": 993,
+        "definition_id": 4523,
+        "description": "",
+        "direct_paths": [
+          {
+            "association_id": 4797,
+            "representation_id": 1377,
+            "shape_id": 2904
+          }
+        ],
+        "formation_id": 1922,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "Sam cavity",
+        "name": "Sam cavity",
+        "product_id": 37,
+        "selected_representation_id": null,
+        "selection": "ambiguous",
+        "source_span": {
+          "end_byte": 380849,
+          "end_column": 60,
+          "end_line": 5474,
+          "end_offset": 380849,
+          "start_byte": 380790,
+          "start_column": 1,
+          "start_line": 5474,
+          "start_offset": 380790
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset",
+    "relationships": [
+      {
+        "entity_id": 1151,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          1377,
+          4802
+        ],
+        "source_span": {
+          "end_byte": 96092,
+          "end_column": 80,
+          "end_line": 1398,
+          "end_offset": 96092,
+          "start_byte": 96013,
+          "start_column": 1,
+          "start_line": 1398,
+          "start_offset": 96013
+        }
+      },
+      {
+        "entity_id": 2178,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          209,
+          4534
+        ],
+        "source_span": {
+          "end_byte": 184265,
+          "end_column": 79,
+          "end_line": 2669,
+          "end_offset": 184265,
+          "start_byte": 184187,
+          "start_column": 1,
+          "start_line": 2669,
+          "start_offset": 184187
+        }
+      },
+      {
+        "entity_id": 3429,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          3143,
+          1377
+        ],
+        "source_span": {
+          "end_byte": 289037,
+          "end_column": 165,
+          "end_line": 4202,
+          "end_offset": 289037,
+          "start_byte": 288873,
+          "start_column": 1,
+          "start_line": 4202,
+          "start_offset": 288873
+        }
+      },
+      {
+        "entity_id": 3817,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          3143,
+          2290
+        ],
+        "source_span": {
+          "end_byte": 321657,
+          "end_column": 165,
+          "end_line": 4652,
+          "end_offset": 321657,
+          "start_byte": 321493,
+          "start_column": 1,
+          "start_line": 4652,
+          "start_offset": 321493
+        }
+      },
+      {
+        "entity_id": 4034,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": false,
+        "representation_ids": [
+          2290,
+          2298
+        ],
+        "source_span": {
+          "end_byte": 339309,
+          "end_column": 80,
+          "end_line": 4899,
+          "end_offset": 339309,
+          "start_byte": 339230,
+          "start_column": 1,
+          "start_line": 4899,
+          "start_offset": 339230
+        }
+      },
+      {
+        "entity_id": 4188,
+        "geometric_equivalence": "not_inferred",
+        "has_transform": true,
+        "representation_ids": [
+          3143,
+          209
+        ],
+        "source_span": {
+          "end_byte": 352663,
+          "end_column": 163,
+          "end_line": 5079,
+          "end_offset": 352663,
+          "start_byte": 352501,
+          "start_column": 1,
+          "start_line": 5079,
+          "start_offset": 352501
+        }
+      }
+    ],
+    "representations": [
+      {
+        "context_id": 708,
+        "entity_id": 209,
+        "item_ids": [
+          3103
+        ],
+        "length_unit_id": 3289,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM ANT",
+        "source_span": {
+          "end_byte": 17270,
+          "end_column": 61,
+          "end_line": 264,
+          "end_offset": 17270,
+          "start_byte": 17210,
+          "start_column": 1,
+          "start_line": 264,
+          "start_offset": 17210
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 221,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 209,
+            "source_node_index": 208,
+            "source_span": {
+              "end_byte": 17266,
+              "end_column": 57,
+              "end_line": 264,
+              "end_offset": 17266,
+              "start_byte": 17262,
+              "start_column": 53,
+              "start_line": 264,
+              "start_offset": 17262
+            },
+            "target_entity_id": 708,
+            "target_node_index": 707,
+            "target_occurrence": "#708",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 786,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 708,
+            "source_node_index": 707,
+            "source_span": {
+              "end_byte": 59470,
+              "end_column": 135,
+              "end_line": 880,
+              "end_offset": 59470,
+              "start_byte": 59465,
+              "start_column": 130,
+              "start_line": 880,
+              "start_offset": 59465
+            },
+            "target_entity_id": 3289,
+            "target_node_index": 3288,
+            "target_occurrence": "#3289",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 2854,
+        "entity_id": 1377,
+        "item_ids": [
+          3103
+        ],
+        "length_unit_id": 584,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "Sam cavity",
+        "source_span": {
+          "end_byte": 115157,
+          "end_column": 66,
+          "end_line": 1675,
+          "end_offset": 115157,
+          "start_byte": 115092,
+          "start_column": 1,
+          "start_line": 1675,
+          "start_offset": 115092
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 1494,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 1377,
+            "source_node_index": 1376,
+            "source_span": {
+              "end_byte": 115153,
+              "end_column": 62,
+              "end_line": 1675,
+              "end_offset": 115153,
+              "start_byte": 115148,
+              "start_column": 57,
+              "start_line": 1675,
+              "start_offset": 115148
+            },
+            "target_entity_id": 2854,
+            "target_node_index": 2853,
+            "target_occurrence": "#2854",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 3250,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2854,
+            "source_node_index": 2853,
+            "source_span": {
+              "end_byte": 240814,
+              "end_column": 135,
+              "end_line": 3480,
+              "end_offset": 240814,
+              "start_byte": 240810,
+              "start_column": 131,
+              "start_line": 3480,
+              "start_offset": 240810
+            },
+            "target_entity_id": 584,
+            "target_node_index": 583,
+            "target_occurrence": "#584",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 4349,
+        "entity_id": 2290,
+        "item_ids": [
+          3103
+        ],
+        "length_unit_id": 1000,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM PCB",
+        "source_span": {
+          "end_byte": 193648,
+          "end_column": 63,
+          "end_line": 2806,
+          "end_offset": 193648,
+          "start_byte": 193586,
+          "start_column": 1,
+          "start_line": 2806,
+          "start_offset": 193586
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 2606,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 2290,
+            "source_node_index": 2289,
+            "source_span": {
+              "end_byte": 193644,
+              "end_column": 59,
+              "end_line": 2806,
+              "end_offset": 193644,
+              "start_byte": 193639,
+              "start_column": 54,
+              "start_line": 2806,
+              "start_offset": 193639
+            },
+            "target_entity_id": 4349,
+            "target_node_index": 4348,
+            "target_occurrence": "#4349",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 4925,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 4349,
+            "source_node_index": 4348,
+            "source_span": {
+              "end_byte": 366152,
+              "end_column": 137,
+              "end_line": 5270,
+              "end_offset": 366152,
+              "start_byte": 366147,
+              "start_column": 132,
+              "start_line": 5270,
+              "start_offset": 366147
+            },
+            "target_entity_id": 1000,
+            "target_node_index": 999,
+            "target_occurrence": "#1000",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 4349,
+        "entity_id": 2298,
+        "item_ids": [
+          2198,
+          3103
+        ],
+        "length_unit_id": 1000,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          2198
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 194211,
+          "end_column": 77,
+          "end_line": 2814,
+          "end_offset": 194211,
+          "start_byte": 194135,
+          "start_column": 1,
+          "start_line": 2814,
+          "start_offset": 194135
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 2617,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 2298,
+            "source_node_index": 2297,
+            "source_span": {
+              "end_byte": 194207,
+              "end_column": 73,
+              "end_line": 2814,
+              "end_offset": 194207,
+              "start_byte": 194202,
+              "start_column": 68,
+              "start_line": 2814,
+              "start_offset": 194202
+            },
+            "target_entity_id": 4349,
+            "target_node_index": 4348,
+            "target_occurrence": "#4349",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 4925,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 4349,
+            "source_node_index": 4348,
+            "source_span": {
+              "end_byte": 366152,
+              "end_column": 137,
+              "end_line": 5270,
+              "end_offset": 366152,
+              "start_byte": 366147,
+              "start_column": 132,
+              "start_line": 5270,
+              "start_offset": 366147
+            },
+            "target_entity_id": 1000,
+            "target_node_index": 999,
+            "target_occurrence": "#1000",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 3250,
+        "entity_id": 3143,
+        "item_ids": [
+          3767,
+          2509,
+          2772,
+          3011
+        ],
+        "length_unit_id": 745,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [],
+        "name": "SAM Assembled_AP214",
+        "source_span": {
+          "end_byte": 265124,
+          "end_column": 96,
+          "end_line": 3846,
+          "end_offset": 265124,
+          "start_byte": 265029,
+          "start_column": 1,
+          "start_line": 3846,
+          "start_offset": 265029
+        },
+        "type": "SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 3588,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 3143,
+            "source_node_index": 3142,
+            "source_span": {
+              "end_byte": 265120,
+              "end_column": 92,
+              "end_line": 3846,
+              "end_offset": 265120,
+              "start_byte": 265115,
+              "start_column": 87,
+              "start_line": 3846,
+              "start_offset": 265115
+            },
+            "target_entity_id": 3250,
+            "target_node_index": 3249,
+            "target_occurrence": "#3250",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 3705,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 3250,
+            "source_node_index": 3249,
+            "source_span": {
+              "end_byte": 273461,
+              "end_column": 136,
+              "end_line": 3968,
+              "end_offset": 273461,
+              "start_byte": 273457,
+              "start_column": 132,
+              "start_line": 3968,
+              "start_offset": 273457
+            },
+            "target_entity_id": 745,
+            "target_node_index": 744,
+            "target_occurrence": "#745",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 708,
+        "entity_id": 4534,
+        "item_ids": [
+          3048,
+          3103
+        ],
+        "length_unit_id": 3289,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          3048
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 381987,
+          "end_column": 76,
+          "end_line": 5490,
+          "end_offset": 381987,
+          "start_byte": 381912,
+          "start_column": 1,
+          "start_line": 5490,
+          "start_offset": 381912
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 5131,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 4534,
+            "source_node_index": 4533,
+            "source_span": {
+              "end_byte": 381983,
+              "end_column": 72,
+              "end_line": 5490,
+              "end_offset": 381983,
+              "start_byte": 381979,
+              "start_column": 68,
+              "start_line": 5490,
+              "start_offset": 381979
+            },
+            "target_entity_id": 708,
+            "target_node_index": 707,
+            "target_occurrence": "#708",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 786,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 708,
+            "source_node_index": 707,
+            "source_span": {
+              "end_byte": 59470,
+              "end_column": 135,
+              "end_line": 880,
+              "end_offset": 59470,
+              "start_byte": 59465,
+              "start_column": 130,
+              "start_line": 880,
+              "start_offset": 59465
+            },
+            "target_entity_id": 3289,
+            "target_node_index": 3288,
+            "target_occurrence": "#3289",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 2854,
+        "entity_id": 4802,
+        "item_ids": [
+          4787,
+          3103
+        ],
+        "length_unit_id": 584,
+        "mm_per_source_unit": 1.0,
+        "model_ids": [
+          4787
+        ],
+        "name": "",
+        "source_span": {
+          "end_byte": 404253,
+          "end_column": 77,
+          "end_line": 5809,
+          "end_offset": 404253,
+          "start_byte": 404177,
+          "start_column": 1,
+          "start_line": 5809,
+          "start_offset": 404177
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "si",
+        "unit_source_edges": [
+          {
+            "edge_index": 5502,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 4802,
+            "source_node_index": 4801,
+            "source_span": {
+              "end_byte": 404249,
+              "end_column": 73,
+              "end_line": 5809,
+              "end_offset": 404249,
+              "start_byte": 404244,
+              "start_column": 68,
+              "start_line": 5809,
+              "start_offset": 404244
+            },
+            "target_entity_id": 2854,
+            "target_node_index": 2853,
+            "target_occurrence": "#2854",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 3250,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 2854,
+            "source_node_index": 2853,
+            "source_span": {
+              "end_byte": 240814,
+              "end_column": 135,
+              "end_line": 3480,
+              "end_offset": 240814,
+              "start_byte": 240810,
+              "start_column": 131,
+              "start_line": 3480,
+              "start_offset": 240810
+            },
+            "target_entity_id": 584,
+            "target_node_index": 583,
+            "target_occurrence": "#584",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+    "status": "partial"
+  },
+  {
+    "assembly": null,
+    "control_id": "cadquery_assembly",
+    "diagnostics": [],
+    "products": [
+      {
+        "candidate_ids": [
+          25
+        ],
+        "definition_context_id": 2,
+        "definition_id": 56,
+        "description": "PART-blue_cylinder-DESC",
+        "direct_paths": [
+          {
+            "association_id": 5,
+            "representation_id": 25,
+            "shape_id": 24
+          }
+        ],
+        "formation_id": 105,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "blue_cylinder",
+        "name": "blue_cylinder",
+        "product_id": 55,
+        "selected_representation_id": 25,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 3155,
+          "end_column": 54,
+          "end_line": 56,
+          "end_offset": 3155,
+          "start_byte": 3102,
+          "start_column": 1,
+          "start_line": 56,
+          "start_offset": 3102
+        },
+        "unqualified_candidate_ids": []
+      },
+      {
+        "candidate_ids": [
+          28
+        ],
+        "definition_context_id": 2,
+        "definition_id": 60,
+        "description": "PART-red_cube-DESC",
+        "direct_paths": [
+          {
+            "association_id": 7,
+            "representation_id": 28,
+            "shape_id": 27
+          }
+        ],
+        "formation_id": 110,
+        "formation_source": "NOT_KNOWN",
+        "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+        "identifier": "red_cube",
+        "name": "red_cube",
+        "product_id": 59,
+        "selected_representation_id": 28,
+        "selection": "unique",
+        "source_span": {
+          "end_byte": 3384,
+          "end_column": 54,
+          "end_line": 60,
+          "end_offset": 3384,
+          "start_byte": 3331,
+          "start_column": 1,
+          "start_line": 60,
+          "start_offset": 3331
+        },
+        "unqualified_candidate_ids": []
+      }
+    ],
+    "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+    "relationships": [],
+    "representations": [
+      {
+        "context_id": 8,
+        "entity_id": 25,
+        "item_ids": [
+          57,
+          58
+        ],
+        "length_unit_id": 33,
+        "mm_per_source_unit": 1000.0,
+        "model_ids": [
+          57
+        ],
+        "name": "blue_cylinder",
+        "source_span": {
+          "end_byte": 1642,
+          "end_column": 79,
+          "end_line": 29,
+          "end_offset": 1642,
+          "start_byte": 1564,
+          "start_column": 1,
+          "start_line": 29,
+          "start_offset": 1564
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "conversion_based",
+        "unit_source_edges": [
+          {
+            "edge_index": 46,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 25,
+            "source_node_index": 21,
+            "source_span": {
+              "end_byte": 1639,
+              "end_column": 76,
+              "end_line": 29,
+              "end_offset": 1639,
+              "start_byte": 1637,
+              "start_column": 74,
+              "start_line": 29,
+              "start_offset": 1637
+            },
+            "target_entity_id": 8,
+            "target_node_index": 7,
+            "target_occurrence": "#8",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 21,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 8,
+            "source_node_index": 7,
+            "source_span": {
+              "end_byte": 902,
+              "end_column": 127,
+              "end_line": 15,
+              "end_offset": 902,
+              "start_byte": 899,
+              "start_column": 124,
+              "start_line": 15,
+              "start_offset": 899
+            },
+            "target_entity_id": 33,
+            "target_node_index": 26,
+            "target_occurrence": "#33",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 53,
+            "parameter_path": [
+              1
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 33,
+            "source_node_index": 26,
+            "source_span": {
+              "end_byte": 1974,
+              "end_column": 45,
+              "end_line": 34,
+              "end_offset": 1974,
+              "start_byte": 1971,
+              "start_column": 42,
+              "start_line": 34,
+              "start_offset": 1971
+            },
+            "target_entity_id": 65,
+            "target_node_index": 55,
+            "target_occurrence": "#65",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 99,
+            "parameter_path": [
+              1
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 65,
+            "source_node_index": 55,
+            "source_span": {
+              "end_byte": 3554,
+              "end_column": 73,
+              "end_line": 63,
+              "end_offset": 3554,
+              "start_byte": 3550,
+              "start_column": 69,
+              "start_line": 63,
+              "start_offset": 3550
+            },
+            "target_entity_id": 115,
+            "target_node_index": 97,
+            "target_occurrence": "#115",
+            "target_scope": "local_entity"
+          }
+        ]
+      },
+      {
+        "context_id": 8,
+        "entity_id": 28,
+        "item_ids": [
+          61,
+          62
+        ],
+        "length_unit_id": 33,
+        "mm_per_source_unit": 1000.0,
+        "model_ids": [
+          61
+        ],
+        "name": "red_cube",
+        "source_span": {
+          "end_byte": 1837,
+          "end_column": 74,
+          "end_line": 32,
+          "end_offset": 1837,
+          "start_byte": 1764,
+          "start_column": 1,
+          "start_line": 32,
+          "start_offset": 1764
+        },
+        "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+        "unit_form": "conversion_based",
+        "unit_source_edges": [
+          {
+            "edge_index": 51,
+            "parameter_path": [
+              2
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 28,
+            "source_node_index": 24,
+            "source_span": {
+              "end_byte": 1834,
+              "end_column": 71,
+              "end_line": 32,
+              "end_offset": 1834,
+              "start_byte": 1832,
+              "start_column": 69,
+              "start_line": 32,
+              "start_offset": 1832
+            },
+            "target_entity_id": 8,
+            "target_node_index": 7,
+            "target_occurrence": "#8",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 21,
+            "parameter_path": [
+              0,
+              0
+            ],
+            "record_index": 2,
+            "reference_kind": "entity",
+            "source_entity_id": 8,
+            "source_node_index": 7,
+            "source_span": {
+              "end_byte": 902,
+              "end_column": 127,
+              "end_line": 15,
+              "end_offset": 902,
+              "start_byte": 899,
+              "start_column": 124,
+              "start_line": 15,
+              "start_offset": 899
+            },
+            "target_entity_id": 33,
+            "target_node_index": 26,
+            "target_occurrence": "#33",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 53,
+            "parameter_path": [
+              1
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 33,
+            "source_node_index": 26,
+            "source_span": {
+              "end_byte": 1974,
+              "end_column": 45,
+              "end_line": 34,
+              "end_offset": 1974,
+              "start_byte": 1971,
+              "start_column": 42,
+              "start_line": 34,
+              "start_offset": 1971
+            },
+            "target_entity_id": 65,
+            "target_node_index": 55,
+            "target_occurrence": "#65",
+            "target_scope": "local_entity"
+          },
+          {
+            "edge_index": 99,
+            "parameter_path": [
+              1
+            ],
+            "record_index": 0,
+            "reference_kind": "entity",
+            "source_entity_id": 65,
+            "source_node_index": 55,
+            "source_span": {
+              "end_byte": 3554,
+              "end_column": 73,
+              "end_line": 63,
+              "end_offset": 3554,
+              "start_byte": 3550,
+              "start_column": 69,
+              "start_line": 63,
+              "start_offset": 3550
+            },
+            "target_entity_id": 115,
+            "target_node_index": 97,
+            "target_occurrence": "#115",
+            "target_scope": "local_entity"
+          }
+        ]
+      }
+    ],
+    "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+    "schema_conformance": "not_evaluated",
+    "selection_policy": "unique_or_explicit",
+    "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+    "status": "resolved_subset"
+  }
+]

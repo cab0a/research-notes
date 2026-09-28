@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-81件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.66.0〜v0.80.0は15段階・154条件の期待結果を検証し、統合デモも実行します。詳細は英語本文に示します。
+85件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.82.0〜v0.85.0の113条件をネットワークなしで再現し、拘束ソルバーの失敗や参照追跡の誤りも検証します。詳細は英語本文に示します。
 
 ---
 
@@ -841,3 +841,31 @@ The download verifies pinned sizes and hashes, includes all license notices,
 refuses changed assets and copies the reviewed expectations. It never replaces
 source metadata with the current upstream branch. Do not normalize original
 headers or line endings. Source aliases and unit scales remain in the evidence.
+
+## Portability and Robustness in v0.82–v0.85
+
+With the existing pinned geometry and test extras installed:
+
+```bash
+python -m research_notes.robustness_studies
+python -m pytest tests/test_robustness_studies.py -q
+```
+
+All four studies can regenerate separate artifacts for comparison:
+
+```bash
+python -m research_notes.robustness_studies --output-dir output/robustness-results --fixture-dir output/robustness-fixtures --refresh-fixtures
+```
+
+There are 18 AP controls, 12 structure controls, 13 reference controls and 70
+solver controls. A passing case contract may reproduce a known failure;
+the CSV's status, correctness and assessment columns expose the outcome.
+Numerical solver JSON retains ten significant digits. Tests compare it with
+relative tolerance 1e-5 and absolute tolerance 1e-10 for arithmetic variation;
+CSV classifications, input fixtures and other artifacts remain exact.
+
+At `python -m research_notes.integrated_tool`, use `benchmark all` to save the
+reports under `output/integrated-workspace/benchmarks`, or `benchmark solver`
+for only the solver study. `semantics PATH [PD=REP ...]` saves source-linked
+product and shape selection evidence to `semantics.json` without adopting an
+editable model. Normal reproduction never downloads public files.

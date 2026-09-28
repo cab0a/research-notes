@@ -1,0 +1,8 @@
+{
+  "samples": [
+    "ublox_sam_ap203",
+    "ublox_sam_ap214",
+    "cadquery_assembly"
+  ],
+  "source": "../public-step-corpus/manifest.json"
+}

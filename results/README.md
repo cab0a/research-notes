@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-81件の研究の参照成果物を収録します。v0.66.0〜v0.80.0では幾何・工学の期待値比較、資源制限、学習と誤判定、編集案と確認結果、統合ワークフローをCSV・JSON・PNGへ記録します。詳細は英語本文に示します。
+85件の研究の参照成果物を収録します。v0.82.0〜v0.85.0ではAP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性評価をCSV・JSON・PNG・HTMLへ記録します。詳細は英語本文に示します。
 
 ---
 
@@ -1768,3 +1768,22 @@ The upstream files retain their original terms; see [sources and licenses](../fi
 The two SAM formats share one part family. All six exchange gates pass, while
 each SAM retains 57 strict trim discrepancies and EMMY omits 143 faces by budget.
 Reproduce offline with `python experiments/run_public_step_corpus.py`.
+
+## v0.82–v0.85 — Portability and Robustness
+
+| Prefix | Version | Evidence |
+| --- | --- | --- |
+| `ap_portability` | v0.82.0 | 18 schema-profile controls, original public sources and source-linked roles |
+| `complex_product_structures` | v0.83.0 | 12 explicit selection, reuse and unresolved relationship controls |
+| `reference_robustness` | v0.84.0 | 13 perturbation controls with target-set truth and wrong/abstained/split/merge/deleted relations |
+| `solver_robustness` | v0.85.0 | 70 inputs with analytic answers, solutions, residuals and uniqueness evidence |
+
+Each prefix has `.csv`, `_evidence.json`, `_contract.json`, `.png` and `.html`
+artifacts. HTML links to detailed evidence. Numerical solver JSON preserves
+small residuals and singular values at ten significant digits; it is compared
+with declared arithmetic tolerances. Inputs and CSV classifications are exact.
+
+`checks_pass` means the case contract was reproduced. It is not universal CAD
+success: symmetric rotation retains 16 wrong reference assertions, and 13
+solver cases satisfy native residual thresholds while missing analytic
+coordinate tolerance. Reproduce with `python -m research_notes.robustness_studies`.

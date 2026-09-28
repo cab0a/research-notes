@@ -1,0 +1,136 @@
+[
+  {
+    "control_id": "scale_0.001",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "scale",
+    "mode": "normalized_box",
+    "oracle": "kernel_transform_history"
+  },
+  {
+    "control_id": "scale_1000",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "scale",
+    "mode": "normalized_box",
+    "oracle": "kernel_transform_history"
+  },
+  {
+    "control_id": "rotation_37_geometry",
+    "expected": {
+      "asserted": 0,
+      "incorrect": 0
+    },
+    "family": "rotation",
+    "mode": "geometry",
+    "oracle": "kernel_transform_history"
+  },
+  {
+    "control_id": "rotation_37_history",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "rotation",
+    "mode": "operation_history",
+    "oracle": "kernel_transform_history"
+  },
+  {
+    "control_id": "rotation_90_geometry",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 16
+    },
+    "family": "rotation",
+    "mode": "geometry",
+    "oracle": "kernel_transform_history"
+  },
+  {
+    "control_id": "width_feature_edit",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "feature_edit",
+    "mode": "normalized_box",
+    "oracle": "analytic_box_centroid_roles"
+  },
+  {
+    "control_id": "face_reordering",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "reordering",
+    "mode": "geometry",
+    "oracle": "native_subshape_identity"
+  },
+  {
+    "control_id": "boolean_split",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0,
+      "split": 8
+    },
+    "family": "boolean",
+    "mode": "operation_history",
+    "oracle": "kernel_boolean_history"
+  },
+  {
+    "control_id": "boolean_delete",
+    "expected": {
+      "asserted": 18,
+      "deleted": 5,
+      "incorrect": 0
+    },
+    "family": "boolean",
+    "mode": "operation_history",
+    "oracle": "kernel_boolean_history"
+  },
+  {
+    "control_id": "repair_merge",
+    "expected": {
+      "asserted": 30,
+      "deleted": 4,
+      "incorrect": 0,
+      "merge": 16
+    },
+    "family": "repair",
+    "mode": "operation_history",
+    "oracle": "kernel_repair_history"
+  },
+  {
+    "control_id": "tessellation_cache",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "tessellation",
+    "mode": "geometry",
+    "oracle": "analytic_box_centroid_roles"
+  },
+  {
+    "control_id": "step_exchange",
+    "expected": {
+      "asserted": 18,
+      "incorrect": 0
+    },
+    "family": "step_exchange",
+    "mode": "geometry",
+    "oracle": "analytic_box_centroid_roles"
+  },
+  {
+    "control_id": "coincident_duplicates",
+    "expected": {
+      "asserted": 0,
+      "incorrect": 0
+    },
+    "family": "ambiguity",
+    "mode": "geometry",
+    "oracle": "analytic_multiple_candidates"
+  }
+]

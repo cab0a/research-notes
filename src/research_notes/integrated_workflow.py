@@ -183,7 +183,7 @@ class IntegratedSession(ModelingSession):
         shape=self.shape();directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
         entries=[("Imported STEP",self.inspection.imported.shape)]
         if self.model:entries.append((f"Current revision {self.model.revision}",shape))
-        report={"version":"0.81.0","layers":self.layers,"session":self.status(),"material":self.material,"mass":self.mass() if self.material else None,
+        report={"version":"0.85.0","layers":self.layers,"session":self.status(),"material":self.material,"mass":self.mass() if self.material else None,
                 "reconstruction":self.review(),"candidate_ranking":self.rank(),"geometry_analysis":self.analyze(),"comparison":self.compare() if self.model else None,
                 "proposals":[{"proposal_id":p.proposal_id,"before_fingerprint":p.before_fingerprint,"execution_status":"applied" if p.proposal_id in self.applied_proposals else "unapplied","preview":p.preview} for p in self.proposals.values()],
                 "export":self.export_record,"source_history_recovered":False}
@@ -209,7 +209,7 @@ class IntegratedSession(ModelingSession):
         cards="".join(f'<div class="card"><span>{html.escape(k)}</span><strong>{html.escape(status_labels.get(str(v),str(v)))}</strong></div>' for k,v in stages)
         page=f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3D analysis workspace</title>
 <style>body{{margin:0;background:#f3f6f9;color:#193246;font:16px system-ui}}main{{max-width:1240px;margin:auto;padding:32px}}h1{{font-size:36px;margin:8px 0}}.eyebrow{{color:#187b85;font-weight:700;letter-spacing:2px}}.cards{{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}}.card,section{{background:white;border:1px solid #d8e2ea;border-radius:12px;padding:20px}}.card{{flex:1;min-width:140px}}.card span{{font-size:13px;color:#647789;display:block}}.card strong{{display:block;margin-top:8px}}.grid{{display:grid;grid-template-columns:1fr 1fr;gap:20px}}section{{margin:20px 0}}table{{width:100%;border-collapse:collapse}}td,th{{text-align:left;padding:10px;border-bottom:1px solid #e4eaf0}}img{{width:100%}}a{{color:#146d79}}code{{overflow-wrap:anywhere;font-size:12px}}@media(max-width:800px){{.grid{{display:block}}}}</style>
-<main><div class="eyebrow">RESEARCH WORKSPACE / v0.81.0</div><h1>3D analysis & modeling</h1><p>{html.escape(self.inspection.imported.file_name)} · Mass: <b>{mass_text}</b></p>
+<main><div class="eyebrow">RESEARCH WORKSPACE / v0.85.0</div><h1>3D analysis & modeling</h1><p>{html.escape(self.inspection.imported.file_name)} · Mass: <b>{mass_text}</b></p>
 <div class="cards">{cards}</div><section><h2>Geometry comparison</h2><img src="workflow.png" alt="Imported and current B-Rep geometry"><p>{html.escape(analysis_text)}</p></section>
 <div class="grid"><section><h2>Editable reconstruction proposals</h2><table><tr><th>Explanation</th><th>Nodes</th><th>Fit residual</th><th>Adoption</th></tr>{candidate_rows}</table><p>{html.escape(modeling_text)}</p></section>
 <section><h2>Learned candidate ranking</h2><p>Decision: <b>{html.escape(ranking['decision'])}</b> · {html.escape(ranking_text)}</p><table><tr><th>Candidate</th><th>Score</th></tr>{ranking_rows}</table><p>Ranking does not select or edit a model.</p></section></div>

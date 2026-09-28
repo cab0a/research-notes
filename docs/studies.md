@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-画像処理からSTEP・B-rep解析・編集まで81件の研究を索引化しています。v0.66.0〜v0.80.0はPMI、精密幾何、工学計測、データセット、学習の失敗例、確認付き編集、統合APIとターミナルを扱います。詳細は英語本文に示します。
+画像処理からSTEP・B-rep解析・編集まで85件の研究を索引化しています。v0.82.0〜v0.85.0ではAP間の意味解釈、複雑な製品構造、面・辺の追跡、拘束ソルバーを113条件で評価し、成功と限界を記録しました。詳細は英語本文に示します。
 
 ---
 
@@ -1853,6 +1853,59 @@ semantics and editable reconstruction remain unsupported for all six.
 python experiments/run_public_step_corpus.py
 ```
 
+### v0.82.0 — AP Semantic Portability
+
+**Question:** Which product, formation, shape, attribute and unit paths can be
+interpreted under explicitly selected AP profiles?
+
+Eighteen controls include three original public files. SAM yields four product
+definitions and seven representations per format, with unresolved alternatives.
+Full AP conformance and legacy AP203 placement remain deferred.
+
+- [Note](../notes/ap-portability.md)
+- [CSV](../results/ap_portability.csv)
+- [HTML report](../results/ap_portability.html)
+- Reproduce: `python experiments/run_ap_portability.py`
+
+### v0.83.0 — Complex Product Structures
+
+**Question:** Can alternative shapes and reused occurrences remain explicit?
+
+Twelve controls cover unique/explicit selection, multiple model items, related
+representations, bounded cycles and nested reuse with composed placement.
+
+- [Note](../notes/complex-product-structures.md)
+- [CSV](../results/complex_product_structures.csv)
+- [HTML report](../results/complex_product_structures.html)
+- Reproduce: `python experiments/run_complex_product_structures.py`
+
+### v0.84.0 — Reference Robustness
+
+**Question:** When do geometric matches differ from feature ancestry?
+
+Thirteen controls score coverage, incorrect relations and abstention, including
+split/merge/deletion. A symmetric rotation produces 16 wrong assertions among
+18 references under the geometry policy; the error is retained.
+
+- [Note](../notes/reference-robustness.md)
+- [CSV](../results/reference_robustness.csv)
+- [HTML report](../results/reference_robustness.html)
+- Reproduce: `python experiments/run_reference_robustness.py`
+
+### v0.85.0 — Constraint-Solver Robustness
+
+**Question:** Do convergence, coordinate correctness and uniqueness agree under
+changes in seed, scale, redundancy, conflict and conditioning?
+
+Seventy controls record 46 correct, 13 satisfied-but-inaccurate, 5 non-converged,
+3 continuous-freedom, 2 conflict-detected and 1 input-rejected outcomes. Correct
+mirror solutions remain explicitly non-unique in the analytic uniqueness column.
+
+- [Note](../notes/solver-robustness.md)
+- [CSV](../results/solver_robustness.csv)
+- [HTML report](../results/solver_robustness.html)
+- Reproduce: `python experiments/run_solver_robustness.py`
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1877,7 +1930,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.81.0 subsets;
+  controlled v0.21.0 through v0.85.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

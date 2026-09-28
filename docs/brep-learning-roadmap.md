@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.81.0まで実装し、公開STEPの出所・ライセンス・対応範囲の検証を加え、STEPの解析、精密幾何、工学計測、学習、確認付き編集と再出力を統合しました。v0.82.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、v1.0.0の安定契約には到達していません。
+v0.85.0まで実装し、AP間の意味解釈、複雑な製品構造、面・辺の追跡と拘束ソルバーの頑健性評価を追加しました。v0.86.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、誤追跡や特異付近の不正確な解も記録しています。v1.0.0の安定契約には到達していません。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.81.0 have code and reference evidence for their declared
-subsets. Stages from v0.82.0 onward are planned and remain unimplemented.
+The stages through v0.85.0 have code and reference evidence for their declared
+subsets. Stages from v0.86.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -820,29 +820,35 @@ observations, not third-party conformance oracles. See [the study](../notes/publ
 
 #### v0.82.0 — AP203, AP214, and AP242 Semantic Portability
 
-Compare controlled product, shape, unit, assembly, attribute, and
-representation paths across the selected application protocols. Do not infer
-semantic equivalence from similar entity names.
+Implemented with 18 controls comparing selected product, formation, source
+attributes, representation, length-unit and assembly roles. Three original
+public files complement synthetic role probes. Exact schema profiles and an
+explicit AP214 OID spelling are supported; legacy AP203 placement remains
+deferred. See [the study](../notes/ap-portability.md).
 
 #### v0.83.0 — Complex Product Structures and Multiple Representations
 
-Evaluate nested reuse, alternative representations, multiple shape models,
-context-dependent representations, and representation relationships. Make
-selection rules and unresolved ambiguity observable.
+Implemented with 12 controls for nested reuse, alternative representations,
+multiple model items, context-dependent occurrences and shape relationships.
+Unique or explicit selection preserves ambiguity and source paths; occurrence
+cycles and unsupported placement remain visible. See
+[the study](../notes/complex-product-structures.md).
 
 #### v0.84.0 — Persistent-Reference Robustness Benchmark
 
-Benchmark face and edge tracking across scale, rotation, feature edits,
-reordering, Boolean changes, repair, tessellation, and STEP exchange. Report
-coverage, incorrect relations, abstention, split, merge, and deletion by
-perturbation family.
+Implemented with 13 controls across scale, rotation, feature edits, reordering,
+Boolean changes, repair, B-Rep tessellation cache and STEP exchange. Coverage,
+incorrect assertions, abstention, split, merge and deletion are reported. The
+symmetric rotation control exposes 16/18 incorrect geometry-only relations.
+See [the study](../notes/reference-robustness.md).
 
 #### v0.85.0 — Constraint-Solver Robustness Benchmark
 
-Evaluate sketch and assembly solvers across initial conditions, coordinate
-scale, redundant constraints, near-singular systems, conflicting constraints,
-and numerical perturbations. Separate convergence from correctness and
-uniqueness.
+Implemented with 70 sketch/assembly controls for seeds, scale, redundancy,
+conflicts, nearly singular systems and deterministic numerical perturbations.
+Analytic correctness and uniqueness are evaluated independently of convergence:
+46 correct, 13 satisfied but inaccurate, 5 not converged, 3 non-unique, 2 detected
+conflicts and 1 rejected input. See [the study](../notes/solver-robustness.md).
 
 ### Phase N — Stable Operations and Interoperability
 

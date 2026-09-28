@@ -162,6 +162,7 @@ jobs:
           python experiments/run_conversational_proposals.py --fixture-dir regenerated-fixtures/conversational-proposals --output-dir regenerated-results --refresh-fixtures
           python experiments/run_integrated_workflow.py --fixture-dir regenerated-fixtures/integrated-workflow --output-dir regenerated-results --refresh-fixtures
           python experiments/run_public_step_corpus.py --output-dir regenerated-results
+          python -m research_notes.robustness_studies --output-dir regenerated-results --fixture-dir regenerated-fixtures --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -562,6 +563,17 @@ jobs:
           diff -u results/public_step_corpus_contract.json regenerated-results/public_step_corpus_contract.json
           diff -u results/public_step_corpus.html regenerated-results/public_step_corpus.html
           test -s regenerated-results/public_step_corpus.png
+          for study in ap_portability complex_product_structures reference_robustness solver_robustness; do
+            diff -u results/${study}.csv regenerated-results/${study}.csv
+            diff -u results/${study}_contract.json regenerated-results/${study}_contract.json
+            diff -u results/${study}.html regenerated-results/${study}.html
+            if [ "$study" != "solver_robustness" ]; then
+              diff -u results/${study}_evidence.json regenerated-results/${study}_evidence.json
+            fi
+            diff -qr fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
+            test -s regenerated-results/${study}.png
+          done
+          # Solver residuals use tolerance-based comparisons in test_robustness_studies.py.
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

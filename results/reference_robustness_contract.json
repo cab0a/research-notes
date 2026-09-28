@@ -1,0 +1,14 @@
+{
+  "boundaries": [
+    "Face and edge relations are scored by perturbation family, including incorrect assertions and abstentions; no permanent kernel identity is claimed.",
+    "Truth is authored box centroid roles for edit/exchange/cache cases, or native identity/operation ancestry. Kernel history is a scoped oracle, not an independent CAD implementation.",
+    "A 90-degree rotation of a symmetric box is a deliberate geometric false-match control. Matching the occupied geometry does not prove feature identity.",
+    "Tessellation tests the retained B-Rep mesh cache, not triangle-to-B-Rep reconstruction. Curved topology and arbitrary edits remain outside this benchmark."
+  ],
+  "checks_pass": true,
+  "control_count": 13,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "reference_robustness",
+  "version": "v0.84.0"
+}

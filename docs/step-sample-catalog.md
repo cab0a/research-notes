@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v0.81.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。出所とライセンスを記録した公開STEPを6件追加しました。詳細は英語本文に示します。
+v0.85.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。公開STEPに加え、AP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性を検証する入力を追加しました。詳細は英語本文に示します。
 
 ---
 
@@ -1310,3 +1310,17 @@ repositories, five part families, ten SHA-256-pinned source/license assets.
 Original bytes are never regenerated. Use the [explicit fetch command](reproducibility.md#public-step-corpus-in-v0810)
 only to reacquire the pinned files; standard studies run offline. Inspection and
 geometry exchange support do not imply editable histories or AP semantic support.
+
+## v0.82–v0.85 — Portability and Robustness Inputs
+
+| Directory | Input scope | Count |
+| --- | --- | ---: |
+| `fixtures/ap-portability` | Generated profile probes; three existing public sources are referenced, never rewritten | 18 controls |
+| `fixtures/complex-product-structures` | STEP alternatives, relationships, cycles, nested reuse and unresolved placement | 12 controls |
+| `fixtures/reference-robustness` | Authored perturbation recipes and expected tracking counts; native shapes constructed by `reference_cases()` | 13 controls |
+| `fixtures/solver-robustness` | Serialized sketch/assembly inputs, local frames and analytic answers | 70 controls |
+
+Each directory has a digest manifest. Synthetic AP probes are not certified
+AP files. The original public assets and upstream license notices stay in
+`fixtures/public-step-corpus`. See the four new notes for independent truth,
+frozen observed failures and precise interpretation boundaries.

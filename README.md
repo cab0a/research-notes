@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v0.81.0まで実装しました。出所・ライセンスを記録した公開STEPを6件追加し、複数ソリッドや複雑な形状を検査専用で開けます。STEP読込・検査、PMIの限定的な意味解釈、曲面解析、質量・慣性、候補比較、寸法変更の提案・確認、再計算、比較図、STEP再出力をPython APIと対話ターミナルに統合しています。
+v0.85.0まで実装しました。公開STEPの検査に加え、AP203・AP214・AP242の限定した意味解釈、複数の形状候補の明示選択、面・辺の追跡評価、拘束ソルバーの頑健性評価を追加しました。STEP読込・検査、候補比較、寸法変更、再計算、比較図、STEP再出力はPython APIと対話ターミナルから利用できます。
 
-学習には誤判定があり、候補を自動採用しません。組立は明示的に作成したJSONを扱い、任意のSTEPから拘束や設計履歴を復元するものではありません。v0.82.0以降は計画段階です。詳細は英語本文に示します。
+拘束ソルバーの70条件中、46件は既知の正解と一致しました。特異に近い条件では残差合格でも座標誤差が大きい13件を記録し、収束・正しさ・一意性を分けています。任意のSTEPから拘束や設計履歴を復元するものではありません。v0.86.0以降は計画段階です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v0.81.0. Scoped references, dimensional
+The current implementation version is v0.85.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -64,10 +64,38 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 81 studies to their questions,
+The [study index](docs/studies.md) maps all 85 studies to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
+
+v0.82–v0.85 adds 113 case contracts. These include documented failures, not
+113 universally successful CAD operations:
+
+| Version | Evaluation | Recorded result |
+| --- | --- | --- |
+| v0.82 | AP semantic portability | 18 controls; explicit schema profiles, original public files, source spans and units |
+| v0.83 | Complex product structure | 12 controls; nested reuse, alternative representations, explicit selection and unresolved placement |
+| v0.84 | Face/edge reference robustness | 13 controls; a symmetric 90-degree rotation produces 16 incorrect geometric relations out of 18 |
+| v0.85 | Constraint solver robustness | 70 controls; 46 correct, 13 satisfied but inaccurate, 5 not converged, 3 non-unique, 2 detected conflicts, 1 rejected input |
+
+Read the [solver study](notes/solver-robustness.md) and its
+[HTML report](results/solver_robustness.html). The evaluation retains existing
+solver tolerances so that their limits remain visible.
+
+```bash
+python -m research_notes.robustness_studies
+python -m research_notes.integrated_tool
+```
+
+At the `3d>` prompt:
+
+```text
+semantics fixtures/public-step-corpus/sources/ublox_sam_ap214.step
+semantics fixtures/complex-product-structures/alternative.step 6=21
+benchmark solver
+benchmark references
+```
 
 v0.81.0 adds [six licensed public STEP files](fixtures/public-step-corpus/README.md)
 from CadQuery, build123d and u-blox. All six import and pass measured exchange

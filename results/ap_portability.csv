@@ -1,0 +1,19 @@
+control_id,schema,status,product_count,representation_count,selected_count,assembly_path_count,diagnostic_count,checks_pass
+ap203_product,CONFIG_CONTROL_DESIGN,resolved_subset,1,1,1,0,0,True
+ap203_formation_subtype,CONFIG_CONTROL_DESIGN,resolved_subset,1,1,1,0,0,True
+ap203_metre,CONFIG_CONTROL_DESIGN,resolved_subset,1,1,1,0,0,True
+ap203_assembly,CONFIG_CONTROL_DESIGN,partial,2,2,2,0,1,True
+ap214_product,AUTOMOTIVE_DESIGN,resolved_subset,1,1,1,0,0,True
+ap214_formation_subtype,AUTOMOTIVE_DESIGN,resolved_subset,1,1,1,0,0,True
+ap214_metre,AUTOMOTIVE_DESIGN,resolved_subset,1,1,1,0,0,True
+ap214_assembly,AUTOMOTIVE_DESIGN,resolved_subset,2,2,2,1,0,True
+ap242_product,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,resolved_subset,1,1,1,0,0,True
+ap242_formation_subtype,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,resolved_subset,1,1,1,0,0,True
+ap242_metre,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,resolved_subset,1,1,1,0,0,True
+ap242_assembly,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,resolved_subset,2,2,2,1,0,True
+unknown_schema,AUTOMOTIVE_DESIGN_FAKE,unsupported,0,0,0,0,1,True
+wrong_formation,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,partial,0,1,0,0,2,True
+missing_units,AP242_MANAGED_MODEL_BASED_3D_ENGINEERING_MIM_LF,partial,1,0,0,0,1,True
+ublox_sam_ap203,CONFIG_CONTROL_DESIGN,partial,4,7,1,0,1,True
+ublox_sam_ap214,AUTOMOTIVE_DESIGN,partial,4,7,1,0,0,True
+cadquery_assembly,AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 },resolved_subset,2,2,2,0,0,True

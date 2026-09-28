@@ -1,0 +1,15 @@
+{
+  "boundaries": [
+    "Existing local solvers are evaluated without changing their stopping tolerances. Convergence, analytic coordinate correctness and uniqueness are separate columns.",
+    "Sketch scales: 1e-4..1e4 mm; assembly scale factors: 1e-4..100, plus a 1000 control rejected by the signed-distance domain. Seed, duplicate, conflict and deterministic RHS perturbation cases are included.",
+    "Two-distance sketches have two mirror solutions or a singular tangent solution; assembly nearly parallel distance normals test loss of numerical rank.",
+    "Difficult controls explicitly permit recorded non-convergence or inaccurate satisfied solutions. A passing case contract is not a robustness guarantee.",
+    "Rank/nullity is local and tolerance dependent. Nonlinear failure does not prove inconsistency, and a zero reported DOF does not prove global uniqueness."
+  ],
+  "checks_pass": true,
+  "control_count": 70,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "solver_robustness",
+  "version": "v0.85.0"
+}

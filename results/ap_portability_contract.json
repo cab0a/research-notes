@@ -1,0 +1,14 @@
+{
+  "boundaries": [
+    "Explicit schema identifiers enable selected attribute and reference roles; no full AP or EXPRESS conformance claim.",
+    "Synthetic cross-profile controls are role probes, not certified AP documents. Original public inputs remain byte-preserved.",
+    "Legacy AP203 assembly placement remains deferred. AP214/242 use the existing bounded, source-linked occurrence decoder.",
+    "Names are retained source attributes, never evidence of geometric equivalence; legacy AP242 APIs remain unchanged."
+  ],
+  "checks_pass": true,
+  "control_count": 18,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "ap_portability",
+  "version": "v0.82.0"
+}

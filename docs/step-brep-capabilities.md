@@ -2,17 +2,31 @@
 
 ## 日本語概要
 
-v0.81.0時点の機能と制限を分類します。PMI、曲面・交差、修復、質量・慣性、空間索引、学習、編集提案を統合しています。各機能は明示した合成条件に限定され、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
+v0.85.0時点の機能と制限を分類します。AP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性評価を追加しました。誤追跡や特異付近の不正確な解も記録し、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-81 studies through v0.81.0. It separates syntax recognition, schema validation, physical-reference
+85 studies through v0.85.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.82.0 and later roadmap stages remain unimplemented.
+v0.86.0 and later roadmap stages remain unimplemented.
+
+## Portability and Robustness in v0.82–v0.85
+
+| Capability | Available scope | Observed boundary |
+| --- | --- | --- |
+| AP semantics | Opt-in `portable_step.inspect_step_file`; explicit AP203/214/242 role profiles and source spans | No full schema validation; legacy AP203 placement deferred |
+| Product structures | Candidate enumeration, unique/explicit selection, nested occurrence paths | Unknown alternatives retain unresolved state; selection does not rewrite placement |
+| Reference benchmark | 13 controls, coverage and incorrect/abstained/split/merge/deleted relations | Symmetric rotation yields 16 incorrect geometric matches out of 18 |
+| Solver benchmark | 70 analytic sketch/pose controls and separate convergence/correctness/uniqueness | 13 satisfied-but-inaccurate results; no solver robustness guarantee |
+
+Use terminal commands `semantics PATH [PD=REP ...]` and
+`benchmark solver|references|ap|structure|all`. Existing `scan` and public
+inspection reports retain the earlier AP242-only application layer. The new
+semantics command is additive and does not adopt inferred editable geometry.
 
 ## Status Definitions
 

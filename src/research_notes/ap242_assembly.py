@@ -260,11 +260,13 @@ def evaluate_ap242_assembly(
 
 class _AssemblyResolver:
     def __init__(
-        self, document: Part21Document, graph: STEPGraph, limits: AssemblyLimits
+        self, document: Part21Document, graph: STEPGraph, limits: AssemblyLimits,
+        *, accepted_schemas: tuple[str, ...] = (AP242_SCHEMA_IDENTIFIER,),
     ) -> None:
         self.document = document
         self.graph = graph
         self.limits = limits
+        self.accepted_schemas = accepted_schemas
         self.entities = {entity.entity_id: entity for entity in document.entities}
         self.occurrences: list[AssemblyOccurrence] = []
         self.paths: list[AssemblyPath] = []
@@ -283,7 +285,7 @@ class _AssemblyResolver:
                 "assembly_occurrence_limit",
                 "assembly occurrences exceed the configured work budget",
             )
-        if schema != AP242_SCHEMA_IDENTIFIER:
+        if schema not in self.accepted_schemas:
             self._diagnose(
                 _AssemblyError(
                     "deferred",
