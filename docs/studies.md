@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-画像処理からSTEP・B-rep解析・編集まで90件の研究を索引化しています。v0.86.0〜v0.90.0では再計算の確定・取り消し、API契約、診断画面、STEP出力方針、相互運用性を59条件で評価し、成功と限界を記録しました。詳細は英語本文に示します。
+画像処理からSTEP・B-rep解析・編集まで100件の研究を索引化しています。v0.91.0〜v1.0.0では、実測環境、不正入力、資源制限、AI支援、操作手順と安定版契約を142条件で評価し、成功と限界を記録しました。詳細は英語本文に示します。
 
 ---
 
@@ -2022,3 +2022,16 @@ failure-mode analysis, but it does not establish:
   local sketch solver.
 
 The complete notes contain the narrower limitations for each experiment.
+
+## v0.91–v1.0 Stabilization Studies
+
+- v0.91.0: [実測のクロスプラットフォーム再現性](../notes/cad-platform-reproducibility.md) — [evidence](../results/cad_platform_reproducibility_evidence.json)
+- v0.92.0: [文法・幾何の不正入力検証](../notes/cad-fuzzing.md) — [evidence](../results/cad_fuzzing_evidence.json)
+- v0.93.0: [性能と資源制限](../notes/cad-resource-contracts.md) — [evidence](../results/cad_resource_contracts_evidence.json)
+- v0.94.0: [未学習サンプルによるAI支援評価](../notes/blinded-assistance-evaluation.md) — [evidence](../results/blinded_assistance_evaluation_evidence.json)
+- v0.95.0: [確認・修正・拒否の操作検証](../notes/cad-review-workflow.md) — [evidence](../results/cad_review_workflow_evidence.json)
+- v0.96.0: [読込から編集・再出力までの検証](../notes/cad-end-to-end.md) — [evidence](../results/cad_end_to_end_evidence.json)
+- v0.97.0: [仕様・実装・証拠の対応表](../notes/cad-claim-traceability.md) — [evidence](../results/cad_claim_traceability_evidence.json)
+- v0.98.0: [APIと配布契約の固定](../notes/cad-contract-freeze.md) — [evidence](../results/cad_contract_freeze_evidence.json)
+- v0.99.0: [安定版候補の受入検証](../notes/cad-release-candidate.md) — [evidence](../results/cad_release_candidate_evidence.json)
+- v1.0.0: [研究用3D基盤の安定版](../notes/cad-stable-release.md) — [evidence](../results/cad_stable_release_evidence.json)

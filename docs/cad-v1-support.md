@@ -78,7 +78,7 @@ classifications and source bytes remain exact.
 | Source bytes / entities / references / tokens | 2,000,000 / 20,000 / 100,000 / 250,000 |
 | Workspace faces / edges / triangles | 256 / 512 / 60,000 |
 | Model nodes / sketch entities / constraints | 64 / 32 / 128 |
-| Estimated memory admission | 256 MB |
+| Estimated syntax-input memory admission | 256 MB |
 | Worker elapsed deadline | 30 seconds, including process startup |
 
 These counters qualify different stages, not a universal safe-file promise.
@@ -109,8 +109,12 @@ It qualifies the tested corpus, not every OS/kernel combination.
 - The review study uses scripted interactions and a browser verification,
   with no recruited participants or productivity estimate.
 - The wheel provides runtime modules and entry points. Research fixtures,
-  licensed public sources, reports and pinned external comparison parsers
-  are supplied in the repository/source distribution, not bundled in the wheel.
+  licensed public sources and reports are supplied in the repository/source
+  distribution, not bundled in the wheel. External comparison parsers are
+  separately fetched at pinned commits. Research runners and benchmark/ranking
+  commands require the editable Git checkout installation shown above. The
+  isolated wheel check covers the CAD API workflow and console help, not
+  repository-backed research runners.
 
 The [claim map](../results/cad_claim_traceability.html),
 [end-to-end report](../results/cad_end_to_end.html),

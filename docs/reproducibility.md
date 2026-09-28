@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-90件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.86.0〜v0.90.0の59条件を追加しました。依存パッケージと比較用パーサーを準備した後は、再計算・API・診断画面・出力・相互運用性の検証をネットワークなしで実行できます。詳細は英語本文に示します。
+100件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.91.0〜v1.0.0の142条件を追加しました。依存パッケージと比較用パーサーを準備した後は、再計算・API・診断画面・出力・相互運用性の検証をネットワークなしで実行できます。詳細は英語本文に示します。
 
 ---
 
@@ -906,9 +906,43 @@ The reference environment is Python 3.12.14 / Linux WSL x86_64, OCCT 7.9.3 via
 cadquery-ocp 7.9.3.1.1, numpy 2.4.6, lark-parser 0.12.0, pyparsing 3.2.5 and
 antlr4 runtime 4.9.3. Every v0.90 run emits its own environment JSON. The CI job
 uses the same pinned parser commits, runs tests, regenerates all five studies
-and checks fixture/report contracts. This is not yet the v0.91 CAD platform matrix.
+and checks fixture/report contracts. The CAD matrix and v1 release checks below extend this baseline.
 
 Open `results/diagnostic-workspace/workspace.html` directly in a browser for
 the committed reference, or generate an editable-session snapshot using the
 [API/terminal commands](../notes/stable-cad-api.md). No browser is needed to
 regenerate its JSON and geometry evidence.
+
+## v0.91–v1.0 Release Reproduction
+
+The CAD platform workflow runs actual Linux x64, Windows x64, macOS Intel and
+macOS arm64 observations. Retained reports in `results/cad-platforms` include
+runner images and dependency versions. Runtime identity hashes source modules
+plus `pyproject.toml`; report-only commits do not change the measured runtime.
+
+```bash
+python -m research_notes.release_studies all --output-dir output/release-results --fixture-root output/release-fixtures --refresh-fixtures
+python -m pytest
+python -m pip wheel --no-deps -w output/dist .
+```
+
+The complete run has 142 declared case outcomes, including deliberate refusals
+and unsupported claims. Runtime timings, Python allocation peaks and platform
+fingerprints are retained observations, not deterministic byte fixtures.
+Numeric artifacts compare with relative 1e-6 and absolute 1e-9 tolerances (1e-25 for SI inertia);
+classifications, hashes and source bytes stay exact. Principal directions are
+unoriented; literal length expressions permit only relative 1e-14 rounding drift. Per-import solid indices
+are compared by measured centroids/volume, not assumed persistent identity.
+Fixture manifests still validate the bytes actually stored in each directory.
+Nonlinear iteration counts may vary within the solver budget; classifications,
+rank, degrees of freedom and measured solution residuals are still checked.
+
+The frozen AI protocol needs Git history including commit
+`4731ab07e08e099cbedf6c5deda5e83c6b9d83ae`; CI checks out full history. No training
+or threshold adjustment occurs during holdout reproduction. External parsers
+remain at the commits recorded by the v0.90 study.
+
+For scope, installation and interactive commands see the
+[v1 support contract](cad-v1-support.md). The release validation record includes
+actual CI run links and an isolated wheel smoke test; the local release gate
+alone does not attest that a remote workflow passed.

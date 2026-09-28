@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-09-28T10:07:14.977974+00:00",
+  "environment": {
+    "label": "linux-x64",
+    "system": "Linux",
+    "release": "6.18.33.2-microsoft-standard-WSL2",
+    "machine": "x86_64",
+    "python": "3.12.14",
+    "numpy": "2.4.6",
+    "ocp": "7.9.3.1",
+    "cadquery_ocp": "7.9.3.1.1",
+    "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+    "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+    "github_run_id": null,
+    "github_run_attempt": null,
+    "runner_image": null,
+    "runner_image_version": null
+  },
+  "measurements_sha256": "0719b85a9ad9ce9df7100a95f1dfd21ed92b9cc6d1368a99caecce58b1adbdec",
+  "scope": "Single observations per workload, worker startup included; concurrent package installation on this host. No statistical latency or speedup claim. Python allocation peaks exclude native allocations; estimated memory admission applies to syntax input."
+}

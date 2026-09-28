@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.90.0まで実装し、再計算の確定・取り消し、限定Python APIの契約、診断画面、STEP出力方針と相互運用性の比較検証を追加しました。v0.91.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、誤追跡や特異付近の不正確な解も引き続き記録しています。プロジェクト全体のv1.0.0には到達していません。
+v1.0.0まで実装しました。解析・候補確認・編集・再計算・比較・出力を、明示した研究用の対応範囲で安定提供します。実測4環境、資源制限、未学習サンプル評価、操作手順、配布契約の証拠を追加しました。誤追跡・難しい拘束条件・AIの誤判定は制限として残し、汎用CADの代替を主張しません。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,9 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.90.0 have code and reference evidence for their declared
-subsets. Stages from v0.91.0 onward are planned and remain unimplemented.
+The stages through v1.0.0 have code and reference evidence for their declared
+subsets. The [stable support contract](cad-v1-support.md) defines the narrower
+release boundary; completed studies retain their unsupported and experimental cases.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -890,17 +891,23 @@ environment is recorded. See [the benchmark](../notes/interoperability-benchmark
 
 #### v0.91.0 — Cross-Platform Reproducibility
 
+Implemented within the [published study contract](../notes/cad-platform-reproducibility.md).
+
 Run the declared parser, geometry, modeling, and artifact contracts on Windows,
 Linux, and macOS. Record decoded geometry and numeric drift with explicit
 environment fingerprints and platform-independent claim boundaries.
 
 #### v0.92.0 — Grammar and Geometry Fuzzing
 
+Implemented within the [published study contract](../notes/cad-fuzzing.md).
+
 Generate bounded malformed Part 21, EXPRESS, topology, trim, placement, and
 parameter-graph inputs. Minimize failures, enforce resource budgets, and add
 every accepted defect to the deterministic regression corpus.
 
 #### v0.93.0 — Performance and Resource Contracts
+
+Implemented within the [published study contract](../notes/cad-resource-contracts.md).
 
 Publish scale curves and declared budgets for bytes, records, references,
 faces, edges, triangles, constraints, recompute nodes, memory, and time. Treat
@@ -909,11 +916,15 @@ failure.
 
 #### v0.94.0 — Blinded AI-Assistance Evaluation
 
+Implemented within the [published study contract](../notes/blinded-assistance-evaluation.md).
+
 Freeze labels and evaluation rules before running feature ranking and
 reconstruction assistance on held-out families. Measure accuracy, coverage,
 calibration, high-confidence errors, evidence completeness, and abstention.
 
 #### v0.95.0 — Human-Review Workflow Study
+
+Implemented within the [published study contract](../notes/cad-review-workflow.md).
 
 Evaluate whether a user can inspect evidence, compare alternatives, correct a
 proposal, and reject unsupported edits without hidden state. Record task
@@ -923,11 +934,15 @@ outcomes and interaction limitations without inventing productivity claims.
 
 #### v0.96.0 — End-to-End Import, Edit, Recompute, and Export
 
+Implemented within the [published study contract](../notes/cad-end-to-end.md).
+
 Exercise the complete bounded workflow on synthetic and licensed public
 controls. Verify every transition from source bytes through interpretation,
 candidate selection, edit, B-Rep recompute, comparison, and STEP output.
 
 #### v0.97.0 — Specification-to-Evidence Traceability
+
+Implemented within the [published study contract](../notes/cad-claim-traceability.md).
 
 Map each supported claim to its governing public specification or primary
 source, implementation entry point, fixture, observation, test, and limitation.
@@ -935,17 +950,23 @@ Keep unsupported and partially supported requirements visible.
 
 #### v0.98.0 — Contract Freeze and Compatibility Audit
 
+Implemented within the [published study contract](../notes/cad-contract-freeze.md).
+
 Freeze the intended v1 Python API, command behavior, CSV and JSON schemas,
 diagnostic categories, resource outcomes, and reproduction commands. Audit
 compatibility, licenses, notices, packaging, and documentation.
 
 #### v0.99.0 — v1.0 Release Candidate
 
+Implemented within the [published study contract](../notes/cad-release-candidate.md).
+
 Regenerate all fixtures and reference artifacts from clean environments, run
 the complete cross-platform suite, resolve release-blocking discrepancies, and
 publish an explicit accepted-risk and known-limitations record.
 
 #### v1.0.0 — Research-Grade 3D Master Foundation
+
+Implemented within the [published study contract](../notes/cad-stable-release.md).
 
 Publish the first stable, evidence-bounded release connecting STEP parsing,
 semantic product structure, B-Rep analysis, parametric modeling, deterministic

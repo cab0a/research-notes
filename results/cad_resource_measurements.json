@@ -1,6 +1,6 @@
 [
   {
-    "compute_seconds": 0.006027600997,
+    "compute_seconds": 0.007335625,
     "control_id": "syntax_16",
     "measurements": {
       "bytes": 369,
@@ -11,10 +11,10 @@
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 102589,
     "status": "ok",
-    "wall_seconds": 0.415316416
+    "wall_seconds": 0.605202166
   },
   {
-    "compute_seconds": 0.037747862,
+    "compute_seconds": 0.045846449,
     "control_id": "syntax_128",
     "measurements": {
       "bytes": 1994,
@@ -25,10 +25,10 @@
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 492761,
     "status": "ok",
-    "wall_seconds": 0.442557243
+    "wall_seconds": 0.635447473
   },
   {
-    "compute_seconds": 0.316890732,
+    "compute_seconds": 0.418263024,
     "control_id": "syntax_1024",
     "measurements": {
       "bytes": 16379,
@@ -39,10 +39,10 @@
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 3793445,
     "status": "ok",
-    "wall_seconds": 0.727132679
+    "wall_seconds": 1.030345637
   },
   {
-    "compute_seconds": 1.658534998,
+    "compute_seconds": 2.171171899,
     "control_id": "model_4",
     "measurements": {
       "nodes": 4,
@@ -50,12 +50,12 @@
       "volume": 480.0
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 32943410,
+    "python_peak_bytes": 32943389,
     "status": "ok",
-    "wall_seconds": 2.415051565
+    "wall_seconds": 3.218539627
   },
   {
-    "compute_seconds": 1.555277249,
+    "compute_seconds": 2.264759559,
     "control_id": "model_16",
     "measurements": {
       "nodes": 16,
@@ -63,12 +63,12 @@
       "volume": 480.0
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 32959272,
+    "python_peak_bytes": 32959540,
     "status": "ok",
-    "wall_seconds": 2.370875934
+    "wall_seconds": 3.338536623
   },
   {
-    "compute_seconds": 1.599062248,
+    "compute_seconds": 2.115399377,
     "control_id": "model_64",
     "measurements": {
       "nodes": 64,
@@ -76,12 +76,12 @@
       "volume": 480.0
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 33016047,
+    "python_peak_bytes": 33015199,
     "status": "ok",
-    "wall_seconds": 2.34956607
+    "wall_seconds": 3.369395895
   },
   {
-    "compute_seconds": 0.017930784,
+    "compute_seconds": 0.018879151,
     "control_id": "sketch_1",
     "measurements": {
       "constraints": 2,
@@ -92,10 +92,10 @@
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 276513,
     "status": "ok",
-    "wall_seconds": 0.456604183
+    "wall_seconds": 0.584139218
   },
   {
-    "compute_seconds": 0.061815236,
+    "compute_seconds": 0.063521285,
     "control_id": "sketch_8",
     "measurements": {
       "constraints": 16,
@@ -104,12 +104,12 @@
       "status": "fully_constrained"
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 276468,
+    "python_peak_bytes": 276513,
     "status": "ok",
-    "wall_seconds": 0.47091704
+    "wall_seconds": 0.72664671
   },
   {
-    "compute_seconds": 0.696997315,
+    "compute_seconds": 1.026357007,
     "control_id": "sketch_32",
     "measurements": {
       "constraints": 64,
@@ -120,10 +120,10 @@
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 477571,
     "status": "ok",
-    "wall_seconds": 1.123633127
+    "wall_seconds": 1.573713906
   },
   {
-    "compute_seconds": 2.368805789,
+    "compute_seconds": 2.467818617,
     "control_id": "mesh_0",
     "measurements": {
       "edges": 3,
@@ -132,12 +132,12 @@
       "volume": 112.2876823
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 32668713,
+    "python_peak_bytes": 32668821,
     "status": "ok",
-    "wall_seconds": 3.118417182
+    "wall_seconds": 3.397767328
   },
   {
-    "compute_seconds": 2.302262905,
+    "compute_seconds": 2.364306559,
     "control_id": "mesh_1",
     "measurements": {
       "edges": 3,
@@ -146,12 +146,12 @@
       "volume": 112.2876823
     },
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
-    "python_peak_bytes": 32669965,
+    "python_peak_bytes": 32669634,
     "status": "ok",
-    "wall_seconds": 3.080573354
+    "wall_seconds": 3.174637692
   },
   {
-    "compute_seconds": 0.0007513320015,
+    "compute_seconds": 0.0007484769958,
     "control_id": "bytes_gate",
     "counter": "bytes",
     "limit": 128,
@@ -159,37 +159,37 @@
     "observed": 593,
     "python_peak_bytes": 39840,
     "status": "resource_exhausted",
-    "wall_seconds": 0.41732317
+    "wall_seconds": 0.445791285
   },
   {
-    "compute_seconds": 0.009807055998,
+    "compute_seconds": 0.009949738,
     "control_id": "entities_gate",
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 148229,
     "reason": "entity_count_limit",
     "status": "resource_exhausted",
-    "wall_seconds": 0.417824359
+    "wall_seconds": 0.429773847
   },
   {
-    "compute_seconds": 0.010714536,
+    "compute_seconds": 0.0109629,
     "control_id": "references_gate",
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 159473,
     "reason": "reference_count_limit",
     "status": "resource_exhausted",
-    "wall_seconds": 0.418110996
+    "wall_seconds": 0.443185484
   },
   {
-    "compute_seconds": 0.001817965007,
+    "compute_seconds": 0.001745968999,
     "control_id": "tokens_gate",
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "python_peak_bytes": 71672,
     "reason": "token_count_limit",
     "status": "resource_exhausted",
-    "wall_seconds": 0.416263825
+    "wall_seconds": 0.44122393
   },
   {
-    "compute_seconds": 0.0009786660012,
+    "compute_seconds": 0.0007398309972,
     "control_id": "memory_estimate_gate",
     "counter": "estimated_memory_bytes",
     "limit": 1000,
@@ -197,32 +197,32 @@
     "observed": 18976,
     "python_peak_bytes": 39868,
     "status": "resource_exhausted",
-    "wall_seconds": 0.495041296
+    "wall_seconds": 0.413884381
   },
   {
-    "compute_seconds": 0.061104569,
+    "compute_seconds": 0.066873106,
     "control_id": "nodes_gate",
     "counter": "model_nodes",
     "limit": 64,
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "observed": 65,
-    "python_peak_bytes": 542427,
+    "python_peak_bytes": 542495,
     "status": "resource_exhausted",
-    "wall_seconds": 0.494877353
+    "wall_seconds": 0.502873396
   },
   {
-    "compute_seconds": 0.015817154,
+    "compute_seconds": 0.016504214,
     "control_id": "sketch_entities_gate",
     "counter": "sketch_entities",
     "limit": 32,
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "observed": 33,
-    "python_peak_bytes": 276513,
+    "python_peak_bytes": 276468,
     "status": "resource_exhausted",
-    "wall_seconds": 0.427151651
+    "wall_seconds": 0.443359449
   },
   {
-    "compute_seconds": 0.015792207,
+    "compute_seconds": 0.016370549,
     "control_id": "constraints_gate",
     "counter": "sketch_constraints",
     "limit": 8,
@@ -230,40 +230,40 @@
     "observed": 16,
     "python_peak_bytes": 276513,
     "status": "resource_exhausted",
-    "wall_seconds": 0.428620462
+    "wall_seconds": 0.480578083
   },
   {
-    "compute_seconds": 1.548328976,
+    "compute_seconds": 1.581710589,
     "control_id": "faces_gate",
     "counter": "faces",
     "limit": 5,
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "observed": 6,
-    "python_peak_bytes": 32640824,
+    "python_peak_bytes": 32642639,
     "status": "resource_exhausted",
-    "wall_seconds": 2.304106978
+    "wall_seconds": 2.393007337
   },
   {
-    "compute_seconds": 1.566216243,
+    "compute_seconds": 1.603995723,
     "control_id": "edges_gate",
     "counter": "edges",
     "limit": 11,
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "observed": 12,
-    "python_peak_bytes": 32643685,
+    "python_peak_bytes": 32642773,
     "status": "resource_exhausted",
-    "wall_seconds": 2.358175098
+    "wall_seconds": 2.446643549
   },
   {
-    "compute_seconds": 2.253804892,
+    "compute_seconds": 2.41467179,
     "control_id": "triangles_gate",
     "counter": "triangles",
     "limit": 10,
     "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
     "observed": 2022,
-    "python_peak_bytes": 32670735,
+    "python_peak_bytes": 32671264,
     "status": "resource_exhausted",
-    "wall_seconds": 3.055347823
+    "wall_seconds": 3.252323683
   },
   {
     "compute_seconds": null,
@@ -275,6 +275,6 @@
     "python_peak_bytes": null,
     "reason": "child_process_deadline",
     "status": "resource_exhausted",
-    "wall_seconds": 0.02136099801
+    "wall_seconds": 0.02294868
   }
 ]

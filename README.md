@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v0.90.0まで実装しました。再計算の確定・取り消し、契約を固定したPython API、面・辺を選べる診断画面、3種類のSTEP出力方針、複数パーサー・読込経路の比較検証を追加しました。STEP読込・検査、候補比較、寸法変更、再計算、比較図、STEP再出力はPython APIと対話ターミナルから利用できます。
+v1.0.0まで実装しました。STEP読込・検査、候補の確認、寸法変更、再計算、比較、STEP再出力を、明示した対応範囲で安定提供します。Python APIと対話ターミナルに加え、面・辺と根拠を調べる診断画面を利用できます。
 
-新たな59条件を検証しました。固定11サンプルの構文判定は9件で一致・2件で不一致、形状を比較できる7件は2つの読込経路で測定値が一致しました。両経路は同じOCCTを使用します。任意のSTEPから拘束や設計履歴を復元するものではありません。v0.91.0以降は計画段階です。詳細は英語本文に示します。
+v0.91.0〜v1.0.0の142条件では、実測4環境の比較、不正入力、資源制限、未学習サンプルでのAI評価、確認・拒否の操作、読込から再出力までを検証します。公開部品の任意の編集や設計履歴の復元には対応しません。AI評価は合成20例で正解率70%であり、候補の確認を必須にしています。詳細は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,13 +47,39 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v0.90.0. Scoped references, dimensional
+The current implementation version is v1.0.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
+
+## Stable Research CAD Workflow: v1.0.0
+
+The first stable release freezes a bounded Python/terminal workflow. See the
+[support contract and commands](docs/cad-v1-support.md),
+[release evidence](results/cad_stable_release.html) and
+[actual validation record](results/cad-release-validation.json).
+
+| Stage | Evidence | Scope |
+| --- | --- | --- |
+| v0.91 | 4 actual OS/architecture environments | Fixed CAD contracts and explicit numeric drift |
+| v0.92 | 52 seeded malformed/metamorphic controls | Parser, topology, trim, placement and graph behavior |
+| v0.93 | 23 scale/budget cases | Process timeouts; estimated memory and measured Python allocations |
+| v0.94 | 20 held-out synthetic shapes | 70% accuracy, 75% coverage, 2 incorrect high-confidence decisions |
+| v0.95 | 10 review tasks and browser inspection | Confirmation, rejection, correction and visible evidence |
+| v0.96 | 6 editable authored + 4 licensed public controls | Public controls qualify inspection and exchange, not arbitrary edits |
+| v0.97–v1.0 | Claim map, contract freeze and release gates | Tested runtime identity, packaging and explicit accepted limitations |
+
+```bash
+python -m pip install -e ".[geometry]"
+python examples/cad_workspace.py
+python -m research_notes.cad_tool
+```
+
+The browser workspace is a read-only snapshot. Edits use the API or terminal;
+source preservation and reconstructed geometry are distinct writer policies.
 
 ## Research Themes
 
@@ -797,18 +823,13 @@ rank and residual diagnostics, and revisioned scalar dimension edits.
 v0.57.0–v0.60.0 implement explicit features, deterministic recompute,
 source-bound reconstruction candidates, and a focused assisted modeling tool.
 v0.61.0–v0.65.0 add scoped references, dimensional expressions, history editing,
-and authored assembly recompute. The roadmap next proceeds through PMI,
-precision surfaces, engineering
-analysis, evidence-bounded AI assistance, public-corpus generalization,
-interoperability, and reliability evaluation. v1.0.0 is the planned first
-stable research contract for an end-to-end STEP analysis, assisted modeling,
-verification, and export workflow. v0.82.0 and later stages remain
-unimplemented.
-Geometry-kernel binary distribution remains a separate license and packaging
-checkpoint even though the bounded research backend is selected.
-
-The roadmap is exploratory; completed stages above have local code and evidence.
-Versioned implementation does not by itself imply a published Git tag or package.
+and authored assembly recompute. Subsequent stages implement bounded PMI,
+precision surfaces, engineering analysis, auditable AI assistance, public-corpus
+inspection, interoperability and reliability evaluation. v1.0.0 stabilizes the
+[declared research contract](docs/cad-v1-support.md). The repository contains
+100 studies; completion does not imply full STEP conformance or production-CAD
+replacement. Runtime wheel and source-distribution checks retain the project's
+license and upstream notices. No package-registry upload is implied.
 
 ## License
 

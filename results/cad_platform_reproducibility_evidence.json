@@ -1,0 +1,110 @@
+{
+  "checks_pass": true,
+  "contract_version": "1.0.0",
+  "expected_labels": [
+    "linux-x64",
+    "windows-x64",
+    "macos-x64",
+    "macos-arm64"
+  ],
+  "numeric_policy": {
+    "absolute": 1e-07,
+    "relative": 1e-06
+  },
+  "platforms": [
+    {
+      "checks_pass": true,
+      "differences": [],
+      "environment": {
+        "cadquery_ocp": "7.9.3.1.1",
+        "github_run_attempt": "1",
+        "github_run_id": "36407317204",
+        "label": "linux-x64",
+        "machine": "x86_64",
+        "numpy": "2.4.6",
+        "ocp": "7.9.3.1",
+        "python": "3.12.14",
+        "release": "6.17.0-1022-azure",
+        "runner_image": "ubuntu24",
+        "runner_image_version": "20260920.314.1",
+        "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+        "system": "Linux"
+      },
+      "label": "linux-x64",
+      "same_runtime": true,
+      "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+    },
+    {
+      "checks_pass": true,
+      "differences": [],
+      "environment": {
+        "cadquery_ocp": "7.9.3.1.1",
+        "github_run_attempt": "1",
+        "github_run_id": "36407317204",
+        "label": "windows-x64",
+        "machine": "AMD64",
+        "numpy": "2.4.6",
+        "ocp": "7.9.3.1",
+        "python": "3.12.10",
+        "release": "2025Server",
+        "runner_image": "win25-vs2026",
+        "runner_image_version": "20260922.246.2",
+        "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+        "system": "Windows"
+      },
+      "label": "windows-x64",
+      "same_runtime": true,
+      "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+    },
+    {
+      "checks_pass": true,
+      "differences": [],
+      "environment": {
+        "cadquery_ocp": "7.9.3.1.1",
+        "github_run_attempt": "1",
+        "github_run_id": "36407317204",
+        "label": "macos-x64",
+        "machine": "x86_64",
+        "numpy": "2.4.6",
+        "ocp": "7.9.3.1",
+        "python": "3.12.10",
+        "release": "24.6.0",
+        "runner_image": "macos15",
+        "runner_image_version": "20260824.0482.1",
+        "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+        "system": "Darwin"
+      },
+      "label": "macos-x64",
+      "same_runtime": true,
+      "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+    },
+    {
+      "checks_pass": true,
+      "differences": [],
+      "environment": {
+        "cadquery_ocp": "7.9.3.1.1",
+        "github_run_attempt": "1",
+        "github_run_id": "36407317204",
+        "label": "macos-arm64",
+        "machine": "arm64",
+        "numpy": "2.4.6",
+        "ocp": "7.9.3.1",
+        "python": "3.12.10",
+        "release": "24.6.0",
+        "runner_image": "macos15",
+        "runner_image_version": "20260907.0337.1",
+        "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+        "system": "Darwin"
+      },
+      "label": "macos-arm64",
+      "same_runtime": true,
+      "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+    }
+  ],
+  "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+  "scope": "declared parser/import/model/sketch/writer/proximity controls; no arbitrary CAD equivalence"
+}

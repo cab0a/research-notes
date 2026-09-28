@@ -1,0 +1,6 @@
+control_id,outcome,checks_pass
+measured_platform_matrix,verified,True
+tested_runtime_identity,verified,True
+eight_study_gates,verified,True
+published_support_boundary,verified,True
+full_suite_and_wheel,verified,True

@@ -1,0 +1,1463 @@
+{
+  "checks_pass": true,
+  "contract_version": "1.0.0",
+  "environment": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "github_run_attempt": "1",
+    "github_run_id": "36407317204",
+    "label": "macos-x64",
+    "machine": "x86_64",
+    "numpy": "2.4.6",
+    "ocp": "7.9.3.1",
+    "python": "3.12.10",
+    "release": "24.6.0",
+    "runner_image": "macos15",
+    "runner_image_version": "20260824.0482.1",
+    "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+    "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+    "system": "Darwin"
+  },
+  "numeric_policy": {
+    "absolute": 1e-07,
+    "relative": 1e-06
+  },
+  "observations": {
+    "canonical_sha256": "5b521af7148d48d21b7d4300f58b681c0119fb0f859f64ec9b00d793edd0422c",
+    "geometry": {
+      "freeform_shell": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [
+              [
+                0.150000006,
+                0.3000000119,
+                0.8500000238
+              ]
+            ],
+            "names": [
+              "Controlled B-Spline Shell"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 0.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              3.0000001,
+              3.0000001,
+              1.3500001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 4,
+            "face_count": 1,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 0,
+            "surface_area": 9.58157778,
+            "surface_centroid": [
+              1.522222316,
+              1.522222316,
+              0.3474275281
+            ],
+            "surface_counts": [
+              [
+                "bspline",
+                1
+              ]
+            ],
+            "vertex_count": 4
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 0.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              3.0000001,
+              3.0000001,
+              1.3500001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 4,
+            "face_count": 1,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 0,
+            "surface_area": 9.58157778,
+            "surface_centroid": [
+              1.522222316,
+              1.522222316,
+              0.3474275281
+            ],
+            "surface_counts": [
+              [
+                "bspline",
+                1
+              ]
+            ],
+            "vertex_count": 4
+          }
+        }
+      },
+      "named_box": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [
+              [
+                0.8500000238,
+                0.150000006,
+                0.1000000015
+              ]
+            ],
+            "names": [
+              "Controlled Box"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 24.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.0000001,
+              3.0000001,
+              2.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 52.0,
+            "surface_centroid": [
+              2.0,
+              1.5,
+              1.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 24.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.0000001,
+              3.0000001,
+              2.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 52.0,
+            "surface_centroid": [
+              2.0,
+              1.5,
+              1.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          }
+        }
+      },
+      "named_hole": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [],
+            "names": [
+              "Controlled Through Hole"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 546.5475689,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              8.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 469.3064128,
+            "surface_centroid": [
+              5.84101469,
+              4.0,
+              3.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 546.5475689,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              8.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 469.3064128,
+            "surface_centroid": [
+              5.84101469,
+              4.0,
+              3.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          }
+        }
+      },
+      "public_assembly": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [
+              [
+                0.7230551243,
+                0.08437621593,
+                0.0212190114
+              ],
+              [
+                0.04373503104,
+                0.1195384338,
+                0.4564110339
+              ]
+            ],
+            "names": [
+              "blue_cylinder",
+              "red_cube"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 1785.398163,
+            "analyzer_valid": true,
+            "bounds_max": [
+              15.0000001,
+              10.0000001,
+              10.0000001
+            ],
+            "bounds_min": [
+              -10.0000001,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-05,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-05,
+            "shell_count": 2,
+            "solid_count": 2,
+            "surface_area": 1071.238898,
+            "surface_centroid": [
+              1.598512697,
+              5.0,
+              5.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                8
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 1785.398163,
+            "analyzer_valid": true,
+            "bounds_max": [
+              15.0000001,
+              10.0000001,
+              10.0000001
+            ],
+            "bounds_min": [
+              -10.0000001,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-05,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-05,
+            "shell_count": 2,
+            "solid_count": 2,
+            "surface_area": 1071.238898,
+            "surface_centroid": [
+              1.598512697,
+              5.0,
+              5.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                8
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          }
+        }
+      },
+      "public_bracket": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ],
+            "names": [
+              "nema-17-bracket"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 7061.155302,
+            "analyzer_valid": true,
+            "bounds_max": [
+              35.0000001,
+              20.5000001,
+              51.0000001
+            ],
+            "bounds_min": [
+              -1.000000004e-07,
+              -20.5000001,
+              -1.000000004e-07
+            ],
+            "edge_count": 120,
+            "face_count": 42,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 6221.984129,
+            "surface_centroid": [
+              10.01807275,
+              -5.336278632e-14,
+              13.92846652
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                24
+              ],
+              [
+                "cylinder",
+                18
+              ]
+            ],
+            "vertex_count": 80
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 7061.155302,
+            "analyzer_valid": true,
+            "bounds_max": [
+              35.0000001,
+              20.5000001,
+              51.0000001
+            ],
+            "bounds_min": [
+              -1.000000004e-07,
+              -20.5000001,
+              -1.000000004e-07
+            ],
+            "edge_count": 120,
+            "face_count": 42,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 6221.984129,
+            "surface_centroid": [
+              10.01807275,
+              -5.336278632e-14,
+              13.92846652
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                24
+              ],
+              [
+                "cylinder",
+                18
+              ]
+            ],
+            "vertex_count": 80
+          }
+        }
+      },
+      "sam_ap203": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [],
+            "names": [
+              "SAM Assembled_203"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 1309.883581,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.764619881,
+              5.408361274,
+              19.74449654
+            ],
+            "bounds_min": [
+              -10.73588249,
+              -0.9706265602,
+              4.243994172
+            ],
+            "edge_count": 298,
+            "face_count": 98,
+            "maximum_edge_tolerance": 0.0002511841025,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 0.0002511841025,
+            "shell_count": 3,
+            "solid_count": 3,
+            "surface_area": 1569.409109,
+            "surface_centroid": [
+              -2.976077787,
+              1.509311534,
+              11.99627895
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                71
+              ],
+              [
+                "cylinder",
+                21
+              ],
+              [
+                "bspline",
+                6
+              ]
+            ],
+            "vertex_count": 248
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 1309.883581,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.764619881,
+              5.408361274,
+              19.74449654
+            ],
+            "bounds_min": [
+              -10.73588249,
+              -0.9706265602,
+              4.243994172
+            ],
+            "edge_count": 298,
+            "face_count": 98,
+            "maximum_edge_tolerance": 0.0002511841025,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 0.0002511841025,
+            "shell_count": 3,
+            "solid_count": 3,
+            "surface_area": 1569.409109,
+            "surface_centroid": [
+              -2.976077787,
+              1.509311534,
+              11.99627895
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                71
+              ],
+              [
+                "cylinder",
+                21
+              ],
+              [
+                "bspline",
+                6
+              ]
+            ],
+            "vertex_count": 248
+          }
+        }
+      },
+      "sam_ap214": {
+        "stepcaf": {
+          "attributes": {
+            "colors": [
+              [
+                0.5906188488,
+                0.6375968456,
+                0.8549926281
+              ],
+              [
+                1.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.9911020994,
+                0.730460763,
+                0.5394794941
+              ],
+              [
+                0.0,
+                0.5271151066,
+                0.0
+              ],
+              [
+                1.0,
+                1.0,
+                1.0
+              ]
+            ],
+            "names": [
+              "SAM Assembled_AP214"
+            ],
+            "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+            "status": "observed"
+          },
+          "metrics": {
+            "absolute_volume": 1309.883581,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.764619881,
+              5.408361274,
+              19.74449654
+            ],
+            "bounds_min": [
+              -10.73588249,
+              -0.9706265602,
+              4.243994172
+            ],
+            "edge_count": 298,
+            "face_count": 98,
+            "maximum_edge_tolerance": 0.0002511841025,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 0.0002511841025,
+            "shell_count": 3,
+            "solid_count": 3,
+            "surface_area": 1569.409109,
+            "surface_centroid": [
+              -2.976077787,
+              1.509311534,
+              11.99627895
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                71
+              ],
+              [
+                "cylinder",
+                21
+              ],
+              [
+                "bspline",
+                6
+              ]
+            ],
+            "vertex_count": 248
+          }
+        },
+        "stepcontrol": {
+          "attributes": {
+            "colors": [],
+            "names": [],
+            "status": "not_supported"
+          },
+          "metrics": {
+            "absolute_volume": 1309.883581,
+            "analyzer_valid": true,
+            "bounds_max": [
+              4.764619881,
+              5.408361274,
+              19.74449654
+            ],
+            "bounds_min": [
+              -10.73588249,
+              -0.9706265602,
+              4.243994172
+            ],
+            "edge_count": 298,
+            "face_count": 98,
+            "maximum_edge_tolerance": 0.0002511841025,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 0.0002511841025,
+            "shell_count": 3,
+            "solid_count": 3,
+            "surface_area": 1569.409109,
+            "surface_centroid": [
+              -2.976077787,
+              1.509311534,
+              11.99627895
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                71
+              ],
+              [
+                "cylinder",
+                21
+              ],
+              [
+                "bspline",
+                6
+              ]
+            ],
+            "vertex_count": 248
+          }
+        }
+      }
+    },
+    "inputs": {
+      "corpus": [
+        {
+          "bytes": 15887,
+          "control_id": "named_box",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "step-round-trip-preservation/named_colored_box_source.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814"
+        },
+        {
+          "bytes": 20527,
+          "control_id": "named_hole",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "step-round-trip-preservation/named_colored_through_hole_source.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a"
+        },
+        {
+          "bytes": 6371,
+          "control_id": "freeform_shell",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "step-round-trip-preservation/named_colored_bspline_source.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851"
+        },
+        {
+          "bytes": 18322,
+          "control_id": "public_assembly",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "public-step-corpus/sources/cadquery_assembly.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5"
+        },
+        {
+          "bytes": 165860,
+          "control_id": "public_bracket",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "public-step-corpus/sources/build123d_bracket.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d"
+        },
+        {
+          "bytes": 359113,
+          "control_id": "sam_ap203",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "public-step-corpus/sources/ublox_sam_ap203.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365"
+        },
+        {
+          "bytes": 416065,
+          "control_id": "sam_ap214",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": true,
+          "path": "public-step-corpus/sources/ublox_sam_ap214.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495"
+        },
+        {
+          "bytes": 263,
+          "control_id": "invalid_exponent",
+          "expected_builtin_syntax": "reject",
+          "expected_external_syntax": [
+            "accept",
+            "reject"
+          ],
+          "native_geometry_eligible": false,
+          "path": "step-part21-conformance/invalid_real_exponent.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "2c855832ff13c61cab3acb976f7e5624fd9b5050d32d39faed133f5d83d83ea7"
+        },
+        {
+          "bytes": 315,
+          "control_id": "edition3_anchor",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "reject",
+            "reject"
+          ],
+          "native_geometry_eligible": false,
+          "path": "step-part21-conformance/edition3_anchor.step",
+          "schema_path": null,
+          "schema_sha256": null,
+          "sha256": "6a9cde507e13330a3cb873d52e91552e09185b3b896b1354073016ab24c9a443"
+        },
+        {
+          "bytes": 296,
+          "control_id": "schema_valid",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": false,
+          "path": "step-express-validation/scalar_types.step",
+          "schema_path": "step-express-validation/scalar_types.exp",
+          "schema_sha256": "edcf9616f8dcf9057d4c846d901c1f949ea2e180c982f5fc65e17664505cbf43",
+          "sha256": "0cbf1483f8c60fc2822dddd783c2a37c87c2d9756d23fb09e4b92d2a56dc0a93"
+        },
+        {
+          "bytes": 273,
+          "control_id": "schema_invalid",
+          "expected_builtin_syntax": "accept",
+          "expected_external_syntax": [
+            "accept",
+            "accept"
+          ],
+          "native_geometry_eligible": false,
+          "path": "step-express-validation/wrong_scalar_type.step",
+          "schema_path": "step-express-validation/wrong_scalar_type.exp",
+          "schema_sha256": "b53d10ab3ecc59d12d577b78a80c5764a1a6cb2a240c76d09abcbc075563a75b",
+          "sha256": "369ddd01871e3d9688ea0925e4368b7081f476fa8eb4a0f6357ff671c6f4e00a"
+        }
+      ],
+      "parser_pins": {
+        "ifcopenshell_step_file_parser": {
+          "commit": "9400d243d880dace57490949d74ab1932ce99a09",
+          "repository": "https://github.com/IfcOpenShell/step-file-parser.git"
+        },
+        "steputils": {
+          "commit": "547860b349a36cf24c564d6c87ffd8f60484f6fb",
+          "repository": "https://github.com/mozman/steputils.git"
+        }
+      }
+    },
+    "interop_classifications": [
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "named_box",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "within_budget",
+        "mesh_integral": "measured",
+        "schema": "not_supplied",
+        "semantics": "resolved_subset",
+        "source_sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "named_hole",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "within_budget",
+        "mesh_integral": "measured",
+        "schema": "not_supplied",
+        "semantics": "partial",
+        "source_sha256": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "freeform_shell",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "partial",
+        "source_sha256": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "public_assembly",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "resolved_subset",
+        "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "public_bracket",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "within_budget",
+        "mesh_integral": "measured",
+        "schema": "not_supplied",
+        "semantics": "resolved_subset",
+        "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "sam_ap203",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "partial",
+        "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "capability_gap",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "sam_ap214",
+        "geometry_comparison": "agree_invariants",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "partial",
+        "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "not_eligible",
+        "builtin": "reject",
+        "checks_pass": true,
+        "control_id": "invalid_exponent",
+        "geometry_comparison": "not_eligible",
+        "ifcopenshell_parser": "reject",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "not_reached",
+        "source_sha256": "2c855832ff13c61cab3acb976f7e5624fd9b5050d32d39faed133f5d83d83ea7",
+        "steputils": "accept",
+        "syntax_comparison": "disagree"
+      },
+      {
+        "attribute_comparison": "not_eligible",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "edition3_anchor",
+        "geometry_comparison": "not_eligible",
+        "ifcopenshell_parser": "reject",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "not_supplied",
+        "semantics": "unsupported",
+        "source_sha256": "6a9cde507e13330a3cb873d52e91552e09185b3b896b1354073016ab24c9a443",
+        "steputils": "reject",
+        "syntax_comparison": "disagree"
+      },
+      {
+        "attribute_comparison": "not_eligible",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "schema_valid",
+        "geometry_comparison": "not_eligible",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "accept",
+        "semantics": "unsupported",
+        "source_sha256": "0cbf1483f8c60fc2822dddd783c2a37c87c2d9756d23fb09e4b92d2a56dc0a93",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      },
+      {
+        "attribute_comparison": "not_eligible",
+        "builtin": "accept",
+        "checks_pass": true,
+        "control_id": "schema_invalid",
+        "geometry_comparison": "not_eligible",
+        "ifcopenshell_parser": "accept",
+        "mesh_comparison": "not_eligible",
+        "mesh_integral": "not_eligible",
+        "schema": "reject",
+        "semantics": "unsupported",
+        "source_sha256": "369ddd01871e3d9688ea0925e4368b7081f476fa8eb4a0f6357ff671c6f4e00a",
+        "steputils": "accept",
+        "syntax_comparison": "agree"
+      }
+    ],
+    "modeling": {
+      "abort_status": "aborted",
+      "commit_status": "committed",
+      "comparison": {
+        "after": {
+          "absolute_volume": 458.7628337,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 438.0539804,
+          "surface_centroid": [
+            5.899309302,
+            5.0,
+            2.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "authoring_history_recovered": false,
+        "before": {
+          "absolute_volume": 467.4336294,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 434.8495559,
+          "surface_centroid": [
+            5.913305392,
+            5.0,
+            2.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "comparison": {
+          "area_residual": 3.204424507,
+          "bounds_residual": 2.64697796e-23,
+          "material_difference_volume": 8.670795724,
+          "surface_inventory_matches": true,
+          "topology_matches": true,
+          "volume_residual": 8.670795724
+        },
+        "model_revision": 2,
+        "selected_candidate_id": "through_hole_57d4d40e4691",
+        "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+        "surface_area_change": 3.204424507,
+        "volume_change": -8.670795724
+      },
+      "export_checks": {
+        "attributes": "not_preserved",
+        "byte_identity": false,
+        "geometry": "verified_invariants",
+        "schema": "writer_declaration_not_validated",
+        "semantics": "not_preserved",
+        "structure": "regenerated",
+        "syntax": "parsed",
+        "tolerances": "remeasured",
+        "topology": "counts_verified_not_identity"
+      },
+      "initial_fingerprint": "bdb071cfc3948622d3df42e525cce3e42eb7f1a83bed9a6b0fda3aa815ee195b",
+      "rollback_pending": false
+    },
+    "sketches": [
+      {
+        "dof": 0,
+        "satisfied": true,
+        "status": "fully_constrained"
+      },
+      {
+        "dof": 0,
+        "satisfied": true,
+        "status": "fully_constrained"
+      }
+    ],
+    "tied_proximity": {
+      "clearance_satisfied": true,
+      "distance_tolerance": 1e-07,
+      "minimum_distance": 0.0,
+      "overlap_volume": 0.0,
+      "penetration_depth": null,
+      "required_clearance": 0.0,
+      "status": "touching",
+      "transform_provenance": null,
+      "units": "caller-declared common model units; mm in reference controls",
+      "volume_tolerance": 1e-07,
+      "witness_count": 12,
+      "witnesses": [
+        {
+          "a_point": [
+            2.00000005,
+            0.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 9,
+            "kind": "edge"
+          },
+          "b_point": [
+            2.00000005,
+            0.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 2,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.00000005,
+            0.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 10,
+            "kind": "edge"
+          },
+          "b_point": [
+            2.00000005,
+            0.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 1,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.00000005,
+            2.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 11,
+            "kind": "edge"
+          },
+          "b_point": [
+            2.00000005,
+            2.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 4,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.00000005,
+            2.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 12,
+            "kind": "edge"
+          },
+          "b_point": [
+            2.00000005,
+            2.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 3,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            0.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 5,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.0,
+            0.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 10,
+            "kind": "edge"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            0.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 5,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.00000005,
+            0.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 1,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            0.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 6,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.0,
+            0.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 9,
+            "kind": "edge"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            0.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 6,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.00000005,
+            0.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 2,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 7,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 12,
+            "kind": "edge"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "a_support": {
+            "analysis_local_index": 7,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.00000005,
+            2.0,
+            2.0
+          ],
+          "b_support": {
+            "analysis_local_index": 3,
+            "kind": "vertex"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            2.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 8,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.0,
+            2.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 11,
+            "kind": "edge"
+          }
+        },
+        {
+          "a_point": [
+            2.0,
+            2.0,
+            0.0
+          ],
+          "a_support": {
+            "analysis_local_index": 8,
+            "kind": "vertex"
+          },
+          "b_point": [
+            2.00000005,
+            2.0,
+            0.0
+          ],
+          "b_support": {
+            "analysis_local_index": 4,
+            "kind": "vertex"
+          }
+        }
+      ],
+      "witnesses_truncated": false
+    }
+  },
+  "scope": "declared parser/import/model/sketch/writer/proximity controls; no arbitrary CAD equivalence"
+}

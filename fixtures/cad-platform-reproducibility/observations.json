@@ -1,0 +1,18 @@
+[
+  {
+    "path": "results/cad-platforms/linux-x64/cad_platform.json",
+    "sha256": "5d1c959ae1445bff2ee375e3e528373a4c789150c833ea3387eeae29f065ca3e"
+  },
+  {
+    "path": "results/cad-platforms/macos-arm64/cad_platform.json",
+    "sha256": "aa1f4e4ae29cdcf13e6c96c5c77674014c4780b49ac33dfaafd7afde4b6a13af"
+  },
+  {
+    "path": "results/cad-platforms/macos-x64/cad_platform.json",
+    "sha256": "bdc8805e25f3f4d15d7b204009cd4ea4030f12d09e369bc8518b510393ce9354"
+  },
+  {
+    "path": "results/cad-platforms/windows-x64/cad_platform.json",
+    "sha256": "e1855bcdcdf5cc0be0455376884d8317a93c74d32a674b69dfb04be070fab254"
+  }
+]

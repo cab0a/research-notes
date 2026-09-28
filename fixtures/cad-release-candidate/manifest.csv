@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,generator
+acceptance.json,1159,6b89d9ea5b274658e20720067b9170b5bc3abb4a922e00d9cee5b1c571d80c03,experiments/run_cad_release_candidate.py

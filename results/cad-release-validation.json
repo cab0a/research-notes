@@ -1,0 +1,457 @@
+{
+  "release": "1.0.0",
+  "validated_at_utc": "2026-09-28T10:16:36.429579+00:00",
+  "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+  "ci": {
+    "id": 36407317261,
+    "name": "CI",
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+    "html_url": "https://github.com/cab0a/research-notes/actions/runs/36407317261",
+    "created_at": "2026-09-28T10:03:02Z",
+    "updated_at": "2026-09-28T10:15:27Z"
+  },
+  "ci_jobs": [
+    {
+      "id": 108879057548,
+      "name": "test-and-reproduce",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out pinned comparison parsers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run README Quick Start",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run unit tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Regenerate reference results",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify reference data and chart generation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879057731,
+      "name": "JPEG contracts (macos-arm64-default)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Observe decoded-pixel contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879057755,
+      "name": "JPEG contracts (ubuntu-x64-default)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Observe decoded-pixel contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879057830,
+      "name": "JPEG contracts (ubuntu-x64-scalar)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Observe decoded-pixel contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879057892,
+      "name": "JPEG contracts (windows-x64-default)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Observe decoded-pixel contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879057902,
+      "name": "JPEG contracts (macos-x64-default)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Observe decoded-pixel contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 108879709322,
+      "name": "Aggregate JPEG contract matrix",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Download platform observations",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Aggregate cross-platform contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify committed cross-platform contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Upload cross-platform report",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "platform_run": {
+    "id": 36407317204,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+    "html_url": "https://github.com/cab0a/research-notes/actions/runs/36407317204",
+    "created_at": "2026-09-28T10:03:02Z",
+    "updated_at": "2026-09-28T10:11:56Z"
+  },
+  "packaging": {
+    "version": "1.0.0",
+    "export_bytes": 19027,
+    "workspace_exists": true,
+    "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+    "wheel_sha256": "8c447bceab092a0d312dad7082cd715c1797d2be9722955b7686c6f55842af3b",
+    "wheel_bytes": 492543,
+    "isolated_interpreter": true,
+    "editable_install": false,
+    "console_entrypoints": 3,
+    "imported_from_isolated_site_packages": true
+  },
+  "source_distribution_audit": {
+    "project_license_and_upstream_notices_byte_verified": true,
+    "source_and_fixture_inclusion_verified": true,
+    "private_output_and_external_checkouts_excluded": true,
+    "wheel_license_metadata_verified": true
+  },
+  "tests": {
+    "local_full_suite": 717,
+    "remote_full_suite": 717,
+    "targeted_solver_checks_after_iteration_contract_change": 24
+  },
+  "browser_verification": "cad-review-browser.json",
+  "scope": "CI source commit plus runtime digest identify tested code. Documentation, artifact provenance and release packaging may be committed afterward without changing that runtime. Final downloadable archive hashes are in the release SHA256SUMS asset.",
+  "release_reproduction": {
+    "studies": 10,
+    "declared_case_outcomes": 142,
+    "fresh_output_directory": true,
+    "contracts_and_fixture_manifests_verified": true
+  },
+  "markdown": {
+    "files": 111,
+    "failures": 0
+  }
+}

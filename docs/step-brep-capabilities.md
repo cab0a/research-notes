@@ -2,24 +2,24 @@
 
 ## 日本語概要
 
-v0.90.0時点の機能と制限を分類します。再計算の確定・取り消し、Python API契約、診断画面、STEP出力方針と相互運用性比較を追加しました。誤追跡や特異付近の不正確な解も引き続き記録し、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
+v1.0.0時点の機能と制限を分類します。対応範囲を固定した解析・編集・再計算・検証・出力に加え、実測4環境、資源制限、AI評価、操作手順と配布契約を確認しました。誤追跡や特異付近の不正確な解も引き続き記録し、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-90 studies through v0.90.0. It separates syntax recognition, schema validation, physical-reference
+100 studies through v1.0.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.91.0 and later roadmap stages remain unimplemented.
+The [v1 support contract](cad-v1-support.md) and [release evidence](../results/cad_stable_release.html) qualify the completed stabilization stages.
 
 ## Stable Operations and Interoperability in v0.86–v0.90
 
 | Capability | Available scope | Boundary |
 | --- | --- | --- |
 | Transactional recompute | All nodes or authored assembly components/placements/checks commit together; bounded rollback | In memory only; no persistent journal or multi-process concurrency |
-| Python API contract 1.0 | Explicit candidate selection, revision tokens, versioned envelopes, defined errors and limits | Diagnostic data can evolve; legacy modules are not frozen; project remains v0.90 |
+| Python API contract 1.0 | Explicit candidate selection, revision tokens, versioned envelopes, defined errors and limits | Diagnostic data can evolve; legacy modules are not frozen; project v1.0 freezes the declared subset |
 | Diagnostic workspace | Rotate/select faces and edges, provenance, dependencies, candidates, constraints, geometry difference | Read-only HTML snapshot; local IDs; editing via API/terminal |
 | STEP writer policies | Preserve exact bytes, canonicalize trivia, reconstruct confirmed geometry | No schema-aware canonical graph or preserved semantic attributes in reconstruction |
 | Interoperability | 11 sources, 3 syntax routes, 7 import comparisons, 3 mesh integrations | Two import routes share OCCT; public full schemas absent; one recorded environment |

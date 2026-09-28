@@ -1,0 +1,717 @@
+{
+  "accepted_limitations": [
+    "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+    "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+    "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+    "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+    "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+    "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+    "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+  ],
+  "contracts": [
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 4,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_platform_reproducibility",
+      "version": "v0.91.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 52,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_fuzzing",
+      "version": "v0.92.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 23,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_resource_contracts",
+      "version": "v0.93.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 20,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "blinded_assistance_evaluation",
+      "version": "v0.94.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 10,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_review_workflow",
+      "version": "v0.95.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 10,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_end_to_end",
+      "version": "v0.96.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 9,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_claim_traceability",
+      "version": "v0.97.0"
+    },
+    {
+      "boundaries": [
+        "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+        "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+        "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+        "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+        "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+        "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+        "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+      ],
+      "checks_pass": true,
+      "control_count": 4,
+      "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+      "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+      "study": "cad_contract_freeze",
+      "version": "v0.98.0"
+    }
+  ],
+  "platforms": {
+    "checks_pass": true,
+    "contract_version": "1.0.0",
+    "expected_labels": [
+      "linux-x64",
+      "windows-x64",
+      "macos-x64",
+      "macos-arm64"
+    ],
+    "numeric_policy": {
+      "absolute": 1e-07,
+      "relative": 1e-06
+    },
+    "platforms": [
+      {
+        "checks_pass": true,
+        "differences": [],
+        "environment": {
+          "cadquery_ocp": "7.9.3.1.1",
+          "github_run_attempt": "1",
+          "github_run_id": "36407317204",
+          "label": "linux-x64",
+          "machine": "x86_64",
+          "numpy": "2.4.6",
+          "ocp": "7.9.3.1",
+          "python": "3.12.14",
+          "release": "6.17.0-1022-azure",
+          "runner_image": "ubuntu24",
+          "runner_image_version": "20260920.314.1",
+          "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+          "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+          "system": "Linux"
+        },
+        "label": "linux-x64",
+        "same_runtime": true,
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+      },
+      {
+        "checks_pass": true,
+        "differences": [],
+        "environment": {
+          "cadquery_ocp": "7.9.3.1.1",
+          "github_run_attempt": "1",
+          "github_run_id": "36407317204",
+          "label": "windows-x64",
+          "machine": "AMD64",
+          "numpy": "2.4.6",
+          "ocp": "7.9.3.1",
+          "python": "3.12.10",
+          "release": "2025Server",
+          "runner_image": "win25-vs2026",
+          "runner_image_version": "20260922.246.2",
+          "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+          "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+          "system": "Windows"
+        },
+        "label": "windows-x64",
+        "same_runtime": true,
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+      },
+      {
+        "checks_pass": true,
+        "differences": [],
+        "environment": {
+          "cadquery_ocp": "7.9.3.1.1",
+          "github_run_attempt": "1",
+          "github_run_id": "36407317204",
+          "label": "macos-x64",
+          "machine": "x86_64",
+          "numpy": "2.4.6",
+          "ocp": "7.9.3.1",
+          "python": "3.12.10",
+          "release": "24.6.0",
+          "runner_image": "macos15",
+          "runner_image_version": "20260824.0482.1",
+          "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+          "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+          "system": "Darwin"
+        },
+        "label": "macos-x64",
+        "same_runtime": true,
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+      },
+      {
+        "checks_pass": true,
+        "differences": [],
+        "environment": {
+          "cadquery_ocp": "7.9.3.1.1",
+          "github_run_attempt": "1",
+          "github_run_id": "36407317204",
+          "label": "macos-arm64",
+          "machine": "arm64",
+          "numpy": "2.4.6",
+          "ocp": "7.9.3.1",
+          "python": "3.12.10",
+          "release": "24.6.0",
+          "runner_image": "macos15",
+          "runner_image_version": "20260907.0337.1",
+          "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+          "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+          "system": "Darwin"
+        },
+        "label": "macos-arm64",
+        "same_runtime": true,
+        "source_commit": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a"
+      }
+    ],
+    "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+    "scope": "declared parser/import/model/sketch/writer/proximity controls; no arbitrary CAD equivalence"
+  },
+  "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+  "validation": {
+    "browser_verification": "cad-review-browser.json",
+    "ci": {
+      "conclusion": "success",
+      "created_at": "2026-09-28T10:03:02Z",
+      "head_sha": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+      "html_url": "https://github.com/cab0a/research-notes/actions/runs/36407317261",
+      "id": 36407317261,
+      "name": "CI",
+      "status": "completed",
+      "updated_at": "2026-09-28T10:15:27Z"
+    },
+    "ci_jobs": [
+      {
+        "conclusion": "success",
+        "id": 108879057548,
+        "name": "test-and-reproduce",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out pinned comparison parsers",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run README Quick Start",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Run unit tests",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Regenerate reference results",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify reference data and chart generation",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879057731,
+        "name": "JPEG contracts (macos-arm64-default)",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Observe decoded-pixel contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879057755,
+        "name": "JPEG contracts (ubuntu-x64-default)",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Observe decoded-pixel contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879057830,
+        "name": "JPEG contracts (ubuntu-x64-scalar)",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Observe decoded-pixel contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879057892,
+        "name": "JPEG contracts (windows-x64-default)",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Observe decoded-pixel contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879057902,
+        "name": "JPEG contracts (macos-x64-default)",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Observe decoded-pixel contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      },
+      {
+        "conclusion": "success",
+        "id": 108879709322,
+        "name": "Aggregate JPEG contract matrix",
+        "status": "completed",
+        "steps": [
+          {
+            "conclusion": "success",
+            "name": "Set up job",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Install dependencies",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Download platform observations",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Aggregate cross-platform contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Verify committed cross-platform contracts",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Upload cross-platform report",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Post Check out repository",
+            "status": "completed"
+          },
+          {
+            "conclusion": "success",
+            "name": "Complete job",
+            "status": "completed"
+          }
+        ]
+      }
+    ],
+    "markdown": {
+      "failures": 0,
+      "files": 111
+    },
+    "packaging": {
+      "console_entrypoints": 3,
+      "editable_install": false,
+      "export_bytes": 19027,
+      "imported_from_isolated_site_packages": true,
+      "isolated_interpreter": true,
+      "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+      "version": "1.0.0",
+      "wheel_bytes": 492543,
+      "wheel_sha256": "8c447bceab092a0d312dad7082cd715c1797d2be9722955b7686c6f55842af3b",
+      "workspace_exists": true
+    },
+    "platform_run": {
+      "conclusion": "success",
+      "created_at": "2026-09-28T10:03:02Z",
+      "head_sha": "2bdb0d5ad11d5964b793bfdc2627d21b4089fe1a",
+      "html_url": "https://github.com/cab0a/research-notes/actions/runs/36407317204",
+      "id": 36407317204,
+      "status": "completed",
+      "updated_at": "2026-09-28T10:11:56Z"
+    },
+    "release": "1.0.0",
+    "release_reproduction": {
+      "contracts_and_fixture_manifests_verified": true,
+      "declared_case_outcomes": 142,
+      "fresh_output_directory": true,
+      "studies": 10
+    },
+    "runtime_sha256": "74bc06970faaa2c2813bdd2e5f8db2f6f8b3742633d8cdbbef57916cb1168c87",
+    "scope": "CI source commit plus runtime digest identify tested code. Documentation, artifact provenance and release packaging may be committed afterward without changing that runtime. Final downloadable archive hashes are in the release SHA256SUMS asset.",
+    "source_distribution_audit": {
+      "private_output_and_external_checkouts_excluded": true,
+      "project_license_and_upstream_notices_byte_verified": true,
+      "source_and_fixture_inclusion_verified": true,
+      "wheel_license_metadata_verified": true
+    },
+    "tests": {
+      "local_full_suite": 717,
+      "remote_full_suite": 717,
+      "targeted_solver_checks_after_iteration_contract_change": 24
+    },
+    "validated_at_utc": "2026-09-28T10:16:36.429579+00:00"
+  }
+}

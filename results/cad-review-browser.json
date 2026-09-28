@@ -1,0 +1,16 @@
+{
+  "review_type": "Codex browser interaction; no human participant study",
+  "verified_at_utc": "2026-09-28T09:59:25.666015+00:00",
+  "page": "cad-review-workspace/workspace.html",
+  "title": "3D 診断ワークスペース · v1.0",
+  "checks": [
+    "cylinder face 7 selects source-bound evidence",
+    "edge mode selects circular edge 12",
+    "reset view retains selected edge",
+    "comparison shows source volume 467.433629 and committed volume 458.762834 mm3",
+    "console reports no warning/error entries"
+  ],
+  "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+  "screenshot_sha256": "f718d7837e002d737b847aba37885425d843af8a75cbac86cbfd3044f6a83bf5",
+  "screenshot": "cad-review-workspace/browser-review.png"
+}
