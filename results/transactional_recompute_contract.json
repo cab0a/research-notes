@@ -1,0 +1,13 @@
+{
+  "boundaries": [
+    "Atomic publication includes every feature node; assembly publication includes parts, placements and interference checks.",
+    "Failed candidates retain last valid geometry with stale/failed branch diagnostics; pending drafts cannot export as current.",
+    "In-memory checkpoints are bounded; this is not a persistent database, crash recovery system or concurrent shared workspace."
+  ],
+  "checks_pass": true,
+  "control_count": 14,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "transactional_recompute",
+  "version": "v0.86.0"
+}

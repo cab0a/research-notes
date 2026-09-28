@@ -1,0 +1,14 @@
+{
+  "boundaries": [
+    "Preserve retains exact source bytes. Canonical rewrites lexical trivia only, preserving significant token spelling/order.",
+    "Canonical mode refuses signatures, anchors and external references; preserve does not validate signature authenticity.",
+    "Reconstruction measures geometric round-trip invariants; semantic roles, names, colors and persistent topology identity are not retained.",
+    "Output is verified before atomic file publication; original source and existing outputs are guarded."
+  ],
+  "checks_pass": true,
+  "control_count": 8,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "step_writer_modes",
+  "version": "v0.89.0"
+}

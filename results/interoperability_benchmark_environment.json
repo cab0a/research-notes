@@ -1,0 +1,24 @@
+{
+  "external_parsers": {
+    "ifcopenshell_step_file_parser": {
+      "commit": "9400d243d880dace57490949d74ab1932ce99a09",
+      "repository": "https://github.com/IfcOpenShell/step-file-parser.git"
+    },
+    "steputils": {
+      "commit": "547860b349a36cf24c564d6c87ffd8f60484f6fb",
+      "repository": "https://github.com/mozman/steputils.git"
+    }
+  },
+  "machine": "x86_64",
+  "packages": {
+    "antlr4-python3-runtime": "4.9.3",
+    "cadquery-ocp": "7.9.3.1.1",
+    "lark-parser": "0.12.0",
+    "numpy": "2.4.6",
+    "pyparsing": "3.2.5"
+  },
+  "platform": "Linux",
+  "python": "3.12.14",
+  "release": "6.18.33.2-microsoft-standard-WSL2",
+  "scope": "one recorded environment; no cross-platform guarantee"
+}

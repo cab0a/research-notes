@@ -1,0 +1,131 @@
+{
+  "model_id": "branching_plate",
+  "nodes": [
+    {
+      "dependencies": [],
+      "node_id": "base",
+      "operation": "plate",
+      "parameters": [
+        [
+          "length",
+          10.0
+        ],
+        [
+          "origin_x",
+          0.0
+        ],
+        [
+          "origin_y",
+          0.0
+        ],
+        [
+          "origin_z",
+          0.0
+        ],
+        [
+          "thickness",
+          4.0
+        ],
+        [
+          "width",
+          12.0
+        ]
+      ]
+    },
+    {
+      "dependencies": [
+        "base"
+      ],
+      "node_id": "feature",
+      "operation": "through_hole",
+      "parameters": [
+        [
+          "radius",
+          1.0
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    {
+      "dependencies": [
+        "feature"
+      ],
+      "node_id": "boss",
+      "operation": "boss",
+      "parameters": [
+        [
+          "height",
+          2.0
+        ],
+        [
+          "radius",
+          1.0
+        ],
+        [
+          "x",
+          9.0
+        ],
+        [
+          "y",
+          7.0
+        ]
+      ]
+    },
+    {
+      "dependencies": [
+        "boss"
+      ],
+      "node_id": "result",
+      "operation": "result",
+      "parameters": []
+    },
+    {
+      "dependencies": [
+        "base"
+      ],
+      "node_id": "spare_rib",
+      "operation": "rib",
+      "parameters": [
+        [
+          "height",
+          2.0
+        ],
+        [
+          "length",
+          5.0
+        ],
+        [
+          "width",
+          1.0
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    {
+      "dependencies": [
+        "spare_rib"
+      ],
+      "node_id": "spare_result",
+      "operation": "result",
+      "parameters": []
+    }
+  ],
+  "output_id": "result",
+  "provenance": "authored",
+  "revision": 1,
+  "source_sha256": ""
+}

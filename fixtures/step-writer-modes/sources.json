@@ -1,0 +1,12 @@
+[
+  {
+    "bytes": 15887,
+    "path": "fixtures/step-round-trip-preservation/named_colored_box_source.step",
+    "sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814"
+  },
+  {
+    "bytes": 386,
+    "path": "fixtures/step-part21-exchange/signature_present.step",
+    "sha256": "ab34085eb69eedcc7aebb748f3b010c14fcafe3d66c8edba8d4cd6a5c6224b4d"
+  }
+]

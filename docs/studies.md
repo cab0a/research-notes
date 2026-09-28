@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-画像処理からSTEP・B-rep解析・編集まで85件の研究を索引化しています。v0.82.0〜v0.85.0ではAP間の意味解釈、複雑な製品構造、面・辺の追跡、拘束ソルバーを113条件で評価し、成功と限界を記録しました。詳細は英語本文に示します。
+画像処理からSTEP・B-rep解析・編集まで90件の研究を索引化しています。v0.86.0〜v0.90.0では再計算の確定・取り消し、API契約、診断画面、STEP出力方針、相互運用性を59条件で評価し、成功と限界を記録しました。詳細は英語本文に示します。
 
 ---
 
@@ -1906,6 +1906,64 @@ mirror solutions remain explicitly non-unique in the analytic uniqueness column.
 - [HTML report](../results/solver_robustness.html)
 - Reproduce: `python experiments/run_solver_robustness.py`
 
+## Stable Operations and Interoperability
+
+### v0.86.0 — Transactional Recompute and Rollback
+
+**Question:** Can failed branches or interference publish a partly updated model?
+Fourteen cases retain the last valid commit, reject stale tokens and pending
+exports, and restore bounded checkpoints for feature models and assemblies.
+
+- [Note](../notes/transactional-recompute.md)
+- [CSV](../results/transactional_recompute.csv)
+- [HTML report](../results/transactional_recompute.html)
+- Reproduce: `python experiments/run_transactional_recompute.py`
+
+### v0.87.0 — Stable Bounded Python API
+
+**Question:** Can callers distinguish staging, commit, abstention and failure?
+Seventeen cases establish contract 1.0 for method inputs, envelopes, statuses,
+errors and limits, with explicit confirmation and revision tokens.
+
+- [Note and commands](../notes/stable-cad-api.md)
+- [CSV](../results/stable_cad_api.csv)
+- [HTML report](../results/stable_cad_api.html)
+- Reproduce: `python experiments/run_stable_cad_api.py`
+
+### v0.88.0 — Diagnostic Modeling Workspace
+
+**Question:** Can a user inspect provenance, candidates, dependencies and change
+state alongside selected faces and edges? Nine controls validate the standalone
+read-only view and source/revision-bound JSON.
+
+- [Note](../notes/diagnostic-workspace.md)
+- [CSV](../results/diagnostic_workspace.csv)
+- [Interactive view](../results/diagnostic-workspace/workspace.html)
+- Reproduce: `python experiments/run_diagnostic_workspace.py`
+
+### v0.89.0 — STEP Writer Policies
+
+**Question:** What does each form of writing STEP preserve? Eight controls
+separate exact source bytes, lexical canonicalization and measured geometry
+reconstruction, including source protection and explicit overwrite.
+
+- [Note](../notes/step-writer-modes.md)
+- [CSV](../results/step_writer_modes.csv)
+- [HTML report](../results/step_writer_modes.html)
+- Reproduce: `python experiments/run_step_writer_modes.py`
+
+### v0.90.0 — Interoperability Benchmark
+
+**Question:** Which layers agree across fixed parsers and import routes?
+Eleven sources yield nine syntax agreements, two disagreements, seven matched
+native geometry comparisons and three measured mesh integrations. Shared-kernel
+and absent-schema limitations remain explicit.
+
+- [Note](../notes/interoperability-benchmark.md)
+- [CSV](../results/interoperability_benchmark.csv)
+- [HTML report](../results/interoperability_benchmark.html)
+- Reproduce: `python experiments/run_interoperability_benchmark.py`
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1930,7 +1988,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.85.0 subsets;
+  controlled v0.21.0 through v0.90.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

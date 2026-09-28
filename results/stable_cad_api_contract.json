@@ -1,0 +1,13 @@
+{
+  "boundaries": [
+    "API contract 1.0 freezes method inputs, envelope, statuses, error codes and limits; additive diagnostic data can evolve.",
+    "Reconstruction requires explicit candidate confirmation. Input inspection may abstain from editability.",
+    "Revision tokens protect individual workspace edits, not concurrent processes or persistent transactions."
+  ],
+  "checks_pass": true,
+  "control_count": 17,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "stable_cad_api",
+  "version": "v0.87.0"
+}

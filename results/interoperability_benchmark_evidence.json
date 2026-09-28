@@ -1,0 +1,5451 @@
+[
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": {
+      "area_mm2": 52.0,
+      "oracle": "authored_analytic_box",
+      "volume_mm3": 24.0
+    },
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [],
+      "products": [
+        {
+          "candidate_ids": [
+            10
+          ],
+          "definition_context_id": 9,
+          "definition_id": 5,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 3,
+              "representation_id": 10,
+              "shape_id": 4
+            }
+          ],
+          "formation_id": 6,
+          "formation_source": null,
+          "formation_type": "PRODUCT_DEFINITION_FORMATION",
+          "identifier": "Controlled Box",
+          "name": "Controlled Box",
+          "product_id": 7,
+          "selected_representation_id": 10,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 616,
+            "end_column": 44,
+            "end_line": 16,
+            "end_offset": 616,
+            "start_byte": 573,
+            "start_column": 1,
+            "start_line": 16,
+            "start_offset": 573
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+      "relationships": [],
+      "representations": [
+        {
+          "context_id": 345,
+          "entity_id": 10,
+          "item_ids": [
+            11,
+            15
+          ],
+          "length_unit_id": 346,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            15
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 885,
+            "end_column": 61,
+            "end_line": 21,
+            "end_offset": 885,
+            "start_byte": 825,
+            "start_column": 1,
+            "start_line": 21,
+            "start_offset": 825
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 12,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 10,
+              "source_node_index": 9,
+              "source_span": {
+                "end_byte": 883,
+                "end_column": 59,
+                "end_line": 21,
+                "end_offset": 883,
+                "start_byte": 879,
+                "start_column": 55,
+                "start_line": 21,
+                "start_offset": 879
+              },
+              "target_entity_id": 345,
+              "target_node_index": 344,
+              "target_occurrence": "#345",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 398,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 345,
+              "source_node_index": 344,
+              "source_span": {
+                "end_byte": 14842,
+                "end_column": 7,
+                "end_line": 406,
+                "end_offset": 14842,
+                "start_byte": 14838,
+                "start_column": 3,
+                "start_line": 406,
+                "start_offset": 14838
+              },
+              "target_entity_id": 346,
+              "target_node_index": 345,
+              "target_occurrence": "#346",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814",
+      "status": "resolved_subset"
+    },
+    "control_id": "named_box",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 361,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [
+            [
+              0.8500000238,
+              0.150000006,
+              0.1000000015
+            ]
+          ],
+          "names": [
+            "Controlled Box"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 24.0,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.0000001,
+            3.0000001,
+            2.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 12,
+          "face_count": 6,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 52.0,
+          "surface_centroid": [
+            2.0,
+            1.5,
+            1.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ]
+          ],
+          "vertex_count": 8
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 345,
+            "length_unit_id": 346,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              346
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "area": 52.0,
+          "centroid": [
+            2.0,
+            1.5,
+            1.0
+          ],
+          "comparison": "within_budget",
+          "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+          "relative_volume_error_budget": 0.001,
+          "status": "measured",
+          "triangles": 12,
+          "unit_density_inertia": [
+            [
+              26.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              40.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              50.0
+            ]
+          ],
+          "volume": 24.0,
+          "volume_relative_error_vs_gprop": 1.480297366e-16
+        },
+        "metrics": {
+          "absolute_volume": 24.0,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.0000001,
+            3.0000001,
+            2.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 12,
+          "face_count": 6,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 52.0,
+          "surface_centroid": [
+            2.0,
+            1.5,
+            1.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ]
+          ],
+          "vertex_count": 8
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 345,
+            "length_unit_id": 346,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              346
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 361,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": {
+        "decision": "reject",
+        "diagnostics": [
+          {
+            "detail": "the controlled semantic attribute requires an encoded string",
+            "entity_id": 456,
+            "reason_code": "semantic_string_required",
+            "role": "assembly_occurrence.reference_designator",
+            "severity": "invalid",
+            "source_line": 539
+          }
+        ],
+        "occurrences": [],
+        "paths": []
+      },
+      "diagnostics": [],
+      "products": [
+        {
+          "candidate_ids": [
+            10
+          ],
+          "definition_context_id": 9,
+          "definition_id": 5,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 3,
+              "representation_id": 10,
+              "shape_id": 4
+            }
+          ],
+          "formation_id": 6,
+          "formation_source": null,
+          "formation_type": "PRODUCT_DEFINITION_FORMATION",
+          "identifier": "Controlled Through Hole",
+          "name": "Controlled Through Hole",
+          "product_id": 7,
+          "selected_representation_id": 10,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 616,
+            "end_column": 44,
+            "end_line": 16,
+            "end_offset": 616,
+            "start_byte": 573,
+            "start_column": 1,
+            "start_line": 16,
+            "start_offset": 573
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            32
+          ],
+          "definition_context_id": 31,
+          "definition_id": 27,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 25,
+              "representation_id": 32,
+              "shape_id": 26
+            }
+          ],
+          "formation_id": 28,
+          "formation_source": null,
+          "formation_type": "PRODUCT_DEFINITION_FORMATION",
+          "identifier": "SOLID",
+          "name": "SOLID",
+          "product_id": 29,
+          "selected_representation_id": 32,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 1899,
+            "end_column": 47,
+            "end_line": 43,
+            "end_offset": 1899,
+            "start_byte": 1853,
+            "start_column": 1,
+            "start_line": 43,
+            "start_offset": 1853
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+      "relationships": [
+        {
+          "entity_id": 453,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            32,
+            10
+          ],
+          "source_span": {
+            "end_byte": 20245,
+            "end_column": 39,
+            "end_line": 535,
+            "end_offset": 20245,
+            "start_byte": 20099,
+            "start_column": 1,
+            "start_line": 533,
+            "start_offset": 20099
+          }
+        }
+      ],
+      "representations": [
+        {
+          "context_id": 19,
+          "entity_id": 10,
+          "item_ids": [
+            11,
+            15
+          ],
+          "length_unit_id": 20,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "",
+          "source_span": {
+            "end_byte": 891,
+            "end_column": 46,
+            "end_line": 22,
+            "end_offset": 891,
+            "start_byte": 846,
+            "start_column": 1,
+            "start_line": 22,
+            "start_offset": 846
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 12,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 10,
+              "source_node_index": 9,
+              "source_span": {
+                "end_byte": 889,
+                "end_column": 44,
+                "end_line": 22,
+                "end_offset": 889,
+                "start_byte": 886,
+                "start_column": 41,
+                "start_line": 22,
+                "start_offset": 886
+              },
+              "target_entity_id": 19,
+              "target_node_index": 18,
+              "target_occurrence": "#19",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 20,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 19,
+              "source_node_index": 18,
+              "source_span": {
+                "end_byte": 1304,
+                "end_column": 5,
+                "end_line": 33,
+                "end_offset": 1304,
+                "start_byte": 1301,
+                "start_column": 2,
+                "start_line": 33,
+                "start_offset": 1301
+              },
+              "target_entity_id": 20,
+              "target_node_index": 19,
+              "target_occurrence": "#20",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 447,
+          "entity_id": 32,
+          "item_ids": [
+            11,
+            33
+          ],
+          "length_unit_id": 448,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            33
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 2156,
+            "end_column": 61,
+            "end_line": 48,
+            "end_offset": 2156,
+            "start_byte": 2096,
+            "start_column": 1,
+            "start_line": 48,
+            "start_offset": 2096
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 36,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 32,
+              "source_node_index": 31,
+              "source_span": {
+                "end_byte": 2154,
+                "end_column": 59,
+                "end_line": 48,
+                "end_offset": 2154,
+                "start_byte": 2150,
+                "start_column": 55,
+                "start_line": 48,
+                "start_offset": 2150
+              },
+              "target_entity_id": 447,
+              "target_node_index": 446,
+              "target_occurrence": "#447",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 516,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 447,
+              "source_node_index": 446,
+              "source_span": {
+                "end_byte": 19631,
+                "end_column": 7,
+                "end_line": 525,
+                "end_offset": 19631,
+                "start_byte": 19627,
+                "start_column": 3,
+                "start_line": 525,
+                "start_offset": 19627
+              },
+              "target_entity_id": 448,
+              "target_node_index": 447,
+              "target_occurrence": "#448",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a",
+      "status": "partial"
+    },
+    "control_id": "named_hole",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 457,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [],
+          "names": [
+            "Controlled Through Hole"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 546.5475689,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            8.0000001,
+            6.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 469.3064128,
+          "surface_centroid": [
+            5.84101469,
+            4.0,
+            3.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 19,
+            "length_unit_id": 20,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              20
+            ]
+          },
+          {
+            "context_id": 447,
+            "length_unit_id": 448,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              448
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "area": 469.30458,
+          "centroid": [
+            6.107670395,
+            4.0,
+            3.0
+          ],
+          "comparison": "within_budget",
+          "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+          "relative_volume_error_budget": 0.001,
+          "status": "measured",
+          "triangles": 352,
+          "unit_density_inertia": [
+            [
+              4700.24166,
+              1.455191523e-11,
+              3.637978807e-12
+            ],
+            [
+              1.455191523e-11,
+              8416.205365,
+              1.546140993e-11
+            ],
+            [
+              3.637978807e-12,
+              1.546140993e-11,
+              9836.996871
+            ]
+          ],
+          "volume": 546.5750257,
+          "volume_relative_error_vs_gprop": 5.023675763e-05
+        },
+        "metrics": {
+          "absolute_volume": 546.5475689,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            8.0000001,
+            6.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 469.3064128,
+          "surface_centroid": [
+            5.84101469,
+            4.0,
+            3.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 19,
+            "length_unit_id": 20,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              20
+            ]
+          },
+          {
+            "context_id": 447,
+            "length_unit_id": 448,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              448
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 457,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [
+        {
+          "code": "unexpected_target_type",
+          "detail": "",
+          "entity_id": 3,
+          "source_span": {
+            "end_byte": 531,
+            "end_column": 46,
+            "end_line": 14,
+            "end_offset": 531,
+            "start_byte": 486,
+            "start_column": 1,
+            "start_line": 14,
+            "start_offset": 486
+          }
+        }
+      ],
+      "products": [
+        {
+          "candidate_ids": [],
+          "definition_context_id": 9,
+          "definition_id": 5,
+          "description": "",
+          "direct_paths": [],
+          "formation_id": 6,
+          "formation_source": null,
+          "formation_type": "PRODUCT_DEFINITION_FORMATION",
+          "identifier": "Controlled B-Spline Shell",
+          "name": "Controlled B-Spline Shell",
+          "product_id": 7,
+          "selected_representation_id": null,
+          "selection": "unresolved",
+          "source_span": {
+            "end_byte": 616,
+            "end_column": 44,
+            "end_line": 16,
+            "end_offset": 616,
+            "start_byte": 573,
+            "start_column": 1,
+            "start_line": 16,
+            "start_offset": 573
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+      "relationships": [],
+      "representations": [],
+      "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851",
+      "status": "partial"
+    },
+    "control_id": "freeform_shell",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 121,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [
+            [
+              0.150000006,
+              0.3000000119,
+              0.8500000238
+            ]
+          ],
+          "names": [
+            "Controlled B-Spline Shell"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 0.0,
+          "analyzer_valid": true,
+          "bounds_max": [
+            3.0000001,
+            3.0000001,
+            1.3500001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 4,
+          "face_count": 1,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 0,
+          "surface_area": 9.58157778,
+          "surface_centroid": [
+            1.522222316,
+            1.522222316,
+            0.3474275281
+          ],
+          "surface_counts": [
+            [
+              "bspline",
+              1
+            ]
+          ],
+          "vertex_count": 4
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 105,
+            "length_unit_id": 106,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              106
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 0.0,
+          "analyzer_valid": true,
+          "bounds_max": [
+            3.0000001,
+            3.0000001,
+            1.3500001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 4,
+          "face_count": 1,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 0,
+          "surface_area": 9.58157778,
+          "surface_centroid": [
+            1.522222316,
+            1.522222316,
+            0.3474275281
+          ],
+          "surface_counts": [
+            [
+              "bspline",
+              1
+            ]
+          ],
+          "vertex_count": 4
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 105,
+            "length_unit_id": 106,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              106
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 121,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": {
+      "oracle": "authored_upstream_cube_and_cylinder_dimensions",
+      "volume_mm3": 1785.398163
+    },
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [],
+      "products": [
+        {
+          "candidate_ids": [
+            25
+          ],
+          "definition_context_id": 2,
+          "definition_id": 56,
+          "description": "PART-blue_cylinder-DESC",
+          "direct_paths": [
+            {
+              "association_id": 5,
+              "representation_id": 25,
+              "shape_id": 24
+            }
+          ],
+          "formation_id": 105,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "blue_cylinder",
+          "name": "blue_cylinder",
+          "product_id": 55,
+          "selected_representation_id": 25,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 3155,
+            "end_column": 54,
+            "end_line": 56,
+            "end_offset": 3155,
+            "start_byte": 3102,
+            "start_column": 1,
+            "start_line": 56,
+            "start_offset": 3102
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            28
+          ],
+          "definition_context_id": 2,
+          "definition_id": 60,
+          "description": "PART-red_cube-DESC",
+          "direct_paths": [
+            {
+              "association_id": 7,
+              "representation_id": 28,
+              "shape_id": 27
+            }
+          ],
+          "formation_id": 110,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "red_cube",
+          "name": "red_cube",
+          "product_id": 59,
+          "selected_representation_id": 28,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 3384,
+            "end_column": 54,
+            "end_line": 60,
+            "end_offset": 3384,
+            "start_byte": 3331,
+            "start_column": 1,
+            "start_line": 60,
+            "start_offset": 3331
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+      "relationships": [],
+      "representations": [
+        {
+          "context_id": 8,
+          "entity_id": 25,
+          "item_ids": [
+            57,
+            58
+          ],
+          "length_unit_id": 33,
+          "mm_per_source_unit": 1000.0,
+          "model_ids": [
+            57
+          ],
+          "name": "blue_cylinder",
+          "source_span": {
+            "end_byte": 1642,
+            "end_column": 79,
+            "end_line": 29,
+            "end_offset": 1642,
+            "start_byte": 1564,
+            "start_column": 1,
+            "start_line": 29,
+            "start_offset": 1564
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "conversion_based",
+          "unit_source_edges": [
+            {
+              "edge_index": 46,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 25,
+              "source_node_index": 21,
+              "source_span": {
+                "end_byte": 1639,
+                "end_column": 76,
+                "end_line": 29,
+                "end_offset": 1639,
+                "start_byte": 1637,
+                "start_column": 74,
+                "start_line": 29,
+                "start_offset": 1637
+              },
+              "target_entity_id": 8,
+              "target_node_index": 7,
+              "target_occurrence": "#8",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 21,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 8,
+              "source_node_index": 7,
+              "source_span": {
+                "end_byte": 902,
+                "end_column": 127,
+                "end_line": 15,
+                "end_offset": 902,
+                "start_byte": 899,
+                "start_column": 124,
+                "start_line": 15,
+                "start_offset": 899
+              },
+              "target_entity_id": 33,
+              "target_node_index": 26,
+              "target_occurrence": "#33",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 53,
+              "parameter_path": [
+                1
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 33,
+              "source_node_index": 26,
+              "source_span": {
+                "end_byte": 1974,
+                "end_column": 45,
+                "end_line": 34,
+                "end_offset": 1974,
+                "start_byte": 1971,
+                "start_column": 42,
+                "start_line": 34,
+                "start_offset": 1971
+              },
+              "target_entity_id": 65,
+              "target_node_index": 55,
+              "target_occurrence": "#65",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 99,
+              "parameter_path": [
+                1
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 65,
+              "source_node_index": 55,
+              "source_span": {
+                "end_byte": 3554,
+                "end_column": 73,
+                "end_line": 63,
+                "end_offset": 3554,
+                "start_byte": 3550,
+                "start_column": 69,
+                "start_line": 63,
+                "start_offset": 3550
+              },
+              "target_entity_id": 115,
+              "target_node_index": 97,
+              "target_occurrence": "#115",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 8,
+          "entity_id": 28,
+          "item_ids": [
+            61,
+            62
+          ],
+          "length_unit_id": 33,
+          "mm_per_source_unit": 1000.0,
+          "model_ids": [
+            61
+          ],
+          "name": "red_cube",
+          "source_span": {
+            "end_byte": 1837,
+            "end_column": 74,
+            "end_line": 32,
+            "end_offset": 1837,
+            "start_byte": 1764,
+            "start_column": 1,
+            "start_line": 32,
+            "start_offset": 1764
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "conversion_based",
+          "unit_source_edges": [
+            {
+              "edge_index": 51,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 28,
+              "source_node_index": 24,
+              "source_span": {
+                "end_byte": 1834,
+                "end_column": 71,
+                "end_line": 32,
+                "end_offset": 1834,
+                "start_byte": 1832,
+                "start_column": 69,
+                "start_line": 32,
+                "start_offset": 1832
+              },
+              "target_entity_id": 8,
+              "target_node_index": 7,
+              "target_occurrence": "#8",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 21,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 8,
+              "source_node_index": 7,
+              "source_span": {
+                "end_byte": 902,
+                "end_column": 127,
+                "end_line": 15,
+                "end_offset": 902,
+                "start_byte": 899,
+                "start_column": 124,
+                "start_line": 15,
+                "start_offset": 899
+              },
+              "target_entity_id": 33,
+              "target_node_index": 26,
+              "target_occurrence": "#33",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 53,
+              "parameter_path": [
+                1
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 33,
+              "source_node_index": 26,
+              "source_span": {
+                "end_byte": 1974,
+                "end_column": 45,
+                "end_line": 34,
+                "end_offset": 1974,
+                "start_byte": 1971,
+                "start_column": 42,
+                "start_line": 34,
+                "start_offset": 1971
+              },
+              "target_entity_id": 65,
+              "target_node_index": 55,
+              "target_occurrence": "#65",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 99,
+              "parameter_path": [
+                1
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 65,
+              "source_node_index": 55,
+              "source_span": {
+                "end_byte": 3554,
+                "end_column": 73,
+                "end_line": 63,
+                "end_offset": 3554,
+                "start_byte": 3550,
+                "start_column": 69,
+                "start_line": 63,
+                "start_offset": 3550
+              },
+              "target_entity_id": 115,
+              "target_node_index": 97,
+              "target_occurrence": "#115",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "status": "resolved_subset"
+    },
+    "control_id": "public_assembly",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 309,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [
+            [
+              0.7230551243,
+              0.08437621593,
+              0.0212190114
+            ],
+            [
+              0.04373503104,
+              0.1195384338,
+              0.4564110339
+            ]
+          ],
+          "names": [
+            "blue_cylinder",
+            "red_cube"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1785.398163,
+          "analyzer_valid": true,
+          "bounds_max": [
+            15.0000001,
+            10.0000001,
+            10.0000001
+          ],
+          "bounds_min": [
+            -10.0000001,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 9,
+          "maximum_edge_tolerance": 1e-05,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-05,
+          "shell_count": 2,
+          "solid_count": 2,
+          "surface_area": 1071.238898,
+          "surface_centroid": [
+            1.598512697,
+            5.0,
+            5.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              8
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "outcome": "accept",
+        "roots": 2,
+        "units": [
+          {
+            "context_id": 8,
+            "length_unit_id": 33,
+            "millimetres_per_source_unit": 1000.0,
+            "unit_chain": [
+              33,
+              115
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1785.398163,
+          "analyzer_valid": true,
+          "bounds_max": [
+            15.0000001,
+            10.0000001,
+            10.0000001
+          ],
+          "bounds_min": [
+            -10.0000001,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 9,
+          "maximum_edge_tolerance": 1e-05,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-05,
+          "shell_count": 2,
+          "solid_count": 2,
+          "surface_area": 1071.238898,
+          "surface_centroid": [
+            1.598512697,
+            5.0,
+            5.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              8
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "outcome": "accept",
+        "roots": 2,
+        "units": [
+          {
+            "context_id": 8,
+            "length_unit_id": 33,
+            "millimetres_per_source_unit": 1000.0,
+            "unit_chain": [
+              33,
+              115
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 309,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [],
+      "products": [
+        {
+          "candidate_ids": [
+            10
+          ],
+          "definition_context_id": 9,
+          "definition_id": 5,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 3,
+              "representation_id": 10,
+              "shape_id": 4
+            }
+          ],
+          "formation_id": 6,
+          "formation_source": null,
+          "formation_type": "PRODUCT_DEFINITION_FORMATION",
+          "identifier": "nema-17-bracket",
+          "name": "nema-17-bracket",
+          "product_id": 7,
+          "selected_representation_id": 10,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 600,
+            "end_column": 44,
+            "end_line": 16,
+            "end_offset": 600,
+            "start_byte": 557,
+            "start_column": 1,
+            "start_line": 16,
+            "start_offset": 557
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset (explicit OID spelling)",
+      "relationships": [],
+      "representations": [
+        {
+          "context_id": 3331,
+          "entity_id": 10,
+          "item_ids": [
+            11,
+            15
+          ],
+          "length_unit_id": 3332,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            15
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 872,
+            "end_column": 62,
+            "end_line": 21,
+            "end_offset": 872,
+            "start_byte": 811,
+            "start_column": 1,
+            "start_line": 21,
+            "start_offset": 811
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 12,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 10,
+              "source_node_index": 9,
+              "source_span": {
+                "end_byte": 870,
+                "end_column": 60,
+                "end_line": 21,
+                "end_offset": 870,
+                "start_byte": 865,
+                "start_column": 55,
+                "start_line": 21,
+                "start_offset": 865
+              },
+              "target_entity_id": 3331,
+              "target_node_index": 3330,
+              "target_occurrence": "#3331",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 3852,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 3331,
+              "source_node_index": 3330,
+              "source_span": {
+                "end_byte": 164934,
+                "end_column": 36,
+                "end_line": 4011,
+                "end_offset": 164934,
+                "start_byte": 164929,
+                "start_column": 31,
+                "start_line": 4011,
+                "start_offset": 164929
+              },
+              "target_entity_id": 3332,
+              "target_node_index": 3331,
+              "target_occurrence": "#3332",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "status": "resolved_subset"
+    },
+    "control_id": "public_bracket",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 3345,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "names": [
+            "nema-17-bracket"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 7061.155302,
+          "analyzer_valid": true,
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "bounds_min": [
+            -1.000000004e-07,
+            -20.5000001,
+            -1.000000004e-07
+          ],
+          "edge_count": 120,
+          "face_count": 42,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 6221.984129,
+          "surface_centroid": [
+            10.01807275,
+            -5.35820479e-14,
+            13.92846652
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              24
+            ],
+            [
+              "cylinder",
+              18
+            ]
+          ],
+          "vertex_count": 80
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 3331,
+            "length_unit_id": 3332,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3332
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "area": 6223.508501,
+          "centroid": [
+            9.819551926,
+            -3.967412417e-15,
+            12.6007846
+          ],
+          "comparison": "within_budget",
+          "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+          "relative_volume_error_budget": 0.001,
+          "status": "measured",
+          "triangles": 3908,
+          "unit_density_inertia": [
+            [
+              2973924.21,
+              -3.810236592e-10,
+              652378.6781
+            ],
+            [
+              -3.810236592e-10,
+              2680966.874,
+              -3.747544103e-10
+            ],
+            [
+              652378.6781,
+              -3.747544103e-10,
+              1942277.28
+            ]
+          ],
+          "volume": 7063.496948,
+          "volume_relative_error_vs_gprop": 0.0003316236081
+        },
+        "metrics": {
+          "absolute_volume": 7061.155302,
+          "analyzer_valid": true,
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "bounds_min": [
+            -1.000000004e-07,
+            -20.5000001,
+            -1.000000004e-07
+          ],
+          "edge_count": 120,
+          "face_count": 42,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 6221.984129,
+          "surface_centroid": [
+            10.01807275,
+            -5.35820479e-14,
+            13.92846652
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              24
+            ],
+            [
+              "cylinder",
+              18
+            ]
+          ],
+          "vertex_count": 80
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 3331,
+            "length_unit_id": 3332,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3332
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 3345,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [
+        {
+          "code": "assembly_placement_outside_profile",
+          "detail": "Legacy AP203 occurrences are retained as syntax; placement is deferred.",
+          "entity_id": null,
+          "source_span": null
+        }
+      ],
+      "products": [
+        {
+          "candidate_ids": [
+            675,
+            2178
+          ],
+          "definition_context_id": 2983,
+          "definition_id": 260,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 3462,
+              "representation_id": 2178,
+              "shape_id": 347
+            }
+          ],
+          "formation_id": 1355,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM PCB",
+          "name": "SAM PCB",
+          "product_id": 4113,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 22643,
+            "end_column": 60,
+            "end_line": 342,
+            "end_offset": 22643,
+            "start_byte": 22584,
+            "start_column": 1,
+            "start_line": 342,
+            "start_offset": 22584
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            408,
+            3427
+          ],
+          "definition_context_id": 575,
+          "definition_id": 801,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 66,
+              "representation_id": 408,
+              "shape_id": 2232
+            }
+          ],
+          "formation_id": 1900,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM ANT",
+          "name": "SAM ANT",
+          "product_id": 2477,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 66572,
+            "end_column": 59,
+            "end_line": 999,
+            "end_offset": 66572,
+            "start_byte": 66514,
+            "start_column": 1,
+            "start_line": 999,
+            "start_offset": 66514
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            2945
+          ],
+          "definition_context_id": 1666,
+          "definition_id": 1301,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 1111,
+              "representation_id": 2945,
+              "shape_id": 4084
+            }
+          ],
+          "formation_id": 2430,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM Assembled_203",
+          "name": "SAM Assembled_203",
+          "product_id": 1091,
+          "selected_representation_id": 2945,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 107344,
+            "end_column": 61,
+            "end_line": 1619,
+            "end_offset": 107344,
+            "start_byte": 107284,
+            "start_column": 1,
+            "start_line": 1619,
+            "start_offset": 107284
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            1391,
+            2223
+          ],
+          "definition_context_id": 1126,
+          "definition_id": 4003,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 2605,
+              "representation_id": 1391,
+              "shape_id": 2796
+            }
+          ],
+          "formation_id": 852,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "Sam cavity",
+          "name": "Sam cavity",
+          "product_id": 1781,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 336126,
+            "end_column": 60,
+            "end_line": 4975,
+            "end_offset": 336126,
+            "start_byte": 336067,
+            "start_column": 1,
+            "start_line": 4975,
+            "start_offset": 336067
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP203 legacy product/shape subset",
+      "relationships": [
+        {
+          "entity_id": 22,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            2945,
+            408
+          ],
+          "source_span": {
+            "end_byte": 1996,
+            "end_column": 162,
+            "end_line": 37,
+            "end_offset": 1996,
+            "start_byte": 1835,
+            "start_column": 1,
+            "start_line": 37,
+            "start_offset": 1835
+          }
+        },
+        {
+          "entity_id": 1453,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            2945,
+            2178
+          ],
+          "source_span": {
+            "end_byte": 119975,
+            "end_column": 164,
+            "end_line": 1801,
+            "end_offset": 119975,
+            "start_byte": 119812,
+            "start_column": 1,
+            "start_line": 1801,
+            "start_offset": 119812
+          }
+        },
+        {
+          "entity_id": 1665,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            1391,
+            2223
+          ],
+          "source_span": {
+            "end_byte": 138370,
+            "end_column": 80,
+            "end_line": 2086,
+            "end_offset": 138370,
+            "start_byte": 138291,
+            "start_column": 1,
+            "start_line": 2086,
+            "start_offset": 138291
+          }
+        },
+        {
+          "entity_id": 2029,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            408,
+            3427
+          ],
+          "source_span": {
+            "end_byte": 168562,
+            "end_column": 79,
+            "end_line": 2531,
+            "end_offset": 168562,
+            "start_byte": 168484,
+            "start_column": 1,
+            "start_line": 2531,
+            "start_offset": 168484
+          }
+        },
+        {
+          "entity_id": 2444,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            2945,
+            1391
+          ],
+          "source_span": {
+            "end_byte": 205256,
+            "end_column": 165,
+            "end_line": 3053,
+            "end_offset": 205256,
+            "start_byte": 205092,
+            "start_column": 1,
+            "start_line": 3053,
+            "start_offset": 205092
+          }
+        },
+        {
+          "entity_id": 3969,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            2178,
+            675
+          ],
+          "source_span": {
+            "end_byte": 333434,
+            "end_column": 79,
+            "end_line": 4936,
+            "end_offset": 333434,
+            "start_byte": 333356,
+            "start_column": 1,
+            "start_line": 4936,
+            "start_offset": 333356
+          }
+        }
+      ],
+      "representations": [
+        {
+          "context_id": 2507,
+          "entity_id": 408,
+          "item_ids": [
+            2057
+          ],
+          "length_unit_id": 2974,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM ANT",
+          "source_span": {
+            "end_byte": 34238,
+            "end_column": 62,
+            "end_line": 520,
+            "end_offset": 34238,
+            "start_byte": 34177,
+            "start_column": 1,
+            "start_line": 520,
+            "start_offset": 34177
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 482,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 408,
+              "source_node_index": 407,
+              "source_span": {
+                "end_byte": 34234,
+                "end_column": 58,
+                "end_line": 520,
+                "end_offset": 34234,
+                "start_byte": 34229,
+                "start_column": 53,
+                "start_line": 520,
+                "start_offset": 34229
+              },
+              "target_entity_id": 2507,
+              "target_node_index": 2506,
+              "target_occurrence": "#2507",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 2930,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2507,
+              "source_node_index": 2506,
+              "source_span": {
+                "end_byte": 210657,
+                "end_column": 137,
+                "end_line": 3131,
+                "end_offset": 210657,
+                "start_byte": 210652,
+                "start_column": 132,
+                "start_line": 3131,
+                "start_offset": 210652
+              },
+              "target_entity_id": 2974,
+              "target_node_index": 2973,
+              "target_occurrence": "#2974",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 2279,
+          "entity_id": 675,
+          "item_ids": [
+            3350,
+            2057
+          ],
+          "length_unit_id": 2314,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            3350
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 55695,
+            "end_column": 76,
+            "end_line": 843,
+            "end_offset": 55695,
+            "start_byte": 55620,
+            "start_column": 1,
+            "start_line": 843,
+            "start_offset": 55620
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 836,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 675,
+              "source_node_index": 674,
+              "source_span": {
+                "end_byte": 55691,
+                "end_column": 72,
+                "end_line": 843,
+                "end_offset": 55691,
+                "start_byte": 55686,
+                "start_column": 67,
+                "start_line": 843,
+                "start_offset": 55686
+              },
+              "target_entity_id": 2279,
+              "target_node_index": 2278,
+              "target_occurrence": "#2279",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 2656,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2279,
+              "source_node_index": 2278,
+              "source_span": {
+                "end_byte": 190188,
+                "end_column": 137,
+                "end_line": 2842,
+                "end_offset": 190188,
+                "start_byte": 190183,
+                "start_column": 132,
+                "start_line": 2842,
+                "start_offset": 190183
+              },
+              "target_entity_id": 2314,
+              "target_node_index": 2313,
+              "target_occurrence": "#2314",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 955,
+          "entity_id": 1391,
+          "item_ids": [
+            2057
+          ],
+          "length_unit_id": 3280,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "Sam cavity",
+          "source_span": {
+            "end_byte": 114486,
+            "end_column": 65,
+            "end_line": 1724,
+            "end_offset": 114486,
+            "start_byte": 114422,
+            "start_column": 1,
+            "start_line": 1724,
+            "start_offset": 114422
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 1597,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 1391,
+              "source_node_index": 1390,
+              "source_span": {
+                "end_byte": 114482,
+                "end_column": 61,
+                "end_line": 1724,
+                "end_offset": 114482,
+                "start_byte": 114478,
+                "start_column": 57,
+                "start_line": 1724,
+                "start_offset": 114478
+              },
+              "target_entity_id": 955,
+              "target_node_index": 954,
+              "target_occurrence": "#955",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 1124,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 955,
+              "source_node_index": 954,
+              "source_span": {
+                "end_byte": 79151,
+                "end_column": 136,
+                "end_line": 1193,
+                "end_offset": 79151,
+                "start_byte": 79146,
+                "start_column": 131,
+                "start_line": 1193,
+                "start_offset": 79146
+              },
+              "target_entity_id": 3280,
+              "target_node_index": 3279,
+              "target_occurrence": "#3280",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 2279,
+          "entity_id": 2178,
+          "item_ids": [
+            2057
+          ],
+          "length_unit_id": 2314,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM PCB",
+          "source_span": {
+            "end_byte": 181418,
+            "end_column": 63,
+            "end_line": 2715,
+            "end_offset": 181418,
+            "start_byte": 181356,
+            "start_column": 1,
+            "start_line": 2715,
+            "start_offset": 181356
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 2507,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 2178,
+              "source_node_index": 2177,
+              "source_span": {
+                "end_byte": 181414,
+                "end_column": 59,
+                "end_line": 2715,
+                "end_offset": 181414,
+                "start_byte": 181409,
+                "start_column": 54,
+                "start_line": 2715,
+                "start_offset": 181409
+              },
+              "target_entity_id": 2279,
+              "target_node_index": 2278,
+              "target_occurrence": "#2279",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 2656,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2279,
+              "source_node_index": 2278,
+              "source_span": {
+                "end_byte": 190188,
+                "end_column": 137,
+                "end_line": 2842,
+                "end_offset": 190188,
+                "start_byte": 190183,
+                "start_column": 132,
+                "start_line": 2842,
+                "start_offset": 190183
+              },
+              "target_entity_id": 2314,
+              "target_node_index": 2313,
+              "target_occurrence": "#2314",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 955,
+          "entity_id": 2223,
+          "item_ids": [
+            4116,
+            2057
+          ],
+          "length_unit_id": 3280,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            4116
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 185697,
+            "end_column": 76,
+            "end_line": 2776,
+            "end_offset": 185697,
+            "start_byte": 185622,
+            "start_column": 1,
+            "start_line": 2776,
+            "start_offset": 185622
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 2577,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 2223,
+              "source_node_index": 2222,
+              "source_span": {
+                "end_byte": 185693,
+                "end_column": 72,
+                "end_line": 2776,
+                "end_offset": 185693,
+                "start_byte": 185689,
+                "start_column": 68,
+                "start_line": 2776,
+                "start_offset": 185689
+              },
+              "target_entity_id": 955,
+              "target_node_index": 954,
+              "target_occurrence": "#955",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 1124,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 955,
+              "source_node_index": 954,
+              "source_span": {
+                "end_byte": 79151,
+                "end_column": 136,
+                "end_line": 1193,
+                "end_offset": 79151,
+                "start_byte": 79146,
+                "start_column": 131,
+                "start_line": 1193,
+                "start_offset": 79146
+              },
+              "target_entity_id": 3280,
+              "target_node_index": 3279,
+              "target_occurrence": "#3280",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 3808,
+          "entity_id": 2945,
+          "item_ids": [
+            4246,
+            3159,
+            3369,
+            3580
+          ],
+          "length_unit_id": 1338,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM Assembled_203",
+          "source_span": {
+            "end_byte": 247266,
+            "end_column": 94,
+            "end_line": 3665,
+            "end_offset": 247266,
+            "start_byte": 247173,
+            "start_column": 1,
+            "start_line": 3665,
+            "start_offset": 247173
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 3454,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 2945,
+              "source_node_index": 2944,
+              "source_span": {
+                "end_byte": 247262,
+                "end_column": 90,
+                "end_line": 3665,
+                "end_offset": 247262,
+                "start_byte": 247257,
+                "start_column": 85,
+                "start_line": 3665,
+                "start_offset": 247257
+              },
+              "target_entity_id": 3808,
+              "target_node_index": 3807,
+              "target_occurrence": "#3808",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 4418,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 3808,
+              "source_node_index": 3807,
+              "source_span": {
+                "end_byte": 318530,
+                "end_column": 137,
+                "end_line": 4713,
+                "end_offset": 318530,
+                "start_byte": 318525,
+                "start_column": 132,
+                "start_line": 4713,
+                "start_offset": 318525
+              },
+              "target_entity_id": 1338,
+              "target_node_index": 1337,
+              "target_occurrence": "#1338",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 2507,
+          "entity_id": 3427,
+          "item_ids": [
+            619,
+            2057
+          ],
+          "length_unit_id": 2974,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            619
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 287517,
+            "end_column": 76,
+            "end_line": 4247,
+            "end_offset": 287517,
+            "start_byte": 287442,
+            "start_column": 1,
+            "start_line": 4247,
+            "start_offset": 287442
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 3980,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 3427,
+              "source_node_index": 3426,
+              "source_span": {
+                "end_byte": 287513,
+                "end_column": 72,
+                "end_line": 4247,
+                "end_offset": 287513,
+                "start_byte": 287508,
+                "start_column": 67,
+                "start_line": 4247,
+                "start_offset": 287508
+              },
+              "target_entity_id": 2507,
+              "target_node_index": 2506,
+              "target_occurrence": "#2507",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 2930,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2507,
+              "source_node_index": 2506,
+              "source_span": {
+                "end_byte": 210657,
+                "end_column": 137,
+                "end_line": 3131,
+                "end_offset": 210657,
+                "start_byte": 210652,
+                "start_column": 132,
+                "start_line": 3131,
+                "start_offset": 210652
+              },
+              "target_entity_id": 2974,
+              "target_node_index": 2973,
+              "target_occurrence": "#2974",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "CONFIG_CONTROL_DESIGN",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "status": "partial"
+    },
+    "control_id": "sam_ap203",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 4273,
+        "outcome": "accept",
+        "schemas": [
+          "CONFIG_CONTROL_DESIGN"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [],
+          "names": [
+            "SAM Assembled_203"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1309.883581,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.764619881,
+            5.408361274,
+            19.74449654
+          ],
+          "bounds_min": [
+            -10.73588249,
+            -0.9706265602,
+            4.243994172
+          ],
+          "edge_count": 298,
+          "face_count": 98,
+          "maximum_edge_tolerance": 0.0002511841025,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 0.0002511841025,
+          "shell_count": 3,
+          "solid_count": 3,
+          "surface_area": 1569.409109,
+          "surface_centroid": [
+            -2.976077787,
+            1.509311534,
+            11.99627895
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "vertex_count": 248
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 955,
+            "length_unit_id": 3280,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3280
+            ]
+          },
+          {
+            "context_id": 2279,
+            "length_unit_id": 2314,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2314
+            ]
+          },
+          {
+            "context_id": 2507,
+            "length_unit_id": 2974,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2974
+            ]
+          },
+          {
+            "context_id": 3808,
+            "length_unit_id": 1338,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1338
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1309.883581,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.764619881,
+            5.408361274,
+            19.74449654
+          ],
+          "bounds_min": [
+            -10.73588249,
+            -0.9706265602,
+            4.243994172
+          ],
+          "edge_count": 298,
+          "face_count": 98,
+          "maximum_edge_tolerance": 0.0002511841025,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 0.0002511841025,
+          "shell_count": 3,
+          "solid_count": 3,
+          "surface_area": 1569.409109,
+          "surface_centroid": [
+            -2.976077787,
+            1.509311534,
+            11.99627895
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "vertex_count": 248
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 955,
+            "length_unit_id": 3280,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3280
+            ]
+          },
+          {
+            "context_id": 2279,
+            "length_unit_id": 2314,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2314
+            ]
+          },
+          {
+            "context_id": 2507,
+            "length_unit_id": 2974,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2974
+            ]
+          },
+          {
+            "context_id": 3808,
+            "length_unit_id": 1338,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1338
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 4273,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": {
+        "decision": "reject",
+        "diagnostics": [
+          {
+            "detail": "the controlled semantic attribute requires an encoded string",
+            "entity_id": 4935,
+            "reason_code": "semantic_string_required",
+            "role": "assembly_occurrence.reference_designator",
+            "severity": "invalid",
+            "source_line": 5983
+          },
+          {
+            "detail": "the controlled semantic attribute requires an encoded string",
+            "entity_id": 4936,
+            "reason_code": "semantic_string_required",
+            "role": "assembly_occurrence.reference_designator",
+            "severity": "invalid",
+            "source_line": 5984
+          },
+          {
+            "detail": "the controlled semantic attribute requires an encoded string",
+            "entity_id": 4937,
+            "reason_code": "semantic_string_required",
+            "role": "assembly_occurrence.reference_designator",
+            "severity": "invalid",
+            "source_line": 5985
+          }
+        ],
+        "occurrences": [],
+        "paths": []
+      },
+      "diagnostics": [],
+      "products": [
+        {
+          "candidate_ids": [
+            3143
+          ],
+          "definition_context_id": 1654,
+          "definition_id": 76,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 2921,
+              "representation_id": 3143,
+              "shape_id": 4396
+            }
+          ],
+          "formation_id": 356,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM Assembled_AP214",
+          "name": "SAM Assembled_AP214",
+          "product_id": 3126,
+          "selected_representation_id": 3143,
+          "selection": "unique",
+          "source_span": {
+            "end_byte": 6376,
+            "end_column": 58,
+            "end_line": 101,
+            "end_offset": 6376,
+            "start_byte": 6319,
+            "start_column": 1,
+            "start_line": 101,
+            "start_offset": 6319
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            209,
+            4534
+          ],
+          "definition_context_id": 339,
+          "definition_id": 4004,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 1937,
+              "representation_id": 209,
+              "shape_id": 2302
+            }
+          ],
+          "formation_id": 872,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM ANT",
+          "name": "SAM ANT",
+          "product_id": 2757,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 336875,
+            "end_column": 59,
+            "end_line": 4869,
+            "end_offset": 336875,
+            "start_byte": 336817,
+            "start_column": 1,
+            "start_line": 4869,
+            "start_offset": 336817
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            2290,
+            2298
+          ],
+          "definition_context_id": 3136,
+          "definition_id": 4263,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 894,
+              "representation_id": 2290,
+              "shape_id": 83
+            }
+          ],
+          "formation_id": 1403,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "SAM PCB",
+          "name": "SAM PCB",
+          "product_id": 2004,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 358772,
+            "end_column": 61,
+            "end_line": 5169,
+            "end_offset": 358772,
+            "start_byte": 358712,
+            "start_column": 1,
+            "start_line": 5169,
+            "start_offset": 358712
+          },
+          "unqualified_candidate_ids": []
+        },
+        {
+          "candidate_ids": [
+            1377,
+            4802
+          ],
+          "definition_context_id": 993,
+          "definition_id": 4523,
+          "description": "",
+          "direct_paths": [
+            {
+              "association_id": 4797,
+              "representation_id": 1377,
+              "shape_id": 2904
+            }
+          ],
+          "formation_id": 1922,
+          "formation_source": "NOT_KNOWN",
+          "formation_type": "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE",
+          "identifier": "Sam cavity",
+          "name": "Sam cavity",
+          "product_id": 37,
+          "selected_representation_id": null,
+          "selection": "ambiguous",
+          "source_span": {
+            "end_byte": 380849,
+            "end_column": 60,
+            "end_line": 5474,
+            "end_offset": 380849,
+            "start_byte": 380790,
+            "start_column": 1,
+            "start_line": 5474,
+            "start_offset": 380790
+          },
+          "unqualified_candidate_ids": []
+        }
+      ],
+      "profile": "AP214 product/shape/occurrence subset",
+      "relationships": [
+        {
+          "entity_id": 1151,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            1377,
+            4802
+          ],
+          "source_span": {
+            "end_byte": 96092,
+            "end_column": 80,
+            "end_line": 1398,
+            "end_offset": 96092,
+            "start_byte": 96013,
+            "start_column": 1,
+            "start_line": 1398,
+            "start_offset": 96013
+          }
+        },
+        {
+          "entity_id": 2178,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            209,
+            4534
+          ],
+          "source_span": {
+            "end_byte": 184265,
+            "end_column": 79,
+            "end_line": 2669,
+            "end_offset": 184265,
+            "start_byte": 184187,
+            "start_column": 1,
+            "start_line": 2669,
+            "start_offset": 184187
+          }
+        },
+        {
+          "entity_id": 3429,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            3143,
+            1377
+          ],
+          "source_span": {
+            "end_byte": 289037,
+            "end_column": 165,
+            "end_line": 4202,
+            "end_offset": 289037,
+            "start_byte": 288873,
+            "start_column": 1,
+            "start_line": 4202,
+            "start_offset": 288873
+          }
+        },
+        {
+          "entity_id": 3817,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            3143,
+            2290
+          ],
+          "source_span": {
+            "end_byte": 321657,
+            "end_column": 165,
+            "end_line": 4652,
+            "end_offset": 321657,
+            "start_byte": 321493,
+            "start_column": 1,
+            "start_line": 4652,
+            "start_offset": 321493
+          }
+        },
+        {
+          "entity_id": 4034,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": false,
+          "representation_ids": [
+            2290,
+            2298
+          ],
+          "source_span": {
+            "end_byte": 339309,
+            "end_column": 80,
+            "end_line": 4899,
+            "end_offset": 339309,
+            "start_byte": 339230,
+            "start_column": 1,
+            "start_line": 4899,
+            "start_offset": 339230
+          }
+        },
+        {
+          "entity_id": 4188,
+          "geometric_equivalence": "not_inferred",
+          "has_transform": true,
+          "representation_ids": [
+            3143,
+            209
+          ],
+          "source_span": {
+            "end_byte": 352663,
+            "end_column": 163,
+            "end_line": 5079,
+            "end_offset": 352663,
+            "start_byte": 352501,
+            "start_column": 1,
+            "start_line": 5079,
+            "start_offset": 352501
+          }
+        }
+      ],
+      "representations": [
+        {
+          "context_id": 708,
+          "entity_id": 209,
+          "item_ids": [
+            3103
+          ],
+          "length_unit_id": 3289,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM ANT",
+          "source_span": {
+            "end_byte": 17270,
+            "end_column": 61,
+            "end_line": 264,
+            "end_offset": 17270,
+            "start_byte": 17210,
+            "start_column": 1,
+            "start_line": 264,
+            "start_offset": 17210
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 221,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 209,
+              "source_node_index": 208,
+              "source_span": {
+                "end_byte": 17266,
+                "end_column": 57,
+                "end_line": 264,
+                "end_offset": 17266,
+                "start_byte": 17262,
+                "start_column": 53,
+                "start_line": 264,
+                "start_offset": 17262
+              },
+              "target_entity_id": 708,
+              "target_node_index": 707,
+              "target_occurrence": "#708",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 786,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 708,
+              "source_node_index": 707,
+              "source_span": {
+                "end_byte": 59470,
+                "end_column": 135,
+                "end_line": 880,
+                "end_offset": 59470,
+                "start_byte": 59465,
+                "start_column": 130,
+                "start_line": 880,
+                "start_offset": 59465
+              },
+              "target_entity_id": 3289,
+              "target_node_index": 3288,
+              "target_occurrence": "#3289",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 2854,
+          "entity_id": 1377,
+          "item_ids": [
+            3103
+          ],
+          "length_unit_id": 584,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "Sam cavity",
+          "source_span": {
+            "end_byte": 115157,
+            "end_column": 66,
+            "end_line": 1675,
+            "end_offset": 115157,
+            "start_byte": 115092,
+            "start_column": 1,
+            "start_line": 1675,
+            "start_offset": 115092
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 1494,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 1377,
+              "source_node_index": 1376,
+              "source_span": {
+                "end_byte": 115153,
+                "end_column": 62,
+                "end_line": 1675,
+                "end_offset": 115153,
+                "start_byte": 115148,
+                "start_column": 57,
+                "start_line": 1675,
+                "start_offset": 115148
+              },
+              "target_entity_id": 2854,
+              "target_node_index": 2853,
+              "target_occurrence": "#2854",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 3250,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2854,
+              "source_node_index": 2853,
+              "source_span": {
+                "end_byte": 240814,
+                "end_column": 135,
+                "end_line": 3480,
+                "end_offset": 240814,
+                "start_byte": 240810,
+                "start_column": 131,
+                "start_line": 3480,
+                "start_offset": 240810
+              },
+              "target_entity_id": 584,
+              "target_node_index": 583,
+              "target_occurrence": "#584",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 4349,
+          "entity_id": 2290,
+          "item_ids": [
+            3103
+          ],
+          "length_unit_id": 1000,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM PCB",
+          "source_span": {
+            "end_byte": 193648,
+            "end_column": 63,
+            "end_line": 2806,
+            "end_offset": 193648,
+            "start_byte": 193586,
+            "start_column": 1,
+            "start_line": 2806,
+            "start_offset": 193586
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 2606,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 2290,
+              "source_node_index": 2289,
+              "source_span": {
+                "end_byte": 193644,
+                "end_column": 59,
+                "end_line": 2806,
+                "end_offset": 193644,
+                "start_byte": 193639,
+                "start_column": 54,
+                "start_line": 2806,
+                "start_offset": 193639
+              },
+              "target_entity_id": 4349,
+              "target_node_index": 4348,
+              "target_occurrence": "#4349",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 4925,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 4349,
+              "source_node_index": 4348,
+              "source_span": {
+                "end_byte": 366152,
+                "end_column": 137,
+                "end_line": 5270,
+                "end_offset": 366152,
+                "start_byte": 366147,
+                "start_column": 132,
+                "start_line": 5270,
+                "start_offset": 366147
+              },
+              "target_entity_id": 1000,
+              "target_node_index": 999,
+              "target_occurrence": "#1000",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 4349,
+          "entity_id": 2298,
+          "item_ids": [
+            2198,
+            3103
+          ],
+          "length_unit_id": 1000,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            2198
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 194211,
+            "end_column": 77,
+            "end_line": 2814,
+            "end_offset": 194211,
+            "start_byte": 194135,
+            "start_column": 1,
+            "start_line": 2814,
+            "start_offset": 194135
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 2617,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 2298,
+              "source_node_index": 2297,
+              "source_span": {
+                "end_byte": 194207,
+                "end_column": 73,
+                "end_line": 2814,
+                "end_offset": 194207,
+                "start_byte": 194202,
+                "start_column": 68,
+                "start_line": 2814,
+                "start_offset": 194202
+              },
+              "target_entity_id": 4349,
+              "target_node_index": 4348,
+              "target_occurrence": "#4349",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 4925,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 4349,
+              "source_node_index": 4348,
+              "source_span": {
+                "end_byte": 366152,
+                "end_column": 137,
+                "end_line": 5270,
+                "end_offset": 366152,
+                "start_byte": 366147,
+                "start_column": 132,
+                "start_line": 5270,
+                "start_offset": 366147
+              },
+              "target_entity_id": 1000,
+              "target_node_index": 999,
+              "target_occurrence": "#1000",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 3250,
+          "entity_id": 3143,
+          "item_ids": [
+            3767,
+            2509,
+            2772,
+            3011
+          ],
+          "length_unit_id": 745,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [],
+          "name": "SAM Assembled_AP214",
+          "source_span": {
+            "end_byte": 265124,
+            "end_column": 96,
+            "end_line": 3846,
+            "end_offset": 265124,
+            "start_byte": 265029,
+            "start_column": 1,
+            "start_line": 3846,
+            "start_offset": 265029
+          },
+          "type": "SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 3588,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 3143,
+              "source_node_index": 3142,
+              "source_span": {
+                "end_byte": 265120,
+                "end_column": 92,
+                "end_line": 3846,
+                "end_offset": 265120,
+                "start_byte": 265115,
+                "start_column": 87,
+                "start_line": 3846,
+                "start_offset": 265115
+              },
+              "target_entity_id": 3250,
+              "target_node_index": 3249,
+              "target_occurrence": "#3250",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 3705,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 3250,
+              "source_node_index": 3249,
+              "source_span": {
+                "end_byte": 273461,
+                "end_column": 136,
+                "end_line": 3968,
+                "end_offset": 273461,
+                "start_byte": 273457,
+                "start_column": 132,
+                "start_line": 3968,
+                "start_offset": 273457
+              },
+              "target_entity_id": 745,
+              "target_node_index": 744,
+              "target_occurrence": "#745",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 708,
+          "entity_id": 4534,
+          "item_ids": [
+            3048,
+            3103
+          ],
+          "length_unit_id": 3289,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            3048
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 381987,
+            "end_column": 76,
+            "end_line": 5490,
+            "end_offset": 381987,
+            "start_byte": 381912,
+            "start_column": 1,
+            "start_line": 5490,
+            "start_offset": 381912
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 5131,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 4534,
+              "source_node_index": 4533,
+              "source_span": {
+                "end_byte": 381983,
+                "end_column": 72,
+                "end_line": 5490,
+                "end_offset": 381983,
+                "start_byte": 381979,
+                "start_column": 68,
+                "start_line": 5490,
+                "start_offset": 381979
+              },
+              "target_entity_id": 708,
+              "target_node_index": 707,
+              "target_occurrence": "#708",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 786,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 708,
+              "source_node_index": 707,
+              "source_span": {
+                "end_byte": 59470,
+                "end_column": 135,
+                "end_line": 880,
+                "end_offset": 59470,
+                "start_byte": 59465,
+                "start_column": 130,
+                "start_line": 880,
+                "start_offset": 59465
+              },
+              "target_entity_id": 3289,
+              "target_node_index": 3288,
+              "target_occurrence": "#3289",
+              "target_scope": "local_entity"
+            }
+          ]
+        },
+        {
+          "context_id": 2854,
+          "entity_id": 4802,
+          "item_ids": [
+            4787,
+            3103
+          ],
+          "length_unit_id": 584,
+          "mm_per_source_unit": 1.0,
+          "model_ids": [
+            4787
+          ],
+          "name": "",
+          "source_span": {
+            "end_byte": 404253,
+            "end_column": 77,
+            "end_line": 5809,
+            "end_offset": 404253,
+            "start_byte": 404177,
+            "start_column": 1,
+            "start_line": 5809,
+            "start_offset": 404177
+          },
+          "type": "ADVANCED_BREP_SHAPE_REPRESENTATION",
+          "unit_form": "si",
+          "unit_source_edges": [
+            {
+              "edge_index": 5502,
+              "parameter_path": [
+                2
+              ],
+              "record_index": 0,
+              "reference_kind": "entity",
+              "source_entity_id": 4802,
+              "source_node_index": 4801,
+              "source_span": {
+                "end_byte": 404249,
+                "end_column": 73,
+                "end_line": 5809,
+                "end_offset": 404249,
+                "start_byte": 404244,
+                "start_column": 68,
+                "start_line": 5809,
+                "start_offset": 404244
+              },
+              "target_entity_id": 2854,
+              "target_node_index": 2853,
+              "target_occurrence": "#2854",
+              "target_scope": "local_entity"
+            },
+            {
+              "edge_index": 3250,
+              "parameter_path": [
+                0,
+                0
+              ],
+              "record_index": 2,
+              "reference_kind": "entity",
+              "source_entity_id": 2854,
+              "source_node_index": 2853,
+              "source_span": {
+                "end_byte": 240814,
+                "end_column": 135,
+                "end_line": 3480,
+                "end_offset": 240814,
+                "start_byte": 240810,
+                "start_column": 131,
+                "start_line": 3480,
+                "start_offset": 240810
+              },
+              "target_entity_id": 584,
+              "target_node_index": 583,
+              "target_occurrence": "#584",
+              "target_scope": "local_entity"
+            }
+          ]
+        }
+      ],
+      "schema": "AUTOMOTIVE_DESIGN",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+      "status": "partial"
+    },
+    "control_id": "sam_ap214",
+    "geometry_comparison": {
+      "area_error_mm2": 0.0,
+      "bounds_error_mm": 0.0,
+      "independence": "same_OCCT_kernel_different_transfer_interfaces",
+      "status": "agree_invariants",
+      "tolerance_drift": {
+        "maximum_edge_tolerance": 0.0,
+        "maximum_face_tolerance": 0.0,
+        "maximum_vertex_tolerance": 0.0
+      },
+      "topology_counts_equal": true,
+      "volume_error_mm3": 0.0
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 4937,
+        "outcome": "accept",
+        "schemas": [
+          "AUTOMOTIVE_DESIGN"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "stepcaf": {
+        "attributes": {
+          "colors": [
+            [
+              0.5906188488,
+              0.6375968456,
+              0.8549926281
+            ],
+            [
+              1.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.9911020994,
+              0.730460763,
+              0.5394794941
+            ],
+            [
+              0.0,
+              0.5271151066,
+              0.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "names": [
+            "SAM Assembled_AP214"
+          ],
+          "scope": "free-root names and color table; not complete occurrence-level attribute binding",
+          "status": "observed"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1309.883581,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.764619881,
+            5.408361274,
+            19.74449654
+          ],
+          "bounds_min": [
+            -10.73588249,
+            -0.9706265602,
+            4.243994172
+          ],
+          "edge_count": 298,
+          "face_count": 98,
+          "maximum_edge_tolerance": 0.0002511841025,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 0.0002511841025,
+          "shell_count": 3,
+          "solid_count": 3,
+          "surface_area": 1569.409109,
+          "surface_centroid": [
+            -2.976077787,
+            1.509311534,
+            11.99627895
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "vertex_count": 248
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 58,
+            "length_unit_id": 1049,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1049
+            ]
+          },
+          {
+            "context_id": 98,
+            "length_unit_id": 187,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              187
+            ]
+          },
+          {
+            "context_id": 140,
+            "length_unit_id": 814,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              814
+            ]
+          },
+          {
+            "context_id": 153,
+            "length_unit_id": 1219,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1219
+            ]
+          },
+          {
+            "context_id": 228,
+            "length_unit_id": 2379,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2379
+            ]
+          },
+          {
+            "context_id": 235,
+            "length_unit_id": 2480,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2480
+            ]
+          },
+          {
+            "context_id": 438,
+            "length_unit_id": 2547,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2547
+            ]
+          },
+          {
+            "context_id": 513,
+            "length_unit_id": 183,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              183
+            ]
+          },
+          {
+            "context_id": 522,
+            "length_unit_id": 3060,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3060
+            ]
+          },
+          {
+            "context_id": 537,
+            "length_unit_id": 2795,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2795
+            ]
+          },
+          {
+            "context_id": 589,
+            "length_unit_id": 2982,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2982
+            ]
+          },
+          {
+            "context_id": 656,
+            "length_unit_id": 2226,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2226
+            ]
+          },
+          {
+            "context_id": 708,
+            "length_unit_id": 3289,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3289
+            ]
+          },
+          {
+            "context_id": 870,
+            "length_unit_id": 4077,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4077
+            ]
+          },
+          {
+            "context_id": 880,
+            "length_unit_id": 1228,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1228
+            ]
+          },
+          {
+            "context_id": 901,
+            "length_unit_id": 3291,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3291
+            ]
+          },
+          {
+            "context_id": 948,
+            "length_unit_id": 3273,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3273
+            ]
+          },
+          {
+            "context_id": 1043,
+            "length_unit_id": 263,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              263
+            ]
+          },
+          {
+            "context_id": 1231,
+            "length_unit_id": 3452,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3452
+            ]
+          },
+          {
+            "context_id": 1412,
+            "length_unit_id": 176,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              176
+            ]
+          },
+          {
+            "context_id": 1416,
+            "length_unit_id": 2523,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2523
+            ]
+          },
+          {
+            "context_id": 1550,
+            "length_unit_id": 1363,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1363
+            ]
+          },
+          {
+            "context_id": 1580,
+            "length_unit_id": 2721,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2721
+            ]
+          },
+          {
+            "context_id": 1758,
+            "length_unit_id": 1276,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1276
+            ]
+          },
+          {
+            "context_id": 1801,
+            "length_unit_id": 456,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              456
+            ]
+          },
+          {
+            "context_id": 1843,
+            "length_unit_id": 1211,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1211
+            ]
+          },
+          {
+            "context_id": 1861,
+            "length_unit_id": 1708,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1708
+            ]
+          },
+          {
+            "context_id": 1903,
+            "length_unit_id": 2968,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2968
+            ]
+          },
+          {
+            "context_id": 1959,
+            "length_unit_id": 4468,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4468
+            ]
+          },
+          {
+            "context_id": 1991,
+            "length_unit_id": 81,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              81
+            ]
+          },
+          {
+            "context_id": 2032,
+            "length_unit_id": 2383,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2383
+            ]
+          },
+          {
+            "context_id": 2083,
+            "length_unit_id": 3257,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3257
+            ]
+          },
+          {
+            "context_id": 2282,
+            "length_unit_id": 2539,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2539
+            ]
+          },
+          {
+            "context_id": 2360,
+            "length_unit_id": 1925,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1925
+            ]
+          },
+          {
+            "context_id": 2425,
+            "length_unit_id": 4753,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4753
+            ]
+          },
+          {
+            "context_id": 2432,
+            "length_unit_id": 4256,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4256
+            ]
+          },
+          {
+            "context_id": 2448,
+            "length_unit_id": 3385,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3385
+            ]
+          },
+          {
+            "context_id": 2479,
+            "length_unit_id": 1641,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1641
+            ]
+          },
+          {
+            "context_id": 2502,
+            "length_unit_id": 2384,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2384
+            ]
+          },
+          {
+            "context_id": 2582,
+            "length_unit_id": 4116,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4116
+            ]
+          },
+          {
+            "context_id": 2661,
+            "length_unit_id": 3769,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3769
+            ]
+          },
+          {
+            "context_id": 2696,
+            "length_unit_id": 3337,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3337
+            ]
+          },
+          {
+            "context_id": 2854,
+            "length_unit_id": 584,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              584
+            ]
+          },
+          {
+            "context_id": 2871,
+            "length_unit_id": 407,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              407
+            ]
+          },
+          {
+            "context_id": 2996,
+            "length_unit_id": 3300,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3300
+            ]
+          },
+          {
+            "context_id": 3042,
+            "length_unit_id": 951,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              951
+            ]
+          },
+          {
+            "context_id": 3250,
+            "length_unit_id": 745,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              745
+            ]
+          },
+          {
+            "context_id": 3298,
+            "length_unit_id": 3896,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3896
+            ]
+          },
+          {
+            "context_id": 3475,
+            "length_unit_id": 1269,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1269
+            ]
+          },
+          {
+            "context_id": 3518,
+            "length_unit_id": 3900,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3900
+            ]
+          },
+          {
+            "context_id": 3573,
+            "length_unit_id": 4413,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4413
+            ]
+          },
+          {
+            "context_id": 3644,
+            "length_unit_id": 3020,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3020
+            ]
+          },
+          {
+            "context_id": 3766,
+            "length_unit_id": 2164,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2164
+            ]
+          },
+          {
+            "context_id": 3777,
+            "length_unit_id": 498,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              498
+            ]
+          },
+          {
+            "context_id": 3929,
+            "length_unit_id": 3050,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3050
+            ]
+          },
+          {
+            "context_id": 3972,
+            "length_unit_id": 1659,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1659
+            ]
+          },
+          {
+            "context_id": 4086,
+            "length_unit_id": 1324,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1324
+            ]
+          },
+          {
+            "context_id": 4109,
+            "length_unit_id": 212,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              212
+            ]
+          },
+          {
+            "context_id": 4156,
+            "length_unit_id": 1572,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1572
+            ]
+          },
+          {
+            "context_id": 4180,
+            "length_unit_id": 4616,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4616
+            ]
+          },
+          {
+            "context_id": 4242,
+            "length_unit_id": 1062,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1062
+            ]
+          },
+          {
+            "context_id": 4270,
+            "length_unit_id": 3903,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3903
+            ]
+          },
+          {
+            "context_id": 4332,
+            "length_unit_id": 957,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              957
+            ]
+          },
+          {
+            "context_id": 4346,
+            "length_unit_id": 1954,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1954
+            ]
+          },
+          {
+            "context_id": 4349,
+            "length_unit_id": 1000,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1000
+            ]
+          },
+          {
+            "context_id": 4366,
+            "length_unit_id": 3100,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3100
+            ]
+          },
+          {
+            "context_id": 4422,
+            "length_unit_id": 3670,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3670
+            ]
+          },
+          {
+            "context_id": 4453,
+            "length_unit_id": 1646,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1646
+            ]
+          },
+          {
+            "context_id": 4471,
+            "length_unit_id": 253,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              253
+            ]
+          },
+          {
+            "context_id": 4801,
+            "length_unit_id": 4096,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4096
+            ]
+          }
+        ]
+      },
+      "stepcontrol": {
+        "attributes": {
+          "colors": [],
+          "names": [],
+          "status": "not_supported"
+        },
+        "geometry_kernel": "OCCT 7.9.3",
+        "mesh_integral": {
+          "reason": "not_a_single_closed_solid",
+          "status": "not_eligible"
+        },
+        "metrics": {
+          "absolute_volume": 1309.883581,
+          "analyzer_valid": true,
+          "bounds_max": [
+            4.764619881,
+            5.408361274,
+            19.74449654
+          ],
+          "bounds_min": [
+            -10.73588249,
+            -0.9706265602,
+            4.243994172
+          ],
+          "edge_count": 298,
+          "face_count": 98,
+          "maximum_edge_tolerance": 0.0002511841025,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 0.0002511841025,
+          "shell_count": 3,
+          "solid_count": 3,
+          "surface_area": 1569.409109,
+          "surface_centroid": [
+            -2.976077787,
+            1.509311534,
+            11.99627895
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "vertex_count": 248
+        },
+        "outcome": "accept",
+        "roots": 1,
+        "units": [
+          {
+            "context_id": 58,
+            "length_unit_id": 1049,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1049
+            ]
+          },
+          {
+            "context_id": 98,
+            "length_unit_id": 187,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              187
+            ]
+          },
+          {
+            "context_id": 140,
+            "length_unit_id": 814,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              814
+            ]
+          },
+          {
+            "context_id": 153,
+            "length_unit_id": 1219,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1219
+            ]
+          },
+          {
+            "context_id": 228,
+            "length_unit_id": 2379,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2379
+            ]
+          },
+          {
+            "context_id": 235,
+            "length_unit_id": 2480,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2480
+            ]
+          },
+          {
+            "context_id": 438,
+            "length_unit_id": 2547,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2547
+            ]
+          },
+          {
+            "context_id": 513,
+            "length_unit_id": 183,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              183
+            ]
+          },
+          {
+            "context_id": 522,
+            "length_unit_id": 3060,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3060
+            ]
+          },
+          {
+            "context_id": 537,
+            "length_unit_id": 2795,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2795
+            ]
+          },
+          {
+            "context_id": 589,
+            "length_unit_id": 2982,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2982
+            ]
+          },
+          {
+            "context_id": 656,
+            "length_unit_id": 2226,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2226
+            ]
+          },
+          {
+            "context_id": 708,
+            "length_unit_id": 3289,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3289
+            ]
+          },
+          {
+            "context_id": 870,
+            "length_unit_id": 4077,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4077
+            ]
+          },
+          {
+            "context_id": 880,
+            "length_unit_id": 1228,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1228
+            ]
+          },
+          {
+            "context_id": 901,
+            "length_unit_id": 3291,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3291
+            ]
+          },
+          {
+            "context_id": 948,
+            "length_unit_id": 3273,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3273
+            ]
+          },
+          {
+            "context_id": 1043,
+            "length_unit_id": 263,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              263
+            ]
+          },
+          {
+            "context_id": 1231,
+            "length_unit_id": 3452,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3452
+            ]
+          },
+          {
+            "context_id": 1412,
+            "length_unit_id": 176,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              176
+            ]
+          },
+          {
+            "context_id": 1416,
+            "length_unit_id": 2523,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2523
+            ]
+          },
+          {
+            "context_id": 1550,
+            "length_unit_id": 1363,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1363
+            ]
+          },
+          {
+            "context_id": 1580,
+            "length_unit_id": 2721,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2721
+            ]
+          },
+          {
+            "context_id": 1758,
+            "length_unit_id": 1276,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1276
+            ]
+          },
+          {
+            "context_id": 1801,
+            "length_unit_id": 456,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              456
+            ]
+          },
+          {
+            "context_id": 1843,
+            "length_unit_id": 1211,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1211
+            ]
+          },
+          {
+            "context_id": 1861,
+            "length_unit_id": 1708,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1708
+            ]
+          },
+          {
+            "context_id": 1903,
+            "length_unit_id": 2968,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2968
+            ]
+          },
+          {
+            "context_id": 1959,
+            "length_unit_id": 4468,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4468
+            ]
+          },
+          {
+            "context_id": 1991,
+            "length_unit_id": 81,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              81
+            ]
+          },
+          {
+            "context_id": 2032,
+            "length_unit_id": 2383,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2383
+            ]
+          },
+          {
+            "context_id": 2083,
+            "length_unit_id": 3257,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3257
+            ]
+          },
+          {
+            "context_id": 2282,
+            "length_unit_id": 2539,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2539
+            ]
+          },
+          {
+            "context_id": 2360,
+            "length_unit_id": 1925,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1925
+            ]
+          },
+          {
+            "context_id": 2425,
+            "length_unit_id": 4753,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4753
+            ]
+          },
+          {
+            "context_id": 2432,
+            "length_unit_id": 4256,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4256
+            ]
+          },
+          {
+            "context_id": 2448,
+            "length_unit_id": 3385,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3385
+            ]
+          },
+          {
+            "context_id": 2479,
+            "length_unit_id": 1641,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1641
+            ]
+          },
+          {
+            "context_id": 2502,
+            "length_unit_id": 2384,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2384
+            ]
+          },
+          {
+            "context_id": 2582,
+            "length_unit_id": 4116,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4116
+            ]
+          },
+          {
+            "context_id": 2661,
+            "length_unit_id": 3769,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3769
+            ]
+          },
+          {
+            "context_id": 2696,
+            "length_unit_id": 3337,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3337
+            ]
+          },
+          {
+            "context_id": 2854,
+            "length_unit_id": 584,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              584
+            ]
+          },
+          {
+            "context_id": 2871,
+            "length_unit_id": 407,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              407
+            ]
+          },
+          {
+            "context_id": 2996,
+            "length_unit_id": 3300,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3300
+            ]
+          },
+          {
+            "context_id": 3042,
+            "length_unit_id": 951,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              951
+            ]
+          },
+          {
+            "context_id": 3250,
+            "length_unit_id": 745,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              745
+            ]
+          },
+          {
+            "context_id": 3298,
+            "length_unit_id": 3896,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3896
+            ]
+          },
+          {
+            "context_id": 3475,
+            "length_unit_id": 1269,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1269
+            ]
+          },
+          {
+            "context_id": 3518,
+            "length_unit_id": 3900,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3900
+            ]
+          },
+          {
+            "context_id": 3573,
+            "length_unit_id": 4413,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4413
+            ]
+          },
+          {
+            "context_id": 3644,
+            "length_unit_id": 3020,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3020
+            ]
+          },
+          {
+            "context_id": 3766,
+            "length_unit_id": 2164,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2164
+            ]
+          },
+          {
+            "context_id": 3777,
+            "length_unit_id": 498,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              498
+            ]
+          },
+          {
+            "context_id": 3929,
+            "length_unit_id": 3050,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3050
+            ]
+          },
+          {
+            "context_id": 3972,
+            "length_unit_id": 1659,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1659
+            ]
+          },
+          {
+            "context_id": 4086,
+            "length_unit_id": 1324,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1324
+            ]
+          },
+          {
+            "context_id": 4109,
+            "length_unit_id": 212,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              212
+            ]
+          },
+          {
+            "context_id": 4156,
+            "length_unit_id": 1572,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1572
+            ]
+          },
+          {
+            "context_id": 4180,
+            "length_unit_id": 4616,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4616
+            ]
+          },
+          {
+            "context_id": 4242,
+            "length_unit_id": 1062,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1062
+            ]
+          },
+          {
+            "context_id": 4270,
+            "length_unit_id": 3903,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3903
+            ]
+          },
+          {
+            "context_id": 4332,
+            "length_unit_id": 957,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              957
+            ]
+          },
+          {
+            "context_id": 4346,
+            "length_unit_id": 1954,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1954
+            ]
+          },
+          {
+            "context_id": 4349,
+            "length_unit_id": 1000,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1000
+            ]
+          },
+          {
+            "context_id": 4366,
+            "length_unit_id": 3100,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3100
+            ]
+          },
+          {
+            "context_id": 4422,
+            "length_unit_id": 3670,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3670
+            ]
+          },
+          {
+            "context_id": 4453,
+            "length_unit_id": 1646,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1646
+            ]
+          },
+          {
+            "context_id": 4471,
+            "length_unit_id": 253,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              253
+            ]
+          },
+          {
+            "context_id": 4801,
+            "length_unit_id": 4096,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4096
+            ]
+          }
+        ]
+      },
+      "steputils": {
+        "entity_count": 4937,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": null,
+    "control_id": "invalid_exponent",
+    "geometry_comparison": {
+      "status": "not_eligible"
+    },
+    "routes": {
+      "builtin": {
+        "diagnostic_class": "invalid_real",
+        "outcome": "reject"
+      },
+      "ifcopenshell_step_file_parser": {
+        "diagnostic_class": "CollectedValidationErrors",
+        "outcome": "reject"
+      },
+      "steputils": {
+        "entity_count": 1,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "2c855832ff13c61cab3acb976f7e5624fd9b5050d32d39faed133f5d83d83ea7"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [
+        {
+          "code": "unsupported_application_schema",
+          "detail": "",
+          "entity_id": null,
+          "source_span": null
+        }
+      ],
+      "products": [],
+      "profile": null,
+      "relationships": [],
+      "representations": [],
+      "schema": "DEMO_SCHEMA",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "6a9cde507e13330a3cb873d52e91552e09185b3b896b1354073016ab24c9a443",
+      "status": "unsupported"
+    },
+    "control_id": "edition3_anchor",
+    "geometry_comparison": {
+      "status": "not_eligible"
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 1,
+        "outcome": "accept",
+        "schemas": [
+          "DEMO_SCHEMA"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "diagnostic_class": "CollectedValidationErrors",
+        "outcome": "reject"
+      },
+      "steputils": {
+        "diagnostic_class": "ParseError",
+        "outcome": "reject"
+      }
+    },
+    "schema_validation": null,
+    "source_sha256": "6a9cde507e13330a3cb873d52e91552e09185b3b896b1354073016ab24c9a443"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [
+        {
+          "code": "unsupported_application_schema",
+          "detail": "",
+          "entity_id": null,
+          "source_span": null
+        }
+      ],
+      "products": [],
+      "profile": null,
+      "relationships": [],
+      "representations": [],
+      "schema": "DEMO",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "0cbf1483f8c60fc2822dddd783c2a37c87c2d9756d23fb09e4b92d2a56dc0a93",
+      "status": "unsupported"
+    },
+    "control_id": "schema_valid",
+    "geometry_comparison": {
+      "status": "not_eligible"
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 1,
+        "outcome": "accept",
+        "schemas": [
+          "DEMO"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "steputils": {
+        "entity_count": 1,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": {
+      "application_semantics": "not_attempted",
+      "decision": "accept",
+      "deferred_parameter_count": 0,
+      "diagnostics": [],
+      "express_resolution": "valid",
+      "express_syntax": "valid",
+      "instance_count": 1,
+      "instance_validation": "valid",
+      "instances": [
+        {
+          "actual_parameter_count": 7,
+          "entity_id": 1,
+          "expected_parameter_count": 7,
+          "mapping": "internal",
+          "reason_code": "parameters_valid",
+          "record_types": [
+            "ITEM"
+          ],
+          "resolved_entity_ids": [
+            "demo::item"
+          ],
+          "section_index": 0,
+          "status": "valid"
+        }
+      ],
+      "invalid_parameter_count": 0,
+      "parameter_count": 7,
+      "parameters": [
+        {
+          "attribute_name": "integer_value",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "INTEGER",
+          "parameter_index": 0,
+          "reason_code": "scalar_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "integer",
+          "value_source": "3"
+        },
+        {
+          "attribute_name": "real_value",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "REAL",
+          "parameter_index": 1,
+          "reason_code": "scalar_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "real",
+          "value_source": "1.5"
+        },
+        {
+          "attribute_name": "number_value",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "NUMBER",
+          "parameter_index": 2,
+          "reason_code": "scalar_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "integer",
+          "value_source": "2"
+        },
+        {
+          "attribute_name": "text_value",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "STRING",
+          "parameter_index": 3,
+          "reason_code": "scalar_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "string",
+          "value_source": "'label'"
+        },
+        {
+          "attribute_name": "flag",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "BOOLEAN",
+          "parameter_index": 4,
+          "reason_code": "boolean_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "enumeration",
+          "value_source": ".T."
+        },
+        {
+          "attribute_name": "state",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "LOGICAL",
+          "parameter_index": 5,
+          "reason_code": "logical_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "enumeration",
+          "value_source": ".U."
+        },
+        {
+          "attribute_name": "bits",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "BINARY",
+          "parameter_index": 6,
+          "reason_code": "scalar_value_valid",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "valid",
+          "value_kind": "binary",
+          "value_source": "\"0A\""
+        }
+      ],
+      "part21_syntax": "valid",
+      "reason_code": "schema_validation_passed",
+      "rule_execution": "not_attempted",
+      "schema_binding": "valid",
+      "section_count": 1,
+      "sections": [
+        {
+          "declared_schema": "DEMO",
+          "entity_count": 1,
+          "reason_code": "schema_resolved",
+          "resolved_schema": "demo",
+          "section_index": 0,
+          "section_name": null,
+          "status": "valid"
+        }
+      ],
+      "valid_parameter_count": 7
+    },
+    "source_sha256": "0cbf1483f8c60fc2822dddd783c2a37c87c2d9756d23fb09e4b92d2a56dc0a93"
+  },
+  {
+    "adjudication": "declared fixture contracts and analytic truth where supplied; never majority vote",
+    "analytic_truth": null,
+    "application_semantics": {
+      "assembly": null,
+      "diagnostics": [
+        {
+          "code": "unsupported_application_schema",
+          "detail": "",
+          "entity_id": null,
+          "source_span": null
+        }
+      ],
+      "products": [],
+      "profile": null,
+      "relationships": [],
+      "representations": [],
+      "schema": "DEMO",
+      "schema_conformance": "not_evaluated",
+      "selection_policy": "unique_or_explicit",
+      "source_sha256": "369ddd01871e3d9688ea0925e4368b7081f476fa8eb4a0f6357ff671c6f4e00a",
+      "status": "unsupported"
+    },
+    "control_id": "schema_invalid",
+    "geometry_comparison": {
+      "status": "not_eligible"
+    },
+    "routes": {
+      "builtin": {
+        "entity_count": 1,
+        "outcome": "accept",
+        "schemas": [
+          "DEMO"
+        ]
+      },
+      "ifcopenshell_step_file_parser": {
+        "entity_count": null,
+        "geometry": "not_supported",
+        "mode": "validation_without_tree",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      },
+      "steputils": {
+        "entity_count": 1,
+        "geometry": "not_supported",
+        "outcome": "accept",
+        "schema_validation": "not_supported"
+      }
+    },
+    "schema_validation": {
+      "application_semantics": "not_attempted",
+      "decision": "reject",
+      "deferred_parameter_count": 0,
+      "diagnostics": [
+        {
+          "detail": "parameter for item.value is parameter_type_mismatch",
+          "entity_id": 1,
+          "parameter_index": 0,
+          "reason_code": "parameter_type_mismatch",
+          "record_index": 0,
+          "section_index": 0,
+          "severity": "invalid",
+          "source_line": 8,
+          "stage": "parameter_validation"
+        }
+      ],
+      "express_resolution": "valid",
+      "express_syntax": "valid",
+      "instance_count": 1,
+      "instance_validation": "invalid",
+      "instances": [
+        {
+          "actual_parameter_count": 1,
+          "entity_id": 1,
+          "expected_parameter_count": 1,
+          "mapping": "internal",
+          "reason_code": "parameter_type_mismatch",
+          "record_types": [
+            "ITEM"
+          ],
+          "resolved_entity_ids": [
+            "demo::item"
+          ],
+          "section_index": 0,
+          "status": "invalid"
+        }
+      ],
+      "invalid_parameter_count": 1,
+      "parameter_count": 1,
+      "parameters": [
+        {
+          "attribute_name": "value",
+          "attribute_owner": "item",
+          "entity_id": 1,
+          "entity_type": "ITEM",
+          "expected_type": "INTEGER",
+          "parameter_index": 0,
+          "reason_code": "parameter_type_mismatch",
+          "record_index": 0,
+          "section_index": 0,
+          "source_line": 8,
+          "status": "invalid",
+          "value_kind": "string",
+          "value_source": "'one'"
+        }
+      ],
+      "part21_syntax": "valid",
+      "reason_code": "parameter_type_mismatch",
+      "rule_execution": "not_attempted",
+      "schema_binding": "valid",
+      "section_count": 1,
+      "sections": [
+        {
+          "declared_schema": "DEMO",
+          "entity_count": 1,
+          "reason_code": "schema_resolved",
+          "resolved_schema": "demo",
+          "section_index": 0,
+          "section_name": null,
+          "status": "valid"
+        }
+      ],
+      "valid_parameter_count": 0
+    },
+    "source_sha256": "369ddd01871e3d9688ea0925e4368b7081f476fa8eb4a0f6357ff671c6f4e00a"
+  }
+]

@@ -163,6 +163,7 @@ jobs:
           python experiments/run_integrated_workflow.py --fixture-dir regenerated-fixtures/integrated-workflow --output-dir regenerated-results --refresh-fixtures
           python experiments/run_public_step_corpus.py --output-dir regenerated-results
           python -m research_notes.robustness_studies --output-dir regenerated-results --fixture-dir regenerated-fixtures --refresh-fixtures
+          python -m research_notes.operational_studies --output-dir regenerated-results --fixture-dir regenerated-fixtures --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -574,6 +575,17 @@ jobs:
             test -s regenerated-results/${study}.png
           done
           # Solver residuals use tolerance-based comparisons in test_robustness_studies.py.
+          for study in transactional_recompute stable_cad_api diagnostic_workspace step_writer_modes interoperability_benchmark; do
+            diff -u results/${study}.csv regenerated-results/${study}.csv
+            diff -u results/${study}_contract.json regenerated-results/${study}_contract.json
+            diff -u results/${study}.html regenerated-results/${study}.html
+            diff -qr fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
+            test -s regenerated-results/${study}.png
+          done
+          # Numeric evidence and diagnostic snapshots use tolerances in test_operational_studies.py.
+          # Environment fingerprints describe each execution and are not byte-equality contracts.
+          test -s regenerated-results/diagnostic-workspace/workspace.html
+          test -s regenerated-results/interoperability_benchmark_environment.json
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

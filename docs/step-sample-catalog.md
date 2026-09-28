@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v0.85.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。公開STEPに加え、AP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性を検証する入力を追加しました。詳細は英語本文に示します。
+v0.90.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。再計算の確定・取り消し、API契約、診断画面、STEP出力方針の固定入力と、11サンプルによる相互運用性比較のマニフェストを追加しました。公開サンプルの元バイト列とライセンスは保持しています。詳細は英語本文に示します。
 
 ---
 
@@ -1324,3 +1324,23 @@ Each directory has a digest manifest. Synthetic AP probes are not certified
 AP files. The original public assets and upstream license notices stay in
 `fixtures/public-step-corpus`. See the four new notes for independent truth,
 frozen observed failures and precise interpretation boundaries.
+
+## v0.86–v0.90 — Operation Contracts and Interoperability Inputs
+
+| Directory | Frozen input | Cases |
+| --- | --- | ---: |
+| `fixtures/transactional-recompute` | Branching feature model and two-block assembly | 14 |
+| `fixtures/stable-cad-api` | API signatures/envelopes/errors/limits and source digest | 17 |
+| `fixtures/diagnostic-workspace` | Source digest and explicit edit/commit/failure actions | 9 |
+| `fixtures/step-writer-modes` | Named box and signed exchange source hashes | 8 |
+| `fixtures/interoperability-benchmark` | 11 source hashes, two schema hashes, parser pins and expected syntax outcomes | 11 |
+
+The interoperability manifest references the original fixtures in place. It
+does not create normalized substitutes for licensed upstream sources. Native
+geometry is eligible for seven inputs; closed-single-solid mesh integration
+is eligible for three. Ineligible syntax probes, shells and multi-solid inputs
+retain explicit exclusions instead of being presented as geometry failures.
+
+The [interactive workspace](../results/diagnostic-workspace/workspace.html)
+uses the authored through-hole sample. The [benchmark note](../notes/interoperability-benchmark.md)
+defines the independent analytic anchors and all comparison tolerances.

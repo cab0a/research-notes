@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,generator
+inputs.json,5442,f6c5cfbc7a4ed6e5264d9ec9a525f9e5177a05de9847ddf8166582a8c554d1cb,experiments/run_interoperability_benchmark.py

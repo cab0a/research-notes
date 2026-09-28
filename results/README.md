@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-85件の研究の参照成果物を収録します。v0.82.0〜v0.85.0ではAP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性評価をCSV・JSON・PNG・HTMLへ記録します。詳細は英語本文に示します。
+90件の研究の参照成果物を収録します。v0.86.0〜v0.90.0では再計算の確定・取り消し、API契約、診断画面、STEP出力方針と相互運用性比較をCSV・JSON・PNG・HTMLへ記録します。詳細は英語本文に示します。
 
 ---
 
@@ -1787,3 +1787,24 @@ with declared arithmetic tolerances. Inputs and CSV classifications are exact.
 success: symmetric rotation retains 16 wrong reference assertions, and 13
 solver cases satisfy native residual thresholds while missing analytic
 coordinate tolerance. Reproduce with `python -m research_notes.robustness_studies`.
+
+## v0.86.0–v0.90.0
+
+| Prefix | Version | Evidence |
+| --- | --- | --- |
+| `transactional_recompute` | v0.86.0 | 14 commit, abort, stale-state, revision and rollback controls including assembly interference |
+| `stable_cad_api` | v0.87.0 | 17 result-envelope, error, confirmation, resource and abstention controls |
+| `diagnostic_workspace` | v0.88.0 | 9 source-bound display, dependency, constraint, candidate and difference controls |
+| `step_writer_modes` | v0.89.0 | 8 exact-byte, lexical-token, geometry and output-protection controls |
+| `interoperability_benchmark` | v0.90.0 | 11 fixed sources across parser/importer/eligible arithmetic routes |
+
+Each prefix has `.csv`, `_evidence.json`, `_contract.json`, `.png` and `.html`.
+`diagnostic-workspace/workspace.html` additionally provides the interactive
+reference view, backed by `workspace.json`. The v0.90 `_environment.json`
+records the Python/platform/dependency/parser fingerprint of the actual run.
+It is intentionally not a byte-for-byte cross-platform contract.
+
+`checks_pass` means the declared behavior matched, including two syntax
+disagreements, partial semantics, expected refusals and ineligible geometry
+paths. Seven import comparisons match aggregate invariants; both use the same
+OCCT kernel. Reproduce with `python -m research_notes.operational_studies`.

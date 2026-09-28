@@ -1,0 +1,180 @@
+[
+  {
+    "api_version": "1.0.0",
+    "code": "no_source",
+    "control_id": "no_source"
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "open",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "open_step",
+    "status": "ok",
+    "warnings": [
+      "source_history_not_recovered"
+    ]
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "candidates",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "candidates",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "confirmation_required",
+    "control_id": "explicit_confirmation"
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "select",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "select",
+    "status": "ok",
+    "warnings": [
+      "inferred_history_explicitly_selected"
+    ]
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "stage",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "edit",
+    "status": "staged",
+    "warnings": []
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "revision_conflict",
+    "control_id": "stale_token"
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "pending_changes",
+    "control_id": "pending_comparison"
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "pending_changes",
+    "control_id": "pending_export"
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "recompute",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "recompute",
+    "status": "committed",
+    "warnings": []
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "compare",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "compare",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "export",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "export_step",
+    "status": "ok",
+    "warnings": []
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "io_error",
+    "control_id": "failed_open"
+  },
+  {
+    "api_version": "1.0.0",
+    "code": "resource_limit",
+    "control_id": "source_budget"
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "inspection_mode",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "open_step",
+    "status": "ok",
+    "warnings": [
+      "source_history_not_recovered"
+    ]
+  },
+  {
+    "api_version": "1.0.0",
+    "control_id": "no_editable_candidate",
+    "envelope_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "operation": "candidates",
+    "status": "abstained",
+    "warnings": [
+      "no_qualified_editable_candidate"
+    ]
+  }
+]

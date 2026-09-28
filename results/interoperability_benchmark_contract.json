@@ -1,0 +1,15 @@
+{
+  "boundaries": [
+    "Three syntax routes on 11 fixed inputs; two OCCT transfer interfaces on seven eligible geometry inputs.",
+    "STEPControl and STEPCAF share OCCT 7.9.3. Agreement is not independent-kernel validation or majority-vote truth.",
+    "Closed-single-solid mesh integration uses independent arithmetic over OCCT tessellation; ineligible shells/compounds remain explicit.",
+    "Controlled EXPRESS sidecars validate two cases. Public-file full schemas are not supplied; syntax acceptance is not AP conformance.",
+    "Names/colors are observed in XCAF only, at free roots/color table scope. One recorded Linux environment, not cross-platform certification."
+  ],
+  "checks_pass": true,
+  "control_count": 11,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "interoperability_benchmark",
+  "version": "v0.90.0"
+}

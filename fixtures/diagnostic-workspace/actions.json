@@ -1,0 +1,9 @@
+[
+  "select through_hole with confirmation",
+  "stage radius 1.3",
+  "commit",
+  "snapshot",
+  "stage radius 30",
+  "abort",
+  "snapshot retained geometry"
+]

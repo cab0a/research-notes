@@ -1,0 +1,168 @@
+{
+  "corpus": [
+    {
+      "bytes": 15887,
+      "control_id": "named_box",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "step-round-trip-preservation/named_colored_box_source.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "c7259fe95b367ead9df1d38c0a81216ce971ab390079a41453b7c6a8b317c814"
+    },
+    {
+      "bytes": 20527,
+      "control_id": "named_hole",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "step-round-trip-preservation/named_colored_through_hole_source.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "2f06ad82f1661540504d6670780d13179b44f3c45179d4cfbc41ff1d3ca5fb3a"
+    },
+    {
+      "bytes": 6371,
+      "control_id": "freeform_shell",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "step-round-trip-preservation/named_colored_bspline_source.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "abd4988920780e172996c76bb27d2adcbb732668c5636c54e70b6242c9ef8851"
+    },
+    {
+      "bytes": 18322,
+      "control_id": "public_assembly",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "public-step-corpus/sources/cadquery_assembly.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5"
+    },
+    {
+      "bytes": 165860,
+      "control_id": "public_bracket",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "public-step-corpus/sources/build123d_bracket.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d"
+    },
+    {
+      "bytes": 359113,
+      "control_id": "sam_ap203",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "public-step-corpus/sources/ublox_sam_ap203.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365"
+    },
+    {
+      "bytes": 416065,
+      "control_id": "sam_ap214",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": true,
+      "path": "public-step-corpus/sources/ublox_sam_ap214.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495"
+    },
+    {
+      "bytes": 263,
+      "control_id": "invalid_exponent",
+      "expected_builtin_syntax": "reject",
+      "expected_external_syntax": [
+        "accept",
+        "reject"
+      ],
+      "native_geometry_eligible": false,
+      "path": "step-part21-conformance/invalid_real_exponent.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "2c855832ff13c61cab3acb976f7e5624fd9b5050d32d39faed133f5d83d83ea7"
+    },
+    {
+      "bytes": 315,
+      "control_id": "edition3_anchor",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "reject",
+        "reject"
+      ],
+      "native_geometry_eligible": false,
+      "path": "step-part21-conformance/edition3_anchor.step",
+      "schema_path": null,
+      "schema_sha256": null,
+      "sha256": "6a9cde507e13330a3cb873d52e91552e09185b3b896b1354073016ab24c9a443"
+    },
+    {
+      "bytes": 296,
+      "control_id": "schema_valid",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": false,
+      "path": "step-express-validation/scalar_types.step",
+      "schema_path": "step-express-validation/scalar_types.exp",
+      "schema_sha256": "edcf9616f8dcf9057d4c846d901c1f949ea2e180c982f5fc65e17664505cbf43",
+      "sha256": "0cbf1483f8c60fc2822dddd783c2a37c87c2d9756d23fb09e4b92d2a56dc0a93"
+    },
+    {
+      "bytes": 273,
+      "control_id": "schema_invalid",
+      "expected_builtin_syntax": "accept",
+      "expected_external_syntax": [
+        "accept",
+        "accept"
+      ],
+      "native_geometry_eligible": false,
+      "path": "step-express-validation/wrong_scalar_type.step",
+      "schema_path": "step-express-validation/wrong_scalar_type.exp",
+      "schema_sha256": "b53d10ab3ecc59d12d577b78a80c5764a1a6cb2a240c76d09abcbc075563a75b",
+      "sha256": "369ddd01871e3d9688ea0925e4368b7081f476fa8eb4a0f6357ff671c6f4e00a"
+    }
+  ],
+  "parser_pins": {
+    "ifcopenshell_step_file_parser": {
+      "commit": "9400d243d880dace57490949d74ab1932ce99a09",
+      "repository": "https://github.com/IfcOpenShell/step-file-parser.git"
+    },
+    "steputils": {
+      "commit": "547860b349a36cf24c564d6c87ffd8f60484f6fb",
+      "repository": "https://github.com/mozman/steputils.git"
+    }
+  }
+}

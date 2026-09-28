@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-85件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.82.0〜v0.85.0の113条件をネットワークなしで再現し、拘束ソルバーの失敗や参照追跡の誤りも検証します。詳細は英語本文に示します。
+90件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.86.0〜v0.90.0の59条件を追加しました。依存パッケージと比較用パーサーを準備した後は、再計算・API・診断画面・出力・相互運用性の検証をネットワークなしで実行できます。詳細は英語本文に示します。
 
 ---
 
@@ -869,3 +869,46 @@ reports under `output/integrated-workspace/benchmarks`, or `benchmark solver`
 for only the solver study. `semantics PATH [PD=REP ...]` saves source-linked
 product and shape selection evidence to `semantics.json` without adopting an
 editable model. Normal reproduction never downloads public files.
+
+## Stable Operations and Interoperability in v0.86–v0.90
+
+Install the optional runtime and initialize the two comparison checkouts once.
+Skip the clone commands when those exact checkouts already exist:
+
+```bash
+python -m pip install -e ".[comparison,geometry,test]"
+git clone https://github.com/mozman/steputils.git external/steputils
+git -C external/steputils checkout --detach 547860b349a36cf24c564d6c87ffd8f60484f6fb
+git clone https://github.com/IfcOpenShell/step-file-parser.git external/ifcopenshell_step_file_parser
+git -C external/ifcopenshell_step_file_parser checkout --detach 9400d243d880dace57490949d74ab1932ce99a09
+```
+
+Subsequent study execution is offline. Wrong commits or tracked modifications
+are rejected rather than silently comparing a different parser. External
+adapters use child processes with 30-second timeouts, without an OS memory sandbox.
+
+```bash
+python -m research_notes.operational_studies
+python -m pytest tests/test_operational_studies.py -q
+python -m research_notes.operational_studies --output-dir output/operations-results --fixture-dir output/operations-fixtures --refresh-fixtures
+python examples/cad_workspace.py --output-dir output/cad-demo
+```
+
+The five studies contain 14 transaction, 17 API, 9 workspace, 8 writer and 11
+interoperability case contracts. Use `--study interoperability_benchmark` for
+only v0.90. Input manifests, CSV classifications, report contracts and summary
+HTML are exact regressions. Detailed numeric JSON and view snapshots use
+relative tolerance 1e-5 / absolute tolerance 1e-9; PNG files are checked as
+valid artifacts. Environment fingerprints are observations, not equality
+requirements across machines. API error text is not a stable parsing contract.
+
+The reference environment is Python 3.12.14 / Linux WSL x86_64, OCCT 7.9.3 via
+cadquery-ocp 7.9.3.1.1, numpy 2.4.6, lark-parser 0.12.0, pyparsing 3.2.5 and
+antlr4 runtime 4.9.3. Every v0.90 run emits its own environment JSON. The CI job
+uses the same pinned parser commits, runs tests, regenerates all five studies
+and checks fixture/report contracts. This is not yet the v0.91 CAD platform matrix.
+
+Open `results/diagnostic-workspace/workspace.html` directly in a browser for
+the committed reference, or generate an editable-session snapshot using the
+[API/terminal commands](../notes/stable-cad-api.md). No browser is needed to
+regenerate its JSON and geometry evidence.

@@ -1,0 +1,13 @@
+{
+  "boundaries": [
+    "Interactive standalone HTML supports rotation and face/edge selection; JSON records the exact source and revision.",
+    "Selection IDs are local to this snapshot. Candidate support faces refer to the imported source, not persistent edited IDs.",
+    "The view is a read-only diagnostic snapshot. API/terminal commands perform edits and recomputation."
+  ],
+  "checks_pass": true,
+  "control_count": 9,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "diagnostic_workspace",
+  "version": "v0.88.0"
+}

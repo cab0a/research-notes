@@ -2,17 +2,32 @@
 
 ## 日本語概要
 
-v0.85.0時点の機能と制限を分類します。AP間の意味解釈、複雑な製品構造、参照追跡と拘束ソルバーの頑健性評価を追加しました。誤追跡や特異付近の不正確な解も記録し、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
+v0.90.0時点の機能と制限を分類します。再計算の確定・取り消し、Python API契約、診断画面、STEP出力方針と相互運用性比較を追加しました。誤追跡や特異付近の不正確な解も引き続き記録し、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-85 studies through v0.85.0. It separates syntax recognition, schema validation, physical-reference
+90 studies through v0.90.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.86.0 and later roadmap stages remain unimplemented.
+v0.91.0 and later roadmap stages remain unimplemented.
+
+## Stable Operations and Interoperability in v0.86–v0.90
+
+| Capability | Available scope | Boundary |
+| --- | --- | --- |
+| Transactional recompute | All nodes or authored assembly components/placements/checks commit together; bounded rollback | In memory only; no persistent journal or multi-process concurrency |
+| Python API contract 1.0 | Explicit candidate selection, revision tokens, versioned envelopes, defined errors and limits | Diagnostic data can evolve; legacy modules are not frozen; project remains v0.90 |
+| Diagnostic workspace | Rotate/select faces and edges, provenance, dependencies, candidates, constraints, geometry difference | Read-only HTML snapshot; local IDs; editing via API/terminal |
+| STEP writer policies | Preserve exact bytes, canonicalize trivia, reconstruct confirmed geometry | No schema-aware canonical graph or preserved semantic attributes in reconstruction |
+| Interoperability | 11 sources, 3 syntax routes, 7 import comparisons, 3 mesh integrations | Two import routes share OCCT; public full schemas absent; one recorded environment |
+
+Use `python -m research_notes.cad_tool`, or `cad COMMAND` in the integrated
+terminal. `benchmark interop` runs v0.90; `benchmark operations` runs v0.86–v0.90.
+See [API instructions](../notes/stable-cad-api.md) and
+[interoperability boundaries](../notes/interoperability-benchmark.md).
 
 ## Portability and Robustness in v0.82–v0.85
 

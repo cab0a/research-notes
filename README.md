@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v0.85.0まで実装しました。公開STEPの検査に加え、AP203・AP214・AP242の限定した意味解釈、複数の形状候補の明示選択、面・辺の追跡評価、拘束ソルバーの頑健性評価を追加しました。STEP読込・検査、候補比較、寸法変更、再計算、比較図、STEP再出力はPython APIと対話ターミナルから利用できます。
+v0.90.0まで実装しました。再計算の確定・取り消し、契約を固定したPython API、面・辺を選べる診断画面、3種類のSTEP出力方針、複数パーサー・読込経路の比較検証を追加しました。STEP読込・検査、候補比較、寸法変更、再計算、比較図、STEP再出力はPython APIと対話ターミナルから利用できます。
 
-拘束ソルバーの70条件中、46件は既知の正解と一致しました。特異に近い条件では残差合格でも座標誤差が大きい13件を記録し、収束・正しさ・一意性を分けています。任意のSTEPから拘束や設計履歴を復元するものではありません。v0.86.0以降は計画段階です。詳細は英語本文に示します。
+新たな59条件を検証しました。固定11サンプルの構文判定は9件で一致・2件で不一致、形状を比較できる7件は2つの読込経路で測定値が一致しました。両経路は同じOCCTを使用します。任意のSTEPから拘束や設計履歴を復元するものではありません。v0.91.0以降は計画段階です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v0.85.0. Scoped references, dimensional
+The current implementation version is v0.90.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -64,10 +64,43 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 85 studies to their questions,
+The [study index](docs/studies.md) maps all 90 studies to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
+
+v0.86–v0.90 adds 59 case contracts, including deliberate refusals and recorded
+interoperability differences:
+
+| Version | Addition | Recorded result |
+| --- | --- | --- |
+| v0.86 | Transactional recompute and rollback | 14 controls; failed branches and assembly interference retain the last commit |
+| v0.87 | Bounded Python API contract 1.0 | 17 controls; explicit selection, revision tokens, errors and abstention |
+| v0.88 | Diagnostic workspace | 9 controls; face/edge selection, provenance, dependencies, constraints and before/after metrics |
+| v0.89 | Explicit STEP writer modes | 8 controls; preserve, lexical canonicalization and measured reconstruction |
+| v0.90 | Interoperability benchmark | 11 sources × 3 syntax routes; 7 native import comparisons; 3 eligible mesh integrations |
+
+Read the [interoperability study](notes/interoperability-benchmark.md), open the
+[diagnostic workspace](results/diagnostic-workspace/workspace.html), or run the
+[Python example](examples/cad_workspace.py):
+
+```bash
+python examples/cad_workspace.py --output-dir output/cad-demo
+python -m research_notes.cad_tool
+python -m research_notes.operational_studies
+```
+
+The example explicitly selects the authored through-hole hypothesis, changes
+its radius, commits, compares, creates an interactive snapshot and writes STEP.
+See [the API/terminal instructions](notes/stable-cad-api.md) for individual
+commands. Benchmarking requires the pinned comparison parsers described in
+[reproducibility](docs/reproducibility.md). API contract 1.0 does not imply that
+the whole project has reached v1.0.
+
+Both native import routes share OCCT. Three independent mesh integrations over
+OCCT tessellation differ from native volume by at most 0.0332% in this corpus.
+Syntax agreement does not establish supplied-schema validity or full AP
+conformance. Earlier solver and trim limitations remain recorded below.
 
 v0.82–v0.85 adds 113 case contracts. These include documented failures, not
 113 universally successful CAD operations:

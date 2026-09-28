@@ -10,9 +10,18 @@ from research_notes.assembly_tool import AssemblyShell
 
 class IntegratedShell(ModelingShell):
     prompt="3d> "
-    intro="3D research workspace v0.85. Type help. Use semantics PATH or benchmark solver for the new evaluations."
+    intro="3D research workspace v0.90. Type help. Use cad COMMAND for transactional edits; benchmark interop for comparisons."
     def __init__(self,output_dir,**kwargs):
         super().__init__(output_dir,**kwargs);self.session=IntegratedSession();self.assembly=AssemblyShell(output_dir/"assembly",stdout=self.stdout)
+        from research_notes.cad_tool import CadShell
+        self.cad = CadShell(output_dir / "cad", stdout=self.stdout)
+
+    def do_cad(self, arg):
+        """cad COMMAND: separate transactional workspace; open/select/set/recompute/rollback/workspace/export."""
+        previous = self.cad.errors
+        self.cad.onecmd(arg)
+        if self.cad.errors > previous:
+            raise ValueError("CAD command failed")
 
     def do_scan(self,arg):
         """scan STEP [EXPRESS]: bounded syntax/schema/application inspection without native geometry."""
@@ -44,14 +53,23 @@ class IntegratedShell(ModelingShell):
                     "diagnostics": report["diagnostics"], "evidence": str(destination)})
 
     def do_benchmark(self, arg):
-        """benchmark solver|references|ap|structure|all: save offline robustness CSV, HTML and detailed evidence."""
+        """benchmark solver|references|ap|structure|interop|operations|all: save offline evidence."""
         from collections import Counter
         from research_notes.robustness_studies import run_study, STUDIES
         names = {"solver": "solver_robustness", "references": "reference_robustness",
                  "ap": "ap_portability", "structure": "complex_product_structures"}
         requested = arg.strip()
+        if requested in {"interop", "operations"}:
+            from research_notes.operational_studies import run_study as run_operations, STUDIES as OPERATIONS
+            for name in OPERATIONS if requested == "operations" else ("interoperability_benchmark",):
+                rows = run_operations(name, self.output_dir / "benchmarks")
+                self._emit({"study": name, "cases": len(rows), "contracts_matched": sum(r["checks_pass"] for r in rows),
+                            "report": str(self.output_dir / "benchmarks" / (name + ".html"))})
+                if not all(r["checks_pass"] for r in rows):
+                    raise ValueError("operational benchmark contract mismatch")
+            return
         if requested != "all" and requested not in names:
-            raise ValueError("usage: benchmark solver|references|ap|structure|all")
+            raise ValueError("usage: benchmark solver|references|ap|structure|interop|operations|all")
         output = self.output_dir / "benchmarks"
         for name in STUDIES if requested == "all" else (names[requested],):
             rows = run_study(name, output)

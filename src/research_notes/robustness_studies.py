@@ -33,9 +33,9 @@ def evidence_bytes(value):
     return (json.dumps(normalize(value), sort_keys=True, indent=2, allow_nan=False) + "\n").encode()
 
 
-def finish(output, fixtures, name, rows, detail, inputs, boundaries, *, refresh=False):
+def finish(output, fixtures, name, rows, detail, inputs, boundaries, *, refresh=False, version=None):
     output.mkdir(parents=True, exist_ok=True)
-    version = f"v0.{STUDIES[name][0]}.0"
+    version = version or f"v0.{STUDIES[name][0]}.0"
     handle_fixtures(fixtures, inputs, refresh=refresh, generator=f"experiments/run_{name}.py")
     stream = io.StringIO(newline="")
     writer = csv.DictWriter(stream, fieldnames=tuple(rows[0]), lineterminator="\n")
@@ -78,8 +78,9 @@ def finish(output, fixtures, name, rows, detail, inputs, boundaries, *, refresh=
         ax.set(ylabel="Cases", xlabel="Independent assessment, distinct from solver status")
         ax.tick_params(axis="x", labelrotation=15)
     else:
-        ax.barh([r["control_id"] for r in rows], [r["product_count"] for r in rows], color="#147d92")
-        ax.set(xlabel="Product definitions with an interpreted source path")
+        has_products = all("product_count" in row for row in rows)
+        ax.barh([r["control_id"] for r in rows], [r["product_count"] if has_products else int(r["checks_pass"]) for r in rows], color="#147d92")
+        ax.set(xlabel="Product definitions with an interpreted source path" if has_products else "Declared case contract matched (may include a known limitation)")
     ax.set_title(title)
     fig.tight_layout()
     fig.savefig(output / f"{name}.png", dpi=120)

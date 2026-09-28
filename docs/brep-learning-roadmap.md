@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.85.0まで実装し、AP間の意味解釈、複雑な製品構造、面・辺の追跡と拘束ソルバーの頑健性評価を追加しました。v0.86.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、誤追跡や特異付近の不正確な解も記録しています。v1.0.0の安定契約には到達していません。
+v0.90.0まで実装し、再計算の確定・取り消し、限定Python APIの契約、診断画面、STEP出力方針と相互運用性の比較検証を追加しました。v0.91.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、誤追跡や特異付近の不正確な解も引き続き記録しています。プロジェクト全体のv1.0.0には到達していません。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.85.0 have code and reference evidence for their declared
-subsets. Stages from v0.86.0 onward are planned and remain unimplemented.
+The stages through v0.90.0 have code and reference evidence for their declared
+subsets. Stages from v0.91.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -854,33 +854,37 @@ conflicts and 1 rejected input. See [the study](../notes/solver-robustness.md).
 
 #### v0.86.0 — Transactional Recompute and Rollback
 
-Make recompute atomic at declared dependency boundaries. Retain the last valid
-result, isolate failed branches, expose stale outputs, and provide deterministic
-rollback and diagnostic records.
+Implemented with 14 controls: whole-feature-model and whole-authored-assembly
+publication, retained last valid state, stale/failed branch diagnostics, bounded
+checkpoints and revision-guarded rollback. See [the study](../notes/transactional-recompute.md).
 
 #### v0.87.0 — Stable Python API Contracts
 
-Freeze a bounded Python interface for input, queries, candidate selection,
-edits, recompute, comparison, and export. Version result records and define
-exceptions, warnings, abstentions, and resource-limit outcomes.
+Implemented with 17 controls. `CadWorkspace` contract 1.0 freezes method inputs,
+result envelopes, statuses, errors and limits. Diagnostic data can evolve
+additively. See [the API and commands](../notes/stable-cad-api.md).
 
 #### v0.88.0 — Diagnostic Modeling Workspace
 
-Integrate face and edge selection, provenance, dependency views, candidate
-comparison, constraint state, and geometric differences in a focused research
-workspace. Keep exact regeneration possible without the interface.
+Implemented with 9 controls and a standalone read-only HTML snapshot: selectable
+faces/edges, provenance, dependencies, candidate comparison, profile constraints
+and geometric measurements. API/terminal edits reproduce it without UI actions.
+See [the study](../notes/diagnostic-workspace.md).
 
 #### v0.89.0 — STEP Writer Modes and Round-Trip Policies
 
-Separate exact source preservation, controlled canonicalization, and modeled
-reconstruction into explicit writer modes. Validate structure, semantics,
-geometry, topology, attributes, tolerances, and byte identity independently.
+Implemented with 8 controls: exact source preservation, token-preserving trivia
+canonicalization and measured reconstruction. Each preservation dimension is
+reported independently; unsupported semantic/attribute guarantees stay explicit.
+See [the writer policies](../notes/step-writer-modes.md).
 
 #### v0.90.0 — Parser, Importer, and Geometry Portability Benchmark
 
-Compare pinned public parsers, importers, and eligible geometry routes across a
-fixed corpus and recorded environments. Classify syntax, schema, semantic,
-geometry, and attribute disagreements without majority-vote truth.
+Implemented on 11 fixed sources with three syntax routes, seven native import
+comparisons and three eligible mesh integrations. Two syntax disagreements and
+attribute capability differences remain explicit; all seven geometric comparisons
+match declared invariants. Both import routes share OCCT and only one reference
+environment is recorded. See [the benchmark](../notes/interoperability-benchmark.md).
 
 ### Phase O — Trust, Scale, and Human Oversight
 

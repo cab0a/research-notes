@@ -1,0 +1,10 @@
+control_id,outcome,checks_pass
+face_selection,matched,True
+edge_selection,matched,True
+source_and_revision,matched,True
+dependencies,matched,True
+constraint_state,matched,True
+candidate_comparison,matched,True
+geometry_difference,matched,True
+mesh_local_ids,matched,True
+failed_draft_labeled,matched,True
