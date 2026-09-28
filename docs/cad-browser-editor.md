@@ -2,7 +2,20 @@
 
 ## 日本語概要
 
-ローカルのブラウザ画面から、STEP読込、再構成候補の確認・採用、寸法入力、再計算、変更前後の比較、STEP保存を行えます。穴付き板のサンプルは画面のボタンで生成して読み込めます。別途サンプルファイルを用意する必要はありません。
+ローカルのブラウザ画面から、STEP読込、再構成候補の確認・採用、寸法入力、再計算、変更前後の比較、STEP保存を行えます。穴付き板のサンプルは画面のボタンで生成して読み込めます。別途サンプルファイルを用意する必要はありません。対応範囲と検証方法は英語本文に示します。
+
+---
+
+## English Summary
+
+Version 1.1 adds a local single-workspace HTTP adapter and a Japanese browser
+editor over the frozen `CadWorkspace` API. A generated hole plate can be loaded,
+explicitly selected, dimension-edited, recomputed, compared and downloaded.
+The Python API version remains 1.0.0. No new geometry family or assembly editor
+is claimed by this release. The Japanese operation guide follows; implementation
+boundaries and verification are documented below.
+
+## 操作ガイド
 
 ### 起動
 
@@ -18,10 +31,10 @@ python -m research_notes.cad_web
 `--open-browser` を付けるとブラウザも開きます。
 ポートが使用中なら `--port 8768` などを指定します。終了はターミナルで `Ctrl+C`。
 
-この作業環境のPowerShellからは、準備済みのWSL環境で起動できます。
+準備済みのWSL環境では、WSLターミナルでリポジトリへ移動して起動できます。
 
-```powershell
-wsl.exe -d Ubuntu --cd /home/nakanishi/inefficiencylab/research-notes output/venv312/bin/python -m research_notes.cad_web
+```bash
+output/venv312/bin/python -m research_notes.cad_web
 ```
 
 ### 穴半径を変更する
@@ -55,11 +68,7 @@ wsl.exe -d Ubuntu --cd /home/nakanishi/inefficiencylab/research-notes output/ven
 APIで生成する従来のHTMLは引き続き閲覧用スナップショットです。
 編集画面はPythonサーバーの起動中に利用します。詳細は[既存のAPI対応範囲](cad-v1-support.md)を参照してください。
 
-## English Summary
-
-Version 1.1 adds a local single-workspace HTTP adapter and a Japanese browser
-editor over the frozen `CadWorkspace` API. The Python API version remains
-1.0.0. No new geometry family or assembly editor is claimed by this release.
+## Implementation and Boundaries
 
 The editor calls the existing confirmed selection, staged edit, atomic
 recompute, comparison and reconstruct-export operations. Batch changes and

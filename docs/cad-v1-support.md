@@ -1,9 +1,5 @@
 # CAD v1.0 Support and Release Contract
 
-v1.1.0 adds a [local browser dimension editor](cad-browser-editor.md) over this
-unchanged API contract. The read-only browser references below describe the
-standalone diagnostic snapshot; the new live editor supports confirmed editing.
-
 ## 日本語概要
 
 v1.0.0は、対応範囲を固定した研究用3D基盤です。STEPの読込・検査、候補の確認、対応形状の寸法変更、再計算、比較、STEP出力をPython APIと対話ターミナルで行えます。公開部品を何でも編集できるわけではありません。AI候補は未学習の合成20例で正解率70%であり、利用者の確認を必須にします。診断画面は面・辺と根拠を調べる閲覧画面です。詳細は英語本文に示します。
@@ -20,6 +16,10 @@ recovery and native process isolation are not promised. Actual platform reports
 and release validation records qualify the tested runtime.
 
 ## Supported Workflow
+
+v1.1.0 adds a [local browser dimension editor](cad-browser-editor.md) over this
+unchanged API contract. The read-only browser references below describe the
+standalone diagnostic snapshot; the new live editor supports confirmed editing.
 
 | Operation | Supported scope | Limit or refusal |
 | --- | --- | --- |
