@@ -15,10 +15,11 @@ def preregistration():
     for name, expected in lock["files"].items():
         if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
             raise ValueError("preregistered input changed: " + name)
-    commit = subprocess.run(["git", "log", "-1", "--format=%H", "--", "fixtures/blinded-assistance/protocol.json"],
-                            cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
-    if not commit:
-        raise ValueError("evaluation protocol must be committed before predictions")
+    commit = "4731ab07e08e099cbedf6c5deda5e83c6b9d83ae"
+    registered = subprocess.run(["git", "show", commit + ":fixtures/blinded-assistance/protocol.json"],
+                                cwd=ROOT, capture_output=True, check=True).stdout
+    if hashlib.sha256(registered).hexdigest() != lock["files"]["fixtures/blinded-assistance/protocol.json"]:
+        raise ValueError("preregistration commit does not contain the frozen protocol")
     return {**lock, "protocol_commit": commit}
 
 

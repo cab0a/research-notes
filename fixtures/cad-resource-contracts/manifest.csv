@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,generator
+workloads.json,10711,9d0375da48b4160c6fab2107e730c584c1dce3218af299ca785818c63fc6033c,experiments/run_cad_resource_contracts.py

@@ -1,0 +1,101 @@
+[
+  {
+    "claim_id": "part21",
+    "entry_point": "lex_part21",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/step-part21-source-model",
+    "implementation": "src/research_notes/step_part21.py",
+    "limitation": "Transport control filtering, full schema conformance and external resolution are outside the profile.",
+    "primary_source": "https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "support": "bounded",
+    "test": "tests/test_step_part21.py"
+  },
+  {
+    "claim_id": "product_paths",
+    "entry_point": "inspect_step_semantics",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/ap-portability",
+    "implementation": "src/research_notes/portable_step.py",
+    "limitation": "Recognized AP paths do not establish complete AP conformance or PMI support.",
+    "primary_source": "https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "support": "partial",
+    "test": "tests/test_robustness_studies.py"
+  },
+  {
+    "claim_id": "geometry",
+    "entry_point": "read_step_for_inspection",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/public-step-corpus",
+    "implementation": "src/research_notes/public_step.py",
+    "limitation": "Complex face analysis can be partial; persistent face identity is not promised.",
+    "primary_source": "https://dev.opencascade.org/doc/overview/html/occt_user_guides__modeling_algos.html",
+    "support": "bounded",
+    "test": "tests/test_public_step_corpus.py"
+  },
+  {
+    "claim_id": "transactions",
+    "entry_point": "TransactionalModel",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/transactional-recompute",
+    "implementation": "src/research_notes/transactional_recompute.py",
+    "limitation": "Only valid supported DAGs commit; no native process isolation in the API.",
+    "primary_source": "https://dev.opencascade.org/doc/overview/html/occt_user_guides__modeling_algos.html",
+    "support": "supported",
+    "test": "tests/test_operational_studies.py"
+  },
+  {
+    "claim_id": "review",
+    "entry_point": "CadWorkspace",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/cad-review-workflow",
+    "implementation": "src/research_notes/cad_api.py",
+    "limitation": "Scripted usability controls are not a human participant study.",
+    "primary_source": "docs/cad-v1-support.md",
+    "support": "supported",
+    "test": "tests/test_release_studies.py"
+  },
+  {
+    "claim_id": "writer",
+    "entry_point": "write_step",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/step-writer-modes",
+    "implementation": "src/research_notes/step_writer_modes.py",
+    "limitation": "Reconstruct mode preserves measured geometry, not original history, attributes or exact topology IDs.",
+    "primary_source": "https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "support": "bounded",
+    "test": "tests/test_operational_studies.py"
+  },
+  {
+    "claim_id": "ai_assistance",
+    "entry_point": "blind_predict",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/blinded-assistance-evaluation",
+    "implementation": "src/research_notes/blinded_assistance.py",
+    "limitation": "Frozen synthetic holdout; inaccurate high-confidence predictions remain.",
+    "primary_source": "fixtures/blinded-assistance/protocol.json",
+    "support": "experimental",
+    "test": "tests/test_release_studies.py"
+  },
+  {
+    "claim_id": "resources",
+    "entry_point": "run_workload",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/cad-resource-contracts",
+    "implementation": "src/research_notes/cad_resources.py",
+    "limitation": "Worker timeout includes startup; estimated memory admission is not an RSS cap.",
+    "primary_source": "https://docs.python.org/3/library/subprocess.html#subprocess.run",
+    "support": "bounded",
+    "test": "tests/test_release_studies.py"
+  },
+  {
+    "claim_id": "authoring_history",
+    "entry_point": "reconstruct_step",
+    "evidence": "results/cad_claim_traceability_evidence.json",
+    "fixture": "fixtures/step-reconstruction",
+    "implementation": "src/research_notes/step_reconstruction.py",
+    "limitation": "No recovered proprietary CAD history; only explicitly selected reconstructed hypotheses.",
+    "primary_source": "https://www.steptools.com/stds/step/IS_final_p21e3.html",
+    "support": "unsupported",
+    "test": "tests/test_operational_studies.py"
+  }
+]

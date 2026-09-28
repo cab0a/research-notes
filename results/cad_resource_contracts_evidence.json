@@ -1,0 +1,668 @@
+[
+  {
+    "control_id": "syntax_16",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "bytes": 369,
+        "entities": 16,
+        "references": 15,
+        "tokens": 161
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 16,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "syntax_128",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "bytes": 1994,
+        "entities": 128,
+        "references": 127,
+        "tokens": 945
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 128,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "syntax_1024",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "bytes": 16379,
+        "entities": 1024,
+        "references": 1023,
+        "tokens": 7217
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 1024,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "model_4",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "nodes": 4,
+        "valid": true,
+        "volume": 480.0
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 4,
+      "kind": "model"
+    }
+  },
+  {
+    "control_id": "model_16",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "nodes": 16,
+        "valid": true,
+        "volume": 480.0
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 16,
+      "kind": "model"
+    }
+  },
+  {
+    "control_id": "model_64",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "nodes": 64,
+        "valid": true,
+        "volume": 480.0
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 64,
+      "kind": "model"
+    }
+  },
+  {
+    "control_id": "sketch_1",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "constraints": 2,
+        "dof": 0,
+        "entities": 1,
+        "status": "fully_constrained"
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 1,
+      "kind": "sketch"
+    }
+  },
+  {
+    "control_id": "sketch_8",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "constraints": 16,
+        "dof": 0,
+        "entities": 8,
+        "status": "fully_constrained"
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 8,
+      "kind": "sketch"
+    }
+  },
+  {
+    "control_id": "sketch_32",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "constraints": 64,
+        "dof": 0,
+        "entities": 32,
+        "status": "fully_constrained"
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "sketch"
+    }
+  },
+  {
+    "control_id": "mesh_0",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "edges": 3,
+        "faces": 1,
+        "triangles": 2022,
+        "volume": 112.2876823
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "deflection": 0.2,
+      "kind": "mesh"
+    }
+  },
+  {
+    "control_id": "mesh_1",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "measurements": {
+        "edges": 3,
+        "faces": 1,
+        "triangles": 2022,
+        "volume": 112.2876823
+      },
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "status": "ok"
+    },
+    "spec": {
+      "deflection": 0.05,
+      "kind": "mesh"
+    }
+  },
+  {
+    "control_id": "bytes_gate",
+    "limits": {
+      "bytes": 128,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "bytes",
+      "limit": 128,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 593,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "entities_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 16,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "reason": "entity_count_limit",
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "references_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 16,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "reason": "reference_count_limit",
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "tokens_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 16,
+      "triangles": 60000
+    },
+    "result": {
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "reason": "token_count_limit",
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "memory_estimate_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 1000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "estimated_memory_bytes",
+      "limit": 1000,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 18976,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "control_id": "nodes_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "model_nodes",
+      "limit": 64,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 65,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 65,
+      "kind": "model"
+    }
+  },
+  {
+    "control_id": "sketch_entities_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "sketch_entities",
+      "limit": 32,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 33,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 33,
+      "kind": "sketch"
+    }
+  },
+  {
+    "control_id": "constraints_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 8,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "sketch_constraints",
+      "limit": 8,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 16,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "count": 8,
+      "kind": "sketch"
+    }
+  },
+  {
+    "control_id": "faces_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 5,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "faces",
+      "limit": 5,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 6,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "kind": "topology"
+    }
+  },
+  {
+    "control_id": "edges_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 11,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "edges",
+      "limit": 11,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 12,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "kind": "topology"
+    }
+  },
+  {
+    "control_id": "triangles_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 10
+    },
+    "result": {
+      "counter": "triangles",
+      "limit": 10,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": 2022,
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "deflection": 0.2,
+      "kind": "mesh"
+    }
+  },
+  {
+    "control_id": "deadline_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 0.02,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "result": {
+      "counter": "seconds",
+      "limit": 0.02,
+      "memory_scope": "tracemalloc Python allocation peak during workload; excludes native OCCT/NumPy allocations; memory admission is estimated",
+      "observed": null,
+      "reason": "child_process_deadline",
+      "status": "resource_exhausted"
+    },
+    "spec": {
+      "kind": "deadline_control"
+    }
+  }
+]

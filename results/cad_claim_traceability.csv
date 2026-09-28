@@ -1,0 +1,10 @@
+control_id,outcome,checks_pass
+part21,bounded,True
+product_paths,partial,True
+geometry,bounded,True
+transactions,supported,True
+review,supported,True
+writer,bounded,True
+ai_assistance,experimental,True
+resources,bounded,True
+authoring_history,unsupported,True

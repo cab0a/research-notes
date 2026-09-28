@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,generator
+v1_contract.json,2923,0c7dcffdaf7a6eeb04c6fb3bedf098d41b33a076b17f2a0ca6168d427b7f4391,experiments/run_cad_contract_freeze.py

@@ -1,0 +1,11 @@
+control_id,outcome,checks_pass
+inspect_alternatives,verified,True
+confirmation_required,verified,True
+reject_without_adopting,verified,True
+explicit_adoption,verified,True
+stale_review_token,verified,True
+invalid_proposal_retains_geometry,verified,True
+failed_draft_cannot_export,verified,True
+correct_and_commit,verified,True
+compare_evidence,verified,True
+read_only_snapshot,verified,True

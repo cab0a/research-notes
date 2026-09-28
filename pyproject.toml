@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-notes"
-version = "0.90.0"
+version = "1.0.0"
 description = "Reproducible technical research notes and controlled experiments"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -25,6 +25,11 @@ comparison = [
 ]
 geometry = ["cadquery-ocp==7.9.3.1.1"]
 test = ["pytest==9.1.1"]
+
+[project.scripts]
+research-cad = "research_notes.cad_tool:main"
+research-3d = "research_notes.integrated_tool:main"
+research-cad-release = "research_notes.release_studies:main"
 
 [tool.pytest.ini_options]
 addopts = "-ra"

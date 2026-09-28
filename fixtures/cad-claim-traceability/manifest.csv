@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,generator
+claims.json,4607,63adccbee5323d8789778b171c3b060765742c1f7493e3ef1f5a436177eee9d4,experiments/run_cad_claim_traceability.py

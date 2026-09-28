@@ -1,0 +1,9 @@
+include LICENSE LICENSING.md README.md
+recursive-include docs *.md *.txt
+recursive-include notes *.md
+recursive-include fixtures *
+recursive-include results *.json *.csv *.png *.html
+recursive-include examples *.py
+recursive-include experiments *.py
+recursive-include tests *.py
+recursive-exclude * __pycache__ *.pyc

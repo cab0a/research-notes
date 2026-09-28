@@ -1,0 +1,210 @@
+[
+  {
+    "control_id": "part21_truncated_0",
+    "elapsed_seconds": 0.0004662689971
+  },
+  {
+    "control_id": "part21_invalid_byte_0",
+    "elapsed_seconds": 3.629999992e-05
+  },
+  {
+    "control_id": "part21_trivia_0",
+    "elapsed_seconds": 0.0003341669944
+  },
+  {
+    "control_id": "express_truncated_0",
+    "elapsed_seconds": 0.0001249080015
+  },
+  {
+    "control_id": "express_invalid_byte_0",
+    "elapsed_seconds": 5.433400656e-05
+  },
+  {
+    "control_id": "express_trivia_0",
+    "elapsed_seconds": 0.0001205590015
+  },
+  {
+    "control_id": "part21_truncated_1",
+    "elapsed_seconds": 6.512399705e-05
+  },
+  {
+    "control_id": "part21_invalid_byte_1",
+    "elapsed_seconds": 2.966600005e-05
+  },
+  {
+    "control_id": "part21_trivia_1",
+    "elapsed_seconds": 0.0003003230013
+  },
+  {
+    "control_id": "express_truncated_1",
+    "elapsed_seconds": 8.066400187e-05
+  },
+  {
+    "control_id": "express_invalid_byte_1",
+    "elapsed_seconds": 5.345200043e-05
+  },
+  {
+    "control_id": "express_trivia_1",
+    "elapsed_seconds": 0.0001092680031
+  },
+  {
+    "control_id": "part21_truncated_2",
+    "elapsed_seconds": 4.233000072e-05
+  },
+  {
+    "control_id": "part21_invalid_byte_2",
+    "elapsed_seconds": 8.981100109e-05
+  },
+  {
+    "control_id": "part21_trivia_2",
+    "elapsed_seconds": 0.0003130170007
+  },
+  {
+    "control_id": "express_truncated_2",
+    "elapsed_seconds": 3.210099385e-05
+  },
+  {
+    "control_id": "express_invalid_byte_2",
+    "elapsed_seconds": 2.468700404e-05
+  },
+  {
+    "control_id": "express_trivia_2",
+    "elapsed_seconds": 0.0001138869993
+  },
+  {
+    "control_id": "part21_truncated_3",
+    "elapsed_seconds": 3.001699952e-05
+  },
+  {
+    "control_id": "part21_invalid_byte_3",
+    "elapsed_seconds": 2.84639973e-05
+  },
+  {
+    "control_id": "part21_trivia_3",
+    "elapsed_seconds": 0.0003135779989
+  },
+  {
+    "control_id": "express_truncated_3",
+    "elapsed_seconds": 8.394999895e-05
+  },
+  {
+    "control_id": "express_invalid_byte_3",
+    "elapsed_seconds": 6.024500181e-05
+  },
+  {
+    "control_id": "express_trivia_3",
+    "elapsed_seconds": 0.0001187960006
+  },
+  {
+    "control_id": "topology_reversed_0",
+    "elapsed_seconds": 1.490687747
+  },
+  {
+    "control_id": "topology_free_vertex_0",
+    "elapsed_seconds": 1.362599599
+  },
+  {
+    "control_id": "trim_self_intersecting_wire_0",
+    "elapsed_seconds": 1.435863607
+  },
+  {
+    "control_id": "placement_improper_rotation_0",
+    "elapsed_seconds": 0.002779618997
+  },
+  {
+    "control_id": "placement_out_of_range_0",
+    "elapsed_seconds": 3.251199814e-05
+  },
+  {
+    "control_id": "dependency_cycle_0",
+    "elapsed_seconds": 0.000183780001
+  },
+  {
+    "control_id": "dependency_missing_reference_0",
+    "elapsed_seconds": 3.821300197e-05
+  },
+  {
+    "control_id": "topology_reversed_1",
+    "elapsed_seconds": 1.424086716
+  },
+  {
+    "control_id": "topology_free_vertex_1",
+    "elapsed_seconds": 1.562720773
+  },
+  {
+    "control_id": "trim_self_intersecting_wire_1",
+    "elapsed_seconds": 1.34120006
+  },
+  {
+    "control_id": "placement_improper_rotation_1",
+    "elapsed_seconds": 0.0003950630053
+  },
+  {
+    "control_id": "placement_out_of_range_1",
+    "elapsed_seconds": 3.340399417e-05
+  },
+  {
+    "control_id": "dependency_cycle_1",
+    "elapsed_seconds": 0.0001335650013
+  },
+  {
+    "control_id": "dependency_missing_reference_1",
+    "elapsed_seconds": 3.252200258e-05
+  },
+  {
+    "control_id": "topology_reversed_2",
+    "elapsed_seconds": 1.599602697
+  },
+  {
+    "control_id": "topology_free_vertex_2",
+    "elapsed_seconds": 1.35908235
+  },
+  {
+    "control_id": "trim_self_intersecting_wire_2",
+    "elapsed_seconds": 1.39416379
+  },
+  {
+    "control_id": "placement_improper_rotation_2",
+    "elapsed_seconds": 0.0002368910064
+  },
+  {
+    "control_id": "placement_out_of_range_2",
+    "elapsed_seconds": 2.828399738e-05
+  },
+  {
+    "control_id": "dependency_cycle_2",
+    "elapsed_seconds": 0.0001095490006
+  },
+  {
+    "control_id": "dependency_missing_reference_2",
+    "elapsed_seconds": 3.122999624e-05
+  },
+  {
+    "control_id": "topology_reversed_3",
+    "elapsed_seconds": 1.353264078
+  },
+  {
+    "control_id": "topology_free_vertex_3",
+    "elapsed_seconds": 1.448742415
+  },
+  {
+    "control_id": "trim_self_intersecting_wire_3",
+    "elapsed_seconds": 1.378675904
+  },
+  {
+    "control_id": "placement_improper_rotation_3",
+    "elapsed_seconds": 0.0005025680002
+  },
+  {
+    "control_id": "placement_out_of_range_3",
+    "elapsed_seconds": 8.688500384e-05
+  },
+  {
+    "control_id": "dependency_cycle_3",
+    "elapsed_seconds": 0.0002442459954
+  },
+  {
+    "control_id": "dependency_missing_reference_3",
+    "elapsed_seconds": 7.992199971e-05
+  }
+]

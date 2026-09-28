@@ -1,0 +1,5 @@
+control_id,outcome,checks_pass
+api_v087_compatible,verified,True
+license_present,verified,True
+public_source_notices,verified,True
+contract_no_private_objects,verified,True

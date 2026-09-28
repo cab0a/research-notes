@@ -10,7 +10,7 @@ from research_notes.assembly_tool import AssemblyShell
 
 class IntegratedShell(ModelingShell):
     prompt="3d> "
-    intro="3D research workspace v0.90. Type help. Use cad COMMAND for transactional edits; benchmark interop for comparisons."
+    intro="3D research workspace v1.0. Type help. Use cad COMMAND for transactional edits; benchmark interop for comparisons."
     def __init__(self,output_dir,**kwargs):
         super().__init__(output_dir,**kwargs);self.session=IntegratedSession();self.assembly=AssemblyShell(output_dir/"assembly",stdout=self.stdout)
         from research_notes.cad_tool import CadShell

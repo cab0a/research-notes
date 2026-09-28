@@ -12,7 +12,7 @@ from research_notes.cad_api import CadWorkspace, CadAPIError
 
 class CadShell(cmd.Cmd):
     prompt = "cad> "
-    intro = "Transactional CAD workspace v0.90 · API 1.0. Type help for commands."
+    intro = "Transactional CAD workspace v1.0 · API 1.0. Type help for commands."
 
     def __init__(self, output_dir, **kwargs):
         super().__init__(**kwargs)

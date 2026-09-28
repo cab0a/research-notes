@@ -1,0 +1,3 @@
+file_name,byte_length,sha256,generator
+cases.json,13467,65e93eb0dc76fa913cc4a70f9eade6dbf5a24b0fa676495b71ee8893ea4000ea,experiments/run_cad_fuzzing.py
+minimized.json,379,0d6b0b6044e604f433869dbad01f335266523e1053a89cf86bc9e4114d4ca24e,experiments/run_cad_fuzzing.py

@@ -1,0 +1,694 @@
+{
+  "cases": [
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_truncated_0",
+        "mutation": "truncate",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d"
+      },
+      "observation": {
+        "diagnostic": "unexpected_token",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_invalid_byte_0",
+        "mutation": "insert_nul",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d0049534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "unsupported_transport_control",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "part21",
+        "id": "part21_trivia_0",
+        "mutation": "prefix_comment",
+        "source_hex": "202f2a2073656564656420747269766961202a2f2049534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_truncated_0",
+        "mutation": "truncate",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20"
+      },
+      "observation": {
+        "diagnostic": "missing_end_entity",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_invalid_byte_0",
+        "mutation": "insert_nul",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b2000454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "unexpected_character",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "express",
+        "id": "express_trivia_0",
+        "mutation": "prefix_comment",
+        "source_hex": "20282a2073656564656420747269766961202a2920534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_truncated_1",
+        "mutation": "truncate",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c2732"
+      },
+      "observation": {
+        "diagnostic": "unterminated_string",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_invalid_byte_1",
+        "mutation": "insert_nul",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c2732003032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "unsupported_transport_control",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "part21",
+        "id": "part21_trivia_1",
+        "mutation": "prefix_comment",
+        "source_hex": "202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f2049534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_truncated_1",
+        "mutation": "truncate",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954"
+      },
+      "observation": {
+        "diagnostic": "unexpected_token",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_invalid_byte_1",
+        "mutation": "insert_nul",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e54495400593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "unexpected_character",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "express",
+        "id": "express_trivia_1",
+        "mutation": "prefix_comment",
+        "source_hex": "20282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a2920534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_truncated_2",
+        "mutation": "truncate",
+        "source_hex": "49534f2d3130333033"
+      },
+      "observation": {
+        "diagnostic": "unexpected_token",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_invalid_byte_2",
+        "mutation": "insert_nul",
+        "source_hex": "49534f2d3130333033002d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "unsupported_transport_control",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "part21",
+        "id": "part21_trivia_2",
+        "mutation": "prefix_comment",
+        "source_hex": "202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f2049534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_truncated_2",
+        "mutation": "truncate",
+        "source_hex": "534348454d412066757a7a3b2045"
+      },
+      "observation": {
+        "diagnostic": "unsupported_declaration",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_invalid_byte_2",
+        "mutation": "insert_nul",
+        "source_hex": "534348454d412066757a7a3b2045004e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "unexpected_character",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "express",
+        "id": "express_trivia_2",
+        "mutation": "prefix_comment",
+        "source_hex": "20282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a2920534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_truncated_3",
+        "mutation": "truncate",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f"
+      },
+      "observation": {
+        "diagnostic": "unexpected_end",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "part21",
+        "id": "part21_invalid_byte_3",
+        "mutation": "insert_nul",
+        "source_hex": "49534f2d31303330332d32313b4845414445523b46494c455f004445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "unsupported_transport_control",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "part21",
+        "id": "part21_trivia_3",
+        "mutation": "prefix_comment",
+        "source_hex": "202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f20202f2a2073656564656420747269766961202a2f2049534f2d31303330332d32313b4845414445523b46494c455f4445534352495054494f4e28282766757a7a27292c27323b3127293b46494c455f4e414d45282766757a7a272c27323032362d30312d3031272c28276127292c28276f27292c2770272c2773272c2727293b46494c455f534348454d4128282746555a5a2729293b454e445345433b444154413b23313d504f494e542827272c28312e2c322e2c332e29293b454e445345433b454e442d49534f2d31303330332d32313b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_truncated_3",
+        "mutation": "truncate",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e44"
+      },
+      "observation": {
+        "diagnostic": "unsupported_declaration",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "express",
+        "id": "express_invalid_byte_3",
+        "mutation": "insert_nul",
+        "source_hex": "534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e44005f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "unexpected_character",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "accept",
+        "family": "express",
+        "id": "express_trivia_3",
+        "mutation": "prefix_comment",
+        "source_hex": "20282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a292020282a2073656564656420747269766961202a2920534348454d412066757a7a3b20454e5449545920706f696e743b20783a205245414c3b20454e445f454e544954593b20454e445f534348454d413b"
+      },
+      "observation": {
+        "diagnostic": "accepted",
+        "outcome": "accept"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_reversed_0",
+        "mutation": "reversed",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_free_vertex_0",
+        "mutation": "free_vertex",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "trim",
+        "id": "trim_self_intersecting_wire_0",
+        "mutation": "self_intersecting_wire",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "invalid_self_intersecting_trim",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_improper_rotation_0",
+        "mutation": "improper_rotation",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_out_of_range_0",
+        "mutation": "out_of_range",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_cycle_0",
+        "mutation": "cycle",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_missing_reference_0",
+        "mutation": "missing_reference",
+        "scale": 2.499798
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_reversed_1",
+        "mutation": "reversed",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_free_vertex_1",
+        "mutation": "free_vertex",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "trim",
+        "id": "trim_self_intersecting_wire_1",
+        "mutation": "self_intersecting_wire",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "invalid_self_intersecting_trim",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_improper_rotation_1",
+        "mutation": "improper_rotation",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_out_of_range_1",
+        "mutation": "out_of_range",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_cycle_1",
+        "mutation": "cycle",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_missing_reference_1",
+        "mutation": "missing_reference",
+        "scale": 2.083176
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_reversed_2",
+        "mutation": "reversed",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_free_vertex_2",
+        "mutation": "free_vertex",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "trim",
+        "id": "trim_self_intersecting_wire_2",
+        "mutation": "self_intersecting_wire",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "invalid_self_intersecting_trim",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_improper_rotation_2",
+        "mutation": "improper_rotation",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_out_of_range_2",
+        "mutation": "out_of_range",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_cycle_2",
+        "mutation": "cycle",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_missing_reference_2",
+        "mutation": "missing_reference",
+        "scale": 3.301812
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_reversed_3",
+        "mutation": "reversed",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "topology",
+        "id": "topology_free_vertex_3",
+        "mutation": "free_vertex",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "trim",
+        "id": "trim_self_intersecting_wire_3",
+        "mutation": "self_intersecting_wire",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "invalid_self_intersecting_trim",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_improper_rotation_3",
+        "mutation": "improper_rotation",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "placement",
+        "id": "placement_out_of_range_3",
+        "mutation": "out_of_range",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_cycle_3",
+        "mutation": "cycle",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    },
+    {
+      "case": {
+        "expected": "reject",
+        "family": "dependency",
+        "id": "dependency_missing_reference_3",
+        "mutation": "missing_reference",
+        "scale": 4.942221
+      },
+      "observation": {
+        "diagnostic": "ValueError",
+        "outcome": "reject"
+      }
+    }
+  ],
+  "reduction": {
+    "calls": 12,
+    "original_bytes": 190,
+    "original_sha256": "e54ef47e2b43795610de600d8592257a3348562ae98950a367ac86bcb84df4b1",
+    "predicate": {
+      "diagnostic": "unsupported_transport_control",
+      "outcome": "reject"
+    },
+    "reduced_bytes": 1,
+    "reduced_hex": "00",
+    "scope": "diagnostic-preserving reduction of a known rejection, not a newly discovered parser defect"
+  },
+  "seed": 20260928,
+  "unexpected_outcomes": []
+}

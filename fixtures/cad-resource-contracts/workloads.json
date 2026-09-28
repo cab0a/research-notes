@@ -1,0 +1,505 @@
+[
+  {
+    "expected": "ok",
+    "id": "syntax_16",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 16,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "syntax_128",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 128,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "syntax_1024",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 1024,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "model_4",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 4,
+      "kind": "model"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "model_16",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 16,
+      "kind": "model"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "model_64",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 64,
+      "kind": "model"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "sketch_1",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 1,
+      "kind": "sketch"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "sketch_8",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 8,
+      "kind": "sketch"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "sketch_32",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "sketch"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "mesh_0",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "deflection": 0.2,
+      "kind": "mesh"
+    }
+  },
+  {
+    "expected": "ok",
+    "id": "mesh_1",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "deflection": 0.05,
+      "kind": "mesh"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "bytes_gate",
+    "limits": {
+      "bytes": 128,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "entities_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 16,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "references_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 16,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "tokens_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 16,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "memory_estimate_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 1000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 32,
+      "kind": "syntax"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "nodes_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 65,
+      "kind": "model"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "sketch_entities_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 33,
+      "kind": "sketch"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "constraints_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 8,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "count": 8,
+      "kind": "sketch"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "faces_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 5,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "kind": "topology"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "edges_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 11,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "kind": "topology"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "triangles_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 30.0,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 10
+    },
+    "spec": {
+      "deflection": 0.2,
+      "kind": "mesh"
+    }
+  },
+  {
+    "expected": "resource_exhausted",
+    "id": "deadline_gate",
+    "limits": {
+      "bytes": 2000000,
+      "edges": 512,
+      "entities": 20000,
+      "estimated_memory_bytes": 256000000,
+      "faces": 256,
+      "model_nodes": 64,
+      "references": 100000,
+      "seconds": 0.02,
+      "sketch_constraints": 128,
+      "sketch_entities": 32,
+      "tokens": 250000,
+      "triangles": 60000
+    },
+    "spec": {
+      "kind": "deadline_control"
+    }
+  }
+]

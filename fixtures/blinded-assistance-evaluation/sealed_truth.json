@@ -1,0 +1,102 @@
+{
+  "holdout_00": {
+    "family": "paired_cylindrical_cuts",
+    "truth": "hole",
+    "variant": 0.0
+  },
+  "holdout_01": {
+    "family": "paired_cylindrical_cuts",
+    "truth": "hole",
+    "variant": 0.2
+  },
+  "holdout_02": {
+    "family": "paired_rectangular_cuts",
+    "truth": "pocket",
+    "variant": 0.0
+  },
+  "holdout_03": {
+    "family": "paired_rectangular_cuts",
+    "truth": "pocket",
+    "variant": 0.2
+  },
+  "holdout_04": {
+    "family": "long_capsule_cut",
+    "truth": "slot",
+    "variant": 0.0
+  },
+  "holdout_05": {
+    "family": "long_capsule_cut",
+    "truth": "slot",
+    "variant": 0.2
+  },
+  "holdout_06": {
+    "family": "two_level_stair_cut",
+    "truth": "step",
+    "variant": 0.0
+  },
+  "holdout_07": {
+    "family": "two_level_stair_cut",
+    "truth": "step",
+    "variant": 0.2
+  },
+  "holdout_08": {
+    "family": "multiple_edge_chamfer",
+    "truth": "chamfer",
+    "variant": 0.0
+  },
+  "holdout_09": {
+    "family": "multiple_edge_chamfer",
+    "truth": "chamfer",
+    "variant": 0.2
+  },
+  "holdout_10": {
+    "family": "all_edge_rounding",
+    "truth": "fillet",
+    "variant": 0.0
+  },
+  "holdout_11": {
+    "family": "all_edge_rounding",
+    "truth": "fillet",
+    "variant": 0.2
+  },
+  "holdout_12": {
+    "family": "paired_cylindrical_additions",
+    "truth": "boss",
+    "variant": 0.0
+  },
+  "holdout_13": {
+    "family": "paired_cylindrical_additions",
+    "truth": "boss",
+    "variant": 0.2
+  },
+  "holdout_14": {
+    "family": "crossed_rectangular_additions",
+    "truth": "rib",
+    "variant": 0.0
+  },
+  "holdout_15": {
+    "family": "crossed_rectangular_additions",
+    "truth": "rib",
+    "variant": 0.2
+  },
+  "holdout_16": {
+    "family": "mixed_hole_boss",
+    "truth": "unknown",
+    "variant": 0.0
+  },
+  "holdout_17": {
+    "family": "mixed_hole_boss",
+    "truth": "unknown",
+    "variant": 0.2
+  },
+  "holdout_18": {
+    "family": "sphere_negative",
+    "truth": "unknown",
+    "variant": 0.0
+  },
+  "holdout_19": {
+    "family": "sphere_negative",
+    "truth": "unknown",
+    "variant": 0.2
+  }
+}

@@ -1,0 +1,12 @@
+[
+  "inspect_alternatives",
+  "confirmation_required",
+  "reject_without_adopting",
+  "explicit_adoption",
+  "stale_review_token",
+  "invalid_proposal_retains_geometry",
+  "failed_draft_cannot_export",
+  "correct_and_commit",
+  "compare_evidence",
+  "read_only_snapshot"
+]

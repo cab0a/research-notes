@@ -1,0 +1,12 @@
+{
+  "calls": 12,
+  "original_bytes": 190,
+  "original_sha256": "e54ef47e2b43795610de600d8592257a3348562ae98950a367ac86bcb84df4b1",
+  "predicate": {
+    "diagnostic": "unsupported_transport_control",
+    "outcome": "reject"
+  },
+  "reduced_bytes": 1,
+  "reduced_hex": "00",
+  "scope": "diagnostic-preserving reduction of a known rejection, not a newly discovered parser defect"
+}

@@ -1,0 +1,17 @@
+{
+  "boundaries": [
+    "Stability covers the declared API, controls and resource policies, not arbitrary STEP or full AP conformance.",
+    "Reconstruction is a confirmed hypothesis in a small feature grammar, never recovered authoring history.",
+    "Native operations in the interactive API are in-process; only the resource/fuzz workers have hard process deadlines.",
+    "Memory admission is estimated; Python allocation measurements exclude native OCCT/NumPy memory.",
+    "AI ranking remains advisory; held-out synthetic families do not establish industrial accuracy or human productivity.",
+    "Local topology IDs expire with their source/revision; preserve mode does not include geometry edits.",
+    "PolyForm Noncommercial 1.0.0 and separately recorded third-party licenses apply."
+  ],
+  "checks_pass": true,
+  "control_count": 10,
+  "numeric_evidence": "10 significant digits; tiny residuals retained; classifications are tolerance-based",
+  "regression_check": "checks_pass is the declared case contract, not universal solver or CAD success",
+  "study": "cad_end_to_end",
+  "version": "v0.96.0"
+}

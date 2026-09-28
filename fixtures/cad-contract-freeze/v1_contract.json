@@ -1,0 +1,116 @@
+{
+  "api": {
+    "api_version": "1.0.0",
+    "error_codes": [
+      "invalid_request",
+      "revision_conflict",
+      "confirmation_required",
+      "resource_limit",
+      "no_model",
+      "no_source",
+      "pending_changes",
+      "io_error",
+      "native_failure"
+    ],
+    "error_fields": [
+      "api_version",
+      "status",
+      "code",
+      "detail"
+    ],
+    "limits": {
+      "checkpoints": 16,
+      "model_nodes": 64,
+      "source_bytes": 2000000,
+      "workspace_edges": 512,
+      "workspace_faces": 256,
+      "workspace_triangles": 60000
+    },
+    "methods": {
+      "candidates": "(self)",
+      "compare": "(self)",
+      "edit": "(self, node_id, parameter, value, *, expected_revision)",
+      "export_step": "(self, path: 'Path', *, mode='reconstruct', overwrite=False)",
+      "open_step": "(self, path: 'Path', *, mode='inspect')",
+      "recompute": "(self, *, expected_revision)",
+      "rollback": "(self, checkpoint=None, *, expected_revision)",
+      "select": "(self, candidate_id, *, confirm=False, expected_revision)",
+      "semantics": "(self)",
+      "status": "(self)",
+      "workspace": "(self, directory: 'Path')"
+    },
+    "result_fields": [
+      "api_version",
+      "operation",
+      "status",
+      "revision_token",
+      "data",
+      "warnings"
+    ],
+    "result_statuses": [
+      "ok",
+      "partial",
+      "abstained",
+      "staged",
+      "committed",
+      "aborted"
+    ],
+    "revision_policy": "opaque token required for select/edit/recompute/rollback; stale tokens fail without mutation",
+    "scope": "method inputs, result envelope, statuses, error codes and declared limits; additive diagnostic data may evolve; no hard native CPU/RAM isolation"
+  },
+  "cli_commands": [
+    "open",
+    "candidates",
+    "select",
+    "set",
+    "recompute",
+    "rollback",
+    "status",
+    "compare",
+    "workspace",
+    "export",
+    "quit"
+  ],
+  "compatibility": "v0.87 API version 1.0.0 signatures/envelope/errors unchanged; private modules are research interfaces",
+  "evidence_schema": {
+    "contract": [
+      "version",
+      "study",
+      "control_count",
+      "checks_pass",
+      "boundaries",
+      "numeric_evidence",
+      "regression_check"
+    ],
+    "csv": "columns recorded per study; diagnostic JSON data is additive"
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "package_extra": "geometry",
+  "python_tested": "3.12",
+  "version": "1.0.0",
+  "worker_limits": {
+    "bytes": 2000000,
+    "edges": 512,
+    "entities": 20000,
+    "estimated_memory_bytes": 256000000,
+    "faces": 256,
+    "model_nodes": 64,
+    "references": 100000,
+    "seconds": 30.0,
+    "sketch_constraints": 128,
+    "sketch_entities": 32,
+    "tokens": 250000,
+    "triangles": 60000
+  },
+  "worker_outcomes": [
+    "ok",
+    "resource_exhausted",
+    "invalid",
+    "error"
+  ],
+  "writer_modes": [
+    "preserve",
+    "canonical",
+    "reconstruct"
+  ]
+}
