@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.0.0まで実装しました。STEP読込・検査、候補の確認、寸法変更、再計算、比較、STEP再出力を、明示した対応範囲で安定提供します。Python APIと対話ターミナルに加え、面・辺と根拠を調べる診断画面を利用できます。
+v1.1.0まで実装しました。ローカルのブラウザ画面から、STEP読込、候補の確認・採用、寸法入力、再計算、比較、STEP保存を行えます。穴付き板の編集を画面だけで完結できます。[起動方法と操作手順](docs/cad-browser-editor.md)をご覧ください。Python APIと対話ターミナルも引き続き利用できます。
 
 v0.91.0〜v1.0.0の142条件では、実測4環境の比較、不正入力、資源制限、未学習サンプルでのAI評価、確認・拒否の操作、読込から再出力までを検証します。公開部品の任意の編集や設計履歴の復元には対応しません。AI評価は合成20例で正解率70%であり、候補の確認を必須にしています。詳細は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
@@ -47,13 +47,27 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.0.0. Scoped references, dimensional
+The current implementation version is v1.1.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
+
+## Browser Dimension Editor: v1.1.0
+
+Start the local editor after installing the geometry extra:
+
+```bash
+python -m research_notes.cad_web
+```
+
+Open `http://127.0.0.1:8767`, load the built-in through-hole sample, explicitly
+adopt a candidate, change its radius, stage and recompute, compare the result,
+and download the committed STEP. No fixture checkout is needed for this sample.
+The [browser guide](docs/cad-browser-editor.md) covers installation, recovery,
+session limits and verification. The existing API 1.0 contract remains unchanged.
 
 ## Stable Research CAD Workflow: v1.0.0
 

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="cad-token" content="__TOKEN__">
+  <title>Research CAD · 寸法編集</title>
+  <link rel="stylesheet" href="/editor.css">
+  <script src="/editor.js" defer></script>
+</head>
+<body>
+<header><div class="brand"><span class="brandmark">◈</span><div><strong>Research CAD</strong><span class="subtitle">STEP 寸法編集ワークスペース</span></div><span class="version">v1.1.0</span></div><span class="local">● ローカルで実行</span></header>
+<main>
+  <div class="intro"><div><p class="eyebrow">INSPECT → EDIT → VERIFY</p><h1>形状を見ながら、寸法を変える。</h1><p>候補を確認し、変更を再計算してからSTEPへ保存します。</p></div><button id="refresh" class="secondary">最新の状態を読込</button></div>
+  <div id="message" role="status" aria-live="polite">接続しています…</div>
+  <div class="layout">
+    <aside>
+      <section class="card"><details id="source-panel" open><summary><span class="step">01</span> STEPを開く</summary><button id="demo" class="primary wide">穴付き板のサンプルを開く</button><div class="file-row"><label for="file">手元のSTEPを選択</label><input id="file" type="file" accept=".step,.stp"></div><button id="upload" class="secondary wide" disabled>選択したSTEPを開く</button><p class="hint">サンプル：12 × 10 × 4 mm、穴半径 1 mm。ファイルはこのPC内で処理します。</p></details><p id="file-name" class="filename">ファイル未読込</p></section>
+      <section class="card"><details id="candidate-panel" open><summary><span class="step">02</span> 編集する候補を確認</summary><label for="candidate">再構成候補</label><select id="candidate" disabled><option>STEPを開いてください</option></select><p id="candidate-detail" class="hint">形状から推定した編集モデルです。元の設計履歴ではありません。</p><label class="check"><input id="confirm" type="checkbox" disabled> この候補を編集モデルとして採用する</label><button id="select" class="primary wide" disabled>候補を採用</button></details><p id="selected-candidate" class="hint" hidden></p></section>
+      <section class="card"><h2><span class="step">03</span> 寸法を変更 <span class="unit">mm</span></h2><form id="dimensions"><div id="fields"><p class="hint">候補を採用すると寸法を入力できます。</p></div><button id="stage" class="secondary wide" type="submit" disabled>寸法変更を準備</button></form><button id="recompute" class="primary wide" disabled>再計算して確定</button><button id="rollback" class="quiet wide" disabled>入力・未確定の変更を取り消す</button><p class="hint">再計算に失敗した場合、最後に確定した形状を保持します。</p></section>
+    </aside>
+    <div class="workspace">
+      <section class="card view-card"><div class="card-head"><div><p class="eyebrow">GEOMETRY</p><h2>3Dプレビュー</h2></div><span id="geometry-state" class="badge">未読込</span></div><div class="toolbar"><label>表示 <select id="view-mode"><option value="current">確定形状</option><option value="original">読込時</option><option value="both">読込時と比較</option></select></label><label>選択 <select id="kind"><option value="face">面</option><option value="edge">辺</option></select></label><label>ID <select id="element-id" aria-label="面・辺のID"></select></label><button id="reset" class="quiet">視点を戻す</button></div><div id="views"><div id="original-view" hidden><span class="view-label">読込時</span><svg id="original-viewer" viewBox="0 0 760 440" role="img" aria-label="読込時の3D形状"></svg></div><div id="current-view"><span class="view-label">最後に確定した形状</span><svg id="viewer" viewBox="0 0 760 440" role="img" aria-label="回転して確認できる確定形状"></svg></div></div><div id="empty">サンプルまたはSTEPを開くと<br>ここに形状が表示されます。</div><p id="selection" class="hint">ドラッグで回転。面・辺をクリック、またはIDで選択できます。</p></section>
+      <section class="card"><div class="card-head"><div><p class="eyebrow">VERIFY & EXPORT</p><h2>変更前後の比較</h2></div><div class="actions"><button id="compare" class="secondary" disabled>比較を更新</button><button id="export" class="primary" disabled>STEPを保存</button></div></div><p id="compare-status" class="hint">比較対象は読込時と最後に確定した形状です。</p><div class="table-wrap"><table><thead><tr><th>項目</th><th>読込時</th><th>確定形状</th><th>変化</th></tr></thead><tbody id="metrics"><tr><td colspan="4">STEPを開いてください。</td></tr></tbody></table></div><p class="hint">保存はブラウザのダウンロード先へ。未確定の変更がある間は保存できません。</p></section>
+      <section class="card"><details><summary>拘束・再計算の診断と出所</summary><div id="diagnostics" class="diagnostics">STEP未読込</div><p id="source-hash" class="hint"></p><a id="full-diagnostics" href="/diagnostics" target="_blank" rel="noopener" hidden>詳細診断スナップショットを開く ↗</a></details></section>
+    </div>
+  </div>
+  <footer>研究用の対応範囲：板、穴、突起、ポケット、リブなど。候補が得られない部品は編集できません。作業状態はサーバー終了時に失われます。</footer>
+</main>
+</body>
+</html>

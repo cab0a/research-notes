@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v1.0.0まで実装しました。解析・候補確認・編集・再計算・比較・出力を、明示した研究用の対応範囲で安定提供します。実測4環境、資源制限、未学習サンプル評価、操作手順、配布契約の証拠を追加しました。誤追跡・難しい拘束条件・AIの誤判定は制限として残し、汎用CADの代替を主張しません。
+v1.1.0まで実装しました。v1.0の研究用APIにローカルのブラウザ編集画面を追加し、穴付き板の候補採用・寸法変更・再計算・比較・STEP保存を画面から行えます。v1.0の実測4環境などの証拠は当時の実装を対象とします。誤追跡・難しい拘束条件・AIの誤判定は制限として残し、汎用CADの代替を主張しません。
 
 詳細は以下の英語本文に示します。
 
@@ -974,6 +974,17 @@ recompute, engineering checks, visual comparison, auditable AI assistance, and
 STEP export. Stability applies only to the declared contracts and supported
 corpus; it does not imply complete STEP conformance, recovered proprietary CAD
 history, production-CAD replacement, or unrestricted commercial use.
+
+### Phase K — Interactive Research Workflow
+
+#### v1.1.0 — Browser Dimension Editing
+
+Implemented in the [local browser editor](cad-browser-editor.md). A generated
+through-hole plate can be opened, explicitly selected, edited, recomputed,
+compared and downloaded without terminal commands after server startup.
+HTTP controls verify pending-state refusals, stale revisions, failed-input
+atomicity and exported STEP reimport. The existing API contract and bounded
+geometry grammar remain unchanged; native calls are still in-process.
 
 ## Parametric Modeling Milestones
 
