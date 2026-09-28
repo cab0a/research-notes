@@ -1,0 +1,5 @@
+control_id,samples,maximum_error,checks_pass
+polynomial,17,0.000000000,1
+rational_circle,17,0.000000000,1
+internal_knot,17,0.000000000,1
+rational_surface,35,0.000000000,1

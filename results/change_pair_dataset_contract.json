@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "21 parameter changes across six declared construction families; through/profile-hole derivations share train split",
+    "STEP, model DAG, measurements, scoped topology correspondences and descriptor records share hashes",
+    "geometry matches or ambiguity do not recover original design history; family isolation is synthetic only"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 21,
+  "study_version": "v0.75.0"
+}

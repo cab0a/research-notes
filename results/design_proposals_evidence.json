@@ -1,0 +1,850 @@
+[
+  {
+    "alternatives": [
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "profile_hole_9054dfc94df6",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 9
+        },
+        "explanation": "profile_hole",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 1.225221135
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -1.288052988
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "profile_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "through_hole_57d4d40e4691",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 9
+        },
+        "explanation": "through_hole",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 1.225221135
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -1.288052988
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "through_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "automatic_selection": false,
+    "control_id": "through_hole",
+    "rejected_hypotheses": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "ambiguous"
+  },
+  {
+    "alternatives": [
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "rectangular_boss_c999513d950c",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 11
+        },
+        "explanation": "rectangular_boss",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -0.5
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 0.5
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "rib",
+              "parameters": [
+                [
+                  "height",
+                  2.0
+                ],
+                [
+                  "length",
+                  5.0
+                ],
+                [
+                  "width",
+                  1.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "rectangular_rib_d91a534cd546",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 11
+        },
+        "explanation": "rectangular_rib",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -0.5
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 0.5
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "rib",
+              "parameters": [
+                [
+                  "height",
+                  2.0
+                ],
+                [
+                  "length",
+                  5.0
+                ],
+                [
+                  "width",
+                  1.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    ],
+    "automatic_selection": false,
+    "control_id": "rib",
+    "rejected_hypotheses": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "rectangular_pocket",
+        "output is stale; retained geometry is not current"
+      ]
+    ],
+    "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "ambiguous"
+  },
+  {
+    "alternatives": [
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "plate_extrusion_99e2e886acb6",
+        "complexity": {
+          "nodes": 2,
+          "scalar_parameters": 6
+        },
+        "explanation": "plate_extrusion",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "base",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -24.0
+          },
+          {
+            "factor": 1.05,
+            "node": "base",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 24.0
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "27f0ed1e0dc3a85be58ea870f56fe96b47b77534031e36773658e7ed7f383421"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "27f0ed1e0dc3a85be58ea870f56fe96b47b77534031e36773658e7ed7f383421",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "automatic_selection": false,
+    "control_id": "plain_plate",
+    "rejected_hypotheses": [],
+    "source_sha256": "27f0ed1e0dc3a85be58ea870f56fe96b47b77534031e36773658e7ed7f383421",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "candidate_available"
+  },
+  {
+    "alternatives": [
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "rectangular_pocket_6ab6eae5ac32",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 11
+        },
+        "explanation": "rectangular_pocket",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 5e-08,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 0.6
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "width",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -0.6
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "pocket",
+              "parameters": [
+                [
+                  "depth",
+                  1.0
+                ],
+                [
+                  "length",
+                  3.0
+                ],
+                [
+                  "width",
+                  4.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "d151a534323e57b4d0e197da4110926a47a8776600f81fafb28ace9bf83e5e38"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "6058bbdcf7424f402164a87dbd9d803d8f0f0d784a7ccfbcdef5bd6acb31c938",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "6058bbdcf7424f402164a87dbd9d803d8f0f0d784a7ccfbcdef5bd6acb31c938",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "d151a534323e57b4d0e197da4110926a47a8776600f81fafb28ace9bf83e5e38",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    ],
+    "automatic_selection": false,
+    "control_id": "pocket",
+    "rejected_hypotheses": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "rectangular_rib",
+        "output is stale; retained geometry is not current"
+      ],
+      [
+        "rectangular_boss",
+        "output is stale; retained geometry is not current"
+      ]
+    ],
+    "source_sha256": "d151a534323e57b4d0e197da4110926a47a8776600f81fafb28ace9bf83e5e38",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "candidate_available"
+  },
+  {
+    "alternatives": [],
+    "automatic_selection": false,
+    "control_id": "rotated_plate",
+    "rejected_hypotheses": [],
+    "source_sha256": "945a8b2432fa0fd1e34ba16484a052f0a0f286a3495643ba40f96c27988173ea",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "unsupported"
+  }
+]

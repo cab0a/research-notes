@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "analytic formulas and signed-tetrahedron integrals are independent arithmetic routes",
+    "tessellation still comes from OCCT; this is not an independent native geometry kernel",
+    "coarse/fine disagreements are retained; no arbitrary STEP portability or repair equivalence claim"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 6,
+  "study_version": "v0.74.0"
+}

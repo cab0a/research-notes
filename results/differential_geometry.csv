@@ -1,0 +1,10 @@
+control_id,observed,expected,checks_pass
+plane,0.000000000,0.000000000,1
+sphere,-0.500000000,-0.500000000,1
+cylinder,-0.250000000,-0.250000000,1
+rational_cylinder,-0.250000000,-0.250000000,1
+same_plane,G2,G2,1
+offset_plane,disconnected,disconnected,1
+tilted_plane,G0,G0,1
+tangent_curvature_jump,G1,G1,1
+sphere_pole,singular,singular,1

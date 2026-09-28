@@ -75,11 +75,30 @@ def write_shape_previews(
     """Render a deterministic grid of face-colored diagnostic meshes."""
     rows = (len(entries) + columns - 1) // columns
     figure = plt.figure(
-        figsize=(4.1 * columns, 3.6 * rows), constrained_layout=True
+        figsize=(max(7.0, 4.1 * columns), 3.6 * rows), constrained_layout=True
     )
     color_map = plt.get_cmap("tab20")
     for position, (label, shape) in enumerate(entries, start=1):
         axis = figure.add_subplot(rows, columns, position, projection="3d")
+        from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE
+        if indexed_shapes(shape, TopAbs_FACE).Extent() == 0:
+            from OCP.BRepAdaptor import BRepAdaptor_Curve
+            from OCP.TopoDS import TopoDS
+            import numpy as np
+            edges = indexed_shapes(shape, TopAbs_EDGE)
+            vertices = []
+            for index in range(1, edges.Extent()+1):
+                curve = BRepAdaptor_Curve(TopoDS.Edge_s(edges.FindKey(index)))
+                points = [tuple(curve.Value(float(t)).Coord()) for t in np.linspace(curve.FirstParameter(), curve.LastParameter(), 129)]
+                vertices.extend(points)
+                axis.plot(*zip(*points), color=color_map((index-1)%20), linewidth=2)
+            if not vertices:
+                raise RuntimeError("diagnostic preview contains no faces or edges")
+            _equal_axes(axis, vertices)
+            axis.view_init(elev=24, azim=-55)
+            axis.set_axis_off()
+            axis.set_title(label)
+            continue
         polygons, face_indices = _mesh_polygons(shape)
         collection = Poly3DCollection(
             polygons,

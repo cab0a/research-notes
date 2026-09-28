@@ -146,6 +146,21 @@ jobs:
           python experiments/run_feature_history_editing.py --fixture-dir regenerated-fixtures/feature-history-editing --output-dir regenerated-results --refresh-fixtures
           python experiments/run_assembly_constraints.py --fixture-dir regenerated-fixtures/assembly-constraints --output-dir regenerated-results --refresh-fixtures
           python experiments/run_assembly_recompute.py --fixture-dir regenerated-fixtures/assembly-recompute --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_semantic_pmi.py --fixture-dir regenerated-fixtures/semantic-pmi --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_spline_geometry.py --fixture-dir regenerated-fixtures/spline-geometry --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_differential_geometry.py --fixture-dir regenerated-fixtures/differential-geometry --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_intersection_analysis.py --fixture-dir regenerated-fixtures/intersection-analysis --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_repair_policies.py --fixture-dir regenerated-fixtures/repair-policies --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_mass_properties.py --fixture-dir regenerated-fixtures/mass-properties --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_proximity_analysis.py --fixture-dir regenerated-fixtures/proximity-analysis --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_spatial_workflow.py --fixture-dir regenerated-fixtures/spatial-workflow --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_independent_validation.py --fixture-dir regenerated-fixtures/independent-validation --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_change_pair_dataset.py --fixture-dir regenerated-fixtures/change-pair-dataset --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_representation_learning.py --fixture-dir regenerated-fixtures/representation-learning --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_candidate_ranking.py --fixture-dir regenerated-fixtures/candidate-ranking --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_design_proposals.py --fixture-dir regenerated-fixtures/design-proposals --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_conversational_proposals.py --fixture-dir regenerated-fixtures/conversational-proposals --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_integrated_workflow.py --fixture-dir regenerated-fixtures/integrated-workflow --output-dir regenerated-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -466,6 +481,81 @@ jobs:
           diff -u results/assembly_recompute_contract.json regenerated-results/assembly_recompute_contract.json
           diff -qr fixtures/assembly-recompute regenerated-fixtures/assembly-recompute
           test -s regenerated-results/assembly_recompute.png
+          diff -u results/semantic_pmi.csv regenerated-results/semantic_pmi.csv
+          diff -u results/semantic_pmi_evidence.json regenerated-results/semantic_pmi_evidence.json
+          diff -u results/semantic_pmi_contract.json regenerated-results/semantic_pmi_contract.json
+          diff -qr fixtures/semantic-pmi regenerated-fixtures/semantic-pmi
+          test -s regenerated-results/semantic_pmi.png
+          diff -u results/spline_geometry.csv regenerated-results/spline_geometry.csv
+          diff -u results/spline_geometry_evidence.json regenerated-results/spline_geometry_evidence.json
+          diff -u results/spline_geometry_contract.json regenerated-results/spline_geometry_contract.json
+          diff -qr fixtures/spline-geometry regenerated-fixtures/spline-geometry
+          test -s regenerated-results/spline_geometry.png
+          diff -u results/differential_geometry.csv regenerated-results/differential_geometry.csv
+          diff -u results/differential_geometry_evidence.json regenerated-results/differential_geometry_evidence.json
+          diff -u results/differential_geometry_contract.json regenerated-results/differential_geometry_contract.json
+          diff -qr fixtures/differential-geometry regenerated-fixtures/differential-geometry
+          test -s regenerated-results/differential_geometry.png
+          diff -u results/intersection_analysis.csv regenerated-results/intersection_analysis.csv
+          diff -u results/intersection_analysis_evidence.json regenerated-results/intersection_analysis_evidence.json
+          diff -u results/intersection_analysis_contract.json regenerated-results/intersection_analysis_contract.json
+          diff -qr fixtures/intersection-analysis regenerated-fixtures/intersection-analysis
+          test -s regenerated-results/intersection_analysis.png
+          diff -u results/repair_policies.csv regenerated-results/repair_policies.csv
+          diff -u results/repair_policies_evidence.json regenerated-results/repair_policies_evidence.json
+          diff -u results/repair_policies_contract.json regenerated-results/repair_policies_contract.json
+          diff -qr fixtures/repair-policies regenerated-fixtures/repair-policies
+          test -s regenerated-results/repair_policies.png
+          diff -u results/mass_properties.csv regenerated-results/mass_properties.csv
+          diff -u results/mass_properties_evidence.json regenerated-results/mass_properties_evidence.json
+          diff -u results/mass_properties_contract.json regenerated-results/mass_properties_contract.json
+          diff -qr fixtures/mass-properties regenerated-fixtures/mass-properties
+          test -s regenerated-results/mass_properties.png
+          diff -u results/proximity_analysis.csv regenerated-results/proximity_analysis.csv
+          diff -u results/proximity_analysis_evidence.json regenerated-results/proximity_analysis_evidence.json
+          diff -u results/proximity_analysis_contract.json regenerated-results/proximity_analysis_contract.json
+          diff -qr fixtures/proximity-analysis regenerated-fixtures/proximity-analysis
+          test -s regenerated-results/proximity_analysis.png
+          diff -u results/spatial_workflow.csv regenerated-results/spatial_workflow.csv
+          diff -u results/spatial_workflow_evidence.json regenerated-results/spatial_workflow_evidence.json
+          diff -u results/spatial_workflow_contract.json regenerated-results/spatial_workflow_contract.json
+          diff -qr fixtures/spatial-workflow regenerated-fixtures/spatial-workflow
+          test -s regenerated-results/spatial_workflow.png
+          diff -u results/independent_validation.csv regenerated-results/independent_validation.csv
+          diff -u results/independent_validation_evidence.json regenerated-results/independent_validation_evidence.json
+          diff -u results/independent_validation_contract.json regenerated-results/independent_validation_contract.json
+          diff -qr fixtures/independent-validation regenerated-fixtures/independent-validation
+          test -s regenerated-results/independent_validation.png
+          diff -u results/change_pair_dataset.csv regenerated-results/change_pair_dataset.csv
+          diff -u results/change_pair_dataset_evidence.json regenerated-results/change_pair_dataset_evidence.json
+          diff -u results/change_pair_dataset_contract.json regenerated-results/change_pair_dataset_contract.json
+          diff -qr fixtures/change-pair-dataset regenerated-fixtures/change-pair-dataset
+          test -s regenerated-results/change_pair_dataset.png
+          diff -u results/representation_learning.csv regenerated-results/representation_learning.csv
+          diff -u results/representation_learning_evidence.json regenerated-results/representation_learning_evidence.json
+          diff -u results/representation_learning_contract.json regenerated-results/representation_learning_contract.json
+          diff -qr fixtures/representation-learning regenerated-fixtures/representation-learning
+          test -s regenerated-results/representation_learning.png
+          diff -u results/candidate_ranking.csv regenerated-results/candidate_ranking.csv
+          diff -u results/candidate_ranking_evidence.json regenerated-results/candidate_ranking_evidence.json
+          diff -u results/candidate_ranking_contract.json regenerated-results/candidate_ranking_contract.json
+          diff -qr fixtures/candidate-ranking regenerated-fixtures/candidate-ranking
+          test -s regenerated-results/candidate_ranking.png
+          diff -u results/design_proposals.csv regenerated-results/design_proposals.csv
+          diff -u results/design_proposals_evidence.json regenerated-results/design_proposals_evidence.json
+          diff -u results/design_proposals_contract.json regenerated-results/design_proposals_contract.json
+          diff -qr fixtures/design-proposals regenerated-fixtures/design-proposals
+          test -s regenerated-results/design_proposals.png
+          diff -u results/conversational_proposals.csv regenerated-results/conversational_proposals.csv
+          diff -u results/conversational_proposals_evidence.json regenerated-results/conversational_proposals_evidence.json
+          diff -u results/conversational_proposals_contract.json regenerated-results/conversational_proposals_contract.json
+          diff -qr fixtures/conversational-proposals regenerated-fixtures/conversational-proposals
+          test -s regenerated-results/conversational_proposals.png
+          diff -u results/integrated_workflow.csv regenerated-results/integrated_workflow.csv
+          diff -u results/integrated_workflow_evidence.json regenerated-results/integrated_workflow_evidence.json
+          diff -u results/integrated_workflow_contract.json regenerated-results/integrated_workflow_contract.json
+          diff -qr fixtures/integrated-workflow regenerated-fixtures/integrated-workflow
+          test -s regenerated-results/integrated_workflow.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

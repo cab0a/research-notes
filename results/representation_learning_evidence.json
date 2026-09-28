@@ -1,0 +1,4457 @@
+{
+  "leakage": {
+    "checks_pass": true,
+    "cross_split_leaks": [],
+    "scope": "source identity, declared construction family and derivation lineage; not geometric novelty certification",
+    "split_policy": {
+      "blind_bore": "test",
+      "perforated_plate": "train",
+      "plate_growth": "test",
+      "rectangular_pocket": "validation",
+      "rectangular_rib": "validation",
+      "round_boss": "train"
+    }
+  },
+  "models": [
+    {
+      "model": {
+        "abstention_threshold": 0.7,
+        "centroids": [
+          [
+            0.254030357,
+            0.357879592,
+            0.020353426,
+            0.017546919,
+            1.400554557,
+            -1.414213562
+          ],
+          [
+            -0.127015178,
+            -0.178939796,
+            -0.010176713,
+            -0.008773459,
+            -0.700277279,
+            0.707106781
+          ]
+        ],
+        "feature_names": [
+          "volume_before",
+          "volume_after",
+          "area_before",
+          "area_after",
+          "volume_delta",
+          "area_delta"
+        ],
+        "labels": [
+          "additive",
+          "subtractive"
+        ],
+        "means": [
+          574.26304865,
+          570.023992963,
+          489.945210027,
+          493.840784918,
+          -4.239055687,
+          3.895574891
+        ],
+        "scales": [
+          76.374937714,
+          77.118158561,
+          44.768394268,
+          44.767203593,
+          5.853011857,
+          0.088857659
+        ],
+        "temperature": 16.0,
+        "train_ids": [
+          "through_hole_0",
+          "through_hole_1",
+          "through_hole_2",
+          "profile_hole_0",
+          "profile_hole_1",
+          "profile_hole_2",
+          "boss_0",
+          "boss_1",
+          "boss_2"
+        ],
+        "validation_ids": [
+          "pocket_0",
+          "pocket_1",
+          "pocket_2",
+          "rib_0",
+          "rib_1",
+          "rib_2"
+        ]
+      },
+      "predictions": [
+        {
+          "confidence": 0.663288686,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 471.957522807,
+              "winner_vs_runner_distance_margin": 1.069232495
+            },
+            {
+              "feature": "volume_after",
+              "value": 464.794691557,
+              "winner_vs_runner_distance_margin": 1.561060375
+            },
+            {
+              "feature": "area_before",
+              "value": 432.084954386,
+              "winner_vs_runner_distance_margin": 0.079227158
+            },
+            {
+              "feature": "area_after",
+              "value": 436.04336113,
+              "winner_vs_runner_distance_margin": 0.068193623
+            },
+            {
+              "feature": "volume_delta",
+              "value": -7.16283125,
+              "winner_vs_runner_distance_margin": 3.570036608
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.663288686,
+              "squared_distance": 6.204521996
+            },
+            {
+              "label": "additive",
+              "probability": 0.336711314,
+              "squared_distance": 17.052272254
+            }
+          ],
+          "sample_id": "through_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.644468936,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 557.152301792,
+              "winner_vs_runner_distance_margin": 0.219134515
+            },
+            {
+              "feature": "volume_after",
+              "value": 548.839647631,
+              "winner_vs_runner_distance_margin": 0.390986745
+            },
+            {
+              "feature": "area_before",
+              "value": 485.621060362,
+              "winner_vs_runner_distance_margin": 0.006208468
+            },
+            {
+              "feature": "area_after",
+              "value": 489.579467106,
+              "winner_vs_runner_distance_margin": 0.005241709
+            },
+            {
+              "feature": "volume_delta",
+              "value": -8.312654161,
+              "winner_vs_runner_distance_margin": 4.395452526
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.644468936,
+              "squared_distance": 0.033536173
+            },
+            {
+              "label": "additive",
+              "probability": 0.355531064,
+              "squared_distance": 9.550560136
+            }
+          ],
+          "sample_id": "through_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.622701885,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 651.456992324,
+              "winner_vs_runner_distance_margin": -0.721864781
+            },
+            {
+              "feature": "volume_after",
+              "value": 641.919117028,
+              "winner_vs_runner_distance_margin": -0.904865353
+            },
+            {
+              "feature": "area_before",
+              "value": 542.002830044,
+              "winner_vs_runner_distance_margin": -0.070691464
+            },
+            {
+              "feature": "area_after",
+              "value": 545.961236788,
+              "winner_vs_runner_distance_margin": -0.061056356
+            },
+            {
+              "feature": "volume_delta",
+              "value": -9.537875296,
+              "winner_vs_runner_distance_margin": 5.274994078
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.622701885,
+              "squared_distance": 5.323201632
+            },
+            {
+              "label": "additive",
+              "probability": 0.377298115,
+              "squared_distance": 13.339717755
+            }
+          ],
+          "sample_id": "through_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.660415265,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 479.957522807,
+              "winner_vs_runner_distance_margin": 0.989406197
+            },
+            {
+              "feature": "volume_after",
+              "value": 472.794691557,
+              "winner_vs_runner_distance_margin": 1.449684399
+            },
+            {
+              "feature": "area_before",
+              "value": 437.684954386,
+              "winner_vs_runner_distance_margin": 0.071589235
+            },
+            {
+              "feature": "area_after",
+              "value": 441.64336113,
+              "winner_vs_runner_distance_margin": 0.061608707
+            },
+            {
+              "feature": "volume_delta",
+              "value": -7.16283125,
+              "winner_vs_runner_distance_margin": 3.570036608
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.660415265,
+              "squared_distance": 5.115963752
+            },
+            {
+              "label": "additive",
+              "probability": 0.339584735,
+              "squared_distance": 15.758288897
+            }
+          ],
+          "sample_id": "profile_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.641260073,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 565.888301792,
+              "winner_vs_runner_distance_margin": 0.131964197
+            },
+            {
+              "feature": "volume_after",
+              "value": 557.575647631,
+              "winner_vs_runner_distance_margin": 0.269364179
+            },
+            {
+              "feature": "area_before",
+              "value": 491.461060362,
+              "winner_vs_runner_distance_margin": -0.001756794
+            },
+            {
+              "feature": "area_after",
+              "value": 495.419467106,
+              "winner_vs_runner_distance_margin": -0.001625416
+            },
+            {
+              "feature": "volume_delta",
+              "value": -8.312654161,
+              "winner_vs_runner_distance_margin": 4.395452526
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.641260073,
+              "squared_distance": 0.004505393
+            },
+            {
+              "label": "additive",
+              "probability": 0.358739927,
+              "squared_distance": 9.297904083
+            }
+          ],
+          "sample_id": "profile_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.619133115,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 660.960992324,
+              "winner_vs_runner_distance_margin": -0.816698423
+            },
+            {
+              "feature": "volume_after",
+              "value": 651.423117028,
+              "winner_vs_runner_distance_margin": -1.037180013
+            },
+            {
+              "feature": "area_before",
+              "value": 548.082830044,
+              "winner_vs_runner_distance_margin": -0.078984067
+            },
+            {
+              "feature": "area_after",
+              "value": 552.041236788,
+              "winner_vs_runner_distance_margin": -0.068205693
+            },
+            {
+              "feature": "volume_delta",
+              "value": -9.537875296,
+              "winner_vs_runner_distance_margin": 5.274994078
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.619133115,
+              "squared_distance": 6.585048771
+            },
+            {
+              "label": "additive",
+              "probability": 0.380866885,
+              "squared_distance": 14.358974653
+            }
+          ],
+          "sample_id": "profile_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.603159699,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 500.021238597,
+              "winner_vs_runner_distance_margin": -0.789204677
+            },
+            {
+              "feature": "volume_after",
+              "value": 503.602654222,
+              "winner_vs_runner_distance_margin": -1.020776034
+            },
+            {
+              "feature": "area_before",
+              "value": 437.253096491,
+              "winner_vs_runner_distance_margin": -0.072178252
+            },
+            {
+              "feature": "area_after",
+              "value": 441.023007676,
+              "winner_vs_runner_distance_margin": -0.062338167
+            },
+            {
+              "feature": "volume_delta",
+              "value": 3.581415625,
+              "winner_vs_runner_distance_margin": 4.142866234
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.603159699,
+              "squared_distance": 5.861209628
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.396840301,
+              "squared_distance": 12.559578732
+            }
+          ],
+          "sample_id": "boss_0",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.640897623,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 590.401380099,
+              "winner_vs_runner_distance_margin": 0.112634341
+            },
+            {
+              "feature": "volume_after",
+              "value": 594.359786842,
+              "winner_vs_runner_distance_margin": 0.242744499
+            },
+            {
+              "feature": "area_before",
+              "value": 489.949733553,
+              "winner_vs_runner_distance_margin": -0.000304527
+            },
+            {
+              "feature": "area_after",
+              "value": 493.719644737,
+              "winner_vs_runner_distance_margin": -0.000373367
+            },
+            {
+              "feature": "volume_delta",
+              "value": 3.958406744,
+              "winner_vs_runner_distance_margin": 4.413494404
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.640897623,
+              "squared_distance": 0.004436402
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.359102377,
+              "squared_distance": 9.272631752
+            }
+          ],
+          "sample_id": "boss_1",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.680252319,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 690.571185307,
+              "winner_vs_runner_distance_margin": 1.112157436
+            },
+            {
+              "feature": "volume_after",
+              "value": 694.906583169,
+              "winner_vs_runner_distance_margin": 1.6425567
+            },
+            {
+              "feature": "area_before",
+              "value": 545.366370614,
+              "winner_vs_runner_distance_margin": 0.075279047
+            },
+            {
+              "feature": "area_after",
+              "value": 549.136281799,
+              "winner_vs_runner_distance_margin": 0.064789821
+            },
+            {
+              "feature": "volume_delta",
+              "value": 4.335397862,
+              "winner_vs_runner_distance_margin": 4.684122574
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.680252319,
+              "squared_distance": 6.170596233
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.319747681,
+              "squared_distance": 18.24950181
+            }
+          ],
+          "sample_id": "boss_2",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.99960326,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 492.0,
+              "winner_vs_runner_distance_margin": -0.8692429
+            },
+            {
+              "feature": "volume_after",
+              "value": 490.2,
+              "winner_vs_runner_distance_margin": -1.207367746
+            },
+            {
+              "feature": "area_before",
+              "value": 452.8,
+              "winner_vs_runner_distance_margin": -0.0509736
+            },
+            {
+              "feature": "area_after",
+              "value": 454.0,
+              "winner_vs_runner_distance_margin": -0.047078811
+            },
+            {
+              "feature": "volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.279744291
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.99960326,
+              "squared_distance": 842.688900398
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.00039674,
+              "squared_distance": 967.998201593
+            }
+          ],
+          "sample_id": "pocket_0",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999655434,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 580.848,
+              "winner_vs_runner_distance_margin": 0.01730797
+            },
+            {
+              "feature": "volume_after",
+              "value": 579.048,
+              "winner_vs_runner_distance_margin": 0.029573848
+            },
+            {
+              "feature": "area_before",
+              "value": 505.28,
+              "winner_vs_runner_distance_margin": 0.020604651
+            },
+            {
+              "feature": "area_after",
+              "value": 506.48,
+              "winner_vs_runner_distance_margin": 0.01463125
+            },
+            {
+              "feature": "volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.279744291
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999655434,
+              "squared_distance": 837.690556541
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000344566,
+              "squared_distance": 965.256638512
+            }
+          ],
+          "sample_id": "pocket_1",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999705178,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 679.392,
+              "winner_vs_runner_distance_margin": 1.000608313
+            },
+            {
+              "feature": "volume_after",
+              "value": 677.592,
+              "winner_vs_runner_distance_margin": 1.401503125
+            },
+            {
+              "feature": "area_before",
+              "value": 560.48,
+              "winner_vs_runner_distance_margin": 0.095892751
+            },
+            {
+              "feature": "area_after",
+              "value": 561.68,
+              "winner_vs_runner_distance_margin": 0.079539699
+            },
+            {
+              "feature": "volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.279744291
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999705178,
+              "squared_distance": 844.427801665
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000294822,
+              "squared_distance": 974.489309804
+            }
+          ],
+          "sample_id": "pocket_2",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999679457,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 524.0,
+              "winner_vs_runner_distance_margin": -0.549937706
+            },
+            {
+              "feature": "volume_after",
+              "value": 525.8,
+              "winner_vs_runner_distance_margin": -0.711744651
+            },
+            {
+              "feature": "area_before",
+              "value": 458.4,
+              "winner_vs_runner_distance_margin": -0.043335677
+            },
+            {
+              "feature": "area_after",
+              "value": 459.6,
+              "winner_vs_runner_distance_margin": -0.040493896
+            },
+            {
+              "feature": "volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.864052949
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999679457,
+              "squared_distance": 839.435679205
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000320543,
+              "squared_distance": 968.158440185
+            }
+          ],
+          "sample_id": "rib_0",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999722925,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 615.984,
+              "winner_vs_runner_distance_margin": 0.367905072
+            },
+            {
+              "feature": "volume_after",
+              "value": 617.784,
+              "winner_vs_runner_distance_margin": 0.568856325
+            },
+            {
+              "feature": "area_before",
+              "value": 511.12,
+              "winner_vs_runner_distance_margin": 0.028569914
+            },
+            {
+              "feature": "area_after",
+              "value": 512.32,
+              "winner_vs_runner_distance_margin": 0.021498376
+            },
+            {
+              "feature": "volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.864052949
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999722925,
+              "squared_distance": 837.113358465
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000277075,
+              "squared_distance": 968.168461063
+            }
+          ],
+          "sample_id": "rib_1",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999764056,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 717.696,
+              "winner_vs_runner_distance_margin": 1.382816629
+            },
+            {
+              "feature": "volume_after",
+              "value": 719.496,
+              "winner_vs_runner_distance_margin": 1.984890489
+            },
+            {
+              "feature": "area_before",
+              "value": 566.56,
+              "winner_vs_runner_distance_margin": 0.104185353
+            },
+            {
+              "feature": "area_after",
+              "value": 567.76,
+              "winner_vs_runner_distance_margin": 0.086689036
+            },
+            {
+              "feature": "volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.864052949
+            },
+            {
+              "feature": "area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 127.204219961
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999764056,
+              "squared_distance": 847.261606758
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000235944,
+              "squared_distance": 980.888461176
+            }
+          ],
+          "sample_id": "rib_2",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.529353252,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 515.978761403,
+              "winner_vs_runner_distance_margin": -0.62997593
+            },
+            {
+              "feature": "volume_after",
+              "value": 512.397345778,
+              "winner_vs_runner_distance_margin": -0.898336364
+            },
+            {
+              "feature": "area_before",
+              "value": 454.053096491,
+              "winner_vs_runner_distance_margin": -0.049264483
+            },
+            {
+              "feature": "area_after",
+              "value": 457.823007676,
+              "winner_vs_runner_distance_margin": -0.042583422
+            },
+            {
+              "feature": "volume_delta",
+              "value": -3.581415625,
+              "winner_vs_runner_distance_margin": -0.999068994
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.529353252,
+              "squared_distance": 5.26705869
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.470646748,
+              "squared_distance": 7.147829498
+            }
+          ],
+          "sample_id": "blind_hole_0",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.56067431,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 606.430619901,
+              "winner_vs_runner_distance_margin": 0.272578701
+            },
+            {
+              "feature": "volume_after",
+              "value": 602.472213158,
+              "winner_vs_runner_distance_margin": 0.355685674
+            },
+            {
+              "feature": "area_before",
+              "value": 507.469733553,
+              "winner_vs_runner_distance_margin": 0.023591261
+            },
+            {
+              "feature": "area_after",
+              "value": 511.239644737,
+              "winner_vs_runner_distance_margin": 0.02022801
+            },
+            {
+              "feature": "volume_delta",
+              "value": -3.958406744,
+              "winner_vs_runner_distance_margin": -1.269697164
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.56067431,
+              "squared_distance": 2.136863802
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.43932569,
+              "squared_distance": 6.039250284
+            }
+          ],
+          "sample_id": "blind_hole_1",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.595096151,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 706.516814693,
+              "winner_vs_runner_distance_margin": 1.271267507
+            },
+            {
+              "feature": "volume_after",
+              "value": 702.181416831,
+              "winner_vs_runner_distance_margin": 1.743836913
+            },
+            {
+              "feature": "area_before",
+              "value": 563.606370614,
+              "winner_vs_runner_distance_margin": 0.100156854
+            },
+            {
+              "feature": "area_after",
+              "value": 567.376281799,
+              "winner_vs_runner_distance_margin": 0.08623783
+            },
+            {
+              "feature": "volume_delta",
+              "value": -4.335397862,
+              "winner_vs_runner_distance_margin": -1.540325334
+            },
+            {
+              "feature": "area_delta",
+              "value": 3.769911184,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.595096151,
+              "squared_distance": 11.311089981
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.404903849,
+              "squared_distance": 17.472263751
+            }
+          ],
+          "sample_id": "blind_hole_2",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999997669,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 528.0,
+              "winner_vs_runner_distance_margin": 0.510024557
+            },
+            {
+              "feature": "volume_after",
+              "value": 540.0,
+              "winner_vs_runner_distance_margin": 0.514052293
+            },
+            {
+              "feature": "area_before",
+              "value": 449.6,
+              "winner_vs_runner_distance_margin": 0.055338127
+            },
+            {
+              "feature": "area_after",
+              "value": 458.0,
+              "winner_vs_runner_distance_margin": 0.042375301
+            },
+            {
+              "feature": "volume_delta",
+              "value": 12.0,
+              "winner_vs_runner_distance_margin": -10.186260815
+            },
+            {
+              "feature": "area_delta",
+              "value": 8.4,
+              "winner_vs_runner_distance_margin": 216.570455686
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.999997669,
+              "squared_distance": 2512.317065563
+            },
+            {
+              "label": "additive",
+              "probability": 2.331e-06,
+              "squared_distance": 2719.823050712
+            }
+          ],
+          "sample_id": "plate_growth_0",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999999031,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 620.256,
+              "winner_vs_runner_distance_margin": -0.410532315
+            },
+            {
+              "feature": "volume_after",
+              "value": 633.36,
+              "winner_vs_runner_distance_margin": -0.785705351
+            },
+            {
+              "feature": "area_before",
+              "value": 502.0,
+              "winner_vs_runner_distance_margin": -0.016131011
+            },
+            {
+              "feature": "area_after",
+              "value": 510.76,
+              "winner_vs_runner_distance_margin": -0.019664007
+            },
+            {
+              "feature": "volume_delta",
+              "value": 13.104,
+              "winner_vs_runner_distance_margin": -10.978782137
+            },
+            {
+              "feature": "area_delta",
+              "value": 8.76,
+              "winner_vs_runner_distance_margin": 233.759189468
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.999999031,
+              "squared_distance": 2935.167721807
+            },
+            {
+              "label": "additive",
+              "probability": 9.69e-07,
+              "squared_distance": 3156.716096454
+            }
+          ],
+          "sample_id": "plate_growth_1",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.99999959,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "volume_before",
+              "value": 722.304,
+              "winner_vs_runner_distance_margin": -1.428796577
+            },
+            {
+              "feature": "volume_after",
+              "value": 736.56,
+              "winner_vs_runner_distance_margin": -2.222455446
+            },
+            {
+              "feature": "area_before",
+              "value": 557.12,
+              "winner_vs_runner_distance_margin": -0.091309997
+            },
+            {
+              "feature": "area_after",
+              "value": 566.24,
+              "winner_vs_runner_distance_margin": -0.084901702
+            },
+            {
+              "feature": "volume_delta",
+              "value": 14.256,
+              "winner_vs_runner_distance_margin": -11.805760908
+            },
+            {
+              "feature": "area_delta",
+              "value": 9.12,
+              "winner_vs_runner_distance_margin": 250.947923251
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.99999959,
+              "squared_distance": 3403.815529849
+            },
+            {
+              "label": "additive",
+              "probability": 4.1e-07,
+              "squared_distance": 3639.13022847
+            }
+          ],
+          "sample_id": "plate_growth_2",
+          "split": "test",
+          "truth": "additive"
+        }
+      ],
+      "privileged_authored_history": false,
+      "representation": "geometry_table",
+      "test_metrics": {
+        "accuracy": 0.0,
+        "brier": 1.316234185,
+        "count": 6,
+        "coverage": 0.0,
+        "expected_calibration_error": 0.780853334,
+        "high_confidence_errors": [
+          "plate_growth_0",
+          "plate_growth_1",
+          "plate_growth_2"
+        ],
+        "selective_accuracy": null
+      }
+    },
+    {
+      "model": {
+        "abstention_threshold": 0.7,
+        "centroids": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            -1.386287953,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.693143976,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "feature_names": [
+          "face_delta",
+          "adjacency_delta",
+          "mean_degree_delta",
+          "curved_area_ratio_delta",
+          "plane_delta",
+          "cylinder_delta",
+          "boundary_delta"
+        ],
+        "labels": [
+          "additive",
+          "subtractive"
+        ],
+        "means": [
+          0.0,
+          0.0,
+          0.0,
+          0.01298891,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          1.0,
+          0.003955096,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "temperature": 16.0,
+        "train_ids": [
+          "through_hole_0",
+          "through_hole_1",
+          "through_hole_2",
+          "profile_hole_0",
+          "profile_hole_1",
+          "profile_hole_2",
+          "boss_0",
+          "boss_1",
+          "boss_2"
+        ],
+        "validation_ids": [
+          "pocket_0",
+          "pocket_1",
+          "pocket_2",
+          "rib_0",
+          "rib_1",
+          "rib_2"
+        ]
+      },
+      "predictions": [
+        {
+          "confidence": 0.585425271,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.016869024,
+              "winner_vs_runner_distance_margin": 5.52136473
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.585425271,
+              "squared_distance": 0.082885119
+            },
+            {
+              "label": "additive",
+              "probability": 0.414574729,
+              "squared_distance": 5.60424985
+            }
+          ],
+          "sample_id": "through_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.567878271,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.015775209,
+              "winner_vs_runner_distance_margin": 4.371196079
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.567878271,
+              "squared_distance": 0.000128582
+            },
+            {
+              "label": "additive",
+              "probability": 0.432121729,
+              "squared_distance": 4.37132466
+            }
+          ],
+          "sample_id": "through_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.552434975,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.014821377,
+              "winner_vs_runner_distance_margin": 3.36822239
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.552434975,
+              "squared_distance": 0.052819958
+            },
+            {
+              "label": "additive",
+              "probability": 0.447565025,
+              "squared_distance": 3.421042349
+            }
+          ],
+          "sample_id": "through_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.582094789,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.016660463,
+              "winner_vs_runner_distance_margin": 5.30205861
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.582094789,
+              "squared_distance": 0.055302831
+            },
+            {
+              "label": "additive",
+              "probability": 0.417905211,
+              "squared_distance": 5.357361441
+            }
+          ],
+          "sample_id": "profile_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.564951835,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.015593894,
+              "winner_vs_runner_distance_margin": 4.18053968
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.564951835,
+              "squared_distance": 0.001190526
+            },
+            {
+              "label": "additive",
+              "probability": 0.435048165,
+              "squared_distance": 4.181730206
+            }
+          ],
+          "sample_id": "profile_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.549847013,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.014662197,
+              "winner_vs_runner_distance_margin": 3.200841392
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.549847013,
+              "squared_distance": 0.072939285
+            },
+            {
+              "label": "additive",
+              "probability": 0.450152987,
+              "squared_distance": 3.273780677
+            }
+          ],
+          "sample_id": "profile_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.553465263,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.008351572,
+              "winner_vs_runner_distance_margin": 3.434908755
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.553465263,
+              "squared_distance": 0.045706667
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.446534737,
+              "squared_distance": 3.480615421
+            }
+          ],
+          "sample_id": "boss_0",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.567905461,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.007459473,
+              "winner_vs_runner_distance_margin": 4.372968942
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.567905461,
+              "squared_distance": 0.000138431
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.432094539,
+              "squared_distance": 4.373107373
+            }
+          ],
+          "sample_id": "boss_1",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.57999786,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.006706977,
+              "winner_vs_runner_distance_margin": 5.164233744
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.57999786,
+              "squared_distance": 0.040814307
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.42000214,
+              "squared_distance": 5.205048051
+            }
+          ],
+          "sample_id": "boss_2",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "pocket_0",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "pocket_1",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "pocket_2",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "rib_0",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "rib_1",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "rib_2",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.558323866,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.008052112,
+              "winner_vs_runner_distance_margin": 3.749797017
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.558323866,
+              "squared_distance": 0.019065038
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.441676134,
+              "squared_distance": 3.768862054
+            }
+          ],
+          "sample_id": "blind_hole_0",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.571928691,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.007209717,
+              "winner_vs_runner_distance_margin": 4.63559244
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.571928691,
+              "squared_distance": 0.005612041
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.428071309,
+              "squared_distance": 4.641204482
+            }
+          ],
+          "sample_id": "blind_hole_1",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.583366636,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.006496316,
+              "winner_vs_runner_distance_margin": 5.385748057
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.583366636,
+              "squared_distance": 0.065172316
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.416633364,
+              "squared_distance": 5.450920373
+            }
+          ],
+          "sample_id": "blind_hole_2",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "plate_growth_0",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "plate_growth_1",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.682123385,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "face_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "adjacency_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "mean_degree_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "curved_area_ratio_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 12.216756056
+            },
+            {
+              "feature": "plane_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "cylinder_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "boundary_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.682123385,
+              "squared_distance": 3.601669554
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.317876615,
+              "squared_distance": 15.81842561
+            }
+          ],
+          "sample_id": "plate_growth_2",
+          "split": "test",
+          "truth": "additive"
+        }
+      ],
+      "privileged_authored_history": false,
+      "representation": "face_graph",
+      "test_metrics": {
+        "accuracy": 0.5,
+        "brier": 0.427427075,
+        "count": 6,
+        "coverage": 0.0,
+        "expected_calibration_error": 0.126664891,
+        "high_confidence_errors": [],
+        "selective_accuracy": null
+      }
+    },
+    {
+      "model": {
+        "abstention_threshold": 0.7,
+        "centroids": [
+          [
+            1.400554557,
+            -1.414174105,
+            0.0
+          ],
+          [
+            -0.700277279,
+            0.707087052,
+            0.0
+          ]
+        ],
+        "feature_names": [
+          "mesh_volume_delta",
+          "mesh_area_delta",
+          "triangle_count_delta"
+        ],
+        "labels": [
+          "additive",
+          "subtractive"
+        ],
+        "means": [
+          -4.223261654,
+          3.8993154,
+          0.0
+        ],
+        "scales": [
+          5.831204485,
+          0.093990325,
+          1.0
+        ],
+        "temperature": 16.0,
+        "train_ids": [
+          "through_hole_0",
+          "through_hole_1",
+          "through_hole_2",
+          "profile_hole_0",
+          "profile_hole_1",
+          "profile_hole_2",
+          "boss_0",
+          "boss_1",
+          "boss_2"
+        ],
+        "validation_ids": [
+          "pocket_0",
+          "pocket_1",
+          "pocket_2",
+          "rib_0",
+          "rib_1",
+          "rib_2"
+        ]
+      },
+      "predictions": [
+        {
+          "confidence": 0.622786049,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -7.136143705,
+              "winner_vs_runner_distance_margin": 3.570036608
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.964721581,
+              "winner_vs_runner_distance_margin": 4.45221146
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.622786049,
+              "squared_distance": 0.040423612
+            },
+            {
+              "label": "additive",
+              "probability": 0.377213951,
+              "squared_distance": 8.062671681
+            }
+          ],
+          "sample_id": "through_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.635514952,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -8.281682562,
+              "winner_vs_runner_distance_margin": 4.395452526
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.965774742,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.635514952,
+              "squared_distance": 1.8438e-05
+            },
+            {
+              "label": "additive",
+              "probability": 0.364485048,
+              "squared_distance": 8.89521986
+            }
+          ],
+          "sample_id": "through_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.648828228,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -9.502338722,
+              "winner_vs_runner_distance_margin": 5.274994078
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.966827903,
+              "winner_vs_runner_distance_margin": 4.547286332
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.648828228,
+              "squared_distance": 0.042166032
+            },
+            {
+              "label": "additive",
+              "probability": 0.351171772,
+              "squared_distance": 9.864446442
+            }
+          ],
+          "sample_id": "through_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.622786049,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -7.136143705,
+              "winner_vs_runner_distance_margin": 3.570036608
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.964721581,
+              "winner_vs_runner_distance_margin": 4.45221146
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.622786049,
+              "squared_distance": 0.040423612
+            },
+            {
+              "label": "additive",
+              "probability": 0.377213951,
+              "squared_distance": 8.062671681
+            }
+          ],
+          "sample_id": "profile_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.635514952,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -8.281682562,
+              "winner_vs_runner_distance_margin": 4.395452526
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.965774742,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.635514952,
+              "squared_distance": 1.8438e-05
+            },
+            {
+              "label": "additive",
+              "probability": 0.364485048,
+              "squared_distance": 8.89521986
+            }
+          ],
+          "sample_id": "profile_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.648828228,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -9.502338722,
+              "winner_vs_runner_distance_margin": 5.274994078
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.966827903,
+              "winner_vs_runner_distance_margin": 4.547286332
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.648828228,
+              "squared_distance": 0.042166032
+            },
+            {
+              "label": "additive",
+              "probability": 0.351171772,
+              "squared_distance": 9.864446442
+            }
+          ],
+          "sample_id": "profile_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.631850439,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 3.568071852,
+              "winner_vs_runner_distance_margin": 4.142866234
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.631850439,
+              "squared_distance": 0.004148618
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.368149561,
+              "squared_distance": 8.646763748
+            }
+          ],
+          "sample_id": "boss_0",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.635776109,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 3.943658363,
+              "winner_vs_runner_distance_margin": 4.413494404
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.635776109,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.364223891,
+              "squared_distance": 8.9132433
+            }
+          ],
+          "sample_id": "boss_1",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.639683789,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 4.319244874,
+              "winner_vs_runner_distance_margin": 4.684122574
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.639683789,
+              "squared_distance": 0.004148618
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.360316211,
+              "squared_distance": 9.188020088
+            }
+          ],
+          "sample_id": "boss_2",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999468098,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.274911929
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999468098,
+              "squared_distance": 746.527936409
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000531902,
+              "squared_distance": 867.144258266
+            }
+          ],
+          "sample_id": "pocket_0",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999468098,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.274911929
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999468098,
+              "squared_distance": 746.527936409
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000531902,
+              "squared_distance": 867.144258266
+            }
+          ],
+          "sample_id": "pocket_1",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999468098,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -1.8,
+              "winner_vs_runner_distance_margin": 0.274911929
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999468098,
+              "squared_distance": 746.527936409
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000531902,
+              "squared_distance": 867.144258266
+            }
+          ],
+          "sample_id": "pocket_2",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999547669,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.868885311
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999547669,
+              "squared_distance": 745.692881105
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000452331,
+              "squared_distance": 868.903176344
+            }
+          ],
+          "sample_id": "rib_0",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999547669,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.868885311
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999547669,
+              "squared_distance": 745.692881105
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000452331,
+              "squared_distance": 868.903176344
+            }
+          ],
+          "sample_id": "rib_1",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999547669,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 1.8,
+              "winner_vs_runner_distance_margin": 2.868885311
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 1.2,
+              "winner_vs_runner_distance_margin": 120.341409928
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.999547669,
+              "squared_distance": 745.692881105
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.000452331,
+              "squared_distance": 868.903176344
+            }
+          ],
+          "sample_id": "rib_2",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.554480962,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -3.568071852,
+              "winner_vs_runner_distance_margin": -0.999068994
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.554480962,
+              "squared_distance": 1.659447133
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.445519038,
+              "squared_distance": 5.160127035
+            }
+          ],
+          "sample_id": "blind_hole_0",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.550298848,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -3.943658363,
+              "winner_vs_runner_distance_margin": -1.269697164
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.550298848,
+              "squared_distance": 1.829540464
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.449701152,
+              "squared_distance": 5.059592196
+            }
+          ],
+          "sample_id": "blind_hole_1",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.546109611,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": -4.319244874,
+              "winner_vs_runner_distance_margin": -1.540325334
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 3.766396717,
+              "winner_vs_runner_distance_margin": 4.499748896
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 0.546109611,
+              "squared_distance": 2.007931031
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.453890389,
+              "squared_distance": 4.967354593
+            }
+          ],
+          "sample_id": "blind_hole_2",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.999994722,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 12.0,
+              "winner_vs_runner_distance_margin": -10.21847656
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 8.4,
+              "winner_vs_runner_distance_margin": 204.651196984
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.999994722,
+              "squared_distance": 2237.840477398
+            },
+            {
+              "label": "additive",
+              "probability": 5.278e-06,
+              "squared_distance": 2432.273197822
+            }
+          ],
+          "sample_id": "plate_growth_0",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999997991,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 13.104,
+              "winner_vs_runner_distance_margin": -11.013961731
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 8.76,
+              "winner_vs_runner_distance_margin": 220.90082733
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.999997991,
+              "squared_distance": 2615.261744564
+            },
+            {
+              "label": "additive",
+              "probability": 2.009e-06,
+              "squared_distance": 2825.148610162
+            }
+          ],
+          "sample_id": "plate_growth_1",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.999999234,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "mesh_volume_delta",
+              "value": 14.256,
+              "winner_vs_runner_distance_margin": -11.844033213
+            },
+            {
+              "feature": "mesh_area_delta",
+              "value": 9.12,
+              "winner_vs_runner_distance_margin": 237.150457675
+            },
+            {
+              "feature": "triangle_count_delta",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            }
+          ],
+          "out_of_domain": true,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.999999234,
+              "squared_distance": 3022.158913966
+            },
+            {
+              "label": "additive",
+              "probability": 7.66e-07,
+              "squared_distance": 3247.465338428
+            }
+          ],
+          "sample_id": "plate_growth_2",
+          "split": "test",
+          "truth": "additive"
+        }
+      ],
+      "privileged_authored_history": false,
+      "representation": "tessellation",
+      "test_metrics": {
+        "accuracy": 0.0,
+        "brier": 1.30283252,
+        "count": 6,
+        "coverage": 0.0,
+        "expected_calibration_error": 0.775146895,
+        "high_confidence_errors": [
+          "plate_growth_0",
+          "plate_growth_1",
+          "plate_growth_2"
+        ],
+        "selective_accuracy": null
+      }
+    },
+    {
+      "model": {
+        "abstention_threshold": 0.7,
+        "centroids": [
+          [
+            0.0,
+            0.0,
+            1.414213562,
+            -1.414213562
+          ],
+          [
+            0.0,
+            0.0,
+            -0.707106781,
+            0.707106781
+          ]
+        ],
+        "feature_names": [
+          "node_count",
+          "plate_edit",
+          "additive_operation",
+          "subtractive_operation"
+        ],
+        "labels": [
+          "additive",
+          "subtractive"
+        ],
+        "means": [
+          3.0,
+          0.0,
+          0.333333333,
+          0.666666667
+        ],
+        "scales": [
+          1.0,
+          1.0,
+          0.471404521,
+          0.471404521
+        ],
+        "temperature": 0.25,
+        "train_ids": [
+          "through_hole_0",
+          "through_hole_1",
+          "through_hole_2",
+          "profile_hole_0",
+          "profile_hole_1",
+          "profile_hole_2",
+          "boss_0",
+          "boss_1",
+          "boss_2"
+        ],
+        "validation_ids": [
+          "pocket_0",
+          "pocket_1",
+          "pocket_2",
+          "rib_0",
+          "rib_1",
+          "rib_2"
+        ]
+      },
+      "predictions": [
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "through_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "through_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "through_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "profile_hole_0",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "profile_hole_1",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "profile_hole_2",
+          "split": "train",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "boss_0",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "boss_1",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "boss_2",
+          "split": "train",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "pocket_0",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "pocket_1",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "pocket_2",
+          "split": "validation",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "rib_0",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "rib_1",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "additive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "additive",
+          "ranking": [
+            {
+              "label": "additive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "subtractive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "rib_2",
+          "split": "validation",
+          "truth": "additive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "blind_hole_0",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "blind_hole_1",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 1.0,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "subtractive",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 3.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 1.0,
+              "squared_distance": 0.0
+            },
+            {
+              "label": "additive",
+              "probability": 0.0,
+              "squared_distance": 9.0
+            }
+          ],
+          "sample_id": "blind_hole_2",
+          "split": "test",
+          "truth": "subtractive"
+        },
+        {
+          "confidence": 0.5,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 2.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": -4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            },
+            {
+              "label": "additive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            }
+          ],
+          "sample_id": "plate_growth_0",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.5,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 2.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": -4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            },
+            {
+              "label": "additive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            }
+          ],
+          "sample_id": "plate_growth_1",
+          "split": "test",
+          "truth": "additive"
+        },
+        {
+          "confidence": 0.5,
+          "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+          "decision": "abstain",
+          "influence": [
+            {
+              "feature": "node_count",
+              "value": 2.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "plate_edit",
+              "value": 1.0,
+              "winner_vs_runner_distance_margin": 0.0
+            },
+            {
+              "feature": "additive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": 4.5
+            },
+            {
+              "feature": "subtractive_operation",
+              "value": 0.0,
+              "winner_vs_runner_distance_margin": -4.5
+            }
+          ],
+          "out_of_domain": false,
+          "prediction": "subtractive",
+          "ranking": [
+            {
+              "label": "subtractive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            },
+            {
+              "label": "additive",
+              "probability": 0.5,
+              "squared_distance": 6.5
+            }
+          ],
+          "sample_id": "plate_growth_2",
+          "split": "test",
+          "truth": "additive"
+        }
+      ],
+      "privileged_authored_history": true,
+      "representation": "feature_history",
+      "test_metrics": {
+        "accuracy": 0.5,
+        "brier": 0.25,
+        "count": 6,
+        "coverage": 0.5,
+        "expected_calibration_error": 0.25,
+        "high_confidence_errors": [],
+        "selective_accuracy": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+control_id,observed,expected,checks_pass
+curve_surface,points,points,1
+trimmed_out,disjoint,disjoint,1
+curve_curve,points,points,1
+skew,disjoint,disjoint,1
+coincident,parallel_or_coincident_ambiguous,parallel_or_coincident_ambiguous,1
+surface_surface,curves,curves,1
+two_crossings,points,points,1
+tangent_contact,points,points,1
+near_tangent_separated,disjoint,disjoint,1
+planar_trim,1,1,1

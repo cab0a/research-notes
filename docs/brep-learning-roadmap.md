@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.65.0まで実装し、参照追跡、単位付き寸法式、特徴履歴、部品の再利用、組立の自由度・過剰拘束・干渉を検証しました。v0.66.0以降は未実装です。v1.0.0までの計画は、明示的な形状操作、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
+v0.80.0まで実装し、STEPの解析、精密幾何、工学計測、学習、確認付き編集と再出力を統合しました。v0.81.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、v1.0.0の安定契約には到達していません。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.65.0 have code and reference evidence. Stages from
-v0.66.0 onward are planned and remain unimplemented.
+The stages through v0.80.0 have code and reference evidence for their declared
+subsets. Stages from v0.81.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -684,106 +684,127 @@ this bounded implementation.
 
 #### v0.66.0 — Semantic PMI, Datums, and Tolerances
 
-Study controlled AP242 product-manufacturing-information paths for dimensions,
-geometric tolerances, datums, and annotations. Separate display text and
-presentation geometry from semantic meaning and direct source provenance.
+Completed for the declared research subset. Seven source controls separate dimensions, flatness, position tolerance, datum establishment and presentation text. The diameter stays 4 mm when the display says 999 mm or 123 mm. An invalid establishing datum relationship also invalidates its dependent position tolerance.
+
+The reader follows selected AP242 roles with exact entity spans and explicit SI length measures. It accepts only the declared mappings and reports unsupported schemas, units, targets and modifiers. The synthetic file establishes product ownership but does not bind a shape aspect to a native face. It is a role-level semantic study, not complete AP242 or GD&T validation.
+
+See [implementation and evidence](../notes/semantic-pmi.md).
 
 #### v0.67.0 — B-Spline and NURBS Curves and Surfaces
 
-Evaluate degree, poles, knots, multiplicities, weights, periodicity, and
-derivatives for bounded B-spline and NURBS controls. Compare implementation
-results with independent mathematical truth and retain parameterization
-differences after STEP exchange.
+Completed for the declared research subset. Polynomial, rational quarter-circle, internal-knot and rational quarter-cylinder controls compare positions, first derivatives and STEP exchange samples. The rational curve stays on a radius-2 circle; the surface agrees with an independent tensor-product extrusion.
+
+An independent Cox-de Boor basis and homogeneous quotient derivative evaluate clamped degree-1-to-5 curves with at most 64 poles. Positive weights, finite coordinates, strictly ordered distinct knots and consistent multiplicities are checked before native construction. Periodicity is recorded but periodic evaluation is explicitly rejected. Exported/imported poles, knots, weights and degrees remain inspectable; general reparameterization invariance is not assumed.
+
+See [implementation and evidence](../notes/spline-geometry.md).
 
 #### v0.68.0 — Differential Geometry and Surface Continuity
 
-Measure tangent frames, principal curvatures, Gaussian and mean curvature, and
-bounded positional, tangent, and curvature continuity. Visualize discontinuity
-evidence without treating samples as a certified whole-surface proof.
+Completed for the declared research subset. Nine controls include plane, sphere, cylinder and rational cylinder curvature, reversed orientation, a singular sphere pole, coincident/disconnected/tilted planes, and a tangent join with a curvature jump. The quadratic patches retain G1 at three matched samples while failing G2.
+
+The implementation forms the first and second fundamental forms from native second derivatives. A symmetric generalized eigenproblem gives principal curvatures and tangent directions. Mean curvature changes sign with orientation; Gaussian curvature does not. Repeated principal values produce nonunique directions. Continuity compares matched sample positions, oriented normals and world-space curvature tensors; samples never certify an entire seam.
+
+See [implementation and evidence](../notes/differential-geometry.md).
 
 #### v0.69.0 — Curve-Surface Intersections and Trimming Validity
 
-Evaluate bounded curve-curve, curve-surface, and surface-surface intersections.
-Verify three-dimensional intersection curves, p-curves, loop closure, trim
-orientation, residuals, multiplicity, and tolerance-sensitive ambiguity.
+Completed for the declared research subset. Ten controls cover curve/curve crossing, skew and coincidence, bounded curve/surface acceptance and exclusion, two crossings, tangency, near-tangent separation, surface/surface curves and planar trimming. P-curve samples are compared to their 3D edge positions.
+
+Curve extrema within explicit intervals are near-intersection observations; parallel/coincident curves abstain. Curve/surface results retain parameters, residuals and observed point multiplicity. Surface intersection curves are sampled and projected onto both supports. Wire closure and orientation are checked independently of sampled endpoint and p-curve residuals. Natural surface domains, tangency and periodic UV unwrapping remain explicit boundaries.
+
+See [implementation and evidence](../notes/intersection-analysis.md).
 
 #### v0.70.0 — Auditable Shape Repair Policies
 
-Compare explicit policies for gap closure, edge and face unification,
-orientation correction, and small-feature removal. Record every changed
-subshape, tolerance increase, lost attribute, geometric deviation, rejected
-operation, and rollback instead of silently healing input.
+Completed for the declared research subset. Eight controls exercise same-domain unification, explicit attribute-loss acceptance/refusal, gap sewing, tolerance rejection, orientation correction, and small-hole removal with restrictive or permissive geometric budgets. Rejection returns the original shape.
+
+Operations run on a copied shape. The audit retains before/candidate metrics, per-vertex/edge/face tolerances and orientations, face/edge relations, unresolved attributes, reasons, and bidirectional material difference where both inputs are solids. Small-feature removal requires selected face indices. Volume, area and tolerance budgets are explicit; this is not a Hausdorff-distance guarantee or automatic attribute transfer.
+
+See [implementation and evidence](../notes/repair-policies.md).
 
 ### Phase K — Engineering Analysis and Scalable Evidence
 
 #### v0.71.0 — Mass Properties and Inertia Tensors
 
-Evaluate volume, area, centroid, mass, inertia tensor, principal moments, and
-principal axes for closed synthetic solids with explicit density and units.
-Abstain when material, unit, closure, orientation, or validity evidence is
-insufficient.
+Completed for the declared research subset. Eleven observations compare a box, sphere, cylinder and rigidly moved box before/after STEP exchange with analytic volume, centroid and inertia. Missing material, unknown units and reversed solid orientation are refused.
+
+A single valid outward closed solid and explicit homogeneous material density are required. Length units mm, cm, m and inch and density units kg/m3 and g/cm3 are converted to SI. The centroid inertia scales with the fifth power of length. Eigenvectors use canonical signs but repeated principal moments are marked nonunique. Small SI inertia values retain significant digits in JSON instead of rounding to zero.
+
+See [implementation and evidence](../notes/mass-properties.md).
 
 #### v0.72.0 — Distance, Contact, Interference, and Clearance
 
-Distinguish separation, touching, penetration, containment, and clearance for
-bounded part and assembly controls. Measure tolerance sensitivity and retain
-the supporting faces, edges, points, and transform provenance.
+Completed for the declared research subset. Six box-pair controls distinguish a 1 mm separation, touching, 4 mm3 penetration, containment, coincident material and a 5e-8 mm tolerance-sensitive near-contact. Each observation retains witness points and support subshape indices.
+
+Minimum distance and common volume answer different questions. Containment is reported separately and never represented as a negative distance. Required clearance uses explicit length tolerance; overlap classification uses a separate volume tolerance. Witnesses are analysis-local and capped at 64 with a truncation flag. Both inputs must pass solid validity/closure/orientation checks; swept collision and penetration depth remain outside the API.
+
+See [implementation and evidence](../notes/proximity-analysis.md).
 
 #### v0.73.0 — Large STEP Files and Spatial Indexing
 
-Add staged parsing, lazy geometry evaluation, bounding-volume indexes, and
-explicit byte, entity, topology, memory, and time budgets for large synthetic
-assemblies. Report partial and quarantined results without claiming a native-
-code security boundary.
+Completed for the declared research subset. Seven controls exercise a 64-solid STEP, a 128-occurrence authored-box BVH, 127 clearance candidates, cache reuse, partial pair enumeration, and byte/entity/memory-estimate refusals. Candidate search builds no native shape until geometry is requested.
+
+Byte acquisition precedes source-preserving syntax parsing. Budgets cover bytes, tokens, entities, heuristic memory, cooperative elapsed time, geometry count, topology count and candidate pairs. Rigid box bounds are exact from authored sizes and placements. The median-split BVH is a broad phase; candidates still require narrow-phase checks. The reference is a bounded scaling control, not an industrial-size benchmark, streaming parser, measured memory cap or native security boundary.
+
+See [implementation and evidence](../notes/spatial-workflow.md).
 
 #### v0.74.0 — Independent Geometry Validation and Kernel Portability
 
-Compare the selected kernel with independent analytic evaluators and, where a
-license-compatible implementation is technically adequate, an independent
-geometry route. Record agreement and disagreement for topology, geometry,
-mass properties, intersections, and repairs without treating one backend as an
-oracle.
+Completed for the declared research subset. Six observations compare analytic box/sphere volume against native integration and coarse/fine signed-tetrahedron integration, then verify repair topology/area/volume and a curve intersection with independent cuboid and line truth. Coarse mesh disagreement remains visible.
+
+For each oriented triangle, the independent integrator accumulates its signed origin-tetrahedron volume, first moment and second moment; a parallel-axis shift produces centroid inertia. The arithmetic is independent of GProp, while tessellation still comes from OCCT. No second native kernel is bundled, no kernel is treated as an oracle, and no arbitrary STEP or repair portability claim follows.
+
+See [implementation and evidence](../notes/independent-validation.md).
 
 #### v0.75.0 — Parametric Change-Pair Dataset
 
-Publish provenance-bound before-and-after pairs containing parameter edits,
-feature dependencies, B-Reps, STEP files, topology correspondence, graph
-descriptors, measurements, previews, and construction truth. Split by
-construction lineage and test identity and derivation leakage.
+Completed for the declared research subset. Twenty-one edits produce 42 STEP states, 21 before/after previews, model DAGs, topology relations, face/edge descriptors and measurement truth. Six construction families are split into train, validation and test; through-hole/profile-hole equivalent construction routes stay together.
+
+Each pair binds the edit, construction lineage, source hashes, model fingerprints and representations. Leakage checks cover cross-split source identity, family and derivation lineage. The family split is fixed before fitting; no filenames or truth values become numeric features. The authored-history representation is explicitly privileged information unavailable from generic STEP reconstruction. Geometric novelty beyond the declared family relation is not certified.
+
+See [implementation and evidence](../notes/change-pair-dataset.md).
 
 ### Phase L — Evidence-Bounded 3D AI Assistance
 
 #### v0.76.0 — 3D Representation Learning Baselines
 
-Compare simple geometry tables, attributed face graphs, tessellations, and
-feature-history descriptors under fixed family-isolated splits. Preserve strong
-non-learned baselines, calibration evidence, abstention, and failure cases.
+Completed for the declared research subset. Four centroid representations predict additive/subtractive edits under the fixed six-family split. On the held-out controls, raw accuracy is 0% for geometry tables, 50% for graph summaries, 0% for tessellation summaries and 50% for privileged histories. The signed-volume rule reaches 100%; training-majority reaches 50%.
+
+Means, scales and class centroids use only training rows; temperature uses only validation rows. Probability, Brier score, calibration error, abstention and high-confidence mistakes are retained. Most learned geometry predictions abstain because held-out descriptors leave the bounded training range. This experiment demonstrates a strong non-learned baseline and a generalization failure, not a useful general 3D model.
+
+See [implementation and evidence](../notes/representation-learning.md).
 
 #### v0.77.0 — Learned Feature-Candidate Ranking
 
-Rank bounded hole, pocket, slot, step, chamfer, fillet, boss, and rib
-candidates. Every output links confidence and descriptor influence to the
-supporting faces and edges; high-confidence errors remain first-class evidence.
+Completed for the declared research subset. Thirty-two authored designs cover hole, pocket, slot, step, chamfer, fillet, boss and rib, with two additional unknown controls. All eight known held-out designs rank correctly. A plain box is wrongly accepted as chamfer at about 97.1% confidence; an unknown torus abstains despite a large raw score.
+
+Each design lineage belongs to one split; all eight labels occur in training. This tests bounded dimension generalization, not unseen feature families. Whole-shape graph and geometry descriptors produce eight hypotheses. Every score links source hash, supporting face/edge indices and winner-versus-runner descriptor margins. These are aggregate support sets, not learned feature localization or recovered design intent. Ranking never selects or edits a model.
+
+See [implementation and evidence](../notes/candidate-ranking.md).
 
 #### v0.78.0 — Assisted Design-Reconstruction Proposals
 
-Generate multiple editable sketch and feature-graph proposals from imported
-B-Rep evidence. Compare residual, complexity, stability, and alternative
-explanations, and require human selection before a proposal becomes modeled
-history.
+Completed for the declared research subset. Five imported shapes produce two equivalent through-hole explanations, two rib/boss explanations, one plain-plate and one pocket proposal, and no proposal for a rotated unsupported plate. Each alternative includes source faces, residuals, DAG complexity and sketch fingerprints.
+
+The review evaluates fresh unconfirmed hypotheses at minus/plus 5% of one editable dimension. It reports valid/failed recompute and topology/volume changes without adopting the model or pretending the user confirmed it. Local stability is two samples, not a global editability proof. Selection continues to require the exact candidate ID and explicit confirmation.
+
+See [implementation and evidence](../notes/design-proposals.md).
 
 #### v0.79.0 — Conversational Analysis and Edit Proposals
 
-Translate bounded natural-language requests into inspectable analysis queries
-or proposed parameter and feature edits. Show the selected entities,
-assumptions, expected effects, and before-and-after checks before execution.
+Completed for the declared research subset. Eight workflow controls cover Japanese dimension preview, confirmation refusal, unknown language, code-like expressions, invalid geometry, confirmed application, stale replay and a material-aware mass query. Preview leaves the active model fingerprint and shape unchanged.
+
+A deterministic, bounded English/Japanese grammar produces read-only queries or immutable edit intents. It is not a general language model and calls no external service. Explicit unit expressions reuse the safe arithmetic parser. An edit carries selected node/parameter, assumptions, supporting faces, predicted geometry, before/after measurements, recomputed nodes and source/selection/model fingerprints. Apply rechecks freshness and rebuilds before atomically replacing the session.
+
+See [implementation and evidence](../notes/conversational-proposals.md).
 
 #### v0.80.0 — Integrated 3D Analysis and Modeling Foundation
 
-Connect STEP syntax, schema and application semantics, B-Rep analysis,
-parametric recompute, visual diagnostics, engineering measurements, and AI-
-assisted proposals through one bounded workflow. This is an integration
-milestone, not yet the stable v1 contract.
+Completed for the declared research subset. Eight integration checks connect bounded source inspection, schema/application status, reconstruction alternatives, learned ranking, per-face differential/trim analysis, confirmed edits, SI measurements, verified STEP reimport and authored assembly recompute. One terminal exposes the whole sequence.
+
+The report separates syntax, supplied schema validation, application semantics and PMI; unsupported layers never become implied successes. The current imported millimetre solid can be inspected before selecting an editable reconstruction. Curvature and trim observations, material/inertia, comparison images, model state and proposal audit share the same report. Geometry-only STEP export passes the existing round-trip contract. Authored assembly commands reuse v0.65 constraints and interference checks.
+
+See [implementation and evidence](../notes/integrated-workflow.md).
 
 ### Phase M — Generalization Beyond the Controlled Core
 

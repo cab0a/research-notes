@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "one valid outward closed solid; explicit homogeneous density and length units required",
+    "mass and centroid inertia reported in SI; principal axes for repeated eigenvalues are nonunique",
+    "synthetic engineering measurements; no heterogeneous material assignment inferred"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 11,
+  "study_version": "v0.71.0"
+}

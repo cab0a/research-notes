@@ -1,0 +1,9 @@
+control_id,result,checks_pass
+syntax_and_semantics,accepted,1
+explicit_reconstruction,2,1
+learned_ranking,hole,1
+preview_apply_recompute,-8.670795724,1
+engineering_mass,0.003578350,1
+differential_and_trim_analysis,7,1
+verified_step_export,e8760c6f2b8d0ff5f3bdca898203ec069f576c0a7f60b82105478f87f8c0bff9,1
+assembly_recompute,fully_constrained,1

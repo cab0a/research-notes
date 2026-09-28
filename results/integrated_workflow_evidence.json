@@ -1,0 +1,1542 @@
+{
+  "assembly": {
+    "assembly_id": "two_blocks",
+    "components": {
+      "block": {
+        "evaluated_nodes": [
+          "base",
+          "result"
+        ],
+        "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+        "model_id": "block",
+        "output_id": "result",
+        "reused_nodes": [],
+        "revision": 2,
+        "states": [
+          {
+            "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+            "error": "",
+            "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+            "last_valid_revision": 2,
+            "metrics": {
+              "absolute_volume": 8.0,
+              "analyzer_valid": true,
+              "bounds_max": [
+                2.0000001,
+                2.0000001,
+                2.0000001
+              ],
+              "bounds_min": [
+                -1e-07,
+                -1e-07,
+                -1e-07
+              ],
+              "edge_count": 12,
+              "face_count": 6,
+              "maximum_edge_tolerance": 1e-07,
+              "maximum_face_tolerance": 1e-07,
+              "maximum_vertex_tolerance": 1e-07,
+              "shell_count": 1,
+              "solid_count": 1,
+              "surface_area": 24.0,
+              "surface_centroid": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "surface_counts": [
+                [
+                  "plane",
+                  6
+                ]
+              ],
+              "vertex_count": 8
+            },
+            "node_id": "base",
+            "retained_geometry_available": true,
+            "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+            "status": "valid"
+          },
+          {
+            "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+            "error": "",
+            "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+            "last_valid_revision": 2,
+            "metrics": {
+              "absolute_volume": 8.0,
+              "analyzer_valid": true,
+              "bounds_max": [
+                2.0000001,
+                2.0000001,
+                2.0000001
+              ],
+              "bounds_min": [
+                -1e-07,
+                -1e-07,
+                -1e-07
+              ],
+              "edge_count": 12,
+              "face_count": 6,
+              "maximum_edge_tolerance": 1e-07,
+              "maximum_face_tolerance": 1e-07,
+              "maximum_vertex_tolerance": 1e-07,
+              "shell_count": 1,
+              "solid_count": 1,
+              "surface_area": 24.0,
+              "surface_centroid": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "surface_counts": [
+                [
+                  "plane",
+                  6
+                ]
+              ],
+              "vertex_count": 8
+            },
+            "node_id": "result",
+            "retained_geometry_available": true,
+            "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+            "status": "valid"
+          }
+        ]
+      }
+    },
+    "fingerprint": "e22d77e81311c7e01c198cd90d3f8d4de0afebc21b59fa77f1f5b7e5d1a027a5",
+    "original_step_assembly_history_recovered": false,
+    "pair_checks": [
+      {
+        "minimum_distance_mm": 1.0,
+        "occurrence_a": "base",
+        "occurrence_b": "slider",
+        "overlap_volume_mm3": 0.0,
+        "placement_provisional": false,
+        "status": "separated"
+      }
+    ],
+    "placement_is_local_solution": true,
+    "revision": 1,
+    "solution": {
+      "conflict_constraints": [],
+      "degrees_of_freedom": 0,
+      "equation_count": 12,
+      "iterations": 3,
+      "occurrence_order": [
+        "base",
+        "slider"
+      ],
+      "placements": [
+        {
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "translation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "mm"
+        },
+        {
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "translation": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "unit": "mm"
+        }
+      ],
+      "rank": 12,
+      "redundant_equations": 0,
+      "remaining_motion": [],
+      "residuals": [
+        {
+          "component": "axis_offset_x",
+          "constraint_id": "coaxial",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "axis_offset_y",
+          "constraint_id": "coaxial",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "axis_x",
+          "constraint_id": "coaxial",
+          "residual": 0.0,
+          "unit": "unitless"
+        },
+        {
+          "component": "axis_y",
+          "constraint_id": "coaxial",
+          "residual": 0.0,
+          "unit": "unitless"
+        },
+        {
+          "component": "signed_axial_distance",
+          "constraint_id": "gap",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "tx",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "ty",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "tz",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "mm"
+        },
+        {
+          "component": "rx",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "rad"
+        },
+        {
+          "component": "ry",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "rad"
+        },
+        {
+          "component": "rz",
+          "constraint_id": "ground",
+          "residual": 0.0,
+          "unit": "rad"
+        },
+        {
+          "component": "rz",
+          "constraint_id": "twist",
+          "residual": 0.0,
+          "unit": "rad"
+        }
+      ],
+      "singular_values": [
+        4.074145889,
+        3.946597031,
+        2.040816447,
+        1.333778392,
+        1.076454937,
+        1.0,
+        1.0,
+        0.901376484,
+        0.749749738,
+        0.458666707,
+        0.278980582,
+        0.245450219
+      ],
+      "status": "fully_constrained"
+    },
+    "status": "fully_constrained"
+  },
+  "comparison": {
+    "after": {
+      "absolute_volume": 458.762833662,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 438.053980428,
+      "surface_centroid": [
+        5.899309302,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "authoring_history_recovered": false,
+    "before": {
+      "absolute_volume": 467.433629386,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.849555922,
+      "surface_centroid": [
+        5.913305392,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "comparison": {
+      "area_residual": 3.204424507,
+      "bounds_residual": 0.0,
+      "material_difference_volume": 8.670795724,
+      "surface_inventory_matches": true,
+      "topology_matches": true,
+      "volume_residual": 8.670795724
+    },
+    "model_revision": 2,
+    "selected_candidate_id": "through_hole_57d4d40e4691",
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+    "surface_area_change": 3.204424507,
+    "volume_change": -8.670795724
+  },
+  "edit_preview": {
+    "after": {
+      "absolute_volume": 458.762833662,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 438.053980428,
+      "surface_centroid": [
+        5.899309302,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "assumptions": [
+      "selected reconstruction is user-approved",
+      "explicit length expression normalized to millimetres"
+    ],
+    "before": {
+      "absolute_volume": 467.433629386,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.849555922,
+      "surface_centroid": [
+        5.913305392,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "comparison": {
+      "area_residual": 3.204424507,
+      "bounds_residual": 0.0,
+      "material_difference_volume": 8.670795724,
+      "surface_inventory_matches": true,
+      "topology_matches": true,
+      "volume_residual": 8.670795724
+    },
+    "confirmation_required": true,
+    "executed": false,
+    "expected_volume_delta": -8.670795724,
+    "expression": "1.3 * mm",
+    "proposal_id": "1018a2738de2902a6620",
+    "recomputed_nodes": [
+      "feature",
+      "result"
+    ],
+    "reused_nodes": [
+      "base"
+    ],
+    "selected_node": "feature",
+    "selected_parameter": "radius",
+    "supporting_faces": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "value_mm": 1.3
+  },
+  "export": {
+    "authoring_history_recovered": false,
+    "file_name": "edited.step",
+    "model_fingerprint": "e3c255c3f549cc50fe185e11ea92ca843acd5c67755dd323969f1d20d383ee2b",
+    "model_revision": 2,
+    "pmi_policy": "geometry only; source semantic PMI must be reviewed and rebound after edits",
+    "preservation_policy": "shape_geometry_only; names, colors, PMI, and constraints are not carried over",
+    "round_trip": {
+      "area_residual": 0.0,
+      "bounds_residual": 0.0,
+      "material_difference_volume": 0.0,
+      "surface_inventory_matches": true,
+      "topology_matches": true,
+      "volume_residual": 0.0
+    },
+    "selected_candidate_id": "through_hole_57d4d40e4691",
+    "selection_confirmed": true,
+    "sha256": "e8760c6f2b8d0ff5f3bdca898203ec069f576c0a7f60b82105478f87f8c0bff9",
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+  },
+  "geometry_analysis": {
+    "faces": [
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "point": [
+            6.0,
+            0.0,
+            2.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            6.0,
+            -2.0
+          ]
+        },
+        "face_index": 1,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -48.0,
+              "wire_index": 1
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "point": [
+            0.0,
+            5.0,
+            2.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            5.0,
+            -2.0
+          ]
+        },
+        "face_index": 2,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -40.0,
+              "wire_index": 1
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "point": [
+            12.0,
+            5.0,
+            2.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            5.0,
+            -2.0
+          ]
+        },
+        "face_index": 3,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -40.0,
+              "wire_index": 1
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "point": [
+            6.0,
+            5.0,
+            0.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            0.0,
+            0.0
+          ]
+        },
+        "face_index": 4,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -120.0,
+              "wire_index": 1
+            },
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": 5.173880006,
+              "wire_index": 2
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "point": [
+            6.0,
+            5.0,
+            4.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            0.0,
+            0.0
+          ]
+        },
+        "face_index": 5,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": 120.0,
+              "wire_index": 1
+            },
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -5.173880006,
+              "wire_index": 2
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.0,
+          "normal": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "point": [
+            6.0,
+            10.0,
+            2.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.0
+          ],
+          "principal_directions": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "principal_directions_unique": false,
+          "second_form": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            6.0,
+            -2.0
+          ]
+        },
+        "face_index": 6,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Plane",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -48.0,
+              "wire_index": 1
+            }
+          ]
+        }
+      },
+      {
+        "differential": {
+          "first_form": [
+            [
+              1.69,
+              0.0
+            ],
+            [
+              0.0,
+              1.0
+            ]
+          ],
+          "gaussian_curvature": 0.0,
+          "mean_curvature": 0.384615385,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "point": [
+            2.7,
+            5.0,
+            2.0
+          ],
+          "principal_curvatures": [
+            0.0,
+            0.769230769
+          ],
+          "principal_directions": [
+            [
+              0.0,
+              0.0,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0
+            ]
+          ],
+          "principal_directions_unique": true,
+          "second_form": [
+            [
+              1.3,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "status": "regular",
+          "uv": [
+            3.141592654,
+            3.0
+          ]
+        },
+        "face_index": 7,
+        "sample_within_trim": true,
+        "support_type": "GeomAbs_SurfaceType.GeomAbs_Cylinder",
+        "trimming": {
+          "analyzer_valid": true,
+          "checks_pass": true,
+          "scope": "sampled p-curve agreement and kernel wire checks; UV area assumes no periodic seam unwrap",
+          "wires": [
+            {
+              "closed": true,
+              "maximum_endpoint_gap": 0.0,
+              "maximum_pcurve_residual": 0.0,
+              "orientation_valid": true,
+              "sampled_signed_uv_area": -25.132741229,
+              "wire_index": 1
+            }
+          ]
+        }
+      }
+    ],
+    "scope": "support samples outside trims are labeled; differential and sampled trim evidence remain separate"
+  },
+  "layers": {
+    "application_semantics": {
+      "declared_schemas": [
+        "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+      ],
+      "status": "unsupported_schema"
+    },
+    "pmi": {
+      "diagnostics": [
+        {
+          "entity_id": null,
+          "reason": "unsupported_schema"
+        }
+      ],
+      "full_schema_validation": false,
+      "presentation": [],
+      "schema_status": "controlled_roles_only",
+      "semantic": [],
+      "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+      "status": "unsupported_schema"
+    },
+    "schema": {
+      "full_ap_conformance": false,
+      "status": "not_supplied"
+    },
+    "syntax": {
+      "budgets": {
+        "max_bytes": 8000000,
+        "max_entities": 100000,
+        "max_estimated_memory_bytes": 256000000,
+        "max_geometry": 128,
+        "max_pairs": 4096,
+        "max_seconds": 30.0,
+        "max_tokens": 2000000,
+        "max_topology": 100000
+      },
+      "byte_count": 19019,
+      "entity_count": 434,
+      "estimated_parser_memory_bytes": 608608,
+      "geometry_evaluated": false,
+      "native_security_boundary": false,
+      "reason": "syntax_only_geometry_deferred",
+      "schema_identifiers": [
+        "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+      ],
+      "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+      "stage": "syntax",
+      "status": "accepted"
+    }
+  },
+  "mass": {
+    "centroid_m": [
+      0.006092585,
+      0.005,
+      0.002
+    ],
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        3.59011464e-08,
+        1.41881173e-23,
+        7.09405867e-24
+      ],
+      [
+        1.41881173e-23,
+        4.89358736e-08,
+        7.09405867e-24
+      ],
+      [
+        7.09405867e-24,
+        7.09405867e-24,
+        7.5294753e-08
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.00357835,
+    "principal_axes": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "principal_axes_unique": true,
+    "principal_moments_kg_m2": [
+      3.59011464e-08,
+      4.89358736e-08,
+      7.5294753e-08
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "surface_area_m2": 0.000438054,
+    "volume_m3": 4.58762834e-07
+  },
+  "ranking": {
+    "automatic_selection": false,
+    "confidence": 1.0,
+    "confidence_kind": "validation-temperature-scaled synthetic centroid probability",
+    "decision": "hole",
+    "influence": [
+      {
+        "feature": "faces",
+        "value": 7.0,
+        "winner_vs_runner_distance_margin": 0.0
+      },
+      {
+        "feature": "adjacencies",
+        "value": 14.0,
+        "winner_vs_runner_distance_margin": 0.04063492
+      },
+      {
+        "feature": "mean_degree",
+        "value": 4.0,
+        "winner_vs_runner_distance_margin": 0.570418386
+      },
+      {
+        "feature": "curved_area_ratio",
+        "value": 0.057796405,
+        "winner_vs_runner_distance_margin": 6.430351818
+      },
+      {
+        "feature": "plane_faces",
+        "value": 6.0,
+        "winner_vs_runner_distance_margin": 0.0
+      },
+      {
+        "feature": "cylinder_faces",
+        "value": 1.0,
+        "winner_vs_runner_distance_margin": 0.0
+      },
+      {
+        "feature": "boundary_edges",
+        "value": 0.0,
+        "winner_vs_runner_distance_margin": 0.0
+      },
+      {
+        "feature": "volume_fill_ratio",
+        "value": 0.973819977,
+        "winner_vs_runner_distance_margin": 0.043955402
+      },
+      {
+        "feature": "area_scale_ratio",
+        "value": 7.093243154,
+        "winner_vs_runner_distance_margin": 0.278819776
+      },
+      {
+        "feature": "concave_cylinder_faces",
+        "value": 1.0,
+        "winner_vs_runner_distance_margin": 1.0
+      },
+      {
+        "feature": "other_curved_faces",
+        "value": 0.0,
+        "winner_vs_runner_distance_margin": 0.0
+      }
+    ],
+    "model_fingerprint": "bdb071cfc3948622d3df42e525cce3e42eb7f1a83bed9a6b0fda3aa815ee195b",
+    "out_of_domain": false,
+    "prediction": "hole",
+    "ranking": [
+      {
+        "label": "hole",
+        "probability": 1.0,
+        "squared_distance": 0.205687573
+      },
+      {
+        "label": "fillet",
+        "probability": 0.0,
+        "squared_distance": 8.569867876
+      },
+      {
+        "label": "chamfer",
+        "probability": 0.0,
+        "squared_distance": 11.650765901
+      },
+      {
+        "label": "boss",
+        "probability": 0.0,
+        "squared_distance": 17.789349311
+      },
+      {
+        "label": "step",
+        "probability": 0.0,
+        "squared_distance": 19.229092356
+      },
+      {
+        "label": "slot",
+        "probability": 0.0,
+        "squared_distance": 27.52474084
+      },
+      {
+        "label": "pocket",
+        "probability": 0.0,
+        "squared_distance": 27.577552784
+      },
+      {
+        "label": "rib",
+        "probability": 0.0,
+        "squared_distance": 37.168550646
+      }
+    ],
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+    "support": {
+      "edges": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "faces": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "scope": "whole-shape aggregate descriptor; candidate localization is not learned"
+    }
+  },
+  "reconstruction": {
+    "alternatives": [
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "profile_hole_9054dfc94df6",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 9
+        },
+        "explanation": "profile_hole",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 1.225221135
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -1.288052988
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "profile_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "authoring_history_recovered": false,
+        "candidate_id": "through_hole_57d4d40e4691",
+        "complexity": {
+          "nodes": 3,
+          "scalar_parameters": 9
+        },
+        "explanation": "through_hole",
+        "fit": {
+          "area_residual": 0.0,
+          "bounds_residual": 0.0,
+          "material_difference_volume": 0.0,
+          "volume_residual": 0.0
+        },
+        "local_edit_stability": [
+          {
+            "factor": 0.95,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": 1.225221135
+          },
+          {
+            "factor": 1.05,
+            "node": "feature",
+            "parameter": "radius",
+            "status": "valid",
+            "topology_preserved": true,
+            "volume_delta": -1.288052988
+          }
+        ],
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "through_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "sketch_evidence": [
+          {
+            "fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+            "node_id": "base"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "feature"
+          },
+          {
+            "fingerprint": "916831f42485d1e71615b158034c209bfe5456ae831a773281971972c581c27c",
+            "node_id": "result"
+          }
+        ],
+        "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+        "status": "requires_human_selection",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "automatic_selection": false,
+    "rejected_hypotheses": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+    "stability_scope": "two local dimension perturbations; no global editability guarantee",
+    "status": "ambiguous"
+  },
+  "source_history_recovered": false,
+  "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+}

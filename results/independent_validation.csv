@@ -1,0 +1,7 @@
+control_id,mesh_relative_volume_error,native_relative_volume_error,checks_pass
+box_coarse,0.000000000,0.000000000,1
+box_fine,0.000000000,0.000000000,1
+sphere_coarse,0.059994228,0.000000000,1
+sphere_fine,0.001841823,0.000000000,1
+repair_box_analytic,0.000000000,0.000000000,1
+intersection_analytic,,,True

@@ -2,9 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリは65件の研究の参照成果物を含みます。v0.61.0〜v0.65.0では面・辺の参照関係、単位付き寸法式、特徴履歴、組立定義、拘束残差、自由度、接触・干渉を記録します。詳細は英語本文に示します。
-
-各成果物の内容と再生成元は以下の英語本文を参照してください。
+80件の研究の参照成果物を収録します。v0.66.0〜v0.80.0では幾何・工学の期待値比較、資源制限、学習と誤判定、編集案と確認結果、統合ワークフローをCSV・JSON・PNGへ記録します。詳細は英語本文に示します。
 
 ---
 
@@ -1503,6 +1501,171 @@ Ten solver controls and eight edit events verify freedom, redundancy, conflicts,
 
 [Interpretation](../notes/assembly-recompute-degrees-of-freedom.md) and [fixture digests](../fixtures/assembly-recompute/manifest.csv).
 
+## v0.66.0 — Semantic PMI, Datums, and Tolerances
+
+7 declared controls, including expected rejections or learning failures.
+
+- [semantic_pmi.csv](semantic_pmi.csv): observations and expectation checks.
+- [semantic_pmi_evidence.json](semantic_pmi_evidence.json): source, numeric and decision evidence.
+- [semantic_pmi_contract.json](semantic_pmi_contract.json): explicit boundaries.
+- [semantic_pmi.png](semantic_pmi.png): diagnostic figure.
+
+[Interpretation](../notes/semantic-pmi.md) and [fixture digests](../fixtures/semantic-pmi/manifest.csv).
+
+## v0.67.0 — B-Spline and NURBS Geometry
+
+4 declared controls, including expected rejections or learning failures.
+
+- [spline_geometry.csv](spline_geometry.csv): observations and expectation checks.
+- [spline_geometry_evidence.json](spline_geometry_evidence.json): source, numeric and decision evidence.
+- [spline_geometry_contract.json](spline_geometry_contract.json): explicit boundaries.
+- [spline_geometry.png](spline_geometry.png): diagnostic figure.
+
+[Interpretation](../notes/spline-geometry.md) and [fixture digests](../fixtures/spline-geometry/manifest.csv).
+
+## v0.68.0 — Differential Geometry and Surface Continuity
+
+9 declared controls, including expected rejections or learning failures.
+
+- [differential_geometry.csv](differential_geometry.csv): observations and expectation checks.
+- [differential_geometry_evidence.json](differential_geometry_evidence.json): source, numeric and decision evidence.
+- [differential_geometry_contract.json](differential_geometry_contract.json): explicit boundaries.
+- [differential_geometry.png](differential_geometry.png): diagnostic figure.
+
+[Interpretation](../notes/differential-geometry.md) and [fixture digests](../fixtures/differential-geometry/manifest.csv).
+
+## v0.69.0 — Intersections and Trimming Validity
+
+10 declared controls, including expected rejections or learning failures.
+
+- [intersection_analysis.csv](intersection_analysis.csv): observations and expectation checks.
+- [intersection_analysis_evidence.json](intersection_analysis_evidence.json): source, numeric and decision evidence.
+- [intersection_analysis_contract.json](intersection_analysis_contract.json): explicit boundaries.
+- [intersection_analysis.png](intersection_analysis.png): diagnostic figure.
+
+[Interpretation](../notes/intersection-analysis.md) and [fixture digests](../fixtures/intersection-analysis/manifest.csv).
+
+## v0.70.0 — Auditable Shape Repair Policies
+
+8 declared controls, including expected rejections or learning failures.
+
+- [repair_policies.csv](repair_policies.csv): observations and expectation checks.
+- [repair_policies_evidence.json](repair_policies_evidence.json): source, numeric and decision evidence.
+- [repair_policies_contract.json](repair_policies_contract.json): explicit boundaries.
+- [repair_policies.png](repair_policies.png): diagnostic figure.
+
+[Interpretation](../notes/repair-policies.md) and [fixture digests](../fixtures/repair-policies/manifest.csv).
+
+## v0.71.0 — Mass Properties and Inertia Tensors
+
+11 declared controls, including expected rejections or learning failures.
+
+- [mass_properties.csv](mass_properties.csv): observations and expectation checks.
+- [mass_properties_evidence.json](mass_properties_evidence.json): source, numeric and decision evidence.
+- [mass_properties_contract.json](mass_properties_contract.json): explicit boundaries.
+- [mass_properties.png](mass_properties.png): diagnostic figure.
+
+[Interpretation](../notes/mass-properties.md) and [fixture digests](../fixtures/mass-properties/manifest.csv).
+
+## v0.72.0 — Distance, Contact, Interference and Clearance
+
+6 declared controls, including expected rejections or learning failures.
+
+- [proximity_analysis.csv](proximity_analysis.csv): observations and expectation checks.
+- [proximity_analysis_evidence.json](proximity_analysis_evidence.json): source, numeric and decision evidence.
+- [proximity_analysis_contract.json](proximity_analysis_contract.json): explicit boundaries.
+- [proximity_analysis.png](proximity_analysis.png): diagnostic figure.
+
+[Interpretation](../notes/proximity-analysis.md) and [fixture digests](../fixtures/proximity-analysis/manifest.csv).
+
+## v0.73.0 — Staged STEP and Spatial Indexing
+
+7 declared controls, including expected rejections or learning failures.
+
+- [spatial_workflow.csv](spatial_workflow.csv): observations and expectation checks.
+- [spatial_workflow_evidence.json](spatial_workflow_evidence.json): source, numeric and decision evidence.
+- [spatial_workflow_contract.json](spatial_workflow_contract.json): explicit boundaries.
+- [spatial_workflow.png](spatial_workflow.png): diagnostic figure.
+
+[Interpretation](../notes/spatial-workflow.md) and [fixture digests](../fixtures/spatial-workflow/manifest.csv).
+
+## v0.74.0 — Independent Geometry Validation
+
+6 declared controls, including expected rejections or learning failures.
+
+- [independent_validation.csv](independent_validation.csv): observations and expectation checks.
+- [independent_validation_evidence.json](independent_validation_evidence.json): source, numeric and decision evidence.
+- [independent_validation_contract.json](independent_validation_contract.json): explicit boundaries.
+- [independent_validation.png](independent_validation.png): diagnostic figure.
+
+[Interpretation](../notes/independent-validation.md) and [fixture digests](../fixtures/independent-validation/manifest.csv).
+
+## v0.75.0 — Parametric Change-Pair Dataset
+
+21 declared controls, including expected rejections or learning failures.
+
+- [change_pair_dataset.csv](change_pair_dataset.csv): observations and expectation checks.
+- [change_pair_dataset_evidence.json](change_pair_dataset_evidence.json): source, numeric and decision evidence.
+- [change_pair_dataset_contract.json](change_pair_dataset_contract.json): explicit boundaries.
+- [change_pair_dataset.png](change_pair_dataset.png): diagnostic figure.
+
+[Interpretation](../notes/change-pair-dataset.md) and [fixture digests](../fixtures/change-pair-dataset/manifest.csv).
+
+## v0.76.0 — 3D Representation Learning Baselines
+
+10 declared controls, including expected rejections or learning failures.
+
+- [representation_learning.csv](representation_learning.csv): observations and expectation checks.
+- [representation_learning_evidence.json](representation_learning_evidence.json): source, numeric and decision evidence.
+- [representation_learning_contract.json](representation_learning_contract.json): explicit boundaries.
+- [representation_learning.png](representation_learning.png): diagnostic figure.
+
+[Interpretation](../notes/representation-learning.md) and [fixture digests](../fixtures/representation-learning/manifest.csv).
+
+## v0.77.0 — Learned Feature-Candidate Ranking
+
+34 declared controls, including expected rejections or learning failures.
+
+- [candidate_ranking.csv](candidate_ranking.csv): observations and expectation checks.
+- [candidate_ranking_evidence.json](candidate_ranking_evidence.json): source, numeric and decision evidence.
+- [candidate_ranking_contract.json](candidate_ranking_contract.json): explicit boundaries.
+- [candidate_ranking.png](candidate_ranking.png): diagnostic figure.
+
+[Interpretation](../notes/candidate-ranking.md) and [fixture digests](../fixtures/candidate-ranking/manifest.csv).
+
+## v0.78.0 — Assisted Design-Reconstruction Proposals
+
+5 declared controls, including expected rejections or learning failures.
+
+- [design_proposals.csv](design_proposals.csv): observations and expectation checks.
+- [design_proposals_evidence.json](design_proposals_evidence.json): source, numeric and decision evidence.
+- [design_proposals_contract.json](design_proposals_contract.json): explicit boundaries.
+- [design_proposals.png](design_proposals.png): diagnostic figure.
+
+[Interpretation](../notes/design-proposals.md) and [fixture digests](../fixtures/design-proposals/manifest.csv).
+
+## v0.79.0 — Conversational Analysis and Edit Proposals
+
+8 declared controls, including expected rejections or learning failures.
+
+- [conversational_proposals.csv](conversational_proposals.csv): observations and expectation checks.
+- [conversational_proposals_evidence.json](conversational_proposals_evidence.json): source, numeric and decision evidence.
+- [conversational_proposals_contract.json](conversational_proposals_contract.json): explicit boundaries.
+- [conversational_proposals.png](conversational_proposals.png): diagnostic figure.
+
+[Interpretation](../notes/conversational-proposals.md) and [fixture digests](../fixtures/conversational-proposals/manifest.csv).
+
+## v0.80.0 — Integrated 3D Analysis and Modeling Foundation
+
+8 declared controls, including expected rejections or learning failures.
+
+- [integrated_workflow.csv](integrated_workflow.csv): observations and expectation checks.
+- [integrated_workflow_evidence.json](integrated_workflow_evidence.json): source, numeric and decision evidence.
+- [integrated_workflow_contract.json](integrated_workflow_contract.json): explicit boundaries.
+- [integrated_workflow.png](integrated_workflow.png): diagnostic figure.
+
+[Interpretation](../notes/integrated-workflow.md) and [fixture digests](../fixtures/integrated-workflow/manifest.csv).
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1571,6 +1734,21 @@ python experiments/run_parameter_expressions.py
 python experiments/run_feature_history_editing.py
 python experiments/run_assembly_constraints.py
 python experiments/run_assembly_recompute.py
+python experiments/run_semantic_pmi.py
+python experiments/run_spline_geometry.py
+python experiments/run_differential_geometry.py
+python experiments/run_intersection_analysis.py
+python experiments/run_repair_policies.py
+python experiments/run_mass_properties.py
+python experiments/run_proximity_analysis.py
+python experiments/run_spatial_workflow.py
+python experiments/run_independent_validation.py
+python experiments/run_change_pair_dataset.py
+python experiments/run_representation_learning.py
+python experiments/run_candidate_ranking.py
+python experiments/run_design_proposals.py
+python experiments/run_conversational_proposals.py
+python experiments/run_integrated_workflow.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

@@ -1,0 +1,454 @@
+[
+  {
+    "centroid_m": [
+      0.001,
+      0.0015,
+      0.002
+    ],
+    "control_id": "box",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        3.9e-10,
+        -5.54223334e-26,
+        0.0
+      ],
+      [
+        -5.54223334e-26,
+        3.12e-10,
+        -1.10844667e-25
+      ],
+      [
+        0.0,
+        -1.10844667e-25,
+        2.028e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.0001872,
+    "principal_axes": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "principal_axes_unique": true,
+    "principal_moments_kg_m2": [
+      2.028e-10,
+      3.12e-10,
+      3.9e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "constructed",
+    "surface_area_m2": 5.2e-05,
+    "volume_m3": 2.4e-08
+  },
+  {
+    "centroid_m": [
+      0.001,
+      0.0015,
+      0.002
+    ],
+    "control_id": "box",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        3.9e-10,
+        -5.54223334e-26,
+        0.0
+      ],
+      [
+        -5.54223334e-26,
+        3.12e-10,
+        -1.10844667e-25
+      ],
+      [
+        0.0,
+        -1.10844667e-25,
+        2.028e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.0001872,
+    "principal_axes": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "principal_axes_unique": true,
+    "principal_moments_kg_m2": [
+      2.028e-10,
+      3.12e-10,
+      3.9e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "step_imported",
+    "surface_area_m2": 5.2e-05,
+    "volume_m3": 2.4e-08
+  },
+  {
+    "centroid_m": [
+      -1.19768192e-19,
+      2.97716834e-20,
+      1.56125113e-20
+    ],
+    "control_id": "sphere",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        4.18208814e-10,
+        2.6508044e-26,
+        -2.19666671e-42
+      ],
+      [
+        2.6508044e-26,
+        4.18208814e-10,
+        2.72512633e-43
+      ],
+      [
+        -2.19666671e-42,
+        2.72512633e-43,
+        4.18208814e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.000261381,
+    "principal_axes": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "principal_axes_unique": false,
+    "principal_moments_kg_m2": [
+      4.18208814e-10,
+      4.18208814e-10,
+      4.18208814e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "constructed",
+    "surface_area_m2": 5.0265e-05,
+    "volume_m3": 3.35103216e-08
+  },
+  {
+    "centroid_m": [
+      -1.05207023e-19,
+      2.25709295e-20,
+      -6.76542156e-20
+    ],
+    "control_id": "sphere",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        4.18208814e-10,
+        2.27535516e-26,
+        2.21378905e-42
+      ],
+      [
+        2.27535516e-26,
+        4.18208814e-10,
+        -2.15824688e-44
+      ],
+      [
+        2.21378905e-42,
+        -2.15824688e-44,
+        4.18208814e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.000261381,
+    "principal_axes": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "principal_axes_unique": false,
+    "principal_moments_kg_m2": [
+      4.18208814e-10,
+      4.18208814e-10,
+      4.18208814e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "step_imported",
+    "surface_area_m2": 5.0265e-05,
+    "volume_m3": 3.35103216e-08
+  },
+  {
+    "centroid_m": [
+      -1.17798322e-19,
+      -4.12520008e-20,
+      0.0015
+    ],
+    "control_id": "cylinder",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        5.14592877e-10,
+        1.91925414e-26,
+        3.46389584e-27
+      ],
+      [
+        1.91925414e-26,
+        5.14592877e-10,
+        -1.91287788e-28
+      ],
+      [
+        3.46389584e-27,
+        -1.91287788e-28,
+        5.88106145e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.000294053,
+    "principal_axes": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "principal_axes_unique": false,
+    "principal_moments_kg_m2": [
+      5.14592877e-10,
+      5.14592877e-10,
+      5.88106145e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "constructed",
+    "surface_area_m2": 6.2832e-05,
+    "volume_m3": 3.76991118e-08
+  },
+  {
+    "centroid_m": [
+      -4.24073958e-19,
+      -1.06412551e-19,
+      0.0015
+    ],
+    "control_id": "cylinder",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        5.14592877e-10,
+        -5.06275012e-26,
+        -6.92779167e-27
+      ],
+      [
+        -5.06275012e-26,
+        5.14592877e-10,
+        8.60795046e-28
+      ],
+      [
+        -6.92779167e-27,
+        8.60795046e-28,
+        5.88106145e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.000294053,
+    "principal_axes": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "principal_axes_unique": false,
+    "principal_moments_kg_m2": [
+      5.14592877e-10,
+      5.14592877e-10,
+      5.88106145e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "step_imported",
+    "surface_area_m2": 6.2832e-05,
+    "volume_m3": 3.76991118e-08
+  },
+  {
+    "centroid_m": [
+      0.010336933,
+      0.02177101,
+      0.032
+    ],
+    "control_id": "rigid_box",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        3.78171562e-10,
+        2.79768875e-11,
+        -7.09405867e-24
+      ],
+      [
+        2.79768875e-11,
+        3.23828438e-10,
+        0.0
+      ],
+      [
+        -7.09405867e-24,
+        0.0,
+        2.028e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.0001872,
+    "principal_axes": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        -0.389418342,
+        0.921060994,
+        0.0
+      ],
+      [
+        0.921060994,
+        0.389418342,
+        0.0
+      ]
+    ],
+    "principal_axes_unique": true,
+    "principal_moments_kg_m2": [
+      2.028e-10,
+      3.12e-10,
+      3.9e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "constructed",
+    "surface_area_m2": 5.2e-05,
+    "volume_m3": 2.4e-08
+  },
+  {
+    "centroid_m": [
+      0.010336933,
+      0.02177101,
+      0.032
+    ],
+    "control_id": "rigid_box",
+    "density_kg_m3": 7800.0,
+    "inertia_about_centroid_kg_m2": [
+      [
+        3.78171562e-10,
+        2.79768875e-11,
+        0.0
+      ],
+      [
+        2.79768875e-11,
+        3.23828438e-10,
+        2.83762347e-23
+      ],
+      [
+        0.0,
+        2.83762347e-23,
+        2.028e-10
+      ]
+    ],
+    "length_unit": "mm",
+    "mass_kg": 0.0001872,
+    "principal_axes": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        -0.389418342,
+        0.921060994,
+        0.0
+      ],
+      [
+        0.921060994,
+        0.389418342,
+        0.0
+      ]
+    ],
+    "principal_axes_unique": true,
+    "principal_moments_kg_m2": [
+      2.028e-10,
+      3.12e-10,
+      3.9e-10
+    ],
+    "source": "OCCT analytic-surface integration after closure/orientation gates",
+    "stage": "step_imported",
+    "surface_area_m2": 5.2e-05,
+    "volume_m3": 2.4e-08
+  },
+  {
+    "control_id": "missing_material",
+    "rejection": "explicit positive finite material density required"
+  },
+  {
+    "control_id": "unknown_unit",
+    "rejection": "unsupported explicit material or length unit"
+  },
+  {
+    "control_id": "reversed",
+    "rejection": "outward orientation and positive enclosed volume are required"
+  }
+]

@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書はv0.65.0時点の機能を分類します。限定した面・辺の参照追跡、単位付き寸法式、特徴履歴の編集、部品の再利用、組立再計算、局所的な自由度・重複拘束・矛盾・干渉を検証しています。詳細は英語本文に示します。
+v0.80.0時点の機能と制限を分類します。PMI、曲面・交差、修復、質量・慣性、空間索引、学習、編集提案を統合しています。各機能は明示した合成条件に限定され、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-65 studies through v0.65.0. It separates syntax recognition, schema validation, physical-reference
+80 studies through v0.80.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.66.0 and later roadmap stages remain unimplemented.
+v0.81.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -54,13 +54,13 @@ Git tag or package is separate. Planned numbers are not delivery promises.
 | Authored assemblies | Controlled subset | Reused definitions, authored datums, unit-aware parameters, pose constraints, local freedom, and interference | Arbitrary STEP mate inference, nested assemblies, global motion proof, or swept collision |
 | Scoped topology references | Controlled subset | Qualified one-to-one continuity and explicit split/merge/deletion/ambiguity | General persistent naming or permanent kernel identity |
 | Assisted modeling | Controlled subset | Python session API and terminal with confirmation, current-result guards, and static comparison reports | Graphical CAD editing, session restore, undo/redo, arbitrary assemblies, or a general modeling API |
-| AI use | Research evidence | Family-isolated dataset and four binary baselines from v0.53.0–v0.54.0 | Industrial transfer, general inference API, or calibrated guarantees for arbitrary shapes |
+| AI use | Research evidence | Family-isolated change pairs, representation baselines, eight-way ranking and confirmed edit proposals through v0.80.0 | Industrial transfer, general inference API, or calibrated guarantees for arbitrary shapes |
 
 ## Part 21 and Container Capabilities
 
 | Capability | Status | Current contract | Current boundary | Evidence |
 | --- | --- | --- | --- | --- |
-| Byte input | Implemented | Public parsers accept an in-memory `bytes` value | No streaming reader or bounded file acquisition | [`step_part21.py`](../src/research_notes/step_part21.py) |
+| Byte input | Implemented | Public parsers accept an in-memory `bytes` value | No streaming parser; bounded file acquisition is available in v0.73 | [`step_part21.py`](../src/research_notes/step_part21.py) |
 | Exact source reconstruction | Controlled subset | Accepted source-model fixtures reconstruct the original byte stream from retained tokens | Not established for every legal Part 21 spelling | [`test_step_part21.py`](../tests/test_step_part21.py) |
 | Source coordinates | Implemented | Tokens retain character offsets, byte offsets, lines, and columns | Downstream B-Rep tables do not yet repeat every span directly | [`step_part21_token_inventory.csv`](../results/step_part21_token_inventory.csv) |
 | Comments and whitespace | Controlled subset | Retained as source trivia in the unified token stream | Complete grammar coverage is not claimed | [`unified-part21-lexer-grammar-source-model.md`](../notes/unified-part21-lexer-grammar-source-model.md) |
@@ -359,3 +359,23 @@ rotation-vector domains are bounded; normals must be co-oriented. Local nullity
 does not prove global mobility. Duplicate conflicting right-hand sides are
 reported separately from general numerical failure. Placed-geometry STEP
 exports omit mates and occurrence IDs, which remain in JSON.
+
+## v0.66–v0.80 Evidence
+
+| Capability | Status | Version | Evidence boundary |
+| --- | --- | --- | --- |
+| [Semantic PMI, Datums, and Tolerances](../notes/semantic-pmi.md) | Controlled subset / research evidence | v0.66.0 | 7 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [B-Spline and NURBS Geometry](../notes/spline-geometry.md) | Controlled subset / research evidence | v0.67.0 | 4 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Differential Geometry and Surface Continuity](../notes/differential-geometry.md) | Controlled subset / research evidence | v0.68.0 | 9 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Intersections and Trimming Validity](../notes/intersection-analysis.md) | Controlled subset / research evidence | v0.69.0 | 10 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Auditable Shape Repair Policies](../notes/repair-policies.md) | Controlled subset / research evidence | v0.70.0 | 8 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Mass Properties and Inertia Tensors](../notes/mass-properties.md) | Controlled subset / research evidence | v0.71.0 | 11 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Distance, Contact, Interference and Clearance](../notes/proximity-analysis.md) | Controlled subset / research evidence | v0.72.0 | 6 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Staged STEP and Spatial Indexing](../notes/spatial-workflow.md) | Controlled subset / research evidence | v0.73.0 | 7 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Independent Geometry Validation](../notes/independent-validation.md) | Controlled subset / research evidence | v0.74.0 | 6 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Parametric Change-Pair Dataset](../notes/change-pair-dataset.md) | Controlled subset / research evidence | v0.75.0 | 21 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [3D Representation Learning Baselines](../notes/representation-learning.md) | Controlled subset / research evidence | v0.76.0 | 10 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Learned Feature-Candidate Ranking](../notes/candidate-ranking.md) | Controlled subset / research evidence | v0.77.0 | 34 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Assisted Design-Reconstruction Proposals](../notes/design-proposals.md) | Controlled subset / research evidence | v0.78.0 | 5 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Conversational Analysis and Edit Proposals](../notes/conversational-proposals.md) | Controlled subset / research evidence | v0.79.0 | 8 declared observations; see note for acceptance, abstention and failure boundaries. |
+| [Integrated 3D Analysis and Modeling Foundation](../notes/integrated-workflow.md) | Controlled subset / research evidence | v0.80.0 | 8 declared observations; see note for acceptance, abstention and failure boundaries. |

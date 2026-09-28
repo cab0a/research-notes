@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "operations run on a deep copy; failed validity/tolerance/volume/area/attribute gates return the original",
+    "per-edge/per-face correspondences report unresolved geometry honestly; native history used where available",
+    "small-feature removal requires explicit face selections and geometric budgets; no silent repair or Hausdorff claim"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 8,
+  "study_version": "v0.70.0"
+}

@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "64-solid STEP and 128-occurrence index are bounded scale controls, not industrial-size throughput claims",
+    "byte stage precedes syntax; geometry remains deferred; memory is an estimate and time checks are cooperative",
+    "exact authored-box BVH supports rigid placements; lazy native geometry and pair limits; no native-code sandbox"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 7,
+  "study_version": "v0.73.0"
+}

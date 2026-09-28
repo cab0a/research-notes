@@ -1,0 +1,6 @@
+control_id,candidate_count,expected_count,checks_pass
+through_hole,2,2,1
+rib,2,2,1
+plain_plate,1,1,1
+pocket,1,1,1
+rotated_plate,0,0,1

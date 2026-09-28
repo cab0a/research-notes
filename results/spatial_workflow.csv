@@ -1,0 +1,8 @@
+control_id,observed,expected,checks_pass
+bvh_clearance,127,127,1
+lazy_cache,2,2,1
+partial_pairs,partial,partial,1
+staged_syntax,accepted,accepted,1
+byte_gate,quarantined,quarantined,1
+entity_gate,quarantined,quarantined,1
+memory_estimate_gate,quarantined,quarantined,1

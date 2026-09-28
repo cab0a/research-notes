@@ -1,0 +1,170 @@
+[
+  {
+    "after_sha256": "86f546a6e549f86e66f619b3530c5a9c6261f2224818557adda10df88b90b347",
+    "before_sha256": "d026f0cc6aa42a6bd2a90ccd707f4c04e2f663ea5a28b0780f80ab352331a186",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_0",
+    "pair_id": "through_hole_0",
+    "split": "train"
+  },
+  {
+    "after_sha256": "e4a529eefafaacd19806e669ffee521bb85d846ffc446e9ac29054b79fef14f9",
+    "before_sha256": "5c485b3c8a39161bd8c1d78f0aca14cdbcc3353c75db356a3424d33fde30314f",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_1",
+    "pair_id": "through_hole_1",
+    "split": "train"
+  },
+  {
+    "after_sha256": "9dcbfde9105efe77dc943951b7428df24e19edb495bddf7f63cc66808dcdc6c6",
+    "before_sha256": "142761cb8bc128c6a72c5a610bba1163ec76d542ee159561683816fbb9f54ca1",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_2",
+    "pair_id": "through_hole_2",
+    "split": "train"
+  },
+  {
+    "after_sha256": "410c33122302467e6da2aa0f28b7295e8453b7562939ad8ba843b97c7ca12269",
+    "before_sha256": "56c7650eae8ba8c65f2e8aadb6933aa87a25526f9aee13480228176a6524a1e6",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_0",
+    "pair_id": "profile_hole_0",
+    "split": "train"
+  },
+  {
+    "after_sha256": "bda9fdba947e5516102909d89946fc3e2fa0887980da97d2c0ddcd6ca2626168",
+    "before_sha256": "8d665fe3e9c56f45534d6ac7023f31306599db0fb27a0195795e339e1d5737db",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_1",
+    "pair_id": "profile_hole_1",
+    "split": "train"
+  },
+  {
+    "after_sha256": "773792c6cdb7bdd1a5faad0f343eac6f9f64463b40c344d4b78558c2e1dd0bf4",
+    "before_sha256": "8207a665b980d98dc774864764311f4ab9372b59aeab2a58dacf924552258d37",
+    "family": "perforated_plate",
+    "lineage_id": "perforated_plate_2",
+    "pair_id": "profile_hole_2",
+    "split": "train"
+  },
+  {
+    "after_sha256": "c6e10c00c111e416f36ab452d5e13afa1eeadf0ba121db68110d875478091d58",
+    "before_sha256": "b1c7630a72ce7a5376c8cd35c9a910b5b1946f3e2fd61bfe5f142c949cb7f030",
+    "family": "round_boss",
+    "lineage_id": "round_boss_0",
+    "pair_id": "boss_0",
+    "split": "train"
+  },
+  {
+    "after_sha256": "c69815f275fa0418b6275ec3d4cbc65bfd1f00ce7d5ef86712114ca2f81db1ae",
+    "before_sha256": "8b1fc0a7a9a02eaf7e1e3ae93cfa505079d426b74a670fb41a09f2f81cf7751b",
+    "family": "round_boss",
+    "lineage_id": "round_boss_1",
+    "pair_id": "boss_1",
+    "split": "train"
+  },
+  {
+    "after_sha256": "f721b6690a3104540b889ae5bd4b4a06e0127a88d9aaa7077d6cb91a7c564d88",
+    "before_sha256": "728ddeb7662fcd32979f349c58d78f2e8e558592d0f3c3010acd5ce6a9005806",
+    "family": "round_boss",
+    "lineage_id": "round_boss_2",
+    "pair_id": "boss_2",
+    "split": "train"
+  },
+  {
+    "after_sha256": "0e26e02791bf6ee48e4c91b67c4464137d9bed22d5906c49b2e9402ba3895a6e",
+    "before_sha256": "2952330574c8b64477395ba5e5f18b46d1c59d28409ea3e10ebe4f754f915dad",
+    "family": "rectangular_pocket",
+    "lineage_id": "rectangular_pocket_0",
+    "pair_id": "pocket_0",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "c1b38cce80228d382d0f763042889574b31dc4b4c036efefa0976119d12b9282",
+    "before_sha256": "995ce13190c437814e3e8d1ad14de9c127304cdf6f2439b2989328ba78e11347",
+    "family": "rectangular_pocket",
+    "lineage_id": "rectangular_pocket_1",
+    "pair_id": "pocket_1",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "ae9560c5387b02da731f344c8fdc917231ff299a9e24a143ac39433dab6c79f1",
+    "before_sha256": "19d52b31f13c15b3f9ed0d08fe37c8023ac8c09b3f7b7525fb611bcda7f1bca0",
+    "family": "rectangular_pocket",
+    "lineage_id": "rectangular_pocket_2",
+    "pair_id": "pocket_2",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "06f36eb1ab6c299cbe473c6451568cb4d2a79c3db18fd85fd7d7070455b10029",
+    "before_sha256": "9812508a1b3b9e6e0790352432f7ed3cecd765f429c6f65f929644bc00be8296",
+    "family": "rectangular_rib",
+    "lineage_id": "rectangular_rib_0",
+    "pair_id": "rib_0",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "3b57d2c67da9327c4ba0efd1f4735bf1da05cf10eb72418af76f2899086e910e",
+    "before_sha256": "28eab15217310dff4a63ad2e54ee1034718b0ce70c0825156c502c867d9cffdb",
+    "family": "rectangular_rib",
+    "lineage_id": "rectangular_rib_1",
+    "pair_id": "rib_1",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "c8c44e1af99093d9e7d733a6c2ed31d2a2717c929df22beb31fc5b945cf2af9c",
+    "before_sha256": "930a2ee9badbbe8cd399f137c871de7c4a8e360927719a40bf860361330a1363",
+    "family": "rectangular_rib",
+    "lineage_id": "rectangular_rib_2",
+    "pair_id": "rib_2",
+    "split": "validation"
+  },
+  {
+    "after_sha256": "10300b93bbc7a4d1e7f344b4a7905aea26a1d61b82557321621f93e138d39d68",
+    "before_sha256": "638bde24d902426e74e2688575ff0a7648e313ee18487d18ba2ff0004d606b52",
+    "family": "blind_bore",
+    "lineage_id": "blind_bore_0",
+    "pair_id": "blind_hole_0",
+    "split": "test"
+  },
+  {
+    "after_sha256": "0a98f2fdceee86c10a06902eaf0a99fd24fdae22d7c4a2a8e84cb4311cbebb10",
+    "before_sha256": "eb9e060c5238024434d426d2ed2237009bd7a9c274598c760995acab4c09fb26",
+    "family": "blind_bore",
+    "lineage_id": "blind_bore_1",
+    "pair_id": "blind_hole_1",
+    "split": "test"
+  },
+  {
+    "after_sha256": "894579bb0eed17f527eca7092d91be7c4f4a47da402e7972c7efd7484ad397b8",
+    "before_sha256": "41e9efe93f9c02b7327752956279cfb28f1aee4937eb6b0b153bd0f0370ad014",
+    "family": "blind_bore",
+    "lineage_id": "blind_bore_2",
+    "pair_id": "blind_hole_2",
+    "split": "test"
+  },
+  {
+    "after_sha256": "d95214b1569314d1e58d57a4f2b4499b5476028e6a073b2ce51d61b7a55868c9",
+    "before_sha256": "a95a1c9633d0b26ba0450768b0d52b4e5e39b5c30748c8b784958b64d7fca291",
+    "family": "plate_growth",
+    "lineage_id": "plate_growth_0",
+    "pair_id": "plate_growth_0",
+    "split": "test"
+  },
+  {
+    "after_sha256": "801f10c0097fe2137f3b00472a8e38748029a3501fbb6409cfdd54d0fcdd1367",
+    "before_sha256": "82fb6119a1ffedf07ec55f6a71162e4e5016757c711e2d8b8146519c381a54c3",
+    "family": "plate_growth",
+    "lineage_id": "plate_growth_1",
+    "pair_id": "plate_growth_1",
+    "split": "test"
+  },
+  {
+    "after_sha256": "6cf18d9cf53c544ba4e220cc49b0b29f4950acdc36a3efcc3fe23b9a89c71c5a",
+    "before_sha256": "b82222f046c2b2997a0bd729da264e68f652fb4047f5c6402351495085e45e79",
+    "family": "plate_growth",
+    "lineage_id": "plate_growth_2",
+    "pair_id": "plate_growth_2",
+    "split": "test"
+  }
+]

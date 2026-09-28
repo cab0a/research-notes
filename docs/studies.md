@@ -2,9 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理からSTEP・B-repの解析、編集、組立までの65件の研究を索引化しています。v0.61.0〜v0.65.0は参照追跡、寸法式、特徴履歴、再利用部品、組立の再計算と自由度・過剰拘束・干渉を検証します。詳細は英語本文に示します。
-
-研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
+画像処理からSTEP・B-rep解析・編集まで80件の研究を索引化しています。v0.66.0〜v0.80.0はPMI、精密幾何、工学計測、データセット、学習の失敗例、確認付き編集、統合APIとターミナルを扱います。詳細は英語本文に示します。
 
 ---
 
@@ -1592,6 +1590,248 @@ python experiments/run_assembly_constraints.py
 python experiments/run_assembly_recompute.py
 ```
 
+## Precision, Engineering and Integrated Assistance
+
+### v0.66.0 — Semantic PMI, Datums, and Tolerances
+
+**Question:** How can semantic pmi, datums, and tolerances expose both its supported evidence and its boundary?
+
+**Finding:** Seven source controls separate dimensions, flatness, position tolerance, datum establishment and presentation text. The diameter stays 4 mm when the display says 999 mm or 123 mm. An invalid establishing datum relationship also invalidates its dependent position tolerance.
+
+- [Complete note](../notes/semantic-pmi.md)
+- [Observations](../results/semantic_pmi.csv)
+- [Evidence](../results/semantic_pmi_evidence.json)
+- [Contract](../results/semantic_pmi_contract.json)
+- [Figure](../results/semantic_pmi.png)
+
+```bash
+python experiments/run_semantic_pmi.py
+```
+
+### v0.67.0 — B-Spline and NURBS Geometry
+
+**Question:** How can b-spline and nurbs geometry expose both its supported evidence and its boundary?
+
+**Finding:** Polynomial, rational quarter-circle, internal-knot and rational quarter-cylinder controls compare positions, first derivatives and STEP exchange samples. The rational curve stays on a radius-2 circle; the surface agrees with an independent tensor-product extrusion.
+
+- [Complete note](../notes/spline-geometry.md)
+- [Observations](../results/spline_geometry.csv)
+- [Evidence](../results/spline_geometry_evidence.json)
+- [Contract](../results/spline_geometry_contract.json)
+- [Figure](../results/spline_geometry.png)
+
+```bash
+python experiments/run_spline_geometry.py
+```
+
+### v0.68.0 — Differential Geometry and Surface Continuity
+
+**Question:** How can differential geometry and surface continuity expose both its supported evidence and its boundary?
+
+**Finding:** Nine controls include plane, sphere, cylinder and rational cylinder curvature, reversed orientation, a singular sphere pole, coincident/disconnected/tilted planes, and a tangent join with a curvature jump. The quadratic patches retain G1 at three matched samples while failing G2.
+
+- [Complete note](../notes/differential-geometry.md)
+- [Observations](../results/differential_geometry.csv)
+- [Evidence](../results/differential_geometry_evidence.json)
+- [Contract](../results/differential_geometry_contract.json)
+- [Figure](../results/differential_geometry.png)
+
+```bash
+python experiments/run_differential_geometry.py
+```
+
+### v0.69.0 — Intersections and Trimming Validity
+
+**Question:** How can intersections and trimming validity expose both its supported evidence and its boundary?
+
+**Finding:** Ten controls cover curve/curve crossing, skew and coincidence, bounded curve/surface acceptance and exclusion, two crossings, tangency, near-tangent separation, surface/surface curves and planar trimming. P-curve samples are compared to their 3D edge positions.
+
+- [Complete note](../notes/intersection-analysis.md)
+- [Observations](../results/intersection_analysis.csv)
+- [Evidence](../results/intersection_analysis_evidence.json)
+- [Contract](../results/intersection_analysis_contract.json)
+- [Figure](../results/intersection_analysis.png)
+
+```bash
+python experiments/run_intersection_analysis.py
+```
+
+### v0.70.0 — Auditable Shape Repair Policies
+
+**Question:** How can auditable shape repair policies expose both its supported evidence and its boundary?
+
+**Finding:** Eight controls exercise same-domain unification, explicit attribute-loss acceptance/refusal, gap sewing, tolerance rejection, orientation correction, and small-hole removal with restrictive or permissive geometric budgets. Rejection returns the original shape.
+
+- [Complete note](../notes/repair-policies.md)
+- [Observations](../results/repair_policies.csv)
+- [Evidence](../results/repair_policies_evidence.json)
+- [Contract](../results/repair_policies_contract.json)
+- [Figure](../results/repair_policies.png)
+
+```bash
+python experiments/run_repair_policies.py
+```
+
+### v0.71.0 — Mass Properties and Inertia Tensors
+
+**Question:** How can mass properties and inertia tensors expose both its supported evidence and its boundary?
+
+**Finding:** Eleven observations compare a box, sphere, cylinder and rigidly moved box before/after STEP exchange with analytic volume, centroid and inertia. Missing material, unknown units and reversed solid orientation are refused.
+
+- [Complete note](../notes/mass-properties.md)
+- [Observations](../results/mass_properties.csv)
+- [Evidence](../results/mass_properties_evidence.json)
+- [Contract](../results/mass_properties_contract.json)
+- [Figure](../results/mass_properties.png)
+
+```bash
+python experiments/run_mass_properties.py
+```
+
+### v0.72.0 — Distance, Contact, Interference and Clearance
+
+**Question:** How can distance, contact, interference and clearance expose both its supported evidence and its boundary?
+
+**Finding:** Six box-pair controls distinguish a 1 mm separation, touching, 4 mm3 penetration, containment, coincident material and a 5e-8 mm tolerance-sensitive near-contact. Each observation retains witness points and support subshape indices.
+
+- [Complete note](../notes/proximity-analysis.md)
+- [Observations](../results/proximity_analysis.csv)
+- [Evidence](../results/proximity_analysis_evidence.json)
+- [Contract](../results/proximity_analysis_contract.json)
+- [Figure](../results/proximity_analysis.png)
+
+```bash
+python experiments/run_proximity_analysis.py
+```
+
+### v0.73.0 — Staged STEP and Spatial Indexing
+
+**Question:** How can staged step and spatial indexing expose both its supported evidence and its boundary?
+
+**Finding:** Seven controls exercise a 64-solid STEP, a 128-occurrence authored-box BVH, 127 clearance candidates, cache reuse, partial pair enumeration, and byte/entity/memory-estimate refusals. Candidate search builds no native shape until geometry is requested.
+
+- [Complete note](../notes/spatial-workflow.md)
+- [Observations](../results/spatial_workflow.csv)
+- [Evidence](../results/spatial_workflow_evidence.json)
+- [Contract](../results/spatial_workflow_contract.json)
+- [Figure](../results/spatial_workflow.png)
+
+```bash
+python experiments/run_spatial_workflow.py
+```
+
+### v0.74.0 — Independent Geometry Validation
+
+**Question:** How can independent geometry validation expose both its supported evidence and its boundary?
+
+**Finding:** Six observations compare analytic box/sphere volume against native integration and coarse/fine signed-tetrahedron integration, then verify repair topology/area/volume and a curve intersection with independent cuboid and line truth. Coarse mesh disagreement remains visible.
+
+- [Complete note](../notes/independent-validation.md)
+- [Observations](../results/independent_validation.csv)
+- [Evidence](../results/independent_validation_evidence.json)
+- [Contract](../results/independent_validation_contract.json)
+- [Figure](../results/independent_validation.png)
+
+```bash
+python experiments/run_independent_validation.py
+```
+
+### v0.75.0 — Parametric Change-Pair Dataset
+
+**Question:** How can parametric change-pair dataset expose both its supported evidence and its boundary?
+
+**Finding:** Twenty-one edits produce 42 STEP states, 21 before/after previews, model DAGs, topology relations, face/edge descriptors and measurement truth. Six construction families are split into train, validation and test; through-hole/profile-hole equivalent construction routes stay together.
+
+- [Complete note](../notes/change-pair-dataset.md)
+- [Observations](../results/change_pair_dataset.csv)
+- [Evidence](../results/change_pair_dataset_evidence.json)
+- [Contract](../results/change_pair_dataset_contract.json)
+- [Figure](../results/change_pair_dataset.png)
+
+```bash
+python experiments/run_change_pair_dataset.py
+```
+
+### v0.76.0 — 3D Representation Learning Baselines
+
+**Question:** How can 3d representation learning baselines expose both its supported evidence and its boundary?
+
+**Finding:** Four centroid representations predict additive/subtractive edits under the fixed six-family split. On the held-out controls, raw accuracy is 0% for geometry tables, 50% for graph summaries, 0% for tessellation summaries and 50% for privileged histories. The signed-volume rule reaches 100%; training-majority reaches 50%.
+
+- [Complete note](../notes/representation-learning.md)
+- [Observations](../results/representation_learning.csv)
+- [Evidence](../results/representation_learning_evidence.json)
+- [Contract](../results/representation_learning_contract.json)
+- [Figure](../results/representation_learning.png)
+
+```bash
+python experiments/run_representation_learning.py
+```
+
+### v0.77.0 — Learned Feature-Candidate Ranking
+
+**Question:** How can learned feature-candidate ranking expose both its supported evidence and its boundary?
+
+**Finding:** Thirty-two authored designs cover hole, pocket, slot, step, chamfer, fillet, boss and rib, with two additional unknown controls. All eight known held-out designs rank correctly. A plain box is wrongly accepted as chamfer at about 97.1% confidence; an unknown torus abstains despite a large raw score.
+
+- [Complete note](../notes/candidate-ranking.md)
+- [Observations](../results/candidate_ranking.csv)
+- [Evidence](../results/candidate_ranking_evidence.json)
+- [Contract](../results/candidate_ranking_contract.json)
+- [Figure](../results/candidate_ranking.png)
+
+```bash
+python experiments/run_candidate_ranking.py
+```
+
+### v0.78.0 — Assisted Design-Reconstruction Proposals
+
+**Question:** How can assisted design-reconstruction proposals expose both its supported evidence and its boundary?
+
+**Finding:** Five imported shapes produce two equivalent through-hole explanations, two rib/boss explanations, one plain-plate and one pocket proposal, and no proposal for a rotated unsupported plate. Each alternative includes source faces, residuals, DAG complexity and sketch fingerprints.
+
+- [Complete note](../notes/design-proposals.md)
+- [Observations](../results/design_proposals.csv)
+- [Evidence](../results/design_proposals_evidence.json)
+- [Contract](../results/design_proposals_contract.json)
+- [Figure](../results/design_proposals.png)
+
+```bash
+python experiments/run_design_proposals.py
+```
+
+### v0.79.0 — Conversational Analysis and Edit Proposals
+
+**Question:** How can conversational analysis and edit proposals expose both its supported evidence and its boundary?
+
+**Finding:** Eight workflow controls cover Japanese dimension preview, confirmation refusal, unknown language, code-like expressions, invalid geometry, confirmed application, stale replay and a material-aware mass query. Preview leaves the active model fingerprint and shape unchanged.
+
+- [Complete note](../notes/conversational-proposals.md)
+- [Observations](../results/conversational_proposals.csv)
+- [Evidence](../results/conversational_proposals_evidence.json)
+- [Contract](../results/conversational_proposals_contract.json)
+- [Figure](../results/conversational_proposals.png)
+
+```bash
+python experiments/run_conversational_proposals.py
+```
+
+### v0.80.0 — Integrated 3D Analysis and Modeling Foundation
+
+**Question:** How can integrated 3d analysis and modeling foundation expose both its supported evidence and its boundary?
+
+**Finding:** Eight integration checks connect bounded source inspection, schema/application status, reconstruction alternatives, learned ranking, per-face differential/trim analysis, confirmed edits, SI measurements, verified STEP reimport and authored assembly recompute. One terminal exposes the whole sequence.
+
+- [Complete note](../notes/integrated-workflow.md)
+- [Observations](../results/integrated_workflow.csv)
+- [Evidence](../results/integrated_workflow_evidence.json)
+- [Contract](../results/integrated_workflow_contract.json)
+- [Figure](../results/integrated_workflow.png)
+
+```bash
+python experiments/run_integrated_workflow.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1616,7 +1856,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.65.0 subsets;
+  controlled v0.21.0 through v0.80.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

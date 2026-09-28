@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "clamped nonperiodic degree 1..5, at most 64 curve poles; positive weights and bounded coordinates",
+    "periodicity is recorded on exchange; periodic evaluation is explicitly unsupported",
+    "independent curve basis and quarter-cylinder truth; same-parameter exchange observations do not imply universal parameter preservation"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 4,
+  "study_version": "v0.67.0"
+}

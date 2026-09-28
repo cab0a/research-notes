@@ -1,0 +1,6602 @@
+[
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 20,
+      "face_count": 10,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          10
+        ]
+      ],
+      "vertex_count": 12
+    },
+    "candidate": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "unify",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": 0.0,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "unify",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [],
+    "status": "accepted",
+    "subshape_changes": [
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 11,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 12,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 13,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 14,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 15,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 16,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 17,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 18,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 19,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 20,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 20,
+      "face_count": 10,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          10
+        ]
+      ],
+      "vertex_count": 12
+    },
+    "candidate": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "attribute_gate",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [
+      "face_color"
+    ],
+    "material_difference_volume": 0.0,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "unify",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [
+      "attribute_loss"
+    ],
+    "status": "rejected_rolled_back",
+    "subshape_changes": [
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 11,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 12,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 13,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 14,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 15,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 16,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 17,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 18,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 19,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 20,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 20,
+      "face_count": 10,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          10
+        ]
+      ],
+      "vertex_count": 12
+    },
+    "candidate": {
+      "absolute_volume": 16.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        2.0000001,
+        2.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 40.0,
+      "surface_centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "attribute_opt_in",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [
+      "face_color"
+    ],
+    "material_difference_volume": 0.0,
+    "policy": {
+      "allow_attribute_loss": true,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "unify",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [],
+    "status": "accepted",
+    "subshape_changes": [
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 5,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 6,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 7,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 8,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 9,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 10,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 11,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 12,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 13,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 14,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 15,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 16,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 17,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "merge",
+        "source_index": 18,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 19,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 20,
+        "source_stage": "before:ecb5606d64134f54",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:ed4a6b761185dc1c"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        5.0000001,
+        6.0000006
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 24,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 0,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.000000068
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 24
+    },
+    "candidate": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.000000525,
+        5.000000525,
+        6.000000525
+      ],
+      "bounds_min": [
+        -5.25e-07,
+        -5.25e-07,
+        -5.25e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 5.25e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 5.25e-07,
+      "shell_count": 1,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.000000068
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "sew_gap",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": null,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 0.0001,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "sew",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [],
+    "status": "accepted",
+    "subshape_changes": [
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 2,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 3,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 4,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 5,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 6,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 1,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 2,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 3,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 4,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 5,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 6,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 7,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 8,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 9,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 10,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 11,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 12,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 13,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 14,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 15,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 16,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 17,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 18,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 19,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 20,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 21,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 22,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 23,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 24,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 21,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 22,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 23,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 24,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 21,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 22,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 23,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 24,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        5.0000001,
+        6.0000006
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 24,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 0,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.000000068
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 24
+    },
+    "candidate": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.000000525,
+        5.000000525,
+        6.000000525
+      ],
+      "bounds_min": [
+        -5.25e-07,
+        -5.25e-07,
+        -5.25e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 5.25e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 5.25e-07,
+      "shell_count": 1,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.000000068
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "tolerance_gate",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": null,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-08,
+      "maximum_volume_change": 1e-06,
+      "operation": "sew",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [
+      "tolerance_budget"
+    ],
+    "status": "rejected_rolled_back",
+    "subshape_changes": [
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 2,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 3,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 4,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 5,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 6,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 1,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 2,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 3,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 4,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 5,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 6,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 7,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 8,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 9,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 10,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 11,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 12,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 13,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 14,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 15,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 16,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "ambiguous",
+        "source_index": 17,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 18,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 19,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 20,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 21,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 22,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 23,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "unresolved",
+        "source_index": 24,
+        "source_stage": "before:60ae67221489b1b8",
+        "target_indices": [],
+        "target_stage": "candidate:43271136ea3292fa"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 21,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 22,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 23,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 24,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 16,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 17,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 18,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 19,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 20,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 21,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 22,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 23,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 24,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 5.25e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": 0.0,
+    "before": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        5.0000001,
+        6.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "candidate": {
+      "absolute_volume": 0.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        4.0000001,
+        5.0000001,
+        6.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 0,
+      "surface_area": 148.0,
+      "surface_centroid": [
+        2.0,
+        2.5,
+        3.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "orientation",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": null,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "orient",
+      "selected_faces": [],
+      "tolerance": 1e-06
+    },
+    "reasons": [],
+    "status": "accepted",
+    "subshape_changes": [
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 7,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 8,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 9,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 11,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      },
+      {
+        "evidence": "geometry",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 12,
+        "source_stage": "before:1bd16957a037fb56",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:50cf3e8716971db5"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.0
+  },
+  {
+    "area_change": -4.775220833,
+    "before": {
+      "absolute_volume": 479.497345175,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 420.775220833,
+      "surface_centroid": [
+        5.977302747,
+        4.988651373,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "candidate": {
+      "absolute_volume": 480.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 416.0,
+      "surface_centroid": [
+        6.0,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "small_hole_rejected",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": 0.502654825,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 1e-05,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1e-06,
+      "operation": "remove_faces",
+      "selected_faces": [
+        7
+      ],
+      "tolerance": 1e-06
+    },
+    "reasons": [
+      "volume_change_budget",
+      "material_difference_budget",
+      "area_change_budget"
+    ],
+    "status": "rejected_rolled_back",
+    "subshape_changes": [
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 7,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 7,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 8,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 9,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 11,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 12,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 13,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 14,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 15,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.502654825
+  },
+  {
+    "area_change": -4.775220833,
+    "before": {
+      "absolute_volume": 479.497345175,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 420.775220833,
+      "surface_centroid": [
+        5.977302747,
+        4.988651373,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "candidate": {
+      "absolute_volume": 480.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 416.0,
+      "surface_centroid": [
+        6.0,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "control_id": "small_hole_explicit",
+    "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+    "input_mutated": false,
+    "lost_or_unresolved_attributes": [],
+    "material_difference_volume": 0.502654825,
+    "policy": {
+      "allow_attribute_loss": false,
+      "maximum_area_change": 10.0,
+      "maximum_tolerance": 1e-05,
+      "maximum_volume_change": 1.0,
+      "operation": "remove_faces",
+      "selected_faces": [
+        7
+      ],
+      "tolerance": 1e-06
+    },
+    "reasons": [],
+    "status": "accepted",
+    "subshape_changes": [
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "face",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 7,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 1,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          1
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 2,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          2
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 3,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          3
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 4,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          4
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 5,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          5
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 6,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          6
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 7,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          7
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 8,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          8
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 9,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          9
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 10,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          10
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 11,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          11
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 12,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "one_to_one",
+        "source_index": 13,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [
+          12
+        ],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 14,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      },
+      {
+        "evidence": "operation_history",
+        "kind": "edge",
+        "owner": "repair",
+        "permanent_kernel_identity": false,
+        "relation": "deleted",
+        "source_index": 15,
+        "source_stage": "before:a7cf6ca4d6f0e45a",
+        "target_indices": [],
+        "target_stage": "candidate:6ab16e9c6a938b8f"
+      }
+    ],
+    "subshape_tolerances_and_orientations_before": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 13,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 14,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 15,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "subshape_tolerances_and_orientations_candidate": [
+      {
+        "index": 1,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "vertex",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 7,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 8,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 9,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 10,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 11,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 12,
+        "kind": "edge",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 1,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 2,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 3,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 4,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 5,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+        "tolerance": 1e-07
+      },
+      {
+        "index": 6,
+        "kind": "face",
+        "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+        "tolerance": 1e-07
+      }
+    ],
+    "volume_change": 0.502654825
+  }
+]

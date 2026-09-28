@@ -1,0 +1,7 @@
+control_id,observed,expected,distance,overlap_volume,checks_pass
+separation,separated,separated,1.000000000,0.000000000,1
+contact,touching,touching,0.000000000,0.000000000,1
+overlap,penetrating,penetrating,0.000000000,4.000000000,1
+containment,a_contains_b,a_contains_b,0.000000000,1.000000000,1
+coincident,coincident,coincident,0.000000000,8.000000000,1
+tolerance_contact,touching,touching,0.000000000,0.000000000,1

@@ -1,0 +1,22 @@
+# Run from repository root. A proposal is previewed before each explicit confirmation.
+scan fixtures/semantic-pmi/semantic.step
+open fixtures/step-reconstruction/through_hole.step
+review
+rank
+analyze
+select 2 --confirm
+material 7800 kg/m3
+ask 穴の半径を1.3 mmに
+apply latest --confirm
+recompute
+mass
+compare
+export output/integrated-demo/edited.step --overwrite
+report
+assembly open fixtures/assembly-constraints/fully_fixed.json
+assembly recompute
+assembly set clearance 0 * mm
+assembly recompute
+assembly status
+assembly report
+quit

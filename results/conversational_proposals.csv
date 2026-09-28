@@ -1,0 +1,9 @@
+control_id,decision,checks_pass
+japanese_preview,preview_only,1
+confirmation_gate,rejected,1
+unbounded_language,rejected,1
+code_injection,rejected,1
+invalid_dimension,rejected,1
+confirmed_apply,applied,1
+stale_replay,rejected,1
+mass_query,read_only,1

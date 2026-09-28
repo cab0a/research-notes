@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "deterministic bounded English/Japanese intent grammar; no LLM service or arbitrary language execution",
+    "preview evaluates proposed geometry without mutating the active model; confirmation is bound to source, selection and model fingerprint",
+    "unknown requests, unsafe expressions, invalid dimensions and stale/replayed proposals fail closed"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 8,
+  "study_version": "v0.79.0"
+}

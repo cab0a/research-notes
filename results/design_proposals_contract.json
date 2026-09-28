@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "multiple fitting sketch/feature DAG explanations remain separate with source binding",
+    "complexity and +/-5% local dimension stability supplement geometric residuals; no recovered authoring intent",
+    "selection is always explicit; rotated and unsupported feature grammars can return no proposal"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 5,
+  "study_version": "v0.78.0"
+}

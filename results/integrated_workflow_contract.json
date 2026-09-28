@@ -1,0 +1,14 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "unified API/terminal joins source stages, geometry, reconstruction, learned ranking, preview/confirmation, engineering measures, diagnostics and verified STEP export",
+    "schema/application/PMI gaps remain explicit; geometry-only STEP export does not preserve source PMI or authored constraints",
+    "authored assembly commands share the terminal; imported arbitrary assembly reconstruction remains outside scope",
+    "integration milestone with bounded synthetic evidence, not the stable v1 contract"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 8,
+  "study_version": "v0.80.0"
+}

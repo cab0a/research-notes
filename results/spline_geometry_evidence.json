@@ -1,0 +1,841 @@
+[
+  {
+    "constructed": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "control_id": "polynomial",
+    "imported": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "input": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "samples": [
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.1875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.25,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.3125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.4375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.6875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.75,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.8125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.9375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 1.0,
+        "point_error": 0.0
+      }
+    ]
+  },
+  {
+    "constructed": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        0.707106781,
+        1.0
+      ]
+    },
+    "control_id": "rational_circle",
+    "imported": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        0.707106781,
+        1.0
+      ]
+    },
+    "input": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          0.0
+        ],
+        [
+          0.0,
+          2.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        0.707106781,
+        1.0
+      ]
+    },
+    "samples": [
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.1875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.25,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.3125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.4375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.6875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.75,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.8125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.9375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 1.0,
+        "point_error": 0.0
+      }
+    ]
+  },
+  {
+    "constructed": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        1,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "control_id": "internal_knot",
+    "imported": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        1,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "input": {
+      "degree": 2,
+      "knots": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "multiplicities": [
+        3,
+        1,
+        3
+      ],
+      "periodic": false,
+      "poles": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          2.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "samples": [
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.0625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.1875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.25,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.3125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.4375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.5625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.625,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.6875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.75,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.8125,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.875,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 0.9375,
+        "point_error": 0.0
+      },
+      {
+        "derivative_error": 0.0,
+        "exchange_error": 0.0,
+        "parameter": 1.0,
+        "point_error": 0.0
+      }
+    ]
+  },
+  {
+    "constructed": {
+      "poles": [
+        [
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            3.0
+          ]
+        ]
+      ],
+      "u_degree": 2,
+      "u_knots": [
+        0.0,
+        1.0
+      ],
+      "u_multiplicities": [
+        3,
+        3
+      ],
+      "u_periodic": false,
+      "v_degree": 1,
+      "v_knots": [
+        0.0,
+        1.0
+      ],
+      "v_multiplicities": [
+        2,
+        2
+      ],
+      "v_periodic": false,
+      "weights": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.707106781,
+          0.707106781
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    "control_id": "rational_surface",
+    "errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "imported": {
+      "poles": [
+        [
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            3.0
+          ]
+        ]
+      ],
+      "u_degree": 2,
+      "u_knots": [
+        0.0,
+        1.0
+      ],
+      "u_multiplicities": [
+        3,
+        3
+      ],
+      "u_periodic": false,
+      "v_degree": 1,
+      "v_knots": [
+        0.0,
+        1.0
+      ],
+      "v_multiplicities": [
+        2,
+        2
+      ],
+      "v_periodic": false,
+      "weights": [
+        [
+          1.0,
+          1.0
+        ],
+        [
+          0.707106781,
+          0.707106781
+        ],
+        [
+          1.0,
+          1.0
+        ]
+      ]
+    }
+  }
+]

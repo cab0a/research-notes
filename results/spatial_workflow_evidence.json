@@ -1,0 +1,651 @@
+[
+  {
+    "control_id": "bvh_clearance",
+    "geometry_evaluations": 0,
+    "node_visits": 1196,
+    "pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        11,
+        12
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ],
+      [
+        15,
+        16
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        17,
+        18
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        19,
+        20
+      ],
+      [
+        20,
+        21
+      ],
+      [
+        21,
+        22
+      ],
+      [
+        22,
+        23
+      ],
+      [
+        23,
+        24
+      ],
+      [
+        24,
+        25
+      ],
+      [
+        25,
+        26
+      ],
+      [
+        26,
+        27
+      ],
+      [
+        27,
+        28
+      ],
+      [
+        28,
+        29
+      ],
+      [
+        29,
+        30
+      ],
+      [
+        30,
+        31
+      ],
+      [
+        31,
+        32
+      ],
+      [
+        32,
+        33
+      ],
+      [
+        33,
+        34
+      ],
+      [
+        34,
+        35
+      ],
+      [
+        35,
+        36
+      ],
+      [
+        36,
+        37
+      ],
+      [
+        37,
+        38
+      ],
+      [
+        38,
+        39
+      ],
+      [
+        39,
+        40
+      ],
+      [
+        40,
+        41
+      ],
+      [
+        41,
+        42
+      ],
+      [
+        42,
+        43
+      ],
+      [
+        43,
+        44
+      ],
+      [
+        44,
+        45
+      ],
+      [
+        45,
+        46
+      ],
+      [
+        46,
+        47
+      ],
+      [
+        47,
+        48
+      ],
+      [
+        48,
+        49
+      ],
+      [
+        49,
+        50
+      ],
+      [
+        50,
+        51
+      ],
+      [
+        51,
+        52
+      ],
+      [
+        52,
+        53
+      ],
+      [
+        53,
+        54
+      ],
+      [
+        54,
+        55
+      ],
+      [
+        55,
+        56
+      ],
+      [
+        56,
+        57
+      ],
+      [
+        57,
+        58
+      ],
+      [
+        58,
+        59
+      ],
+      [
+        59,
+        60
+      ],
+      [
+        60,
+        61
+      ],
+      [
+        61,
+        62
+      ],
+      [
+        62,
+        63
+      ],
+      [
+        63,
+        64
+      ],
+      [
+        64,
+        65
+      ],
+      [
+        65,
+        66
+      ],
+      [
+        66,
+        67
+      ],
+      [
+        67,
+        68
+      ],
+      [
+        68,
+        69
+      ],
+      [
+        69,
+        70
+      ],
+      [
+        70,
+        71
+      ],
+      [
+        71,
+        72
+      ],
+      [
+        72,
+        73
+      ],
+      [
+        73,
+        74
+      ],
+      [
+        74,
+        75
+      ],
+      [
+        75,
+        76
+      ],
+      [
+        76,
+        77
+      ],
+      [
+        77,
+        78
+      ],
+      [
+        78,
+        79
+      ],
+      [
+        79,
+        80
+      ],
+      [
+        80,
+        81
+      ],
+      [
+        81,
+        82
+      ],
+      [
+        82,
+        83
+      ],
+      [
+        83,
+        84
+      ],
+      [
+        84,
+        85
+      ],
+      [
+        85,
+        86
+      ],
+      [
+        86,
+        87
+      ],
+      [
+        87,
+        88
+      ],
+      [
+        88,
+        89
+      ],
+      [
+        89,
+        90
+      ],
+      [
+        90,
+        91
+      ],
+      [
+        91,
+        92
+      ],
+      [
+        92,
+        93
+      ],
+      [
+        93,
+        94
+      ],
+      [
+        94,
+        95
+      ],
+      [
+        95,
+        96
+      ],
+      [
+        96,
+        97
+      ],
+      [
+        97,
+        98
+      ],
+      [
+        98,
+        99
+      ],
+      [
+        99,
+        100
+      ],
+      [
+        100,
+        101
+      ],
+      [
+        101,
+        102
+      ],
+      [
+        102,
+        103
+      ],
+      [
+        103,
+        104
+      ],
+      [
+        104,
+        105
+      ],
+      [
+        105,
+        106
+      ],
+      [
+        106,
+        107
+      ],
+      [
+        107,
+        108
+      ],
+      [
+        108,
+        109
+      ],
+      [
+        109,
+        110
+      ],
+      [
+        110,
+        111
+      ],
+      [
+        111,
+        112
+      ],
+      [
+        112,
+        113
+      ],
+      [
+        113,
+        114
+      ],
+      [
+        114,
+        115
+      ],
+      [
+        115,
+        116
+      ],
+      [
+        116,
+        117
+      ],
+      [
+        117,
+        118
+      ],
+      [
+        118,
+        119
+      ],
+      [
+        119,
+        120
+      ],
+      [
+        120,
+        121
+      ],
+      [
+        121,
+        122
+      ],
+      [
+        122,
+        123
+      ],
+      [
+        123,
+        124
+      ],
+      [
+        124,
+        125
+      ],
+      [
+        125,
+        126
+      ],
+      [
+        126,
+        127
+      ]
+    ],
+    "reason": null,
+    "status": "complete"
+  },
+  {
+    "node_visits": 98,
+    "pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "reason": "pair_budget",
+    "status": "partial"
+  },
+  {
+    "budgets": {
+      "max_bytes": 8000000,
+      "max_entities": 100000,
+      "max_estimated_memory_bytes": 256000000,
+      "max_geometry": 128,
+      "max_pairs": 4096,
+      "max_seconds": 30.0,
+      "max_tokens": 2000000,
+      "max_topology": 100000
+    },
+    "byte_count": 1068233,
+    "control_id": "staged_syntax",
+    "entity_count": 22612,
+    "estimated_parser_memory_bytes": 34183456,
+    "geometry_evaluated": false,
+    "native_security_boundary": false,
+    "reason": "syntax_only_geometry_deferred",
+    "schema_identifiers": [
+      "AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }"
+    ],
+    "source_sha256": "c4c653fd27eb819dcf7c672ecb7c2707c1512b328b699af96d0cf5c876fabd86",
+    "stage": "syntax",
+    "status": "accepted"
+  },
+  {
+    "budgets": {
+      "max_bytes": 1000,
+      "max_entities": 100000,
+      "max_estimated_memory_bytes": 256000000,
+      "max_geometry": 128,
+      "max_pairs": 4096,
+      "max_seconds": 30.0,
+      "max_tokens": 2000000,
+      "max_topology": 100000
+    },
+    "byte_count": 1001,
+    "control_id": "byte_gate",
+    "native_security_boundary": false,
+    "read_prefix_sha256": "d0080f9e73e7e5ec9df044e50bbf67d01ac7bad86424db062cdc839cfa031a49",
+    "reason": "byte_budget",
+    "source_sha256": null,
+    "stage": "bytes",
+    "status": "quarantined"
+  },
+  {
+    "budgets": {
+      "max_bytes": 8000000,
+      "max_entities": 100,
+      "max_estimated_memory_bytes": 256000000,
+      "max_geometry": 128,
+      "max_pairs": 4096,
+      "max_seconds": 30.0,
+      "max_tokens": 2000000,
+      "max_topology": 100000
+    },
+    "byte_count": 1068233,
+    "control_id": "entity_gate",
+    "estimated_parser_memory_bytes": 34183456,
+    "native_security_boundary": false,
+    "reason": "entity_count_limit",
+    "source_sha256": "c4c653fd27eb819dcf7c672ecb7c2707c1512b328b699af96d0cf5c876fabd86",
+    "stage": "syntax",
+    "status": "quarantined"
+  },
+  {
+    "budgets": {
+      "max_bytes": 8000000,
+      "max_entities": 100000,
+      "max_estimated_memory_bytes": 1000,
+      "max_geometry": 128,
+      "max_pairs": 4096,
+      "max_seconds": 30.0,
+      "max_tokens": 2000000,
+      "max_topology": 100000
+    },
+    "byte_count": 1068233,
+    "control_id": "memory_estimate_gate",
+    "estimated_parser_memory_bytes": 34183456,
+    "native_security_boundary": false,
+    "reason": "estimated_memory_budget",
+    "source_sha256": "c4c653fd27eb819dcf7c672ecb7c2707c1512b328b699af96d0cf5c876fabd86",
+    "stage": "bytes",
+    "status": "quarantined"
+  }
+]

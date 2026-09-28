@@ -1,0 +1,910 @@
+[
+  {
+    "clearance_satisfied": true,
+    "control_id": "separation",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 1.0,
+    "overlap_volume": 0.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "separated",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        3.0,
+        0.0,
+        0.0
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 4,
+    "witnesses": [
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          3.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          3.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          3.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          3.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  },
+  {
+    "clearance_satisfied": false,
+    "control_id": "contact",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 0.0,
+    "overlap_volume": 0.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "touching",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        2.0,
+        0.0,
+        0.0
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 4,
+    "witnesses": [
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  },
+  {
+    "clearance_satisfied": false,
+    "control_id": "overlap",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 0.0,
+    "overlap_volume": 4.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "penetrating",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 8,
+    "witnesses": [
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        },
+        "b_point": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          1.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        },
+        "b_point": [
+          1.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
+        },
+        "b_point": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          1.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        },
+        "b_point": [
+          1.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  },
+  {
+    "clearance_satisfied": false,
+    "control_id": "containment",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 0.0,
+    "overlap_volume": 1.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "a_contains_b",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 1,
+    "witnesses": [
+      {
+        "a_point": [
+          0.5,
+          0.5,
+          1.5
+        ],
+        "a_support": {
+          "analysis_local_index": null,
+          "kind": "unknown"
+        },
+        "b_point": [
+          0.5,
+          0.5,
+          1.5
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  },
+  {
+    "clearance_satisfied": false,
+    "control_id": "coincident",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 0.0,
+    "overlap_volume": 8.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "coincident",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 8,
+    "witnesses": [
+      {
+        "a_point": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        },
+        "b_point": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        },
+        "b_point": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          0.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        },
+        "b_point": [
+          0.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        },
+        "b_point": [
+          0.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  },
+  {
+    "clearance_satisfied": false,
+    "control_id": "tolerance_contact",
+    "distance_tolerance": 1e-07,
+    "minimum_distance": 0.0,
+    "overlap_volume": 0.0,
+    "penetration_depth": null,
+    "required_clearance": 0.5,
+    "status": "touching",
+    "transform_provenance": {
+      "a_origin": [
+        0,
+        0,
+        0
+      ],
+      "b_origin": [
+        2.00000005,
+        0.0,
+        0.0
+      ]
+    },
+    "units": "caller-declared common model units; mm in reference controls",
+    "volume_tolerance": 1e-07,
+    "witness_count": 12,
+    "witnesses": [
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.00000005,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.00000005,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.00000005,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.00000005,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      }
+    ],
+    "witnesses_truncated": false
+  }
+]

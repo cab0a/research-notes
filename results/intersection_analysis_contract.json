@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "bounded curve extrema classify near-intersections; parallel/coincident cases abstain",
+    "surface intersections use natural domains and sampled residuals; tangent multiplicity is not certified",
+    "wire closure/orientation and p-curves are checked separately; periodic UV unwrapping is deferred"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 10,
+  "study_version": "v0.69.0"
+}

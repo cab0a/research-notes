@@ -1,0 +1,1290 @@
+[
+  {
+    "analytic_volume": 24.0,
+    "control_id": "box_coarse",
+    "mesh": {
+      "area": 52.0,
+      "centroid": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+      "triangles": 12,
+      "unit_density_inertia": [
+        [
+          50.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          40.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          26.0
+        ]
+      ],
+      "volume": 24.0
+    },
+    "native": {
+      "centroid_m": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "density_kg_m3": 1.0,
+      "inertia_about_centroid_kg_m2": [
+        [
+          50.0,
+          -7.10542736e-15,
+          0.0
+        ],
+        [
+          -7.10542736e-15,
+          40.0,
+          -1.42108547e-14
+        ],
+        [
+          0.0,
+          -1.42108547e-14,
+          26.0
+        ]
+      ],
+      "length_unit": "m",
+      "mass_kg": 24.0,
+      "principal_axes": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "principal_axes_unique": true,
+      "principal_moments_kg_m2": [
+        26.0,
+        40.0,
+        50.0
+      ],
+      "source": "OCCT analytic-surface integration after closure/orientation gates",
+      "surface_area_m2": 52.0,
+      "volume_m3": 24.0
+    }
+  },
+  {
+    "analytic_volume": 24.0,
+    "control_id": "box_fine",
+    "mesh": {
+      "area": 52.0,
+      "centroid": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+      "triangles": 12,
+      "unit_density_inertia": [
+        [
+          50.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          40.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          26.0
+        ]
+      ],
+      "volume": 24.0
+    },
+    "native": {
+      "centroid_m": [
+        1.0,
+        1.5,
+        2.0
+      ],
+      "density_kg_m3": 1.0,
+      "inertia_about_centroid_kg_m2": [
+        [
+          50.0,
+          -7.10542736e-15,
+          0.0
+        ],
+        [
+          -7.10542736e-15,
+          40.0,
+          -1.42108547e-14
+        ],
+        [
+          0.0,
+          -1.42108547e-14,
+          26.0
+        ]
+      ],
+      "length_unit": "m",
+      "mass_kg": 24.0,
+      "principal_axes": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "principal_axes_unique": true,
+      "principal_moments_kg_m2": [
+        26.0,
+        40.0,
+        50.0
+      ],
+      "source": "OCCT analytic-surface integration after closure/orientation gates",
+      "surface_area_m2": 52.0,
+      "volume_m3": 24.0
+    }
+  },
+  {
+    "analytic_volume": 33.510321638,
+    "control_id": "sphere_coarse",
+    "mesh": {
+      "area": 48.691589437,
+      "centroid": [
+        -0.001746028,
+        0.0,
+        0.0
+      ],
+      "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+      "triangles": 226,
+      "unit_density_inertia": [
+        [
+          48.61559009,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          48.544160021,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          47.977086248
+        ]
+      ],
+      "volume": 31.499895764
+    },
+    "native": {
+      "centroid_m": [
+        -1.19768192e-16,
+        2.97716834e-17,
+        1.56125113e-17
+      ],
+      "density_kg_m3": 1.0,
+      "inertia_about_centroid_kg_m2": [
+        [
+          53.616514621,
+          3.39846718e-15,
+          -2.81623937e-31
+        ],
+        [
+          3.39846718e-15,
+          53.616514621,
+          3.49375171e-32
+        ],
+        [
+          -2.81623937e-31,
+          3.49375171e-32,
+          53.616514621
+        ]
+      ],
+      "length_unit": "m",
+      "mass_kg": 33.510321638,
+      "principal_axes": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "principal_axes_unique": false,
+      "principal_moments_kg_m2": [
+        53.616514621,
+        53.616514621,
+        53.616514621
+      ],
+      "source": "OCCT analytic-surface integration after closure/orientation gates",
+      "surface_area_m2": 50.265482457,
+      "volume_m3": 33.510321638
+    }
+  },
+  {
+    "analytic_volume": 33.510321638,
+    "control_id": "sphere_fine",
+    "mesh": {
+      "area": 50.216331373,
+      "centroid": [
+        -3.0115e-05,
+        0.0,
+        -5e-09
+      ],
+      "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+      "triangles": 8002,
+      "unit_density_inertia": [
+        [
+          53.458691144,
+          0.0,
+          -8.3e-08
+        ],
+        [
+          0.0,
+          53.456795139,
+          0.0
+        ],
+        [
+          -8.3e-08,
+          0.0,
+          53.440638165
+        ]
+      ],
+      "volume": 33.448601558
+    },
+    "native": {
+      "centroid_m": [
+        -1.19768192e-16,
+        2.97716834e-17,
+        1.56125113e-17
+      ],
+      "density_kg_m3": 1.0,
+      "inertia_about_centroid_kg_m2": [
+        [
+          53.616514621,
+          3.39846718e-15,
+          -2.81623937e-31
+        ],
+        [
+          3.39846718e-15,
+          53.616514621,
+          3.49375171e-32
+        ],
+        [
+          -2.81623937e-31,
+          3.49375171e-32,
+          53.616514621
+        ]
+      ],
+      "length_unit": "m",
+      "mass_kg": 33.510321638,
+      "principal_axes": [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "principal_axes_unique": false,
+      "principal_moments_kg_m2": [
+        53.616514621,
+        53.616514621,
+        53.616514621
+      ],
+      "source": "OCCT analytic-surface integration after closure/orientation gates",
+      "surface_area_m2": 50.265482457,
+      "volume_m3": 33.510321638
+    }
+  },
+  {
+    "analytic_dimensions": [
+      4,
+      2,
+      2
+    ],
+    "control_id": "repair_box_analytic",
+    "expected_topology": [
+      8,
+      12,
+      6
+    ],
+    "mesh": {
+      "area": 40.0,
+      "centroid": [
+        2.0,
+        1.0,
+        1.0
+      ],
+      "independence": "tetrahedron arithmetic independent of GProp; tessellation still uses OCCT",
+      "triangles": 12,
+      "unit_density_inertia": [
+        [
+          10.666666667,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          26.666666667,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          26.666666667
+        ]
+      ],
+      "volume": 16.0
+    },
+    "repair": {
+      "area_change": 0.0,
+      "before": {
+        "absolute_volume": 16.0,
+        "analyzer_valid": true,
+        "bounds_max": [
+          4.0000001,
+          2.0000001,
+          2.0000001
+        ],
+        "bounds_min": [
+          -1e-07,
+          -1e-07,
+          -1e-07
+        ],
+        "edge_count": 20,
+        "face_count": 10,
+        "maximum_edge_tolerance": 1e-07,
+        "maximum_face_tolerance": 1e-07,
+        "maximum_vertex_tolerance": 1e-07,
+        "shell_count": 1,
+        "solid_count": 1,
+        "surface_area": 40.0,
+        "surface_centroid": [
+          2.0,
+          1.0,
+          1.0
+        ],
+        "surface_counts": [
+          [
+            "plane",
+            10
+          ]
+        ],
+        "vertex_count": 12
+      },
+      "candidate": {
+        "absolute_volume": 16.0,
+        "analyzer_valid": true,
+        "bounds_max": [
+          4.0000001,
+          2.0000001,
+          2.0000001
+        ],
+        "bounds_min": [
+          -1e-07,
+          -1e-07,
+          -1e-07
+        ],
+        "edge_count": 12,
+        "face_count": 6,
+        "maximum_edge_tolerance": 1e-07,
+        "maximum_face_tolerance": 1e-07,
+        "maximum_vertex_tolerance": 1e-07,
+        "shell_count": 1,
+        "solid_count": 1,
+        "surface_area": 40.0,
+        "surface_centroid": [
+          2.0,
+          1.0,
+          1.0
+        ],
+        "surface_counts": [
+          [
+            "plane",
+            6
+          ]
+        ],
+        "vertex_count": 8
+      },
+      "deviation_scope": "volume and area budgets; no Hausdorff guarantee",
+      "input_mutated": false,
+      "lost_or_unresolved_attributes": [],
+      "material_difference_volume": 0.0,
+      "policy": {
+        "allow_attribute_loss": false,
+        "maximum_area_change": 1e-05,
+        "maximum_tolerance": 1e-05,
+        "maximum_volume_change": 1e-06,
+        "operation": "unify",
+        "selected_faces": [],
+        "tolerance": 1e-06
+      },
+      "reasons": [],
+      "status": "accepted",
+      "subshape_changes": [
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 1,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            1
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 2,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            6
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 3,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            5
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 4,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            4
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 5,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            2
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 6,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            6
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 7,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            5
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 8,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            4
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 9,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            2
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "face",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 10,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            3
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 1,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            1
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 2,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            2
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 3,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            3
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 4,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            4
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 5,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            5
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "deleted",
+          "source_index": 6,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 7,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            12
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 8,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            11
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "deleted",
+          "source_index": 9,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 10,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            7
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "deleted",
+          "source_index": 11,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "deleted",
+          "source_index": 12,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 13,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            5
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 14,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            8
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 15,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            12
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 16,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            11
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 17,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            9
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "merge",
+          "source_index": 18,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            7
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 19,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            10
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        },
+        {
+          "evidence": "operation_history",
+          "kind": "edge",
+          "owner": "repair",
+          "permanent_kernel_identity": false,
+          "relation": "one_to_one",
+          "source_index": 20,
+          "source_stage": "before:ecb5606d64134f54",
+          "target_indices": [
+            6
+          ],
+          "target_stage": "candidate:ed4a6b761185dc1c"
+        }
+      ],
+      "subshape_tolerances_and_orientations_before": [
+        {
+          "index": 1,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 7,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 8,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 9,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 10,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 11,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 12,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 1,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 7,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 8,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 9,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 10,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 11,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 12,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 13,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 14,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 15,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 16,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 17,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 18,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 19,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 20,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 1,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 7,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 8,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 9,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 10,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        }
+      ],
+      "subshape_tolerances_and_orientations_candidate": [
+        {
+          "index": 1,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 7,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 8,
+          "kind": "vertex",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 1,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 7,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 8,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 9,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 10,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 11,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 12,
+          "kind": "edge",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 1,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 2,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 3,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 4,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 5,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_FORWARD",
+          "tolerance": 1e-07
+        },
+        {
+          "index": 6,
+          "kind": "face",
+          "orientation": "TopAbs_Orientation.TopAbs_REVERSED",
+          "tolerance": 1e-07
+        }
+      ],
+      "volume_change": 0.0
+    }
+  },
+  {
+    "control_id": "intersection_analytic",
+    "expected_point": [
+      0,
+      0,
+      0
+    ],
+    "observation": {
+      "multiplicity": 1,
+      "points": [
+        {
+          "first_parameter": 2.0,
+          "point": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "residual": 0.0,
+          "second_parameter": 3.0
+        }
+      ],
+      "status": "points"
+    }
+  }
+]

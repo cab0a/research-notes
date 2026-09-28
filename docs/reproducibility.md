@@ -2,11 +2,7 @@
 
 ## 日本語概要
 
-本書は65件の研究ノートの合成入力、固定条件、観測値、図、実行環境を再現する手順です。v0.61.0〜v0.65.0は参照追跡から組立再計算までを固定したgeometry依存環境で検証します。詳細は英語本文に示します。
-
-現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
-
-環境構築と検証コマンドは以下の英語本文を参照してください。
+80件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.66.0〜v0.80.0は15段階・154条件の期待結果を検証し、統合デモも実行します。詳細は英語本文に示します。
 
 ---
 
@@ -141,6 +137,21 @@ python experiments/run_parameter_expressions.py
 python experiments/run_feature_history_editing.py
 python experiments/run_assembly_constraints.py
 python experiments/run_assembly_recompute.py
+python experiments/run_semantic_pmi.py
+python experiments/run_spline_geometry.py
+python experiments/run_differential_geometry.py
+python experiments/run_intersection_analysis.py
+python experiments/run_repair_policies.py
+python experiments/run_mass_properties.py
+python experiments/run_proximity_analysis.py
+python experiments/run_spatial_workflow.py
+python experiments/run_independent_validation.py
+python experiments/run_change_pair_dataset.py
+python experiments/run_representation_learning.py
+python experiments/run_candidate_ranking.py
+python experiments/run_design_proposals.py
+python experiments/run_conversational_proposals.py
+python experiments/run_integrated_workflow.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -780,3 +791,23 @@ constraint system, recovered profile history, arbitrary guide-curve or loft
 behavior, certified surface fitting, general Boolean robustness, a universal
 fuzzy tolerance, persistent topology naming, cross-STEP operation history, or
 general-purpose visualization correctness.
+
+## Integrated Foundation Through v0.80.0
+
+```bash
+python -m research_notes.foundation_studies --output-dir output/foundation-results --fixture-dir output/foundation-fixtures --refresh-fixtures
+python -m pytest tests/test_foundation_study_artifacts.py tests/test_integrated_workflow.py
+python -m research_notes.integrated_tool --script fixtures/integrated-workflow/demo_commands.txt --output-dir output/integrated-demo
+```
+
+The 15 added studies contain 154 declared observations. Regeneration checks every
+fixture, CSV and JSON against the reference bytes; PNG files are visually
+reviewed diagnostic artifacts, and per-pair preview PNGs have fixture hashes.
+Learning correctness is reported separately from expectation checks. Test rows
+never fit or calibrate the models; v0.76 keeps a stronger signed-volume rule and
+v0.77 keeps a high-confidence negative-control error.
+
+Numeric evidence normally uses nine decimal places. Small SI mass, volume,
+centroid and inertia fields preserve nine significant digits below 1e-6. The
+interactive report preserves Python float values. Neither native-code isolation
+nor full AP242/schema/PMI preservation is implied by successful geometry export.

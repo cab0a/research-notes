@@ -1,0 +1,14 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "eight authored single-feature labels; 32 independently built dimensional designs plus two unknown/negative controls, with whole design lineages isolated",
+    "all labels appear in training; test is bounded dimension generalization, not unseen manufacturing-family validation",
+    "scores link source hashes, support faces/edges and per-descriptor distance margins; calibrated confidence can still be wrong",
+    "ranks whole-shape candidate hypotheses; does not certify feature intent or recover history"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 34,
+  "study_version": "v0.77.0"
+}

@@ -1,0 +1,9 @@
+control_id,decision,expected,checks_pass
+unify,accepted,accepted,1
+attribute_gate,rejected_rolled_back,rejected_rolled_back,1
+attribute_opt_in,accepted,accepted,1
+sew_gap,accepted,accepted,1
+tolerance_gate,rejected_rolled_back,rejected_rolled_back,1
+orientation,accepted,accepted,1
+small_hole_rejected,rejected_rolled_back,rejected_rolled_back,1
+small_hole_explicit,accepted,accepted,1

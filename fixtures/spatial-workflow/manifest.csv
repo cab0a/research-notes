@@ -1,0 +1,3 @@
+file_name,byte_length,sha256,generator
+large_box_assembly.step,1068233,c4c653fd27eb819dcf7c672ecb7c2707c1512b328b699af96d0cf5c876fabd86,experiments/run_spatial_workflow.py
+occurrences.json,43230,eb8afb0e0400d4cabb2248ecdf92a395d83b9ee931e9ad706b7dee2182c1c231,experiments/run_spatial_workflow.py

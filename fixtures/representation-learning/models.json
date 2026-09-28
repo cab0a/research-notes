@@ -1,0 +1,258 @@
+{
+  "face_graph": {
+    "abstention_threshold": 0.7,
+    "centroids": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        -1.386287953,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.693143976,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "feature_names": [
+      "face_delta",
+      "adjacency_delta",
+      "mean_degree_delta",
+      "curved_area_ratio_delta",
+      "plane_delta",
+      "cylinder_delta",
+      "boundary_delta"
+    ],
+    "labels": [
+      "additive",
+      "subtractive"
+    ],
+    "means": [
+      0.0,
+      0.0,
+      0.0,
+      0.01298891,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scales": [
+      1.0,
+      1.0,
+      1.0,
+      0.003955096,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "temperature": 16.0,
+    "train_ids": [
+      "through_hole_0",
+      "through_hole_1",
+      "through_hole_2",
+      "profile_hole_0",
+      "profile_hole_1",
+      "profile_hole_2",
+      "boss_0",
+      "boss_1",
+      "boss_2"
+    ],
+    "validation_ids": [
+      "pocket_0",
+      "pocket_1",
+      "pocket_2",
+      "rib_0",
+      "rib_1",
+      "rib_2"
+    ]
+  },
+  "feature_history": {
+    "abstention_threshold": 0.7,
+    "centroids": [
+      [
+        0.0,
+        0.0,
+        1.414213562,
+        -1.414213562
+      ],
+      [
+        0.0,
+        0.0,
+        -0.707106781,
+        0.707106781
+      ]
+    ],
+    "feature_names": [
+      "node_count",
+      "plate_edit",
+      "additive_operation",
+      "subtractive_operation"
+    ],
+    "labels": [
+      "additive",
+      "subtractive"
+    ],
+    "means": [
+      3.0,
+      0.0,
+      0.333333333,
+      0.666666667
+    ],
+    "scales": [
+      1.0,
+      1.0,
+      0.471404521,
+      0.471404521
+    ],
+    "temperature": 0.25,
+    "train_ids": [
+      "through_hole_0",
+      "through_hole_1",
+      "through_hole_2",
+      "profile_hole_0",
+      "profile_hole_1",
+      "profile_hole_2",
+      "boss_0",
+      "boss_1",
+      "boss_2"
+    ],
+    "validation_ids": [
+      "pocket_0",
+      "pocket_1",
+      "pocket_2",
+      "rib_0",
+      "rib_1",
+      "rib_2"
+    ]
+  },
+  "geometry_table": {
+    "abstention_threshold": 0.7,
+    "centroids": [
+      [
+        0.254030357,
+        0.357879592,
+        0.020353426,
+        0.017546919,
+        1.400554557,
+        -1.414213562
+      ],
+      [
+        -0.127015178,
+        -0.178939796,
+        -0.010176713,
+        -0.008773459,
+        -0.700277279,
+        0.707106781
+      ]
+    ],
+    "feature_names": [
+      "volume_before",
+      "volume_after",
+      "area_before",
+      "area_after",
+      "volume_delta",
+      "area_delta"
+    ],
+    "labels": [
+      "additive",
+      "subtractive"
+    ],
+    "means": [
+      574.26304865,
+      570.023992963,
+      489.945210027,
+      493.840784918,
+      -4.239055687,
+      3.895574891
+    ],
+    "scales": [
+      76.374937714,
+      77.118158561,
+      44.768394268,
+      44.767203593,
+      5.853011857,
+      0.088857659
+    ],
+    "temperature": 16.0,
+    "train_ids": [
+      "through_hole_0",
+      "through_hole_1",
+      "through_hole_2",
+      "profile_hole_0",
+      "profile_hole_1",
+      "profile_hole_2",
+      "boss_0",
+      "boss_1",
+      "boss_2"
+    ],
+    "validation_ids": [
+      "pocket_0",
+      "pocket_1",
+      "pocket_2",
+      "rib_0",
+      "rib_1",
+      "rib_2"
+    ]
+  },
+  "tessellation": {
+    "abstention_threshold": 0.7,
+    "centroids": [
+      [
+        1.400554557,
+        -1.414174105,
+        0.0
+      ],
+      [
+        -0.700277279,
+        0.707087052,
+        0.0
+      ]
+    ],
+    "feature_names": [
+      "mesh_volume_delta",
+      "mesh_area_delta",
+      "triangle_count_delta"
+    ],
+    "labels": [
+      "additive",
+      "subtractive"
+    ],
+    "means": [
+      -4.223261654,
+      3.8993154,
+      0.0
+    ],
+    "scales": [
+      5.831204485,
+      0.093990325,
+      1.0
+    ],
+    "temperature": 16.0,
+    "train_ids": [
+      "through_hole_0",
+      "through_hole_1",
+      "through_hole_2",
+      "profile_hole_0",
+      "profile_hole_1",
+      "profile_hole_2",
+      "boss_0",
+      "boss_1",
+      "boss_2"
+    ],
+    "validation_ids": [
+      "pocket_0",
+      "pocket_1",
+      "pocket_2",
+      "rib_0",
+      "rib_1",
+      "rib_2"
+    ]
+  }
+}

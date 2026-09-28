@@ -1,0 +1,12 @@
+control_id,mass_kg,expected_mass_kg,checks_pass
+box_constructed,0.000187200,0.000187200,1
+box_step_imported,0.000187200,0.000187200,1
+sphere_constructed,0.000261381,0.000261381,1
+sphere_step_imported,0.000261381,0.000261381,1
+cylinder_constructed,0.000294053,0.000294053,1
+cylinder_step_imported,0.000294053,0.000294053,1
+rigid_box_constructed,0.000187200,0.000187200,1
+rigid_box_step_imported,0.000187200,0.000187200,1
+missing_material,,,1
+unknown_unit,,,1
+reversed,,,1

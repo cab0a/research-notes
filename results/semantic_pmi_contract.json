@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "controlled AP242 dimension, flatness, position and legacy datum-reference paths only; no full schema or GD&T conformance",
+    "presentation text never determines semantic dimensions; source spans and unit links are retained",
+    "no face binding inferred from names; geometry attachments and modern datum systems remain deferred"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 7,
+  "study_version": "v0.66.0"
+}

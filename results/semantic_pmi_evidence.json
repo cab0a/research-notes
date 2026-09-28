@@ -1,0 +1,1753 @@
+[
+  {
+    "control_id": "semantic",
+    "diagnostics": [],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 999 mm');",
+            "span": {
+              "end_byte": 1417,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1417,
+              "start_byte": 1347,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1347
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 14,
+        "evidence": [
+          {
+            "entity_id": 14,
+            "source": "#14=DIMENSIONAL_CHARACTERISTIC_REPRESENTATION(#13,#12);",
+            "span": {
+              "end_byte": 987,
+              "end_column": 56,
+              "end_line": 21,
+              "end_offset": 987,
+              "start_byte": 932,
+              "start_column": 1,
+              "start_line": 21,
+              "start_offset": 932
+            }
+          },
+          {
+            "entity_id": 13,
+            "source": "#13=DIMENSIONAL_SIZE(#8,'diameter');",
+            "span": {
+              "end_byte": 931,
+              "end_column": 37,
+              "end_line": 20,
+              "end_offset": 931,
+              "start_byte": 895,
+              "start_column": 1,
+              "start_line": 20,
+              "start_offset": 895
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 12,
+            "source": "#12=SHAPE_DIMENSION_REPRESENTATION('',(#10),#11);",
+            "span": {
+              "end_byte": 894,
+              "end_column": 50,
+              "end_line": 19,
+              "end_offset": 894,
+              "start_byte": 845,
+              "start_column": 1,
+              "start_line": 19,
+              "start_offset": 845
+            }
+          },
+          {
+            "entity_id": 10,
+            "source": "#10=(LENGTH_MEASURE_WITH_UNIT() MEASURE_REPRESENTATION_ITEM() MEASURE_WITH_UNIT(LENGTH_MEASURE(4.),#9) REPRESENTATION_ITEM('diameter'));",
+            "span": {
+              "end_byte": 809,
+              "end_column": 137,
+              "end_line": 17,
+              "end_offset": 809,
+              "start_byte": 673,
+              "start_column": 1,
+              "start_line": 17,
+              "start_offset": 673
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "dimension",
+        "name": "diameter",
+        "product_shape_id": 7,
+        "shape_aspect_id": 8,
+        "value_mm": 4.0
+      },
+      {
+        "entity_id": 16,
+        "evidence": [
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "identification": "A",
+        "kind": "datum"
+      },
+      {
+        "datum_reference_ids": [],
+        "entity_id": 19,
+        "evidence": [
+          {
+            "entity_id": 19,
+            "source": "#19=FLATNESS_TOLERANCE('flatness','',#18,#8);",
+            "span": {
+              "end_byte": 1200,
+              "end_column": 46,
+              "end_line": 26,
+              "end_offset": 1200,
+              "start_byte": 1155,
+              "start_column": 1,
+              "start_line": 26,
+              "start_offset": 1155
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "flatness_tolerance",
+        "name": "flatness",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      },
+      {
+        "datum_reference_ids": [
+          20,
+          16,
+          17,
+          15
+        ],
+        "entity_id": 21,
+        "evidence": [
+          {
+            "entity_id": 21,
+            "source": "#21=(GEOMETRIC_TOLERANCE('position','',#18,#8) GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE((#20)) POSITION_TOLERANCE());",
+            "span": {
+              "end_byte": 1346,
+              "end_column": 118,
+              "end_line": 28,
+              "end_offset": 1346,
+              "start_byte": 1229,
+              "start_column": 1,
+              "start_line": 28,
+              "start_offset": 1229
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          },
+          {
+            "entity_id": 20,
+            "source": "#20=DATUM_REFERENCE(1,#16);",
+            "span": {
+              "end_byte": 1228,
+              "end_column": 28,
+              "end_line": 27,
+              "end_offset": 1228,
+              "start_byte": 1201,
+              "start_column": 1,
+              "start_line": 27,
+              "start_offset": 1201
+            }
+          },
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "kind": "position_tolerance",
+        "name": "position",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      }
+    ],
+    "source_sha256": "9355da8624ce3699f66a991904d2d567725e49755a998d6a9619948abbdecae8",
+    "status": "observed"
+  },
+  {
+    "control_id": "display_text_change",
+    "diagnostics": [],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 123 mm');",
+            "span": {
+              "end_byte": 1417,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1417,
+              "start_byte": 1347,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1347
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 14,
+        "evidence": [
+          {
+            "entity_id": 14,
+            "source": "#14=DIMENSIONAL_CHARACTERISTIC_REPRESENTATION(#13,#12);",
+            "span": {
+              "end_byte": 987,
+              "end_column": 56,
+              "end_line": 21,
+              "end_offset": 987,
+              "start_byte": 932,
+              "start_column": 1,
+              "start_line": 21,
+              "start_offset": 932
+            }
+          },
+          {
+            "entity_id": 13,
+            "source": "#13=DIMENSIONAL_SIZE(#8,'diameter');",
+            "span": {
+              "end_byte": 931,
+              "end_column": 37,
+              "end_line": 20,
+              "end_offset": 931,
+              "start_byte": 895,
+              "start_column": 1,
+              "start_line": 20,
+              "start_offset": 895
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 12,
+            "source": "#12=SHAPE_DIMENSION_REPRESENTATION('',(#10),#11);",
+            "span": {
+              "end_byte": 894,
+              "end_column": 50,
+              "end_line": 19,
+              "end_offset": 894,
+              "start_byte": 845,
+              "start_column": 1,
+              "start_line": 19,
+              "start_offset": 845
+            }
+          },
+          {
+            "entity_id": 10,
+            "source": "#10=(LENGTH_MEASURE_WITH_UNIT() MEASURE_REPRESENTATION_ITEM() MEASURE_WITH_UNIT(LENGTH_MEASURE(4.),#9) REPRESENTATION_ITEM('diameter'));",
+            "span": {
+              "end_byte": 809,
+              "end_column": 137,
+              "end_line": 17,
+              "end_offset": 809,
+              "start_byte": 673,
+              "start_column": 1,
+              "start_line": 17,
+              "start_offset": 673
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "dimension",
+        "name": "diameter",
+        "product_shape_id": 7,
+        "shape_aspect_id": 8,
+        "value_mm": 4.0
+      },
+      {
+        "entity_id": 16,
+        "evidence": [
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "identification": "A",
+        "kind": "datum"
+      },
+      {
+        "datum_reference_ids": [],
+        "entity_id": 19,
+        "evidence": [
+          {
+            "entity_id": 19,
+            "source": "#19=FLATNESS_TOLERANCE('flatness','',#18,#8);",
+            "span": {
+              "end_byte": 1200,
+              "end_column": 46,
+              "end_line": 26,
+              "end_offset": 1200,
+              "start_byte": 1155,
+              "start_column": 1,
+              "start_line": 26,
+              "start_offset": 1155
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "flatness_tolerance",
+        "name": "flatness",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      },
+      {
+        "datum_reference_ids": [
+          20,
+          16,
+          17,
+          15
+        ],
+        "entity_id": 21,
+        "evidence": [
+          {
+            "entity_id": 21,
+            "source": "#21=(GEOMETRIC_TOLERANCE('position','',#18,#8) GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE((#20)) POSITION_TOLERANCE());",
+            "span": {
+              "end_byte": 1346,
+              "end_column": 118,
+              "end_line": 28,
+              "end_offset": 1346,
+              "start_byte": 1229,
+              "start_column": 1,
+              "start_line": 28,
+              "start_offset": 1229
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          },
+          {
+            "entity_id": 20,
+            "source": "#20=DATUM_REFERENCE(1,#16);",
+            "span": {
+              "end_byte": 1228,
+              "end_column": 28,
+              "end_line": 27,
+              "end_offset": 1228,
+              "start_byte": 1201,
+              "start_column": 1,
+              "start_line": 27,
+              "start_offset": 1201
+            }
+          },
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "kind": "position_tolerance",
+        "name": "position",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      }
+    ],
+    "source_sha256": "df5d839c9bc323b43b98dc50dfd58b2b14bea97e7982ae47755418aef51ea2bb",
+    "status": "observed"
+  },
+  {
+    "control_id": "negative_tolerance",
+    "diagnostics": [
+      {
+        "entity_id": 19,
+        "reason": "magnitude must be finite and nonnegative"
+      },
+      {
+        "entity_id": 21,
+        "reason": "magnitude must be finite and nonnegative"
+      }
+    ],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 999 mm');",
+            "span": {
+              "end_byte": 1418,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1418,
+              "start_byte": 1348,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1348
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 14,
+        "evidence": [
+          {
+            "entity_id": 14,
+            "source": "#14=DIMENSIONAL_CHARACTERISTIC_REPRESENTATION(#13,#12);",
+            "span": {
+              "end_byte": 987,
+              "end_column": 56,
+              "end_line": 21,
+              "end_offset": 987,
+              "start_byte": 932,
+              "start_column": 1,
+              "start_line": 21,
+              "start_offset": 932
+            }
+          },
+          {
+            "entity_id": 13,
+            "source": "#13=DIMENSIONAL_SIZE(#8,'diameter');",
+            "span": {
+              "end_byte": 931,
+              "end_column": 37,
+              "end_line": 20,
+              "end_offset": 931,
+              "start_byte": 895,
+              "start_column": 1,
+              "start_line": 20,
+              "start_offset": 895
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 12,
+            "source": "#12=SHAPE_DIMENSION_REPRESENTATION('',(#10),#11);",
+            "span": {
+              "end_byte": 894,
+              "end_column": 50,
+              "end_line": 19,
+              "end_offset": 894,
+              "start_byte": 845,
+              "start_column": 1,
+              "start_line": 19,
+              "start_offset": 845
+            }
+          },
+          {
+            "entity_id": 10,
+            "source": "#10=(LENGTH_MEASURE_WITH_UNIT() MEASURE_REPRESENTATION_ITEM() MEASURE_WITH_UNIT(LENGTH_MEASURE(4.),#9) REPRESENTATION_ITEM('diameter'));",
+            "span": {
+              "end_byte": 809,
+              "end_column": 137,
+              "end_line": 17,
+              "end_offset": 809,
+              "start_byte": 673,
+              "start_column": 1,
+              "start_line": 17,
+              "start_offset": 673
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "dimension",
+        "name": "diameter",
+        "product_shape_id": 7,
+        "shape_aspect_id": 8,
+        "value_mm": 4.0
+      },
+      {
+        "entity_id": 16,
+        "evidence": [
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "identification": "A",
+        "kind": "datum"
+      }
+    ],
+    "source_sha256": "2c072dc9b9862c63886e4b22ef638c55df4bb92725a09ab098994b5b82f95c49",
+    "status": "partial"
+  },
+  {
+    "control_id": "missing_datum_link",
+    "diagnostics": [
+      {
+        "entity_id": 16,
+        "reason": "datum requires exactly one establishing feature"
+      },
+      {
+        "entity_id": 21,
+        "reason": "datum requires exactly one establishing feature"
+      }
+    ],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 999 mm');",
+            "span": {
+              "end_byte": 1416,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1416,
+              "start_byte": 1346,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1346
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 14,
+        "evidence": [
+          {
+            "entity_id": 14,
+            "source": "#14=DIMENSIONAL_CHARACTERISTIC_REPRESENTATION(#13,#12);",
+            "span": {
+              "end_byte": 987,
+              "end_column": 56,
+              "end_line": 21,
+              "end_offset": 987,
+              "start_byte": 932,
+              "start_column": 1,
+              "start_line": 21,
+              "start_offset": 932
+            }
+          },
+          {
+            "entity_id": 13,
+            "source": "#13=DIMENSIONAL_SIZE(#8,'diameter');",
+            "span": {
+              "end_byte": 931,
+              "end_column": 37,
+              "end_line": 20,
+              "end_offset": 931,
+              "start_byte": 895,
+              "start_column": 1,
+              "start_line": 20,
+              "start_offset": 895
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 12,
+            "source": "#12=SHAPE_DIMENSION_REPRESENTATION('',(#10),#11);",
+            "span": {
+              "end_byte": 894,
+              "end_column": 50,
+              "end_line": 19,
+              "end_offset": 894,
+              "start_byte": 845,
+              "start_column": 1,
+              "start_line": 19,
+              "start_offset": 845
+            }
+          },
+          {
+            "entity_id": 10,
+            "source": "#10=(LENGTH_MEASURE_WITH_UNIT() MEASURE_REPRESENTATION_ITEM() MEASURE_WITH_UNIT(LENGTH_MEASURE(4.),#9) REPRESENTATION_ITEM('diameter'));",
+            "span": {
+              "end_byte": 809,
+              "end_column": 137,
+              "end_line": 17,
+              "end_offset": 809,
+              "start_byte": 673,
+              "start_column": 1,
+              "start_line": 17,
+              "start_offset": 673
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "dimension",
+        "name": "diameter",
+        "product_shape_id": 7,
+        "shape_aspect_id": 8,
+        "value_mm": 4.0
+      },
+      {
+        "datum_reference_ids": [],
+        "entity_id": 19,
+        "evidence": [
+          {
+            "entity_id": 19,
+            "source": "#19=FLATNESS_TOLERANCE('flatness','',#18,#8);",
+            "span": {
+              "end_byte": 1199,
+              "end_column": 46,
+              "end_line": 26,
+              "end_offset": 1199,
+              "start_byte": 1154,
+              "start_column": 1,
+              "start_line": 26,
+              "start_offset": 1154
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1153,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1153,
+              "start_byte": 1099,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1099
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "flatness_tolerance",
+        "name": "flatness",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      }
+    ],
+    "source_sha256": "b5ad354458aed695ac8e9c44f6099415075b9b1f25474c1118070301103e6ef7",
+    "status": "partial"
+  },
+  {
+    "control_id": "wrong_dimension_target",
+    "diagnostics": [
+      {
+        "entity_id": 14,
+        "reason": "expected SHAPE_ASPECT at #3"
+      }
+    ],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 999 mm');",
+            "span": {
+              "end_byte": 1417,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1417,
+              "start_byte": 1347,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1347
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 16,
+        "evidence": [
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "identification": "A",
+        "kind": "datum"
+      },
+      {
+        "datum_reference_ids": [],
+        "entity_id": 19,
+        "evidence": [
+          {
+            "entity_id": 19,
+            "source": "#19=FLATNESS_TOLERANCE('flatness','',#18,#8);",
+            "span": {
+              "end_byte": 1200,
+              "end_column": 46,
+              "end_line": 26,
+              "end_offset": 1200,
+              "start_byte": 1155,
+              "start_column": 1,
+              "start_line": 26,
+              "start_offset": 1155
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          }
+        ],
+        "kind": "flatness_tolerance",
+        "name": "flatness",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      },
+      {
+        "datum_reference_ids": [
+          20,
+          16,
+          17,
+          15
+        ],
+        "entity_id": 21,
+        "evidence": [
+          {
+            "entity_id": 21,
+            "source": "#21=(GEOMETRIC_TOLERANCE('position','',#18,#8) GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE((#20)) POSITION_TOLERANCE());",
+            "span": {
+              "end_byte": 1346,
+              "end_column": 118,
+              "end_line": 28,
+              "end_offset": 1346,
+              "start_byte": 1229,
+              "start_column": 1,
+              "start_line": 28,
+              "start_offset": 1229
+            }
+          },
+          {
+            "entity_id": 8,
+            "source": "#8=SHAPE_ASPECT('hole','',#7,.T.);",
+            "span": {
+              "end_byte": 613,
+              "end_column": 35,
+              "end_line": 15,
+              "end_offset": 613,
+              "start_byte": 579,
+              "start_column": 1,
+              "start_line": 15,
+              "start_offset": 579
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 18,
+            "source": "#18=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.05),#9);",
+            "span": {
+              "end_byte": 1154,
+              "end_column": 55,
+              "end_line": 25,
+              "end_offset": 1154,
+              "start_byte": 1100,
+              "start_column": 1,
+              "start_line": 25,
+              "start_offset": 1100
+            }
+          },
+          {
+            "entity_id": 9,
+            "source": "#9=(LENGTH_UNIT() NAMED_UNIT(*) SI_UNIT(.MILLI.,.METRE.));",
+            "span": {
+              "end_byte": 672,
+              "end_column": 59,
+              "end_line": 16,
+              "end_offset": 672,
+              "start_byte": 614,
+              "start_column": 1,
+              "start_line": 16,
+              "start_offset": 614
+            }
+          },
+          {
+            "entity_id": 20,
+            "source": "#20=DATUM_REFERENCE(1,#16);",
+            "span": {
+              "end_byte": 1228,
+              "end_column": 28,
+              "end_line": 27,
+              "end_offset": 1228,
+              "start_byte": 1201,
+              "start_column": 1,
+              "start_line": 27,
+              "start_offset": 1201
+            }
+          },
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1053,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1053,
+              "start_byte": 1025,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1025
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1099,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1099,
+              "start_byte": 1054,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1054
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1024,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1024,
+              "start_byte": 988,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 988
+            }
+          }
+        ],
+        "kind": "position_tolerance",
+        "name": "position",
+        "shape_aspect_id": 8,
+        "value_mm": 0.05
+      }
+    ],
+    "source_sha256": "6fa4c6af4cd455f7c04273fecdf413ed6f2357cbbb897ba51486606fb9bfe60b",
+    "status": "partial"
+  },
+  {
+    "control_id": "unsupported_unit",
+    "diagnostics": [
+      {
+        "entity_id": 14,
+        "reason": "unsupported PMI length unit"
+      },
+      {
+        "entity_id": 19,
+        "reason": "unsupported PMI length unit"
+      },
+      {
+        "entity_id": 21,
+        "reason": "unsupported PMI length unit"
+      }
+    ],
+    "full_schema_validation": false,
+    "presentation": [
+      {
+        "entity_id": 22,
+        "evidence": [
+          {
+            "entity_id": 22,
+            "source": "#22=DESCRIPTIVE_REPRESENTATION_ITEM('display only','Diameter 999 mm');",
+            "span": {
+              "end_byte": 1416,
+              "end_column": 71,
+              "end_line": 29,
+              "end_offset": 1416,
+              "start_byte": 1346,
+              "start_column": 1,
+              "start_line": 29,
+              "start_offset": 1346
+            }
+          }
+        ],
+        "semantic_value_inferred": false,
+        "types": [
+          "DESCRIPTIVE_REPRESENTATION_ITEM"
+        ]
+      }
+    ],
+    "schema_status": "controlled_roles_only",
+    "semantic": [
+      {
+        "entity_id": 16,
+        "evidence": [
+          {
+            "entity_id": 16,
+            "source": "#16=DATUM('','',#7,.F.,'A');",
+            "span": {
+              "end_byte": 1052,
+              "end_column": 29,
+              "end_line": 23,
+              "end_offset": 1052,
+              "start_byte": 1024,
+              "start_column": 1,
+              "start_line": 23,
+              "start_offset": 1024
+            }
+          },
+          {
+            "entity_id": 7,
+            "source": "#7=PRODUCT_DEFINITION_SHAPE('','',#6);",
+            "span": {
+              "end_byte": 578,
+              "end_column": 39,
+              "end_line": 14,
+              "end_offset": 578,
+              "start_byte": 540,
+              "start_column": 1,
+              "start_line": 14,
+              "start_offset": 540
+            }
+          },
+          {
+            "entity_id": 17,
+            "source": "#17=SHAPE_ASPECT_RELATIONSHIP('','',#15,#16);",
+            "span": {
+              "end_byte": 1098,
+              "end_column": 46,
+              "end_line": 24,
+              "end_offset": 1098,
+              "start_byte": 1053,
+              "start_column": 1,
+              "start_line": 24,
+              "start_offset": 1053
+            }
+          },
+          {
+            "entity_id": 15,
+            "source": "#15=DATUM_FEATURE('base','',#7,.T.);",
+            "span": {
+              "end_byte": 1023,
+              "end_column": 37,
+              "end_line": 22,
+              "end_offset": 1023,
+              "start_byte": 987,
+              "start_column": 1,
+              "start_line": 22,
+              "start_offset": 987
+            }
+          }
+        ],
+        "identification": "A",
+        "kind": "datum"
+      }
+    ],
+    "source_sha256": "2c4186aef831a6f33a184d207b30dcf22bc8d86ed96b2f2ddb042e0ca9540b18",
+    "status": "partial"
+  },
+  {
+    "control_id": "unsupported_schema",
+    "diagnostics": [
+      {
+        "entity_id": null,
+        "reason": "unsupported_schema"
+      }
+    ],
+    "full_schema_validation": false,
+    "presentation": [],
+    "schema_status": "controlled_roles_only",
+    "semantic": [],
+    "source_sha256": "771de3caa2eea14fcdffee1448ac05e3aca7ceed5093c17efb8e21959460778e",
+    "status": "unsupported_schema"
+  }
+]

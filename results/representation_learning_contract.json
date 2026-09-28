@@ -1,0 +1,14 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "task: additive versus subtractive parametric change, six isolated synthetic construction families",
+    "train-only means/scales/centroids; validation-only temperature; test labels never fit model or calibration",
+    "signed-volume rule is a strong exact control; authored-history descriptors are privileged, not recovered from STEP",
+    "accuracy, Brier score, calibration, abstentions and high-confidence errors retained without a success threshold"
+  ],
+  "contract_version": "1.0.0",
+  "detail_numeric_serialization": "9 decimal places; nonzero magnitudes below 1e-6 retain 9 significant digits",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 10,
+  "study_version": "v0.76.0"
+}
