@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状を版番号付き非巡回依存グラフとして表します。3形状は真値と一致し、再読込後も位相数と計測値を保持しました。読込STEPの穴候補は未確認のまま結果と分離します。v0.56.0以降は未実装です。v1.0.0までの計画は、スケッチ拘束、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
+v0.60.0まで実装し、5種類のパラメトリック形状、依存関係の再計算、STEPからの未確認候補、候補選択・寸法編集・比較・再出力を検証しました。v0.61.0以降は未実装です。v1.0.0までの計画は、明示的な形状操作、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,7 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages from v0.56.0 onward are planned and not implemented at v0.55.0.
+The stages through v0.60.0 have code and reference evidence. Stages from
+v0.61.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -608,34 +609,44 @@ deferred.
 
 #### v0.56.0 — Two-Dimensional Sketches and Geometric Constraints
 
-Implement bounded line, arc, circle, coincidence, parallel, perpendicular,
-tangent, horizontal, vertical, distance, radius, and angle constraints.
-Separate under-constrained, fully constrained, over-constrained, and
-inconsistent systems.
+Completed with 22 authored line, circle, and circular-arc controls, including
+coincidence, parallel, perpendicular, signed line-circle tangency, horizontal,
+vertical, distance, radius, and angle constraints. Six under-constrained,
+eleven fully constrained, two satisfied redundant, two affine-conflict, and
+one nonlinear non-convergence cases match their expected states.
+
+Width, height, and radius edits preserve the other constraints and match
+independent coordinates and area ratios 1.5, 1.25, and 2.25. Local numerical
+rank is not a global uniqueness or nonlinear inconsistency proof. This solver
+was initially independent; v0.57.0 connects its rectangle/circle profiles to
+feature construction, and v0.58.0 adds dependency recompute.
 
 #### v0.57.0 — Parametric Holes, Pockets, Bosses, and Ribs
 
-Construct common features from explicit parameters and compare their generated
-topology and geometry with independently known synthetic construction truth.
+Implemented with bounded evidence. Ten shapes from five feature families pass 20 constructed/imported truth observations; five invalid domains reject.
+See the [complete study](../notes/parametric-holes-pockets-bosses-ribs.md).
 
 #### v0.58.0 — Dependency Graph and Deterministic Recompute
 
-Propagate parameter changes through an acyclic feature dependency graph,
-isolate failed features, retain the last valid result, and report which
-downstream shapes became invalid or stale.
+Implemented with bounded evidence. Six events produce 36 node states; five valid events match analytic volume and cold/cached normalized STEP bytes.
+See the [complete study](../notes/dependency-graph-deterministic-recompute.md).
 
 #### v0.59.0 — STEP-to-Feature Reconstruction Candidates
 
-Generate auditable candidate sketches and features from imported B-Rep
-evidence. Report geometric residuals, ambiguity, alternative explanations,
-and confidence; never claim recovery of unavailable original CAD history.
+Implemented with bounded evidence. Nine STEP inputs yield ten unconfirmed candidates: three ambiguous inputs, four single-candidate inputs, and two unsupported inputs.
+See the [complete study](../notes/step-to-feature-reconstruction-candidates.md).
+
+Candidates retain residuals, source digests, alternatives, and an uncalibrated
+geometric fit score. Original CAD history is not recovered.
 
 #### v0.60.0 — Assisted Parametric Modeling Tool
 
-Expose import, inspection, candidate selection, parameter editing, recompute,
-visual comparison, and STEP export through a bounded Python API and a focused
-interactive tool. Require explicit user confirmation before replacing inferred
-features or repaired geometry.
+Implemented with bounded evidence. Five end-to-end edits match volume/area truth and STEP round trips; eleven state and export guards pass.
+See the [complete study](../notes/assisted-parametric-modeling-tool.md).
+
+The Python API and interactive terminal require explicit confirmation, reject
+dirty/stale exports, and generate static comparisons. Shape-only export does
+not preserve source names, colors, PMI, or constraints.
 
 ### Phase I — Stable Parametric Editing and Assemblies
 

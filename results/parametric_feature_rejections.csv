@@ -1,0 +1,6 @@
+control_id,decision,reason,checks_pass
+touching_outer_boundary,reject,feature footprint must remain strictly inside the plate,1
+oversized_radius,reject,feature footprint must remain strictly inside the plate,1
+blind_floor_removed,reject,blind feature must retain a positive floor,1
+negative_boss_height,reject,"feature parameters must be finite and in (0.0001, 1000] mm",1
+rib_outside_plate,reject,feature footprint must remain strictly inside the plate,1

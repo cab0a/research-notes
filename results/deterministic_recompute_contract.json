@@ -1,0 +1,15 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "executable specialization of the feature-graph concept; it does not recover STEP history or persistent face identity",
+    "failed/stale nodes retain last-valid geometry for inspection only; current_output refuses it",
+    "serial deterministic traversal and fingerprint caching; independent branches continue, without atomic transactions",
+    "six event controls with one disjoint two-feature branch and one independent branch are not arbitrary CAD robustness evidence"
+  ],
+  "contract_version": "1.0.0",
+  "event_count": 6,
+  "node_observation_count": 36,
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 6,
+  "study_version": "v0.58.0"
+}

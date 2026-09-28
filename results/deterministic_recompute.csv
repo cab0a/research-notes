@@ -1,0 +1,7 @@
+event,revision,evaluated_count,reused_count,failed_nodes,stale_nodes,all_last_valid_shapes_retained,volume_truth_error,cold_vs_cached_step_bytes_match,checks_pass
+initial,1,6,0,,,1,0.000000000,1,1
+unchanged,1,0,6,,,1,0.000000000,1,1
+radius_edit,2,3,3,,,1,0.000000000,1,1
+invalid_radius,3,1,3,feature,boss|result,1,0.000000000,,1
+recovered,4,0,6,,,1,0.000000000,1,1
+base_width_edit,5,6,0,,,1,0.000000000,1,1

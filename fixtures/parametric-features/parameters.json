@@ -1,0 +1,330 @@
+[
+  {
+    "control_id": "through_hole_before",
+    "feature": {
+      "kind": "through_hole",
+      "parameters": [
+        [
+          "radius",
+          1.0
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "through_hole_after",
+    "feature": {
+      "kind": "through_hole",
+      "parameters": [
+        [
+          "radius",
+          1.5
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "blind_hole_before",
+    "feature": {
+      "kind": "blind_hole",
+      "parameters": [
+        [
+          "depth",
+          1.0
+        ],
+        [
+          "radius",
+          1.0
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "blind_hole_after",
+    "feature": {
+      "kind": "blind_hole",
+      "parameters": [
+        [
+          "depth",
+          2.0
+        ],
+        [
+          "radius",
+          1.0
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "pocket_before",
+    "feature": {
+      "kind": "pocket",
+      "parameters": [
+        [
+          "depth",
+          1.0
+        ],
+        [
+          "length",
+          3.0
+        ],
+        [
+          "width",
+          4.0
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "pocket_after",
+    "feature": {
+      "kind": "pocket",
+      "parameters": [
+        [
+          "depth",
+          2.0
+        ],
+        [
+          "length",
+          3.0
+        ],
+        [
+          "width",
+          4.0
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "boss_before",
+    "feature": {
+      "kind": "boss",
+      "parameters": [
+        [
+          "height",
+          2.0
+        ],
+        [
+          "radius",
+          1.5
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "boss_after",
+    "feature": {
+      "kind": "boss",
+      "parameters": [
+        [
+          "height",
+          3.0
+        ],
+        [
+          "radius",
+          1.5
+        ],
+        [
+          "x",
+          4.0
+        ],
+        [
+          "y",
+          5.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "rib_before",
+    "feature": {
+      "kind": "rib",
+      "parameters": [
+        [
+          "height",
+          2.0
+        ],
+        [
+          "length",
+          5.0
+        ],
+        [
+          "width",
+          1.0
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  },
+  {
+    "control_id": "rib_after",
+    "feature": {
+      "kind": "rib",
+      "parameters": [
+        [
+          "height",
+          2.0
+        ],
+        [
+          "length",
+          5.0
+        ],
+        [
+          "width",
+          1.5
+        ],
+        [
+          "x",
+          3.0
+        ],
+        [
+          "y",
+          3.0
+        ]
+      ]
+    },
+    "plate": {
+      "length": 10.0,
+      "origin_x": 0.0,
+      "origin_y": 0.0,
+      "origin_z": 0.0,
+      "thickness": 4.0,
+      "width": 12.0
+    }
+  }
+]

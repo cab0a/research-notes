@@ -4,13 +4,13 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.55.0では、基準面、寸法、スケッチ、形状操作、結果形状を版番号付きの非巡回依存グラフとして表し、明示的に作成した3形状をSTEPへ出力します。
+v0.60.0まで実装し、STEPの検査、編集可能な構成候補の選択、寸法変更、依存関係の再計算、比較図、STEP再出力をつなぎます。
 
-板、穴付き板、段差付き角柱は独立な体積・表面積の真値と一致し、STEP読込後も位相数と計測値を保持しました。16件のグラフ検査は全件成功しました。読込STEPから得た穴候補は未確認のまま結果形状と分離し、元の作成履歴とは扱いません。詳細は英語本文に示します。
+貫通穴・止まり穴・ポケット・ボス・リブの5種類で編集から再出力までを検証しました。推定候補は明示的な選択と確認を経て採用し、計算に失敗した下流形状は古い状態として出力を拒否します。対応は検証済みのmm単位・軸に平行な単一立体に限定します。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
-v1.0.0を安定研究版の目標とし、STEP読込、製品構成・B-rep解析、形状構成候補、寸法・拘束編集、決定論的再計算、変更検証、STEP再出力、根拠付きAI支援を一貫して扱います。v0.56.0以降は計画段階であり、実装済み機能ではありません。
+v1.0.0を安定研究版の目標とし、STEP読込、製品構成・B-rep解析、形状構成候補、寸法・拘束編集、決定論的再計算、変更検証、STEP再出力、根拠付きAI支援を一貫して扱います。v0.61.0以降は計画段階であり、実装済み機能ではありません。
 
 ---
 
@@ -48,7 +48,10 @@ dimension-specific STEP/XCAF preservation, independent parser/import-route
 comparison, staged resource-bounded 3D intake, and provenance-bound face-
 adjacency graphs, a perturbation-aware feature-rule benchmark, a provenance-
 bound synthetic 3D dataset, explainable binary baselines, and a versioned
-parametric feature graph. The current release is v0.55.0.
+parametric feature graph, and bounded 2D sketch constraints and dimension
+edits, five parameterized feature families, deterministic dependency recompute,
+STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
+The current implementation version is v0.60.0.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -63,29 +66,39 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 55 releases to their questions,
+The [study index](docs/studies.md) maps all 60 studies to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-The v0.55.0 study represents explicit construction and imported reconstruction
-candidates as separate versioned dependency graphs.
+v0.60.0 connects qualified STEP import to explicit candidate selection,
+parameter editing, recompute, visual comparison, and verified export.
 
-| Evidence | Observed result |
-| --- | ---: |
-| Graphs / explicit generated results | 4 / 3 |
-| Graph structural checks passed | 16 / 16 |
-| Independent volume/area checks passed | 6 / 6 |
-| STEP topology-count matches | 3 / 3 |
-| Maximum STEP volume difference | `2.27e-13` |
-| Maximum STEP surface-area difference | `7.96e-13` |
+| Version | Implemented evidence |
+| --- | --- |
+| v0.57.0 | Five feature families, ten before/after shapes, 20 truth observations, five domain rejections |
+| v0.58.0 | Six dependency events, 36 node states, failure isolation and last-valid recovery |
+| v0.59.0 | Nine STEP inputs, ten candidates, explicit ambiguity and two unsupported controls |
+| v0.60.0 | Five import-edit-export workflows and eleven state/output guards |
 
-![Parametric feature graphs](results/parametric_feature_graph.png)
+![Imported, confirmed, and edited hole](results/assisted_modeling_example.png)
 
-Explicit construction graphs end in generated B-Reps; the imported STEP graph
-ends in an unconfirmed candidate and contains no generated-result node. This is
-a representation foundation, not yet a sketch solver, recompute engine, or
-general parametric modeling API.
+The [complete tool note](notes/assisted-parametric-modeling-tool.md) includes
+terminal commands, Python API usage, results, and boundaries. To run the fixed
+demonstration after installing the pinned geometry extra:
+
+```bash
+python -m pip install -e ".[geometry]"
+python -m research_notes.modeling_tool \
+  --script fixtures/assisted-modeling/demo_commands.txt \
+  --output-dir output/modeling-demo
+```
+
+Open `output/modeling-demo/comparison.html` to compare the imported, confirmed,
+and edited shapes. Omit `--script` for an interactive terminal. Inferred models
+require explicit selection; export requires a current valid recomputation.
+The tool exports tested shape geometry, without source names, colors, PMI,
+or constraints. It does not recover original authoring history.
 
 ## Current STEP and B-Rep Capability
 
@@ -111,7 +124,10 @@ scoped fillet/chamfer history plus STEP identity boundaries, stages defensive
 3D intake, emits provenance-bound face-adjacency graphs, benchmarks bounded
 feature rules under four perturbations, publishes family-isolated synthetic
 dataset records, compares explainable binary baselines, and represents bounded
-explicit construction in versioned feature graphs. It cannot prove
+explicit construction in versioned feature graphs. A separate local 2D sketch
+solver verifies constraints and scalar dimension edits on 22 controls. Its
+rectangle/circle profiles now drive the bounded feature DAG and terminal tool.
+It cannot prove
 arbitrary trimmed, self-intersecting, or nonconvex geometry, assign persistent
 CAD identities, or expose a supported general modeling or editing API.
 
@@ -119,13 +135,23 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, feature-rule perturbations, family-isolated synthetic data, explainable binary baselines, versioned parametric feature graphs, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A supported sketch solver or parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, general recompute, or general healing |
+| Assisted modeling | Five feature families, deterministic DAG recompute, source-bound candidates, explicit selection, Python API, terminal commands, and static comparisons | Arbitrary STEP compatibility, graphical CAD editing, assemblies, undo/redo, persistent naming, or source metadata preservation |
+| 2D sketches | Bounded line, circle, and arc constraints; local rank, residuals, and revisioned dimension edits | Global uniqueness, general nonlinear conflict diagnosis, a production sketch API, or arbitrary sketch-to-feature integration |
+| B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, feature-rule perturbations, family-isolated synthetic data, explainable binary baselines, versioned parametric feature graphs, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A general sketch solver or general-purpose 3D parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, general recompute, or general healing |
 
 The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
 
 ## Claim Boundaries
 
+- The v0.56.0 sketch solver reports local Jacobian rank and bounded residuals.
+  It does not prove global uniqueness or nonlinear infeasibility. The v0.57.0
+  feature grammar integrates its rectangle/circle subset with B-Rep generation.
+- The v0.57.0–v0.60.0 tool qualifies small axis-aligned millimetre shapes.
+  Fit scores are uncalibrated geometric evidence, not history probabilities.
+  Failed/stale geometry is retained for diagnosis but cannot be exported.
+  Native STEP work has no OS sandbox or execution timeout; shape-only exports
+  do not carry names, colors, PMI, or source constraints.
 - The studies use small, 8-bit synthetic images rather than a representative
   natural-image benchmark.
 - Metric responses are relative to declared controls. They are not universal
@@ -323,7 +349,10 @@ families and four declared feature-rule perturbations. v0.53.0 reuses those
 files by digest and adds four toroidal negative STEP fixtures plus one unified
 dataset manifest. v0.54.0 reuses the fixed v0.53.0 CSV contract and adds no new
 geometry files. v0.55.0 adds three explicit parametric-result STEP fixtures and
-reuses one v0.52.0 input reference by digest.
+reuses one v0.52.0 input reference by digest. v0.56.0 adds authored 2D sketch
+JSON, a digest manifest, and constraint and dimension-edit figures without
+generating new STEP geometry. v0.57.0–v0.60.0 add feature shapes, recompute
+snapshots, reconstruction inputs, edited exports, manifests, and comparison figures.
 Syntax-only samples use source and relationship figures rather than fabricated
 geometry previews.
 
@@ -334,7 +363,7 @@ validation evidence.
 
 ## Key Features
 
-- Fifty-five published studies with explicit questions, controls, results, and
+- Sixty implemented studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -639,8 +668,10 @@ v0.51.0 evaluates four face-adjacency graph pairs, v0.52.0 evaluates 32
 feature-rule benchmark cases before and after STEP, v0.53.0 binds 36 STEP
 samples to family-isolated dataset records, and v0.54.0 compares four binary
 baselines. v0.55.0 evaluates four versioned feature graphs and three generated
-STEP results.
-These releases do not claim
+STEP results. v0.56.0 evaluates 22 bounded 2D sketch systems and three scalar
+dimension edits. v0.57.0–v0.60.0 qualify five feature families, six dependency
+events, nine reconstruction inputs, and five complete modeling workflows.
+These studies do not claim
 compatibility beyond their controlled fixtures or change the parser subset.
 
 ## Roadmap
@@ -684,18 +715,21 @@ v0.53.0 adds family-isolated splits, graph/B-Rep features, labels, digests, and
 leakage checks. v0.54.0 adds rule, geometry, graph, and combined baselines with
 separate fit, calibration, evaluation, evidence, and abstention records.
 v0.55.0 adds explicit datum, parameter, sketch, feature, result, dependency,
-and imported-candidate graph contracts. The roadmap next proceeds through
-sketch constraints, explicit parametric features, deterministic recompute,
-persistent topology references, assemblies, precision surfaces, engineering
+and imported-candidate graph contracts. v0.56.0 adds local sketch constraints,
+rank and residual diagnostics, and revisioned scalar dimension edits.
+v0.57.0–v0.60.0 implement explicit features, deterministic recompute,
+source-bound reconstruction candidates, and a focused assisted modeling tool.
+The roadmap next proceeds through persistent topology references, assemblies, precision surfaces, engineering
 analysis, evidence-bounded AI assistance, public-corpus generalization,
 interoperability, and reliability evaluation. v1.0.0 is the planned first
 stable research contract for an end-to-end STEP analysis, assisted modeling,
-verification, and export workflow. v0.56.0 and later releases remain
+verification, and export workflow. v0.61.0 and later stages remain
 unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.
 
-The roadmap is exploratory; only published releases represent completed work.
+The roadmap is exploratory; completed stages above have local code and evidence.
+Versioned implementation does not by itself imply a published Git tag or package.
 
 ## License
 

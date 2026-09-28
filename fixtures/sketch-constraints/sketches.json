@@ -1,0 +1,2549 @@
+{
+  "cases": [
+    {
+      "case_id": "rectangle_free",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 4,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_anchored",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 2,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_width_only",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 1,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_full",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": 96.0,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          },
+          {
+            "constraint_id": "height",
+            "kind": "distance_y",
+            "references": [
+              "right.start",
+              "right.end"
+            ],
+            "values": [
+              8.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_redundant",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": 96.0,
+      "expected_dependent": 1,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expected_status": "over_constrained",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          },
+          {
+            "constraint_id": "height",
+            "kind": "distance_y",
+            "references": [
+              "right.start",
+              "right.end"
+            ],
+            "values": [
+              8.0
+            ]
+          },
+          {
+            "constraint_id": "width_duplicate",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_conflict",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 1,
+      "expected_dof": 0,
+      "expected_entities": [],
+      "expected_status": "inconsistent",
+      "family": "rectangle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          },
+          {
+            "constraint_id": "height",
+            "kind": "distance_y",
+            "references": [
+              "right.start",
+              "right.end"
+            ],
+            "values": [
+              8.0
+            ]
+          },
+          {
+            "constraint_id": "width_conflict",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              13.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              -0.3,
+              10.8,
+              0.2
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              11.1,
+              -0.1,
+              11.2,
+              7.2
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              10.9,
+              7.0,
+              -0.2,
+              7.1
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              6.8,
+              -0.1,
+              0.2
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "circle_free",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 3,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "circle_center_only",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 1,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "circle_radius_only",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 2,
+      "expected_entities": [],
+      "expected_status": "under_constrained",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "circle_full",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": 12.566370614359172,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            2.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "circle_redundant",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": 12.566370614359172,
+      "expected_dependent": 1,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            2.0
+          ]
+        }
+      ],
+      "expected_status": "over_constrained",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "radius_duplicate",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "circle_conflict",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 1,
+      "expected_dof": 0,
+      "expected_entities": [],
+      "expected_status": "inconsistent",
+      "family": "circle",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "radius_conflict",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              3.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              3.5,
+              2.4,
+              1.3
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "rectangle_width_edit",
+      "edited_constraint": "width",
+      "edited_value": 18.0,
+      "expected_area": 144.0,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            18.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            18.0,
+            0.0,
+            18.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            18.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "rectangle",
+      "parent_case_id": "rectangle_full",
+      "previous_value": 12.0,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              18.0
+            ]
+          },
+          {
+            "constraint_id": "height",
+            "kind": "distance_y",
+            "references": [
+              "right.start",
+              "right.end"
+            ],
+            "values": [
+              8.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              12.0,
+              0.0
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              12.0,
+              0.0,
+              12.0,
+              8.0
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              12.0,
+              8.0,
+              0.0,
+              8.0
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              8.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 2,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "rectangle_height_edit",
+      "edited_constraint": "height",
+      "edited_value": 10.0,
+      "expected_area": 120.0,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            10.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            10.0,
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            10.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "rectangle",
+      "parent_case_id": "rectangle_full",
+      "previous_value": 8.0,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "join_bottom_right",
+            "kind": "coincident",
+            "references": [
+              "bottom.end",
+              "right.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_right_top",
+            "kind": "coincident",
+            "references": [
+              "right.end",
+              "top.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_top_left",
+            "kind": "coincident",
+            "references": [
+              "top.end",
+              "left.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "join_left_bottom",
+            "kind": "coincident",
+            "references": [
+              "left.end",
+              "bottom.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_bottom",
+            "kind": "horizontal",
+            "references": [
+              "bottom"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_right",
+            "kind": "vertical",
+            "references": [
+              "right"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal_top",
+            "kind": "horizontal",
+            "references": [
+              "top"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "vertical_left",
+            "kind": "vertical",
+            "references": [
+              "left"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "origin",
+            "kind": "fix_point",
+            "references": [
+              "bottom.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "bottom.start",
+              "bottom.end"
+            ],
+            "values": [
+              12.0
+            ]
+          },
+          {
+            "constraint_id": "height",
+            "kind": "distance_y",
+            "references": [
+              "right.start",
+              "right.end"
+            ],
+            "values": [
+              10.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "bottom",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              12.0,
+              0.0
+            ]
+          },
+          {
+            "entity_id": "right",
+            "kind": "line",
+            "parameters": [
+              12.0,
+              0.0,
+              12.0,
+              8.0
+            ]
+          },
+          {
+            "entity_id": "top",
+            "kind": "line",
+            "parameters": [
+              12.0,
+              8.0,
+              0.0,
+              8.0
+            ]
+          },
+          {
+            "entity_id": "left",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              8.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 2,
+        "sketch_id": "rectangle"
+      }
+    },
+    {
+      "case_id": "circle_radius_edit",
+      "edited_constraint": "radius",
+      "edited_value": 3.0,
+      "expected_area": 28.274333882308138,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            3.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "circle",
+      "parent_case_id": "circle_full",
+      "previous_value": 2.0,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              3.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              4.0,
+              3.0,
+              2.0
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 2,
+        "sketch_id": "circle"
+      }
+    },
+    {
+      "case_id": "line_parallel",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            4.0,
+            5.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "line_relation",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "reference_start",
+            "kind": "fix_point",
+            "references": [
+              "reference.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "reference_end",
+            "kind": "fix_point",
+            "references": [
+              "reference.end"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "moving_start",
+            "kind": "fix_point",
+            "references": [
+              "moving.start"
+            ],
+            "values": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "length",
+            "kind": "distance",
+            "references": [
+              "moving.start",
+              "moving.end"
+            ],
+            "values": [
+              5.0
+            ]
+          },
+          {
+            "constraint_id": "relation",
+            "kind": "parallel",
+            "references": [
+              "reference",
+              "moving"
+            ],
+            "values": []
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "reference",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "entity_id": "moving",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              2.1,
+              3.8,
+              4.7
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "line_parallel"
+      }
+    },
+    {
+      "case_id": "line_perpendicular",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            -3.0,
+            6.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "line_relation",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "reference_start",
+            "kind": "fix_point",
+            "references": [
+              "reference.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "reference_end",
+            "kind": "fix_point",
+            "references": [
+              "reference.end"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "moving_start",
+            "kind": "fix_point",
+            "references": [
+              "moving.start"
+            ],
+            "values": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "length",
+            "kind": "distance",
+            "references": [
+              "moving.start",
+              "moving.end"
+            ],
+            "values": [
+              5.0
+            ]
+          },
+          {
+            "constraint_id": "relation",
+            "kind": "perpendicular",
+            "references": [
+              "reference",
+              "moving"
+            ],
+            "values": []
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "reference",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "entity_id": "moving",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              2.1,
+              -2.7,
+              5.8
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "line_perpendicular"
+      }
+    },
+    {
+      "case_id": "line_angle",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            -3.0,
+            6.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "line_relation",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "reference_start",
+            "kind": "fix_point",
+            "references": [
+              "reference.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "reference_end",
+            "kind": "fix_point",
+            "references": [
+              "reference.end"
+            ],
+            "values": [
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "moving_start",
+            "kind": "fix_point",
+            "references": [
+              "moving.start"
+            ],
+            "values": [
+              0.0,
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "length",
+            "kind": "distance",
+            "references": [
+              "moving.start",
+              "moving.end"
+            ],
+            "values": [
+              5.0
+            ]
+          },
+          {
+            "constraint_id": "relation",
+            "kind": "angle",
+            "references": [
+              "reference",
+              "moving"
+            ],
+            "values": [
+              1.5707963267948966
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "reference",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              4.0,
+              3.0
+            ]
+          },
+          {
+            "entity_id": "moving",
+            "kind": "line",
+            "parameters": [
+              0.1,
+              2.1,
+              -2.7,
+              5.8
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "line_angle"
+      }
+    },
+    {
+      "case_id": "line_circle_tangent",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "line",
+          "kind": "line",
+          "parameters": [
+            -5.0,
+            0.0,
+            5.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            0.0,
+            2.0,
+            2.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "tangency",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "line_start",
+            "kind": "fix_point",
+            "references": [
+              "line.start"
+            ],
+            "values": [
+              -5.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "line_end",
+            "kind": "fix_point",
+            "references": [
+              "line.end"
+            ],
+            "values": [
+              5.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "center_x",
+            "kind": "coordinate_x",
+            "references": [
+              "circle.center"
+            ],
+            "values": [
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "circle"
+            ],
+            "values": [
+              2.0
+            ]
+          },
+          {
+            "constraint_id": "tangency",
+            "kind": "tangent",
+            "references": [
+              "line",
+              "circle"
+            ],
+            "values": [
+              1.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "line",
+            "kind": "line",
+            "parameters": [
+              -5.0,
+              0.0,
+              5.0,
+              0.0
+            ]
+          },
+          {
+            "entity_id": "circle",
+            "kind": "circle",
+            "parameters": [
+              0.2,
+              2.4,
+              1.7
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "line_circle_tangent"
+      }
+    },
+    {
+      "case_id": "quarter_arc",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "arc",
+          "kind": "arc",
+          "parameters": [
+            0.0,
+            0.0,
+            3.0,
+            0.0,
+            1.5707963267948966
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "arc",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "arc.center"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "start_angle",
+            "kind": "arc_start",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "sweep",
+            "kind": "arc_sweep",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              1.5707963267948966
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "arc",
+            "kind": "arc",
+            "parameters": [
+              0.2,
+              -0.1,
+              2.6,
+              0.1,
+              1.5
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "quarter_arc"
+      }
+    },
+    {
+      "case_id": "arc_line_coincident",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 0,
+      "expected_dof": 0,
+      "expected_entities": [
+        {
+          "entity_id": "arc",
+          "kind": "arc",
+          "parameters": [
+            0.0,
+            0.0,
+            3.0,
+            0.0,
+            1.5707963267948966
+          ]
+        },
+        {
+          "entity_id": "line",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            3.0,
+            4.0,
+            3.0
+          ]
+        }
+      ],
+      "expected_status": "fully_constrained",
+      "family": "arc",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "center",
+            "kind": "fix_point",
+            "references": [
+              "arc.center"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "radius",
+            "kind": "radius",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              3.0
+            ]
+          },
+          {
+            "constraint_id": "start_angle",
+            "kind": "arc_start",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "sweep",
+            "kind": "arc_sweep",
+            "references": [
+              "arc"
+            ],
+            "values": [
+              1.5707963267948966
+            ]
+          },
+          {
+            "constraint_id": "join",
+            "kind": "coincident",
+            "references": [
+              "arc.end",
+              "line.start"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "horizontal",
+            "kind": "horizontal",
+            "references": [
+              "line"
+            ],
+            "values": []
+          },
+          {
+            "constraint_id": "width",
+            "kind": "distance_x",
+            "references": [
+              "line.start",
+              "line.end"
+            ],
+            "values": [
+              4.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "arc",
+            "kind": "arc",
+            "parameters": [
+              0.2,
+              -0.1,
+              2.6,
+              0.1,
+              1.5
+            ]
+          },
+          {
+            "entity_id": "line",
+            "kind": "line",
+            "parameters": [
+              0.2,
+              2.8,
+              3.9,
+              3.1
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "arc_line_coincident"
+      }
+    },
+    {
+      "case_id": "nonlinear_unresolved",
+      "edited_constraint": "",
+      "edited_value": null,
+      "expected_area": null,
+      "expected_dependent": 1,
+      "expected_dof": 1,
+      "expected_entities": [],
+      "expected_status": "not_converged",
+      "family": "nonlinear_failure",
+      "parent_case_id": "",
+      "previous_value": null,
+      "sketch": {
+        "constraints": [
+          {
+            "constraint_id": "start",
+            "kind": "fix_point",
+            "references": [
+              "line.start"
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraint_id": "length_a",
+            "kind": "distance",
+            "references": [
+              "line.start",
+              "line.end"
+            ],
+            "values": [
+              5.0
+            ]
+          },
+          {
+            "constraint_id": "length_b",
+            "kind": "distance",
+            "references": [
+              "line.start",
+              "line.end"
+            ],
+            "values": [
+              6.0
+            ]
+          }
+        ],
+        "entities": [
+          {
+            "entity_id": "line",
+            "kind": "line",
+            "parameters": [
+              0.0,
+              0.0,
+              3.0,
+              4.0
+            ]
+          }
+        ],
+        "length_unit": "mm",
+        "revision": 1,
+        "sketch_id": "nonlinear_unresolved"
+      }
+    }
+  ],
+  "contract_version": "1.0.0"
+}

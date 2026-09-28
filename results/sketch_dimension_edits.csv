@@ -1,0 +1,4 @@
+case_id,parent_case_id,constraint_id,before_mm,after_mm,before_area_mm2,after_area_mm2,expected_area_ratio,measured_area_ratio,status,checks_pass
+rectangle_width_edit,rectangle_full,width,12.0000000000,18.0000000000,96.0000000000,144.0000000000,1.5000000000,1.5000000000,fully_constrained,1
+rectangle_height_edit,rectangle_full,height,8.0000000000,10.0000000000,96.0000000000,120.0000000000,1.2500000000,1.2500000000,fully_constrained,1
+circle_radius_edit,circle_full,radius,2.0000000000,3.0000000000,12.5663706144,28.2743338823,2.2500000000,2.2500000000,fully_constrained,1

@@ -1,0 +1,2652 @@
+[
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "profile_hole_9054dfc94df6",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "profile_hole",
+        "fit_score": 0.999982947,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "profile_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      },
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "through_hole_57d4d40e4691",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "through_hole",
+        "fit_score": 0.999983516,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "through_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "through_hole",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          5.0,
+          5.0,
+          4.0
+        ],
+        "bounds_min": [
+          5.0,
+          5.0,
+          0.0
+        ],
+        "center_x": 4.0,
+        "center_y": 5.0,
+        "face_index": 7,
+        "radius": 1.0,
+        "surface_type": "cylinder"
+      }
+    ],
+    "file_name": "through_hole.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 467.433629386,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.849555922,
+      "surface_centroid": [
+        5.913305392,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "reason": "multiple_equivalent_explanations",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "89b93ab7d5991de1097363a053523fd60a8f53edea58ffcc6f7a0c2e115e1a75",
+    "status": "ambiguous"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "blind_hole_cabd61838c87",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "blind_hole",
+        "fit_score": 0.999995453,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "blind_hole",
+              "parameters": [
+                [
+                  "depth",
+                  1.0
+                ],
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "940dc9835bf61b555b49d61e48e7b14b4b2e58d2f22997e27c6285b2466bfb60"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "blind_hole",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          5.0,
+          5.0,
+          4.0
+        ],
+        "bounds_min": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "center_x": 4.0,
+        "center_y": 5.0,
+        "face_index": 7,
+        "radius": 1.0,
+        "surface_type": "cylinder"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "bounds_min": [
+          5.0,
+          5.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 8,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "blind_hole.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 476.858407346,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 8,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 422.283185307,
+      "surface_centroid": [
+        5.97024184,
+        5.0,
+        2.01487908
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          7
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "reason": "candidate_requires_confirmation",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "through_hole",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "profile_hole",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "cylindrical_boss",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "940dc9835bf61b555b49d61e48e7b14b4b2e58d2f22997e27c6285b2466bfb60",
+    "status": "candidate_available"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 5e-08,
+        "candidate_id": "rectangular_pocket_6ab6eae5ac32",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "rectangular_pocket",
+        "fit_score": 0.666666664,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "pocket",
+              "parameters": [
+                [
+                  "depth",
+                  1.0
+                ],
+                [
+                  "length",
+                  3.0
+                ],
+                [
+                  "width",
+                  4.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "d151a534323e57b4d0e197da4110926a47a8776600f81fafb28ace9bf83e5e38"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "pocket",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          7.0,
+          6.0,
+          4.0
+        ],
+        "bounds_min": [
+          7.0,
+          3.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 7,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          7.0,
+          6.0,
+          4.0
+        ],
+        "bounds_min": [
+          3.0,
+          6.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 8,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          3.0,
+          6.0,
+          4.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 9,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          7.0,
+          3.0,
+          4.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 10,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          7.0,
+          6.0,
+          3.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 11,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "pocket.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 468.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 24,
+      "face_count": 11,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 430.0,
+      "surface_centroid": [
+        5.96744186,
+        4.98372093,
+        2.020930233
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          11
+        ]
+      ],
+      "vertex_count": 16
+    },
+    "reason": "candidate_requires_confirmation",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "rectangular_rib",
+        "output is stale; retained geometry is not current"
+      ],
+      [
+        "rectangular_boss",
+        "output is stale; retained geometry is not current"
+      ]
+    ],
+    "source_sha256": "d151a534323e57b4d0e197da4110926a47a8776600f81fafb28ace9bf83e5e38",
+    "status": "candidate_available"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "cylindrical_boss_11512b5ac3d3",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "cylindrical_boss",
+        "fit_score": 0.999987495,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "boss",
+              "parameters": [
+                [
+                  "height",
+                  2.0
+                ],
+                [
+                  "radius",
+                  1.5
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "c7f72bd52961501f783fc320ed1e8a8729e7f8d3297ff085a072347d4bde1d68"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "boss",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          5.5,
+          5.0,
+          6.0
+        ],
+        "bounds_min": [
+          5.5,
+          5.0,
+          4.0
+        ],
+        "center_x": 4.0,
+        "center_y": 5.0,
+        "face_index": 7,
+        "radius": 1.5,
+        "surface_type": "cylinder"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          5.5,
+          5.0,
+          6.0
+        ],
+        "bounds_min": [
+          5.5,
+          5.0,
+          6.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 8,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "boss.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 494.137166941,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        6.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 15,
+      "face_count": 8,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.849555922,
+      "surface_centroid": [
+        5.913305392,
+        5.0,
+        2.16255239
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          7
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "reason": "candidate_requires_confirmation",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "through_hole",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "profile_hole",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "blind_hole",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "c7f72bd52961501f783fc320ed1e8a8729e7f8d3297ff085a072347d4bde1d68",
+    "status": "candidate_available"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "rectangular_boss_c999513d950c",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "rectangular_boss",
+        "fit_score": 1.0,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "rib",
+              "parameters": [
+                [
+                  "height",
+                  2.0
+                ],
+                [
+                  "length",
+                  5.0
+                ],
+                [
+                  "width",
+                  1.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      },
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "rectangular_rib_d91a534cd546",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "rectangular_rib",
+        "fit_score": 1.0,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "rib",
+              "parameters": [
+                [
+                  "height",
+                  2.0
+                ],
+                [
+                  "length",
+                  5.0
+                ],
+                [
+                  "width",
+                  1.0
+                ],
+                [
+                  "x",
+                  3.0
+                ],
+                [
+                  "y",
+                  3.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "rib",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          4.0,
+          3.0,
+          6.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 7,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          4.0,
+          8.0,
+          6.0
+        ],
+        "bounds_min": [
+          4.0,
+          3.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 8,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          4.0,
+          8.0,
+          6.0
+        ],
+        "bounds_min": [
+          3.0,
+          8.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 9,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          3.0,
+          8.0,
+          6.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 10,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          4.0,
+          8.0,
+          6.0
+        ],
+        "bounds_min": [
+          3.0,
+          3.0,
+          6.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 11,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "rib.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 490.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        6.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 24,
+      "face_count": 11,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 440.0,
+      "surface_centroid": [
+        5.863636364,
+        5.027272727,
+        2.186363636
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          11
+        ]
+      ],
+      "vertex_count": 16
+    },
+    "reason": "multiple_equivalent_explanations",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "rectangular_pocket",
+        "output is stale; retained geometry is not current"
+      ]
+    ],
+    "source_sha256": "1cebbe7181de909d3c7aabe7ef3e3473e32e00ab7eedc0d0f5f9c4c90366b0b6",
+    "status": "ambiguous"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "plate_extrusion_99e2e886acb6",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "plate_extrusion",
+        "fit_score": 1.0,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  0.0
+                ],
+                [
+                  "origin_y",
+                  0.0
+                ],
+                [
+                  "origin_z",
+                  0.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "27f0ed1e0dc3a85be58ea870f56fe96b47b77534031e36773658e7ed7f383421"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "plain_plate",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "plain_plate.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 480.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 416.0,
+      "surface_centroid": [
+        6.0,
+        5.0,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "reason": "candidate_requires_confirmation",
+    "rejected_proposals": [],
+    "source_sha256": "27f0ed1e0dc3a85be58ea870f56fe96b47b77534031e36773658e7ed7f383421",
+    "status": "candidate_available"
+  },
+  {
+    "candidates": [
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "profile_hole_22000f99af2e",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "profile_hole",
+        "fit_score": 0.999982947,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  100.0
+                ],
+                [
+                  "origin_y",
+                  -25.0
+                ],
+                [
+                  "origin_z",
+                  7.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "profile_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "aca8699b2ec22120b7971cfe9d999ecb03bc41ea8f6b99759e5e91abd43fd584"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      },
+      {
+        "area_residual": 0.0,
+        "authoring_history_recovered": false,
+        "bounds_residual": 0.0,
+        "candidate_id": "through_hole_158acaefc8be",
+        "confidence_kind": "uncalibrated_geometric_fit",
+        "explanation": "through_hole",
+        "fit_score": 0.999983516,
+        "material_difference_volume": 0.0,
+        "model": {
+          "model_id": "reconstruction",
+          "nodes": [
+            {
+              "dependencies": [],
+              "node_id": "base",
+              "operation": "plate",
+              "parameters": [
+                [
+                  "length",
+                  10.0
+                ],
+                [
+                  "origin_x",
+                  100.0
+                ],
+                [
+                  "origin_y",
+                  -25.0
+                ],
+                [
+                  "origin_z",
+                  7.0
+                ],
+                [
+                  "thickness",
+                  4.0
+                ],
+                [
+                  "width",
+                  12.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "base"
+              ],
+              "node_id": "feature",
+              "operation": "through_hole",
+              "parameters": [
+                [
+                  "radius",
+                  1.0
+                ],
+                [
+                  "x",
+                  4.0
+                ],
+                [
+                  "y",
+                  5.0
+                ]
+              ]
+            },
+            {
+              "dependencies": [
+                "feature"
+              ],
+              "node_id": "result",
+              "operation": "result",
+              "parameters": []
+            }
+          ],
+          "output_id": "result",
+          "provenance": "unconfirmed_candidate",
+          "revision": 1,
+          "source_sha256": "aca8699b2ec22120b7971cfe9d999ecb03bc41ea8f6b99759e5e91abd43fd584"
+        },
+        "status": "unconfirmed",
+        "supporting_faces": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "topology_matches": true,
+        "volume_residual": 0.0
+      }
+    ],
+    "contract_version": "1.0.0",
+    "control_id": "translated_hole",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          112.0,
+          -25.0,
+          11.0
+        ],
+        "bounds_min": [
+          100.0,
+          -25.0,
+          7.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          100.0,
+          -15.0,
+          11.0
+        ],
+        "bounds_min": [
+          100.0,
+          -25.0,
+          7.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          112.0,
+          -15.0,
+          11.0
+        ],
+        "bounds_min": [
+          112.0,
+          -25.0,
+          7.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          112.0,
+          -15.0,
+          7.0
+        ],
+        "bounds_min": [
+          100.0,
+          -25.0,
+          7.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          112.0,
+          -15.0,
+          11.0
+        ],
+        "bounds_min": [
+          100.0,
+          -25.0,
+          11.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          112.0,
+          -15.0,
+          11.0
+        ],
+        "bounds_min": [
+          100.0,
+          -15.0,
+          7.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          105.0,
+          -20.0,
+          11.0
+        ],
+        "bounds_min": [
+          105.0,
+          -20.0,
+          7.0
+        ],
+        "center_x": 104.0,
+        "center_y": -20.0,
+        "face_index": 7,
+        "radius": 1.0,
+        "surface_type": "cylinder"
+      }
+    ],
+    "file_name": "translated_hole.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 467.433629386,
+      "analyzer_valid": true,
+      "bounds_max": [
+        112.0000001,
+        -14.9999999,
+        11.0000001
+      ],
+      "bounds_min": [
+        99.9999999,
+        -25.0000001,
+        6.9999999
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.849555922,
+      "surface_centroid": [
+        105.913305392,
+        -20.0,
+        9.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "reason": "multiple_equivalent_explanations",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ]
+    ],
+    "source_sha256": "aca8699b2ec22120b7971cfe9d999ecb03bc41ea8f6b99759e5e91abd43fd584",
+    "status": "ambiguous"
+  },
+  {
+    "candidates": [],
+    "contract_version": "1.0.0",
+    "control_id": "rotated_plate",
+    "faces": [],
+    "file_name": "rotated_plate.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 480.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        10.392304945,
+        14.660254138,
+        4.0000001
+      ],
+      "bounds_min": [
+        -5.0000001,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 12,
+      "face_count": 6,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 416.0,
+      "surface_centroid": [
+        2.696152423,
+        7.330127019,
+        2.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ]
+      ],
+      "vertex_count": 8
+    },
+    "reason": "only axis-aligned planes and Z-axis cylinders are qualified",
+    "rejected_proposals": [],
+    "source_sha256": "945a8b2432fa0fd1e34ba16484a052f0a0f286a3495643ba40f96c27988173ea",
+    "status": "unsupported"
+  },
+  {
+    "candidates": [],
+    "contract_version": "1.0.0",
+    "control_id": "unsupported_step",
+    "faces": [
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          0.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 1,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          0.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 2,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "bounds_min": [
+          12.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 3,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          12.0,
+          10.0,
+          2.0
+        ],
+        "bounds_min": [
+          6.0,
+          0.0,
+          2.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 4,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          6.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          6.0,
+          0.0,
+          2.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 5,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 2,
+        "bounds_max": [
+          6.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          4.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 6,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 0,
+        "bounds_max": [
+          0.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 7,
+        "radius": null,
+        "surface_type": "plane"
+      },
+      {
+        "axis": 1,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          10.0,
+          0.0
+        ],
+        "center_x": null,
+        "center_y": null,
+        "face_index": 8,
+        "radius": null,
+        "surface_type": "plane"
+      }
+    ],
+    "file_name": "unsupported_step.step",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 360.0,
+      "analyzer_valid": true,
+      "bounds_max": [
+        12.0000001,
+        10.0000001,
+        4.0000001
+      ],
+      "bounds_min": [
+        -1e-07,
+        -1e-07,
+        -1e-07
+      ],
+      "edge_count": 18,
+      "face_count": 8,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 392.0,
+      "surface_centroid": [
+        5.510204082,
+        5.0,
+        1.632653061
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          8
+        ]
+      ],
+      "vertex_count": 12
+    },
+    "reason": "no_proposal_meets_declared_fit_gate",
+    "rejected_proposals": [
+      [
+        "plate_extrusion",
+        "geometry_or_topology_residual_exceeds_gate"
+      ],
+      [
+        "rectangular_pocket",
+        "output is stale; retained geometry is not current"
+      ],
+      [
+        "rectangular_rib",
+        "output is stale; retained geometry is not current"
+      ],
+      [
+        "rectangular_boss",
+        "output is stale; retained geometry is not current"
+      ]
+    ],
+    "source_sha256": "5d7e3177588b6f8f77bf0e980eceb2de564f8de8794169b558ef3fd674004647",
+    "status": "unsupported"
+  }
+]

@@ -1,0 +1,11 @@
+control_id,candidate_id,explanation,state,supporting_faces,volume_residual,area_residual,material_difference_volume,bounds_residual,topology_matches,fit_score,confidence_kind,authoring_history_recovered
+through_hole,profile_hole_9054dfc94df6,profile_hole,unconfirmed,1|2|3|4|5|6|7,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999982947,uncalibrated_geometric_fit,0
+through_hole,through_hole_57d4d40e4691,through_hole,unconfirmed,1|2|3|4|5|6|7,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999983516,uncalibrated_geometric_fit,0
+blind_hole,blind_hole_cabd61838c87,blind_hole,unconfirmed,1|2|3|4|5|6|7|8,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999995453,uncalibrated_geometric_fit,0
+pocket,rectangular_pocket_6ab6eae5ac32,rectangular_pocket,unconfirmed,1|2|3|4|5|6|7|8|9|10|11,0.000000000,0.000000000,0.000000000,0.000000050,1,0.666666664,uncalibrated_geometric_fit,0
+boss,cylindrical_boss_11512b5ac3d3,cylindrical_boss,unconfirmed,1|2|3|4|5|6|7|8,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999987495,uncalibrated_geometric_fit,0
+rib,rectangular_boss_c999513d950c,rectangular_boss,unconfirmed,1|2|3|4|5|6|7|8|9|10|11,0.000000000,0.000000000,0.000000000,0.000000000,1,1.000000000,uncalibrated_geometric_fit,0
+rib,rectangular_rib_d91a534cd546,rectangular_rib,unconfirmed,1|2|3|4|5|6|7|8|9|10|11,0.000000000,0.000000000,0.000000000,0.000000000,1,1.000000000,uncalibrated_geometric_fit,0
+plain_plate,plate_extrusion_99e2e886acb6,plate_extrusion,unconfirmed,1|2|3|4|5|6,0.000000000,0.000000000,0.000000000,0.000000000,1,1.000000000,uncalibrated_geometric_fit,0
+translated_hole,profile_hole_22000f99af2e,profile_hole,unconfirmed,1|2|3|4|5|6|7,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999982947,uncalibrated_geometric_fit,0
+translated_hole,through_hole_158acaefc8be,through_hole,unconfirmed,1|2|3|4|5|6|7,0.000000000,0.000000000,0.000000000,0.000000000,1,0.999983516,uncalibrated_geometric_fit,0

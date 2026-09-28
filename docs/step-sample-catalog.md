@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-repとEXPRESSの調査でコミットした合成サンプル、ハッシュ付き一覧、目視用画像、主な用途を対応付けます。v0.55.0は明示的な特徴グラフから生成した板、穴付き板、段差付き角柱の3試料と形状画像を追加し、読込候補グラフは既存STEPを要約値で参照します。詳細は英語本文に示します。
+本書は、STEP/B-rep、EXPRESS、2Dスケッチの合成サンプル、ハッシュ付き一覧、画像、用途を対応付けます。v0.57.0〜v0.60.0では、特徴の変更前後、再計算の正常出力、候補推定用のSTEP、編集後のSTEPと操作手順を追加します。詳細は英語本文に示します。
 
 ---
 
@@ -892,6 +892,59 @@ through-hole input by digest and deliberately produces no new STEP result.
 The result files prove explicit repository construction and exchange behavior;
 they do not prove that the same feature graphs can be recovered from STEP.
 
+## v0.56.0 — Authored 2D Sketch Controls
+
+Directory: [`fixtures/sketch-constraints/`](../fixtures/sketch-constraints/)
+
+Manifest: [`manifest.csv`](../fixtures/sketch-constraints/manifest.csv)
+
+`sketches.json` records 22 authored initial geometries, identified constraints,
+expected local solver states, independent coordinate and area truth, and three
+dimension-edit relationships. These are 2D research inputs and do not contain
+STEP-derived sketch history or new B-Rep results.
+
+![Sketch dimension edits](../results/sketch_dimension_edits.png)
+
+## v0.57.0 — Parametric Holes, Pockets, Bosses, and Ribs
+
+Directory: [fixtures/parametric-features/](../fixtures/parametric-features/)
+
+Manifest: [byte lengths and SHA-256](../fixtures/parametric-features/manifest.csv)
+
+Ten before/after STEP shapes and authored parameter truth qualify five isolated feature families.
+
+![Parametric Holes, Pockets, Bosses, and Ribs](../results/parametric_features.png)
+
+## v0.58.0 — Dependency Graph and Deterministic Recompute
+
+Directory: [fixtures/deterministic-recompute/](../fixtures/deterministic-recompute/)
+
+Manifest: [byte lengths and SHA-256](../fixtures/deterministic-recompute/manifest.csv)
+
+Three distinct successful STEP snapshots and model revisions expose invalidation and recovery. Failed/stale geometry is never represented as a current-output fixture.
+
+![Dependency Graph and Deterministic Recompute](../results/deterministic_recompute.png)
+
+## v0.59.0 — STEP-to-Feature Reconstruction Candidates
+
+Directory: [fixtures/step-reconstruction/](../fixtures/step-reconstruction/)
+
+Manifest: [byte lengths and SHA-256](../fixtures/step-reconstruction/manifest.csv)
+
+Nine inputs include five feature families, a plate, a translated hole, a rotated plate, and an exterior step. Expected labels are evaluation truth, never inference inputs.
+
+![STEP-to-Feature Reconstruction Candidates](../results/step_reconstruction.png)
+
+## v0.60.0 — Assisted Parametric Modeling Tool
+
+Directory: [fixtures/assisted-modeling/](../fixtures/assisted-modeling/)
+
+Manifest: [byte lengths and SHA-256](../fixtures/assisted-modeling/manifest.csv)
+
+Five edited STEP outputs, workflow parameters, and an explicit terminal demo connect confirmation to export. This geometry-only route does not preserve source metadata.
+
+![Assisted Parametric Modeling Tool](../results/assisted_modeling.png)
+
 ## Regeneration
 
 ```bash
@@ -1026,6 +1079,10 @@ python experiments/run_parametric_feature_graphs.py \
   --import-reference fixtures/feature-recognition-benchmark/benchmark_through_hole_baseline.step \
   --fixture-dir fixtures/parametric-feature-graphs \
   --refresh-fixtures
+
+python experiments/run_sketch_constraints.py \
+  --fixture-dir fixtures/sketch-constraints \
+  --refresh-fixtures
 ```
 
 ## Interpretation Boundary
@@ -1035,3 +1092,15 @@ does not prove Part 21 conformance, EXPRESS conformance or semantic validity,
 application-protocol conformance, B-Rep validity, unit correctness, tolerance
 consistency, or preservation across another kernel. Those claims require the
 separate observations and tests defined by each study.
+
+## Modeling Fixture Reproduction
+
+Run in source order; the independent-copy [recipe](reproducibility.md#modeling-reproduction-through-v0600)
+provides explicit refresh and source paths.
+
+```bash
+python experiments/run_parametric_features.py
+python experiments/run_deterministic_recompute.py
+python experiments/run_step_reconstruction.py
+python experiments/run_assisted_modeling.py
+```

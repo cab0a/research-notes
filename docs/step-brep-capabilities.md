@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.55.0時点のSTEP・EXPRESS・AP242・B-rep機能を、実装済み、限定対応、構造のみ、研究実証、未実装に分けます。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付き非巡回グラフとして表します。拘束条件と一般再計算は未実装です。詳細は英語本文に示します。
+本書は、v0.60.0時点のSTEP・EXPRESS・AP242・B-rep機能を分類します。5種類のパラメトリック形状、決定論的な依存関係の再計算、根拠付きの未確認候補、Python APIと対話ターミナルでの編集・比較・STEP再出力を限定した合成入力で検証しています。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-55 studies through v0.55.0. It separates syntax recognition, schema validation, physical-reference
+60 studies through v0.60.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.56.0 and later roadmap stages remain unimplemented.
+v0.61.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -26,8 +26,8 @@ v0.56.0 and later roadmap stages remain unimplemented.
 | Research evidence | A reproducible experiment records observations without exposing a general supported feature. |
 | Not implemented | No current public implementation supports the capability. |
 
-Only published releases count as completed work. Planned release numbers are
-directions, not delivery promises.
+Implemented stages below have code and reference evidence. Publication of a
+Git tag or package is separate. Planned numbers are not delivery promises.
 
 ## Executive Snapshot
 
@@ -49,8 +49,10 @@ directions, not delivery promises.
 | Rule-based feature recognition | Controlled subset | Nine generated solids and STEP fixtures produce 136 face rows, 282 adjacency rows, 14 candidate rows, 18 stage observations, and two equivalent-boundary rows; all 14 candidates match controlled classification and dimensions, while two negative controls produce no false positives | Feature-history reconstruction, design-intent proof, interacting or arbitrary features, or a general recognizer |
 | Face-level reports | Controlled subset | A versioned 60-field CSV records 13 faces per stage across six surface families with parent lists, geometry, parameters, boundaries, adjacency, tolerance, and attributed metadata source | Persistent identity, arbitrary-file coverage, XCAF metadata traversal, shell-relative material orientation, or cross-kernel portability |
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
-| Geometry modeling | Research evidence | Bounded controls cover primitives, profiles, extrusion, revolution, sweeps, lofts, one point-grid surface, seven Boolean cases, and fillet/chamfer history on one box edge | A supported modeling API, parameter editing, sketches, arbitrary local-feature behavior, history composition, general healing, persistent naming, and evaluated export preservation |
-| AI use | Not implemented | Source-linked tables and graphs can become future inputs | No dataset contract, feature learner, trained model, inference API, or quality claim exists |
+| Geometry modeling | Controlled subset | Explicit hole, pocket, boss, and rib operations; dependency recompute; last-valid recovery; confirmed edits and verified STEP export | Arbitrary features, persistent naming, general healing, source attribute preservation, or arbitrary STEP compatibility |
+| 2D sketch constraints | Research evidence | Twenty-two line, circle, and arc controls record local rank, residuals, and three revisioned dimension edits | Global uniqueness, arbitrary-scale or singularity robustness, general nonlinear conflict detection, or arbitrary sketch-driven B-Rep recompute |
+| Assisted modeling | Controlled subset | Python session API and terminal with confirmation, current-result guards, and static comparison reports | Graphical CAD editing, session restore, undo/redo, assemblies, or a general modeling API |
+| AI use | Research evidence | Family-isolated dataset and four binary baselines from v0.53.0–v0.54.0 | Industrial transfer, general inference API, or calibrated guarantees for arbitrary shapes |
 
 ## Part 21 and Container Capabilities
 
@@ -184,9 +186,11 @@ corpus and its declared provenance.
 | AI-ready 3D dataset | Controlled subset | v0.53.0 | Thirty-six STEP-backed samples, nine family groups, fixed splits, graph/B-Rep features, labels, digests, and five zero-violation leakage checks |
 | Learned 3D assistance | Research demonstration | v0.54.0 | Four binary baselines retain train/calibration/test separation, source-linked evidence, confidence, abstention, calibration bins, and perturbation stability; industrial transfer is untested |
 | Parametric feature graph | Research demonstration | v0.55.0 | Four revisioned DAGs cover datum, parameter, sketch, feature, result, dependency, import reference, observation, and unconfirmed-candidate nodes; three generated B-Reps match truth and STEP |
-| Parametric constraints and recompute | Not implemented | v0.56.0–v0.58.0 | Solver states, explicit feature families, and deterministic dependency recompute |
-| STEP-to-feature reconstruction | Not implemented | v0.59.0 | Residuals, ambiguity, alternatives, confidence, and no design-history claim |
-| Assisted parametric modeling tool | Not implemented | v0.60.0 | Bounded import, inspection, candidate selection, editing, recompute, comparison, and export |
+| 2D sketches and constraints | Research demonstration | v0.56.0 | 22 line, circle, and arc controls with local rank, residuals, explicit failure states, and three revisioned dimension edits; no global solver guarantee or B-Rep connection |
+| Parametric feature families | Controlled subset | v0.57.0 | Five families, ten shapes, 20 constructed/imported truth observations, and five rejections |
+| Dependency recompute | Controlled subset | v0.58.0 | Six events and 36 states; independent branches, last-valid retention, stale descendants, and cold/cached STEP agreement |
+| STEP-to-feature reconstruction | Controlled subset | v0.59.0 | Nine inputs and ten unconfirmed candidates; residuals, source digests, alternative explanations, and uncalibrated fit scores; no history recovery |
+| Assisted parametric modeling tool | Controlled subset | v0.60.0 | Five workflows and eleven guards; Python API, terminal, confirmation, static comparison, and shape-only STEP export |
 
 ## Safe Present-Day Uses
 
@@ -330,3 +334,12 @@ The complete generated-input catalog is in the
 [STEP sample and preview catalog](step-sample-catalog.md). The sequence from
 current limitations to modeling and AI is in the
 [STEP mastery roadmap](brep-learning-roadmap.md).
+
+## Assisted Modeling Boundaries
+
+The [v0.60.0 tool](../notes/assisted-parametric-modeling-tool.md) admits one
+local millimetre STEP root, a valid single solid/shell, at most 24 faces, and
+qualified axis-aligned planes or one Z cylinder. Native work has no execution
+timeout or OS sandbox. Geometry fit does not recover authoring history;
+source names, colors, PMI, and constraints are not carried into exports.
+Persistent references and general editing remain future work.

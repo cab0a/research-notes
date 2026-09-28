@@ -136,6 +136,11 @@ jobs:
           python experiments/run_synthetic_3d_dataset.py --source-fixture-dir regenerated-fixtures/feature-recognition-benchmark --fixture-dir regenerated-fixtures/synthetic-3d-dataset --output-dir regenerated-results --refresh-fixtures
           python experiments/run_learned_3d_baselines.py --dataset-csv regenerated-results/synthetic_3d_samples.csv --output-dir regenerated-results
           python experiments/run_parametric_feature_graphs.py --import-reference regenerated-fixtures/feature-recognition-benchmark/benchmark_through_hole_baseline.step --fixture-dir regenerated-fixtures/parametric-feature-graphs --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_sketch_constraints.py --fixture-dir regenerated-fixtures/sketch-constraints --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_parametric_features.py --fixture-dir regenerated-fixtures/parametric-features --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_deterministic_recompute.py --fixture-dir regenerated-fixtures/deterministic-recompute --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_step_reconstruction.py --source-fixture-dir regenerated-fixtures/parametric-features --fixture-dir regenerated-fixtures/step-reconstruction --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_assisted_modeling.py --source-fixture-dir regenerated-fixtures/step-reconstruction --fixture-dir regenerated-fixtures/assisted-modeling --output-dir regenerated-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -399,6 +404,38 @@ jobs:
           diff -u results/parametric_feature_graph_contract.json regenerated-results/parametric_feature_graph_contract.json
           test -s regenerated-results/parametric_feature_graph.png
           test -s regenerated-results/parametric_feature_graph_shapes.png
+          diff -u results/sketch_constraint_observations.csv regenerated-results/sketch_constraint_observations.csv
+          diff -u results/sketch_constraint_residuals.csv regenerated-results/sketch_constraint_residuals.csv
+          diff -u results/sketch_dimension_edits.csv regenerated-results/sketch_dimension_edits.csv
+          diff -u results/sketch_constraint_solutions.json regenerated-results/sketch_constraint_solutions.json
+          diff -u results/sketch_constraint_contract.json regenerated-results/sketch_constraint_contract.json
+          diff -qr fixtures/sketch-constraints regenerated-fixtures/sketch-constraints
+          test -s regenerated-results/sketch_constraints.png
+          test -s regenerated-results/sketch_dimension_edits.png
+          diff -u results/parametric_features.csv regenerated-results/parametric_features.csv
+          diff -u results/parametric_feature_rejections.csv regenerated-results/parametric_feature_rejections.csv
+          diff -u results/parametric_features_contract.json regenerated-results/parametric_features_contract.json
+          diff -qr fixtures/parametric-features regenerated-fixtures/parametric-features
+          test -s regenerated-results/parametric_features.png
+          diff -u results/deterministic_recompute.csv regenerated-results/deterministic_recompute.csv
+          diff -u results/recompute_node_states.csv regenerated-results/recompute_node_states.csv
+          diff -u results/recompute_models.json regenerated-results/recompute_models.json
+          diff -u results/deterministic_recompute_contract.json regenerated-results/deterministic_recompute_contract.json
+          diff -qr fixtures/deterministic-recompute regenerated-fixtures/deterministic-recompute
+          test -s regenerated-results/deterministic_recompute.png
+          diff -u results/step_reconstruction.csv regenerated-results/step_reconstruction.csv
+          diff -u results/reconstruction_candidates.csv regenerated-results/reconstruction_candidates.csv
+          diff -u results/step_reconstruction.json regenerated-results/step_reconstruction.json
+          diff -u results/step_reconstruction_contract.json regenerated-results/step_reconstruction_contract.json
+          diff -qr fixtures/step-reconstruction regenerated-fixtures/step-reconstruction
+          test -s regenerated-results/step_reconstruction.png
+          diff -u results/assisted_modeling.csv regenerated-results/assisted_modeling.csv
+          diff -u results/assisted_modeling_guards.csv regenerated-results/assisted_modeling_guards.csv
+          diff -u results/assisted_modeling_sessions.json regenerated-results/assisted_modeling_sessions.json
+          diff -u results/assisted_modeling_contract.json regenerated-results/assisted_modeling_contract.json
+          diff -qr fixtures/assisted-modeling regenerated-fixtures/assisted-modeling
+          test -s regenerated-results/assisted_modeling.png
+          test -s regenerated-results/assisted_modeling_example.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

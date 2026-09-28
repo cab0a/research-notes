@@ -1,0 +1,12 @@
+control_id,decision,reason,checks_pass
+edit_before_selection,reject,select and confirm a candidate before editing,1
+selection_without_confirmation,reject,selection replaces the active model with an inferred proposal; explicit confirmation is required,1
+export_before_selection,reject,no confirmed model is available,1
+export_before_recompute,reject,dimensions changed; recompute before comparison or export,1
+compare_before_recompute,reject,dimensions changed; recompute before comparison or export,1
+overwrite_without_permission,reject,export exists; explicit overwrite is required,1
+source_overwrite,reject,the imported source file is read-only; choose another export path,1
+export_stale_result,reject,output is stale; retained geometry is not current,1
+compare_stale_result,reject,output is stale; retained geometry is not current,1
+failed_edit_recovery,recover,last_valid_geometry_reused,1
+new_import_clears_selection,reset,new_source_requires_selection,1

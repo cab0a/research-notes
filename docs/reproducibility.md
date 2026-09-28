@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、55件の研究ノートの合成画像・合成STEP・合成EXPRESS、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.55.0は4個の版番号付き特徴グラフ、3個の生成STEP、真値比較、構造検査、読込候補境界、図を再生成します。
+本書は、60件の研究ノートの合成入力、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.57.0〜v0.60.0の形状構成、再計算、候補生成、編集ツールは固定したgeometry依存環境で実行します。詳細は英語本文に示します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -131,6 +131,11 @@ python experiments/run_feature_recognition_benchmark.py
 python experiments/run_synthetic_3d_dataset.py
 python experiments/run_learned_3d_baselines.py
 python experiments/run_parametric_feature_graphs.py
+python experiments/run_sketch_constraints.py
+python experiments/run_parametric_features.py
+python experiments/run_deterministic_recompute.py
+python experiments/run_step_reconstruction.py
+python experiments/run_assisted_modeling.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -308,6 +313,43 @@ python experiments/run_step_round_trip_preservation.py \
   --refresh-fixtures
 ```
 
+The v0.56.0 study needs only the base dependencies. It verifies committed
+sketch JSON and its digest manifest by default. To refresh separate copies:
+
+```bash
+python experiments/run_sketch_constraints.py \
+  --fixture-dir output/fixtures/sketch-constraints \
+  --output-dir output/sketch-constraints \
+  --refresh-fixtures
+```
+
+## Modeling Reproduction Through v0.60.0
+
+Install the pinned geometry and test extras. Run the four scripts in order:
+v0.59.0 reuses v0.57.0 STEP inputs, and v0.60.0 reuses v0.59.0 inputs.
+Default runs verify existing fixture bytes. For an independent copy:
+
+```bash
+python experiments/run_parametric_features.py --fixture-dir output/v060/fixtures/parametric-features --output-dir output/v060/results --refresh-fixtures
+python experiments/run_deterministic_recompute.py --fixture-dir output/v060/fixtures/deterministic-recompute --output-dir output/v060/results --refresh-fixtures
+python experiments/run_step_reconstruction.py --source-fixture-dir output/v060/fixtures/parametric-features --fixture-dir output/v060/fixtures/step-reconstruction --output-dir output/v060/results --refresh-fixtures
+python experiments/run_assisted_modeling.py --source-fixture-dir output/v060/fixtures/step-reconstruction --fixture-dir output/v060/fixtures/assisted-modeling --output-dir output/v060/results --refresh-fixtures
+```
+
+CSV/JSON outputs and all fixture bytes are compared exactly in tests and CI.
+PNGs are generated visual evidence, without a cross-platform pixel-identity
+claim. Numbers are serialized to nine decimal places while gates use raw
+values. Profile coordinates are checkpointed to twelve decimal places;
+inferred parameters to nine. New STEP writes explicitly set uncertainty to
+1e-7 mm, avoiding dependence on preceding writer activity in the process.
+
+Tests cover analytic truth, graph validation, cache reuse, independent
+branches, failure/stale propagation, translated and unsupported inputs, unit
+context binding, candidate ambiguity, confirmation, source protection,
+current-revision export, and the terminal script. See the
+[tool note](../notes/assisted-parametric-modeling-tool.md) for usage.
+Native input work is in-process and is not an OS sandbox.
+
 ## Deterministic Controls
 
 - Synthetic source images are generated in code.
@@ -464,6 +506,11 @@ python experiments/run_step_round_trip_preservation.py \
   source-linked semantic roles, normalized length units, diagnostics, work
   budgets, and versioned JSON.
 - CI compares regenerated CSV, JSON, and fixture data with committed references.
+- The v0.56.0 sketch corpus fixes 22 initial geometries, constraints, expected
+  states, and analytic truth. Edit seeds are checkpointed at 12 decimal places.
+  Result floats are rounded to ten decimal places; residual and truth gates
+  use unrounded values. PNGs illustrate geometry and local rank, not a global
+  solver guarantee.
 
 PNG files are checked for successful generation. CSV and fixture comparisons
 carry the deterministic equality contract because rendering metadata can vary
@@ -684,7 +731,11 @@ v0.51.0 evaluates four constructed/imported face-adjacency graph pairs, and
 v0.52.0 evaluates 32 feature-rule cases before and after STEP exchange, and
 v0.53.0 binds 36 STEP samples to family-isolated dataset records, v0.54.0
 evaluates four explainable binary baselines on that fixed contract, and
-v0.55.0 evaluates four feature graphs and three generated STEP results.
+v0.55.0 evaluates four feature graphs and three generated STEP results, and
+v0.56.0 evaluates 22 local sketch systems and three dimension edits without a
+geometry kernel. v0.57.0 checks ten parameterized shapes, v0.58.0 records six
+DAG events and 36 states, v0.59.0 evaluates nine reconstruction controls, and
+v0.60.0 verifies five editing workflows and eleven guards.
 None implies
 complete ISO 10303-21, EXPRESS, or AP242 conformance, cross-platform kernel portability,
 redistribution permission, or general trimmed-face, spline, curved-shell

@@ -1,0 +1,2104 @@
+{
+  "contract_version": "1.0.0",
+  "solutions": [
+    {
+      "affine_system": true,
+      "case_id": "rectangle_free",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            11.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            11.0,
+            0.0,
+            11.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            11.0,
+            7.025,
+            0.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            7.025,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 12,
+      "input_sha256": "ed9dfd19f7abd12eb9c521a28876e37063381eb46aa39091feec6e1077595347",
+      "iterations": 1,
+      "jacobian_rank": 12,
+      "local_degrees_of_freedom": 4,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "under_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_anchored",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            11.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            11.0,
+            0.0,
+            11.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            11.0,
+            7.025,
+            0.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            7.025,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 14,
+      "input_sha256": "4a47195b944737582b8c9f4e48b20265b1d4719afe8830b9000b7ea00766f67d",
+      "iterations": 1,
+      "jacobian_rank": 14,
+      "local_degrees_of_freedom": 2,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "under_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_width_only",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            7.025,
+            0.0,
+            7.025
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            7.025,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 15,
+      "input_sha256": "7e0fe60534a5689b735621e8d751773456d2715a329769fc6c8ce3c4d2b15902",
+      "iterations": 1,
+      "jacobian_rank": 15,
+      "local_degrees_of_freedom": 1,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "under_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_full",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 16,
+      "input_sha256": "3735d1a504e83668008dfa6a92eb06ea39ebcff3ffa699a308157ce61dafe3af",
+      "iterations": 1,
+      "jacobian_rank": 16,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "height",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_redundant",
+      "dependent_equation_count": 1,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 17,
+      "input_sha256": "8848283df0074fea72996243a7098dacc59ff9f7894b5395f2301a5f625cb8ba",
+      "iterations": 1,
+      "jacobian_rank": 16,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "height",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width_duplicate",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "over_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_conflict",
+      "dependent_equation_count": 1,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.5,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.5,
+            0.0,
+            12.5,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.5,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 17,
+      "input_sha256": "b782483fe7744382d6b1f8d983da5269b62ddad3efd887c3d9a217db15c20693",
+      "iterations": 1,
+      "jacobian_rank": 16,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.5,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.5
+        },
+        {
+          "component": 0,
+          "constraint_id": "height",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width_conflict",
+          "unit": "mm",
+          "value": -0.5
+        }
+      ],
+      "revision": 1,
+      "satisfied": false,
+      "sketch_id": "rectangle",
+      "status": "inconsistent",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_free",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            3.5,
+            2.4,
+            1.3
+          ]
+        }
+      ],
+      "equation_count": 0,
+      "input_sha256": "0c00e66a3dc89126b73707f52d21e8e01a2664c3f305ccaed760c2b6c377e91f",
+      "iterations": 0,
+      "jacobian_rank": 0,
+      "local_degrees_of_freedom": 3,
+      "max_residual": 0.0,
+      "residuals": [],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "under_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_center_only",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            1.3
+          ]
+        }
+      ],
+      "equation_count": 2,
+      "input_sha256": "35d91ba3cec07783efbdabe0feb0cb7a92adda9f263fe5b850a8e210bb071e78",
+      "iterations": 1,
+      "jacobian_rank": 2,
+      "local_degrees_of_freedom": 1,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "under_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_radius_only",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            3.5,
+            2.4,
+            2.0
+          ]
+        }
+      ],
+      "equation_count": 1,
+      "input_sha256": "4c8fd69da90ffcd300a89758e536e2a66a1f050fdcd5b5392abe651c9984b576",
+      "iterations": 1,
+      "jacobian_rank": 1,
+      "local_degrees_of_freedom": 2,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "under_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_full",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            2.0
+          ]
+        }
+      ],
+      "equation_count": 3,
+      "input_sha256": "879a73ceffcac5aec248bb0062de15e8917e02ec5d8e1c849ce5a6f213e19336",
+      "iterations": 1,
+      "jacobian_rank": 3,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_redundant",
+      "dependent_equation_count": 1,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            2.0
+          ]
+        }
+      ],
+      "equation_count": 4,
+      "input_sha256": "918ffca7962da159ace0f84663c04aecb5a826cff0e7d75b5baa29ca70cf2678",
+      "iterations": 1,
+      "jacobian_rank": 3,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius_duplicate",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "over_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_conflict",
+      "dependent_equation_count": 1,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            2.5
+          ]
+        }
+      ],
+      "equation_count": 4,
+      "input_sha256": "74947ec6329327eea12d576a7ceeaa42097f24f41116f47d052b3749a60afc57",
+      "iterations": 1,
+      "jacobian_rank": 3,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.5,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.5
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius_conflict",
+          "unit": "mm",
+          "value": -0.5
+        }
+      ],
+      "revision": 1,
+      "satisfied": false,
+      "sketch_id": "circle",
+      "status": "inconsistent",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_width_edit",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            18.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            18.0,
+            0.0,
+            18.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            18.0,
+            8.0,
+            0.0,
+            8.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 16,
+      "input_sha256": "6d2451c0ff53551cf8e92365a0fd39e9e49d7a7207bad411e0f38d5644c19856",
+      "iterations": 1,
+      "jacobian_rank": 16,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "height",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 2,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "rectangle_height_edit",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "bottom",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            12.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "right",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            0.0,
+            12.0,
+            10.0
+          ]
+        },
+        {
+          "entity_id": "top",
+          "kind": "line",
+          "parameters": [
+            12.0,
+            10.0,
+            0.0,
+            10.0
+          ]
+        },
+        {
+          "entity_id": "left",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            10.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "equation_count": 16,
+      "input_sha256": "93486831dfea331c48d63c5f64af846bf4615e9021f5a8a122691657d3511dc1",
+      "iterations": 1,
+      "jacobian_rank": 16,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_bottom_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_right_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_top_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join_left_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_bottom",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_right",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal_top",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "vertical_left",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "origin",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "height",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 2,
+      "satisfied": true,
+      "sketch_id": "rectangle",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 16
+    },
+    {
+      "affine_system": true,
+      "case_id": "circle_radius_edit",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            4.0,
+            3.0,
+            3.0
+          ]
+        }
+      ],
+      "equation_count": 3,
+      "input_sha256": "f4f0d2cbc0e5b9e53f988860ab38ebf086ed80cb176802b37705b69f3e71f1e1",
+      "iterations": 1,
+      "jacobian_rank": 3,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 2,
+      "satisfied": true,
+      "sketch_id": "circle",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 3
+    },
+    {
+      "affine_system": false,
+      "case_id": "line_parallel",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            4.0,
+            5.0
+          ]
+        }
+      ],
+      "equation_count": 8,
+      "input_sha256": "c3e4dee24dfbbbf5c94d55df68f7320be22bbdb0c80c0be7e7e3e1cf6ea2c625",
+      "iterations": 3,
+      "jacobian_rank": 8,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "length",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "relation",
+          "unit": "unitless",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "line_parallel",
+      "status": "fully_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 8
+    },
+    {
+      "affine_system": false,
+      "case_id": "line_perpendicular",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            -3.0,
+            6.0
+          ]
+        }
+      ],
+      "equation_count": 8,
+      "input_sha256": "e1749dbeb48f3babfd59dfbafe2ae6b7a7eaa6b483667cb27e3ae1fe00eebdda",
+      "iterations": 3,
+      "jacobian_rank": 8,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "length",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "relation",
+          "unit": "unitless",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "line_perpendicular",
+      "status": "fully_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 8
+    },
+    {
+      "affine_system": false,
+      "case_id": "line_angle",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "reference",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            4.0,
+            3.0
+          ]
+        },
+        {
+          "entity_id": "moving",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            2.0,
+            -3.0,
+            6.0
+          ]
+        }
+      ],
+      "equation_count": 8,
+      "input_sha256": "b5822ae8b3ea600c885fff6c480c1ef67ee68033fecbeef5a7d2bfec9a65098b",
+      "iterations": 3,
+      "jacobian_rank": 8,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "reference_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "moving_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "length",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "relation",
+          "unit": "rad",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "line_angle",
+      "status": "fully_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 8
+    },
+    {
+      "affine_system": false,
+      "case_id": "line_circle_tangent",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "line",
+          "kind": "line",
+          "parameters": [
+            -5.0,
+            0.0,
+            5.0,
+            0.0
+          ]
+        },
+        {
+          "entity_id": "circle",
+          "kind": "circle",
+          "parameters": [
+            0.0,
+            2.0,
+            2.0
+          ]
+        }
+      ],
+      "equation_count": 7,
+      "input_sha256": "004a44ca2d75ac6d7a9c15a87e022d7ef6e1565dd17743bf1728b1877f91123a",
+      "iterations": 1,
+      "jacobian_rank": 7,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "line_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "line_start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "line_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "line_end",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "center_x",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "tangency",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "line_circle_tangent",
+      "status": "fully_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 7
+    },
+    {
+      "affine_system": true,
+      "case_id": "quarter_arc",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "arc",
+          "kind": "arc",
+          "parameters": [
+            0.0,
+            0.0,
+            3.0,
+            0.0,
+            1.5707963268
+          ]
+        }
+      ],
+      "equation_count": 5,
+      "input_sha256": "be5c489d4542455e84f91310538e155aa6383fe2f302a39cdb780686bbd80a9f",
+      "iterations": 1,
+      "jacobian_rank": 5,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "start_angle",
+          "unit": "rad",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "sweep",
+          "unit": "rad",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "quarter_arc",
+      "status": "fully_constrained",
+      "termination": "affine_least_squares",
+      "variable_count": 5
+    },
+    {
+      "affine_system": false,
+      "case_id": "arc_line_coincident",
+      "dependent_equation_count": 0,
+      "entities": [
+        {
+          "entity_id": "arc",
+          "kind": "arc",
+          "parameters": [
+            0.0,
+            0.0,
+            3.0,
+            0.0,
+            1.5707963268
+          ]
+        },
+        {
+          "entity_id": "line",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            3.0,
+            4.0,
+            3.0
+          ]
+        }
+      ],
+      "equation_count": 9,
+      "input_sha256": "3a09ca2e4cae2a169a9c66695a9806f9714d72210a324a485b6162a5567df50e",
+      "iterations": 2,
+      "jacobian_rank": 9,
+      "local_degrees_of_freedom": 0,
+      "max_residual": 0.0,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "center",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "radius",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "start_angle",
+          "unit": "rad",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "sweep",
+          "unit": "rad",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "join",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "join",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "horizontal",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "width",
+          "unit": "mm",
+          "value": 0.0
+        }
+      ],
+      "revision": 1,
+      "satisfied": true,
+      "sketch_id": "arc_line_coincident",
+      "status": "fully_constrained",
+      "termination": "residual_tolerance",
+      "variable_count": 9
+    },
+    {
+      "affine_system": false,
+      "case_id": "nonlinear_unresolved",
+      "dependent_equation_count": 1,
+      "entities": [
+        {
+          "entity_id": "line",
+          "kind": "line",
+          "parameters": [
+            0.0,
+            0.0,
+            3.3,
+            4.4
+          ]
+        }
+      ],
+      "equation_count": 4,
+      "input_sha256": "c188124fb811fdcb61c90359cc809bbcd1de5e45c2c069a3ed68e4bdb0895336",
+      "iterations": 1,
+      "jacobian_rank": 3,
+      "local_degrees_of_freedom": 1,
+      "max_residual": 0.5,
+      "residuals": [
+        {
+          "component": 0,
+          "constraint_id": "start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 1,
+          "constraint_id": "start",
+          "unit": "mm",
+          "value": 0.0
+        },
+        {
+          "component": 0,
+          "constraint_id": "length_a",
+          "unit": "mm",
+          "value": 0.5
+        },
+        {
+          "component": 0,
+          "constraint_id": "length_b",
+          "unit": "mm",
+          "value": -0.5
+        }
+      ],
+      "revision": 1,
+      "satisfied": false,
+      "sketch_id": "nonlinear_unresolved",
+      "status": "not_converged",
+      "termination": "no_descent",
+      "variable_count": 4
+    }
+  ]
+}

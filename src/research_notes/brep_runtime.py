@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import math
 import re
 import tempfile
 from dataclasses import dataclass
@@ -166,12 +167,14 @@ def step_entity_count(source_bytes: bytes, entity_name: str) -> int:
     )
 
 
-def step_round_trip(shape: object, fixture_id: str) -> StepRoundTrip:
+def step_round_trip(shape: object, fixture_id: str, *, writer_uncertainty: float | None = None) -> StepRoundTrip:
     """Write, narrowly normalize, and read one synthetic STEP fixture."""
     if not isinstance(fixture_id, str):
         raise TypeError("fixture_id must be a string")
     if not re.fullmatch(r"[a-z0-9]+(?:_[a-z0-9]+)*", fixture_id):
         raise ValueError("fixture_id must use lower-case snake case")
+    if writer_uncertainty is not None and (not math.isfinite(writer_uncertainty) or writer_uncertainty <= 0):
+        raise ValueError("writer uncertainty must be finite and positive")
 
     from OCP.IFSelect import IFSelect_RetDone
     from OCP.STEPControl import STEPControl_AsIs, STEPControl_Reader, STEPControl_Writer
@@ -180,6 +183,8 @@ def step_round_trip(shape: object, fixture_id: str) -> StepRoundTrip:
     with tempfile.TemporaryDirectory(prefix="research-notes-brep-") as directory:
         path = Path(directory) / file_name
         writer = STEPControl_Writer()
+        if writer_uncertainty is not None:
+            writer.SetTolerance(writer_uncertainty)
         transfer_status = writer.Transfer(shape, STEPControl_AsIs)
         if transfer_status != IFSelect_RetDone:
             raise RuntimeError(

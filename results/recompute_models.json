@@ -1,0 +1,2564 @@
+[
+  {
+    "event": "initial",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              12.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 1,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [
+        "base",
+        "feature",
+        "spare_rib",
+        "boss",
+        "spare_result",
+        "result"
+      ],
+      "model_fingerprint": "5ff7d0d0ba66a6ad595b9b9635077d0c4607e5686f4ab1b2df1136c5003310c5",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [],
+      "revision": 1,
+      "states": [
+        {
+          "attempted_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "error": "",
+          "last_valid_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 480.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 416.0,
+            "surface_centroid": [
+              6.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "62a698765fa99dd70d1ae99aa3f7c635b3c1b47be9ba9ffc80d3a5c40dd8ef81",
+          "error": "",
+          "last_valid_fingerprint": "62a698765fa99dd70d1ae99aa3f7c635b3c1b47be9ba9ffc80d3a5c40dd8ef81",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 467.433629386,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 434.849555922,
+            "surface_centroid": [
+              5.869958088,
+              4.913305392,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "b85fff961ea6d502ac0f276bd1e1b2d3a3efd1454ff9647e32a6fd53c4c53065",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "error": "",
+          "last_valid_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "9c02951e7ece2ea7f8e42c0741c856412ffa769a86cae37168fcc8d5072440b6",
+          "error": "",
+          "last_valid_fingerprint": "9c02951e7ece2ea7f8e42c0741c856412ffa769a86cae37168fcc8d5072440b6",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 473.716814693,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 447.415926536,
+            "surface_centroid": [
+              5.957870172,
+              4.971913448,
+              2.098302931
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "error": "",
+          "last_valid_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "80262082590a9c4af459dc48d5c7b89f32bd2b4fb3ec220d85ed2c9d88c4f7a3",
+          "error": "",
+          "last_valid_fingerprint": "80262082590a9c4af459dc48d5c7b89f32bd2b4fb3ec220d85ed2c9d88c4f7a3",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 473.716814693,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 447.415926536,
+            "surface_centroid": [
+              5.957870172,
+              4.971913448,
+              2.098302931
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        }
+      ]
+    }
+  },
+  {
+    "event": "unchanged",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              12.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 1,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [],
+      "model_fingerprint": "5ff7d0d0ba66a6ad595b9b9635077d0c4607e5686f4ab1b2df1136c5003310c5",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [
+        "base",
+        "feature",
+        "spare_rib",
+        "boss",
+        "spare_result",
+        "result"
+      ],
+      "revision": 1,
+      "states": [
+        {
+          "attempted_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "error": "",
+          "last_valid_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 480.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 416.0,
+            "surface_centroid": [
+              6.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "62a698765fa99dd70d1ae99aa3f7c635b3c1b47be9ba9ffc80d3a5c40dd8ef81",
+          "error": "",
+          "last_valid_fingerprint": "62a698765fa99dd70d1ae99aa3f7c635b3c1b47be9ba9ffc80d3a5c40dd8ef81",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 467.433629386,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 434.849555922,
+            "surface_centroid": [
+              5.869958088,
+              4.913305392,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "b85fff961ea6d502ac0f276bd1e1b2d3a3efd1454ff9647e32a6fd53c4c53065",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "error": "",
+          "last_valid_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "9c02951e7ece2ea7f8e42c0741c856412ffa769a86cae37168fcc8d5072440b6",
+          "error": "",
+          "last_valid_fingerprint": "9c02951e7ece2ea7f8e42c0741c856412ffa769a86cae37168fcc8d5072440b6",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 473.716814693,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 447.415926536,
+            "surface_centroid": [
+              5.957870172,
+              4.971913448,
+              2.098302931
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "error": "",
+          "last_valid_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "80262082590a9c4af459dc48d5c7b89f32bd2b4fb3ec220d85ed2c9d88c4f7a3",
+          "error": "",
+          "last_valid_fingerprint": "80262082590a9c4af459dc48d5c7b89f32bd2b4fb3ec220d85ed2c9d88c4f7a3",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 473.716814693,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 447.415926536,
+            "surface_centroid": [
+              5.957870172,
+              4.971913448,
+              2.098302931
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        }
+      ]
+    }
+  },
+  {
+    "event": "radius_edit",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              12.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              1.5
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 2,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [
+        "feature",
+        "boss",
+        "result"
+      ],
+      "model_fingerprint": "8430613dd82a8b7defe9cdae01ec3c512c209d742f72eb39d5296a3e4696b782",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [
+        "base",
+        "spare_rib",
+        "spare_result"
+      ],
+      "revision": 2,
+      "states": [
+        {
+          "attempted_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "error": "",
+          "last_valid_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 480.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 416.0,
+            "surface_centroid": [
+              6.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "400fc37078c72c73b21c3f15fc33977dc332047158ec86bbe2981c7b95e38517",
+          "error": "",
+          "last_valid_fingerprint": "400fc37078c72c73b21c3f15fc33977dc332047158ec86bbe2981c7b95e38517",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 451.725666118,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 439.561944902,
+            "surface_centroid": [
+              5.839190277,
+              4.892793518,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "9b2164957d4803a414e4c7a79a89a3d4bc7e40d86f04373668c8c42bcf134025",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "error": "",
+          "last_valid_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "821d1764edb03db84830ee8c901729a0c4e2622d7296d9e169758b2b51ed5e65",
+          "error": "",
+          "last_valid_fingerprint": "821d1764edb03db84830ee8c901729a0c4e2622d7296d9e169758b2b51ed5e65",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "error": "",
+          "last_valid_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "1e009ca5f9525aea83d9105a726b36f719548f1243ad0a0ee17bfe52d7c68dd4",
+          "error": "",
+          "last_valid_fingerprint": "1e009ca5f9525aea83d9105a726b36f719548f1243ad0a0ee17bfe52d7c68dd4",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        }
+      ]
+    }
+  },
+  {
+    "event": "invalid_radius",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              12.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              30.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 3,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [
+        "feature"
+      ],
+      "model_fingerprint": "53218e347d31fa0a2a48752f5c00bdd82a12574cf0003f95f3c40fb87203cd31",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [
+        "base",
+        "spare_rib",
+        "spare_result"
+      ],
+      "revision": 3,
+      "states": [
+        {
+          "attempted_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "error": "",
+          "last_valid_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 480.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 416.0,
+            "surface_centroid": [
+              6.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "773aa58cc7dd8c124c42616635cc589a09bb8fe1598b1cc791a8212199c31af5",
+          "error": "feature footprint must remain strictly inside the plate",
+          "last_valid_fingerprint": "400fc37078c72c73b21c3f15fc33977dc332047158ec86bbe2981c7b95e38517",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 451.725666118,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 439.561944902,
+            "surface_centroid": [
+              5.839190277,
+              4.892793518,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "9b2164957d4803a414e4c7a79a89a3d4bc7e40d86f04373668c8c42bcf134025",
+          "status": "failed"
+        },
+        {
+          "attempted_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "error": "",
+          "last_valid_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "e12d44986a45eb1a46ee2721a9a8dbce0276744365946cd6a53dcaaee61b2948",
+          "error": "dependency_not_valid",
+          "last_valid_fingerprint": "821d1764edb03db84830ee8c901729a0c4e2622d7296d9e169758b2b51ed5e65",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "stale"
+        },
+        {
+          "attempted_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "error": "",
+          "last_valid_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "0a570524c106ff39a0daccb2d1a42b767adf8c835f6526555d2331c7ff184c2d",
+          "error": "dependency_not_valid",
+          "last_valid_fingerprint": "1e009ca5f9525aea83d9105a726b36f719548f1243ad0a0ee17bfe52d7c68dd4",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "stale"
+        }
+      ]
+    }
+  },
+  {
+    "event": "recovered",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              12.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              1.5
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 4,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [],
+      "model_fingerprint": "a87fa3e05718bab3ecdf9172fc349878ed8b239945feda4a4a52a72bb062353a",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [
+        "base",
+        "feature",
+        "spare_rib",
+        "boss",
+        "spare_result",
+        "result"
+      ],
+      "revision": 4,
+      "states": [
+        {
+          "attempted_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "error": "",
+          "last_valid_fingerprint": "71efd2b028f7743a5e4c8c176609d40bb2bce2957a9f22d3a09aae0fda3b252e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 480.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 416.0,
+            "surface_centroid": [
+              6.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "76cba21a85b3746f86e1ddaae2e8c0fa9cacabcbdf2c3b482071d3543833ca70",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "400fc37078c72c73b21c3f15fc33977dc332047158ec86bbe2981c7b95e38517",
+          "error": "",
+          "last_valid_fingerprint": "400fc37078c72c73b21c3f15fc33977dc332047158ec86bbe2981c7b95e38517",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 451.725666118,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 439.561944902,
+            "surface_centroid": [
+              5.839190277,
+              4.892793518,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "9b2164957d4803a414e4c7a79a89a3d4bc7e40d86f04373668c8c42bcf134025",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "error": "",
+          "last_valid_fingerprint": "32cc125e83b1fb6e0f04bcfc130bccd85eeb613b6ea46c630515dd70cd03441e",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "821d1764edb03db84830ee8c901729a0c4e2622d7296d9e169758b2b51ed5e65",
+          "error": "",
+          "last_valid_fingerprint": "821d1764edb03db84830ee8c901729a0c4e2622d7296d9e169758b2b51ed5e65",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "error": "",
+          "last_valid_fingerprint": "02db33ca5e3d434a90dcd621a4e9c18f73ebd6bd8c5b700539249628ce79916f",
+          "last_valid_revision": 1,
+          "metrics": {
+            "absolute_volume": 490.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 440.0,
+            "surface_centroid": [
+              5.863636364,
+              5.027272727,
+              2.186363636
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "1e009ca5f9525aea83d9105a726b36f719548f1243ad0a0ee17bfe52d7c68dd4",
+          "error": "",
+          "last_valid_fingerprint": "1e009ca5f9525aea83d9105a726b36f719548f1243ad0a0ee17bfe52d7c68dd4",
+          "last_valid_revision": 2,
+          "metrics": {
+            "absolute_volume": 458.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              12.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 452.128315516,
+            "surface_centroid": [
+              5.927041236,
+              4.951360824,
+              2.097278351
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        }
+      ]
+    }
+  },
+  {
+    "event": "base_width_edit",
+    "model": {
+      "model_id": "branching_plate",
+      "nodes": [
+        {
+          "dependencies": [],
+          "node_id": "base",
+          "operation": "plate",
+          "parameters": [
+            [
+              "length",
+              10.0
+            ],
+            [
+              "origin_x",
+              0.0
+            ],
+            [
+              "origin_y",
+              0.0
+            ],
+            [
+              "origin_z",
+              0.0
+            ],
+            [
+              "thickness",
+              4.0
+            ],
+            [
+              "width",
+              14.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "feature",
+          "operation": "through_hole",
+          "parameters": [
+            [
+              "radius",
+              1.5
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "feature"
+          ],
+          "node_id": "boss",
+          "operation": "boss",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "radius",
+              1.0
+            ],
+            [
+              "x",
+              9.0
+            ],
+            [
+              "y",
+              7.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "boss"
+          ],
+          "node_id": "result",
+          "operation": "result",
+          "parameters": []
+        },
+        {
+          "dependencies": [
+            "base"
+          ],
+          "node_id": "spare_rib",
+          "operation": "rib",
+          "parameters": [
+            [
+              "height",
+              2.0
+            ],
+            [
+              "length",
+              5.0
+            ],
+            [
+              "width",
+              1.0
+            ],
+            [
+              "x",
+              3.0
+            ],
+            [
+              "y",
+              3.0
+            ]
+          ]
+        },
+        {
+          "dependencies": [
+            "spare_rib"
+          ],
+          "node_id": "spare_result",
+          "operation": "result",
+          "parameters": []
+        }
+      ],
+      "output_id": "result",
+      "provenance": "authored",
+      "revision": 5,
+      "source_sha256": ""
+    },
+    "recompute": {
+      "evaluated_nodes": [
+        "base",
+        "feature",
+        "spare_rib",
+        "boss",
+        "spare_result",
+        "result"
+      ],
+      "model_fingerprint": "60f6b983865ac49927b8f25172a84d82d53840febde7ed25e0d369fe2fd5d18b",
+      "model_id": "branching_plate",
+      "output_id": "result",
+      "reused_nodes": [],
+      "revision": 5,
+      "states": [
+        {
+          "attempted_fingerprint": "c707fbf7e81c2882dc36c525cb01e7ce3fa42a2e0a4fcb8f17b19370a929160d",
+          "error": "",
+          "last_valid_fingerprint": "c707fbf7e81c2882dc36c525cb01e7ce3fa42a2e0a4fcb8f17b19370a929160d",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 560.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 12,
+            "face_count": 6,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 472.0,
+            "surface_centroid": [
+              7.0,
+              5.0,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "vertex_count": 8
+          },
+          "node_id": "base",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "ef9a4647c5acbd823edcded77ad0b539100a13cd36f2833508da935c5d6f3e23",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "848d351672267326e3d0372586d254a95455d47728c04436f8f204cd3f726d0d",
+          "error": "",
+          "last_valid_fingerprint": "848d351672267326e3d0372586d254a95455d47728c04436f8f204cd3f726d0d",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 531.725666118,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              4.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 15,
+            "face_count": 7,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 495.561944902,
+            "surface_centroid": [
+              6.80981635,
+              4.904908175,
+              2.0
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ],
+              [
+                "cylinder",
+                1
+              ]
+            ],
+            "vertex_count": 10
+          },
+          "node_id": "feature",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "9b2164957d4803a414e4c7a79a89a3d4bc7e40d86f04373668c8c42bcf134025",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "9542fcc36532922597c30289fb5fb3a9f528ef431b1b392872f98574912274a2",
+          "error": "",
+          "last_valid_fingerprint": "9542fcc36532922597c30289fb5fb3a9f528ef431b1b392872f98574912274a2",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 570.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 496.0,
+            "surface_centroid": [
+              6.830645161,
+              5.024193548,
+              2.165322581
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_rib",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "5f909872c619ddcffb3ec5633cfa66553386d12a7cbae4546c4ad1621b69d934",
+          "error": "",
+          "last_valid_fingerprint": "5f909872c619ddcffb3ec5633cfa66553386d12a7cbae4546c4ad1621b69d934",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 538.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 508.128315516,
+            "surface_centroid": [
+              6.863981132,
+              4.956721269,
+              2.086557462
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "boss",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "a8e003a00e935e41d0c6bcea3c9ccf7e44aa1e062a2e50ce16eda90b34d138be",
+          "error": "",
+          "last_valid_fingerprint": "a8e003a00e935e41d0c6bcea3c9ccf7e44aa1e062a2e50ce16eda90b34d138be",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 570.0,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 24,
+            "face_count": 11,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 496.0,
+            "surface_centroid": [
+              6.830645161,
+              5.024193548,
+              2.165322581
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                11
+              ]
+            ],
+            "vertex_count": 16
+          },
+          "node_id": "spare_result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "30782392fa0f8e7f89c7f7818fe289b800c32384e7cca8a418b5cfee7fb3487c",
+          "status": "valid"
+        },
+        {
+          "attempted_fingerprint": "2607a929d56af0c16f13f3048f694dc55fbb0187b03dd95fec10b4014be50035",
+          "error": "",
+          "last_valid_fingerprint": "2607a929d56af0c16f13f3048f694dc55fbb0187b03dd95fec10b4014be50035",
+          "last_valid_revision": 5,
+          "metrics": {
+            "absolute_volume": 538.008851425,
+            "analyzer_valid": true,
+            "bounds_max": [
+              14.0000001,
+              10.0000001,
+              6.0000001
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "edge_count": 18,
+            "face_count": 9,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "maximum_vertex_tolerance": 1e-07,
+            "shell_count": 1,
+            "solid_count": 1,
+            "surface_area": 508.128315516,
+            "surface_centroid": [
+              6.863981132,
+              4.956721269,
+              2.086557462
+            ],
+            "surface_counts": [
+              [
+                "plane",
+                7
+              ],
+              [
+                "cylinder",
+                2
+              ]
+            ],
+            "vertex_count": 12
+          },
+          "node_id": "result",
+          "retained_geometry_available": true,
+          "sketch_fingerprint": "959bfe0965f39c9d06310a444068fa6fa3fffc01599fc68bbe4a2479aaf1bdb4",
+          "status": "valid"
+        }
+      ]
+    }
+  }
+]

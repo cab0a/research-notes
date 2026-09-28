@@ -1,0 +1,18 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "focused Python API and terminal workspace for the v0.59.0 qualified input grammar, not a general CAD editor",
+    "inferred proposals require explicit confirmation before model replacement or editing; no original authoring history is claimed",
+    "dirty, failed, and stale outputs cannot be compared as current or exported; source files cannot be overwritten",
+    "STEP export is shape-only: names, colors, PMI, constraints, and proprietary history are not preserved by this route",
+    "session.json is an inspection record, not a persistent session restore or crash-recovery format",
+    "input parsing is bounded but native import and geometry work are not an OS security sandbox"
+  ],
+  "contract_version": "1.0.0",
+  "guard_count": 11,
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 16,
+  "study_version": "v0.60.0",
+  "terminal_entry_point": "python -m research_notes.modeling_tool",
+  "workflow_count": 5
+}

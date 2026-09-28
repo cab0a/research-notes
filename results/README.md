@@ -2,14 +2,15 @@
 
 ## 日本語概要
 
-このディレクトリには、55件の研究を固定した合成画像・合成STEP・合成EXPRESSと版管理された実験スクリプトから生成した参照成果物があります。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付きグラフとして記録し、3個の生成形状を真値とSTEP往復で評価します。
+このディレクトリには、60件の研究を固定した合成入力と版管理された実験スクリプトから生成した参照成果物があります。v0.57.0〜v0.60.0では形状の真値、再計算の状態遷移、候補の曖昧さ、編集からSTEP再出力までを記録します。詳細は英語本文に示します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
 ---
 
 This directory contains committed outputs generated exclusively from synthetic
-images and STEP exchange structures by the versioned experiment scripts.
+images, STEP exchange structures, and authored sketches by the versioned
+experiment scripts.
 
 ## v0.1.0
 
@@ -1375,6 +1376,78 @@ The rule and combined tabular baselines decide all eight test samples correctly.
 
 All 16 graph checks and all six independent volume/area truth checks pass. Three STEP results retain topology counts with maximum volume and area differences below `1e-12`. The imported hole candidate remains unconfirmed and has no generated-result node.
 
+## v0.56.0
+
+- `sketch_constraint_observations.csv` records expected and measured states, local rank, freedom, dependent rows, residuals, independent truth errors, and checks for 22 controls.
+- `sketch_constraint_residuals.csv` records every scalar constraint component, its unit, residual, and unrounded tolerance decision.
+- `sketch_dimension_edits.csv` compares width, height, and radius edits with analytic area ratios.
+- `sketch_constraint_solutions.json` retains revisioned solved or diagnostic geometry and per-equation residuals.
+- `sketch_constraint_contract.json` fixes fixture provenance, solver limits, tolerances, serialization, and claim boundaries.
+- `sketch_constraints.png` displays the 22 local constraint-state observations.
+- `sketch_dimension_edits.png` compares the original and edited rectangle and circle geometry.
+
+Inputs and independent truth are committed in
+[`fixtures/sketch-constraints/`](../fixtures/sketch-constraints/). Result numbers
+are rounded to ten decimal places; all success flags use unrounded values.
+Nonlinear non-convergence is distinct from affine incompatibility.
+
+## v0.57.0
+
+Ten shapes from five feature families pass 20 constructed/imported truth observations; five invalid domains reject.
+
+- [parametric_features.csv](parametric_features.csv) records primary observations.
+- [parametric_feature_rejections.csv](parametric_feature_rejections.csv) records supporting observations or model records.
+- [parametric_features_contract.json](parametric_features_contract.json) records limits and claim boundaries.
+- [parametric_features.png](parametric_features.png) records visual evidence.
+
+Inputs and exact digests: [parametric-features](../fixtures/parametric-features/manifest.csv).
+Interpretation: [complete note](../notes/parametric-holes-pockets-bosses-ribs.md).
+
+## v0.58.0
+
+Six events produce 36 node states; five valid events match analytic volume and cold/cached normalized STEP bytes.
+
+- [deterministic_recompute.csv](deterministic_recompute.csv) records primary observations.
+- [recompute_node_states.csv](recompute_node_states.csv) records supporting observations or model records.
+- [recompute_models.json](recompute_models.json) records supporting observations or model records.
+- [deterministic_recompute_contract.json](deterministic_recompute_contract.json) records limits and claim boundaries.
+- [deterministic_recompute.png](deterministic_recompute.png) records visual evidence.
+
+Inputs and exact digests: [deterministic-recompute](../fixtures/deterministic-recompute/manifest.csv).
+Interpretation: [complete note](../notes/dependency-graph-deterministic-recompute.md).
+
+## v0.59.0
+
+Nine STEP inputs yield ten unconfirmed candidates: three ambiguous inputs, four single-candidate inputs, and two unsupported inputs.
+
+- [step_reconstruction.csv](step_reconstruction.csv) records primary observations.
+- [reconstruction_candidates.csv](reconstruction_candidates.csv) records supporting observations or model records.
+- [step_reconstruction.json](step_reconstruction.json) records supporting observations or model records.
+- [step_reconstruction_contract.json](step_reconstruction_contract.json) records limits and claim boundaries.
+- [step_reconstruction.png](step_reconstruction.png) records visual evidence.
+
+Inputs and exact digests: [step-reconstruction](../fixtures/step-reconstruction/manifest.csv).
+Interpretation: [complete note](../notes/step-to-feature-reconstruction-candidates.md).
+
+## v0.60.0
+
+Five end-to-end edits match volume/area truth and STEP round trips; eleven state and export guards pass.
+
+- [assisted_modeling.csv](assisted_modeling.csv) records primary observations.
+- [assisted_modeling_guards.csv](assisted_modeling_guards.csv) records supporting observations or model records.
+- [assisted_modeling_sessions.json](assisted_modeling_sessions.json) records supporting observations or model records.
+- [assisted_modeling_contract.json](assisted_modeling_contract.json) records limits and claim boundaries.
+- [assisted_modeling.png](assisted_modeling.png) records visual evidence.
+- [assisted_modeling_example.png](assisted_modeling_example.png) compares imported, confirmed, and edited geometry.
+
+Inputs and exact digests: [assisted-modeling](../fixtures/assisted-modeling/manifest.csv).
+Interpretation: [complete note](../notes/assisted-parametric-modeling-tool.md).
+
+These four studies serialize numeric evidence to nine decimal places and
+check unrounded values. STEP writers explicitly declare 1e-7 mm uncertainty.
+Geometric fit is not recovered authoring history, and retained last valid
+geometry is not a current failed result.
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1433,6 +1506,11 @@ python experiments/run_feature_recognition_benchmark.py
 python experiments/run_synthetic_3d_dataset.py
 python experiments/run_learned_3d_baselines.py
 python experiments/run_parametric_feature_graphs.py
+python experiments/run_sketch_constraints.py
+python experiments/run_parametric_features.py
+python experiments/run_deterministic_recompute.py
+python experiments/run_step_reconstruction.py
+python experiments/run_assisted_modeling.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

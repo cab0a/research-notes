@@ -1,0 +1,16 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "five feature families on one axis-aligned plate; no arbitrary placement or interacting-feature guarantee",
+    "plate and tool profiles use the v0.56.0 sketch solver; coordinates are checkpointed at 12 decimal places",
+    "closed-form truth applies to one isolated interior feature; Boolean operations use one pinned OCCT route",
+    "STEP preserves the tested geometry and topology counts, not sketch constraints or authoring history"
+  ],
+  "contract_version": "1.0.0",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 25,
+  "rejection_count": 5,
+  "shape_count": 10,
+  "stage_observation_count": 20,
+  "study_version": "v0.57.0"
+}

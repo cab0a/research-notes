@@ -1,0 +1,19 @@
+{
+  "all_checks_pass": true,
+  "candidate_count": 10,
+  "claim_boundaries": [
+    "candidate generation reads source bytes and measured B-Rep faces, not fixture names, expected labels, or sidecar truth",
+    "single-root, single-shell millimetre solids; axis-aligned planes and at most one Z-axis cylinder, with bounded sizes",
+    "all proposals remain unconfirmed; equivalent construction routes and semantic labels remain explicit alternatives",
+    "fit_score is an uncalibrated residual score, not a probability of correct design intent",
+    "bidirectional material difference uses the same kernel; face IDs are analysis-local, not persistent STEP/CAD identities",
+    "bounded parsing and topology gates do not provide an OS sandbox or native-code timeout"
+  ],
+  "contract_version": "1.0.0",
+  "fit_tolerance": 1e-07,
+  "input_count": 9,
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 9,
+  "source_coordinate_checkpoint": "9 decimal places; candidates are rechecked against unrounded source geometry",
+  "study_version": "v0.59.0"
+}

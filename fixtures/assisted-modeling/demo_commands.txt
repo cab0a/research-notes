@@ -1,0 +1,9 @@
+open fixtures/step-reconstruction/through_hole.step
+candidates
+select 2 --confirm
+set feature radius 1.5
+recompute
+compare
+export output/modeling-demo/edited.step --overwrite
+status
+quit

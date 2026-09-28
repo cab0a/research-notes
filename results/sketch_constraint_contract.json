@@ -1,0 +1,40 @@
+{
+  "all_checks_pass": true,
+  "case_count": 22,
+  "claim_boundaries": [
+    "synthetic authored sketches; no STEP import, inference, B-Rep construction, or graph recompute",
+    "Jacobian rank, freedom, and dependent rows are local first-order observations, not global uniqueness or redundancy proofs",
+    "over_constrained denotes satisfied dependent equations and can coexist with remaining freedom",
+    "inconsistent is reported only for incompatible affine equations; nonlinear failure remains not_converged",
+    "line dimensions are signed x/y differences; general distance is positive Euclidean length",
+    "tangency is signed infinite-line to full-circle support tangency, not finite-segment or arc tangency",
+    "arcs are counterclockwise with sweep strictly between zero and 2pi; angle branches and seeds are explicit",
+    "fixed mm/rad residual scaling and bounded examples do not establish robustness across coordinate scales or singularities",
+    "geometry domain: positive radii, nonzero lines, finite parameter magnitudes at most 1e6; at most 32 entities and 128 constraints",
+    "inconsistent, invalid_geometry, and not_converged outputs are diagnostic iterates, never accepted solved sketches"
+  ],
+  "contract_version": "1.0.0",
+  "difference_step": 1e-06,
+  "edit_seed": "matching satisfied parent solution checkpointed at 12 decimal places",
+  "fixture_sha256": "6f3153524857ee3ac1693ab370ab42628a7365557afa59aafebe36de513d8359",
+  "maximum_nonlinear_iterations": 80,
+  "minimum_geometry_size_mm": 1e-08,
+  "rank_relative_tolerance": 1e-07,
+  "residual_tolerance": 1e-09,
+  "serialization": "result floats rounded to 10 decimal places; all gates use unrounded values; sub-resolution values display as zero",
+  "solver": "NumPy least squares; direct affine solve or backtracked local Gauss-Newton",
+  "state_counts": {
+    "fully_constrained": 11,
+    "inconsistent": 2,
+    "not_converged": 1,
+    "over_constrained": 2,
+    "under_constrained": 6
+  },
+  "study_version": "v0.56.0",
+  "title": "Two-Dimensional Sketches and Geometric Constraints",
+  "units": {
+    "angle": "rad",
+    "length": "mm",
+    "normalized_direction": "unitless"
+  }
+}

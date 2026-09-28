@@ -1,0 +1,55 @@
+[
+  {
+    "control_id": "through_hole",
+    "expected_explanations": [
+      "profile_hole",
+      "through_hole"
+    ]
+  },
+  {
+    "control_id": "blind_hole",
+    "expected_explanations": [
+      "blind_hole"
+    ]
+  },
+  {
+    "control_id": "pocket",
+    "expected_explanations": [
+      "rectangular_pocket"
+    ]
+  },
+  {
+    "control_id": "boss",
+    "expected_explanations": [
+      "cylindrical_boss"
+    ]
+  },
+  {
+    "control_id": "rib",
+    "expected_explanations": [
+      "rectangular_boss",
+      "rectangular_rib"
+    ]
+  },
+  {
+    "control_id": "plain_plate",
+    "expected_explanations": [
+      "plate_extrusion"
+    ]
+  },
+  {
+    "control_id": "translated_hole",
+    "expected_explanations": [
+      "profile_hole",
+      "through_hole"
+    ]
+  },
+  {
+    "control_id": "rotated_plate",
+    "expected_explanations": []
+  },
+  {
+    "control_id": "unsupported_step",
+    "expected_explanations": []
+  }
+]

@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理、JPEG、メタデータ、STEP・EXPRESS・AP242、形状計算核、B-rep解析を扱う55件の研究を索引化しています。v0.55.0は基準面、寸法、スケッチ、形状操作、結果形状、依存関係、読込候補を版番号付き非巡回グラフとして表し、3個の生成形状を真値とSTEP往復で評価します。各版の問い、代表結果、成果物、再現コマンド、完全な研究ノートを対応付けます。
+本書は、画像処理からSTEP・B-repの解析と編集までの60件の研究を索引化しています。v0.57.0〜v0.60.0は5種類の形状構成、依存関係の再計算、STEPからの候補生成、候補の確認・編集・比較・再出力を検証します。各版の問い、成果物、再現コマンドを対応付けます。詳細は英語本文に示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1428,6 +1428,95 @@ python -m pip install -e ".[geometry]"
 python experiments/run_parametric_feature_graphs.py
 ```
 
+### v0.56.0 — Two-Dimensional Sketches and Geometric Constraints
+
+**Question.** Can small authored sketches distinguish local freedom, satisfied
+redundancy, and incompatible dimensions while preserving unaffected geometry
+after a dimension edit?
+
+**Result.** All 22 controls match expected states and declared truth. Rectangle
+freedom decreases from 4 to 2 to 1 to 0. Width, height, and radius edits retain
+the remaining constraints and yield area ratios 1.5, 1.25, and 2.25. Affine
+inconsistency and nonlinear non-convergence remain separate outcomes.
+
+- [Complete note](../notes/two-dimensional-sketches-geometric-constraints.md)
+- [Case observations](../results/sketch_constraint_observations.csv)
+- [Per-equation residuals](../results/sketch_constraint_residuals.csv)
+- [Dimension edit comparisons](../results/sketch_dimension_edits.csv)
+- [Solution records](../results/sketch_constraint_solutions.json)
+- [Solver contract](../results/sketch_constraint_contract.json)
+- [Constraint states](../results/sketch_constraints.png)
+- [Dimension previews](../results/sketch_dimension_edits.png)
+- [Authored input fixtures](../fixtures/sketch-constraints/)
+
+```bash
+python experiments/run_sketch_constraints.py
+```
+
+### v0.57.0 — Parametric Holes, Pockets, Bosses, and Ribs
+
+**Question:** Can solved profiles drive dimensioned features checked independently of the kernel?
+
+**Representative finding:** Ten shapes from five feature families pass 20 constructed/imported truth observations; five invalid domains reject.
+
+- [Complete note](../notes/parametric-holes-pockets-bosses-ribs.md)
+- [Input manifest](../fixtures/parametric-features/manifest.csv)
+- [Observations](../results/parametric_features.csv)
+- [Contract](../results/parametric_features_contract.json)
+- [Figure](../results/parametric_features.png)
+
+```bash
+python experiments/run_parametric_features.py
+```
+
+### v0.58.0 — Dependency Graph and Deterministic Recompute
+
+**Question:** Can parameter changes propagate while independent branches and last valid results remain distinguishable?
+
+**Representative finding:** Six events produce 36 node states; five valid events match analytic volume and cold/cached normalized STEP bytes.
+
+- [Complete note](../notes/dependency-graph-deterministic-recompute.md)
+- [Input manifest](../fixtures/deterministic-recompute/manifest.csv)
+- [Observations](../results/deterministic_recompute.csv)
+- [Contract](../results/deterministic_recompute_contract.json)
+- [Figure](../results/deterministic_recompute.png)
+
+```bash
+python experiments/run_deterministic_recompute.py
+```
+
+### v0.59.0 — STEP-to-Feature Reconstruction Candidates
+
+**Question:** Which editable construction proposals fit imported geometry, and where does ambiguity remain?
+
+**Representative finding:** Nine STEP inputs yield ten unconfirmed candidates: three ambiguous inputs, four single-candidate inputs, and two unsupported inputs.
+
+- [Complete note](../notes/step-to-feature-reconstruction-candidates.md)
+- [Input manifest](../fixtures/step-reconstruction/manifest.csv)
+- [Observations](../results/step_reconstruction.csv)
+- [Contract](../results/step_reconstruction_contract.json)
+- [Figure](../results/step_reconstruction.png)
+
+```bash
+python experiments/run_step_reconstruction.py
+```
+
+### v0.60.0 — Assisted Parametric Modeling Tool
+
+**Question:** Can explicit selection, editing, recompute, visual comparison, and verified export form a bounded workflow?
+
+**Representative finding:** Five end-to-end edits match volume/area truth and STEP round trips; eleven state and export guards pass.
+
+- [Complete note](../notes/assisted-parametric-modeling-tool.md)
+- [Input manifest](../fixtures/assisted-modeling/manifest.csv)
+- [Observations](../results/assisted_modeling.csv)
+- [Contract](../results/assisted_modeling_contract.json)
+- [Figure](../results/assisted_modeling.png)
+
+```bash
+python experiments/run_assisted_modeling.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1452,7 +1541,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.55.0 subsets;
+  controlled v0.21.0 through v0.60.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,
@@ -1480,5 +1569,9 @@ failure-mode analysis, but it does not establish:
   arbitrary hostile-file handling from the v0.50.0 counters and timeouts.
 - persistent naming, complete graph isomorphism, feature recognition, or
   design-intent recovery from the v0.51.0 analysis-local graph descriptors.
+
+- global solution uniqueness, general nonlinear inconsistency detection,
+  arbitrary-scale robustness, or dependency-wide recompute from the v0.56.0
+  local sketch solver.
 
 The complete notes contain the narrower limitations for each experiment.

@@ -1,0 +1,2 @@
+file_name,byte_length,sha256,case_count,generator,provenance
+sketches.json,57386,6f3153524857ee3ac1693ab370ab42628a7365557afa59aafebe36de513d8359,22,experiments/run_sketch_constraints.py,synthetic authored constraints and independent analytic truth; no STEP inference
