@@ -1,0 +1,55 @@
+[
+  {
+    "base_value": 50.8,
+    "declared_unit": "mm",
+    "dependencies": [],
+    "dimension": [
+      1,
+      0
+    ],
+    "expression": "2 * inch",
+    "name": "width",
+    "value_in_declared_unit": 50.8
+  },
+  {
+    "base_value": 25.4,
+    "declared_unit": "cm",
+    "dependencies": [
+      "width"
+    ],
+    "dimension": [
+      1,
+      0
+    ],
+    "expression": "width / 2",
+    "name": "half",
+    "value_in_declared_unit": 2.54
+  },
+  {
+    "base_value": 0.5,
+    "declared_unit": "one",
+    "dependencies": [
+      "half",
+      "width"
+    ],
+    "dimension": [
+      0,
+      0
+    ],
+    "expression": "half / width",
+    "name": "ratio",
+    "value_in_declared_unit": 0.5
+  },
+  {
+    "base_value": 1.570796327,
+    "declared_unit": "rad",
+    "dependencies": [],
+    "dimension": [
+      0,
+      1
+    ],
+    "expression": "90 * deg",
+    "name": "angle",
+    "value_in_declared_unit": 1.570796327
+  }
+]

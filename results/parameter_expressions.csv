@@ -1,0 +1,18 @@
+control_id,decision,base_value,expected_base_value,reason,checks_pass
+width,accept,50.800000000,50.800000000,,1
+half,accept,25.400000000,25.400000000,,1
+ratio,accept,0.500000000,0.500000000,,1
+angle,accept,1.570796327,1.570796327,,1
+missing_unit,reject,,,expression dimension differs from declared unit: size,1
+dimension_mismatch,reject,,,addition/subtraction requires equal dimensions,1
+division_zero,reject,,,division by zero,1
+unknown_name,reject,,,unknown expression name: missing,1
+call,reject,,,"only names, numbers, parentheses, +, -, *, and / are supported",1
+attribute,reject,,,"only names, numbers, parentheses, +, -, *, and / are supported",1
+power,reject,,,"only names, numbers, parentheses, +, -, *, and / are supported",1
+overflow,reject,,,quantity exceeds the finite arithmetic domain,1
+out_of_domain,reject,,,parameter is outside its inclusive domain: size,1
+cycle,reject,,,cyclic parameter expressions,1
+duplicate_name,reject,,,duplicate parameter name,1
+reserved_unit,reject,,,parameter name is invalid or reserved,1
+bound_model,accept,451.725666118,451.725666118,3 mm diameter becomes 1.5 mm model radius,1

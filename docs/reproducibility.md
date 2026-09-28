@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、60件の研究ノートの合成入力、固定条件、CSV・JSON・図、実行環境を再現する手順を定義します。v0.57.0〜v0.60.0の形状構成、再計算、候補生成、編集ツールは固定したgeometry依存環境で実行します。詳細は英語本文に示します。
+本書は65件の研究ノートの合成入力、固定条件、観測値、図、実行環境を再現する手順です。v0.61.0〜v0.65.0は参照追跡から組立再計算までを固定したgeometry依存環境で検証します。詳細は英語本文に示します。
 
 現在と今後の公開版には研究・教育・個人的実験向けのPolyForm Noncommercial License 1.0.0を適用し、商用利用には書面による別ライセンスが必要です。過去版の事実は`LICENSING.md`に分離しています。
 
@@ -136,6 +136,11 @@ python experiments/run_parametric_features.py
 python experiments/run_deterministic_recompute.py
 python experiments/run_step_reconstruction.py
 python experiments/run_assisted_modeling.py
+python experiments/run_topological_references.py
+python experiments/run_parameter_expressions.py
+python experiments/run_feature_history_editing.py
+python experiments/run_assembly_constraints.py
+python experiments/run_assembly_recompute.py
 ```
 
 The [study index](studies.md) maps every command to its research note and main
@@ -349,6 +354,32 @@ context binding, candidate ambiguity, confirmation, source protection,
 current-revision export, and the terminal script. See the
 [tool note](../notes/assisted-parametric-modeling-tool.md) for usage.
 Native input work is in-process and is not an OS sandbox.
+
+## Assembly Reproduction Through v0.65.0
+
+The five new studies use the existing pinned geometry environment. Each runner
+accepts separate fixture and output directories. For example:
+
+```bash
+python experiments/run_assembly_recompute.py --fixture-dir output/fixtures/assembly-recompute --output-dir output/assembly-recompute --refresh-fixtures
+python -m research_notes.assembly_tool --script fixtures/assembly-recompute/demo_commands.txt --output-dir output/assembly-demo
+```
+
+All five runners are listed above. Tests regenerate and compare every new
+fixture and CSV/JSON byte; CI repeats generation and checks PNG presence.
+Results serialize to nine decimal places, while acceptance checks use raw
+values. Occurrence translations/rotation matrices checkpoint to twelve
+decimal places before native transformation; STEP uncertainty is 1e-7 mm.
+
+Expression parsing is bounded and does not execute Python. Placement solves
+use stable occurrence/constraint ordering, finite-difference Jacobians, and
+local SVD rank. Remaining motion modes use a deterministic projected-axis
+basis; equivalence across arbitrary numerical libraries is not claimed.
+Independent box arithmetic qualifies distances, overlap volume, and dimension
+propagation. Under-constrained pair observations remain provisional.
+
+The [assembly note](../notes/assembly-recompute-degrees-of-freedom.md) documents
+the terminal and Python API, status semantics, and export guards.
 
 ## Deterministic Controls
 

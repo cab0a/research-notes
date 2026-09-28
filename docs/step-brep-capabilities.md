@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-本書は、v0.60.0時点のSTEP・EXPRESS・AP242・B-rep機能を分類します。5種類のパラメトリック形状、決定論的な依存関係の再計算、根拠付きの未確認候補、Python APIと対話ターミナルでの編集・比較・STEP再出力を限定した合成入力で検証しています。詳細は英語本文に示します。
+本書はv0.65.0時点の機能を分類します。限定した面・辺の参照追跡、単位付き寸法式、特徴履歴の編集、部品の再利用、組立再計算、局所的な自由度・重複拘束・矛盾・干渉を検証しています。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-60 studies through v0.60.0. It separates syntax recognition, schema validation, physical-reference
+65 studies through v0.65.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.61.0 and later roadmap stages remain unimplemented.
+v0.66.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -51,7 +51,9 @@ Git tag or package is separate. Planned numbers are not delivery promises.
 | Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
 | Geometry modeling | Controlled subset | Explicit hole, pocket, boss, and rib operations; dependency recompute; last-valid recovery; confirmed edits and verified STEP export | Arbitrary features, persistent naming, general healing, source attribute preservation, or arbitrary STEP compatibility |
 | 2D sketch constraints | Research evidence | Twenty-two line, circle, and arc controls record local rank, residuals, and three revisioned dimension edits | Global uniqueness, arbitrary-scale or singularity robustness, general nonlinear conflict detection, or arbitrary sketch-driven B-Rep recompute |
-| Assisted modeling | Controlled subset | Python session API and terminal with confirmation, current-result guards, and static comparison reports | Graphical CAD editing, session restore, undo/redo, assemblies, or a general modeling API |
+| Authored assemblies | Controlled subset | Reused definitions, authored datums, unit-aware parameters, pose constraints, local freedom, and interference | Arbitrary STEP mate inference, nested assemblies, global motion proof, or swept collision |
+| Scoped topology references | Controlled subset | Qualified one-to-one continuity and explicit split/merge/deletion/ambiguity | General persistent naming or permanent kernel identity |
+| Assisted modeling | Controlled subset | Python session API and terminal with confirmation, current-result guards, and static comparison reports | Graphical CAD editing, session restore, undo/redo, arbitrary assemblies, or a general modeling API |
 | AI use | Research evidence | Family-isolated dataset and four binary baselines from v0.53.0–v0.54.0 | Industrial transfer, general inference API, or calibrated guarantees for arbitrary shapes |
 
 ## Part 21 and Container Capabilities
@@ -191,6 +193,11 @@ corpus and its declared provenance.
 | Dependency recompute | Controlled subset | v0.58.0 | Six events and 36 states; independent branches, last-valid retention, stale descendants, and cold/cached STEP agreement |
 | STEP-to-feature reconstruction | Controlled subset | v0.59.0 | Nine inputs and ten unconfirmed candidates; residuals, source digests, alternative explanations, and uncalibrated fit scores; no history recovery |
 | Assisted parametric modeling tool | Controlled subset | v0.60.0 | Five workflows and eleven guards; Python API, terminal, confirmation, static comparison, and shape-only STEP export |
+| Persistent Topological References | Controlled subset | v0.61.0 | 6 controls and 120 face/edge relations qualify box edits, STEP exchange, split, merge, deletion, and ambiguity. |
+| Parameter Expressions, Units, and Domains | Controlled subset | v0.62.0 | 17 controls cover dimensional arithmetic, unit conversion, twelve rejection cases, and a bound radius edit. |
+| Feature-History Editing and Configurations | Controlled subset | v0.63.0 | Seven authored history variants match independent volume/area truth before and after STEP exchange. |
+| Assembly Constraints and Reusable Components | Controlled subset | v0.64.0 | Ten authored documents separate reusable definitions, occurrences, datum frames, units, and mate constraints. |
+| Assembly Recompute and Degrees of Freedom | Controlled subset | v0.65.0 | Ten solver controls and eight edit events verify freedom, redundancy, conflicts, contact, interference, and recovery. |
 
 ## Safe Present-Day Uses
 
@@ -343,3 +350,12 @@ qualified axis-aligned planes or one Z cylinder. Native work has no execution
 timeout or OS sandbox. Geometry fit does not recover authoring history;
 source names, colors, PMI, and constraints are not carried into exports.
 Persistent references and general editing remain future work.
+
+## Authored Assembly Boundaries
+
+The [assembly tool](../notes/assembly-recompute-degrees-of-freedom.md) supports
+small authored JSON assemblies and local pose solving. World translations and
+rotation-vector domains are bounded; normals must be co-oriented. Local nullity
+does not prove global mobility. Duplicate conflicting right-hand sides are
+reported separately from general numerical failure. Placed-geometry STEP
+exports omit mates and occurrence IDs, which remain in JSON.

@@ -1,0 +1,13 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "normalized roles qualify unfeatured axis-aligned boxes only",
+    "geometry inference is not permanent identity; split, deletion, and merge require operation evidence",
+    "ambiguous, split, deleted, and merged selections require explicit review"
+  ],
+  "contract_version": "1.0.0",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 6,
+  "relation_count": 120,
+  "study_version": "v0.61.0"
+}

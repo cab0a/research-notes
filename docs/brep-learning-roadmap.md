@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.60.0まで実装し、5種類のパラメトリック形状、依存関係の再計算、STEPからの未確認候補、候補選択・寸法編集・比較・再出力を検証しました。v0.61.0以降は未実装です。v1.0.0までの計画は、明示的な形状操作、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
+v0.65.0まで実装し、参照追跡、単位付き寸法式、特徴履歴、部品の再利用、組立の自由度・過剰拘束・干渉を検証しました。v0.66.0以降は未実装です。v1.0.0までの計画は、明示的な形状操作、再計算、精密曲面、工学解析、根拠付きAI支援、相互運用性、信頼性評価を経て、STEPの解析・編集・検証・再出力を一貫して扱う安定研究版への道筋です。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.60.0 have code and reference evidence. Stages from
-v0.61.0 onward are planned and remain unimplemented.
+The stages through v0.65.0 have code and reference evidence. Stages from
+v0.66.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -652,33 +652,33 @@ not preserve source names, colors, PMI, or constraints.
 
 #### v0.61.0 — Persistent Topological References
 
-Track faces and edges across controlled parameter changes, recompute, repair,
-and STEP exchange. Record one-to-one, split, merge, deletion, and ambiguous
-relations without presenting a geometric match as permanent identity.
+Implemented for the declared controls. 6 controls and 120 face/edge relations qualify box edits, STEP exchange, split, merge, deletion, and ambiguity.
+See the [complete study](../notes/persistent-topological-references.md).
 
 #### v0.62.0 — Parameter Expressions, Units, and Domains
 
-Evaluate named parameter expressions with explicit dimensions, unit
-conversion, lower and upper bounds, invalid-value diagnostics, and cycle
-detection. Keep source spelling separate from normalized values.
+Implemented for the declared controls. 17 controls cover dimensional arithmetic, unit conversion, twelve rejection cases, and a bound radius edit.
+See the [complete study](../notes/parameter-expressions-units-domains.md).
 
 #### v0.63.0 — Feature-History Editing and Configurations
 
-Support bounded feature suppression, reactivation, reordering, rollback, and
-named configurations. Compare affected dependency paths and generated B-Reps
-against independently constructed truth.
+Implemented for the declared controls. Seven authored history variants match independent volume/area truth before and after STEP exchange.
+See the [complete study](../notes/feature-history-editing-configurations.md).
 
 #### v0.64.0 — Assembly Constraints and Reusable Components
 
-Represent reusable components, occurrences, coordinate frames, and bounded
-fixed, coincident, concentric, and distance constraints. Preserve definition,
-occurrence, placement, and unit provenance as separate records.
+Implemented for the declared controls. Ten authored documents separate reusable definitions, occurrences, datum frames, units, and mate constraints.
+See the [complete study](../notes/assembly-constraints-reusable-components.md).
 
 #### v0.65.0 — Assembly Recompute and Degrees of Freedom
 
-Recompute controlled assemblies, identify under-constrained and over-
-constrained placements, report remaining motion, and connect placement changes
-to bounded interference observations.
+Implemented for the declared controls. Ten solver controls and eight edit events verify freedom, redundancy, conflicts, contact, interference, and recovery.
+See the [complete study](../notes/assembly-recompute-degrees-of-freedom.md).
+
+Assembly motion is local numerical evidence. STEP exports placed geometry,
+while authored mates and occurrence identity remain in JSON. General naming,
+nested assemblies, and arbitrary STEP assembly reconstruction remain outside
+this bounded implementation.
 
 ### Phase J — Precision Geometry and Auditable Repair
 

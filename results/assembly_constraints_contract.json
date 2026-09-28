@@ -1,0 +1,12 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "authored JSON assemblies; no recovery of assembly mates from arbitrary STEP",
+    "definitions use mm B-Rep; occurrence/frame units and local datum provenance remain separate",
+    "fixed coordinate locks, co-oriented plane coincidence, coaxial axes, and signed axial distance"
+  ],
+  "contract_version": "1.0.0",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 10,
+  "study_version": "v0.64.0"
+}

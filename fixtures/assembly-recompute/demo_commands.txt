@@ -1,0 +1,16 @@
+open fixtures/assembly-constraints/fully_fixed.json
+recompute
+report
+set clearance 0 * mm
+recompute
+report
+export output/assembly-demo/contact.step --overwrite
+set clearance -1 * mm
+recompute
+report
+set clearance 1 * mm
+set height 3 * mm
+recompute
+report
+export output/assembly-demo/edited.step --overwrite
+quit

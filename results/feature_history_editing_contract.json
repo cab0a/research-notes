@@ -1,0 +1,12 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "authored feature sequences and immutable configurations; no inferred history recovery",
+    "truth uses two disjoint features; interacting-feature reordering is not qualified",
+    "suppression and rollback change active dependencies; unsupported profile order rejects"
+  ],
+  "contract_version": "1.0.0",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 7,
+  "study_version": "v0.63.0"
+}

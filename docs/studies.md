@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、画像処理からSTEP・B-repの解析と編集までの60件の研究を索引化しています。v0.57.0〜v0.60.0は5種類の形状構成、依存関係の再計算、STEPからの候補生成、候補の確認・編集・比較・再出力を検証します。各版の問い、成果物、再現コマンドを対応付けます。詳細は英語本文に示します。
+本書は、画像処理からSTEP・B-repの解析、編集、組立までの65件の研究を索引化しています。v0.61.0〜v0.65.0は参照追跡、寸法式、特徴履歴、再利用部品、組立の再計算と自由度・過剰拘束・干渉を検証します。詳細は英語本文に示します。
 
 研究ごとの要点と成果物へのリンクは以下の英語本文を参照してください。
 
@@ -1517,6 +1517,81 @@ python experiments/run_step_reconstruction.py
 python experiments/run_assisted_modeling.py
 ```
 
+### v0.61.0 — Persistent Topological References
+
+**Representative finding:** 6 controls and 120 face/edge relations qualify box edits, STEP exchange, split, merge, deletion, and ambiguity.
+
+- [Complete note](../notes/persistent-topological-references.md)
+- [Manifest](../fixtures/topological-references/manifest.csv)
+- [Observations](../results/topological_references.csv)
+- [Details](../results/topological_reference_relations.json)
+- [Contract](../results/topological_references_contract.json)
+- [Figure](../results/topological_references.png)
+
+```bash
+python experiments/run_topological_references.py
+```
+
+### v0.62.0 — Parameter Expressions, Units, and Domains
+
+**Representative finding:** 17 controls cover dimensional arithmetic, unit conversion, twelve rejection cases, and a bound radius edit.
+
+- [Complete note](../notes/parameter-expressions-units-domains.md)
+- [Manifest](../fixtures/parameter-expressions/manifest.csv)
+- [Observations](../results/parameter_expressions.csv)
+- [Details](../results/parameter_values.json)
+- [Contract](../results/parameter_expressions_contract.json)
+- [Figure](../results/parameter_expressions.png)
+
+```bash
+python experiments/run_parameter_expressions.py
+```
+
+### v0.63.0 — Feature-History Editing and Configurations
+
+**Representative finding:** Seven authored history variants match independent volume/area truth before and after STEP exchange.
+
+- [Complete note](../notes/feature-history-editing-configurations.md)
+- [Manifest](../fixtures/feature-history-editing/manifest.csv)
+- [Observations](../results/feature_history_editing.csv)
+- [Details](../results/feature_history_models.json)
+- [Contract](../results/feature_history_editing_contract.json)
+- [Figure](../results/feature_history_editing.png)
+
+```bash
+python experiments/run_feature_history_editing.py
+```
+
+### v0.64.0 — Assembly Constraints and Reusable Components
+
+**Representative finding:** Ten authored documents separate reusable definitions, occurrences, datum frames, units, and mate constraints.
+
+- [Complete note](../notes/assembly-constraints-reusable-components.md)
+- [Manifest](../fixtures/assembly-constraints/manifest.csv)
+- [Observations](../results/assembly_constraints.csv)
+- [Details](../results/assembly_documents.json)
+- [Contract](../results/assembly_constraints_contract.json)
+- [Figure](../results/assembly_constraints.png)
+
+```bash
+python experiments/run_assembly_constraints.py
+```
+
+### v0.65.0 — Assembly Recompute and Degrees of Freedom
+
+**Representative finding:** Ten solver controls and eight edit events verify freedom, redundancy, conflicts, contact, interference, and recovery.
+
+- [Complete note](../notes/assembly-recompute-degrees-of-freedom.md)
+- [Manifest](../fixtures/assembly-recompute/manifest.csv)
+- [Observations](../results/assembly_recompute.csv)
+- [Details](../results/assembly_recompute_states.json)
+- [Contract](../results/assembly_recompute_contract.json)
+- [Figure](../results/assembly_recompute.png)
+
+```bash
+python experiments/run_assembly_recompute.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1541,7 +1616,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.60.0 subsets;
+  controlled v0.21.0 through v0.65.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

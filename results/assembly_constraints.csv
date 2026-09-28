@@ -1,0 +1,11 @@
+control_id,definition_count,occurrence_count,constraint_count,shared_definition,expected_solver_status,expected_freedom,expected_redundant_equations,checks_pass
+free_pair,1,2,0,1,under_constrained,12,0,1
+one_grounded,1,2,1,1,under_constrained,6,0,1
+concentric,1,2,2,1,under_constrained,2,0,1
+axial_distance,1,2,3,1,under_constrained,1,0,1
+fully_fixed,1,2,4,1,fully_constrained,0,0,1
+plane_coincidence,1,2,2,1,under_constrained,3,0,1
+redundant_distance,1,2,5,1,redundant,0,1,1
+conflicting_distance,1,2,5,1,inconsistent,0,1,1
+rotated_ground,1,2,4,1,fully_constrained,0,0,1
+inch_initial_placement,1,2,4,1,fully_constrained,0,0,1

@@ -1,0 +1,230 @@
+{
+  "assembly_id": "two_blocks",
+  "bindings": [
+    [
+      "block",
+      "height",
+      "base",
+      "thickness"
+    ]
+  ],
+  "constraints": [
+    {
+      "axes": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "constraint_id": "ground",
+      "frame_a": "origin",
+      "frame_b": "origin",
+      "kind": "fixed",
+      "occurrence_a": "base",
+      "occurrence_b": null,
+      "target": {
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "unit": "mm"
+      },
+      "value_expression": "0 * mm"
+    },
+    {
+      "axes": [
+        "tx",
+        "ty",
+        "tz",
+        "rx",
+        "ry",
+        "rz"
+      ],
+      "constraint_id": "plane",
+      "frame_a": "bottom",
+      "frame_b": "top",
+      "kind": "coincident",
+      "occurrence_a": "slider",
+      "occurrence_b": "base",
+      "target": {
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "unit": "mm"
+      },
+      "value_expression": "0 * mm"
+    }
+  ],
+  "definitions": [
+    {
+      "definition_id": "block",
+      "frames": [
+        {
+          "anchor": "explicit",
+          "frame_id": "origin",
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "provenance": "authored_local_datum",
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "mm"
+        },
+        {
+          "anchor": "plate_top",
+          "frame_id": "top",
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "provenance": "authored_local_datum",
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "mm"
+        },
+        {
+          "anchor": "plate_bottom",
+          "frame_id": "bottom",
+          "origin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "provenance": "authored_local_datum",
+          "rotation_degrees": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "unit": "mm"
+        }
+      ],
+      "geometry_unit": "mm",
+      "model": {
+        "model_id": "block",
+        "nodes": [
+          {
+            "dependencies": [],
+            "node_id": "base",
+            "operation": "plate",
+            "parameters": [
+              [
+                "length",
+                2.0
+              ],
+              [
+                "origin_x",
+                0.0
+              ],
+              [
+                "origin_y",
+                0.0
+              ],
+              [
+                "origin_z",
+                0.0
+              ],
+              [
+                "thickness",
+                2.0
+              ],
+              [
+                "width",
+                2.0
+              ]
+            ]
+          },
+          {
+            "dependencies": [
+              "base"
+            ],
+            "node_id": "result",
+            "operation": "result",
+            "parameters": []
+          }
+        ],
+        "output_id": "result",
+        "provenance": "authored",
+        "revision": 1,
+        "source_sha256": ""
+      }
+    }
+  ],
+  "occurrences": [
+    {
+      "definition_id": "block",
+      "initial": {
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "unit": "mm"
+      },
+      "occurrence_id": "base"
+    },
+    {
+      "definition_id": "block",
+      "initial": {
+        "rotation_degrees": [
+          5.0,
+          -7.0,
+          10.0
+        ],
+        "translation": [
+          0.3,
+          -0.2,
+          2.7
+        ],
+        "unit": "mm"
+      },
+      "occurrence_id": "slider"
+    }
+  ],
+  "parameters": [
+    {
+      "expression": "2 * mm",
+      "lower": 1e-05,
+      "name": "height",
+      "unit": "mm",
+      "upper": 10.0
+    },
+    {
+      "expression": "1 * mm",
+      "lower": -1.5,
+      "name": "clearance",
+      "unit": "mm",
+      "upper": 5.0
+    }
+  ],
+  "revision": 1
+}

@@ -1,0 +1,8 @@
+control_id,revision,active_nodes,evaluated_nodes,reused_nodes,volume,expected_volume,surface_area,expected_area,max_truth_error,checks_pass
+initial,1,base|hole|boss|result,base|hole|boss|result,,473.716814693,473.716814693,447.415926536,447.415926536,0.000000000,1
+suppressed,2,base|boss|result,boss|result,base,486.283185307,486.283185307,428.566370614,428.566370614,0.000000000,1
+reactivated,3,base|hole|boss|result,hole|boss|result,base,473.716814693,473.716814693,447.415926536,447.415926536,0.000000000,1
+reordered,2,base|boss|hole|result,boss|hole|result,base,473.716814693,473.716814693,447.415926536,447.415926536,0.000000000,1
+rollback,2,base|hole|result,hole|result,base,467.433629386,467.433629386,434.849555922,434.849555922,0.000000000,1
+wide_configuration,2,base|hole|boss|result,hole|boss|result,base,458.008851425,458.008851425,452.128315516,452.128315516,0.000000000,1
+base_only,2,base|result,result,base,480.000000000,480.000000000,416.000000000,416.000000000,0.000000000,1

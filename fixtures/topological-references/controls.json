@@ -1,0 +1,48 @@
+[
+  {
+    "control_id": "parameter_edit",
+    "expected_counts": {
+      "one_to_one": 18
+    },
+    "mode": "normalized_box"
+  },
+  {
+    "control_id": "step_exchange",
+    "expected_counts": {
+      "one_to_one": 18
+    },
+    "mode": "geometry"
+  },
+  {
+    "control_id": "cut_split",
+    "expected_counts": {
+      "one_to_one": 10,
+      "split": 8
+    },
+    "mode": "operation_history"
+  },
+  {
+    "control_id": "cut_delete",
+    "expected_counts": {
+      "deleted": 5,
+      "one_to_one": 13
+    },
+    "mode": "operation_history"
+  },
+  {
+    "control_id": "healing_merge",
+    "expected_counts": {
+      "deleted": 4,
+      "merge": 16,
+      "one_to_one": 10
+    },
+    "mode": "operation_history"
+  },
+  {
+    "control_id": "geometric_ambiguity",
+    "expected_counts": {
+      "ambiguous": 18
+    },
+    "mode": "geometry"
+  }
+]

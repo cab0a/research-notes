@@ -4,13 +4,13 @@
 
 このリポジトリは、画像処理とSTEP/B-repの調査を再現可能に記録し、Pythonパーサー、モデリング、3D AI利用へ進みます。
 
-v0.60.0まで実装し、STEPの検査、編集可能な構成候補の選択、寸法変更、依存関係の再計算、比較図、STEP再出力をつなぎます。
+v0.65.0まで実装し、面・辺の参照追跡、単位付き寸法式、特徴履歴の編集、部品の再利用、組立全体の再計算へ進みました。
 
-貫通穴・止まり穴・ポケット・ボス・リブの5種類で編集から再出力までを検証しました。推定候補は明示的な選択と確認を経て採用し、計算に失敗した下流形状は古い状態として出力を拒否します。対応は検証済みのmm単位・軸に平行な単一立体に限定します。詳細は英語本文に示します。
+同じ部品を2個配置する組立で、残る自由度、重複拘束、矛盾、接触、干渉を区別します。10種類の拘束条件と8回の編集が期待結果と一致し、部品の厚さを変えると接続位置も追従します。対話ターミナルとPython APIから利用できます。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
-v1.0.0を安定研究版の目標とし、STEP読込、製品構成・B-rep解析、形状構成候補、寸法・拘束編集、決定論的再計算、変更検証、STEP再出力、根拠付きAI支援を一貫して扱います。v0.61.0以降は計画段階であり、実装済み機能ではありません。
+v1.0.0を安定研究版の目標とし、STEP読込、製品構成・B-rep解析、形状構成候補、寸法・拘束編集、決定論的再計算、変更検証、STEP再出力、根拠付きAI支援を一貫して扱います。v0.66.0以降は計画段階であり、実装済み機能ではありません。
 
 ---
 
@@ -51,7 +51,9 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v0.60.0.
+The current implementation version is v0.65.0. Scoped references, dimensional
+expressions, authored feature history, and reusable constrained assemblies extend
+this modeling track.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
@@ -66,39 +68,41 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 60 studies to their questions,
+The [study index](docs/studies.md) maps all 65 studies to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
 
-v0.60.0 connects qualified STEP import to explicit candidate selection,
-parameter editing, recompute, visual comparison, and verified export.
+v0.65.0 recomputes component geometry and occurrence placement, and reports
+remaining local freedom, redundant equations, conflicts, and interference.
 
-| Version | Implemented evidence |
+| Version | Completed evidence |
 | --- | --- |
-| v0.57.0 | Five feature families, ten before/after shapes, 20 truth observations, five domain rejections |
-| v0.58.0 | Six dependency events, 36 node states, failure isolation and last-valid recovery |
-| v0.59.0 | Nine STEP inputs, ten candidates, explicit ambiguity and two unsupported controls |
-| v0.60.0 | Five import-edit-export workflows and eleven state/output guards |
+| v0.61.0 | Six controls, 120 scoped face/edge relations, explicit split/merge/deletion/ambiguity |
+| v0.62.0 | Seventeen checks for dimensional expressions, domains, and model binding |
+| v0.63.0 | Seven feature-history variants checked against independent volume/area truth |
+| v0.64.0 | Ten authored assemblies with separate reusable definitions, occurrences, units, and mates |
+| v0.65.0 | Ten solver controls and eight edit events, including recovery and interference |
 
-![Imported, confirmed, and edited hole](results/assisted_modeling_example.png)
+![Assembly recompute](results/assembly_recompute.png)
 
-The [complete tool note](notes/assisted-parametric-modeling-tool.md) includes
-terminal commands, Python API usage, results, and boundaries. To run the fixed
-demonstration after installing the pinned geometry extra:
+For two reused blocks, concentric alignment leaves two motion degrees,
+adding distance leaves one, and locking rotation leaves none. A 1 mm overlap
+produces 4 mm³ interference; editing the shared height moves the mating datum.
+
+The [assembly tool note](notes/assembly-recompute-degrees-of-freedom.md) includes
+interactive commands and Python usage. To run the fixed demo:
 
 ```bash
 python -m pip install -e ".[geometry]"
-python -m research_notes.modeling_tool \
-  --script fixtures/assisted-modeling/demo_commands.txt \
-  --output-dir output/modeling-demo
+python -m research_notes.assembly_tool --script fixtures/assembly-recompute/demo_commands.txt --output-dir output/assembly-demo
 ```
 
-Open `output/modeling-demo/comparison.html` to compare the imported, confirmed,
-and edited shapes. Omit `--script` for an interactive terminal. Inferred models
-require explicit selection; export requires a current valid recomputation.
-The tool exports tested shape geometry, without source names, colors, PMI,
-or constraints. It does not recover original authoring history.
+Open `output/assembly-demo/assembly.html` for the comparison. Omit `--script`
+for an interactive terminal. The
+[single-part STEP modeling tool](notes/assisted-parametric-modeling-tool.md)
+remains available. Assemblies currently use authored JSON; arbitrary STEP
+mate/history recovery is not supported.
 
 ## Current STEP and B-Rep Capability
 
@@ -135,7 +139,8 @@ CAD identities, or expose a supported general modeling or editing API.
 | --- | --- | --- |
 | Exchange and schema | Selected Part 21 editions, source spans, EXPRESS declarations and relationships, and staged instance checks | Complete grammar, external schemas, rule execution, or ISO/AP242 conformance |
 | Product and assembly | Controlled AP242 product paths, occurrence identity, rigid placements, nested composition, and supported length units | Alternate mappings, all unit forms, persistent CAD identity, or transformed-solid evaluation |
-| Assisted modeling | Five feature families, deterministic DAG recompute, source-bound candidates, explicit selection, Python API, terminal commands, and static comparisons | Arbitrary STEP compatibility, graphical CAD editing, assemblies, undo/redo, persistent naming, or source metadata preservation |
+| Authored assemblies | Reusable definitions, local datums, explicit units, fixed/coincident/concentric/distance constraints, local freedom and pair interference | Arbitrary STEP mate recovery, nested assemblies, general joints, global motion proof, or swept-motion collision |
+| Assisted modeling | Five feature families, deterministic DAG recompute, source-bound candidates, explicit selection, Python API, terminal commands, and static comparisons | Arbitrary STEP compatibility, graphical CAD editing, arbitrary assemblies, undo/redo, persistent naming, or source metadata preservation |
 | 2D sketches | Bounded line, circle, and arc constraints; local rank, residuals, and revisioned dimension edits | Global uniqueness, general nonlinear conflict diagnosis, a production sketch API, or arbitrary sketch-to-feature integration |
 | B-Rep and modeling | Selected declarations plus an optional OCCT route evaluated on analytic faces, edges, wires, shells, solids, repair, correspondence, feature candidates, feature-rule perturbations, family-isolated synthetic data, explainable binary baselines, versioned parametric feature graphs, face reports, tessellations, construction, Boolean controls, operation-local fillet/chamfer history, and face-adjacency descriptors | A general sketch solver or general-purpose 3D parametric editing API, certified tessellation error bounds, persistent naming, XCAF face metadata traversal, recovered history after exchange, general feature recognition, arbitrary Boolean robustness, general recompute, or general healing |
 
@@ -143,6 +148,13 @@ The [detailed STEP and B-Rep capability matrix](docs/step-brep-capabilities.md)
 maps each current field to its evidence, exact limitation, and planned release.
 
 ## Claim Boundaries
+
+- v0.61.0 tracks scoped reference continuity; ambiguous, split, deleted, or
+  merged selections require review. General persistent naming is unqualified.
+- v0.62.0–v0.65.0 use bounded expressions, authored histories, and small local
+  assembly systems. Nullity is local numerical evidence, not global mobility.
+  Interference at an under-constrained pose is provisional. Assembly JSON
+  retains mates and IDs; STEP exports only placed geometry.
 
 - The v0.56.0 sketch solver reports local Jacobian rank and bounded residuals.
   It does not prove global uniqueness or nonlinear infeasibility. The v0.57.0
@@ -363,7 +375,7 @@ validation evidence.
 
 ## Key Features
 
-- Sixty implemented studies with explicit questions, controls, results, and
+- Sixty-five implemented studies with explicit questions, controls, results, and
   limitations
 - Programmatically generated blur, noise, window, preprocessing, optical, and
   photometric conditions
@@ -719,11 +731,13 @@ and imported-candidate graph contracts. v0.56.0 adds local sketch constraints,
 rank and residual diagnostics, and revisioned scalar dimension edits.
 v0.57.0–v0.60.0 implement explicit features, deterministic recompute,
 source-bound reconstruction candidates, and a focused assisted modeling tool.
-The roadmap next proceeds through persistent topology references, assemblies, precision surfaces, engineering
+v0.61.0–v0.65.0 add scoped references, dimensional expressions, history editing,
+and authored assembly recompute. The roadmap next proceeds through PMI,
+precision surfaces, engineering
 analysis, evidence-bounded AI assistance, public-corpus generalization,
 interoperability, and reliability evaluation. v1.0.0 is the planned first
 stable research contract for an end-to-end STEP analysis, assisted modeling,
-verification, and export workflow. v0.61.0 and later stages remain
+verification, and export workflow. v0.66.0 and later stages remain
 unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.

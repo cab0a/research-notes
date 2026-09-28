@@ -141,6 +141,11 @@ jobs:
           python experiments/run_deterministic_recompute.py --fixture-dir regenerated-fixtures/deterministic-recompute --output-dir regenerated-results --refresh-fixtures
           python experiments/run_step_reconstruction.py --source-fixture-dir regenerated-fixtures/parametric-features --fixture-dir regenerated-fixtures/step-reconstruction --output-dir regenerated-results --refresh-fixtures
           python experiments/run_assisted_modeling.py --source-fixture-dir regenerated-fixtures/step-reconstruction --fixture-dir regenerated-fixtures/assisted-modeling --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_topological_references.py --fixture-dir regenerated-fixtures/topological-references --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_parameter_expressions.py --fixture-dir regenerated-fixtures/parameter-expressions --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_feature_history_editing.py --fixture-dir regenerated-fixtures/feature-history-editing --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_assembly_constraints.py --fixture-dir regenerated-fixtures/assembly-constraints --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_assembly_recompute.py --fixture-dir regenerated-fixtures/assembly-recompute --output-dir regenerated-results --refresh-fixtures
 
       - name: Verify reference data and chart generation
         run: |
@@ -436,6 +441,31 @@ jobs:
           diff -qr fixtures/assisted-modeling regenerated-fixtures/assisted-modeling
           test -s regenerated-results/assisted_modeling.png
           test -s regenerated-results/assisted_modeling_example.png
+          diff -u results/topological_references.csv regenerated-results/topological_references.csv
+          diff -u results/topological_reference_relations.json regenerated-results/topological_reference_relations.json
+          diff -u results/topological_references_contract.json regenerated-results/topological_references_contract.json
+          diff -qr fixtures/topological-references regenerated-fixtures/topological-references
+          test -s regenerated-results/topological_references.png
+          diff -u results/parameter_expressions.csv regenerated-results/parameter_expressions.csv
+          diff -u results/parameter_values.json regenerated-results/parameter_values.json
+          diff -u results/parameter_expressions_contract.json regenerated-results/parameter_expressions_contract.json
+          diff -qr fixtures/parameter-expressions regenerated-fixtures/parameter-expressions
+          test -s regenerated-results/parameter_expressions.png
+          diff -u results/feature_history_editing.csv regenerated-results/feature_history_editing.csv
+          diff -u results/feature_history_models.json regenerated-results/feature_history_models.json
+          diff -u results/feature_history_editing_contract.json regenerated-results/feature_history_editing_contract.json
+          diff -qr fixtures/feature-history-editing regenerated-fixtures/feature-history-editing
+          test -s regenerated-results/feature_history_editing.png
+          diff -u results/assembly_constraints.csv regenerated-results/assembly_constraints.csv
+          diff -u results/assembly_documents.json regenerated-results/assembly_documents.json
+          diff -u results/assembly_constraints_contract.json regenerated-results/assembly_constraints_contract.json
+          diff -qr fixtures/assembly-constraints regenerated-fixtures/assembly-constraints
+          test -s regenerated-results/assembly_constraints.png
+          diff -u results/assembly_recompute.csv regenerated-results/assembly_recompute.csv
+          diff -u results/assembly_recompute_states.json regenerated-results/assembly_recompute_states.json
+          diff -u results/assembly_recompute_contract.json regenerated-results/assembly_recompute_contract.json
+          diff -qr fixtures/assembly-recompute regenerated-fixtures/assembly-recompute
+          test -s regenerated-results/assembly_recompute.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

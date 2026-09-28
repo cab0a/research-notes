@@ -1,0 +1,7 @@
+control_id,source_count,relation_counts,expected_counts,review_required_count,checks_pass
+parameter_edit,18,"[('one_to_one', 18)]","[('one_to_one', 18)]",0,1
+step_exchange,18,"[('one_to_one', 18)]","[('one_to_one', 18)]",0,1
+cut_split,18,"[('one_to_one', 10), ('split', 8)]","[('one_to_one', 10), ('split', 8)]",8,1
+cut_delete,18,"[('deleted', 5), ('one_to_one', 13)]","[('deleted', 5), ('one_to_one', 13)]",5,1
+healing_merge,30,"[('deleted', 4), ('merge', 16), ('one_to_one', 10)]","[('deleted', 4), ('merge', 16), ('one_to_one', 10)]",20,1
+geometric_ambiguity,18,"[('ambiguous', 18)]","[('ambiguous', 18)]",18,1

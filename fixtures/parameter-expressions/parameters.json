@@ -1,0 +1,215 @@
+{
+  "accepted": [
+    {
+      "expression": "2 * inch",
+      "lower": -10000.0,
+      "name": "width",
+      "unit": "mm",
+      "upper": 10000.0
+    },
+    {
+      "expression": "width / 2",
+      "lower": -10000.0,
+      "name": "half",
+      "unit": "cm",
+      "upper": 10000.0
+    },
+    {
+      "expression": "half / width",
+      "lower": 0.0,
+      "name": "ratio",
+      "unit": "one",
+      "upper": 1.0
+    },
+    {
+      "expression": "90 * deg",
+      "lower": 0.0,
+      "name": "angle",
+      "unit": "rad",
+      "upper": 4.0
+    }
+  ],
+  "bindings": [
+    [
+      "radius",
+      "feature",
+      "radius"
+    ]
+  ],
+  "bound_parameters": [
+    {
+      "expression": "0.3 * cm",
+      "lower": -10000.0,
+      "name": "diameter",
+      "unit": "mm",
+      "upper": 10000.0
+    },
+    {
+      "expression": "diameter / 2",
+      "lower": -10000.0,
+      "name": "radius",
+      "unit": "mm",
+      "upper": 10000.0
+    }
+  ],
+  "invalid": [
+    {
+      "control_id": "missing_unit",
+      "parameters": [
+        {
+          "expression": "2",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "dimension_mismatch",
+      "parameters": [
+        {
+          "expression": "1*mm + 1*deg",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "division_zero",
+      "parameters": [
+        {
+          "expression": "1*mm/0",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "unknown_name",
+      "parameters": [
+        {
+          "expression": "missing*mm",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "call",
+      "parameters": [
+        {
+          "expression": "abs(-1)*mm",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "attribute",
+      "parameters": [
+        {
+          "expression": "mm.real",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "power",
+      "parameters": [
+        {
+          "expression": "2**8*mm",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "overflow",
+      "parameters": [
+        {
+          "expression": "1e999*mm",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "out_of_domain",
+      "parameters": [
+        {
+          "expression": "10001*mm",
+          "lower": -10000.0,
+          "name": "size",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "cycle",
+      "parameters": [
+        {
+          "expression": "b",
+          "lower": -10000.0,
+          "name": "a",
+          "unit": "mm",
+          "upper": 10000.0
+        },
+        {
+          "expression": "a",
+          "lower": -10000.0,
+          "name": "b",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "duplicate_name",
+      "parameters": [
+        {
+          "expression": "1*mm",
+          "lower": -10000.0,
+          "name": "a",
+          "unit": "mm",
+          "upper": 10000.0
+        },
+        {
+          "expression": "2*mm",
+          "lower": -10000.0,
+          "name": "a",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    },
+    {
+      "control_id": "reserved_unit",
+      "parameters": [
+        {
+          "expression": "1*mm",
+          "lower": -10000.0,
+          "name": "mm",
+          "unit": "mm",
+          "upper": 10000.0
+        }
+      ]
+    }
+  ]
+}

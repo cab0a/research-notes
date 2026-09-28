@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-本書は、STEP/B-rep、EXPRESS、2Dスケッチの合成サンプル、ハッシュ付き一覧、画像、用途を対応付けます。v0.57.0〜v0.60.0では、特徴の変更前後、再計算の正常出力、候補推定用のSTEP、編集後のSTEPと操作手順を追加します。詳細は英語本文に示します。
+本書はSTEP・EXPRESS・スケッチ・組立の合成サンプルと画像を対応付けます。v0.61.0〜v0.65.0は参照変更、式で指定した形状、特徴履歴の変種、再利用部品と拘束、接触・干渉を含む組立の診断形状を追加します。詳細は英語本文に示します。
 
 ---
 
@@ -945,6 +945,49 @@ Five edited STEP outputs, workflow parameters, and an explicit terminal demo con
 
 ![Assisted Parametric Modeling Tool](../results/assisted_modeling.png)
 
+## v0.61.0 — Persistent Topological References
+
+6 controls and 120 face/edge relations qualify box edits, STEP exchange, split, merge, deletion, and ambiguity.
+
+[Inputs and manifest](../fixtures/topological-references/manifest.csv) · [Study](../notes/persistent-topological-references.md)
+
+![Persistent Topological References](../results/topological_references.png)
+
+## v0.62.0 — Parameter Expressions, Units, and Domains
+
+17 controls cover dimensional arithmetic, unit conversion, twelve rejection cases, and a bound radius edit.
+
+[Inputs and manifest](../fixtures/parameter-expressions/manifest.csv) · [Study](../notes/parameter-expressions-units-domains.md)
+
+![Parameter Expressions, Units, and Domains](../results/parameter_expressions.png)
+
+## v0.63.0 — Feature-History Editing and Configurations
+
+Seven authored history variants match independent volume/area truth before and after STEP exchange.
+
+[Inputs and manifest](../fixtures/feature-history-editing/manifest.csv) · [Study](../notes/feature-history-editing-configurations.md)
+
+![Feature-History Editing and Configurations](../results/feature_history_editing.png)
+
+## v0.64.0 — Assembly Constraints and Reusable Components
+
+Ten authored documents separate reusable definitions, occurrences, datum frames, units, and mate constraints.
+
+[Inputs and manifest](../fixtures/assembly-constraints/manifest.csv) · [Study](../notes/assembly-constraints-reusable-components.md)
+
+![Assembly Constraints and Reusable Components](../results/assembly_constraints.png)
+
+## v0.65.0 — Assembly Recompute and Degrees of Freedom
+
+Ten solver controls and eight edit events verify freedom, redundancy, conflicts, contact, interference, and recovery.
+
+[Inputs and manifest](../fixtures/assembly-recompute/manifest.csv) · [Study](../notes/assembly-recompute-degrees-of-freedom.md)
+
+![Assembly Recompute and Degrees of Freedom](../results/assembly_recompute.png)
+
+The v0.65.0 interference STEP is explicitly a diagnostic fixture. The user
+session refuses export of an interfering assembly as an accepted result.
+
 ## Regeneration
 
 ```bash
@@ -1103,4 +1146,14 @@ python experiments/run_parametric_features.py
 python experiments/run_deterministic_recompute.py
 python experiments/run_step_reconstruction.py
 python experiments/run_assisted_modeling.py
+```
+
+## Assembly Fixture Reproduction
+
+```bash
+python experiments/run_topological_references.py
+python experiments/run_parameter_expressions.py
+python experiments/run_feature_history_editing.py
+python experiments/run_assembly_constraints.py
+python experiments/run_assembly_recompute.py
 ```

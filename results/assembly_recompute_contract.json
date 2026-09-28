@@ -1,0 +1,15 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "local rank/nullspace at one pose; no global motion or nonlinear infeasibility proof",
+    "duplicate conflicting right-hand sides prove the declared inconsistent controls; other failure is not_converged",
+    "provisional interference observations for under-constrained poses are not motion envelopes",
+    "same-kernel common volume and minimum distance; geometry-only STEP export blocks interference and incomplete constraints"
+  ],
+  "contract_version": "1.0.0",
+  "edit_event_count": 8,
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 18,
+  "solver_control_count": 10,
+  "study_version": "v0.65.0"
+}

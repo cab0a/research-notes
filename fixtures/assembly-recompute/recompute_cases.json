@@ -1,0 +1,4612 @@
+[
+  {
+    "control_id": "free_pair",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "7aaef26b3b628815e0524b11c2b36e96216f58c2652c690523a3bba95bc7d434",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.713339093,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": true,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 12,
+        "equation_count": 0,
+        "iterations": 0,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              5.0,
+              -7.0,
+              10.0
+            ],
+            "translation": [
+              0.3,
+              -0.2,
+              2.7
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 0,
+        "redundant_equations": 0,
+        "remaining_motion": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "residuals": [],
+        "singular_values": [],
+        "status": "under_constrained"
+      },
+      "status": "under_constrained"
+    }
+  },
+  {
+    "control_id": "one_grounded",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "45cbdabcf93fd2c93a7032a0a24b922ffab6775c0617d8dafef0dc79ff4f537d",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.713339093,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": true,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 6,
+        "equation_count": 6,
+        "iterations": 0,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              5.0,
+              -7.0,
+              10.0
+            ],
+            "translation": [
+              0.3,
+              -0.2,
+              2.7
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 6,
+        "redundant_equations": 0,
+        "remaining_motion": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "residuals": [
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "status": "under_constrained"
+      },
+      "status": "under_constrained"
+    }
+  },
+  {
+    "control_id": "concentric",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "1d6e140675ecc030132cf0f94849c8b18c10e96ec98e90edbd9303ae9f626b57",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.7,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": true,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 2,
+        "equation_count": 10,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              13.076529128
+            ],
+            "translation": [
+              0.252183573,
+              -0.200321037,
+              2.7
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 10,
+        "redundant_equations": 0,
+        "remaining_motion": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.693005674,
+            -0.431752015,
+            0.0,
+            0.0,
+            0.0,
+            0.577350269
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          3.828422525,
+          3.336987588,
+          1.32364548,
+          1.179524961,
+          1.0,
+          1.0,
+          0.851349954,
+          0.801001015,
+          0.424276078,
+          0.298835145
+        ],
+        "status": "under_constrained"
+      },
+      "status": "under_constrained"
+    }
+  },
+  {
+    "control_id": "axial_distance",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "f480c85b0062bac0391ac83e012373a92203be4e429dd01a4137e9c1d177b1d2",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": true,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 1,
+        "equation_count": 11,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              12.774597611
+            ],
+            "translation": [
+              0.245868655,
+              -0.196363621,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 11,
+        "redundant_equations": 0,
+        "remaining_motion": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.690720859,
+            -0.435397935,
+            0.0,
+            0.0,
+            0.0,
+            0.577350269
+          ]
+        ],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.062124159,
+          3.940506324,
+          2.044188065,
+          1.297542233,
+          1.077687901,
+          1.0,
+          0.900914906,
+          0.818092049,
+          0.46552807,
+          0.395618126,
+          0.277723235
+        ],
+        "status": "under_constrained"
+      },
+      "status": "under_constrained"
+    }
+  },
+  {
+    "control_id": "fully_fixed",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "e22d77e81311c7e01c198cd90d3f8d4de0afebc21b59fa77f1f5b7e5d1a027a5",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.074145889,
+          3.946597031,
+          2.040816447,
+          1.333778392,
+          1.076454937,
+          1.0,
+          1.0,
+          0.901376484,
+          0.749749738,
+          0.458666707,
+          0.278980582,
+          0.245450219
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "plane_coincidence",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "8807d3d18876ae3df2a90c3e08bf7f27077c52834cd4fbe2011660724390087c",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": true,
+          "status": "contact"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 3,
+        "equation_count": 9,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              12.123177547
+            ],
+            "translation": [
+              0.3,
+              -0.2,
+              2.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 9,
+        "redundant_equations": 0,
+        "remaining_motion": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "residuals": [
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "plane_offset",
+            "constraint_id": "plane",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "normal_x",
+            "constraint_id": "plane",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "normal_y",
+            "constraint_id": "plane",
+            "residual": 0.0,
+            "unit": "unitless"
+          }
+        ],
+        "singular_values": [
+          2.846210799,
+          1.617201161,
+          1.154768316,
+          1.0,
+          1.0,
+          1.0,
+          0.690160879,
+          0.617199424,
+          0.440024944
+        ],
+        "status": "under_constrained"
+      },
+      "status": "under_constrained"
+    }
+  },
+  {
+    "control_id": "redundant_distance",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "3f9a370f282600c04858ac35ced05344e3dc5daa60b93226fa3ee8581a1ee33b",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 13,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 1,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "duplicate_gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.445394989,
+          4.074145889,
+          2.439215942,
+          1.333778392,
+          1.07929926,
+          1.0,
+          1.0,
+          0.903372096,
+          0.749749738,
+          0.479463003,
+          0.278991351,
+          0.245450219
+        ],
+        "status": "redundant"
+      },
+      "status": "redundant"
+    }
+  },
+  {
+    "control_id": "conflicting_distance",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "6b3774429a844643308299a44eff6b58eee2d50fa505cf582488dd1a443ea4a7",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [
+          "conflict",
+          "gap"
+        ],
+        "degrees_of_freedom": 0,
+        "equation_count": 13,
+        "iterations": 4,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.5
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 1,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "conflict",
+            "residual": -0.5,
+            "unit": "mm"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.5,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.73956596,
+          4.463360768,
+          2.551477814,
+          1.297922089,
+          1.070372804,
+          1.0,
+          1.0,
+          0.916205345,
+          0.770462271,
+          0.478893569,
+          0.249010544,
+          0.22404642
+        ],
+        "status": "inconsistent"
+      },
+      "status": "inconsistent"
+    }
+  },
+  {
+    "control_id": "rotated_ground",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "06c3472ce5ac51cb272e5fef208ecc67df4c55122d11c3ffb17df5a10934ed7c",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 4,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              30.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              4.0,
+              5.0,
+              1.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              30.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              4.0,
+              3.5,
+              3.598076211
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.050356834,
+          3.92571175,
+          2.040108356,
+          1.363546843,
+          1.080110475,
+          1.0,
+          1.0,
+          0.894503593,
+          0.674780192,
+          0.457772878,
+          0.284389577,
+          0.254366588
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "inch_initial_placement",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "4e0524fb2cd71de8eb4a2b634566337e62f26a15c245b237103a77746ffa1b65",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.074145889,
+          3.946597031,
+          2.040816447,
+          1.333778392,
+          1.076454937,
+          1.0,
+          1.0,
+          0.901376484,
+          0.749749738,
+          0.458666707,
+          0.278980582,
+          0.245450219
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_initial",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "e22d77e81311c7e01c198cd90d3f8d4de0afebc21b59fa77f1f5b7e5d1a027a5",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.074145889,
+          3.946597031,
+          2.040816447,
+          1.333778392,
+          1.076454937,
+          1.0,
+          1.0,
+          0.901376484,
+          0.749749738,
+          0.458666707,
+          0.278980582,
+          0.245450219
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_unchanged",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [
+            "base",
+            "result"
+          ],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "e22d77e81311c7e01c198cd90d3f8d4de0afebc21b59fa77f1f5b7e5d1a027a5",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 1,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.074145889,
+          3.946597031,
+          2.040816447,
+          1.333778392,
+          1.076454937,
+          1.0,
+          1.0,
+          0.901376484,
+          0.749749738,
+          0.458666707,
+          0.278980582,
+          0.245450219
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_contact",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [
+            "base",
+            "result"
+          ],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "3ab6eb83a495bc660a13be044d559938d3d705e969946f1ae9333dde9dedbd3b",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "contact"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 2,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          3.374062188,
+          3.318396038,
+          1.922870948,
+          1.427210177,
+          1.099191979,
+          1.0,
+          1.0,
+          0.860547897,
+          0.700667649,
+          0.461997528,
+          0.358619083,
+          0.296378651
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_interference",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [
+            "base",
+            "result"
+          ],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "16a35be4492e88b3ce1e7685b9a89948b1d7159b9576872dd263b9e63cc5bd60",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 0.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 4.0,
+          "placement_provisional": false,
+          "status": "interference"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 3,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          2.941294427,
+          2.840536194,
+          1.733666877,
+          1.545573295,
+          1.132017313,
+          1.0,
+          1.0,
+          0.784914601,
+          0.647009109,
+          0.503373654,
+          0.43845991,
+          0.352046209
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_clearance_restored",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [],
+          "model_fingerprint": "c753db8feba694c187c2c7270298e1c8802ad3daada306b7db4a3239f3ab635b",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [
+            "base",
+            "result"
+          ],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "error": "",
+              "last_valid_fingerprint": "444ddd229803db149aac5430eea3597a4f15ceb2e668eeca0633e3d8f8db6528",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "error": "",
+              "last_valid_fingerprint": "71fd5b55aa135c48377761f7ec2de394f1f81e3e56b8049b94818cec46cfe73d",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 8.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  2.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 24.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "11f5aeca6c49a8904865c83a32be33cb6d239331e09ef8a0d18d66970e0ff48c",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 4,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              3.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.074145889,
+          3.946597031,
+          2.040816447,
+          1.333778392,
+          1.076454937,
+          1.0,
+          1.0,
+          0.901376484,
+          0.749749738,
+          0.458666707,
+          0.278980582,
+          0.245450219
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_height_edit",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base",
+            "result"
+          ],
+          "model_fingerprint": "907770d7eaef963a5a78441ca43244886a33c04cf97279139b69e918c1783396",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "11653d048d750db63798179031dd75757becd8a535cf406cef19d1d2f7ff8bb3",
+              "error": "",
+              "last_valid_fingerprint": "11653d048d750db63798179031dd75757becd8a535cf406cef19d1d2f7ff8bb3",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "a22fba070a21c932014d015b442ef68f3e4933492bf090fd2ff46722a950d884",
+              "error": "",
+              "last_valid_fingerprint": "a22fba070a21c932014d015b442ef68f3e4933492bf090fd2ff46722a950d884",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "1fb958877708ab156460f315bb2063fc37fe7bd26b83105bf7ace2efa4dc18c6",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 5,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              4.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.871158552,
+          4.727575216,
+          2.099548347,
+          1.267927815,
+          1.061437486,
+          1.0,
+          1.0,
+          0.924905187,
+          0.788688432,
+          0.45779898,
+          0.224165728,
+          0.205289971
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  },
+  {
+    "control_id": "edit_invalid_height",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [
+            "base"
+          ],
+          "model_fingerprint": "7deb68d7bca8894411f7a3a6d72f363a6793479645f2ecdb9e4425a19b68c2d0",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "c5b9ad3fd2abf9556d5f7984ab0169876aec4db64e9d0f857ffd0432b6b79d3e",
+              "error": "plate dimensions must be finite and in (0.0001, 1000] mm",
+              "last_valid_fingerprint": "11653d048d750db63798179031dd75757becd8a535cf406cef19d1d2f7ff8bb3",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "failed"
+            },
+            {
+              "attempted_fingerprint": "1947540a5bfa58aa8e8e3b2fb050e6912002a4f31db3d027779c254006d8834b",
+              "error": "dependency_not_valid",
+              "last_valid_fingerprint": "a22fba070a21c932014d015b442ef68f3e4933492bf090fd2ff46722a950d884",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "stale"
+            }
+          ]
+        }
+      },
+      "fingerprint": "3be2be59e3139fea6c04904c0e633cd20c60f2153995f92f5c2278f6fb1544e8",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [],
+      "placement_is_local_solution": true,
+      "revision": 6,
+      "solution": null,
+      "status": "component_failed"
+    }
+  },
+  {
+    "control_id": "edit_height_recovered",
+    "result": {
+      "assembly_id": "two_blocks",
+      "components": {
+        "block": {
+          "evaluated_nodes": [],
+          "model_fingerprint": "907770d7eaef963a5a78441ca43244886a33c04cf97279139b69e918c1783396",
+          "model_id": "block",
+          "output_id": "result",
+          "reused_nodes": [
+            "base",
+            "result"
+          ],
+          "revision": 2,
+          "states": [
+            {
+              "attempted_fingerprint": "11653d048d750db63798179031dd75757becd8a535cf406cef19d1d2f7ff8bb3",
+              "error": "",
+              "last_valid_fingerprint": "11653d048d750db63798179031dd75757becd8a535cf406cef19d1d2f7ff8bb3",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "base",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            },
+            {
+              "attempted_fingerprint": "a22fba070a21c932014d015b442ef68f3e4933492bf090fd2ff46722a950d884",
+              "error": "",
+              "last_valid_fingerprint": "a22fba070a21c932014d015b442ef68f3e4933492bf090fd2ff46722a950d884",
+              "last_valid_revision": 2,
+              "metrics": {
+                "absolute_volume": 12.0,
+                "analyzer_valid": true,
+                "bounds_max": [
+                  2.0000001,
+                  2.0000001,
+                  3.0000001
+                ],
+                "bounds_min": [
+                  -1e-07,
+                  -1e-07,
+                  -1e-07
+                ],
+                "edge_count": 12,
+                "face_count": 6,
+                "maximum_edge_tolerance": 1e-07,
+                "maximum_face_tolerance": 1e-07,
+                "maximum_vertex_tolerance": 1e-07,
+                "shell_count": 1,
+                "solid_count": 1,
+                "surface_area": 32.0,
+                "surface_centroid": [
+                  1.0,
+                  1.0,
+                  1.5
+                ],
+                "surface_counts": [
+                  [
+                    "plane",
+                    6
+                  ]
+                ],
+                "vertex_count": 8
+              },
+              "node_id": "result",
+              "retained_geometry_available": true,
+              "sketch_fingerprint": "22e6494f378f06c821aaf7e37822d2d4397c1bedffa44228ad3d4a6c181cdd33",
+              "status": "valid"
+            }
+          ]
+        }
+      },
+      "fingerprint": "46f613ec46a5f248f3cb31e1dada13beb7e7c4b76a5fbbef589cfbe1e1be2035",
+      "original_step_assembly_history_recovered": false,
+      "pair_checks": [
+        {
+          "minimum_distance_mm": 1.0,
+          "occurrence_a": "base",
+          "occurrence_b": "slider",
+          "overlap_volume_mm3": 0.0,
+          "placement_provisional": false,
+          "status": "separated"
+        }
+      ],
+      "placement_is_local_solution": true,
+      "revision": 7,
+      "solution": {
+        "conflict_constraints": [],
+        "degrees_of_freedom": 0,
+        "equation_count": 12,
+        "iterations": 3,
+        "occurrence_order": [
+          "base",
+          "slider"
+        ],
+        "placements": [
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "unit": "mm"
+          },
+          {
+            "rotation_degrees": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "translation": [
+              0.0,
+              0.0,
+              4.0
+            ],
+            "unit": "mm"
+          }
+        ],
+        "rank": 12,
+        "redundant_equations": 0,
+        "remaining_motion": [],
+        "residuals": [
+          {
+            "component": "axis_offset_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_offset_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "axis_x",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "axis_y",
+            "constraint_id": "coaxial",
+            "residual": 0.0,
+            "unit": "unitless"
+          },
+          {
+            "component": "signed_axial_distance",
+            "constraint_id": "gap",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "ty",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "tz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "mm"
+          },
+          {
+            "component": "rx",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "ry",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "ground",
+            "residual": 0.0,
+            "unit": "rad"
+          },
+          {
+            "component": "rz",
+            "constraint_id": "twist",
+            "residual": 0.0,
+            "unit": "rad"
+          }
+        ],
+        "singular_values": [
+          4.871158552,
+          4.727575216,
+          2.099548347,
+          1.267927815,
+          1.061437486,
+          1.0,
+          1.0,
+          0.924905187,
+          0.788688432,
+          0.45779898,
+          0.224165728,
+          0.205289971
+        ],
+        "status": "fully_constrained"
+      },
+      "status": "fully_constrained"
+    }
+  }
+]

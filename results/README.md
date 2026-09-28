@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-このディレクトリには、60件の研究を固定した合成入力と版管理された実験スクリプトから生成した参照成果物があります。v0.57.0〜v0.60.0では形状の真値、再計算の状態遷移、候補の曖昧さ、編集からSTEP再出力までを記録します。詳細は英語本文に示します。
+このディレクトリは65件の研究の参照成果物を含みます。v0.61.0〜v0.65.0では面・辺の参照関係、単位付き寸法式、特徴履歴、組立定義、拘束残差、自由度、接触・干渉を記録します。詳細は英語本文に示します。
 
 各成果物の内容と再生成元は以下の英語本文を参照してください。
 
@@ -1448,6 +1448,61 @@ check unrounded values. STEP writers explicitly declare 1e-7 mm uncertainty.
 Geometric fit is not recovered authoring history, and retained last valid
 geometry is not a current failed result.
 
+## v0.61.0
+
+6 controls and 120 face/edge relations qualify box edits, STEP exchange, split, merge, deletion, and ambiguity.
+
+- [topological_references.csv](topological_references.csv): control outcomes.
+- [topological_reference_relations.json](topological_reference_relations.json): detailed records and evidence.
+- [topological_references_contract.json](topological_references_contract.json): limits and claim boundaries.
+- [topological_references.png](topological_references.png): diagnostic previews.
+
+[Interpretation](../notes/persistent-topological-references.md) and [fixture digests](../fixtures/topological-references/manifest.csv).
+
+## v0.62.0
+
+17 controls cover dimensional arithmetic, unit conversion, twelve rejection cases, and a bound radius edit.
+
+- [parameter_expressions.csv](parameter_expressions.csv): control outcomes.
+- [parameter_values.json](parameter_values.json): detailed records and evidence.
+- [parameter_expressions_contract.json](parameter_expressions_contract.json): limits and claim boundaries.
+- [parameter_expressions.png](parameter_expressions.png): diagnostic previews.
+
+[Interpretation](../notes/parameter-expressions-units-domains.md) and [fixture digests](../fixtures/parameter-expressions/manifest.csv).
+
+## v0.63.0
+
+Seven authored history variants match independent volume/area truth before and after STEP exchange.
+
+- [feature_history_editing.csv](feature_history_editing.csv): control outcomes.
+- [feature_history_models.json](feature_history_models.json): detailed records and evidence.
+- [feature_history_editing_contract.json](feature_history_editing_contract.json): limits and claim boundaries.
+- [feature_history_editing.png](feature_history_editing.png): diagnostic previews.
+
+[Interpretation](../notes/feature-history-editing-configurations.md) and [fixture digests](../fixtures/feature-history-editing/manifest.csv).
+
+## v0.64.0
+
+Ten authored documents separate reusable definitions, occurrences, datum frames, units, and mate constraints.
+
+- [assembly_constraints.csv](assembly_constraints.csv): control outcomes.
+- [assembly_documents.json](assembly_documents.json): detailed records and evidence.
+- [assembly_constraints_contract.json](assembly_constraints_contract.json): limits and claim boundaries.
+- [assembly_constraints.png](assembly_constraints.png): diagnostic previews.
+
+[Interpretation](../notes/assembly-constraints-reusable-components.md) and [fixture digests](../fixtures/assembly-constraints/manifest.csv).
+
+## v0.65.0
+
+Ten solver controls and eight edit events verify freedom, redundancy, conflicts, contact, interference, and recovery.
+
+- [assembly_recompute.csv](assembly_recompute.csv): control outcomes.
+- [assembly_recompute_states.json](assembly_recompute_states.json): detailed records and evidence.
+- [assembly_recompute_contract.json](assembly_recompute_contract.json): limits and claim boundaries.
+- [assembly_recompute.png](assembly_recompute.png): diagnostic previews.
+
+[Interpretation](../notes/assembly-recompute-degrees-of-freedom.md) and [fixture digests](../fixtures/assembly-recompute/manifest.csv).
+
 Regenerate the artifacts from the repository root:
 
 ```bash
@@ -1511,6 +1566,11 @@ python experiments/run_parametric_features.py
 python experiments/run_deterministic_recompute.py
 python experiments/run_step_reconstruction.py
 python experiments/run_assisted_modeling.py
+python experiments/run_topological_references.py
+python experiments/run_parameter_expressions.py
+python experiments/run_feature_history_editing.py
+python experiments/run_assembly_constraints.py
+python experiments/run_assembly_recompute.py
 ```
 
 All committed CSV and JSON files are deterministic reference artifacts checked by CI.

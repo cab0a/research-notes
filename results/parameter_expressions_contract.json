@@ -1,0 +1,12 @@
+{
+  "all_checks_pass": true,
+  "claim_boundaries": [
+    "bounded arithmetic AST only; no eval, calls, attributes, powers, or implicit unit coercion",
+    "base units mm and rad; domains apply in each declared unit; 64 parameters, 256 characters, 96 AST nodes",
+    "scalar length bindings drive the existing bounded feature model"
+  ],
+  "contract_version": "1.0.0",
+  "numeric_serialization": "9 decimal places; checks use unrounded values",
+  "observation_count": 17,
+  "study_version": "v0.62.0"
+}
