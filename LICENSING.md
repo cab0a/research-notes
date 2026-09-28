@@ -67,3 +67,20 @@ reports, research questions, and source corrections may be proposed through
 GitHub Issues without posting confidential or proprietary information. This
 policy preserves a clear rights boundary for research publication and any
 future commercial licensing discussion.
+
+## Public STEP Assets Added in v0.81.0
+
+The files under `fixtures/public-step-corpus/sources/` are third-party assets,
+retained byte-for-byte under their upstream terms. They are not relicensed under
+this project's PolyForm Noncommercial license. The [corpus manifest](fixtures/public-step-corpus/manifest.json)
+records source URLs, full upstream commits, retrieval date, digests, attribution
+and per-file license references. The [corpus README](fixtures/public-step-corpus/README.md)
+maps the files to retained notices.
+
+CadQuery and build123d assets use their repository-level Apache-2.0 licenses;
+build123d's NOTICE is also retained. u-blox assets use the explicit deliverable
+permission in its unaltered README (`LicenseRef-u-blox-Deliverable` in the manifest).
+Generated diagnostic previews depict these upstream designs, and the matching
+attribution is retained in the study and HTML report. Geometry-only exports are
+modified derivatives; keep the corresponding license and attribution when
+redistributing them. No upstream endorsement is implied.

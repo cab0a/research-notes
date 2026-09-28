@@ -2,13 +2,13 @@
 
 ## 日本語概要
 
-80件の研究の参照成果物を収録します。v0.66.0〜v0.80.0では幾何・工学の期待値比較、資源制限、学習と誤判定、編集案と確認結果、統合ワークフローをCSV・JSON・PNGへ記録します。詳細は英語本文に示します。
+81件の研究の参照成果物を収録します。v0.66.0〜v0.80.0では幾何・工学の期待値比較、資源制限、学習と誤判定、編集案と確認結果、統合ワークフローをCSV・JSON・PNGへ記録します。詳細は英語本文に示します。
 
 ---
 
-This directory contains committed outputs generated exclusively from synthetic
+This directory contains committed outputs generated from controlled synthetic
 images, STEP exchange structures, and authored sketches by the versioned
-experiment scripts.
+experiment scripts. v0.81.0 additionally evaluates six licensed public STEP files.
 
 ## v0.1.0
 
@@ -1755,3 +1755,16 @@ All committed CSV and JSON files are deterministic reference artifacts checked b
 CI also regenerates every chart and verifies that non-empty PNG files are
 produced. PNG byte identity is not asserted because font rasterization can
 differ across operating systems.
+
+## v0.81.0 — Public STEP Corpus
+
+- `public_step_corpus.csv` records six frozen observed outcomes, including unsupported editing/semantics, strict trim failures and partial analysis.
+- `public_step_corpus_evidence.json` joins source digests, license paths, per-face findings, per-solid reference measures and round-trip residuals.
+- `public_step_corpus_contract.json` distinguishes regression matching from geometric ground truth or AP conformance.
+- `public_step_corpus.png` depicts the six upstream designs with diagnostic colors.
+- `public_step_corpus.html` displays coverage, failures and linked upstream attribution.
+
+The upstream files retain their original terms; see [sources and licenses](../fixtures/public-step-corpus/README.md).
+The two SAM formats share one part family. All six exchange gates pass, while
+each SAM retains 57 strict trim discrepancies and EMMY omits 143 faces by budget.
+Reproduce offline with `python experiments/run_public_step_corpus.py`.

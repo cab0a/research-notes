@@ -10,7 +10,7 @@ from research_notes.assembly_tool import AssemblyShell
 
 class IntegratedShell(ModelingShell):
     prompt="3d> "
-    intro="3D research workspace v0.80. Type help. Inspect proposals, then select/apply with --confirm."
+    intro="3D research workspace v0.81. Type help. Use open PATH --inspect-only for broader public geometry."
     def __init__(self,output_dir,**kwargs):
         super().__init__(output_dir,**kwargs);self.session=IntegratedSession();self.assembly=AssemblyShell(output_dir/"assembly",stdout=self.stdout)
 
@@ -19,6 +19,21 @@ class IntegratedShell(ModelingShell):
         args=shlex.split(arg)
         if len(args) not in (1,2):raise ValueError("usage: scan STEP [EXPRESS]")
         self._emit(source_layers(Path(args[0]),schema_path=Path(args[1]) if len(args)==2 else None))
+
+    def do_open(self,arg):
+        """open PATH [--inspect-only]: inspect public geometry, or infer bounded editable proposals."""
+        args=shlex.split(arg)
+        if len(args)==2 and args[1]=="--inspect-only":
+            self._emit(self.session.open_step_for_inspection(Path(args[0])))
+        else:super().do_open(arg)
+
+    def do_export(self,arg):
+        """export PATH [--inspection-only] [--overwrite]: verified geometry-only STEP output."""
+        args=shlex.split(arg)
+        if "--inspection-only" not in args:return super().do_export(arg)
+        if len(args) not in (2,3) or args[1:] not in (["--inspection-only"],["--inspection-only","--overwrite"]):
+            raise ValueError("usage: export PATH --inspection-only [--overwrite]")
+        self._emit(self.session.export_inspected_step(Path(args[0]),overwrite="--overwrite" in args))
 
     def do_schema(self,arg):
         """schema EXPRESS: validate imported immutable source against a supplied bounded schema."""

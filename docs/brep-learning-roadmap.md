@@ -6,7 +6,7 @@ STEP規格をPythonパーサーとして実装・検証し、構文・意味・�
 
 <p>STEPを仕様から深く理解する<br>↓<br>STEPファイルをPythonで正しく読み取る<br>↓<br>形状・位相・製品構成を解析する<br>↓<br>面・辺・シェル・立体を扱う<br>↓<br>検査・可視化・変換・モデリングへ発展させる<br>↓<br>将来的に3DデータをAIでも利用する</p>
 
-v0.80.0まで実装し、STEPの解析、精密幾何、工学計測、学習、確認付き編集と再出力を統合しました。v0.81.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、v1.0.0の安定契約には到達していません。
+v0.81.0まで実装し、公開STEPの出所・ライセンス・対応範囲の検証を加え、STEPの解析、精密幾何、工学計測、学習、確認付き編集と再出力を統合しました。v0.82.0以降は計画段階です。各段階は限定した研究用サンプルで検証しており、v1.0.0の安定契約には到達していません。
 
 詳細は以下の英語本文に示します。
 
@@ -430,8 +430,8 @@ arbitrary and interacting features.
 
 ### Phase E — Inspection, Visualization, and Modeling
 
-The stages through v0.80.0 have code and reference evidence for their declared
-subsets. Stages from v0.81.0 onward are planned and remain unimplemented.
+The stages through v0.81.0 have code and reference evidence for their declared
+subsets. Stages from v0.82.0 onward are planned and remain unimplemented.
 
 #### v0.41.0 — Face-Level Analysis Reports
 
@@ -810,10 +810,13 @@ See [implementation and evidence](../notes/integrated-workflow.md).
 
 #### v0.81.0 — Public STEP Conformance Corpus
 
-Add redistribution-compatible or fetch-by-explicit-action public STEP samples
-with recorded provenance and licenses. Preserve expected, unsupported, and
-disputed behavior instead of using third-party acceptance as a conformance
-oracle.
+Implemented as a six-file, five-family public corpus from CadQuery, build123d
+and u-blox with unchanged source bytes, pinned commits, digests and license notices.
+Inspection-only input expands to multiple roots/solids and qualified uniform length
+contexts. All six pass measured geometry round trips; both SAM formats retain
+57 strict trim failures, and EMMY retains partial 256/399 face coverage. AP semantics
+and editable reconstruction remain unsupported for this corpus. These are frozen
+observations, not third-party conformance oracles. See [the study](../notes/public-step-corpus.md).
 
 #### v0.82.0 — AP203, AP214, and AP242 Semantic Portability
 

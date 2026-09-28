@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v0.80.0まで実装しました。STEP読込・検査、PMIの限定的な意味解釈、曲面解析、質量・慣性、候補比較、寸法変更の提案・確認、再計算、比較図、STEP再出力をPython APIと対話ターミナルに統合しています。
+v0.81.0まで実装しました。出所・ライセンスを記録した公開STEPを6件追加し、複数ソリッドや複雑な形状を検査専用で開けます。STEP読込・検査、PMIの限定的な意味解釈、曲面解析、質量・慣性、候補比較、寸法変更の提案・確認、再計算、比較図、STEP再出力をPython APIと対話ターミナルに統合しています。
 
-学習には誤判定があり、候補を自動採用しません。組立は明示的に作成したJSONを扱い、任意のSTEPから拘束や設計履歴を復元するものではありません。v0.81.0以降は計画段階です。詳細は英語本文に示します。
+学習には誤判定があり、候補を自動採用しません。組立は明示的に作成したJSONを扱い、任意のSTEPから拘束や設計履歴を復元するものではありません。v0.82.0以降は計画段階です。詳細は英語本文に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v0.80.0. Scoped references, dimensional
+The current implementation version is v0.81.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -64,10 +64,25 @@ and claim boundaries evolve from one study to the next.
 | JPEG codec and metadata contracts | v0.9.0–v0.20.0 | Which byte, pixel, metadata, recovery, sanitization, temporal, field-retention, resource-boundary, nested-relationship, transform-integrity, and composed-policy behaviors remain stable across encoders, decoders, syntax variants, policies, generations, and recorded CI environments? |
 | STEP and B-Rep foundations | v0.21.0 onward | Which exchange-structure, schema, topology, geometry, validity, and modeling claims can be reproduced from controlled product-model data? |
 
-The [study index](docs/studies.md) maps all 80 studies to their questions,
+The [study index](docs/studies.md) maps all 81 studies to their questions,
 representative findings, artifacts, commands, and complete notes.
 
 ## Representative Result
+
+v0.81.0 adds [six licensed public STEP files](fixtures/public-step-corpus/README.md)
+from CadQuery, build123d and u-blox. All six import and pass measured exchange
+invariants; SAM retains 57 strict trim failures per format and EMMY explicitly
+reports 256/399 analyzed faces. Read the [public validation study](notes/public-step-corpus.md)
+or open its [HTML report](results/public_step_corpus.html).
+
+```bash
+python experiments/run_public_step_corpus.py
+python -m research_notes.integrated_tool --script fixtures/public-step-corpus/demo_commands.txt --output-dir output/public-step-demo
+```
+
+Public inputs and license notices are byte-preserved, hash-pinned and available
+offline. They retain their upstream terms, independently of this project's
+license. The new `open PATH --inspect-only` mode does not infer editable history.
 
 v0.80.0 connects source inspection, precise geometry, engineering measurements,
 reviewable reconstruction/edit proposals, recompute and verified STEP export.
@@ -726,7 +741,7 @@ precision surfaces, engineering
 analysis, evidence-bounded AI assistance, public-corpus generalization,
 interoperability, and reliability evaluation. v1.0.0 is the planned first
 stable research contract for an end-to-end STEP analysis, assisted modeling,
-verification, and export workflow. v0.81.0 and later stages remain
+verification, and export workflow. v0.82.0 and later stages remain
 unimplemented.
 Geometry-kernel binary distribution remains a separate license and packaging
 checkpoint even though the bounded research backend is selected.

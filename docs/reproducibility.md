@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-80件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.66.0〜v0.80.0は15段階・154条件の期待結果を検証し、統合デモも実行します。詳細は英語本文に示します。
+81件の研究の固定入力、観測値、図、実行環境を再現する手順です。v0.66.0〜v0.80.0は15段階・154条件の期待結果を検証し、統合デモも実行します。詳細は英語本文に示します。
 
 ---
 
@@ -811,3 +811,33 @@ Numeric evidence normally uses nine decimal places. Small SI mass, volume,
 centroid and inertia fields preserve nine significant digits below 1e-6. The
 interactive report preserves Python float values. Neither native-code isolation
 nor full AP242/schema/PMI preservation is implied by successful geometry export.
+
+## Public STEP Corpus in v0.81.0
+
+The [manifest](../fixtures/public-step-corpus/manifest.json) pins six original
+STEP files and four upstream license/notice snapshots. Ordinary runs are offline;
+changed bytes fail before native geometry is evaluated. The same pinned geometry
+environment used above reproduces the study:
+
+```bash
+python experiments/run_public_step_corpus.py --output-dir output/public-step-check
+python -m pytest tests/test_public_step_corpus.py -q
+python -m research_notes.integrated_tool --script fixtures/public-step-corpus/demo_commands.txt --output-dir output/public-step-demo
+```
+
+CSV and JSON are compared with committed evidence. Six matching regression rows
+include unsupported semantic/editing outcomes, 57 trim failures for each SAM
+format, and EMMY's partial 256/399 face analysis. The two SAM files share a family;
+they are not independent train/test examples. No public input enters learning.
+
+Re-download only by explicit invocation, to a separate directory:
+
+```bash
+python experiments/fetch_public_step_samples.py --destination output/public-step-download
+python experiments/run_public_step_corpus.py --corpus-dir output/public-step-download --output-dir output/public-step-recheck
+```
+
+The download verifies pinned sizes and hashes, includes all license notices,
+refuses changed assets and copies the reviewed expectations. It never replaces
+source metadata with the current upstream branch. Do not normalize original
+headers or line endings. Source aliases and unit scales remain in the evidence.

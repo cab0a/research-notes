@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-画像処理からSTEP・B-rep解析・編集まで80件の研究を索引化しています。v0.66.0〜v0.80.0はPMI、精密幾何、工学計測、データセット、学習の失敗例、確認付き編集、統合APIとターミナルを扱います。詳細は英語本文に示します。
+画像処理からSTEP・B-rep解析・編集まで81件の研究を索引化しています。v0.66.0〜v0.80.0はPMI、精密幾何、工学計測、データセット、学習の失敗例、確認付き編集、統合APIとターミナルを扱います。詳細は英語本文に示します。
 
 ---
 
@@ -10,7 +10,7 @@
 
 This index maps each published release to its research question, representative
 finding, committed evidence, reproduction command, and complete note. The
-numbers below describe the declared synthetic controls and recorded runtime
+numbers below describe the declared synthetic controls, pinned public samples and recorded runtime
 profiles; they are not general thresholds or production guarantees.
 
 ## Blur Measurement and Localization
@@ -1832,6 +1832,27 @@ python experiments/run_conversational_proposals.py
 python experiments/run_integrated_workflow.py
 ```
 
+### v0.81.0 — Public STEP Validation and Inspection Coverage
+
+**Question:** Which bounded geometry contracts survive externally authored STEP files?
+
+**Finding:** Six immutable public files from three projects cover five part families.
+Multiple roots/solids, metre conversion units and more than 24 faces are inspectable.
+All six pass measured round-trip gates; each SAM format retains 57 strict trim
+failures and EMMY explicitly records partial 256/399 face analysis. Application
+semantics and editable reconstruction remain unsupported for all six.
+
+- [Complete note](../notes/public-step-corpus.md)
+- [Sources and licenses](../fixtures/public-step-corpus/README.md)
+- [Coverage CSV](../results/public_step_corpus.csv)
+- [Evidence](../results/public_step_corpus_evidence.json)
+- [Contract](../results/public_step_corpus_contract.json)
+- [HTML report](../results/public_step_corpus.html)
+
+```bash
+python experiments/run_public_step_corpus.py
+```
+
 ## Artifact Details
 
 The [`results` catalog](../results/README.md) documents every committed CSV and
@@ -1840,7 +1861,7 @@ structures, and their manifests are under [`fixtures/`](../fixtures/).
 
 ## Claim Boundaries
 
-The studies use controlled synthetic inputs so that changed variables and
+Most studies use controlled synthetic inputs; v0.81 adds six pinned external files. Changed variables and
 expected relationships remain inspectable. This design supports regression and
 failure-mode analysis, but it does not establish:
 
@@ -1856,7 +1877,7 @@ failure-mode analysis, but it does not establish:
 - full Part 21 edition coverage, complete EXPRESS parsing or validation,
   external reference safety, CMS
   verification, archive safety, or exact geometry evaluation beyond the
-  controlled v0.21.0 through v0.80.0 subsets;
+  controlled v0.21.0 through v0.81.0 subsets;
 - persistent face or edge identity, topological naming, or design-history
   recovery from the v0.39.0 geometry-inferred correspondence controls;
 - feature-history or design-intent recovery, or general feature recognition,

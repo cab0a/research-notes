@@ -1,0 +1,7 @@
+# All bundled upstream STEP files are immutable; export to a separate output directory.
+open fixtures/public-step-corpus/sources/build123d_bracket.step --inspect-only
+inspect
+analyze
+export output/public-step-demo/bracket.step --inspection-only --overwrite
+report
+quit

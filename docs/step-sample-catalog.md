@@ -2,13 +2,13 @@
 
 ## 日本語概要
 
-v0.80.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。精密幾何、修復、工学計測、64部品のSTEP、変更前後21組、学習用形状、統合デモを追加しました。詳細は英語本文に示します。
+v0.81.0までのSTEP・EXPRESS・スケッチ・組立サンプルを一覧化しています。出所とライセンスを記録した公開STEPを6件追加しました。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
-This catalog maps committed synthetic STEP and EXPRESS samples to their
+This catalog maps committed synthetic and selected public STEP/EXPRESS samples to their
 manifests, previews, research purpose, and validation boundary. Samples live
 under `fixtures/` because they are both human-inspectable examples and exact
 CI inputs.
@@ -16,8 +16,8 @@ CI inputs.
 ## Sample Policy
 
 Each STEP, B-Rep, or EXPRESS study keeps the actual input bytes whenever licensing and
-privacy permit. This repository uses only generated synthetic inputs. A sample
-set includes:
+privacy permit. Most inputs are generated controls; v0.81.0 additionally retains
+six licensed public STEP files unchanged. A generated sample set includes:
 
 - a deterministic generator in `src/research_notes/`;
 - committed `.step` or container files under `fixtures/`;
@@ -1292,3 +1292,21 @@ Eight integration checks connect bounded source inspection, schema/application s
 [Fixtures](../fixtures/integrated-workflow/) · [SHA-256 manifest](../fixtures/integrated-workflow/manifest.csv) · [Complete note](../notes/integrated-workflow.md)
 
 ![Integrated 3D Analysis and Modeling Foundation](../results/integrated_workflow.png)
+
+## v0.81.0 — Public, Byte-Preserved STEP Samples
+
+[Public corpus](../fixtures/public-step-corpus/README.md): six files, three upstream
+repositories, five part families, ten SHA-256-pinned source/license assets.
+
+| Input | Geometry | Source / terms |
+| --- | --- | --- |
+| `cadquery_assembly.step` | 2 roots, 2 solids, metre conversion unit | CadQuery / Apache-2.0 |
+| `build123d_bracket.step` | 42-face NEMA-17 bracket | build123d / Apache-2.0 + NOTICE |
+| `build123d_screw.step` | 28-face M6 threaded screw, B-splines | build123d / Apache-2.0 + NOTICE |
+| `ublox_sam_ap203.step` | 3-solid SAM, AP203 | u-blox / retained deliverable permission |
+| `ublox_sam_ap214.step` | Same SAM model, AP214 | u-blox / retained deliverable permission |
+| `ublox_emmy.step` | 54-solid, 399-face EMMY module | u-blox / retained deliverable permission |
+
+Original bytes are never regenerated. Use the [explicit fetch command](reproducibility.md#public-step-corpus-in-v0810)
+only to reacquire the pinned files; standard studies run offline. Inspection and
+geometry exchange support do not imply editable histories or AP semantic support.

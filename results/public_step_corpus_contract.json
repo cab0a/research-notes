@@ -1,0 +1,18 @@
+{
+  "baseline_kind": "reviewed observations on pinned external inputs; not author-supplied geometric truth",
+  "checks_pass_meaning": "matches frozen declared outcomes, including unsupported, partial and disputed outcomes",
+  "claim_boundaries": [
+    "six selected files, not representative industrial coverage or full AP conformance",
+    "geometry inspection does not recover editable history, colors, materials, product structure, PMI or mates",
+    "same OCCT kernel imports and exports; measured invariants are not pointwise shape equivalence",
+    "uniform SI metre/centimetre/millimetre or bounded conversion chains, normalized to mm; mixed contexts refused; no OS time/memory sandbox",
+    "differential samples and 17-point wire checks do not certify whole faces; fixed face limit is explicit",
+    "per-solid unit-density integration is not a physical assembly mass or material assignment"
+  ],
+  "geometry_backend": "cadquery-ocp 7.9.3.1.1 (reference environment)",
+  "independent_family_count": 5,
+  "network_required": false,
+  "sample_count": 6,
+  "training_use": false,
+  "version": "0.81.0"
+}

@@ -161,6 +161,7 @@ jobs:
           python experiments/run_design_proposals.py --fixture-dir regenerated-fixtures/design-proposals --output-dir regenerated-results --refresh-fixtures
           python experiments/run_conversational_proposals.py --fixture-dir regenerated-fixtures/conversational-proposals --output-dir regenerated-results --refresh-fixtures
           python experiments/run_integrated_workflow.py --fixture-dir regenerated-fixtures/integrated-workflow --output-dir regenerated-results --refresh-fixtures
+          python experiments/run_public_step_corpus.py --output-dir regenerated-results
 
       - name: Verify reference data and chart generation
         run: |
@@ -556,6 +557,11 @@ jobs:
           diff -u results/integrated_workflow_contract.json regenerated-results/integrated_workflow_contract.json
           diff -qr fixtures/integrated-workflow regenerated-fixtures/integrated-workflow
           test -s regenerated-results/integrated_workflow.png
+          diff -u results/public_step_corpus.csv regenerated-results/public_step_corpus.csv
+          diff -u results/public_step_corpus_evidence.json regenerated-results/public_step_corpus_evidence.json
+          diff -u results/public_step_corpus_contract.json regenerated-results/public_step_corpus_contract.json
+          diff -u results/public_step_corpus.html regenerated-results/public_step_corpus.html
+          test -s regenerated-results/public_step_corpus.png
           diff -u results/face_adjacency_graphs.json regenerated-results/face_adjacency_graphs.json
           diff -u results/face_graph_contract.json regenerated-results/face_graph_contract.json
           diff -qr fixtures/jpeg-decoder-contracts regenerated-fixtures/jpeg-decoder-contracts

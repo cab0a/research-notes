@@ -1,3 +1,7 @@
 *.jpg binary
 *.png binary
 *.step text eol=lf whitespace=-blank-at-eol
+
+# Upstream STEP and license snapshots are byte-preserved on every checkout.
+fixtures/public-step-corpus/sources/** -text -whitespace
+fixtures/public-step-corpus/licenses/** -text -whitespace

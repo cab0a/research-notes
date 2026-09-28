@@ -2,17 +2,17 @@
 
 ## 日本語概要
 
-v0.80.0時点の機能と制限を分類します。PMI、曲面・交差、修復、質量・慣性、空間索引、学習、編集提案を統合しています。各機能は明示した合成条件に限定され、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
+v0.81.0時点の機能と制限を分類します。PMI、曲面・交差、修復、質量・慣性、空間索引、学習、編集提案を統合しています。各機能は明示した合成条件に限定され、一般のCADや完全な規格適合を主張しません。詳細は英語本文に示します。
 
 ---
 
 ## English Summary
 
 This document states what the STEP and B-Rep track can and cannot claim across
-80 studies through v0.80.0. It separates syntax recognition, schema validation, physical-reference
+81 studies through v0.81.0. It separates syntax recognition, schema validation, physical-reference
 graphs, application semantics, declared topology, evaluated geometry, and
 modeling so that success at one layer is not presented as success at another.
-v0.81.0 and later roadmap stages remain unimplemented.
+v0.82.0 and later roadmap stages remain unimplemented.
 
 ## Status Definitions
 
@@ -28,6 +28,16 @@ v0.81.0 and later roadmap stages remain unimplemented.
 
 Implemented stages below have code and reference evidence. Publication of a
 Git tag or package is separate. Planned numbers are not delivery promises.
+
+## Public STEP Extension in v0.81.0
+
+Six hash-pinned public samples supplement the synthetic controls below. Explicit
+inspection-only input accepts multiple roots/solids and qualified uniform SI or
+conversion-based length contexts, normalized to mm. It does not widen the editing
+grammar. All six pass topology/volume/area/bounds/native-validity exchange gates;
+two SAM inputs retain strict p-curve discrepancies and EMMY retains partial face
+coverage. AP203/AP214 semantic portability remains deferred. Source bytes, license
+notices and failures are in [the public corpus study](../notes/public-step-corpus.md).
 
 ## Executive Snapshot
 
@@ -48,7 +58,7 @@ Git tag or package is separate. Planned numbers are not delivery promises.
 | Face and edge correspondence | Controlled subset | Four planar/open-line controls record 56 face descriptors, 37 face candidates, 35 face relations, 122 edge descriptors, 79 edge candidates, and 75 edge relations; STEP import resolves 23 faces and 47 edges one-to-one while two faces and eight edges abstain, and all 10 face plus 20 edge healing relations agree with separate operation history | Persistent topological identity, one-to-many splits, generated-result controls, moving frames, curved or closed edges, semantic provenance, or design-history recovery |
 | Rule-based feature recognition | Controlled subset | Nine generated solids and STEP fixtures produce 136 face rows, 282 adjacency rows, 14 candidate rows, 18 stage observations, and two equivalent-boundary rows; all 14 candidates match controlled classification and dimensions, while two negative controls produce no false positives | Feature-history reconstruction, design-intent proof, interacting or arbitrary features, or a general recognizer |
 | Face-level reports | Controlled subset | A versioned 60-field CSV records 13 faces per stage across six surface families with parent lists, geometry, parameters, boundaries, adjacency, tolerance, and attributed metadata source | Persistent identity, arbitrary-file coverage, XCAF metadata traversal, shell-relative material orientation, or cross-kernel portability |
-| Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | A general end-user CAD inspector or an interactive 3D viewer |
+| Inspection artifacts | Implemented | Regenerate synthetic STEP/EXPRESS inputs, CSV, JSON, and diagnostic figures deterministically | Arbitrary-file coverage or an interactive 3D viewer |
 | Geometry modeling | Controlled subset | Explicit hole, pocket, boss, and rib operations; dependency recompute; last-valid recovery; confirmed edits and verified STEP export | Arbitrary features, persistent naming, general healing, source attribute preservation, or arbitrary STEP compatibility |
 | 2D sketch constraints | Research evidence | Twenty-two line, circle, and arc controls record local rank, residuals, and three revisioned dimension edits | Global uniqueness, arbitrary-scale or singularity robustness, general nonlinear conflict detection, or arbitrary sketch-driven B-Rep recompute |
 | Authored assemblies | Controlled subset | Reused definitions, authored datums, unit-aware parameters, pose constraints, local freedom, and interference | Arbitrary STEP mate inference, nested assemblies, global motion proof, or swept collision |
@@ -73,7 +83,7 @@ Git tag or package is separate. Planned numbers are not delivery promises.
 | Edition and implementation-level observations | Controlled subset | Selected Edition 1, 2, and 3 features are compared with the declared implementation level | Not an ISO certification suite | [`step_part21_conformance_observations.csv`](../results/step_part21_conformance_observations.csv) |
 | Malformed-input routing | Implemented for declared cases | Syntax failures reject; configured work-limit failures quarantine | No fuzzing, memory-safety proof, or denial-of-service guarantee | [`step_part21.py`](../src/research_notes/step_part21.py) |
 | Public-parser comparison | Research evidence | Selected fixtures are compared with pinned `steputils` and `step-file-parser` revisions | Neither parser is treated as a conformance oracle | [`step_part21_parser_comparison.csv`](../results/step_part21_parser_comparison.csv) |
-| Arbitrary production STEP files | Not implemented | None | Coverage is limited to generated corpora and explicit subsets | [Claim boundaries](../README.md#claim-boundaries) |
+| Arbitrary production STEP files | Not implemented | None | Coverage is limited to generated corpora and six selected public STEP files | [Claim boundaries](../README.md#claim-boundaries) |
 
 ## EXPRESS and Schema-Validation Capabilities
 

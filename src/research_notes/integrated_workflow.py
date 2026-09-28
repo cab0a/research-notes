@@ -52,6 +52,31 @@ class IntegratedSession(ModelingSession):
     def inspect(self):
         return {**super().inspect(),"layers":self.layers}
 
+    def open_step_for_inspection(self,path:Path):
+        """Open broader public geometry without creating editable candidates."""
+        from research_notes.public_step import read_step_for_inspection
+        from research_notes.step_reconstruction import ReconstructionResult
+        layers=source_layers(path)
+        inspected=read_step_for_inspection(path)
+        if inspected.imported.source_sha256!=layers["syntax"]["source_sha256"]:
+            raise ValueError("source changed during import")
+        candidate=IntegratedSession()
+        candidate.source_path=Path(path).resolve()
+        candidate.inspection=ReconstructionResult(inspected.imported,(),(),(),"inspection_only",
+            "geometry inspection only; no editable history or assembly constraints inferred")
+        candidate.layers=layers
+        candidate.layers["native_geometry"]={"transferred_roots":inspected.roots,
+            "unit_contexts":list(inspected.unit_contexts),"length_unit":"mm","mode":"inspection_only"}
+        self.__dict__.update(candidate.__dict__)
+        return self.inspect()
+
+    def export_inspected_step(self,path,*,overwrite=False):
+        from research_notes.public_step import export_inspected_geometry
+        if self.inspection is None or self.inspection.status!="inspection_only":
+            raise ValueError("open with --inspect-only before inspection export")
+        self.export_record=export_inspected_geometry(self.inspection.imported,self.source_path,path,overwrite=overwrite)
+        return self.export_record
+
     def select_candidate(self,identifier,*,confirm=False):
         result=super().select_candidate(identifier,confirm=confirm)
         self.rank_result=None;self.export_record=None
@@ -94,6 +119,9 @@ class IntegratedSession(ModelingSession):
         return review_reconstructions(self.inspection)
 
     def analyze(self):
+        if self.inspection is not None and self.inspection.status=="inspection_only":
+            from research_notes.public_step import analyze_public_shape
+            return analyze_public_shape(self.shape())
         from OCP.BRepAdaptor import BRepAdaptor_Surface
         from OCP.BRepClass import BRepClass_FaceClassifier
         from OCP.gp import gp_Pnt2d
@@ -118,6 +146,9 @@ class IntegratedSession(ModelingSession):
         return {"faces":rows,"scope":"support samples outside trims are labeled; differential and sampled trim evidence remain separate"}
 
     def rank(self):
+        if self.inspection is not None and self.inspection.status=="inspection_only":
+            return {"decision":"not_evaluated","ranking":[],"automatic_selection":False,
+                    "reason":"public inspection shapes are outside the trained synthetic ranking contract"}
         path=Path(__file__).resolve().parents[2]/"fixtures/candidate-ranking/model.json"
         payload=json.loads(path.read_text())
         model=RepresentationModel(**{**payload,"labels":tuple(payload["labels"]),"means":tuple(payload["means"]),"scales":tuple(payload["scales"]),"centroids":tuple(map(tuple,payload["centroids"])),"feature_names":tuple(payload["feature_names"]),"train_ids":tuple(payload["train_ids"]),"validation_ids":tuple(payload["validation_ids"])})
@@ -152,7 +183,7 @@ class IntegratedSession(ModelingSession):
         shape=self.shape();directory=Path(directory);directory.mkdir(parents=True,exist_ok=True)
         entries=[("Imported STEP",self.inspection.imported.shape)]
         if self.model:entries.append((f"Current revision {self.model.revision}",shape))
-        report={"version":"0.80.0","layers":self.layers,"session":self.status(),"material":self.material,"mass":self.mass() if self.material else None,
+        report={"version":"0.81.0","layers":self.layers,"session":self.status(),"material":self.material,"mass":self.mass() if self.material else None,
                 "reconstruction":self.review(),"candidate_ranking":self.rank(),"geometry_analysis":self.analyze(),"comparison":self.compare() if self.model else None,
                 "proposals":[{"proposal_id":p.proposal_id,"before_fingerprint":p.before_fingerprint,"execution_status":"applied" if p.proposal_id in self.applied_proposals else "unapplied","preview":p.preview} for p in self.proposals.values()],
                 "export":self.export_record,"source_history_recovered":False}
@@ -165,17 +196,23 @@ class IntegratedSession(ModelingSession):
         candidate_rows="".join(f"<tr><td>{html.escape(c['explanation'].replace('_',' '))}</td><td>{c['complexity']['nodes']}</td><td>{c['fit']['material_difference_volume']:.3g}</td><td>{'Selected in this session' if c['candidate_id']==self.selected_candidate_id else 'Alternative proposal'}</td></tr>" for c in candidates)
         ranking=report["candidate_ranking"]
         ranking_rows="".join(f"<tr><td>{html.escape(r['label'])}</td><td>{r['probability']:.1%}</td></tr>" for r in ranking["ranking"])
+        analysis=report["geometry_analysis"]
+        analysis_text=(f"Analyzed {analysis['analyzed_face_count']} of {analysis['face_count']} faces; "
+                       f"{analysis['omitted_face_count']} omitted by budget; {analysis['trim_check_failures']} sampled trim checks failed. "
+                       "A completed analysis is not a validity certificate.") if "analyzed_face_count" in analysis else "Detailed face observations are available in the JSON evidence."
+        modeling_text="Inspection only: no editable candidates were inferred." if self.inspection.status=="inspection_only" else "Alternative feature histories can explain the same shape. Original authoring history is not recovered."
+        ranking_text=ranking.get("reason","Calibrated on synthetic controls; public generalization is not established.")
         stages=[("STEP syntax",self.layers["syntax"]["status"]),("Schema",self.layers["schema"].get("status",self.layers["schema"].get("validation",{}).get("decision","deferred"))),
                 ("Application semantics",self.layers["application_semantics"]["status"]),("Semantic PMI",self.layers["pmi"].get("status","unsupported_schema")),
-                ("Model",f"Confirmed revision {self.model.revision}" if self.model else "Awaiting proposal selection")]
+                ("Model",f"Confirmed revision {self.model.revision}" if self.model else "Inspection only" if self.inspection.status=="inspection_only" else "Awaiting proposal selection")]
         status_labels={"accepted":"Parsed successfully","not_supplied":"Schema not provided","unsupported_schema":"Outside supported AP mapping","no_supported_pmi":"No supported semantic PMI","observed":"Semantic records found","partial":"Partial evidence"}
         cards="".join(f'<div class="card"><span>{html.escape(k)}</span><strong>{html.escape(status_labels.get(str(v),str(v)))}</strong></div>' for k,v in stages)
         page=f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3D analysis workspace</title>
 <style>body{{margin:0;background:#f3f6f9;color:#193246;font:16px system-ui}}main{{max-width:1240px;margin:auto;padding:32px}}h1{{font-size:36px;margin:8px 0}}.eyebrow{{color:#187b85;font-weight:700;letter-spacing:2px}}.cards{{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}}.card,section{{background:white;border:1px solid #d8e2ea;border-radius:12px;padding:20px}}.card{{flex:1;min-width:140px}}.card span{{font-size:13px;color:#647789;display:block}}.card strong{{display:block;margin-top:8px}}.grid{{display:grid;grid-template-columns:1fr 1fr;gap:20px}}section{{margin:20px 0}}table{{width:100%;border-collapse:collapse}}td,th{{text-align:left;padding:10px;border-bottom:1px solid #e4eaf0}}img{{width:100%}}a{{color:#146d79}}code{{overflow-wrap:anywhere;font-size:12px}}@media(max-width:800px){{.grid{{display:block}}}}</style>
-<main><div class="eyebrow">RESEARCH WORKSPACE / v0.80.0</div><h1>3D analysis & modeling</h1><p>{html.escape(self.inspection.imported.file_name)} · Mass: <b>{mass_text}</b></p>
-<div class="cards">{cards}</div><section><h2>Geometry comparison</h2><img src="workflow.png" alt="Imported and current B-Rep geometry"></section>
-<div class="grid"><section><h2>Editable reconstruction proposals</h2><table><tr><th>Explanation</th><th>Nodes</th><th>Fit residual</th><th>Adoption</th></tr>{candidate_rows}</table><p>Alternative feature histories can explain the same shape. Original authoring history is not recovered.</p></section>
-<section><h2>Learned candidate ranking</h2><p>Decision: <b>{html.escape(ranking['decision'])}</b> · Calibrated on synthetic controls</p><table><tr><th>Candidate</th><th>Score</th></tr>{ranking_rows}</table><p>Ranking does not select or edit a model.</p></section></div>
+<main><div class="eyebrow">RESEARCH WORKSPACE / v0.81.0</div><h1>3D analysis & modeling</h1><p>{html.escape(self.inspection.imported.file_name)} · Mass: <b>{mass_text}</b></p>
+<div class="cards">{cards}</div><section><h2>Geometry comparison</h2><img src="workflow.png" alt="Imported and current B-Rep geometry"><p>{html.escape(analysis_text)}</p></section>
+<div class="grid"><section><h2>Editable reconstruction proposals</h2><table><tr><th>Explanation</th><th>Nodes</th><th>Fit residual</th><th>Adoption</th></tr>{candidate_rows}</table><p>{html.escape(modeling_text)}</p></section>
+<section><h2>Learned candidate ranking</h2><p>Decision: <b>{html.escape(ranking['decision'])}</b> · {html.escape(ranking_text)}</p><table><tr><th>Candidate</th><th>Score</th></tr>{ranking_rows}</table><p>Ranking does not select or edit a model.</p></section></div>
 <section><h2>Evidence and exchange</h2><p>Source SHA-256: <code>{self.inspection.imported.source_sha256}</code></p><p>STEP export preserves verified shape geometry. Source names, PMI and constraints require separate review.</p><a href="workflow.json">Complete source, measurement, proposal and recompute evidence</a></section></main></html>'''
         (directory/"workflow.html").write_text(page,encoding="utf-8")
         return {"report":str(directory/"workflow.html"),"evidence":str(directory/"workflow.json")}
