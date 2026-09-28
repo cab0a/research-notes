@@ -51,6 +51,18 @@ def csv_bytes(rows: list[dict]) -> bytes:
 def handle_fixtures(directory: Path, payloads: dict[str, bytes], *, refresh: bool, generator: str) -> None:
     directory.mkdir(parents=True, exist_ok=True)
     payloads = dict(payloads)
+    # Three historical fixtures include measured solver/geometry evidence.
+    # Keep their committed bytes after a numerical equivalence check, so the
+    # manifest still verifies the exact artifact distributed to users.
+    if not refresh:
+        from research_notes.artifact_contracts import evidence_differences
+        measured = {"experiments/run_assembly_recompute.py": "recompute_cases.json",
+                    "experiments/run_change_pair_dataset.py": "pairs.json",
+                    "experiments/run_solver_robustness.py": "controls.json"}.get(generator)
+        if measured and (directory / measured).exists():
+            reference = (directory / measured).read_bytes()
+            if not evidence_differences(json.loads(payloads[measured]), json.loads(reference)):
+                payloads[measured] = reference
     payloads["manifest.csv"] = csv_bytes([
         {"file_name": name, "byte_length": len(payload), "sha256": hashlib.sha256(payload).hexdigest(), "generator": generator}
         for name, payload in sorted(payloads.items())

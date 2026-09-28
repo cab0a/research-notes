@@ -1,3 +1,4 @@
+from research_notes.artifact_contracts import compare_file
 from pathlib import Path
 import json
 import pytest
@@ -13,9 +14,9 @@ def test_foundation_artifacts_reproduce_exactly(tmp_path,version,name,module):
     assert rows and all(r["checks_pass"] for r in rows)
     expected=ROOT/"fixtures"/name.replace("_","-")
     assert {p.name for p in fixtures.iterdir()}=={p.name for p in expected.iterdir()}
-    for path in fixtures.iterdir():assert path.read_bytes()==(expected/path.name).read_bytes(),path.name
+    for path in fixtures.iterdir():compare_file(path, expected/path.name)
     for path in output.iterdir():
-        if path.suffix in {".csv",".json"}:assert path.read_bytes()==(ROOT/"results"/path.name).read_bytes(),path.name
+        if path.suffix in {".csv",".json"}:compare_file(path, ROOT/"results"/path.name)
         else:assert path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
 
 

@@ -219,6 +219,13 @@ def lex_part21(
         ) from error
 
     coordinates = _SourceCoordinates(text)
+    # This bounded profile does not implement the transport-control filtering
+    # permitted by Part 21 section 5.2. Never silently retain a NUL as string data.
+    if "\x00" in text:
+        offset = text.index("\x00")
+        raise Part21ParseError("reject", "unsupported_transport_control",
+                              "NUL transport control is outside this parser profile",
+                              coordinates.span(offset, offset + 1))
     tokens: list[Part21Token] = []
     index = 0
     while index < len(text):

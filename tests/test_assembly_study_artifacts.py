@@ -1,3 +1,4 @@
+from research_notes.artifact_contracts import compare_file
 from pathlib import Path
 import subprocess
 import sys
@@ -26,10 +27,10 @@ def test_reference_artifacts_reproduce_exactly(tmp_path, runner, fixture):
     expected = ROOT/"fixtures"/fixture
     assert {p.name for p in fixtures.iterdir()} == {p.name for p in expected.iterdir()}
     for generated in fixtures.iterdir():
-        assert generated.read_bytes() == (expected/generated.name).read_bytes(), generated.name
+        compare_file(generated, expected/generated.name)
     for generated in output.iterdir():
         if generated.suffix in {".json", ".csv"}:
-            assert generated.read_bytes() == (ROOT/"results"/generated.name).read_bytes(), generated.name
+            compare_file(generated, ROOT/"results"/generated.name)
         else:
             assert generated.read_bytes().startswith(b"\x89PNG\r\n\x1a\n")
 

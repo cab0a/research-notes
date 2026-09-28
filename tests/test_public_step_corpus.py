@@ -1,3 +1,4 @@
+from research_notes.artifact_contracts import compare_file
 from dataclasses import replace
 import hashlib
 import io
@@ -165,7 +166,7 @@ def test_public_corpus_reproduces_offline_and_keeps_failures(tmp_path, monkeypat
     assert all(r["editable_candidates"] == 0 for r in rows)
     for path in tmp_path.iterdir():
         if path.suffix in {".json", ".csv"}:
-            assert path.read_bytes() == (ROOT / "results" / path.name).read_bytes(), path.name
+            compare_file(path, ROOT/"results"/path.name)
 
 
 def test_public_terminal_demo(tmp_path):

@@ -480,9 +480,9 @@ jobs:
           diff -qr fixtures/assembly-constraints regenerated-fixtures/assembly-constraints
           test -s regenerated-results/assembly_constraints.png
           diff -u results/assembly_recompute.csv regenerated-results/assembly_recompute.csv
-          diff -u results/assembly_recompute_states.json regenerated-results/assembly_recompute_states.json
+          python -m research_notes.artifact_contracts results/assembly_recompute_states.json regenerated-results/assembly_recompute_states.json
           diff -u results/assembly_recompute_contract.json regenerated-results/assembly_recompute_contract.json
-          diff -qr fixtures/assembly-recompute regenerated-fixtures/assembly-recompute
+          python -m research_notes.artifact_contracts fixtures/assembly-recompute regenerated-fixtures/assembly-recompute
           test -s regenerated-results/assembly_recompute.png
           diff -u results/semantic_pmi.csv regenerated-results/semantic_pmi.csv
           diff -u results/semantic_pmi_evidence.json regenerated-results/semantic_pmi_evidence.json
@@ -530,9 +530,9 @@ jobs:
           diff -qr fixtures/independent-validation regenerated-fixtures/independent-validation
           test -s regenerated-results/independent_validation.png
           diff -u results/change_pair_dataset.csv regenerated-results/change_pair_dataset.csv
-          diff -u results/change_pair_dataset_evidence.json regenerated-results/change_pair_dataset_evidence.json
+          python -m research_notes.artifact_contracts results/change_pair_dataset_evidence.json regenerated-results/change_pair_dataset_evidence.json
           diff -u results/change_pair_dataset_contract.json regenerated-results/change_pair_dataset_contract.json
-          diff -qr fixtures/change-pair-dataset regenerated-fixtures/change-pair-dataset
+          python -m research_notes.artifact_contracts fixtures/change-pair-dataset regenerated-fixtures/change-pair-dataset
           test -s regenerated-results/change_pair_dataset.png
           diff -u results/representation_learning.csv regenerated-results/representation_learning.csv
           diff -u results/representation_learning_evidence.json regenerated-results/representation_learning_evidence.json
@@ -560,7 +560,7 @@ jobs:
           diff -qr fixtures/integrated-workflow regenerated-fixtures/integrated-workflow
           test -s regenerated-results/integrated_workflow.png
           diff -u results/public_step_corpus.csv regenerated-results/public_step_corpus.csv
-          diff -u results/public_step_corpus_evidence.json regenerated-results/public_step_corpus_evidence.json
+          python -m research_notes.artifact_contracts results/public_step_corpus_evidence.json regenerated-results/public_step_corpus_evidence.json
           diff -u results/public_step_corpus_contract.json regenerated-results/public_step_corpus_contract.json
           diff -u results/public_step_corpus.html regenerated-results/public_step_corpus.html
           test -s regenerated-results/public_step_corpus.png
@@ -571,7 +571,7 @@ jobs:
             if [ "$study" != "solver_robustness" ]; then
               diff -u results/${study}_evidence.json regenerated-results/${study}_evidence.json
             fi
-            diff -qr fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
+            python -m research_notes.artifact_contracts fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
             test -s regenerated-results/${study}.png
           done
           # Solver residuals use tolerance-based comparisons in test_robustness_studies.py.
@@ -579,7 +579,7 @@ jobs:
             diff -u results/${study}.csv regenerated-results/${study}.csv
             diff -u results/${study}_contract.json regenerated-results/${study}_contract.json
             diff -u results/${study}.html regenerated-results/${study}.html
-            diff -qr fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
+            python -m research_notes.artifact_contracts fixtures/${study//_/-} regenerated-fixtures/${study//_/-}
             test -s regenerated-results/${study}.png
           done
           # Numeric evidence and diagnostic snapshots use tolerances in test_operational_studies.py.

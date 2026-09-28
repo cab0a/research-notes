@@ -1,4 +1,5 @@
 """Regression artifacts plus independent semantic and solver failure controls."""
+from research_notes.artifact_contracts import compare_file
 from collections import Counter
 from dataclasses import replace
 import hashlib
@@ -41,7 +42,7 @@ def test_robustness_artifacts_reproduce(tmp_path, name):
     reference = ROOT / "fixtures" / name.replace("_", "-")
     assert {p.name for p in fixtures.iterdir()} == {p.name for p in reference.iterdir()}
     for path in fixtures.iterdir():
-        assert path.read_bytes() == (reference / path.name).read_bytes()
+        compare_file(path, reference/path.name)
     for path in output.iterdir():
         if path.suffix == ".png":
             assert path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n")

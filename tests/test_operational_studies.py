@@ -186,7 +186,7 @@ def test_workspace_escapes_hostile_source_name(tmp_path):
     imported = replace(workspace._session.inspection.imported, file_name='</script><script>alert(1)</script>')
     workspace._session.inspection = replace(workspace._session.inspection, imported=imported)
     workspace.workspace(tmp_path)
-    page = (tmp_path / "workspace.html").read_text()
+    page = (tmp_path / "workspace.html").read_text(encoding="utf-8")
     assert '</script><script>alert(1)' not in page
     assert '\\u003c/script>' in page
     assert json.loads((tmp_path / "workspace.json").read_text())["file_name"] == imported.file_name
