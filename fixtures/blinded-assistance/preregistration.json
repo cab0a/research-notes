@@ -1,0 +1,9 @@
+{
+  "files": {
+    "fixtures/blinded-assistance/protocol.json": "0706dfbf7e5930bebc39131e8ded87f7d82a77f2d9e1cfb63206f7f6f5e9c923",
+    "fixtures/candidate-ranking/model.json": "01189dc47cd3480dadffbde3e4184a7e895e93cd7ac9b71372598223ee4b9e1f",
+    "fixtures/candidate-ranking/samples.json": "7361b77e919bebe64e11e9d3bf245f90cc4ea3dfe8c0d2fffb6495b7da98bd30"
+  },
+  "frozen_before_predictions": true,
+  "protocol_version": "1.0.0"
+}

@@ -1,0 +1,25 @@
+{
+  "protocol_version": "1.0.0",
+  "training_checkpoint": "fixtures/candidate-ranking/model.json",
+  "training_samples": "fixtures/candidate-ranking/samples.json",
+  "prediction_input": "only geometric descriptor vectors; no truth, family, file name or recipe",
+  "abstention_threshold": 0.7,
+  "fitting_allowed": false,
+  "evaluation": ["top1_accuracy", "coverage", "selective_accuracy", "brier", "expected_calibration_error", "high_confidence_errors", "evidence_coverage"],
+  "success_policy": "valid isolation and complete observations; no post-hoc accuracy target or threshold tuning",
+  "plate_dimensions_mm": [18.0, 12.0, 4.0],
+  "variants": [0.0, 0.2],
+  "construction_families": [
+    {"family": "paired_cylindrical_cuts", "truth": "hole"},
+    {"family": "paired_rectangular_cuts", "truth": "pocket"},
+    {"family": "long_capsule_cut", "truth": "slot"},
+    {"family": "two_level_stair_cut", "truth": "step"},
+    {"family": "multiple_edge_chamfer", "truth": "chamfer"},
+    {"family": "all_edge_rounding", "truth": "fillet"},
+    {"family": "paired_cylindrical_additions", "truth": "boss"},
+    {"family": "crossed_rectangular_additions", "truth": "rib"},
+    {"family": "mixed_hole_boss", "truth": "unknown"},
+    {"family": "sphere_negative", "truth": "unknown"}
+  ],
+  "scope": "algorithm-blind synthetic held-out construction families; no independent human labeling or industrial generalization claim"
+}

@@ -242,86 +242,6 @@
     "witnesses": [
       {
         "a_point": [
-          2.0,
-          0.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 5,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          0.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 10,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          0.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 6,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          0.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 9,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 7,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          2.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 12,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 8,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          2.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 11,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
           1.0,
           0.0,
           0.0
@@ -398,6 +318,86 @@
         "b_support": {
           "analysis_local_index": 3,
           "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
         }
       }
     ],
@@ -666,166 +666,6 @@
     "witnesses": [
       {
         "a_point": [
-          2.0,
-          0.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 5,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.00000005,
-          0.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 1,
-          "kind": "vertex"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          0.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 6,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.00000005,
-          0.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 2,
-          "kind": "vertex"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 7,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.00000005,
-          2.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 3,
-          "kind": "vertex"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 8,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.00000005,
-          2.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 4,
-          "kind": "vertex"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          0.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 5,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          0.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 10,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          0.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 6,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          0.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 9,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          2.0
-        ],
-        "a_support": {
-          "analysis_local_index": 7,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          2.0,
-          2.0
-        ],
-        "b_support": {
-          "analysis_local_index": 12,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
-          2.0,
-          2.0,
-          0.0
-        ],
-        "a_support": {
-          "analysis_local_index": 8,
-          "kind": "vertex"
-        },
-        "b_point": [
-          2.0,
-          2.0,
-          0.0
-        ],
-        "b_support": {
-          "analysis_local_index": 11,
-          "kind": "edge"
-        }
-      },
-      {
-        "a_point": [
           2.00000005,
           0.0,
           0.0
@@ -901,6 +741,166 @@
         ],
         "b_support": {
           "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 10,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 5,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 1,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 9,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          0.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 6,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          0.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 2,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 12,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "a_support": {
+          "analysis_local_index": 7,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          2.0
+        ],
+        "b_support": {
+          "analysis_local_index": 3,
+          "kind": "vertex"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 11,
+          "kind": "edge"
+        }
+      },
+      {
+        "a_point": [
+          2.0,
+          2.0,
+          0.0
+        ],
+        "a_support": {
+          "analysis_local_index": 8,
+          "kind": "vertex"
+        },
+        "b_point": [
+          2.00000005,
+          2.0,
+          0.0
+        ],
+        "b_support": {
+          "analysis_local_index": 4,
           "kind": "vertex"
         }
       }

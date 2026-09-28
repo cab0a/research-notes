@@ -82,12 +82,24 @@ def proximity(first,second,*,distance_tolerance=1e-7,volume_tolerance=1e-7,requi
     witnesses=[{"a_point":list(dist.PointOnShape1(i).Coord()),"b_point":list(dist.PointOnShape2(i).Coord()),
                 "a_support":support(a,dist.SupportOnShape1(i)),"b_support":support(b,dist.SupportOnShape2(i))}
                for i in range(1,min(dist.NbSolution(),64)+1)]
+    # OCCT may enumerate tied witnesses differently across builds/threads. Order
+    # by support identity and rounded coordinates without changing measurements.
+    witnesses = ordered_witnesses(witnesses)
     return {"status":status,"minimum_distance":separation,"overlap_volume":overlap,
             "required_clearance":required_clearance,"clearance_satisfied":status=="separated" and separation+distance_tolerance>=required_clearance or status=="touching" and required_clearance==0,
             "distance_tolerance":distance_tolerance,"volume_tolerance":volume_tolerance,"witnesses":witnesses,
             "witness_count":dist.NbSolution(),"witnesses_truncated":dist.NbSolution()>64,
             "transform_provenance":transforms,"units":"caller-declared common model units; mm in reference controls",
             "penetration_depth":None}
+
+
+def ordered_witnesses(witnesses):
+    def key(item):
+        supports = tuple((item[side]["kind"], item[side]["analysis_local_index"] or 0)
+                         for side in ("a_support", "b_support"))
+        points = tuple(round(value, 12) for side in ("a_point", "b_point") for value in item[side])
+        return supports, points
+    return sorted(witnesses, key=key)
 
 
 def mesh_mass_properties(shape,*,deflection=.05,angular_deflection=.2):
