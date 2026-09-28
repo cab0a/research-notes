@@ -3,7 +3,7 @@ const el = id => document.getElementById(id);
 const token = document.querySelector('meta[name="cad-token"]').content;
 const labels = {plain_plate:'板',through_hole:'貫通穴（切削）',profile_hole:'貫通穴（輪郭から押出）',blind_hole:'止まり穴',boss:'円柱状の突起',pocket:'ポケット',rib:'補強リブ',plate:'板',base:'ベース',feature:'フィーチャー',width:'幅',length:'長さ',thickness:'板厚',radius:'半径',depth:'深さ',height:'高さ',x:'中心 / 位置 X',y:'中心 / 位置 Y',origin_x:'原点 X',origin_y:'原点 Y',origin_z:'原点 Z'};
 let state = null, busy = false, localDirty = false;
-let yaw = .65, pitch = -.55, selected = 1, kind = 'face', drag = null, moved = false;
+let yaw = .65, pitch = -.55, selected = 1, kind = 'face', drag = null, drawFrame = null;
 function message(text, tone='') {el('message').textContent=text; el('message').className=tone;}
 function pending() {return Boolean(state?.snapshot?.transaction?.draft_pending);}
 function updateButtons() {
@@ -100,6 +100,7 @@ function elementOptions() {
   values.forEach(v=>{const option=document.createElement('option');option.value=v.index;option.textContent=v.index+' · '+v.support;el('element-id').append(option);});el('element-id').value=String(selected);
 }
 function draw() {
+  if(drawFrame!==null){cancelAnimationFrame(drawFrame);drawFrame=null;}
   const mode=el('view-mode').value;el('original-view').hidden=mode==='current';el('current-view').hidden=mode==='original';el('views').classList.toggle('both',mode==='both');
   const current=state?.snapshot, original=state?.original;
   // Both panes use the same source/current bounds and camera to preserve scale.
@@ -112,14 +113,55 @@ function draw() {
     const svg=el(id);svg.replaceChildren();if(!data)return;
     data.polygons.map((p,i)=>({points:p.map(project),face:data.polygon_face_ids[i]})).sort((a,b)=>a.points.reduce((s,p)=>s+p[2],0)-b.points.reduce((s,p)=>s+p[2],0)).forEach(t=>{
       const p=document.createElementNS('http://www.w3.org/2000/svg','polygon');p.setAttribute('points',t.points.map(x=>x.slice(0,2).join(',')).join(' '));p.setAttribute('fill',interactive&&kind==='face'&&t.face===selected?'#dfa654':`hsl(${186+t.face*5%25} 27% ${53+t.face%4*7}%)`);
-      if(interactive)p.onclick=()=>{if(!moved){selected=t.face;kind='face';el('kind').value=kind;elementOptions();draw();}};svg.append(p);
+      if(interactive){p.dataset.kind='face';p.dataset.index=t.face;}svg.append(p);
     });
-    if(kind==='edge')data.edges.forEach(e=>{const p=document.createElementNS('http://www.w3.org/2000/svg','polyline');p.setAttribute('points',e.points.map(project).map(x=>x.slice(0,2).join(',')).join(' '));p.setAttribute('fill','none');p.setAttribute('stroke',interactive&&e.index===selected?'#c64627':'#234757');p.setAttribute('stroke-width',interactive&&e.index===selected?'5':'2');if(interactive)p.onclick=()=>{if(!moved){selected=e.index;elementOptions();draw();}};svg.append(p);});
+    if(kind==='edge')data.edges.forEach(e=>{const p=document.createElementNS('http://www.w3.org/2000/svg','polyline');p.setAttribute('points',e.points.map(project).map(x=>x.slice(0,2).join(',')).join(' '));p.setAttribute('fill','none');p.setAttribute('stroke',interactive&&e.index===selected?'#c64627':'#234757');p.setAttribute('stroke-width',interactive&&e.index===selected?'5':'2');if(interactive){p.dataset.kind='edge';p.dataset.index=e.index;}svg.append(p);});
   }
   pane('viewer',current,true);pane('original-viewer',original,false);
-  el('selection').textContent=`ドラッグで回転 · 確定形状の${kind==='face'?'面':'辺'} ${selected} を選択中。IDはこの状態内での番号です。`;
+  el('selection').textContent=`${mode==='both'?'左右どちらでもドラッグで両方を回転':'ドラッグで回転'} · 確定形状の${kind==='face'?'面':'辺'} ${selected} を選択中。IDはこの状態内での番号です。`;
 }
-['viewer','original-viewer'].forEach(id=>{el(id).onpointerdown=e=>{drag=[e.clientX,e.clientY];moved=false;};el(id).onpointermove=e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];if(Math.abs(dx)+Math.abs(dy)>2)moved=true;if(moved){yaw+=dx*.008;pitch+=dy*.008;drag=[e.clientX,e.clientY];draw();}};el(id).onpointerleave=el(id).onpointerup=()=>{drag=null;};});
+function rotateDrag(e) {
+  if(!drag || e.pointerId!==drag.pointerId)return;
+  const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+  if(!drag.moved && Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<3)return;
+  drag.moved=true;drag.svg.classList.add('dragging');
+  yaw+=dx*.008;pitch+=dy*.008;drag.x=e.clientX;drag.y=e.clientY;
+  // Coalesce pointer events so both comparison panes are redrawn once per frame.
+  if(drawFrame===null)drawFrame=requestAnimationFrame(draw);
+}
+function endDrag() {
+  if(!drag)return;
+  const active=drag;drag=null;active.svg.classList.remove('dragging');
+  if(active.svg.hasPointerCapture(active.pointerId))active.svg.releasePointerCapture(active.pointerId);
+}
+['viewer','original-viewer'].forEach(id=>{
+  const svg=el(id);
+  svg.onpointerdown=e=>{
+    if(drag || !e.isPrimary || e.button!==0)return;
+    const hit=e.target.closest('[data-kind]');
+    drag={svg,pointerId:e.pointerId,startX:e.clientX,startY:e.clientY,x:e.clientX,y:e.clientY,moved:false,
+      hit:hit?{kind:hit.dataset.kind,index:Number(hit.dataset.index)}:null};
+    // Capture on the stable SVG, not a polygon replaced by draw(). Keep tracking
+    // when the pointer crosses the comparison divider or leaves either pane.
+    svg.setPointerCapture(e.pointerId);
+  };
+  svg.onpointermove=e=>{
+    if(!drag || e.pointerId!==drag.pointerId)return;
+    if(!(e.buttons&1)){endDrag();return;}
+    rotateDrag(e);
+  };
+  svg.onpointerup=e=>{
+    if(!drag || e.pointerId!==drag.pointerId)return;
+    rotateDrag(e);
+    const hit=!drag.moved && drag.hit;endDrag();
+    // Pointer capture retargets clicks to the SVG; preserve face/edge picking
+    // explicitly, and never pick an element at the end of a rotation.
+    if(hit){selected=hit.index;kind=hit.kind;el('kind').value=kind;elementOptions();draw();}
+  };
+  svg.onpointercancel=e=>{if(drag?.pointerId===e.pointerId)endDrag();};
+  svg.onlostpointercapture=e=>{if(e.target===svg && drag?.pointerId===e.pointerId)endDrag();};
+});
+window.addEventListener('blur',endDrag);
 el('kind').onchange=()=>{kind=el('kind').value;elementOptions();draw();};el('element-id').onchange=()=>{selected=Number(el('element-id').value);draw();};el('view-mode').onchange=draw;el('reset').onclick=()=>{yaw=.65;pitch=-.55;draw();};
 el('file').onchange=updateButtons;el('confirm').onchange=updateButtons;
 el('candidate').onchange=()=>{el('confirm').checked=false;candidateDetail();updateButtons();};
