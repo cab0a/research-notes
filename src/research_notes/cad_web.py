@@ -44,7 +44,7 @@ class BrowserEditor:
         self.storage.cleanup()
 
     def state(self):
-        return {"editor_version": "1.2.0", "revision_token": self.workspace.revision_token,
+        return {"editor_version": "1.5.0", "revision_token": self.workspace.revision_token,
                 "file_name": self.file_name, "snapshot": self.snapshot, "original": self.original}
 
     def guard(self, token):
@@ -152,7 +152,7 @@ class EditorServer(ThreadingHTTPServer):
 
 
 class EditorHandler(BaseHTTPRequestHandler):
-    server_version = "ResearchCAD/1.2"
+    server_version = "ResearchCAD/1.5"
 
     def setup(self):
         super().setup()
@@ -174,7 +174,8 @@ class EditorHandler(BaseHTTPRequestHandler):
         self.send_header("Referrer-Policy", "no-referrer")
         self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
         if download:
-            self.send_header("Content-Disposition", 'attachment; filename="edited.step"')
+            filename = "edited.step" if download is True else download
+            self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
         self.end_headers()
         self.wfile.write(data)
 
@@ -247,6 +248,9 @@ class EditorHandler(BaseHTTPRequestHandler):
                         payload = json.loads(raw)
                         if not isinstance(payload, dict):
                             raise CadAPIError("invalid_request", "JSON object required")
+                        if path == "/api/revisions/report":
+                            self.send(200, comparison.report(payload), "text/html; charset=utf-8", download="step-comparison.html")
+                            return
                         result = comparison.action(path.removeprefix("/api/revisions/"), payload)
                     self.send(200, {"result": result, "state": comparison.state()})
                     return
@@ -279,7 +283,7 @@ def main():
     parser.add_argument("--open-browser", action="store_true")
     args = parser.parse_args()
     with EditorServer(args.port) as server:
-        print(f"Research CAD v1.2.0: {server.url} (Ctrl+C to stop)", flush=True)
+        print(f"Research CAD v1.5.0: {server.url} (Ctrl+C to stop)", flush=True)
         print(f"STEP revision comparison: {server.url}/revisions", flush=True)
         if args.open_browser:
             import webbrowser

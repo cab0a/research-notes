@@ -10,6 +10,7 @@ import tempfile
 from research_notes.cad_api import CadAPIError
 from research_notes.diagnostic_workspace import shape_snapshot
 from research_notes.step_reconstruction import read_step_input
+from research_notes.revision_detection import describe_plate, compare_revisions, COLORS, STATUS_LABELS
 
 MAX_SOURCE_BYTES = 2_000_000
 METRIC_KEYS = ("absolute_volume", "surface_area", "face_count", "edge_count",
@@ -22,14 +23,27 @@ class RevisionComparison:
     def __init__(self):
         self.slots = {"old": None, "new": None}
         self.revision_token = secrets.token_urlsafe(24)
+        self.analysis = compare_revisions(None, None)
 
     def state(self):
         old, new = self.slots["old"], self.slots["new"]
         delta = {key: new["metrics"][key] - old["metrics"][key] for key in METRIC_KEYS} if old and new else None
-        return {"comparison_version": "1.2.0", "revision_token": self.revision_token,
+        return {"comparison_version": "1.5.0", "revision_token": self.revision_token,
                 **self.slots, "metrics_delta": delta,
                 "coordinate_policy": "source_coordinates_no_alignment",
-                "change_detection": "not_performed"}
+                "change_detection": self.analysis["status"], "analysis": self.analysis,
+                "status_colors": COLORS, "status_labels": STATUS_LABELS}
+
+    def publish(self, slots):
+        analysis = compare_revisions(slots["old"], slots["new"])
+        json.dumps(analysis, allow_nan=False)
+        self.slots, self.analysis = slots, analysis
+        self.revision_token = secrets.token_urlsafe(24)
+
+    def report(self, payload):
+        from research_notes.revision_report import render_report, camera_values
+        self.guard(payload.get("revision_token"))
+        return render_report(self.state(), camera_values(payload.get("camera", {})))
 
     def guard(self, token):
         if token != self.revision_token:
@@ -48,6 +62,7 @@ class RevisionComparison:
             record = {"file_name": file_name, "source_sha256": imported.source_sha256,
                       "source_bytes": len(source), "length_unit": imported.unit,
                       "metrics": asdict(imported.metrics),
+                      "features": describe_plate(imported),
                       **preview}
             # Check the complete HTTP payload before replacing either slot.
             json.dumps(record, allow_nan=False)
@@ -58,22 +73,31 @@ class RevisionComparison:
         if side not in self.slots:
             raise CadAPIError("invalid_request", "旧版または新版を指定してください。")
         record = self.load(source, file_name)
-        self.slots = {**self.slots, side: record}
-        self.revision_token = secrets.token_urlsafe(24)
+        self.publish({**self.slots, side: record})
         return {"status": "loaded", "side": side}
 
     def action(self, operation, payload):
         self.guard(payload.get("revision_token"))
         if operation == "demo":
-            from research_notes.deterministic_recompute import single_feature_model, recompute
-            from research_notes.parametric_features import PlateSpec, feature_spec
+            from research_notes.revision_detection import plate_shape
             from research_notes.step_writer_modes import prepare_step_write
+            cases = {
+                "diameter": ([(6., 5., 1.)], [(6., 5., 1.3)], 4.),
+                "position": ([(6., 5., 1.)], [(7.5, 5.5, 1.)], 4.),
+                "thickness": ([(6., 5., 1.)], [(6., 5., 1.)], 5.),
+                "addition": ([(3., 5., .8)], [(3., 5., .8), (9., 5., .8)], 4.),
+                "deletion": ([(3., 5., .8), (9., 5., .8)], [(3., 5., .8)], 4.),
+                "ambiguous": ([(4., 4., .6), (8., 4., .6)], [(6., 3., .6), (6., 5., .6)], 4.)}
+            case = payload.get("case", "diameter")
+            if case not in cases:
+                raise CadAPIError("invalid_request", "サンプルの種類が不正です。")
+            old_holes, new_holes, thickness = cases[case]
             slots = {}
-            for side, radius in (("old", 1.), ("new", 1.3)):
-                model = single_feature_model("revision_demo", PlateSpec(),
-                                             feature_spec("through_hole", x=6., y=5., radius=radius))
+            for side, holes, height in (("old", old_holes, 4.), ("new", new_holes, thickness)):
+                shape = plate_shape([0., 0., 0.], [12., 10., height],
+                                    [{"x": x, "y": y, "radius": r} for x, y, r in holes])
                 source, _ = prepare_step_write(source=None, mode="reconstruct",
-                                               shape=recompute(model).current_output().shape)
+                                               shape=shape)
                 slots[side] = self.load(source, f"plate-{side}.step")
         elif operation == "swap":
             if not all(self.slots.values()):
@@ -86,6 +110,5 @@ class RevisionComparison:
             slots = {**self.slots, side: None}
         else:
             raise CadAPIError("invalid_request", "Unknown comparison operation")
-        self.slots = slots
-        self.revision_token = secrets.token_urlsafe(24)
+        self.publish(slots)
         return {"status": "ok", "operation": operation}

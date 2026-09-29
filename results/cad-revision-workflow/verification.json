@@ -1,0 +1,138 @@
+{
+  "version": "1.5.0",
+  "scope": "v1.3-v1.5 bounded plate/hole correspondence, dimensions and HTML reports",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux",
+    "cadquery_ocp": "7.9.3.1.1",
+    "installed_research_notes": "1.5.0"
+  },
+  "automated_tests": {
+    "command": "python -m pytest tests/test_revision_detection.py tests/test_cad_web.py tests/test_operational_studies.py -k \"not artifacts_reproduce\" -q",
+    "passed": 78,
+    "deselected": 5,
+    "elapsed_seconds": 39.29,
+    "scope": "local regression only; no new cross-platform or general accuracy result"
+  },
+  "browser": {
+    "engine": "Codex in-app browser",
+    "checks": {
+      "six_demo_pairs_and_expected_dimensions_or_abstention": "passed",
+      "region_selection_fades_other_faces": "passed",
+      "unchanged_dimensions_toggle": "passed",
+      "shared_rotation_across_divider": "passed",
+      "reset": "passed",
+      "diameter_and_ambiguous_reports_downloaded_to_disk": "passed",
+      "downloaded_report_structural_checks": "passed",
+      "saved_file_visual_reopen": "unverified: automation browser policy blocks file: navigation; no workaround attempted",
+      "new_application_console_errors_or_warnings": []
+    },
+    "historical_upload_ui_evidence": "../cad-revision-comparison/verification.json",
+    "screenshots": [
+      "comparison.png",
+      "dimensions.png"
+    ]
+  },
+  "demo_observations": {
+    "diameter_mm": {
+      "old": 2.0,
+      "new": 2.6,
+      "delta": 0.6
+    },
+    "position_mm": {
+      "x_delta": 1.5,
+      "y_delta": 0.5
+    },
+    "thickness_mm": {
+      "old": 4.0,
+      "new": 5.0,
+      "delta": 1.0
+    },
+    "addition": "one retained hole and one added hole",
+    "deletion": "one retained hole and one deleted hole",
+    "ambiguous": "two old and two new holes remain unresolved; no paired hole dimension rows"
+  },
+  "downloaded_reports": {
+    "diameter": {
+      "path": "diameter-report.html",
+      "sha256": "145ba84e292279f7f404ed92fdae2fd6e5261792826563708038f25f92c67cd3",
+      "bytes": 104661,
+      "comparison_status": "compared",
+      "svg_count": 2,
+      "external_references": [],
+      "executable_scripts": 0,
+      "dimension_rows": 4,
+      "unresolved_reasons": 0,
+      "input_sha256": {
+        "old": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+        "new": "34fe5f82e7bbc876eab4d91b5b99a50cfedc3d0f54602e6bfe4b177a2bcef215"
+      },
+      "camera": {
+        "yaw": 0.65,
+        "pitch": -0.55,
+        "zoom": 1,
+        "edges": false
+      }
+    },
+    "ambiguous": {
+      "path": "ambiguous-report.html",
+      "sha256": "9fd8ee256a15eadceba6c8b92637989b505435c342d98c50f6419a2dfc1d1cf3",
+      "bytes": 182791,
+      "comparison_status": "partial",
+      "svg_count": 2,
+      "external_references": [],
+      "executable_scripts": 0,
+      "dimension_rows": 1,
+      "unresolved_reasons": 4,
+      "input_sha256": {
+        "old": "0869fb51afab55fc469b9478c4fb54844b31c3443d9b2a94caabaff326e9a8fa",
+        "new": "9c0366373d622fab7ec2273e88c42a20b9eb7e6e11ba56314b06555f18f62582"
+      },
+      "camera": {
+        "yaw": 0.65,
+        "pitch": -0.55,
+        "zoom": 1,
+        "edges": false
+      }
+    }
+  },
+  "packaging": {
+    "wheel": "research_notes-1.5.0-py3-none-any.whl",
+    "sha256": "cfc8e1f021a2e5205742032c20b898253e873248ffd7707a5d78425d0467162c",
+    "all_six_local_assets_match_source": true,
+    "both_new_modules_match_source": true
+  },
+  "source_sha256": {
+    "pyproject.toml": "147734576e6364f200b404d88497bb8829806f8b92c55b8eaeeb6d3f850b9e31",
+    ".github/workflows/cad-platforms.yml": "86e933e1f75e348f8b6377f5d75d4e972d93120e5228c2191f4c61e07dcc24fd",
+    "README.md": "b225315c3f20b4cd59c54c00142804d350543e73ca9b6581ff1e69163854e216",
+    "docs/cad-revision-comparison.md": "0c1ce4ba0981f3502eee99abb5efa6a22ea5ee4a8d245291c2a1dbcec6b53b8a",
+    "docs/cad-browser-editor.md": "ee263c1b041319206e29ba57fe0d60c7d85b50311d9fda3644497da71bc32e3b",
+    "docs/step-revision-comparison-plan.md": "16f1be70ca858ac909b7b809676775fc0f165f5347d9f0fbf0bcdb309aae86ea",
+    "src/research_notes/cad_web.py": "3addb3a2476e7670353fb5ca850b2d3f8cab55d1958bdf66f662bc425ad0e7c3",
+    "src/research_notes/cad_revision.py": "9dde9bc035b74d98e556d449cdf8f89e785e569ce0a566f6265a6291ea56680a",
+    "src/research_notes/revision_detection.py": "e3fa45848a0671a989ad46ac47fd7330621dcd230b19bbfc46fa5c26e2cdf86b",
+    "src/research_notes/revision_report.py": "09cc6dae824d63e5324898c2e0716b0f0cb9da10e2b961bbca76b181ca60d472",
+    "tests/test_revision_detection.py": "02ae236ee58d6ebba215b0a8063c162425ecdd44c8d235964b44ebbfa288b851",
+    "tests/test_cad_web.py": "4cf928d7e971ff5d56b0920e2547fee8e9b38882c2a4675ff78353bc516095d3",
+    "src/research_notes/cad_editor/editor.css": "c5bc80cf21a3f0d1784eaa479bcf486aa41d0b049918ef5b3b2817666a2b738c",
+    "src/research_notes/cad_editor/editor.js": "c0ffb8e70f94763a70fd2722bce2afd12369519c9ec2c0183e4fd1be23c2f8e1",
+    "src/research_notes/cad_editor/index.html": "c1cd7806754854af836eccc6a1ada315d496510787ffc130d3a0f3d1abf79301",
+    "src/research_notes/cad_editor/revisions.css": "47b0393e021dbcbded6bd2e205018580b9022910ddb4e2c99b91b76b8dbd78d8",
+    "src/research_notes/cad_editor/revisions.html": "77bb3be74dbc74ee320fb5d9e3fe84f9b46fc80c65ec4a8318f87eb87a22204c",
+    "src/research_notes/cad_editor/revisions.js": "f974d991021d5bb189531f89164838aa7278061fdb0dc78242ab017267a0e5dc"
+  },
+  "artifact_sha256": {
+    "comparison.png": "ef597b947e36967f53b91ff3539773b85a64ba5df6cdf9a5a401cb933d9dea40",
+    "dimensions.png": "263dd4955c5bb098fb7d90c851b25011e31823c06a214ffac01c934f054ee718"
+  },
+  "limits": [
+    "2 MB, explicit SI millimetres, one root, one valid solid and shell, at most 24 faces",
+    "axis-aligned rectangular plates with separated Z-axis through holes; no split/merged faces",
+    "matching XY extents and Z base; no automatic alignment",
+    "one-to-one candidates only; no design history, nominal dimensions or semantic equality claim",
+    "whole-face classification and diagnostic triangles, not exact changed-material boundaries",
+    "static SVG in reports; saved-file visual inspection remains unverified",
+    "native geometry in process; no hard native time/memory budget"
+  ]
+}

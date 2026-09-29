@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-新旧のSTEPを2つ読み込み、変更箇所と寸法差を確認し、レポートを保存できるローカルツールを次の研究テーマとして整理します。Inefficiency Labの「課題から探す」への掲載を見据え、想定する利用者、初期範囲、検証条件、掲載原稿案をまとめました。これは研究計画であり、2ファイルの自動差分判定の実装・評価結果ではありません。英語本文の要約に続いて、日本語で計画と原稿案を示します。
+新旧のSTEPを2つ読み込み、変更箇所と寸法差を確認し、レポートを保存する研究計画です。v1.5.0までに、同じ座標系の穴付き板に限定した試作を実装しました。Inefficiency Labの「課題から探す」への掲載を見据え、想定する利用者、検証条件、掲載原稿案も残しています。一般の公開部品に対する精度評価やサイトへの掲載は今後の段階です。英語本文の要約に続いて、日本語で計画を示します。
 
 ---
 
@@ -11,14 +11,15 @@
 This proposal targets local comparison of two independently imported STEP revisions,
 with highlighted changes, measured dimensional differences and a saved review report.
 It connects the research to Inefficiency Lab's problem-oriented Insights articles.
-The existing v1.1 editor provides import, supported parameter editing and comparison
-against the original model; it does not establish arbitrary two-file correspondence.
-The document defines a bounded prototype, evidence requirements and draft website
-copy. No new comparison results, customer outcomes or production deployment are claimed.
+Version 1.5 implements a bounded prototype for aligned rectangular plates with
+through holes, including explicit ambiguity, measured differences and standalone
+reports. The guide links its local verification separately. This document retains
+the original baseline, wider evaluation requirements and draft website copy.
+General STEP accuracy, customer outcomes and production deployment are not claimed.
 
 ## 研究のゴール
 
-v1.2.0で[独立した新旧STEPの読込・並列表示・全体測定値の比較](cad-revision-comparison.md)を実装しました。以下の初期計画のうち、局所対応付け・変更判定・寸法差・レポート保存・Insights掲載は引き続き今後の段階です。
+v1.2.0の独立した新旧STEP読込に続き、v1.3.0〜v1.5.0で[穴付き板の局所対応付け・色分け・寸法差・HTMLレポート保存](cad-revision-comparison.md)を実装しました。対象は同じXY外周・Z下端を持つ軸に平行な長方形の板とZ方向の貫通穴です。対応が複数ある穴は保留します。関連テスト78件とブラウザ操作の記録は[検証記録](../results/cad-revision-workflow/verification.json)に示します。一般部品への拡張、別CAD出力・面分割などの体系的な評価、公開サンプルでの検証、Insights掲載が次の段階です。
 
 想定する場面は、設計・加工・生産技術の担当者が、更新されたSTEPを受け取り、前の版とどこが変わったか確認するときです。
 
@@ -26,9 +27,9 @@ v1.2.0で[独立した新旧STEPの読込・並列表示・全体測定値の比
 
 利用者が判断したいのは、どこが変わったか、どれだけ変わったか、確認できていない範囲がどこかです。部分形状の認識・対応付けは、この判断を支える技術として開発します。
 
-## 現在の実装と追加する研究
+## 計画作成時の実装と追加する研究
 
-基準は研究リポジトリのコミット `4a849f49e0c0dfb4c9b4d62c1971ec9de38f559b` です。
+以下は初期計画の記録です。基準は研究リポジトリのコミット `4a849f49e0c0dfb4c9b4d62c1971ec9de38f559b` であり、現在のv1.5.0の未実装一覧ではありません。
 
 | 項目 | 現在の状態 | この研究で追加する内容 |
 | --- | --- | --- |
@@ -59,7 +60,7 @@ STEPから測る穴径や面間距離は、元CADの設計寸法・公差・設�
 
 ## 検証と掲載に必要な証拠
 
-以下は予定する評価条件です。まだ検出率・処理時間・業務削減時間の実測値はありません。
+以下は継続して評価する条件です。v1.5.0では穴径・位置・板厚・増減・曖昧な配置・同形状の作成順変更・許容差付近・対象外形状を個別に検証しました。一般部品の検出率・処理時間・業務削減時間の実測値はまだありません。
 
 | 評価条件 | 確かめること |
 | --- | --- |

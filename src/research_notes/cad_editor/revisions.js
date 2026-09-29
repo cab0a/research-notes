@@ -7,7 +7,8 @@ let bounds = null;
 function message(text, tone='') {el('message').textContent=text;el('message').className=tone;}
 function buttons() {
   el('demo').disabled=el('refresh').disabled=busy || !state;
-  el('swap').disabled=busy || !state?.old || !state?.new;
+  el('swap').disabled=el('report').disabled=busy || !state?.old || !state?.new;
+  el('demo-case').disabled=busy;
   sides.forEach(side=>{
     el('file-'+side).disabled=busy || !state;
     el('upload-'+side).disabled=busy || !state || !el('file-'+side).files.length;
@@ -27,6 +28,7 @@ async function request(operation, payload={}, file=null) {
   else headers['Content-Type']='application/json';
   const response=await fetch('/api/revisions/'+operation,{method:'POST',headers,
     body:file || JSON.stringify({...payload,revision_token:state.revision_token})});
+  if(operation==='report' && response.ok)return response.blob();
   const result=await response.json();
   if(result.state)applyState(result.state);
   if(!response.ok)throw new Error(result.error?.detail || '読込に失敗しました。');
@@ -49,7 +51,43 @@ function applyState(next) {
   });
   bounds=Number.isFinite(lo[0])?{center:lo.map((v,i)=>(v+hi[i])/2),span:Math.max(...hi.map((v,i)=>v-lo[i]),1e-9)}:null;
   el('pair-status').textContent=state.old&&state.new?'2ファイルを表示中':state.old||state.new?'片方を読込済み':'未読込';
-  renderMetrics();draw();buttons();
+  renderAnalysis();renderMetrics();draw();buttons();
+}
+function cells(target, values) {
+  const row=document.createElement('tr');
+  values.forEach(value=>{const cell=document.createElement('td');if(value instanceof Node)cell.append(value);else cell.textContent=value;row.append(cell);});
+  el(target).append(row);return row;
+}
+function renderAnalysis() {
+  const analysis=state.analysis;
+  el('legend').replaceChildren();
+  Object.entries(state.status_colors).forEach(([status,color])=>{const item=document.createElement('span'),swatch=document.createElement('i');swatch.style.background=color;item.append(swatch,document.createTextNode(state.status_labels[status]));el('legend').append(item);});
+  const previous=el('region').value;
+  el('region').replaceChildren(new Option('全体','all'));
+  el('regions').replaceChildren();
+  analysis.regions.forEach(region=>{
+    el('region').append(new Option(region.label+' · '+state.status_labels[region.status],region.id));
+    const choose=document.createElement('button');choose.className='quiet';choose.textContent=region.label;
+    choose.onclick=()=>{el('region').value=region.id;renderDimensions();draw();};
+    const badge=document.createElement('span');badge.className='status-chip';badge.style.borderColor=state.status_colors[region.status];badge.textContent=state.status_labels[region.status];
+    cells('regions',[choose,badge,(region.old_faces.join(', ')||'—')+' → '+(region.new_faces.join(', ')||'—'),region.reason]);
+  });
+  if([...el('region').options].some(o=>o.value===previous))el('region').value=previous;
+  el('analysis-status').textContent=({waiting:'旧版と新版の両方を開いてください。',compared:'対象範囲内で比較しました。変更候補と寸法差を確認してください。',partial:'一部の穴の対応は判定保留です。確定できた対応だけ寸法差を表示します。',unresolved:'形状または座標条件が判定範囲外です。保留理由を確認してください。'})[analysis.status];
+  el('unresolved').hidden=!analysis.unresolved.length;el('unresolved').replaceChildren();
+  analysis.unresolved.forEach(reason=>{const p=document.createElement('p');p.textContent=reason;el('unresolved').append(p);});
+  const c=analysis.conditions;
+  el('conditions').textContent=`長さの比較許容差 ${c.length_tolerance_mm} mm。穴の対応検索距離 ${c.hole_search_distance_mm??'対象外'} mm。${c.position_reference} ${c.matching_policy}`;
+  renderDimensions();
+}
+function renderDimensions() {
+  el('dimensions').replaceChildren();
+  const region=state.analysis.regions.find(r=>r.id===el('region').value);
+  el('region-reason').textContent=region?.reason||'';
+  const available=state.analysis.dimensions.filter(d=>!region || d.region_id===region.id);
+  const rows=available.filter(d=>el('show-unchanged').checked || d.status==='changed');
+  rows.forEach(d=>{const delta=Number(d.delta.toFixed(6));cells('dimensions',[d.label+' / '+d.name,d.old.toFixed(6),d.new.toFixed(6),(delta>0?'+':'')+delta.toFixed(6)]);});
+  if(!rows.length){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=4;cell.textContent=available.length?'表示対象の寸法差はありません。「許容差内の寸法も表示」で確認できます。':'この箇所は対応が確認できた新旧の寸法がありません。判定と根拠を確認してください。';row.append(cell);el('dimensions').append(row);}
 }
 function renderMetrics() {
   const rows=[['単位',d=>d.length_unit,null],['体積 mm³',d=>d.metrics.absolute_volume,'absolute_volume'],
@@ -80,19 +118,31 @@ function draw() {
   sides.forEach(side=>{
     const svg=el('view-'+side),data=state?.[side];svg.replaceChildren();
     if(!data || !bounds)return;
-    // Neutral shading shows the source surfaces; it is not a change heatmap.
-    data.polygons.map(p=>p.map(project)).sort((a,b)=>a.reduce((s,p)=>s+p[2],0)-b.reduce((s,p)=>s+p[2],0)).forEach(points=>{
+    const selectedRegion=state.analysis.regions.find(r=>r.id===el('region').value);
+    data.polygons.map((p,i)=>({points:p.map(project),face:data.polygon_face_ids[i]})).sort((a,b)=>a.points.reduce((s,p)=>s+p[2],0)-b.points.reduce((s,p)=>s+p[2],0)).forEach(({points,face})=>{
       const a=points[1].map((v,i)=>v-points[0][i]),b=points[2].map((v,i)=>v-points[0][i]);
       const n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
-      const shade=43+30*Math.abs(n[2])/(Math.hypot(...n)||1);
+      const light=.7+.3*Math.abs(n[2])/(Math.hypot(...n)||1);
+      const status=state.analysis.face_status[side][String(face)]||'unresolved';
+      const color=state.status_colors[status],rgb=[1,3,5].map(i=>Math.round(parseInt(color.slice(i,i+2),16)*light));
       const polygon=document.createElementNS('http://www.w3.org/2000/svg','polygon');
       polygon.setAttribute('points',points.map(p=>p.slice(0,2).join(',')).join(' '));
-      polygon.setAttribute('fill',`hsl(191 25% ${shade}%)`);svg.append(polygon);
+      polygon.setAttribute('fill',`rgb(${rgb.join(',')})`);polygon.dataset.face=face;polygon.dataset.status=status;
+      if(selectedRegion && !selectedRegion[side+'_faces'].includes(face))polygon.setAttribute('opacity','.28');
+      svg.append(polygon);
     });
     if(edges)data.edges.forEach(edge=>{
       const line=document.createElementNS('http://www.w3.org/2000/svg','polyline');
       line.setAttribute('points',edge.points.map(project).map(p=>p.slice(0,2).join(',')).join(' '));
       line.setAttribute('fill','none');line.setAttribute('stroke','#315965');line.setAttribute('stroke-width','1.5');svg.append(line);
+    });
+    state.analysis.markers[side].forEach(marker=>{
+      if(selectedRegion && selectedRegion.id!==marker.region_id)return;
+      const [x,y]=project(marker.position),ns='http://www.w3.org/2000/svg';
+      const line=document.createElementNS(ns,'line');line.setAttribute('x1',x);line.setAttribute('y1',y);line.setAttribute('x2',x+16);line.setAttribute('y2',y-16);line.setAttribute('stroke','#243b47');
+      const circle=document.createElementNS(ns,'circle');circle.setAttribute('cx',x+16);circle.setAttribute('cy',y-16);circle.setAttribute('r','13');circle.setAttribute('fill','white');circle.setAttribute('stroke',state.status_colors[marker.status]);circle.setAttribute('stroke-width','3');
+      const label=document.createElementNS(ns,'text');label.setAttribute('x',x+16);label.setAttribute('y',y-12);label.setAttribute('text-anchor','middle');label.setAttribute('font-size','11');label.setAttribute('fill','#243b47');label.textContent=marker.label;
+      svg.append(line,circle,label);
     });
   });
 }
@@ -130,7 +180,13 @@ sides.forEach(side=>{
 window.addEventListener('blur',endDrag);
 el('display').onchange=draw;el('zoom').onchange=draw;
 el('reset').onclick=()=>{endDrag();yaw=.65;pitch=-.55;el('zoom').value='1';draw();};
-el('demo').onclick=()=>run(async()=>{await request('demo');message('サンプル2件を読み込みました。板は12 × 10 × 4 mm。旧版は穴半径1 mm、新版は1.3 mmで作成した別々のSTEPです。');});
+el('demo').onclick=()=>run(async()=>{const label=el('demo-case').selectedOptions[0].text;await request('demo',{case:el('demo-case').value});message('「'+label+'」のサンプルを別々のSTEPとして読み込み、形状から比較しました。');});
+el('region').onchange=()=>{renderDimensions();draw();};el('show-unchanged').onchange=renderDimensions;
+el('report').onclick=()=>run(async()=>{
+  const blob=await request('report',{camera:{yaw,pitch,zoom:Number(el('zoom').value),edges:el('display').value==='edges'}});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='step-comparison.html';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
+  message('比較図・寸法差・判定保留を含むHTMLレポートを保存しました。');
+});
 el('swap').onclick=()=>run(async()=>{await request('swap');message('旧版と新版を入れ替えました。差の符号も更新しています。');});
 el('refresh').onclick=()=>run(refresh);
 run(refresh);

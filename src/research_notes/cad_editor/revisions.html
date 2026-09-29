@@ -10,24 +10,27 @@
   <script src="/revisions.js" defer></script>
 </head>
 <body>
-<header><div class="brand"><span class="brandmark">◈</span><div><strong>Research CAD</strong><span class="subtitle">新旧STEP比較</span></div><span class="version">v1.2.0</span></div><span class="local">● ローカルで実行</span></header>
+<header><div class="brand"><span class="brandmark">◈</span><div><strong>Research CAD</strong><span class="subtitle">新旧STEP比較</span></div><span class="version">v1.5.0</span></div><span class="local">● ローカルで実行</span></header>
 <main>
   <nav class="workspace-nav" aria-label="ワークスペース"><a href="/">寸法編集</a><a href="/revisions" aria-current="page">新旧STEP比較</a></nav>
-  <div class="revision-heading"><h1>新旧STEP比較</h1><div class="actions"><button id="demo" class="secondary" disabled>サンプル2件を開く</button><button id="refresh" class="quiet" disabled>最新の状態を読込</button></div></div>
+  <div class="revision-heading"><h1>新旧STEP比較</h1><div class="actions"><label class="sample-case">サンプル<select id="demo-case"><option value="diameter">穴径の変更</option><option value="position">穴位置の変更</option><option value="thickness">板厚の変更</option><option value="addition">穴の追加</option><option value="deletion">穴の削除</option><option value="ambiguous">対応が曖昧な穴</option></select></label><button id="demo" class="secondary" disabled>サンプル2件を開く</button><button id="refresh" class="quiet" disabled>最新の状態を読込</button></div></div>
   <div id="message" role="status" aria-live="polite">接続しています…</div>
   <div class="source-pair">
     <section class="card"><div class="card-head"><h2>旧版STEP</h2><button id="clear-old" class="quiet" disabled>旧版を閉じる</button></div><p id="name-old" class="filename">未読込</p><div class="upload-row"><label class="file-row" for="file-old">旧版ファイル<input id="file-old" type="file" accept=".step,.stp" disabled></label><button id="upload-old" class="primary" disabled>旧版を開く</button></div><p id="info-old" class="hint">2 MB以下・mm単位・単体ソリッド（最大24面）</p></section>
     <section class="card"><div class="card-head"><h2>新版STEP</h2><button id="clear-new" class="quiet" disabled>新版を閉じる</button></div><p id="name-new" class="filename">未読込</p><div class="upload-row"><label class="file-row" for="file-new">新版ファイル<input id="file-new" type="file" accept=".step,.stp" disabled></label><button id="upload-new" class="primary" disabled>新版を開く</button></div><p id="info-new" class="hint">2 MB以下・mm単位・単体ソリッド（最大24面）</p></section>
   </div>
   <section class="card revision-preview"><div class="card-head"><h2>3Dプレビュー</h2><span id="pair-status" class="badge">未読込</span></div><div class="toolbar"><label>表示 <select id="display"><option value="faces">面</option><option value="edges">面と辺</option></select></label><label>拡大率 <select id="zoom"><option value="0.5">50%</option><option value="1" selected>100%</option><option value="1.5">150%</option><option value="2">200%</option></select></label><button id="swap" class="secondary" disabled>旧版と新版を入れ替え</button><button id="reset" class="quiet">視点を戻す</button></div>
+    <div id="legend" class="legend" aria-label="色分けの凡例"></div>
+    <div class="toolbar"><label>確認箇所 <select id="region"><option value="all">全体</option></select></label><span id="region-reason" class="hint"></span></div>
     <div class="revision-views">
       <div class="revision-pane"><span class="view-label">旧版</span><svg id="view-old" viewBox="0 0 760 440" role="img" aria-label="旧版の3D形状。ドラッグで両方を回転"></svg><p id="empty-old" class="pane-empty">旧版STEPを開いてください</p></div>
       <div class="revision-pane"><span class="view-label">新版</span><svg id="view-new" viewBox="0 0 760 440" role="img" aria-label="新版の3D形状。ドラッグで両方を回転"></svg><p id="empty-new" class="pane-empty">新版STEPを開いてください</p></div>
     </div>
     <p class="hint">左右どちらでもドラッグで両方を回転。同じ視点・縮尺・座標基準で表示します。自動位置合わせは行いません。</p>
   </section>
-  <section class="card"><div class="card-head"><h2>全体の測定値</h2><span class="hint">差 = 新版 − 旧版</span></div><p class="hint">体積や面積が同じでも、形状が同じとは限りません。この版では変更箇所の判定・局所寸法差・確認レポート保存は未対応です。</p><div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">旧版</th><th scope="col">新版</th><th scope="col">差</th></tr></thead><tbody id="metrics"></tbody></table></div></section>
-  <section class="card"><details><summary>ファイルの識別情報と比較条件</summary><div class="source-pair provenance"><div><h3>旧版</h3><p id="hash-old" class="hint">未読込</p></div><div><h3>新版</h3><p id="hash-new" class="hint">未読込</p></div></div><p class="hint">単位はSTEP内の明示的なmm宣言を確認します。異なる単位や複数部品は読込対象外です。面・辺の番号は各ファイル内の番号で、ファイル間の対応を表しません。</p></details></section>
+  <section class="card revision-results"><div class="card-head"><h2>変更箇所と寸法差</h2><button id="report" class="primary" disabled>確認レポートを保存</button></div><p id="analysis-status" role="status" class="hint">新旧のSTEPを開いてください。</p><p class="hint">幾何から測定した値です。元CADの公称寸法・公差・設計意図を復元するものではありません。寸法差は新版 − 旧版です。</p><div class="table-wrap"><table><thead><tr><th>箇所</th><th>判定</th><th>対応する面（旧 → 新）</th><th>根拠・保留理由</th></tr></thead><tbody id="regions"></tbody></table></div><label class="check"><input id="show-unchanged" type="checkbox">許容差内の寸法も表示</label><div class="table-wrap"><table><thead><tr><th>箇所 / 測定寸法</th><th>旧値 mm</th><th>新値 mm</th><th>差 mm</th></tr></thead><tbody id="dimensions"></tbody></table></div><div id="unresolved" class="unresolved" hidden></div><p class="hint">レポートには現在の視点の比較図、全ての対応寸法、判定保留、比較条件を保存します。保存したHTMLはサーバー停止後も開けます。</p></section>
+  <section class="card"><div class="card-head"><h2>全体の測定値</h2><span class="hint">差 = 新版 − 旧版</span></div><p class="hint">体積や面積が同じでも、形状が同じとは限りません。色分けは面全体の分類で、変更された材料領域の厳密な境界ではありません。</p><div class="table-wrap"><table><thead><tr><th scope="col">項目</th><th scope="col">旧版</th><th scope="col">新版</th><th scope="col">差</th></tr></thead><tbody id="metrics"></tbody></table></div></section>
+  <section class="card"><details><summary>ファイルの識別情報と比較条件</summary><div class="source-pair provenance"><div><h3>旧版</h3><p id="hash-old" class="hint">未読込</p></div><div><h3>新版</h3><p id="hash-new" class="hint">未読込</p></div></div><p id="conditions" class="hint"></p><p class="hint">単位はSTEP内の明示的なmm宣言を確認します。異なる単位や複数部品は読込対象外です。面・辺の番号は各ファイル内の番号で、番号の一致を対応の根拠には使いません。</p></details></section>
   <footer>ファイルはこのPC内で処理します。比較データは寸法編集と別に保持し、同じサーバーのタブ間で共有します。サーバーを終了すると作業状態は失われます。</footer>
 </main>
 </body>

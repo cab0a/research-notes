@@ -203,7 +203,7 @@ def test_two_independent_uploads_analytic_measurements_and_swap(server, revision
         assert data["metrics"]["surface_area"] == pytest.approx(416 - 2 * math.pi * r**2 + 8 * math.pi * r)
     assert state["metrics_delta"]["absolute_volume"] == pytest.approx(-4 * math.pi * .69)
     assert state["metrics_delta"]["face_count"] == 0
-    assert state["change_detection"] == "not_performed"
+    assert state["change_detection"] == "compared"
     assert state["coordinate_policy"] == "source_coordinates_no_alignment"
     swapped = revision_act(server, "swap")[2]["state"]
     assert swapped["old"] == state["new"] and swapped["new"] == state["old"]
@@ -285,7 +285,7 @@ def test_comparison_enforces_local_request_guards(server, revision_sources, head
 
 def test_comparison_assets_and_malformed_actions(server):
     status, _, page = call(server, "/revisions")
-    assert status == 200 and b"__TOKEN__" not in page and b"1.2.0" in page
+    assert status == 200 and b"__TOKEN__" not in page and b"1.5.0" in page
     for asset in ("revisions.js", "revisions.css"):
         assert call(server, "/" + asset)[0] == 200
     before = revision_state(server)
@@ -309,7 +309,7 @@ def test_comparison_keeps_source_coordinates_without_assuming_shape_equality(ser
     assert state["metrics_delta"]["absolute_volume"] == pytest.approx(0., abs=1e-8)
     assert state["new"]["metrics"]["bounds_min"][0] - state["old"]["metrics"]["bounds_min"][0] == pytest.approx(30.)
     assert min(p[0] for poly in state["new"]["polygons"] for p in poly) == pytest.approx(30.)
-    assert state["change_detection"] == "not_performed"
+    assert state["change_detection"] == "unresolved"
 
 
 def test_comparison_reads_sphere_without_editable_candidate(server):
@@ -321,3 +321,48 @@ def test_comparison_reads_sphere_without_editable_candidate(server):
     assert response["state"]["old"]["metrics"]["absolute_volume"] == pytest.approx(36 * math.pi)
     assert response["state"]["old"]["faces"][0]["support"] == "sphere"
     assert server.editor.workspace._transaction is None
+
+
+def test_revision_report_http_download_is_guarded_and_preserves_state(server):
+    assert revision_act(server, "report")[0] == 400
+    revision_act(server, "demo", case="position")
+    before = revision_state(server)
+    status, headers, report = revision_act(server, "report", camera={"yaw": 1.2, "pitch": -.7, "zoom": 1.5, "edges": True})
+    assert status == 200 and headers["Content-Type"].startswith("text/html")
+    assert headers["Content-Disposition"] == 'attachment; filename="step-comparison.html"'
+    assert "穴中心X" in report.decode() and report.count(b"<svg ") == 2
+    assert server.token.encode() not in report and b"/api/" not in report
+    assert revision_state(server) == before
+    revision_act(server, "swap")
+    assert revision_act(server, "report", revision_token=before["revision_token"])[0] == 409
+
+
+@pytest.mark.parametrize("camera", [None, [], {"zoom": 50}, {"yaw": True}, {"pitch": float("nan")},
+                                     {"yaw": float("inf")}, {"edges": "true"}])
+def test_report_camera_rejects_invalid_values_without_changing_pair(server, camera):
+    revision_act(server, "demo")
+    before = revision_state(server)
+    assert revision_act(server, "report", camera=camera)[0] == 400
+    assert revision_state(server) == before
+
+
+def test_comparison_failure_does_not_publish_new_slot_or_result(server, revision_sources, monkeypatch):
+    import research_notes.cad_revision as module
+    revision_act(server, "demo")
+    before = revision_state(server)
+    def fail(*args):
+        raise RuntimeError("injected matching failure")
+    monkeypatch.setattr(module, "compare_revisions", fail)
+    assert revision_upload(server, "new", revision_sources[0])[0] == 400
+    assert revision_act(server, "swap")[0] == 400
+    assert revision_act(server, "clear", side="old")[0] == 400
+    assert revision_state(server) == before
+
+
+@pytest.mark.parametrize("case,expected", [("diameter", "compared"), ("position", "compared"),
+    ("thickness", "compared"), ("addition", "compared"), ("deletion", "compared"), ("ambiguous", "partial")])
+def test_all_comparison_demos_are_reimported_and_analyzed(server, case, expected):
+    status, _, response = revision_act(server, "demo", case=case)
+    assert status == 200 and response["state"]["analysis"]["status"] == expected
+    assert response["state"]["old"]["features"]["status"] == "qualified"
+    assert response["state"]["new"]["features"]["status"] == "qualified"

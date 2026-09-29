@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v1.2.0では、新旧2つのSTEPを独立して読み込み、同じ視点・縮尺で並べ、単位・体積・面積などと差を確認できます。[新旧STEP比較の操作手順](docs/cad-revision-comparison.md)をご覧ください。[寸法編集・再計算・STEP保存](docs/cad-browser-editor.md)とPython API・ターミナルも利用できます。
+v1.5.0では、新旧2つのSTEPを読み込み、穴付き板の変更候補・追加・削除・判定保留を色分けします。対応する穴径・穴位置・板厚の旧値・新値・差を確認し、比較図と条件をHTMLレポートへ保存できます。[新旧STEP比較の操作手順](docs/cad-revision-comparison.md)をご覧ください。[寸法編集・再計算・STEP保存](docs/cad-browser-editor.md)とPython API・ターミナルも利用できます。
 
-v0.91.0〜v1.0.0の142条件では、実測4環境の比較、不正入力、資源制限、未学習サンプルでのAI評価、確認・拒否の操作、読込から再出力までを検証します。公開部品の任意の編集や設計履歴の復元には対応しません。AI評価は合成20例で正解率70%であり、候補の確認を必須にしています。詳細は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
+比較対象は同じ座標系の長方形の板とZ方向の貫通穴に限定し、曖昧な穴の対応は保留します。今回の関連テストは78件成功です。公開部品全般の自動差分や設計履歴の復元には対応しません。既存研究の結果と制限は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.2.0. Scoped references, dimensional
+The current implementation version is v1.5.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -55,15 +55,22 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Independent STEP Comparison: v1.2.0
+## Independent STEP Comparison and Reports: v1.5.0
 
 Open `/revisions` on the local CAD server to load old and new STEP files
-independently, rotate both at the same camera and scale, and compare global
-metrics. The built-in pair sample needs no fixture checkout. Each file uses
-the bounded explicit-mm, single-solid importer (2 MB, at most 24 faces).
-The [comparison guide](docs/cad-revision-comparison.md) documents operations,
-tests and limits. Local correspondence, change detection, dimension differences
-and report export are future work. Editor data is kept separately.
+independently. For qualified rectangular plates with Z-axis through holes,
+v1.3–v1.5 adds face/hole correspondence, colored change/addition/deletion
+candidates, diameter/position/thickness differences, and self-contained HTML
+reports with shared-view SVG diagrams. Ambiguous matches remain unresolved.
+Six built-in pairs demonstrate these cases without fixture preparation.
+
+Each file uses the bounded explicit-mm, single-solid importer (2 MB, at most
+24 faces). Both plates must share their XY extent and Z base; there is no
+automatic alignment or recovery of nominal CAD dimensions. The
+[comparison guide](docs/cad-revision-comparison.md) documents operations and
+limits, and the [verification record](results/cad-revision-workflow/verification.json)
+records 78 passing local tests and browser observations. Editor data is kept
+separately; the frozen Python API 1.0 is unchanged.
 
 ## Browser Dimension Editor: introduced in v1.1.0
 
