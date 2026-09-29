@@ -1,4 +1,4 @@
-# CAD Browser Editor — v1.5.0
+# CAD Browser Editor — v1.7.0
 
 ## 日本語概要
 

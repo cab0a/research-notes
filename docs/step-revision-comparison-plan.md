@@ -19,6 +19,8 @@ General STEP accuracy, customer outcomes and production deployment are not claim
 
 ## 研究のゴール
 
+v1.6〜v1.7では[固定22条件の評価](../notes/step-revision-benchmark.md)、出所・ライセンス付きのサンプル配布、比較図、実測結果、HTMLレポート例を追加しました。自作16組は比較完了9件・一部保留2件・全体保留5件、外部6件は読込拒否です。この範囲を[Insights記事](https://inefficiencylab.com/insights/step-revision-comparison/)の根拠にします。下記の初期原稿案は計画時点の記録として残し、現在の実装・評価結果は上記の検証ノートを参照してください。
+
 v1.2.0の独立した新旧STEP読込に続き、v1.3.0〜v1.5.0で[穴付き板の局所対応付け・色分け・寸法差・HTMLレポート保存](cad-revision-comparison.md)を実装しました。対象は同じXY外周・Z下端を持つ軸に平行な長方形の板とZ方向の貫通穴です。対応が複数ある穴は保留します。関連テスト78件とブラウザ操作の記録は[検証記録](../results/cad-revision-workflow/verification.json)に示します。一般部品への拡張、別CAD出力・面分割などの体系的な評価、公開サンプルでの検証、Insights掲載が次の段階です。
 
 想定する場面は、設計・加工・生産技術の担当者が、更新されたSTEPを受け取り、前の版とどこが変わったか確認するときです。

@@ -1,4 +1,4 @@
-# STEP Revision Comparison — v1.5.0
+# STEP Revision Comparison — v1.7.0
 
 ## 日本語概要
 
@@ -20,6 +20,8 @@ This is geometric evidence within a restricted grammar, not recovered design
 history, arbitrary STEP correspondence or automatic alignment.
 
 ## 起動と操作
+
+v1.7.0では比較ルールを維持し、[固定22条件の評価と配布サンプル](../notes/step-revision-benchmark.md)を追加しました。以下はv1.5.0から利用できる操作です。
 
 Python 3.12とgeometry依存を用意したリポジトリで起動します。
 
@@ -131,6 +133,6 @@ downloaded bytes were checked for diagrams, metadata and absence of external
 dependencies. The [v1.2 browser record](../results/cad-revision-comparison/verification.json)
 is preserved separately and covers the original upload and stale-tab workflow.
 
-The [research and publishing plan](step-revision-comparison-plan.md) describes
-the next stages. This release does not publish an Insights article or broaden
-the frozen Python API 1.0 contract.
+The [research and publishing plan](step-revision-comparison-plan.md) retains the
+original baseline. The v1.7 [evaluation and article evidence](../notes/step-revision-benchmark.md)
+adds fixed public artifacts without broadening the frozen Python API 1.0 contract.

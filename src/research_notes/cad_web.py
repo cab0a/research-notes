@@ -44,7 +44,7 @@ class BrowserEditor:
         self.storage.cleanup()
 
     def state(self):
-        return {"editor_version": "1.5.0", "revision_token": self.workspace.revision_token,
+        return {"editor_version": "1.7.0", "revision_token": self.workspace.revision_token,
                 "file_name": self.file_name, "snapshot": self.snapshot, "original": self.original}
 
     def guard(self, token):
@@ -152,7 +152,7 @@ class EditorServer(ThreadingHTTPServer):
 
 
 class EditorHandler(BaseHTTPRequestHandler):
-    server_version = "ResearchCAD/1.5"
+    server_version = "ResearchCAD/1.7"
 
     def setup(self):
         super().setup()
@@ -283,7 +283,7 @@ def main():
     parser.add_argument("--open-browser", action="store_true")
     args = parser.parse_args()
     with EditorServer(args.port) as server:
-        print(f"Research CAD v1.5.0: {server.url} (Ctrl+C to stop)", flush=True)
+        print(f"Research CAD v1.7.0: {server.url} (Ctrl+C to stop)", flush=True)
         print(f"STEP revision comparison: {server.url}/revisions", flush=True)
         if args.open_browser:
             import webbrowser

@@ -1,0 +1,1252 @@
+{
+  "version": "1.7.0",
+  "manifest_sha256": "c6246ea20fe04107c4c06f0a015a4dad974b56532f791dd473502ba961accffa",
+  "source_sha256": {
+    "revision_benchmark.py": "a62d932eade9d0e247d96346cdda7f18613a92e9f7ea6f6ecaf922a1ef5896df",
+    "revision_detection.py": "e3fa45848a0671a989ad46ac47fd7330621dcd230b19bbfc46fa5c26e2cdf86b",
+    "revision_report.py": "09cc6dae824d63e5324898c2e0716b0f0cb9da10e2b961bbca76b181ca60d472",
+    "cad_revision.py": "cc6dfa66c6478f112628abca54601812bfcdb0181f037870ebb213280de16643",
+    "step_reconstruction.py": "aadc8ad340717997341fdcb5738e6bccbd117e6e9a0002c4d882520b68a777d9"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "architecture": "x86_64",
+    "cadquery_ocp": "7.9.3.1.1"
+  },
+  "method": {
+    "repeats": 3,
+    "timing": "both STEP imports, qualification, tessellation and matching; excludes fixture creation, file reads, report rendering; first run included; no process isolation",
+    "limits": "Fixed regression corpus; v1.5 rules unchanged; no general precision/recall claim. External self-pairs evaluate intake only. Expected values are authored analytic truth, not CAD history."
+  },
+  "summary": {
+    "cases": 22,
+    "contract_passed": 22,
+    "authored_dispositions": {
+      "compared": 9,
+      "partial": 2,
+      "unresolved": 5
+    },
+    "external_dispositions": {
+      "rejected": 6
+    },
+    "max_dimension_error_mm": 0.0,
+    "total_measured_seconds": 32.21883618900756
+  },
+  "cases": [
+    {
+      "id": "identical_reordered",
+      "label": "同形状・穴の作成順変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unchanged": 2
+      },
+      "dimension_rows": 7,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 7,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        1.136324446000799,
+        0.16014815400194493,
+        0.22542118800265598
+      ],
+      "median_seconds": 0.22542118800265598,
+      "input_sha256": {
+        "old": "54485b87005c414954db72c34b2aeb18e1249427081a12a3b7b0063c390b101f",
+        "new": "54485b87005c414954db72c34b2aeb18e1249427081a12a3b7b0063c390b101f"
+      },
+      "known_changes": [],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 8,
+        "new": 8
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 1.6,
+          "new": 1.6,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 3.0,
+          "new": 3.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-2",
+          "label": "旧H2 → 新H2",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-2",
+          "label": "旧H2 → 新H2",
+          "name": "穴中心X",
+          "old": 9.0,
+          "new": 9.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-2",
+          "label": "旧H2 → 新H2",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": 0.0,
+      "report": "reports/identical_reordered.html"
+    },
+    {
+      "id": "diameter",
+      "label": "穴径変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "changed": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.12413612099771854,
+        0.12442100300177117,
+        0.18532047599728685
+      ],
+      "median_seconds": 0.12442100300177117,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "13f911d62795b87039e92c856297e6c6c51028eb5b2773754e13c26e9920947e"
+      },
+      "known_changes": [
+        "diameter"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.6,
+          "delta": 0.6000000000000001,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 6.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -8.6707957239081,
+      "report": "reports/diameter.html"
+    },
+    {
+      "id": "position",
+      "label": "等体積の穴位置変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "changed": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.12413140200078487,
+        0.12240199400184792,
+        0.19295161199988797
+      ],
+      "median_seconds": 0.12413140200078487,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "c2cacc82d1168a1312251174048a841175524ff0877c5df0ad5ed7baa5adc8a7"
+      },
+      "known_changes": [
+        "x",
+        "y"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 7.5,
+          "delta": 1.5,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.5,
+          "delta": 0.5,
+          "unit": "mm",
+          "status": "changed"
+        }
+      ],
+      "volume_delta_mm3": -6.821210263296962e-13,
+      "report": "reports/position.html"
+    },
+    {
+      "id": "thickness",
+      "label": "板厚変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "changed": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.1233045859989943,
+        0.12615402599840309,
+        0.19029102499916917
+      ],
+      "median_seconds": 0.12615402599840309,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "40856017d988d699a46e59d36fa6d97cc7f3445ae1ba009befafde1e73e7f00a"
+      },
+      "known_changes": [
+        "thickness"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 5.0,
+          "delta": 1.0,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 6.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": 116.85840734641005,
+      "report": "reports/thickness.html"
+    },
+    {
+      "id": "addition",
+      "label": "穴追加",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unchanged": 1,
+        "added": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.14885091000178363,
+        0.21076439099851996,
+        0.14044258200010518
+      ],
+      "median_seconds": 0.14885091000178363,
+      "input_sha256": {
+        "old": "a7b59dda368f5c6c884764e6ff65d8cf372d26d157eb4fb02772730f067a1327",
+        "new": "352a7e97788825daa96fe16a2a1fb4f9221691743c995157ad9845f544ba5de4"
+      },
+      "known_changes": [
+        "added_hole"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 8
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 1.6,
+          "new": 1.6,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 3.0,
+          "new": 3.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -8.042477193191132,
+      "report": "reports/addition.html"
+    },
+    {
+      "id": "deletion",
+      "label": "穴削除",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unchanged": 1,
+        "deleted": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.14090373200087924,
+        0.20500977199844783,
+        0.14248464499905822
+      ],
+      "median_seconds": 0.14248464499905822,
+      "input_sha256": {
+        "old": "352a7e97788825daa96fe16a2a1fb4f9221691743c995157ad9845f544ba5de4",
+        "new": "a7b59dda368f5c6c884764e6ff65d8cf372d26d157eb4fb02772730f067a1327"
+      },
+      "known_changes": [
+        "deleted_hole"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 8,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 1.6,
+          "new": 1.6,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 3.0,
+          "new": 3.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": 8.042477193191132,
+      "report": "reports/deletion.html"
+    },
+    {
+      "id": "ambiguous",
+      "label": "繰り返し穴の曖昧な対応",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unresolved": 4
+      },
+      "dimension_rows": 1,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 1,
+      "dimension_contract_pass": true,
+      "disposition": "partial",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.22813363900058903,
+        0.16134171900193905,
+        0.23056510799870011
+      ],
+      "median_seconds": 0.22813363900058903,
+      "input_sha256": {
+        "old": "5ee8fee5dc9a7107b6962fe6c1bc31a84706599d52f4ab794028bb716a21a12e",
+        "new": "f52956f5f434bd58fcaaa6d83966785405a7f59ec3af3205c9c512c49b9ba12f"
+      },
+      "known_changes": [
+        "moved_holes"
+      ],
+      "errors": {},
+      "unresolved": [
+        "旧H1 → —: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。",
+        "旧H2 → —: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。",
+        "— → 新H1: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。",
+        "— → 新H2: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。"
+      ],
+      "face_counts": {
+        "old": 8,
+        "new": 8
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -5.684341886080802e-14,
+      "report": "reports/ambiguous.html"
+    },
+    {
+      "id": "distant_move",
+      "label": "検索距離を超える穴移動",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unresolved": 2
+      },
+      "dimension_rows": 1,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 1,
+      "dimension_contract_pass": true,
+      "disposition": "partial",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.1373531639983412,
+        0.12371513799735112,
+        0.18690602800052147
+      ],
+      "median_seconds": 0.1373531639983412,
+      "input_sha256": {
+        "old": "c828f7904ff18b7d76ca5ca220a17456171eb0e268cac2b21339b9ea456916cc",
+        "new": "5ddba3577103a47f9ed53b2eacb838293bdbf268fbd0dd4bf9b22ac61ff54f3e"
+      },
+      "known_changes": [
+        "x"
+      ],
+      "errors": {},
+      "unresolved": [
+        "旧H1 → —: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。",
+        "— → 新H1: 複数候補または検索範囲外の穴が残り、移動と増減を区別できません。"
+      ],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -1.7621459846850485e-12,
+      "report": "reports/distant_move.html"
+    },
+    {
+      "id": "translated",
+      "label": "板全体の平行移動",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "unresolved",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.12577978400076972,
+        0.1255428820004454,
+        0.18539974699888262
+      ],
+      "median_seconds": 0.12577978400076972,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "d9473a96f9ada3854e5043cae9b9863d311a25c589afd1cebaf69ed0c3b2a238"
+      },
+      "known_changes": [],
+      "errors": {},
+      "unresolved": [
+        "板のXY外周またはZ下端が一致しません。外形変更と位置・向きの違いを区別できないため保留します。"
+      ],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [],
+      "volume_delta_mm3": 0.0,
+      "report": "reports/translated.html"
+    },
+    {
+      "id": "rotated",
+      "label": "板全体の回転",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "unresolved",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.11128873100096826,
+        0.18074929300200893,
+        0.11260808600127348
+      ],
+      "median_seconds": 0.11260808600127348,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "b46abfbe86100457b348c71882a7941549557261318a300b82960293f3dc943b"
+      },
+      "known_changes": [],
+      "errors": {},
+      "unresolved": [
+        "新版: 形状の判定範囲外: only axis-aligned planes and Z-axis cylinders are qualified"
+      ],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [],
+      "volume_delta_mm3": 1.6655121726216748e-11,
+      "report": "reports/rotated.html"
+    },
+    {
+      "id": "outer_width",
+      "label": "板の外形幅変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "unresolved",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.12432735500260605,
+        0.19166040100026294,
+        0.12529878599889344
+      ],
+      "median_seconds": 0.12529878599889344,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "ca27e1bf7631c8a41866ede2b624029657f8d64801e5ab2f02915dbcff8035dc"
+      },
+      "known_changes": [
+        "outer_width"
+      ],
+      "errors": {},
+      "unresolved": [
+        "板のXY外周またはZ下端が一致しません。外形変更と位置・向きの違いを区別できないため保留します。"
+      ],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [],
+      "volume_delta_mm3": 40.00000000000023,
+      "report": "reports/outer_width.html"
+    },
+    {
+      "id": "blind_hole",
+      "label": "止まり穴への変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "unresolved",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.11000619599872152,
+        0.18329663799886475,
+        0.11474553099833429
+      ],
+      "median_seconds": 0.11474553099833429,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d"
+      },
+      "known_changes": [
+        "hole_depth"
+      ],
+      "errors": {},
+      "unresolved": [
+        "新版: 形状の判定範囲外: 全厚を貫通しない円筒面は今回の判定範囲外です。"
+      ],
+      "face_counts": {
+        "old": 7,
+        "new": 8
+      },
+      "dimensions": [],
+      "volume_delta_mm3": 6.283185307179906,
+      "report": "reports/blind_hole.html"
+    },
+    {
+      "id": "within_tolerance",
+      "label": "許容差内の穴径差",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "unchanged": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.19705244899887475,
+        0.1284178720015916,
+        0.125939688001381
+      ],
+      "median_seconds": 0.1284178720015916,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "0514966bbc8a719ba26750731a4f91dadf05adc963aa8abf65cb8e7c8c4f1305"
+      },
+      "known_changes": [],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.000002,
+          "delta": 1.9999999998354667e-06,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 6.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -2.5132753762591165e-05,
+      "report": "reports/within_tolerance.html"
+    },
+    {
+      "id": "above_tolerance",
+      "label": "許容差を超える微小な穴径差",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "changed": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.1885719040001277,
+        0.124496085998544,
+        0.19095152900263201
+      ],
+      "median_seconds": 0.1885719040001277,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "fd6141c2ccf6b7ef3331752c691dff417d73c570a1326259888becc929e01bea"
+      },
+      "known_changes": [
+        "diameter"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.00004,
+          "delta": 3.999999999981796e-05,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 6.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        }
+      ],
+      "volume_delta_mm3": -0.0005026598511790326,
+      "report": "reports/above_tolerance.html"
+    },
+    {
+      "id": "combined",
+      "label": "穴径と位置の同時変更",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {
+        "changed": 1
+      },
+      "dimension_rows": 4,
+      "max_dimension_error_mm": 0.0,
+      "expected_dimension_rows": 4,
+      "dimension_contract_pass": true,
+      "disposition": "compared",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.12939828099842998,
+        0.13022779099992476,
+        0.19566497399864602
+      ],
+      "median_seconds": 0.13022779099992476,
+      "input_sha256": {
+        "old": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+        "new": "a98cc2104a18cd2d0afe8869b612a46bcf29ac38ca4304e2c2dd2f37034d77c9"
+      },
+      "known_changes": [
+        "diameter",
+        "x",
+        "y"
+      ],
+      "errors": {},
+      "unresolved": [],
+      "face_counts": {
+        "old": 7,
+        "new": 7
+      },
+      "dimensions": [
+        {
+          "region_id": "plate",
+          "label": "板",
+          "name": "板厚",
+          "old": 4.0,
+          "new": 4.0,
+          "delta": 0.0,
+          "unit": "mm",
+          "status": "unchanged"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴径",
+          "old": 2.0,
+          "new": 2.4,
+          "delta": 0.3999999999999999,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心X",
+          "old": 6.0,
+          "new": 7.0,
+          "delta": 1.0,
+          "unit": "mm",
+          "status": "changed"
+        },
+        {
+          "region_id": "hole-1",
+          "label": "旧H1 → 新H1",
+          "name": "穴中心Y",
+          "old": 5.0,
+          "new": 5.5,
+          "delta": 0.5,
+          "unit": "mm",
+          "status": "changed"
+        }
+      ],
+      "volume_delta_mm3": -5.529203070318715,
+      "report": "reports/combined.html"
+    },
+    {
+      "id": "split_plane",
+      "label": "同形状・平面分割",
+      "kind": "authored_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "unresolved",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.1066929020016687,
+        0.10502421400087769,
+        0.1674836870006402
+      ],
+      "median_seconds": 0.1066929020016687,
+      "input_sha256": {
+        "old": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+        "new": "a9885ea5c182dbb7f129a100c97f6954329b232196e2edda497481e54dab16a6"
+      },
+      "known_changes": [],
+      "errors": {},
+      "unresolved": [
+        "新版: 形状の判定範囲外: 平面の分割・段差・ポケットは今回の判定範囲外です。"
+      ],
+      "face_counts": {
+        "old": 6,
+        "new": 10
+      },
+      "dimensions": [],
+      "volume_delta_mm3": 0.0,
+      "report": "reports/split_plane.html"
+    },
+    {
+      "id": "cadquery_assembly",
+      "label": "cadquery_assembly",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        0.05380894100017031,
+        0.05634696800188976,
+        0.1232747180001752
+      ],
+      "median_seconds": 0.05634696800188976,
+      "input_sha256": {
+        "old": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+        "new": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "exactly one explicit SI millimetre length unit is required",
+        "new": "exactly one explicit SI millimetre length unit is required"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    },
+    {
+      "id": "build123d_bracket",
+      "label": "build123d_bracket",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        1.013660227003129,
+        1.00386919200173,
+        0.9331155290019524
+      ],
+      "median_seconds": 1.00386919200173,
+      "input_sha256": {
+        "old": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+        "new": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "input must be one valid solid with one shell and at most 24 faces",
+        "new": "input must be one valid solid with one shell and at most 24 faces"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    },
+    {
+      "id": "build123d_screw",
+      "label": "build123d_screw",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        2.3059831149985257,
+        2.4330502539996814,
+        2.2839956000025268
+      ],
+      "median_seconds": 2.3059831149985257,
+      "input_sha256": {
+        "old": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+        "new": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "input must be one valid solid with one shell and at most 24 faces",
+        "new": "input must be one valid solid with one shell and at most 24 faces"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "label": "ublox_sam_ap203",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        1.591089130997716,
+        1.675230405999173,
+        1.5636971560015809
+      ],
+      "median_seconds": 1.591089130997716,
+      "input_sha256": {
+        "old": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+        "new": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "exactly one explicit SI millimetre length unit is required",
+        "new": "exactly one explicit SI millimetre length unit is required"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    },
+    {
+      "id": "ublox_sam_ap214",
+      "label": "ublox_sam_ap214",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        1.8019139990028634,
+        1.9001295189991652,
+        1.751206477998494
+      ],
+      "median_seconds": 1.8019139990028634,
+      "input_sha256": {
+        "old": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+        "new": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "exactly one explicit SI millimetre length unit is required",
+        "new": "exactly one explicit SI millimetre length unit is required"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    },
+    {
+      "id": "ublox_emmy",
+      "label": "ublox_emmy",
+      "kind": "external_intake_control",
+      "contract_pass": true,
+      "hole_status_counts": {},
+      "dimension_rows": 0,
+      "max_dimension_error_mm": null,
+      "expected_dimension_rows": 0,
+      "dimension_contract_pass": true,
+      "disposition": "rejected",
+      "repeat_results_identical": true,
+      "elapsed_seconds": [
+        1.106700106000062,
+        1.2119583469975623,
+        1.0377048349982942
+      ],
+      "median_seconds": 1.106700106000062,
+      "input_sha256": {
+        "old": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a",
+        "new": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a"
+      },
+      "known_changes": [],
+      "errors": {
+        "old": "exactly one explicit SI millimetre length unit is required",
+        "new": "exactly one explicit SI millimetre length unit is required"
+      },
+      "unresolved": [],
+      "face_counts": {},
+      "dimensions": [],
+      "volume_delta_mm3": null,
+      "report": null
+    }
+  ]
+}

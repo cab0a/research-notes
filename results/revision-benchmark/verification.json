@@ -1,0 +1,54 @@
+{
+  "version": "1.7.0",
+  "tests": {
+    "passed": 104,
+    "deselected": 5,
+    "elapsed_seconds": 50.3,
+    "command": "python -m pytest tests/test_revision_benchmark.py tests/test_revision_detection.py tests/test_cad_web.py tests/test_operational_studies.py -k \"not artifacts_reproduce\" -q"
+  },
+  "benchmark": {
+    "cases": 22,
+    "repeats": 3,
+    "expected_handling_passed": 22,
+    "general_accuracy_claim": false,
+    "results_sha256": "7ad1a5bbdc61f1979449a9d82dc843c7263d415edeb4416fd48948a571ed570f"
+  },
+  "bundle": {
+    "extracted_source_and_license_hashes_verified": true,
+    "step_files": 38,
+    "sha256": "94d7d14b2bf465cf036f995ae9bb5db0172d5097552bb25daefbf4da8474ae2a"
+  },
+  "wheel": {
+    "filename": "research_notes-1.7.0-py3-none-any.whl",
+    "sha256": "d4a6c21e9e4b351cec1bc6a73833c4f32bcbb2b90e20c1cb5dafcb843e9a002c",
+    "modules_and_six_assets_match_source": true
+  },
+  "article_assets_copied_without_modification": {
+    "samples.zip": "94d7d14b2bf465cf036f995ae9bb5db0172d5097552bb25daefbf4da8474ae2a",
+    "bundle.json": "21eaab19ca374bd174a5557f8b4aea5c4de002ee910c25cd6e510ba7a8041c3a",
+    "results.csv": "bcfa36139e29bbceac2ef2c6ed2846a352fca96df5d7e51ca9cc08350af5a7c0",
+    "results.json": "7ad1a5bbdc61f1979449a9d82dc843c7263d415edeb4416fd48948a571ed570f",
+    "reports/split_plane.html": "0978a1aac7c04774b4ee7a3be7c858b1b65cad1a4b58a4f2519cf1039c9488e6",
+    "reports/ambiguous.html": "16ce23fd8f188b3ea20665db89f209c789e9a67f8cf25ffb03dd2c52f371c5e9",
+    "reports/diameter.html": "31a9a824a63cfe9acc3c5773fa32709fb4e85a8327f301b8380564150075a70d",
+    "figures/position.svg": "0ac465098126195d861c5c8dcaa2152bbb04cb6751d46b4a0031cf08ec5bde27",
+    "figures/ambiguous.svg": "a69bcbf3a201244c549f984b2701eb4b0c2a596877637db682b3b7681dd3e3c9",
+    "figures/addition.svg": "b0b0315a4aac84934a6b8e619fe2eea353078153bd2f7d11a734d60ed559f76e",
+    "figures/diameter.svg": "88eb682996e055021a32b4d4a280a0efbbefe702039b9f595f2ce01884b18db7"
+  },
+  "browser": {
+    "article_desktop": true,
+    "article_mobile": true,
+    "mobile_requested_width": 390,
+    "mobile_content_width": 375,
+    "all_four_tables_fit": true,
+    "all_three_article_figures_loaded": true,
+    "html_report_navigation_and_rendering_over_http": true,
+    "direct_file_protocol_reopen": "unverified; browser policy limitation from v1.5 remains",
+    "new_console_errors_or_warnings": []
+  },
+  "publication": {
+    "article_url": "https://inefficiencylab.com/insights/step-revision-comparison/",
+    "status_at_research_commit": "prepared; production delivery record belongs to website repository review/step-revision-v1.7/verification.json"
+  }
+}

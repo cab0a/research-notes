@@ -1,0 +1,1396 @@
+{
+  "schema_version": 1,
+  "version": "1.7.0",
+  "selection": "16 authored controls fixed before evaluation plus all 6 previously frozen external STEP files. Not a representative industrial corpus or independent learning test set.",
+  "tuning": "v1.5 tolerances and matching rule retained; no thresholds fitted to this corpus.",
+  "assets": {
+    "sources/identical_reordered-old.step": {
+      "sha256": "54485b87005c414954db72c34b2aeb18e1249427081a12a3b7b0063c390b101f",
+      "bytes": 22604,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/identical_reordered-new.step": {
+      "sha256": "54485b87005c414954db72c34b2aeb18e1249427081a12a3b7b0063c390b101f",
+      "bytes": 22604,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/diameter-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/diameter-new.step": {
+      "sha256": "13f911d62795b87039e92c856297e6c6c51028eb5b2773754e13c26e9920947e",
+      "bytes": 19006,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/position-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/position-new.step": {
+      "sha256": "c2cacc82d1168a1312251174048a841175524ff0877c5df0ad5ed7baa5adc8a7",
+      "bytes": 19014,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/thickness-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/thickness-new.step": {
+      "sha256": "40856017d988d699a46e59d36fa6d97cc7f3445ae1ba009befafde1e73e7f00a",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/addition-old.step": {
+      "sha256": "a7b59dda368f5c6c884764e6ff65d8cf372d26d157eb4fb02772730f067a1327",
+      "bytes": 19006,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/addition-new.step": {
+      "sha256": "352a7e97788825daa96fe16a2a1fb4f9221691743c995157ad9845f544ba5de4",
+      "bytes": 22609,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/deletion-old.step": {
+      "sha256": "352a7e97788825daa96fe16a2a1fb4f9221691743c995157ad9845f544ba5de4",
+      "bytes": 22609,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/deletion-new.step": {
+      "sha256": "a7b59dda368f5c6c884764e6ff65d8cf372d26d157eb4fb02772730f067a1327",
+      "bytes": 19006,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/ambiguous-old.step": {
+      "sha256": "5ee8fee5dc9a7107b6962fe6c1bc31a84706599d52f4ab794028bb716a21a12e",
+      "bytes": 22609,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/ambiguous-new.step": {
+      "sha256": "f52956f5f434bd58fcaaa6d83966785405a7f59ec3af3205c9c512c49b9ba12f",
+      "bytes": 22609,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/distant_move-old.step": {
+      "sha256": "c828f7904ff18b7d76ca5ca220a17456171eb0e268cac2b21339b9ea456916cc",
+      "bytes": 19006,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/distant_move-new.step": {
+      "sha256": "5ddba3577103a47f9ed53b2eacb838293bdbf268fbd0dd4bf9b22ac61ff54f3e",
+      "bytes": 19014,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/translated-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/translated-new.step": {
+      "sha256": "d9473a96f9ada3854e5043cae9b9863d311a25c589afd1cebaf69ed0c3b2a238",
+      "bytes": 19021,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/rotated-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/rotated-new.step": {
+      "sha256": "b46abfbe86100457b348c71882a7941549557261318a300b82960293f3dc943b",
+      "bytes": 19889,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/outer_width-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/outer_width-new.step": {
+      "sha256": "ca27e1bf7631c8a41866ede2b624029657f8d64801e5ab2f02915dbcff8035dc",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/blind_hole-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/blind_hole-new.step": {
+      "sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "bytes": 19214,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/within_tolerance-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/within_tolerance-new.step": {
+      "sha256": "0514966bbc8a719ba26750731a4f91dadf05adc963aa8abf65cb8e7c8c4f1305",
+      "bytes": 19046,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/above_tolerance-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/above_tolerance-new.step": {
+      "sha256": "fd6141c2ccf6b7ef3331752c691dff417d73c570a1326259888becc929e01bea",
+      "bytes": 19038,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/combined-old.step": {
+      "sha256": "95cd033921dca86f873a3c15c05917f036d351abcec387dd37d945db21a4ec91",
+      "bytes": 18998,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/combined-new.step": {
+      "sha256": "a98cc2104a18cd2d0afe8869b612a46bcf29ac38ca4304e2c2dd2f37034d77c9",
+      "bytes": 19014,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/split_plane-old.step": {
+      "sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "bytes": 15403,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "sources/split_plane-new.step": {
+      "sha256": "a9885ea5c182dbb7f129a100c97f6954329b232196e2edda497481e54dab16a6",
+      "bytes": 24524,
+      "origin": "Authored by Inefficiency Lab; independent box/cylinder construction, no matching code",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "license_path": "../../LICENSE",
+      "generator": "experiments/build_revision_fixtures.py"
+    },
+    "../public-step-corpus/sources/cadquery_assembly.step": {
+      "bytes": 18322,
+      "download_url": "https://raw.githubusercontent.com/CadQuery/cadquery/c11b3f93278bb25053991f7071451f71664c90fc/tests/testdata/red_cube_blue_cylinder.step",
+      "path": "sources/cadquery_assembly.step",
+      "repository": "https://github.com/CadQuery/cadquery",
+      "revision": "c11b3f93278bb25053991f7071451f71664c90fc",
+      "role": "step",
+      "sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "source_url": "https://github.com/CadQuery/cadquery/blob/c11b3f93278bb25053991f7071451f71664c90fc/tests/testdata/red_cube_blue_cylinder.step",
+      "upstream_path": "tests/testdata/red_cube_blue_cylinder.step",
+      "origin": "unmodified_external_step",
+      "attribution": "CadQuery contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/cadquery/LICENSE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    },
+    "../public-step-corpus/sources/build123d_bracket.step": {
+      "bytes": 165860,
+      "download_url": "https://raw.githubusercontent.com/gumyr/build123d/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+      "path": "sources/build123d_bracket.step",
+      "repository": "https://github.com/gumyr/build123d",
+      "revision": "17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1",
+      "role": "step",
+      "sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "source_url": "https://github.com/gumyr/build123d/blob/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+      "upstream_path": "docs/topology_selection/examples/nema-17-bracket.step",
+      "origin": "unmodified_external_step",
+      "attribution": "build123d contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/build123d/LICENSE",
+        "licenses/build123d/NOTICE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    },
+    "../public-step-corpus/sources/build123d_screw.step": {
+      "bytes": 503360,
+      "download_url": "https://raw.githubusercontent.com/gumyr/build123d/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/M6-1x12-countersunk-screw.step",
+      "path": "sources/build123d_screw.step",
+      "repository": "https://github.com/gumyr/build123d",
+      "revision": "17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1",
+      "role": "step",
+      "sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "source_url": "https://github.com/gumyr/build123d/blob/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/M6-1x12-countersunk-screw.step",
+      "upstream_path": "docs/M6-1x12-countersunk-screw.step",
+      "origin": "unmodified_external_step",
+      "attribution": "build123d contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/build123d/LICENSE",
+        "licenses/build123d/NOTICE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    },
+    "../public-step-corpus/sources/ublox_sam_ap203.step": {
+      "bytes": 359113,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP203.STEP",
+      "path": "sources/ublox_sam_ap203.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP203.STEP",
+      "upstream_path": "POS/SAM_AP203.STEP",
+      "origin": "unmodified_external_step",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    },
+    "../public-step-corpus/sources/ublox_sam_ap214.step": {
+      "bytes": 416065,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP214.STEP",
+      "path": "sources/ublox_sam_ap214.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP214.STEP",
+      "upstream_path": "POS/SAM_AP214.STEP",
+      "origin": "unmodified_external_step",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    },
+    "../public-step-corpus/sources/ublox_emmy.step": {
+      "bytes": 242333,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/SHO/EMMY-W1.STEP",
+      "path": "sources/ublox_emmy.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/SHO/EMMY-W1.STEP",
+      "upstream_path": "SHO/EMMY-W1.STEP",
+      "origin": "unmodified_external_step",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only",
+      "provenance_manifest": "../public-step-corpus/manifest.json"
+    }
+  },
+  "cases": [
+    {
+      "id": "identical_reordered",
+      "label": "同形状・穴の作成順変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8
+          ],
+          [
+            9.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            9.0,
+            5.0,
+            1.0
+          ],
+          [
+            3.0,
+            5.0,
+            0.8
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "unchanged": 2
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 1.6,
+            "new": 1.6,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 3.0,
+            "new": 3.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 9.0,
+            "new": 9.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/identical_reordered-old.step",
+      "new": "sources/identical_reordered-new.step"
+    },
+    {
+      "id": "diameter",
+      "label": "穴径変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.3
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "diameter"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "changed": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.6,
+            "delta": 0.6000000000000001
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 6.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/diameter-old.step",
+      "new": "sources/diameter-new.step"
+    },
+    {
+      "id": "position",
+      "label": "等体積の穴位置変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            7.5,
+            5.5,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "x",
+        "y"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "changed": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 7.5,
+            "delta": 1.5
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.5,
+            "delta": 0.5
+          }
+        ]
+      },
+      "old": "sources/position-old.step",
+      "new": "sources/position-new.step"
+    },
+    {
+      "id": "thickness",
+      "label": "板厚変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 5.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "thickness"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "changed": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 5.0,
+            "delta": 1.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 6.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/thickness-old.step",
+      "new": "sources/thickness-new.step"
+    },
+    {
+      "id": "addition",
+      "label": "穴追加",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8
+          ],
+          [
+            9.0,
+            5.0,
+            0.8
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "added_hole"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "unchanged": 1,
+          "added": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 1.6,
+            "new": 1.6,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 3.0,
+            "new": 3.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/addition-old.step",
+      "new": "sources/addition-new.step"
+    },
+    {
+      "id": "deletion",
+      "label": "穴削除",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8
+          ],
+          [
+            9.0,
+            5.0,
+            0.8
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "deleted_hole"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "unchanged": 1,
+          "deleted": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 1.6,
+            "new": 1.6,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心X",
+            "old": 3.0,
+            "new": 3.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/deletion-old.step",
+      "new": "sources/deletion-new.step"
+    },
+    {
+      "id": "ambiguous",
+      "label": "繰り返し穴の曖昧な対応",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            4.0,
+            4.0,
+            0.6
+          ],
+          [
+            8.0,
+            4.0,
+            0.6
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            3.0,
+            0.6
+          ],
+          [
+            6.0,
+            5.0,
+            0.6
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "moved_holes"
+      ],
+      "expected": {
+        "disposition": "partial",
+        "hole_status_counts": {
+          "unresolved": 4
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/ambiguous-old.step",
+      "new": "sources/ambiguous-new.step"
+    },
+    {
+      "id": "distant_move",
+      "label": "検索距離を超える穴移動",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            2.0,
+            5.0,
+            0.5
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            10.0,
+            5.0,
+            0.5
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "x"
+      ],
+      "expected": {
+        "disposition": "partial",
+        "hole_status_counts": {
+          "unresolved": 2
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/distant_move-old.step",
+      "new": "sources/distant_move-new.step"
+    },
+    {
+      "id": "translated",
+      "label": "板全体の平行移動",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0,
+        "shift": [
+          30.0,
+          0.0,
+          0.0
+        ]
+      },
+      "known_changes": [],
+      "expected": {
+        "disposition": "unresolved",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "old": "sources/translated-old.step",
+      "new": "sources/translated-new.step"
+    },
+    {
+      "id": "rotated",
+      "label": "板全体の回転",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0,
+        "rotate": 0.2617993877991494
+      },
+      "known_changes": [],
+      "expected": {
+        "disposition": "unresolved",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "old": "sources/rotated-old.step",
+      "new": "sources/rotated-new.step"
+    },
+    {
+      "id": "outer_width",
+      "label": "板の外形幅変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 13.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "outer_width"
+      ],
+      "expected": {
+        "disposition": "unresolved",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "old": "sources/outer_width-old.step",
+      "new": "sources/outer_width-new.step"
+    },
+    {
+      "id": "blind_hole",
+      "label": "止まり穴への変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0,
+        "blind": true
+      },
+      "known_changes": [
+        "hole_depth"
+      ],
+      "expected": {
+        "disposition": "unresolved",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "old": "sources/blind_hole-old.step",
+      "new": "sources/blind_hole-new.step"
+    },
+    {
+      "id": "within_tolerance",
+      "label": "許容差内の穴径差",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.000001
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "unchanged": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.000002,
+            "delta": 1.9999999998354667e-06
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 6.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/within_tolerance-old.step",
+      "new": "sources/within_tolerance-new.step"
+    },
+    {
+      "id": "above_tolerance",
+      "label": "許容差を超える微小な穴径差",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.00002
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "diameter"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "changed": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.00004,
+            "delta": 3.999999999981796e-05
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 6.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.0,
+            "delta": 0.0
+          }
+        ]
+      },
+      "old": "sources/above_tolerance-old.step",
+      "new": "sources/above_tolerance-new.step"
+    },
+    {
+      "id": "combined",
+      "label": "穴径と位置の同時変更",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [
+          [
+            7.0,
+            5.5,
+            1.2
+          ]
+        ],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "known_changes": [
+        "diameter",
+        "x",
+        "y"
+      ],
+      "expected": {
+        "disposition": "compared",
+        "hole_status_counts": {
+          "changed": 1
+        },
+        "dimensions": [
+          {
+            "name": "板厚",
+            "old": 4.0,
+            "new": 4.0,
+            "delta": 0.0
+          },
+          {
+            "name": "穴径",
+            "old": 2.0,
+            "new": 2.4,
+            "delta": 0.3999999999999999
+          },
+          {
+            "name": "穴中心X",
+            "old": 6.0,
+            "new": 7.0,
+            "delta": 1.0
+          },
+          {
+            "name": "穴中心Y",
+            "old": 5.0,
+            "new": 5.5,
+            "delta": 0.5
+          }
+        ]
+      },
+      "old": "sources/combined-old.step",
+      "new": "sources/combined-new.step"
+    },
+    {
+      "id": "split_plane",
+      "label": "同形状・平面分割",
+      "kind": "authored_control",
+      "old_recipe": {
+        "holes": [],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0
+      },
+      "new_recipe": {
+        "holes": [],
+        "thickness": 4.0,
+        "width": 12.0,
+        "length": 10.0,
+        "split_plane": true
+      },
+      "known_changes": [],
+      "expected": {
+        "disposition": "unresolved",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "old": "sources/split_plane-old.step",
+      "new": "sources/split_plane-new.step"
+    },
+    {
+      "id": "cadquery_assembly",
+      "label": "cadquery_assembly",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/cadquery_assembly.step",
+      "new": "../public-step-corpus/sources/cadquery_assembly.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    },
+    {
+      "id": "build123d_bracket",
+      "label": "build123d_bracket",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/build123d_bracket.step",
+      "new": "../public-step-corpus/sources/build123d_bracket.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    },
+    {
+      "id": "build123d_screw",
+      "label": "build123d_screw",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/build123d_screw.step",
+      "new": "../public-step-corpus/sources/build123d_screw.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "label": "ublox_sam_ap203",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/ublox_sam_ap203.step",
+      "new": "../public-step-corpus/sources/ublox_sam_ap203.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    },
+    {
+      "id": "ublox_sam_ap214",
+      "label": "ublox_sam_ap214",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/ublox_sam_ap214.step",
+      "new": "../public-step-corpus/sources/ublox_sam_ap214.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    },
+    {
+      "id": "ublox_emmy",
+      "label": "ublox_emmy",
+      "kind": "external_intake_control",
+      "old": "../public-step-corpus/sources/ublox_emmy.step",
+      "new": "../public-step-corpus/sources/ublox_emmy.step",
+      "known_changes": [],
+      "expected": {
+        "disposition": "rejected",
+        "hole_status_counts": {},
+        "dimensions": []
+      },
+      "expectation_basis": "Existing v1.5 single-root, explicit-mm, <=24-face input contract; self-pair tests intake only, not an authentic manufacturer revision or change-detection accuracy."
+    }
+  ]
+}

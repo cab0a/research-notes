@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v1.5.0では、新旧2つのSTEPを読み込み、穴付き板の変更候補・追加・削除・判定保留を色分けします。対応する穴径・穴位置・板厚の旧値・新値・差を確認し、比較図と条件をHTMLレポートへ保存できます。[新旧STEP比較の操作手順](docs/cad-revision-comparison.md)をご覧ください。[寸法編集・再計算・STEP保存](docs/cad-browser-editor.md)とPython API・ターミナルも利用できます。
+v1.7.0では、新旧STEPの変更候補・寸法差・HTML保存に加え、出所・ライセンス付きサンプル、比較図、実測結果を揃えました。[22条件の評価](notes/step-revision-benchmark.md)と[操作手順](docs/cad-revision-comparison.md)をご覧ください。既存の寸法編集とPython APIも利用できます。
 
-比較対象は同じ座標系の長方形の板とZ方向の貫通穴に限定し、曖昧な穴の対応は保留します。今回の関連テストは78件成功です。公開部品全般の自動差分や設計履歴の復元には対応しません。既存研究の結果と制限は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
+自作16組は比較完了9件・一部保留2件・全体保留5件、外部公開STEP6件は現在の読込条件で全て拒否されました。関連テスト104件は成功ですが、一般部品での比較精度を示す結果ではありません。比較対象は同じ座標系の長方形の板とZ方向の貫通穴です。既存研究の制限は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.5.0. Scoped references, dimensional
+The current implementation version is v1.7.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -55,7 +55,26 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Independent STEP Comparison and Reports: v1.5.0
+## Fixed Revision Evaluation and Public Evidence: v1.6–v1.7
+
+The [fixed corpus](fixtures/revision-comparison/README.md) contains 16 authored
+revision pairs plus all six external STEP inputs from the earlier corpus.
+Three sequential runs of each case produced nine complete, two partial and
+five unresolved authored comparisons; all six external self-pairs were rejected
+by the bounded importer. Their rejection is retained, not counted as successful
+public-part change detection. Rules and tolerances remain unchanged from v1.5.
+
+The [study](notes/step-revision-benchmark.md) records scope and measured timings.
+[JSON/CSV, figures, reports and a licensed STEP bundle](results/revision-benchmark/)
+support the [Insights article](https://inefficiencylab.com/insights/step-revision-comparison/).
+The local related regression run passed 104 tests, with five historical artifact
+cases deselected. Expected handling of 22 controls is not a general accuracy score.
+
+```bash
+python -m research_notes.revision_benchmark --output-dir output/revision-check --repeats 3
+```
+
+## Independent STEP Comparison and Reports: introduced in v1.5.0
 
 Open `/revisions` on the local CAD server to load old and new STEP files
 independently. For qualified rectangular plates with Z-axis through holes,

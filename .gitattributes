@@ -6,3 +6,5 @@
 # Upstream STEP and license snapshots are byte-preserved on every checkout.
 fixtures/public-step-corpus/sources/** -text -whitespace
 fixtures/public-step-corpus/licenses/** -text -whitespace
+fixtures/revision-comparison/sources/** -text -whitespace
+results/revision-benchmark/** -text
