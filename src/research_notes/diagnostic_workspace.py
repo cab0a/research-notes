@@ -14,19 +14,14 @@ from research_notes.modeling_common import _surface_type
 from research_notes.robustness_studies import evidence_bytes
 
 
-def workspace_snapshot(workspace):
+def shape_snapshot(shape):
+    """Bounded diagnostic geometry without reconstruction or editor state."""
     from OCP.BRepAdaptor import BRepAdaptor_Curve
     from OCP.BRepBuilderAPI import BRepBuilderAPI_Copy
     from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE
     from OCP.TopoDS import TopoDS
     from research_notes.brep_preview import _mesh_polygons
     from research_notes.cad_api import CadAPIError
-    from research_notes.parametric_features import rectangle_solution, circular_solution
-    session, tx = workspace._session, workspace._transaction
-    if session.inspection is None:
-        raise CadAPIError("no_source", "open a STEP file before creating the workspace")
-    source = session.inspection.imported
-    shape = tx.committed.current_output().shape if tx else source.shape
     faces, edges = indexed_shapes(shape, TopAbs_FACE), indexed_shapes(shape, TopAbs_EDGE)
     if faces.Extent() > 256 or edges.Extent() > 512:
         raise CadAPIError("resource_limit", "workspace snapshot supports at most 256 faces and 512 edges")
@@ -46,6 +41,19 @@ def workspace_snapshot(workspace):
             edge_records.append({"index": i, "support": support, "points": points, "status": "sampled"})
         except (ValueError, RuntimeError) as error:
             edge_records.append({"index": i, "support": "unknown", "points": [], "status": "unresolved", "reason": str(error)})
+    return {"faces": [{"index": i, "support": _surface_type(TopoDS.Face_s(faces.FindKey(i)))} for i in range(1, faces.Extent() + 1)],
+            "edges": edge_records, "polygons": polygons, "polygon_face_ids": face_ids}
+
+
+def workspace_snapshot(workspace):
+    from research_notes.cad_api import CadAPIError
+    from research_notes.parametric_features import rectangle_solution, circular_solution
+    session, tx = workspace._session, workspace._transaction
+    if session.inspection is None:
+        raise CadAPIError("no_source", "open a STEP file before creating the workspace")
+    source = session.inspection.imported
+    shape = tx.committed.current_output().shape if tx else source.shape
+    geometry = shape_snapshot(shape)
     candidate_rows = [{"candidate_id": c.candidate_id, "explanation": c.explanation,
         "fit_score": c.fit_score, "volume_residual": c.volume_residual,
         "area_residual": c.area_residual, "supporting_source_faces": c.supporting_faces,
@@ -76,8 +84,7 @@ def workspace_snapshot(workspace):
         "candidates": candidate_rows, "comparison": {"before": before, "after": after,
             "volume_change_mm3": after["absolute_volume"] - before["absolute_volume"],
             "area_change_mm2": after["surface_area"] - before["surface_area"]},
-        "faces": [{"index": i, "support": _surface_type(TopoDS.Face_s(faces.FindKey(i)))} for i in range(1, faces.Extent() + 1)],
-        "edges": edge_records, "polygons": polygons, "polygon_face_ids": face_ids,
+        **geometry,
         "selection_scope": "analysis-local IDs bound to this source digest and revision; no inferred STEP entity or persistent identity",
         "editing_policy": "read-only snapshot; use the Python API or terminal for transactional edits"}
 

@@ -18,6 +18,8 @@ copy. No new comparison results, customer outcomes or production deployment are 
 
 ## 研究のゴール
 
+v1.2.0で[独立した新旧STEPの読込・並列表示・全体測定値の比較](cad-revision-comparison.md)を実装しました。以下の初期計画のうち、局所対応付け・変更判定・寸法差・レポート保存・Insights掲載は引き続き今後の段階です。
+
 想定する場面は、設計・加工・生産技術の担当者が、更新されたSTEPを受け取り、前の版とどこが変わったか確認するときです。
 
 目標とする操作は「旧版STEPを開く → 新版STEPを開く → 変更候補と寸法差を確認する → 確認レポートを保存する」です。入力データと形状計算はローカルで扱います。

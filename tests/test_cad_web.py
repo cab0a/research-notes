@@ -155,3 +155,169 @@ def test_snapshot_failure_is_atomic(server, monkeypatch):
     assert call(server)[2] == before
     assert act(server, "demo")[0] == 400
     assert call(server)[2] == before
+
+
+@pytest.fixture(scope="module")
+def revision_sources():
+    from research_notes.deterministic_recompute import single_feature_model, recompute
+    from research_notes.parametric_features import PlateSpec, feature_spec
+    from research_notes.step_writer_modes import prepare_step_write
+    sources = []
+    for radius_value in (1., 1.3):
+        model = single_feature_model("upload_control", PlateSpec(),
+                                     feature_spec("through_hole", x=6., y=5., radius=radius_value))
+        source, _ = prepare_step_write(source=None, mode="reconstruct", shape=recompute(model).current_output().shape)
+        sources.append(source)
+    return sources
+
+
+def revision_act(server, operation, **payload):
+    return call(server, "/api/revisions/" + operation,
+                {"revision_token": server.comparison.revision_token, **payload})
+
+
+def revision_upload(server, side, data, **headers):
+    return call(server, "/api/revisions/open/" + side, raw=data,
+                headers={"X-CAD-Revision": server.comparison.revision_token, **headers})
+
+
+def revision_state(server):
+    return call(server, "/api/revisions/state")[2]
+
+
+def test_two_independent_uploads_analytic_measurements_and_swap(server, revision_sources):
+    before = revision_state(server)
+    assert before["old"] is before["new"] is before["metrics_delta"] is None
+    status, _, response = revision_upload(server, "new", revision_sources[1], **{"X-File-Name": "../new.step"})
+    assert status == 200 and response["state"]["new"]["file_name"] == "new.step"
+    assert response["state"]["old"] is response["state"]["metrics_delta"] is None
+    new = response["state"]["new"]
+    status, _, response = revision_upload(server, "old", revision_sources[0], **{"X-File-Name": "old.step"})
+    assert status == 200
+    state = response["state"]
+    assert state["new"] == new and state["old"]["source_sha256"] != new["source_sha256"]
+    for side, r in (("old", 1.), ("new", 1.3)):
+        data = state[side]
+        assert data["length_unit"] == "mm" and data["polygons"] and data["edges"]
+        assert data["metrics"]["absolute_volume"] == pytest.approx(480 - 4 * math.pi * r**2)
+        assert data["metrics"]["surface_area"] == pytest.approx(416 - 2 * math.pi * r**2 + 8 * math.pi * r)
+    assert state["metrics_delta"]["absolute_volume"] == pytest.approx(-4 * math.pi * .69)
+    assert state["metrics_delta"]["face_count"] == 0
+    assert state["change_detection"] == "not_performed"
+    assert state["coordinate_policy"] == "source_coordinates_no_alignment"
+    swapped = revision_act(server, "swap")[2]["state"]
+    assert swapped["old"] == state["new"] and swapped["new"] == state["old"]
+    assert swapped["metrics_delta"]["absolute_volume"] == pytest.approx(-state["metrics_delta"]["absolute_volume"])
+    cleared = revision_act(server, "clear", side="old")[2]["state"]
+    assert cleared["old"] is cleared["metrics_delta"] is None and cleared["new"] == swapped["new"]
+    assert revision_act(server, "swap")[0] == 400
+
+
+def test_revision_upload_and_editing_are_isolated(server, revision_sources):
+    select_hole(server)
+    act(server, "edit", changes=[radius(1.6)])
+    editor_before = call(server)[2]
+    assert revision_upload(server, "old", revision_sources[0])[0] == 200
+    assert revision_upload(server, "new", revision_sources[1])[0] == 200
+    comparison_before = revision_state(server)
+    assert call(server)[2] == editor_before
+    assert act(server, "recompute")[0] == 200
+    assert act(server, "demo")[0] == 200
+    assert revision_state(server) == comparison_before
+
+
+def test_revision_stale_requests_and_failed_upload_preserve_both_slots(server, revision_sources):
+    assert revision_act(server, "demo")[0] == 200
+    before = revision_state(server)
+    assert revision_upload(server, "old", b"not STEP")[0] == 400
+    assert revision_upload(server, "new", b"")[0] == 400
+    assert revision_upload(server, "other", revision_sources[0])[0] == 400
+    assert revision_upload(server, "new", revision_sources[1], **{"X-CAD-Revision": "stale"})[0] == 409
+    for operation in ("demo", "swap", "clear"):
+        assert revision_act(server, operation, side="old", revision_token="stale")[0] == 409
+    assert revision_state(server) == before
+    assert revision_upload(server, "old", revision_sources[1])[0] == 200
+    assert revision_upload(server, "new", revision_sources[0], **{"X-CAD-Revision": before["revision_token"]})[0] == 409
+    assert revision_state(server)["new"] == before["new"]
+
+
+def test_comparison_preview_and_pair_demo_publish_atomically(server, revision_sources, monkeypatch):
+    import research_notes.cad_revision as module
+    revision_act(server, "demo")
+    before = revision_state(server)
+    original = module.shape_snapshot
+    calls = 0
+    def fail_second(workspace):
+        nonlocal calls
+        calls += 1
+        if calls == 2:
+            raise RuntimeError("injected second preview failure")
+        return original(workspace)
+    monkeypatch.setattr(module, "shape_snapshot", fail_second)
+    assert revision_act(server, "demo")[0] == 400
+    assert revision_state(server) == before
+    calls = 1
+    assert revision_upload(server, "new", revision_sources[1])[0] == 400
+    assert revision_state(server) == before
+
+
+def test_comparison_units_and_request_budget(server, revision_sources):
+    revision_upload(server, "old", revision_sources[0])
+    before = revision_state(server)
+    assert b".MILLI.,.METRE." in revision_sources[0]
+    non_mm = revision_sources[0].replace(b".MILLI.,.METRE.", b"$,.METRE.")
+    status, _, response = revision_upload(server, "new", non_mm)
+    assert status == 400 and "millimetre" in response["error"]["detail"]
+    assert revision_upload(server, "new", b"", **{"Content-Length": "2000001"})[0] == 413
+    assert revision_state(server) == before
+
+
+@pytest.mark.parametrize("headers", [
+    {"X-CAD-Token": "invalid"}, {"Origin": "https://example.invalid"},
+    {"Host": "evil.invalid"}, {"Sec-Fetch-Site": "cross-site"},
+])
+def test_comparison_enforces_local_request_guards(server, revision_sources, headers):
+    before = revision_state(server)
+    assert call(server, "/api/revisions/state", headers=headers)[0] == 403
+    assert revision_upload(server, "old", revision_sources[0], **headers)[0] == 403
+    assert revision_state(server) == before
+
+
+def test_comparison_assets_and_malformed_actions(server):
+    status, _, page = call(server, "/revisions")
+    assert status == 200 and b"__TOKEN__" not in page and b"1.2.0" in page
+    for asset in ("revisions.js", "revisions.css"):
+        assert call(server, "/" + asset)[0] == 200
+    before = revision_state(server)
+    for raw in (b"[]", b"{", b"null"):
+        assert call(server, "/api/revisions/demo", raw=raw)[0] == 400
+    assert revision_act(server, "unknown")[0] == 400
+    assert revision_act(server, "clear", side="unknown")[0] == 400
+    assert revision_state(server) == before
+
+
+def test_comparison_keeps_source_coordinates_without_assuming_shape_equality(server, revision_sources):
+    from research_notes.deterministic_recompute import single_feature_model, recompute
+    from research_notes.parametric_features import PlateSpec, feature_spec
+    from research_notes.step_writer_modes import prepare_step_write
+    model = single_feature_model("translated", PlateSpec(origin_x=30.),
+                                 feature_spec("through_hole", x=6., y=5., radius=1.))
+    shifted, _ = prepare_step_write(source=None, mode="reconstruct", shape=recompute(model).current_output().shape)
+    revision_upload(server, "old", revision_sources[0])
+    assert revision_upload(server, "new", shifted)[0] == 200
+    state = revision_state(server)
+    assert state["metrics_delta"]["absolute_volume"] == pytest.approx(0., abs=1e-8)
+    assert state["new"]["metrics"]["bounds_min"][0] - state["old"]["metrics"]["bounds_min"][0] == pytest.approx(30.)
+    assert min(p[0] for poly in state["new"]["polygons"] for p in poly) == pytest.approx(30.)
+    assert state["change_detection"] == "not_performed"
+
+
+def test_comparison_reads_sphere_without_editable_candidate(server):
+    from OCP.BRepPrimAPI import BRepPrimAPI_MakeSphere
+    from research_notes.step_writer_modes import prepare_step_write
+    source, _ = prepare_step_write(source=None, mode="reconstruct", shape=BRepPrimAPI_MakeSphere(3.).Shape())
+    status, _, response = revision_upload(server, "old", source)
+    assert status == 200
+    assert response["state"]["old"]["metrics"]["absolute_volume"] == pytest.approx(36 * math.pi)
+    assert response["state"]["old"]["faces"][0]["support"] == "sphere"
+    assert server.editor.workspace._transaction is None

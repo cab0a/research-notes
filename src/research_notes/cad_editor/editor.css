@@ -2,3 +2,4 @@
 aside details[open]>summary{margin-bottom:16px}aside summary .step{display:inline-block;margin-right:6px}#fields details{margin:12px 0}#fields summary{font-size:12px;color:#657987;font-weight:normal}
 #message{position:sticky;top:12px;z-index:2;pointer-events:none}
 #views svg{cursor:grab;user-select:none}#views svg.dragging{cursor:grabbing}
+.workspace-nav{display:flex;gap:8px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px}.workspace-nav a{padding:9px 16px;border-radius:6px;text-decoration:none;font-size:13px}.workspace-nav a[aria-current="page"]{background:#dceeed;color:#125d60;font-weight:700}.workspace-nav a:focus-visible{outline:3px solid #2397b0}

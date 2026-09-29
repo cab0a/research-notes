@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.1.0まで実装しました。ローカルのブラウザ画面から、STEP読込、候補の確認・採用、寸法入力、再計算、比較、STEP保存を行えます。穴付き板の編集を画面だけで完結できます。[起動方法と操作手順](docs/cad-browser-editor.md)をご覧ください。Python APIと対話ターミナルも引き続き利用できます。
+v1.2.0では、新旧2つのSTEPを独立して読み込み、同じ視点・縮尺で並べ、単位・体積・面積などと差を確認できます。[新旧STEP比較の操作手順](docs/cad-revision-comparison.md)をご覧ください。[寸法編集・再計算・STEP保存](docs/cad-browser-editor.md)とPython API・ターミナルも利用できます。
 
 v0.91.0〜v1.0.0の142条件では、実測4環境の比較、不正入力、資源制限、未学習サンプルでのAI評価、確認・拒否の操作、読込から再出力までを検証します。公開部品の任意の編集や設計履歴の復元には対応しません。AI評価は合成20例で正解率70%であり、候補の確認を必須にしています。詳細は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
@@ -47,7 +47,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.1.0. Scoped references, dimensional
+The current implementation version is v1.2.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -55,7 +55,17 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Browser Dimension Editor: v1.1.0
+## Independent STEP Comparison: v1.2.0
+
+Open `/revisions` on the local CAD server to load old and new STEP files
+independently, rotate both at the same camera and scale, and compare global
+metrics. The built-in pair sample needs no fixture checkout. Each file uses
+the bounded explicit-mm, single-solid importer (2 MB, at most 24 faces).
+The [comparison guide](docs/cad-revision-comparison.md) documents operations,
+tests and limits. Local correspondence, change detection, dimension differences
+and report export are future work. Editor data is kept separately.
+
+## Browser Dimension Editor: introduced in v1.1.0
 
 Start the local editor after installing the geometry extra:
 
