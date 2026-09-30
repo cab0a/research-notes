@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,boss.step,cb9616b5df57c9621bd886a6a12ee1e272c92a40429b74d477cb7a4fee98e435,unresolved,,,,,,,,,,,,mm,板と穴で再構成した材料領域・面積が入力と一致しません。

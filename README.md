@@ -2,9 +2,9 @@
 
 ## 日本語概要
 
-v1.7.0では、新旧STEPの変更候補・寸法差・HTML保存に加え、出所・ライセンス付きサンプル、比較図、実測結果を揃えました。[22条件の評価](notes/step-revision-benchmark.md)と[操作手順](docs/cad-revision-comparison.md)をご覧ください。既存の寸法編集とPython APIも利用できます。
+v1.8.0では、STEPを1つ開いて穴の数・径・位置・深さ・方向を確認し、番号付きの図とCSVにまとめる穴一覧を追加しました。[21条件の評価](notes/step-hole-inventory.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。既存の寸法編集、新旧STEP比較、Python APIも利用できます。
 
-自作16組は比較完了9件・一部保留2件・全体保留5件、外部公開STEP6件は現在の読込条件で全て拒否されました。関連テスト104件は成功ですが、一般部品での比較精度を示す結果ではありません。比較対象は同じ座標系の長方形の板とZ方向の貫通穴です。既存研究の制限は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
+穴一覧の自作15条件は一覧取得8件・保留7件、外部公開STEP6件は読込条件で全て拒否されました。関連テスト110件が成功しました。対象は軸に平行な長方形の板とZ方向の円筒貫通穴・平底の止まり穴で、一般部品の認識精度を示す結果ではありません。穴0個と穴数不明を区別します。既存研究の制限は英語本文と[対応範囲](docs/cad-v1-support.md)に示します。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -47,13 +47,34 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.7.0. Scoped references, dimensional
+The current implementation version is v1.8.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
 Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
+
+## Single-STEP Hole Inventory: v1.8.0
+
+Open `/holes` on the local CAD server to measure the count, diameter, source
+coordinates, depth and inward axis of cylindrical holes in qualified plates.
+Numbered preview selection and CSV export distinguish confirmed zero holes
+from unknown counts. Flat-bottom blind holes are included only after material
+reconstruction passes. The existing revision-comparison grammar is unchanged.
+
+The [fixed 21-input study](notes/step-hole-inventory.md) records eight complete
+and seven unresolved authored cases, with all six external sources rejected by
+intake. Eight complete cases contain 13 holes, including a zero-hole control.
+Related local tests pass 110 cases. This is bounded regression evidence, not
+general industrial recognition accuracy. The [guide](docs/cad-hole-inventory.md)
+and [Insights article](https://inefficiencylab.com/insights/step-hole-inventory/)
+provide operation, coordinates, downloadable samples and claim boundaries.
+
+```bash
+python -m research_notes.hole_inventory fixtures/hole-inventory/sources/multiple_diameters.step --output-dir output/my-holes
+python -m research_notes.hole_inventory_benchmark --output-dir output/hole-check --repeats 3
+```
 
 ## Fixed Revision Evaluation and Public Evidence: v1.6–v1.7
 

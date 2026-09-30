@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,rotated.step,c04017e6965c3f59cf00d75523c5b5cc907e97e6f8090604c285a7f3eda47bf8,unresolved,,,,,,,,,,,,mm,only axis-aligned planes and Z-axis cylinders are qualified

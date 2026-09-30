@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,counterbore.step,6a261d35b206be92e71f5781fbba1832993b7353b801f4f4b62a5814de44fa1f,unresolved,,,,,,,,,,,,mm,穴の交差・同軸の段付き穴・円筒面の分割は判定範囲外です。

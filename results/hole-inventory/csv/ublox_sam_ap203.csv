@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,ublox_sam_ap203.step,341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365,rejected,,,,,,,,,,,,,exactly one explicit SI millimetre length unit is required

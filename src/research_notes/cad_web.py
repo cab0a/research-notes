@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 from research_notes.cad_api import CadAPIError, CadWorkspace
 from research_notes.cad_revision import RevisionComparison
+from research_notes.hole_inventory import HoleInventory
 from research_notes.diagnostic_workspace import PAGE, workspace_snapshot
 
 MAX_SOURCE_BYTES = 2_000_000
@@ -44,7 +45,7 @@ class BrowserEditor:
         self.storage.cleanup()
 
     def state(self):
-        return {"editor_version": "1.7.0", "revision_token": self.workspace.revision_token,
+        return {"editor_version": "1.8.0", "revision_token": self.workspace.revision_token,
                 "file_name": self.file_name, "snapshot": self.snapshot, "original": self.original}
 
     def guard(self, token):
@@ -138,6 +139,7 @@ class EditorServer(ThreadingHTTPServer):
         super().__init__(("127.0.0.1", port), EditorHandler)
         self.editor = BrowserEditor()
         self.comparison = RevisionComparison()
+        self.holes = HoleInventory()
         self.token = secrets.token_urlsafe(32)
         self.lock = threading.RLock()
 
@@ -152,7 +154,7 @@ class EditorServer(ThreadingHTTPServer):
 
 
 class EditorHandler(BaseHTTPRequestHandler):
-    server_version = "ResearchCAD/1.7"
+    server_version = "ResearchCAD/1.8"
 
     def setup(self):
         super().setup()
@@ -197,16 +199,18 @@ class EditorHandler(BaseHTTPRequestHandler):
         if not self.guard_request(authenticated=path.startswith("/api/")):
             return
         with self.server.lock:
-            if path in ("/", "/revisions"):
-                page = (ASSETS / ("index.html" if path == "/" else "revisions.html")).read_text(encoding="utf-8")
+            if path in ("/", "/revisions", "/holes"):
+                page = (ASSETS / {"/": "index.html", "/revisions": "revisions.html", "/holes": "holes.html"}[path]).read_text(encoding="utf-8")
                 self.send(200, page.replace("__TOKEN__", self.server.token), "text/html; charset=utf-8")
-            elif path in ("/editor.js", "/editor.css", "/revisions.js", "/revisions.css"):
+            elif path in ("/editor.js", "/editor.css", "/revisions.js", "/revisions.css", "/holes.js", "/holes.css"):
                 self.send(200, (ASSETS / path[1:]).read_bytes(),
                           "text/javascript; charset=utf-8" if path.endswith(".js") else "text/css; charset=utf-8")
             elif path == "/api/state":
                 self.send(200, self.server.editor.state())
             elif path == "/api/revisions/state":
                 self.send(200, self.server.comparison.state())
+            elif path == "/api/holes/state":
+                self.send(200, self.server.holes.state())
             elif path in ("/diagnostics", "/workspace.json") and self.server.editor.snapshot:
                 data = self.server.editor.snapshot
                 if path.endswith(".json"):
@@ -223,7 +227,8 @@ class EditorHandler(BaseHTTPRequestHandler):
             return
         path = urlsplit(self.path).path
         revision_route = path.startswith("/api/revisions/")
-        upload = path == "/api/open" or path.startswith("/api/revisions/open/")
+        hole_route = path.startswith("/api/holes/")
+        upload = path in ("/api/open", "/api/holes/open") or path.startswith("/api/revisions/open/")
         limit = MAX_SOURCE_BYTES if upload else 65_536
         try:
             length = int(self.headers.get("Content-Length", "-1"))
@@ -237,7 +242,23 @@ class EditorHandler(BaseHTTPRequestHandler):
                 raise CadAPIError("invalid_request", "Incomplete request body")
             with self.server.lock:
                 editor = self.server.editor
-                if revision_route:
+                if hole_route:
+                    inventory = self.server.holes
+                    if upload:
+                        result = inventory.open_bytes(raw, unquote(self.headers.get("X-File-Name", "uploaded.step")), self.headers.get("X-CAD-Revision"))
+                    else:
+                        if self.headers.get("Content-Type", "").split(";")[0] != "application/json":
+                            raise CadAPIError("invalid_request", "JSON request required")
+                        payload = json.loads(raw)
+                        if not isinstance(payload, dict):
+                            raise CadAPIError("invalid_request", "JSON object required")
+                        result = inventory.action(path.removeprefix("/api/holes/"), payload)
+                        if path == "/api/holes/csv":
+                            self.send(200, result, "text/csv; charset=utf-8", download="hole-inventory.csv")
+                            return
+                    self.send(200, {"result": result, "state": inventory.state()})
+                    return
+                elif revision_route:
                     comparison = self.server.comparison
                     if upload:
                         result = comparison.open_bytes(path.removeprefix("/api/revisions/open/"), raw,
@@ -274,7 +295,7 @@ class EditorHandler(BaseHTTPRequestHandler):
             error = error if isinstance(error, CadAPIError) else CadAPIError("invalid_request", str(error))
             with self.server.lock:
                 self.send(409 if error.code in {"revision_conflict", "pending_changes"} else 400,
-                          {"error": error.record(), "state": (self.server.comparison if revision_route else self.server.editor).state()})
+                          {"error": error.record(), "state": (self.server.holes if hole_route else self.server.comparison if revision_route else self.server.editor).state()})
 
 
 def main():
@@ -283,8 +304,9 @@ def main():
     parser.add_argument("--open-browser", action="store_true")
     args = parser.parse_args()
     with EditorServer(args.port) as server:
-        print(f"Research CAD v1.7.0: {server.url} (Ctrl+C to stop)", flush=True)
+        print(f"Research CAD v1.8.0: {server.url} (Ctrl+C to stop)", flush=True)
         print(f"STEP revision comparison: {server.url}/revisions", flush=True)
+        print(f"STEP hole inventory: {server.url}/holes", flush=True)
         if args.open_browser:
             import webbrowser
             webbrowser.open(server.url)

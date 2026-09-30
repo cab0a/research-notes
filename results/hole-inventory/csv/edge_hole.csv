@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,edge_hole.step,5c204c778f13abb7fa148e16826a553b40ca82959d19c911f41881d8d8a9c984,unresolved,,,,,,,,,,,,mm,外周平面の分割は判定範囲外です。

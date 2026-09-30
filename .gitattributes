@@ -8,3 +8,6 @@ fixtures/public-step-corpus/sources/** -text -whitespace
 fixtures/public-step-corpus/licenses/** -text -whitespace
 fixtures/revision-comparison/sources/** -text -whitespace
 results/revision-benchmark/** -text
+
+fixtures/hole-inventory/sources/** -text -whitespace
+results/hole-inventory/** -text

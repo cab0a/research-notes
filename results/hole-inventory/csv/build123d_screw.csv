@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,build123d_screw.step,9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41,rejected,,,,,,,,,,,,,input must be one valid solid with one shell and at most 24 faces

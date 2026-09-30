@@ -1,0 +1,813 @@
+{
+  "schema_version": 1,
+  "version": "1.8.0",
+  "selection": "15 fixed authored cases and all six frozen external STEP sources; not representative industrial accuracy.",
+  "truth_policy": "Analytic recipes frozen before evaluation; recognizer receives only STEP bytes and name.",
+  "assets": {
+    "sources/no_holes.step": {
+      "sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "bytes": 15403,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/single.step": {
+      "sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "bytes": 18998,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/multiple_diameters.step": {
+      "sha256": "bd1944e1f73f687e0480ea8b54ccc464a8987110f23bfa63f66b6a1fc5e8cd8d",
+      "bytes": 26215,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/four_equal.step": {
+      "sha256": "24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15",
+      "bytes": 29818,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/blind_top.step": {
+      "sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "bytes": 19214,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/blind_bottom.step": {
+      "sha256": "231b99f6011c3809710f915de117ac40dbe09c091aa4217ddb8c33c35ea86d48",
+      "bytes": 19215,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/mixed.step": {
+      "sha256": "f336e519828a1960ed66bd07ae827d496f041f657d5a43eec1fdcb258d98b666",
+      "bytes": 22820,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/translated.step": {
+      "sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+      "bytes": 19085,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/rotated.step": {
+      "sha256": "c04017e6965c3f59cf00d75523c5b5cc907e97e6f8090604c285a7f3eda47bf8",
+      "bytes": 19889,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/boss.step": {
+      "sha256": "cb9616b5df57c9621bd886a6a12ee1e272c92a40429b74d477cb7a4fee98e435",
+      "bytes": 19214,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/intersecting.step": {
+      "sha256": "5c760fad02dbc9919e31f4547f34f284e075fcc0752e2070f1fa5b69d37eb535",
+      "bytes": 26503,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/edge_hole.step": {
+      "sha256": "5c204c778f13abb7fa148e16826a553b40ca82959d19c911f41881d8d8a9c984",
+      "bytes": 25051,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/split_plane.step": {
+      "sha256": "a9885ea5c182dbb7f129a100c97f6954329b232196e2edda497481e54dab16a6",
+      "bytes": 24524,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/counterbore.step": {
+      "sha256": "6a261d35b206be92e71f5781fbba1832993b7353b801f4f4b62a5814de44fa1f",
+      "bytes": 22817,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "sources/tilted_hole.step": {
+      "sha256": "d4bf13777ff73e0b813c9ac1cd12bc015da86263e6805acb55ed787a1bd94f87",
+      "bytes": 22233,
+      "origin": "Inefficiency Lab independent box/cylinder construction",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "generator": "experiments/build_hole_inventory_fixtures.py"
+    },
+    "../public-step-corpus/sources/cadquery_assembly.step": {
+      "bytes": 18322,
+      "download_url": "https://raw.githubusercontent.com/CadQuery/cadquery/c11b3f93278bb25053991f7071451f71664c90fc/tests/testdata/red_cube_blue_cylinder.step",
+      "path": "sources/cadquery_assembly.step",
+      "repository": "https://github.com/CadQuery/cadquery",
+      "revision": "c11b3f93278bb25053991f7071451f71664c90fc",
+      "role": "step",
+      "sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "source_url": "https://github.com/CadQuery/cadquery/blob/c11b3f93278bb25053991f7071451f71664c90fc/tests/testdata/red_cube_blue_cylinder.step",
+      "upstream_path": "tests/testdata/red_cube_blue_cylinder.step",
+      "attribution": "CadQuery contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/cadquery/LICENSE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    },
+    "../public-step-corpus/sources/build123d_bracket.step": {
+      "bytes": 165860,
+      "download_url": "https://raw.githubusercontent.com/gumyr/build123d/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+      "path": "sources/build123d_bracket.step",
+      "repository": "https://github.com/gumyr/build123d",
+      "revision": "17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1",
+      "role": "step",
+      "sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "source_url": "https://github.com/gumyr/build123d/blob/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+      "upstream_path": "docs/topology_selection/examples/nema-17-bracket.step",
+      "attribution": "build123d contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/build123d/LICENSE",
+        "licenses/build123d/NOTICE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    },
+    "../public-step-corpus/sources/build123d_screw.step": {
+      "bytes": 503360,
+      "download_url": "https://raw.githubusercontent.com/gumyr/build123d/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/M6-1x12-countersunk-screw.step",
+      "path": "sources/build123d_screw.step",
+      "repository": "https://github.com/gumyr/build123d",
+      "revision": "17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1",
+      "role": "step",
+      "sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "source_url": "https://github.com/gumyr/build123d/blob/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/M6-1x12-countersunk-screw.step",
+      "upstream_path": "docs/M6-1x12-countersunk-screw.step",
+      "attribution": "build123d contributors",
+      "license_id": "Apache-2.0",
+      "license_paths": [
+        "licenses/build123d/LICENSE",
+        "licenses/build123d/NOTICE"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    },
+    "../public-step-corpus/sources/ublox_sam_ap203.step": {
+      "bytes": 359113,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP203.STEP",
+      "path": "sources/ublox_sam_ap203.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP203.STEP",
+      "upstream_path": "POS/SAM_AP203.STEP",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    },
+    "../public-step-corpus/sources/ublox_sam_ap214.step": {
+      "bytes": 416065,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP214.STEP",
+      "path": "sources/ublox_sam_ap214.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/POS/SAM_AP214.STEP",
+      "upstream_path": "POS/SAM_AP214.STEP",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    },
+    "../public-step-corpus/sources/ublox_emmy.step": {
+      "bytes": 242333,
+      "download_url": "https://raw.githubusercontent.com/u-blox/3D-Step-Models-Library/ac8778fbdcb8faa7d722bc52877f9d17d557a330/SHO/EMMY-W1.STEP",
+      "path": "sources/ublox_emmy.step",
+      "repository": "https://github.com/u-blox/3D-Step-Models-Library",
+      "revision": "ac8778fbdcb8faa7d722bc52877f9d17d557a330",
+      "role": "step",
+      "sha256": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a",
+      "source_url": "https://github.com/u-blox/3D-Step-Models-Library/blob/ac8778fbdcb8faa7d722bc52877f9d17d557a330/SHO/EMMY-W1.STEP",
+      "upstream_path": "SHO/EMMY-W1.STEP",
+      "attribution": "u-blox",
+      "license_id": "LicenseRef-u-blox-Deliverable",
+      "license_paths": [
+        "licenses/3D-Step-Models-Library/LICENSE.txt"
+      ],
+      "retrieved_utc": "2026-09-28",
+      "modifications": "none; local filename only"
+    }
+  },
+  "cases": [
+    {
+      "id": "no_holes",
+      "kind": "authored_control",
+      "source": "sources/no_holes.step",
+      "recipe": {},
+      "expected": {
+        "status": "complete",
+        "holes": [],
+        "hole_count": 0
+      }
+    },
+    {
+      "id": "single",
+      "kind": "authored_control",
+      "source": "sources/single.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0,
+            -1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 1
+      }
+    },
+    {
+      "id": "multiple_diameters",
+      "kind": "authored_control",
+      "source": "sources/multiple_diameters.step",
+      "recipe": {
+        "holes": [
+          [
+            3.0,
+            3.0,
+            0.6,
+            -1.0,
+            5.0
+          ],
+          [
+            6.0,
+            5.0,
+            1.0,
+            -1.0,
+            5.0
+          ],
+          [
+            9.0,
+            7.0,
+            1.25,
+            -1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 2.5,
+            "x_mm": 9.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 3
+      }
+    },
+    {
+      "id": "four_equal",
+      "kind": "authored_control",
+      "source": "sources/four_equal.step",
+      "recipe": {
+        "holes": [
+          [
+            3.0,
+            3.0,
+            0.6,
+            -1.0,
+            5.0
+          ],
+          [
+            3.0,
+            7.0,
+            0.6,
+            -1.0,
+            5.0
+          ],
+          [
+            9.0,
+            3.0,
+            0.6,
+            -1.0,
+            5.0
+          ],
+          [
+            9.0,
+            7.0,
+            0.6,
+            -1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 9.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 9.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 4
+      }
+    },
+    {
+      "id": "blind_top",
+      "kind": "authored_control",
+      "source": "sources/blind_top.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0,
+            2.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 2.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 1
+      }
+    },
+    {
+      "id": "blind_bottom",
+      "kind": "authored_control",
+      "source": "sources/blind_bottom.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0,
+            -1.0,
+            2.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 0.0,
+            "depth_mm": 2.0,
+            "axis": [
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "hole_count": 1
+      }
+    },
+    {
+      "id": "mixed",
+      "kind": "authored_control",
+      "source": "sources/mixed.step",
+      "recipe": {
+        "holes": [
+          [
+            3.0,
+            5.0,
+            0.8,
+            -1.0,
+            5.0
+          ],
+          [
+            9.0,
+            5.0,
+            1.0,
+            1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.6,
+            "x_mm": 3.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          },
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 9.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 3.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 2
+      }
+    },
+    {
+      "id": "translated",
+      "kind": "authored_control",
+      "source": "sources/translated.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0,
+            -1.0,
+            5.0
+          ]
+        ],
+        "shift": [
+          30.0,
+          -20.0,
+          7.0
+        ]
+      },
+      "expected": {
+        "status": "complete",
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 36.0,
+            "y_mm": -15.0,
+            "entry_z_mm": 11.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ]
+          }
+        ],
+        "hole_count": 1
+      }
+    },
+    {
+      "id": "rotated",
+      "kind": "authored_control",
+      "source": "sources/rotated.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            1.0,
+            -1.0,
+            5.0
+          ]
+        ],
+        "rotate": true
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "boss",
+      "kind": "authored_control",
+      "source": "sources/boss.step",
+      "recipe": {
+        "boss": true
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "intersecting",
+      "kind": "authored_control",
+      "source": "sources/intersecting.step",
+      "recipe": {
+        "holes": [
+          [
+            5.0,
+            5.0,
+            1.5,
+            -1.0,
+            5.0
+          ],
+          [
+            6.0,
+            5.0,
+            1.5,
+            -1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "edge_hole",
+      "kind": "authored_control",
+      "source": "sources/edge_hole.step",
+      "recipe": {
+        "holes": [
+          [
+            1.0,
+            5.0,
+            1.0,
+            -1.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "split_plane",
+      "kind": "authored_control",
+      "source": "sources/split_plane.step",
+      "recipe": {
+        "split": true
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "counterbore",
+      "kind": "authored_control",
+      "source": "sources/counterbore.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            5.0,
+            0.6,
+            -1.0,
+            5.0
+          ],
+          [
+            6.0,
+            5.0,
+            1.0,
+            2.0,
+            5.0
+          ]
+        ]
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "tilted_hole",
+      "kind": "authored_control",
+      "source": "sources/tilted_hole.step",
+      "recipe": {
+        "holes": [
+          [
+            6.0,
+            4.0,
+            0.6,
+            -1.0,
+            5.0
+          ]
+        ],
+        "tilt": true
+      },
+      "expected": {
+        "status": "unresolved",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "cadquery_assembly",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/cadquery_assembly.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "build123d_bracket",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/build123d_bracket.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "build123d_screw",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/build123d_screw.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_sam_ap203.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "ublox_sam_ap214",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_sam_ap214.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    },
+    {
+      "id": "ublox_emmy",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_emmy.step",
+      "expected": {
+        "status": "rejected",
+        "holes": [],
+        "hole_count": null
+      }
+    }
+  ]
+}

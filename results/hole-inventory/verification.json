@@ -1,0 +1,69 @@
+{
+  "version": "1.8.0",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cadquery_ocp": "7.9.3.1.1"
+  },
+  "regression": {
+    "command": "python -m pytest tests/test_hole_inventory.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py -q",
+    "passed": 110,
+    "seconds": 53.42,
+    "scope": "local related regression; no historical deselection; not new cross-platform evidence"
+  },
+  "evaluation": {
+    "cases": 21,
+    "repeats": 3,
+    "expected_handling_passed": 21,
+    "authored": {
+      "complete": 8,
+      "unresolved": 7
+    },
+    "external": {
+      "rejected": 6
+    },
+    "complete_holes": 13,
+    "max_reported_dimension_error_mm": 0.0,
+    "general_accuracy_claim": false
+  },
+  "runtime_source_sha256": {
+    "hole_inventory_benchmark.py": "53233d80a1f725b0b9a44f8620a102a80b8c7e1a2b1387c5b34b015af62d448f",
+    "hole_inventory.py": "16e5e34308a0a313cffe893877d2486c0ac173408354202b47319cde99d9c5c7",
+    "step_reconstruction.py": "aadc8ad340717997341fdcb5738e6bccbd117e6e9a0002c4d882520b68a777d9",
+    "revision_detection.py": "e3fa45848a0671a989ad46ac47fd7330621dcd230b19bbfc46fa5c26e2cdf86b"
+  },
+  "manifest_sha256": "7d85e3b5528913341a517ed496a8e6100dbdc958966273847b5d3a2d116ed26e",
+  "archive": {
+    "sha256": "0fac988147f993b726c06b91f77e42d583b3bb0be22b373ef2993a5ab222677b",
+    "step_inputs": 21,
+    "members": 31,
+    "all_extracted_bytes_match": true,
+    "external_licenses_included": true
+  },
+  "packaging": {
+    "version": "1.8.0",
+    "wheel_sha256": "5c5657bda4df4ad07470aa7b87644fea2268434f20e29cf4d9db59c69ba4478f",
+    "browser_assets_matching_source": 9,
+    "installed_cli_entrypoint": true
+  },
+  "cli": {
+    "complete_exit": 0,
+    "hole_count": 3,
+    "csv_rows": 4,
+    "csv_bytes_and_svg_match": true
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8771/holes",
+    "three_hole_demo": true,
+    "table_H2_selects_cylinder": true,
+    "drag_changes_projection": true,
+    "independent_mixed_upload": true,
+    "zero_distinct_from_unknown": true,
+    "counterbore_unresolved": true,
+    "source_change_resets_selection": true,
+    "console_errors": [],
+    "csv_http_bytes_headers_verified": true,
+    "blob_csv_filesystem_download": "unverified: in-app browser download event timed out; CLI file output verified"
+  },
+  "article": "https://inefficiencylab.com/insights/step-hole-inventory/"
+}

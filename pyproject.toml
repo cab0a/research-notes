@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "research-notes"
-version = "1.7.0"
+version = "1.8.0"
 description = "Reproducible technical research notes and controlled experiments"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -27,6 +27,7 @@ geometry = ["cadquery-ocp==7.9.3.1.1"]
 test = ["pytest==9.1.1"]
 
 [project.scripts]
+research-hole-list = "research_notes.hole_inventory:main"
 research-cad = "research_notes.cad_tool:main"
 research-cad-web = "research_notes.cad_web:main"
 research-3d = "research_notes.integrated_tool:main"

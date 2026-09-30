@@ -2035,3 +2035,10 @@ The complete notes contain the narrower limitations for each experiment.
 - v0.98.0: [APIと配布契約の固定](../notes/cad-contract-freeze.md) — [evidence](../results/cad_contract_freeze_evidence.json)
 - v0.99.0: [安定版候補の受入検証](../notes/cad-release-candidate.md) — [evidence](../results/cad_release_candidate_evidence.json)
 - v1.0.0: [研究用3D基盤の安定版](../notes/cad-stable-release.md) — [evidence](../results/cad_stable_release_evidence.json)
+
+## Browser Workflows and Public STEP Evidence
+
+- v1.1.0: [Browser dimension editor](cad-browser-editor.md)
+- v1.2–v1.5: [Independent revision comparison and HTML reports](cad-revision-comparison.md)
+- v1.6–v1.7: [Fixed revision evaluation and licensed public artifacts](../notes/step-revision-benchmark.md)
+- v1.8.0: [Single-STEP hole inventory evaluation](../notes/step-hole-inventory.md) — [guide](cad-hole-inventory.md), [evidence](../results/hole-inventory/verification.json)

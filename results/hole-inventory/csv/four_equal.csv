@@ -1,0 +1,6 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason
+summary,four_equal.step,24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15,complete,4,,,,,,,,,,,mm,板と円筒穴の再構成を、入力の材料領域・面積と照合しました。
+hole,four_equal.step,24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15,complete,4,H1,through,1.2,3.0,3.0,4.0,4.0,0,0,-1,mm,
+hole,four_equal.step,24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15,complete,4,H2,through,1.2,3.0,7.0,4.0,4.0,0,0,-1,mm,
+hole,four_equal.step,24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15,complete,4,H3,through,1.2,9.0,3.0,4.0,4.0,0,0,-1,mm,
+hole,four_equal.step,24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15,complete,4,H4,through,1.2,9.0,7.0,4.0,4.0,0,0,-1,mm,

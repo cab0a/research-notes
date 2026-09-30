@@ -1,0 +1,1677 @@
+{
+  "version": "1.8.0",
+  "summary": {
+    "cases": 21,
+    "repeats": 3,
+    "expected_handling_passed": 21,
+    "authored": {
+      "complete": 8,
+      "unresolved": 7
+    },
+    "external": {
+      "rejected": 6
+    },
+    "complete_holes": 13,
+    "max_reported_dimension_error_mm": 0.0,
+    "general_accuracy_claim": false
+  },
+  "selection": "15 fixed authored cases and all six frozen external STEP sources; not representative industrial accuracy.",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cadquery_ocp": "7.9.3.1.1"
+  },
+  "timing_scope": "STEP parsing/import, qualification and preview tessellation; excludes reading fixed input bytes, CSV/SVG output and fixture construction. First run included.",
+  "runtime_source_sha256": {
+    "hole_inventory_benchmark.py": "53233d80a1f725b0b9a44f8620a102a80b8c7e1a2b1387c5b34b015af62d448f",
+    "hole_inventory.py": "16e5e34308a0a313cffe893877d2486c0ac173408354202b47319cde99d9c5c7",
+    "step_reconstruction.py": "aadc8ad340717997341fdcb5738e6bccbd117e6e9a0002c4d882520b68a777d9",
+    "revision_detection.py": "e3fa45848a0671a989ad46ac47fd7330621dcd230b19bbfc46fa5c26e2cdf86b"
+  },
+  "manifest_sha256": "7d85e3b5528913341a517ed496a8e6100dbdc958966273847b5d3a2d116ed26e",
+  "records": [
+    {
+      "id": "no_holes",
+      "kind": "authored_control",
+      "source": "sources/no_holes.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "no_holes.step",
+        "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+        "source_bytes": 15403,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 8,
+          "edge_count": 12,
+          "face_count": 6,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 480.0,
+          "surface_area": 416.0,
+          "surface_centroid": [
+            6.0,
+            5.0,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 0,
+        "holes": [],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.8e-06,
+        "area_residual_mm2": 0.0,
+        "area_gate_mm2": 4.16e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        1.1287496229997487,
+        0.043529573995328974,
+        0.10380940300092334
+      ],
+      "median_seconds": 0.10380940300092334
+    },
+    {
+      "id": "single",
+      "kind": "authored_control",
+      "source": "sources/single.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "single.step",
+        "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+        "source_bytes": 18998,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 7,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 467.43362938564036,
+          "surface_area": 434.84955592154046,
+          "surface_centroid": [
+            6.0000000000000036,
+            5.0,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 1,
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.674336293856403e-06,
+        "area_residual_mm2": 1.6484591469634324e-12,
+        "area_gate_mm2": 4.348495559215404e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 5,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06202252200455405,
+        0.06742244199995184,
+        0.06626892399799544
+      ],
+      "median_seconds": 0.06626892399799544
+    },
+    {
+      "id": "multiple_diameters",
+      "kind": "authored_control",
+      "source": "sources/multiple_diameters.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "multiple_diameters.step",
+        "source_sha256": "bd1944e1f73f687e0480ea8b54ccc464a8987110f23bfa63f66b6a1fc5e8cd8d",
+        "source_bytes": 26215,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 14,
+          "edge_count": 21,
+          "face_count": 9,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 443.27478187953335,
+          "surface_area": 469.2657034416197,
+          "surface_centroid": [
+            6.056135051437093,
+            5.037423367624721,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              3
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 3,
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              8
+            ],
+            "id": "H2"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 2.5,
+            "x_mm": 9.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              9
+            ],
+            "id": "H3"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.432747818795334e-06,
+        "area_residual_mm2": 4.718003765447065e-12,
+        "area_gate_mm2": 4.692657034416197e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 15,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.10070529700169573,
+        0.15916372500214493,
+        0.09749181299412157
+      ],
+      "median_seconds": 0.10070529700169573
+    },
+    {
+      "id": "four_equal",
+      "kind": "authored_control",
+      "source": "sources/four_equal.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "four_equal.step",
+        "source_sha256": "24e9033c5ccb941279fd305898dd0afadf674a01a765a25b63d20460c144ee15",
+        "source_bytes": 29818,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 16,
+          "edge_count": 24,
+          "face_count": 10,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 461.90442631532227,
+          "surface_area": 467.2707921065894,
+          "surface_centroid": [
+            6.000000000000006,
+            4.999999999999998,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              4
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 4,
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 3.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              9
+            ],
+            "id": "H2"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 9.0,
+            "y_mm": 3.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              8
+            ],
+            "id": "H3"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 1.2,
+            "x_mm": 9.0,
+            "y_mm": 7.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              10
+            ],
+            "id": "H4"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.619044263153223e-06,
+        "area_residual_mm2": 3.865352482534945e-12,
+        "area_gate_mm2": 4.672707921065894e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 20,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.11901656700501917,
+        0.18227964200195856,
+        0.11702917899674503
+      ],
+      "median_seconds": 0.11901656700501917
+    },
+    {
+      "id": "blind_top",
+      "kind": "authored_control",
+      "source": "sources/blind_top.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "blind_top.step",
+        "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+        "source_bytes": 19214,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 8,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 473.71681469282026,
+          "surface_area": 428.56637061436,
+          "surface_centroid": [
+            6.000000000000003,
+            5.000000000000001,
+            2.0146609387436847
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 1,
+        "holes": [
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 2.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.737168146928203e-06,
+        "area_residual_mm2": 7.958078640513122e-13,
+        "area_gate_mm2": 4.2856637061436e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 5,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06199571999604814,
+        0.06202999399829423,
+        0.1251842619967647
+      ],
+      "median_seconds": 0.06202999399829423
+    },
+    {
+      "id": "blind_bottom",
+      "kind": "authored_control",
+      "source": "sources/blind_bottom.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "blind_bottom.step",
+        "source_sha256": "231b99f6011c3809710f915de117ac40dbe09c091aa4217ddb8c33c35ea86d48",
+        "source_bytes": 19215,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 8,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 473.71681469282066,
+          "surface_area": 428.56637061435833,
+          "surface_centroid": [
+            5.999999999999998,
+            5.0,
+            1.985339061256319
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 1,
+        "holes": [
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 6.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 0.0,
+            "depth_mm": 2.0,
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.737168146928207e-06,
+        "area_residual_mm2": 8.526512829121202e-13,
+        "area_gate_mm2": 4.285663706143584e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 5,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06058118399960222,
+        0.06225850999908289,
+        0.06241392599622486
+      ],
+      "median_seconds": 0.06225850999908289
+    },
+    {
+      "id": "mixed",
+      "kind": "authored_control",
+      "source": "sources/mixed.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "mixed.step",
+        "source_sha256": "f336e519828a1960ed66bd07ae827d496f041f657d5a43eec1fdcb258d98b666",
+        "source_bytes": 22820,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 12,
+          "edge_count": 18,
+          "face_count": 9,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 462.5327448460403,
+          "surface_area": 450.9345103079211,
+          "surface_centroid": [
+            6.018392481426661,
+            4.999999999999999,
+            2.0000000000000013
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              2
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 2,
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 1.6,
+            "x_mm": 3.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          },
+          {
+            "kind": "blind",
+            "diameter_mm": 2.0,
+            "x_mm": 9.0,
+            "y_mm": 5.0,
+            "entry_z_mm": 4.0,
+            "depth_mm": 3.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              8
+            ],
+            "id": "H2"
+          }
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.625327448460403e-06,
+        "area_residual_mm2": 2.5579538487363607e-12,
+        "area_gate_mm2": 4.509345103079211e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 10,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.08016526899882592,
+        0.14396326299902285,
+        0.0787336610010243
+      ],
+      "median_seconds": 0.08016526899882592
+    },
+    {
+      "id": "translated",
+      "kind": "authored_control",
+      "source": "sources/translated.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "translated.step",
+        "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+        "source_bytes": 19085,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 7,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 467.43362938564036,
+          "surface_area": 434.84955592154046,
+          "surface_centroid": [
+            36.0,
+            -15.0,
+            9.0
+          ],
+          "bounds_min": [
+            29.9999999,
+            -20.0000001,
+            6.9999999
+          ],
+          "bounds_max": [
+            42.0000001,
+            -9.9999999,
+            11.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "complete",
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "hole_count": 1,
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 36.0,
+            "y_mm": -15.0,
+            "entry_z_mm": 11.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "faces": [
+              7
+            ],
+            "id": "H1"
+          }
+        ],
+        "bounds_min": [
+          30.0,
+          -20.0,
+          7.0
+        ],
+        "bounds_max": [
+          42.0,
+          -10.0,
+          11.0
+        ],
+        "material_residual_mm3": 0.0,
+        "material_gate_mm3": 4.674336293856403e-06,
+        "area_residual_mm2": 1.6484591469634324e-12,
+        "area_gate_mm2": 4.348495559215404e-06
+      },
+      "contract_pass": true,
+      "dimension_values": 5,
+      "max_dimension_error_mm": 0.0,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06195533299614908,
+        0.06309979400248267,
+        0.06331809999392135
+      ],
+      "median_seconds": 0.06309979400248267
+    },
+    {
+      "id": "rotated",
+      "kind": "authored_control",
+      "source": "sources/rotated.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "rotated.step",
+        "source_sha256": "c04017e6965c3f59cf00d75523c5b5cc907e97e6f8090604c285a7f3eda47bf8",
+        "source_bytes": 19889,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 7,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 467.433629385657,
+          "surface_area": 434.8495559215517,
+          "surface_centroid": [
+            4.501459732220455,
+            6.382543402059026,
+            2.0
+          ],
+          "bounds_min": [
+            -2.588190551029916,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            11.591110015468999,
+            12.765086904126848,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "only axis-aligned planes and Z-axis cylinders are qualified",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.10987361200386658,
+        0.047257960999559145,
+        0.04698587099846918
+      ],
+      "median_seconds": 0.047257960999559145
+    },
+    {
+      "id": "boss",
+      "kind": "authored_control",
+      "source": "sources/boss.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "boss.step",
+        "source_sha256": "cb9616b5df57c9621bd886a6a12ee1e272c92a40429b74d477cb7a4fee98e435",
+        "source_bytes": 19214,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 8,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 486.28318530717974,
+          "surface_area": 428.56637061436,
+          "surface_centroid": [
+            6.000000000000003,
+            5.000000000000001,
+            2.1026265712057857
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            6.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "板と穴で再構成した材料領域・面積が入力と一致しません。",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06738368900550995,
+        0.06728685399866663,
+        0.12880280899844365
+      ],
+      "median_seconds": 0.06738368900550995
+    },
+    {
+      "id": "intersecting",
+      "kind": "authored_control",
+      "source": "sources/intersecting.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "intersecting.step",
+        "source_sha256": "5c760fad02dbc9919e31f4547f34f284e075fcc0752e2070f1fa5b69d37eb535",
+        "source_bytes": 26503,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 14,
+          "edge_count": 21,
+          "face_count": 9,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 439.95174749802555,
+          "surface_area": 441.83107141898864,
+          "surface_centroid": [
+            5.970768158816877,
+            5.000000000000001,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.000000100000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              3
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "穴の交差・同軸の段付き穴・円筒面の分割は判定範囲外です。",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.06626866399892606,
+        0.06672294899908593,
+        0.06577197599835927
+      ],
+      "median_seconds": 0.06626866399892606
+    },
+    {
+      "id": "edge_hole",
+      "kind": "authored_control",
+      "source": "sources/edge_hole.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "edge_hole.step",
+        "source_sha256": "5c204c778f13abb7fa148e16826a553b40ca82959d19c911f41881d8d8a9c984",
+        "source_bytes": 25051,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 12,
+          "edge_count": 20,
+          "face_count": 9,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 467.43362938564167,
+          "surface_area": 434.84955592154046,
+          "surface_centroid": [
+            5.78326347969249,
+            5.0,
+            2.0
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              2
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "外周平面の分割は判定範囲外です。",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.1297802520057303,
+        0.06353290900005959,
+        0.061929903997224756
+      ],
+      "median_seconds": 0.06353290900005959
+    },
+    {
+      "id": "split_plane",
+      "kind": "authored_control",
+      "source": "sources/split_plane.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "split_plane.step",
+        "source_sha256": "a9885ea5c182dbb7f129a100c97f6954329b232196e2edda497481e54dab16a6",
+        "source_bytes": 24524,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 12,
+          "edge_count": 20,
+          "face_count": 10,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 480.0,
+          "surface_area": 416.0,
+          "surface_centroid": [
+            6.0,
+            5.0,
+            1.9999999999999998
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              10
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "外周平面の分割は判定範囲外です。",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.058185376998153515,
+        0.11489768599858508,
+        0.05597224899975117
+      ],
+      "median_seconds": 0.058185376998153515
+    },
+    {
+      "id": "counterbore",
+      "kind": "authored_control",
+      "source": "sources/counterbore.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "counterbore.step",
+        "source_sha256": "6a261d35b206be92e71f5781fbba1832993b7353b801f4f4b62a5814de44fa1f",
+        "source_bytes": 22817,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 12,
+          "edge_count": 18,
+          "face_count": 9,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 471.4548679822355,
+          "surface_area": 433.84424627239133,
+          "surface_centroid": [
+            6.0000000000000036,
+            5.000000000000001,
+            2.0023172132805422
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              2
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "穴の交差・同軸の段付き穴・円筒面の分割は判定範囲外です。",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.05836708299466409,
+        0.12613289000000805,
+        0.05826328599505359
+      ],
+      "median_seconds": 0.05836708299466409
+    },
+    {
+      "id": "tilted_hole",
+      "kind": "authored_control",
+      "source": "sources/tilted_hole.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "tilted_hole.step",
+        "source_sha256": "d4bf13777ff73e0b813c9ac1cd12bc015da86263e6805acb55ed787a1bd94f87",
+        "source_bytes": 22233,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 7,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 475.2769166069343,
+          "surface_area": 429.3820696136822,
+          "surface_centroid": [
+            6.0,
+            4.996883412044061,
+            1.9999999998037992
+          ],
+          "bounds_min": [
+            -1.6257525251404325e-07,
+            -1.6257525251404325e-07,
+            -0.36103478131188427
+          ],
+          "bounds_max": [
+            12.000000162575253,
+            10.000000162575253,
+            4.344817625255342
+          ],
+          "maximum_vertex_tolerance": 1.6257525251404325e-07,
+          "maximum_edge_tolerance": 1.6257525251404325e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "status": "unresolved",
+        "reason": "only axis-aligned planes and Z-axis cylinders are qualified",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.05306445799942594,
+        0.052969825999753084,
+        0.05402246300218394
+      ],
+      "median_seconds": 0.05306445799942594
+    },
+    {
+      "id": "cadquery_assembly",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/cadquery_assembly.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "cadquery_assembly.step",
+        "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+        "source_bytes": 18322,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "exactly one explicit SI millimetre length unit is required",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.027771289998781867,
+        0.08739526000135811,
+        0.027009116995031945
+      ],
+      "median_seconds": 0.027771289998781867
+    },
+    {
+      "id": "build123d_bracket",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/build123d_bracket.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "build123d_bracket.step",
+        "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+        "source_bytes": 165860,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "input must be one valid solid with one shell and at most 24 faces",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.5407046340042143,
+        0.43168084300123155,
+        0.5454172960016876
+      ],
+      "median_seconds": 0.5407046340042143
+    },
+    {
+      "id": "build123d_screw",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/build123d_screw.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "build123d_screw.step",
+        "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+        "source_bytes": 503360,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "input must be one valid solid with one shell and at most 24 faces",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        1.231643423998321,
+        1.082997475998127,
+        1.1716746099991724
+      ],
+      "median_seconds": 1.1716746099991724
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_sam_ap203.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "ublox_sam_ap203.step",
+        "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+        "source_bytes": 359113,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "exactly one explicit SI millimetre length unit is required",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.7028446039985283,
+        0.7632473870035028,
+        0.8266061469985289
+      ],
+      "median_seconds": 0.7632473870035028
+    },
+    {
+      "id": "ublox_sam_ap214",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_sam_ap214.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "ublox_sam_ap214.step",
+        "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+        "source_bytes": 416065,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "exactly one explicit SI millimetre length unit is required",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.8278200140048284,
+        0.9299959039999521,
+        0.8923879909998504
+      ],
+      "median_seconds": 0.8923879909998504
+    },
+    {
+      "id": "ublox_emmy",
+      "kind": "external_intake_control",
+      "source": "../public-step-corpus/sources/ublox_emmy.step",
+      "result": {
+        "inventory_version": "1.8.0",
+        "file_name": "ublox_emmy.step",
+        "source_sha256": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a",
+        "source_bytes": 242333,
+        "length_unit": null,
+        "conditions": {
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": null,
+        "status": "rejected",
+        "reason": "exactly one explicit SI millimetre length unit is required",
+        "hole_count": null,
+        "holes": []
+      },
+      "contract_pass": true,
+      "dimension_values": 0,
+      "max_dimension_error_mm": null,
+      "repeat_results_identical": true,
+      "seconds": [
+        0.6772449130003224,
+        0.47952579400589457,
+        0.5592693090002285
+      ],
+      "median_seconds": 0.5592693090002285
+    }
+  ]
+}
