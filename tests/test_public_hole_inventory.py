@@ -17,7 +17,7 @@ CONTROLS=Path(__file__).resolve().parents[1]/'fixtures/hole-inventory/sources'
 @pytest.fixture(scope='module')
 def results():
     manifest=verify_corpus()
-    return {s['sample_id']:analyze_step((CORPUS/s['asset_path']).read_bytes(),s['sample_id']+'.step',inspection=True) for s in manifest['samples']}
+    return {s['sample_id']:analyze_step((CORPUS/s['asset_path']).read_bytes(),s['sample_id']+'.step',inspection=True,include_slots=False) for s in manifest['samples']}
 
 
 def test_all_six_import_with_all_faces_and_unknown_whole_counts(results):
@@ -54,7 +54,8 @@ def test_session_and_csv_keep_partial_rows_separate_from_unknown_total():
     session=HoleInventory()
     session.open_bytes((CORPUS/'sources/build123d_bracket.step').read_bytes(),'bracket.step',session.revision_token)
     rows=list(csv.DictReader(io.StringIO(inventory_csv(session.result).decode('utf-8-sig'))))
-    assert len(rows)==6 and rows[0]['recognized_hole_count']=='5'
+    assert len(rows)==12 and rows[0]['recognized_hole_count']=='11'
+    assert rows[0]['recognized_circular_hole_count']=='5' and rows[0]['recognized_slot_count']=='6'
     assert all(r['hole_count']=='' and r['result_status']=='partial' for r in rows)
     assert all(r['solid_index']=='1' for r in rows[1:])
 

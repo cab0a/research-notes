@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.10.0では、公開ブラケットの直線状貫通長孔6か所から幅・全長・開口中心・長手方向・貫通方向・貫通長を取得しました。幅4.5 mm、全長7.5 mm、貫通長3 mmを別の境界計測経路で照合しています。[長孔の検証と操作方法](notes/bracket-slot-inventory.md)をご覧ください。今回はPython APIと専用CLIの追加で、画面・丸穴CSVへの統合は次段階です。既存の丸穴5か所の認識・寸法編集・新旧比較も維持します。全体の穴数は未確定です。
+v1.11.0では、丸穴と長孔を画面・Python API・CLI・CSVで統合しました。公開ブラケットの丸穴5か所・長孔6か所を同じ一覧に表示し、3D上の穴番号・内壁と表の行を対応させて選択できます。丸穴は径、長孔は幅・全長・長手方向を表示します。全体の穴数は未確定のまま保持します。[操作手順](docs/cad-hole-inventory.md)と[統合の検証記録](notes/unified-hole-inventory.md)をご覧ください。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,7 +45,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.10.0. Scoped references, dimensional
+The current implementation version is v1.11.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -53,14 +53,35 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Bracket Straight Through Slots: v1.10.0
+## Unified Circular Holes and Slots: v1.11.0
+
+The local `/holes` screen, Python `analyze_step(..., inspection=True)`, and
+`research-hole-list --public` now share one typed inventory. The fixed bracket
+has five round-hole rows (H1–H5) and six slot rows (S1–S6), all tied to their
+measured wall faces. Select a number, wall or table row to inspect its dimensions.
+The whole-part count remains unknown; 11 means locally verified rows only.
+
+```bash
+python -m research_notes.cad_web
+python -m research_notes.hole_inventory fixtures/public-step-corpus/sources/build123d_bracket.step --public --output-dir output/bracket-unified
+python -m research_notes.unified_hole_benchmark --output-dir output/unified-check --repeats 3
+```
+
+CSV retains the existing columns and adds feature type, slot width/overall
+length/long axis and circular/slot subtotals. Inapplicable measurements and
+unknown whole counts remain blank. `include_slots=False` or `--circular-only`
+retains the previous circular-only measurement scope. The strict plate importer
+without `--public` is unchanged. See the [guide](docs/cad-hole-inventory.md) and
+[study/evidence](notes/unified-hole-inventory.md).
+
+## Bracket Straight Through Slots: introduced in v1.10.0
 
 The dedicated slot API/CLI qualifies six capsule through slots in the frozen
 public bracket: width 4.5 mm, overall length 7.5 mm and through length 3 mm.
 It reports both opening centres, the long axis and the through direction in
 millimetre-normalized STEP coordinates. Two planar inner rims and four walls
 must agree; unsupported candidates abstain and the whole count stays unknown.
-This release does not yet merge slots into the `/holes` UI or circular-hole CSV.
+The v1.10 study used a separate API/CLI; v1.11 now integrates those measurements into the inventory.
 
 ```bash
 python -m research_notes.slot_inventory fixtures/public-step-corpus/sources/build123d_bracket.step --output output/bracket-slots.json
@@ -74,10 +95,10 @@ The benchmark CSV is a measurement artifact, not an integrated hole inventory.
 
 ## Public STEP Circular Hole Inventory: introduced in v1.9.0
 
-Open `/holes` on the local CAD server for whole-plate inventories or locally
-verified circular through holes in public parts. All six fixed external inputs
-now import; the bracket yields five measured round holes. Total counts remain
-unknown for these six inputs. Slots and other unsupported openings abstain.
+The v1.9 circular-only study imported all six fixed external inputs and
+measured five round holes in the bracket. Whole counts remain unknown.
+Its circular-only path abstains on slots; v1.11 adds slot recognition separately
+from the frozen v1.9 evidence.
 The [public study](notes/public-step-hole-inventory.md) records three repeated
 runs, a same-kernel boundary cross-check, provenance and limits. The historical
 [v1.8 plate study](notes/step-hole-inventory.md) remains frozen.

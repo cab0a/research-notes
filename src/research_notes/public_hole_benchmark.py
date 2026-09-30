@@ -67,7 +67,7 @@ def run(output, repeats=3):
     for sample in manifest['samples']:
         path=CORPUS/sample['asset_path'];runs=[];times=[]
         for _ in range(repeats):
-            start=time.perf_counter();result=analyze_step(path.read_bytes(),path.name,inspection=True)
+            start=time.perf_counter();result=analyze_step(path.read_bytes(),path.name,inspection=True,include_slots=False)
             times.append(time.perf_counter()-start);runs.append({k:v for k,v in result.items() if k!='preview'})
         records.append({'id':sample['sample_id'],'result':runs[0],'repeat_results_identical':all(r==runs[0] for r in runs),
                         'seconds':times,'median_seconds':statistics.median(times)})

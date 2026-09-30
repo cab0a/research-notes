@@ -2045,3 +2045,5 @@ The complete notes contain the narrower limitations for each experiment.
 
 - v1.9.0: [Public STEP circular hole verification](../notes/public-step-hole-inventory.md) — [evidence](../results/public-hole-inventory/results.json)
 - v1.10.0: [Bracket straight through-slot recognition](../notes/bracket-slot-inventory.md) — [evidence](../results/bracket-slot-inventory/results.json)
+
+- v1.11.0: [Unified circular-hole and slot inventory](../notes/unified-hole-inventory.md) — [evidence](../results/unified-hole-inventory/results.json)

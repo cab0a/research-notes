@@ -1,0 +1,13 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,,,,,,,,,,,mm,丸穴5か所・長孔6か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。,11,,,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,H1,through,3.3,3.0,-15.5,14.5,3.0,-1.0,0.0,0.0,mm,,11,1,circular_hole,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,H2,through,3.3,3.0,-15.5,45.5,3.0,-1.0,0.0,0.0,mm,,11,1,circular_hole,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,H3,through,32.0,3.0,0.0,30.0,3.0,-1.0,0.0,0.0,mm,,11,1,circular_hole,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,H4,through,3.3,3.0,15.5,14.5,3.0,-1.0,0.0,0.0,mm,,11,1,circular_hole,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,H5,through,3.3,3.0,15.5,45.5,3.0,-1.0,0.0,0.0,mm,,11,1,circular_hole,,,,,,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S1,straight_through_slot,,10.0,-14.0,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,0.0,1.0,0.0,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S2,straight_through_slot,,10.0,14.0,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,0.0,1.0,0.0,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S3,straight_through_slot,,20.0,-15.5,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,1.0,0.0,0.0,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S4,straight_through_slot,,20.0,15.5,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,1.0,0.0,0.0,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S5,straight_through_slot,,30.0,-14.0,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,0.0,1.0,0.0,5,6,1.11.0
+hole,build123d_bracket.step,bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d,partial,,S6,straight_through_slot,,30.0,14.0,3.0,3.0,0.0,0.0,-1.0,mm,,11,1,straight_slot,4.5,7.5,0.0,1.0,0.0,5,6,1.11.0
