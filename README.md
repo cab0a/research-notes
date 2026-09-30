@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.9.0では、公開STEP6件の読込と円形穴の検証に進み、ブラケットの円形貫通穴5個の径・位置・深さを一覧化しました。長穴などを含む全体の穴数は不明のまま保持します。[公開STEPの検証](notes/public-step-hole-inventory.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。既存の寸法編集と新旧比較も利用できます。英語本文に測定の範囲と制限を示します。
+v1.10.0では、公開ブラケットの直線状貫通長孔6か所から幅・全長・開口中心・長手方向・貫通方向・貫通長を取得しました。幅4.5 mm、全長7.5 mm、貫通長3 mmを別の境界計測経路で照合しています。[長孔の検証と操作方法](notes/bracket-slot-inventory.md)をご覧ください。今回はPython APIと専用CLIの追加で、画面・丸穴CSVへの統合は次段階です。既存の丸穴5か所の認識・寸法編集・新旧比較も維持します。全体の穴数は未確定です。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,7 +45,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.9.0. Scoped references, dimensional
+The current implementation version is v1.10.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -53,7 +53,26 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Public STEP Hole Inventory: v1.9.0
+## Bracket Straight Through Slots: v1.10.0
+
+The dedicated slot API/CLI qualifies six capsule through slots in the frozen
+public bracket: width 4.5 mm, overall length 7.5 mm and through length 3 mm.
+It reports both opening centres, the long axis and the through direction in
+millimetre-normalized STEP coordinates. Two planar inner rims and four walls
+must agree; unsupported candidates abstain and the whole count stays unknown.
+This release does not yet merge slots into the `/holes` UI or circular-hole CSV.
+
+```bash
+python -m research_notes.slot_inventory fixtures/public-step-corpus/sources/build123d_bracket.step --output output/bracket-slots.json
+python -m research_notes.slot_benchmark --output-dir output/bracket-slot-check --repeats 3
+```
+
+See the [study, Python example and limits](notes/bracket-slot-inventory.md),
+[numbered source geometry](results/bracket-slot-inventory/bracket-slots.png),
+and [reproducible evidence](results/bracket-slot-inventory/results.json).
+The benchmark CSV is a measurement artifact, not an integrated hole inventory.
+
+## Public STEP Circular Hole Inventory: introduced in v1.9.0
 
 Open `/holes` on the local CAD server for whole-plate inventories or locally
 verified circular through holes in public parts. All six fixed external inputs

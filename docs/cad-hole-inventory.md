@@ -4,6 +4,8 @@
 
 STEPを1つ読み込み、板全体の穴一覧または局所検証した円形貫通穴の径・開口位置・深さ・軸方向を表示します。v1.9では公開STEP6件を読める検査用経路を穴一覧画面に接続し、ブラケットから5個の円形穴を取得しました。部分確認では全体の穴数は不明とします。英語本文の要約に続いて操作方法と制限を示します。
 
+v1.10で追加した長孔認識は、別の[Python API・専用CLI](../notes/bracket-slot-inventory.md)を使用します。この画面と丸穴CSVへの統合は次段階です。
+
 ---
 
 ## English Summary
@@ -12,6 +14,8 @@ The UI uses inspection intake with supported unit conversion, multiple roots
 and solids. Qualified plates retain complete inventories; other parts can
 return locally verified circular through holes with unknown whole counts.
 The original strict CLI intake remains available without `--public`.
+The v1.10 [slot research API/CLI](../notes/bracket-slot-inventory.md) is separate;
+the circular-hole screen and CSV described here keep their v1.9 scope.
 The [new study](../notes/public-step-hole-inventory.md) records six unchanged
 sources; [v1.8](../notes/step-hole-inventory.md) remains historical evidence.
 

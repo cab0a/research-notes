@@ -2044,3 +2044,4 @@ The complete notes contain the narrower limitations for each experiment.
 - v1.8.0: [Single-STEP hole inventory evaluation](../notes/step-hole-inventory.md) — [guide](cad-hole-inventory.md), [evidence](../results/hole-inventory/verification.json)
 
 - v1.9.0: [Public STEP circular hole verification](../notes/public-step-hole-inventory.md) — [evidence](../results/public-hole-inventory/results.json)
+- v1.10.0: [Bracket straight through-slot recognition](../notes/bracket-slot-inventory.md) — [evidence](../results/bracket-slot-inventory/results.json)

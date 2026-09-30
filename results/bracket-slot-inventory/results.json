@@ -1,0 +1,1391 @@
+{
+  "version": "1.10.0",
+  "passed": true,
+  "selection": "One fixed public bracket used in development; post-hoc qualification, not held-out accuracy.",
+  "expected_bracket_basis": "Manual inspection of frozen STEP opening geometry; no original engineering drawing. Six expected positions and dimensions fixed in the benchmark, not inferred from recognition output.",
+  "source_manifest_sha256": "84cd83cbfd5616b1b14ca027d73dd8e157455ed544b38a53f92e3c7f95c1ca39",
+  "source_asset": {
+    "bytes": 165860,
+    "download_url": "https://raw.githubusercontent.com/gumyr/build123d/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+    "path": "sources/build123d_bracket.step",
+    "repository": "https://github.com/gumyr/build123d",
+    "revision": "17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1",
+    "role": "step",
+    "sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+    "source_url": "https://github.com/gumyr/build123d/blob/17999d509ea0b08a6b45cb9bf71f6a7c9cc5dbc1/docs/topology_selection/examples/nema-17-bracket.step",
+    "upstream_path": "docs/topology_selection/examples/nema-17-bracket.step"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cadquery_ocp": "7.9.3.1.1"
+  },
+  "code_sha256": {
+    "slot_benchmark.py": "d07b5992fea9996d8faf9a8f760e8ea753341ccc96e1941a01afd22b8361ac86",
+    "slot_inventory.py": "608333f25e6fd5d787c4b18a1928bec9a7b809bc176bcd92d9dc65cfd69549a2"
+  },
+  "repeats": 3,
+  "repeat_results_identical": true,
+  "seconds": [
+    2.3804123510053614,
+    0.5559368789981818,
+    0.6253661219961941
+  ],
+  "median_seconds": 0.6253661219961941,
+  "timing_scope": "STEP snapshot/import and slot recognition, first run included; excludes controls, cross-check, plotting and file output.",
+  "bracket_expectations_match": true,
+  "result": {
+    "schema_version": "1.10.0",
+    "status": "partial",
+    "recognized_slot_count": 6,
+    "whole_opening_count": null,
+    "slots": [
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          10.0,
+          -14.0,
+          3.0
+        ],
+        "exit_center_mm": [
+          10.0,
+          -14.0,
+          0.0
+        ],
+        "longitudinal_direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          19,
+          20,
+          21,
+          22
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            72,
+            73,
+            74,
+            75
+          ],
+          [
+            43,
+            44,
+            45,
+            46
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S1"
+      },
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          10.0,
+          14.0,
+          3.0
+        ],
+        "exit_center_mm": [
+          10.0,
+          14.0,
+          0.0
+        ],
+        "longitudinal_direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          31,
+          32,
+          33,
+          34
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            84,
+            85,
+            86,
+            87
+          ],
+          [
+            55,
+            56,
+            57,
+            58
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S2"
+      },
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          20.0,
+          -15.5,
+          3.0
+        ],
+        "exit_center_mm": [
+          20.0,
+          -15.5,
+          0.0
+        ],
+        "longitudinal_direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          23,
+          24,
+          25,
+          26
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            76,
+            77,
+            78,
+            79
+          ],
+          [
+            47,
+            48,
+            49,
+            50
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S3"
+      },
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          20.0,
+          15.5,
+          3.0
+        ],
+        "exit_center_mm": [
+          20.0,
+          15.5,
+          0.0
+        ],
+        "longitudinal_direction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          35,
+          36,
+          37,
+          38
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            88,
+            89,
+            90,
+            91
+          ],
+          [
+            59,
+            60,
+            61,
+            62
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S4"
+      },
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          30.0,
+          -14.0,
+          3.0
+        ],
+        "exit_center_mm": [
+          30.0,
+          -14.0,
+          0.0
+        ],
+        "longitudinal_direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          27,
+          28,
+          29,
+          30
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            80,
+            81,
+            82,
+            83
+          ],
+          [
+            51,
+            52,
+            53,
+            54
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S5"
+      },
+      {
+        "kind": "straight_through_slot",
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "depth_mm": 3.0,
+        "entry_center_mm": [
+          30.0,
+          14.0,
+          3.0
+        ],
+        "exit_center_mm": [
+          30.0,
+          14.0,
+          0.0
+        ],
+        "longitudinal_direction": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "through_direction": [
+          0.0,
+          0.0,
+          -1.0
+        ],
+        "solid_index": 1,
+        "wall_faces": [
+          39,
+          40,
+          41,
+          42
+        ],
+        "opening_faces": [
+          15,
+          13
+        ],
+        "opening_edges": [
+          [
+            92,
+            93,
+            94,
+            95
+          ],
+          [
+            63,
+            64,
+            65,
+            66
+          ]
+        ],
+        "wall_material_samples": 72,
+        "passage_void_samples": 15,
+        "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+        "id": "S6"
+      }
+    ],
+    "withheld_candidates": [],
+    "scanned_faces": 42,
+    "scanned_solids": 1,
+    "length_tolerance_mm": 1e-05,
+    "angular_tolerance": 1e-07,
+    "reason": "Locally verified slots only; no whole-part opening count or absence certificate.",
+    "source_name": "build123d_bracket.step",
+    "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d"
+  },
+  "boundary_crosscheck": {
+    "method": "Integrated arc lengths / pi, straight-edge lengths, wire centroids and centroid separation",
+    "independent_ground_truth": false,
+    "same_kernel": true,
+    "observed_four_edge_inner_rims": 12,
+    "matched_rims": 12,
+    "max_length_error_mm": 5.043883840194739e-15,
+    "max_direction_error": 0.0,
+    "length_threshold_mm": 1e-06,
+    "direction_threshold": 1e-07,
+    "passed": true,
+    "matches": [
+      {
+        "slot": "S1",
+        "opening_edges": [
+          72,
+          73,
+          74,
+          75
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          10.0,
+          -14.0,
+          2.9999999999999996
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 4.440892098500626e-16
+      },
+      {
+        "slot": "S1",
+        "opening_edges": [
+          43,
+          44,
+          45,
+          46
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          10.0,
+          -14.0,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 0.0
+      },
+      {
+        "slot": "S2",
+        "opening_edges": [
+          84,
+          85,
+          86,
+          87
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          10.0,
+          14.0,
+          2.9999999999999996
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 4.440892098500626e-16
+      },
+      {
+        "slot": "S2",
+        "opening_edges": [
+          55,
+          56,
+          57,
+          58
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          10.0,
+          14.0,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 0.0
+      },
+      {
+        "slot": "S3",
+        "opening_edges": [
+          76,
+          77,
+          78,
+          79
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          19.999999999999996,
+          -15.499999999999996,
+          2.9999999999999996
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "max_error_mm": 5.043883840194739e-15
+      },
+      {
+        "slot": "S3",
+        "opening_edges": [
+          47,
+          48,
+          49,
+          50
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          19.999999999999996,
+          -15.499999999999996,
+          0.0
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "max_error_mm": 5.0242958677880805e-15
+      },
+      {
+        "slot": "S4",
+        "opening_edges": [
+          88,
+          89,
+          90,
+          91
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          19.999999999999996,
+          15.499999999999996,
+          2.9999999999999996
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "max_error_mm": 5.043883840194739e-15
+      },
+      {
+        "slot": "S4",
+        "opening_edges": [
+          59,
+          60,
+          61,
+          62
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          19.999999999999996,
+          15.499999999999996,
+          0.0
+        ],
+        "direction": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "max_error_mm": 5.0242958677880805e-15
+      },
+      {
+        "slot": "S5",
+        "opening_edges": [
+          80,
+          81,
+          82,
+          83
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          30.0,
+          -14.0,
+          2.9999999999999996
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 4.440892098500626e-16
+      },
+      {
+        "slot": "S5",
+        "opening_edges": [
+          51,
+          52,
+          53,
+          54
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          30.0,
+          -14.0,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 0.0
+      },
+      {
+        "slot": "S6",
+        "opening_edges": [
+          92,
+          93,
+          94,
+          95
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          30.0,
+          14.0,
+          2.9999999999999996
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 4.440892098500626e-16
+      },
+      {
+        "slot": "S6",
+        "opening_edges": [
+          63,
+          64,
+          65,
+          66
+        ],
+        "width_mm": 4.5,
+        "length_mm": 7.5,
+        "center_mm": [
+          30.0,
+          14.0,
+          0.0
+        ],
+        "direction": [
+          0.0,
+          -1.0,
+          0.0
+        ],
+        "max_error_mm": 0.0
+      }
+    ]
+  },
+  "controls": [
+    {
+      "name": "through",
+      "stage": "constructed",
+      "expected_count": 1,
+      "recognized_slot_count": 1,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "partial",
+        "recognized_slot_count": 1,
+        "whole_opening_count": null,
+        "slots": [
+          {
+            "kind": "straight_through_slot",
+            "width_mm": 2.0,
+            "length_mm": 6.0,
+            "depth_mm": 4.0,
+            "entry_center_mm": [
+              7.0,
+              5.0,
+              4.0
+            ],
+            "exit_center_mm": [
+              7.0,
+              5.0,
+              0.0
+            ],
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "solid_index": 1,
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3,
+              5
+            ],
+            "opening_edges": [
+              [
+                10,
+                11,
+                12,
+                13
+              ],
+              [
+                17,
+                18,
+                19,
+                20
+              ]
+            ],
+            "wall_material_samples": 72,
+            "passage_void_samples": 15,
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "id": "S1"
+          }
+        ],
+        "withheld_candidates": [],
+        "scanned_faces": 10,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "through",
+      "stage": "step_imported",
+      "expected_count": 1,
+      "recognized_slot_count": 1,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "partial",
+        "recognized_slot_count": 1,
+        "whole_opening_count": null,
+        "slots": [
+          {
+            "kind": "straight_through_slot",
+            "width_mm": 2.0,
+            "length_mm": 6.0,
+            "depth_mm": 4.0,
+            "entry_center_mm": [
+              7.0,
+              5.0,
+              4.0
+            ],
+            "exit_center_mm": [
+              7.0,
+              5.0,
+              0.0
+            ],
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "solid_index": 1,
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3,
+              5
+            ],
+            "opening_edges": [
+              [
+                10,
+                11,
+                12,
+                13
+              ],
+              [
+                17,
+                18,
+                19,
+                20
+              ]
+            ],
+            "wall_material_samples": 72,
+            "passage_void_samples": 15,
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "id": "S1"
+          }
+        ],
+        "withheld_candidates": [],
+        "scanned_faces": 10,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "blind",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 11,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "blind",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 11,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "open_notch",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [],
+        "scanned_faces": 10,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "open_notch",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [],
+        "scanned_faces": 10,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "stepped_capsule",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 15,
+            "opening_edges": [
+              30,
+              33,
+              35,
+              36
+            ],
+            "reason": "Curved outer opening boundary: stepped-slot ambiguity is withheld."
+          },
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          },
+          {
+            "wall_faces": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "opening_faces": [
+              5
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 15,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "stepped_capsule",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 15,
+            "opening_edges": [
+              29,
+              33,
+              34,
+              36
+            ],
+            "reason": "Curved outer opening boundary: stepped-slot ambiguity is withheld."
+          },
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          },
+          {
+            "wall_faces": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "opening_faces": [
+              5
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 15,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "stepped_rectangle",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 3,
+            "opening_edges": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 15,
+            "opening_edges": [
+              30,
+              33,
+              35,
+              36
+            ],
+            "reason": "Opening is surrounded by outward-rising walls: recessed shoulder is withheld."
+          },
+          {
+            "wall_faces": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "opening_faces": [
+              5
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 15,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "stepped_rectangle",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 3,
+            "opening_edges": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 15,
+            "opening_edges": [
+              29,
+              33,
+              34,
+              36
+            ],
+            "reason": "Opening is surrounded by outward-rising walls: recessed shoulder is withheld."
+          },
+          {
+            "wall_faces": [
+              11,
+              12,
+              13,
+              14
+            ],
+            "opening_faces": [
+              5
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 15,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "round_hole",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [],
+        "scanned_faces": 7,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "round_hole",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [],
+        "scanned_faces": 7,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "boss",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 11,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "boss",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "wall_faces": [
+              7,
+              8,
+              9,
+              10
+            ],
+            "opening_faces": [
+              3
+            ],
+            "reason": "Two matching inner openings were not found; blind/stepped/trimmed slots abstain."
+          }
+        ],
+        "scanned_faces": 11,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "interrupted",
+      "stage": "constructed",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 2,
+            "opening_edges": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 7,
+            "opening_edges": [
+              25,
+              26,
+              27,
+              28
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 9,
+            "opening_edges": [
+              32,
+              33,
+              34,
+              35
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 11,
+            "opening_edges": [
+              37,
+              38,
+              39,
+              40
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "wall_faces": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "opening_faces": [
+              3,
+              6
+            ],
+            "reason": "A wall has splits, holes or extra trimming."
+          }
+        ],
+        "scanned_faces": 16,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    },
+    {
+      "name": "interrupted",
+      "stage": "step_imported",
+      "expected_count": 0,
+      "recognized_slot_count": 0,
+      "passed": true,
+      "result": {
+        "schema_version": "1.10.0",
+        "status": "unresolved",
+        "recognized_slot_count": 0,
+        "whole_opening_count": null,
+        "slots": [],
+        "withheld_candidates": [
+          {
+            "opening_face": 2,
+            "opening_edges": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 7,
+            "opening_edges": [
+              25,
+              26,
+              27,
+              28
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 9,
+            "opening_edges": [
+              32,
+              33,
+              34,
+              35
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "opening_face": 11,
+            "opening_edges": [
+              37,
+              38,
+              39,
+              40
+            ],
+            "reason": "Opening needs two semicircles and two straight sides."
+          },
+          {
+            "wall_faces": [
+              8,
+              9,
+              10,
+              11
+            ],
+            "opening_faces": [
+              3,
+              6
+            ],
+            "reason": "A wall has splits, holes or extra trimming."
+          }
+        ],
+        "scanned_faces": 16,
+        "scanned_solids": 1,
+        "length_tolerance_mm": 1e-05,
+        "angular_tolerance": 1e-07,
+        "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+      }
+    }
+  ]
+}

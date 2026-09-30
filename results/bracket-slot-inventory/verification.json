@@ -1,0 +1,49 @@
+{
+  "version": "1.10.0",
+  "verified_at_utc": "2026-09-30T12:12:44.186062+00:00",
+  "pytest": {
+    "command": "python -m pytest tests/test_slot_inventory.py tests/test_public_hole_inventory.py tests/test_hole_inventory.py tests/test_public_step_corpus.py tests/test_feature_recognition.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py -q",
+    "passed": 187
+  },
+  "bracket": {
+    "recognized_slots": 6,
+    "width_mm": 4.5,
+    "length_mm": 7.5,
+    "depth_mm": 3.0,
+    "repeats": 3,
+    "repeat_results_identical": true,
+    "whole_opening_count": null
+  },
+  "boundary_crosscheck": {
+    "method": "Integrated arc lengths / pi, straight-edge lengths, wire centroids and centroid separation",
+    "independent_ground_truth": false,
+    "same_kernel": true,
+    "observed_four_edge_inner_rims": 12,
+    "matched_rims": 12,
+    "max_length_error_mm": 5.043883840194739e-15,
+    "max_direction_error": 0.0,
+    "length_threshold_mm": 1e-06,
+    "direction_threshold": 1e-07,
+    "passed": true
+  },
+  "declared_control_stage_cases": 16,
+  "control_stage_cases_passed": 16,
+  "source_and_runtime_code_hashes_match": true,
+  "cli": {
+    "installed_entry_point": "research-slot-list",
+    "exit_code": 0,
+    "output_matches_evidence": true,
+    "complete_inventory_claim": false
+  },
+  "wheel": {
+    "file": "research_notes-1.10.0-py3-none-any.whl",
+    "sha256": "c0bf72787d094d86428c955b0c8aa0a18d1d2138fb130affd014ae4896610c23",
+    "new_modules_match_source": true,
+    "entry_point_present": true
+  },
+  "plot": {
+    "file": "bracket-slots.png",
+    "visually_reviewed": true
+  },
+  "scope": "Linux/WSL local validation; new slot recognition is a separate API/CLI. Browser/round-hole CSV integration remains v1.11. No website changes. No whole-part opening count."
+}
