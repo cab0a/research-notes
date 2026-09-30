@@ -1,0 +1,43 @@
+{
+  "version": "1.9.0",
+  "verified_at_utc": "2026-09-30T07:40:34.702990+00:00",
+  "pytest": {
+    "command": "python -m pytest tests/test_public_hole_inventory.py tests/test_hole_inventory.py tests/test_public_step_corpus.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py -q",
+    "passed": 146
+  },
+  "repeats": {
+    "inputs": 6,
+    "repeats": 3,
+    "imported": 6,
+    "partially_recognized": 1,
+    "verified_circular_holes": 5,
+    "whole_counts_unknown": 6,
+    "repeat_results_identical": true
+  },
+  "boundary_crosscheck_max_error_mm": 7.558001739832858e-14,
+  "source_hashes_match": true,
+  "archive_verified_members": 12,
+  "wheel_editor_assets": 9,
+  "cli": {
+    "partial_exit_code": 2,
+    "csv_matches_evidence": true,
+    "output_files": [
+      "holes.csv",
+      "inventory.json",
+      "holes.svg"
+    ]
+  },
+  "http_csv": {
+    "status": 200,
+    "matches_cli": true,
+    "summary_and_hole_rows": 6
+  },
+  "browser": {
+    "upload_bracket": true,
+    "partial_count_5_total_unknown": true,
+    "select_H3_dims_other_faces": true,
+    "drag_rotation": true,
+    "screenshot": "screenshots/local-bracket.png",
+    "csv_filesystem_save": "unverified"
+  }
+}

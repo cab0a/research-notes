@@ -1,0 +1,7 @@
+id,status,solids,faces,recognized_circular_holes,whole_hole_count,preview_available,median_seconds
+cadquery_assembly,unresolved,2,9,0,,True,0.10391232700203545
+build123d_bracket,partial,1,42,5,,True,0.6662777469973662
+build123d_screw,unresolved,1,28,0,,True,1.3034045140011585
+ublox_sam_ap203,unresolved,3,98,0,,True,1.1434489840030437
+ublox_sam_ap214,unresolved,3,98,0,,True,1.2574840650049737
+ublox_emmy,unresolved,54,399,0,,False,0.8614009939992684

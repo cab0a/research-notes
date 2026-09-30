@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index
+summary,ublox_emmy.step,0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a,unresolved,,,,,,,,,,,,mm,条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。,0,

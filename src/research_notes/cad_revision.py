@@ -28,7 +28,7 @@ class RevisionComparison:
     def state(self):
         old, new = self.slots["old"], self.slots["new"]
         delta = {key: new["metrics"][key] - old["metrics"][key] for key in METRIC_KEYS} if old and new else None
-        return {"comparison_version": "1.8.0", "revision_token": self.revision_token,
+        return {"comparison_version": "1.9.0", "revision_token": self.revision_token,
                 **self.slots, "metrics_delta": delta,
                 "coordinate_policy": "source_coordinates_no_alignment",
                 "change_detection": self.analysis["status"], "analysis": self.analysis,

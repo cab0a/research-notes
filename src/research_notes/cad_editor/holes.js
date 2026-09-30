@@ -2,7 +2,7 @@
 const el=id=>document.getElementById(id),token=document.querySelector('meta[name="cad-token"]').content;
 let state=null,busy=false,yaw=.65,pitch=-.55,drag=null,frame=null,displayedSource=null;
 const types={through:'貫通穴',blind:'平底の止まり穴'};
-const statuses={complete:'対応範囲内で一覧取得',unresolved:'形状の判定保留',rejected:'読込条件で拒否'};
+const statuses={complete:'対応範囲内で一覧取得',partial:'円形穴を部分確認・全体は保留',unresolved:'形状の判定保留',rejected:'読込条件で拒否'};
 function message(text,error=false){el('message').textContent=text;el('message').className=error?'error':'';}
 function buttons(){['demo','refresh','file'].forEach(id=>el(id).disabled=busy||!state);el('upload').disabled=busy||!state||!el('file').files.length;el('csv').disabled=busy||!state?.result;}
 async function request(operation,payload={},file=null){
@@ -15,14 +15,14 @@ async function refresh(){const response=await fetch('/api/holes/state',{headers:
 function render(){
   const r=state.result,previous=r?.source_sha256===displayedSource?el('hole').value:'all';displayedSource=r?.source_sha256||null;el('hole').replaceChildren(new Option('全体','all'));
   el('name').textContent=r?.file_name||'未読込';el('status').textContent=r?statuses[r.status]:'未読込';
-  el('summary').textContent=!r?'STEPを開いてください。':r.hole_count===null?'穴数は不明です。理由を確認してください。':`穴 ${r.hole_count} 個（貫通穴 ${r.holes.filter(h=>h.kind==='through').length}、平底の止まり穴 ${r.holes.filter(h=>h.kind==='blind').length}）`;
-  el('reason').textContent=r?.reason||'';el('rows').replaceChildren();
+  el('summary').textContent=!r?'STEPを開いてください。':r.hole_count===null?`確認できた円形貫通穴 ${r.recognized_hole_count||0} 個。全体の穴数は不明です。`:`穴 ${r.hole_count} 個（貫通穴 ${r.holes.filter(h=>h.kind==='through').length}、平底の止まり穴 ${r.holes.filter(h=>h.kind==='blind').length}）`;
+  el('reason').textContent=r?.reason||'';el('preview-reason').textContent=r?.preview_reason||'';el('rows').replaceChildren();
   (r?.holes||[]).forEach(h=>{
     el('hole').add(new Option(h.id+' · '+types[h.kind],h.id));const tr=document.createElement('tr');tr.dataset.hole=h.id;
     const first=document.createElement('td'),button=document.createElement('button');button.textContent=h.id;button.className='quiet';button.onclick=()=>{el('hole').value=h.id;select();};first.append(button);tr.append(first);
-    [types[h.kind],...[h.diameter_mm,h.x_mm,h.y_mm,h.entry_z_mm,h.depth_mm].map(v=>v.toFixed(6)),h.axis.join(', ')].forEach(text=>{const td=document.createElement('td');td.textContent=text;tr.append(td);});el('rows').append(tr);
+    [h.solid_index||1,types[h.kind],...[h.diameter_mm,h.x_mm,h.y_mm,h.entry_z_mm,h.depth_mm].map(v=>v.toFixed(6)),h.axis.join(', ')].forEach(text=>{const td=document.createElement('td');td.textContent=text;tr.append(td);});el('rows').append(tr);
   });
-  if(!r?.holes.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=8;td.textContent=!r?'STEP未読込':r.hole_count===0?'対応範囲内で穴0個を確認しました。':'穴一覧を確定できません。穴数は不明です。';tr.append(td);el('rows').append(tr);}
+  if(!r?.holes.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=9;td.textContent=!r?'STEP未読込':r.hole_count===0?'対応範囲内で穴0個を確認しました。':'穴一覧を確定できません。穴数は不明です。';tr.append(td);el('rows').append(tr);}
   if(Array.from(el('hole').options).some(o=>o.value===previous))el('hole').value=previous;
   el('conditions').replaceChildren();if(r)Object.entries(r.conditions).forEach(([,value])=>{const p=document.createElement('p');p.textContent=typeof value==='number'?`判定条件値: ${value}`:value;el('conditions').append(p);});
   el('hash').textContent=r?'入力SHA-256: '+r.source_sha256:'';select();buttons();
@@ -31,7 +31,7 @@ function select(){document.querySelectorAll('#rows tr').forEach(row=>row.classLi
 function draw(){
   if(frame!==null){cancelAnimationFrame(frame);frame=null;}
   const svg=el('viewer'),r=state?.result,data=r?.preview;svg.replaceChildren();if(!data)return;
-  const points=data.polygons.flat(),low=[0,1,2].map(i=>Math.min(...points.map(p=>p[i]))),high=[0,1,2].map(i=>Math.max(...points.map(p=>p[i]))),center=low.map((v,i)=>(v+high[i])/2),scale=285*Number(el('zoom').value)/Math.max(...high.map((v,i)=>v-low[i]),1e-9);
+  const bounds=data.polygons.reduce((b,poly)=>{poly.forEach(p=>p.forEach((v,i)=>{b[0][i]=Math.min(b[0][i],v);b[1][i]=Math.max(b[1][i],v);}));return b;},[[Infinity,Infinity,Infinity],[-Infinity,-Infinity,-Infinity]]),[low,high]=bounds,center=low.map((v,i)=>(v+high[i])/2),scale=285*Number(el('zoom').value)/Math.max(...high.map((v,i)=>v-low[i]),1e-9);
   const ns='http://www.w3.org/2000/svg',create=(tag,attrs)=>{const node=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>node.setAttribute(k,v));return node;};
   const project=p=>{const [x,y,z]=p.map((v,i)=>v-center[i]),a=x*Math.cos(yaw)-y*Math.sin(yaw),b=x*Math.sin(yaw)+y*Math.cos(yaw);return [380+a*scale,220-(b*Math.cos(pitch)-z*Math.sin(pitch))*scale,b*Math.sin(pitch)+z*Math.cos(pitch)];};
   const selected=r.holes.find(h=>h.id===el('hole').value),holeFaces=new Set(r.holes.flatMap(h=>h.faces));
@@ -48,6 +48,6 @@ el('viewer').onpointermove=e=>{if(!drag||drag.id!==e.pointerId)return;if(!(e.but
 el('viewer').onpointerup=endDrag;el('viewer').onpointercancel=endDrag;el('viewer').onlostpointercapture=endDrag;window.addEventListener('blur',endDrag);
 el('reset').onclick=()=>{endDrag();yaw=.65;pitch=-.55;el('zoom').value='1';draw();};el('display').onchange=draw;el('zoom').onchange=draw;el('hole').onchange=select;el('file').onchange=buttons;
 el('demo').onclick=()=>run(async()=>{await request('demo');message('3穴のサンプルを読み込みました。');});
-el('upload').onclick=()=>run(async()=>{const file=el('file').files[0];if(!file)return;if(!file.size||file.size>2000000)throw new Error('空でない2 MB以下のSTEPを選択してください。');await request('open',{},file);el('file').value='';message(state.result.status==='complete'?'穴一覧を取得しました。':'一覧を確定できません。判定理由を確認してください。',state.result.status!=='complete');});
-el('csv').onclick=()=>run(async()=>{const blob=await request('csv'),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hole-inventory.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);message('判定状態と穴一覧のCSVを保存しました。');});
+el('upload').onclick=()=>run(async()=>{const file=el('file').files[0];if(!file)return;if(!file.size||file.size>2000000)throw new Error('空でない2 MB以下のSTEPを選択してください。');await request('open',{},file);el('file').value='';message(state.result.status==='complete'?'穴一覧を取得しました。':state.result.status==='partial'?'円形穴を部分確認しました。全体の穴数は保留です。':'一覧を確定できません。判定理由を確認してください。',state.result.status==='rejected');});
+el('csv').onclick=()=>run(async()=>{const blob=await request('csv'),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hole-inventory.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);message('判定状態と穴一覧のCSVダウンロードを開始しました。');});
 el('refresh').onclick=()=>run(refresh);run(refresh);

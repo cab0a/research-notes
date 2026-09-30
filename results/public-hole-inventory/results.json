@@ -1,0 +1,2183 @@
+{
+  "version": "1.9.0",
+  "selection": "All six frozen public STEP files (five families) used during development; post-hoc verification, not held-out accuracy.",
+  "summary": {
+    "inputs": 6,
+    "repeats": 3,
+    "imported": 6,
+    "partially_recognized": 1,
+    "verified_circular_holes": 5,
+    "whole_counts_unknown": 6,
+    "repeat_results_identical": true
+  },
+  "timing_scope": "Includes local source read, STEP intake, qualification and optional tessellation; excludes CSV/SVG and cross-check; first run included.",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "cadquery_ocp": "7.9.3.1.1"
+  },
+  "runtime_source_sha256": {
+    "public_hole_benchmark.py": "fce07df9271f3aca5b60bc922d49130830ecb0d37844617c4ee9eee6daaf7415",
+    "public_hole_inventory.py": "b38e79fcc4c33d61744530bb9f3e83b7e057c318811f94dcc1b9e4ddd1ea43b8",
+    "hole_inventory.py": "bd53e78117e5ea2059126000ad3e7a9e3374b0874492727158dc6324e94a56c7",
+    "public_step.py": "76f7238e98a63e1b1deb9d36e19d82ede604a7eada21de63b24997518e8e7c03"
+  },
+  "manifest_sha256": "84cd83cbfd5616b1b14ca027d73dd8e157455ed544b38a53f92e3c7f95c1ca39",
+  "boundary_crosscheck": {
+    "measurement": "Planar inner-wire length / pi and linear centroid, same OCCT kernel",
+    "independent_ground_truth": false,
+    "circular_rims": 10,
+    "matched_rims": 10,
+    "max_error_mm": 7.558001739832858e-14,
+    "passed": true,
+    "matches": [
+      {
+        "hole": "H1",
+        "opening_center_mm": [
+          3.0,
+          -15.5,
+          14.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          2.9999999999999996,
+          -15.49999999999999,
+          14.499999999999998
+        ],
+        "max_error_mm": 1.0814278949565478e-14
+      },
+      {
+        "hole": "H1",
+        "opening_center_mm": [
+          0.0,
+          -15.5,
+          14.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          0.0,
+          -15.49999999999999,
+          14.499999999999998
+        ],
+        "max_error_mm": 1.0805156823142815e-14
+      },
+      {
+        "hole": "H2",
+        "opening_center_mm": [
+          3.0,
+          -15.5,
+          45.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          2.9999999999999996,
+          -15.49999999999999,
+          45.49999999999999
+        ],
+        "max_error_mm": 1.2817187035862264e-14
+      },
+      {
+        "hole": "H2",
+        "opening_center_mm": [
+          0.0,
+          -15.5,
+          45.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          0.0,
+          -15.49999999999999,
+          45.49999999999999
+        ],
+        "max_error_mm": 1.2809491335957507e-14
+      },
+      {
+        "hole": "H3",
+        "opening_center_mm": [
+          3.0,
+          0.0,
+          30.0
+        ],
+        "diameter_mm": 32.0,
+        "center_mm": [
+          3.0000000000000004,
+          7.549516567451064e-14,
+          29.999999999999996
+        ],
+        "max_error_mm": 7.558001739832858e-14
+      },
+      {
+        "hole": "H3",
+        "opening_center_mm": [
+          0.0,
+          0.0,
+          30.0
+        ],
+        "diameter_mm": 32.0,
+        "center_mm": [
+          0.0,
+          7.549516567451064e-14,
+          30.000000000000004
+        ],
+        "max_error_mm": 7.557871270870751e-14
+      },
+      {
+        "hole": "H4",
+        "opening_center_mm": [
+          3.0,
+          15.5,
+          14.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          2.9999999999999996,
+          15.500000000000009,
+          14.499999999999998
+        ],
+        "max_error_mm": 9.068558285046774e-15
+      },
+      {
+        "hole": "H4",
+        "opening_center_mm": [
+          0.0,
+          15.5,
+          14.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          0.0,
+          15.500000000000009,
+          14.499999999999998
+        ],
+        "max_error_mm": 9.057678187205881e-15
+      },
+      {
+        "hole": "H5",
+        "opening_center_mm": [
+          3.0,
+          15.5,
+          45.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          2.9999999999999996,
+          15.500000000000009,
+          45.49999999999999
+        ],
+        "max_error_mm": 1.1382899616642114e-14
+      },
+      {
+        "hole": "H5",
+        "opening_center_mm": [
+          0.0,
+          15.5,
+          45.5
+        ],
+        "diameter_mm": 3.3,
+        "center_mm": [
+          0.0,
+          15.500000000000009,
+          45.49999999999999
+        ],
+        "max_error_mm": 1.1374233532693354e-14
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "cadquery_assembly",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "cadquery_assembly.step",
+        "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+        "source_bytes": 18322,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 10,
+          "edge_count": 15,
+          "face_count": 9,
+          "shell_count": 2,
+          "solid_count": 2,
+          "absolute_volume": 1785.3981633974481,
+          "surface_area": 1071.238898038469,
+          "surface_centroid": [
+            1.5985126973266384,
+            5.0,
+            5.0
+          ],
+          "bounds_min": [
+            -10.0000001,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            15.0000001,
+            10.0000001,
+            10.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-05,
+          "maximum_edge_tolerance": 1e-05,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              8
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 2,
+        "unit_contexts": [
+          {
+            "context_id": 8,
+            "length_unit_id": 33,
+            "millimetres_per_source_unit": 1000.0,
+            "unit_chain": [
+              33,
+              115
+            ]
+          }
+        ],
+        "holes": [],
+        "recognized_hole_count": 0,
+        "hole_count": null,
+        "status": "unresolved",
+        "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [],
+        "external_cylinder_faces": [
+          3
+        ],
+        "noncircular_planar_inner_wires": [],
+        "scanned_faces": 9,
+        "scanned_solids": 2,
+        "whole_part_reason": "複数ソリッドまたは非ソリッドを全体の板モデルとして確定しません。"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        0.8557504070049617,
+        0.04277177999756532,
+        0.10391232700203545
+      ],
+      "median_seconds": 0.10391232700203545
+    },
+    {
+      "id": "build123d_bracket",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "build123d_bracket.step",
+        "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+        "source_bytes": 165860,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 80,
+          "edge_count": 120,
+          "face_count": 42,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 7061.1553017856795,
+          "surface_area": 6221.9841290626955,
+          "surface_centroid": [
+            10.018072747189672,
+            -5.358204789713305e-14,
+            13.928466523749618
+          ],
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              24
+            ],
+            [
+              "cylinder",
+              18
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 1,
+        "unit_contexts": [
+          {
+            "context_id": 3331,
+            "length_unit_id": 3332,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3332
+            ]
+          }
+        ],
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 3.3,
+            "x_mm": 3.0,
+            "y_mm": -15.5,
+            "entry_z_mm": 14.5,
+            "depth_mm": 3.0,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "faces": [
+              10
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              1,
+              16
+            ],
+            "opening_edges": [
+              9,
+              34
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H1"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 3.3,
+            "x_mm": 3.0,
+            "y_mm": -15.5,
+            "entry_z_mm": 45.5,
+            "depth_mm": 3.0,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "faces": [
+              12
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              1,
+              16
+            ],
+            "opening_edges": [
+              11,
+              38
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H2"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 32.0,
+            "x_mm": 3.0,
+            "y_mm": 0.0,
+            "entry_z_mm": 30.0,
+            "depth_mm": 3.0,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "faces": [
+              11
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              1,
+              16
+            ],
+            "opening_edges": [
+              10,
+              36
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H3"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 3.3,
+            "x_mm": 3.0,
+            "y_mm": 15.5,
+            "entry_z_mm": 14.5,
+            "depth_mm": 3.0,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "faces": [
+              8
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              1,
+              16
+            ],
+            "opening_edges": [
+              7,
+              30
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H4"
+          },
+          {
+            "kind": "through",
+            "diameter_mm": 3.3,
+            "x_mm": 3.0,
+            "y_mm": 15.5,
+            "entry_z_mm": 45.5,
+            "depth_mm": 3.0,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "faces": [
+              9
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              1,
+              16
+            ],
+            "opening_edges": [
+              8,
+              32
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H5"
+          }
+        ],
+        "recognized_hole_count": 5,
+        "hole_count": null,
+        "status": "partial",
+        "reason": "円形貫通穴5個を局所検証しました。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [
+          {
+            "face_index": 20,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 22,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 24,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 26,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 28,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 30,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 32,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 34,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 36,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 38,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 40,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 42,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          }
+        ],
+        "external_cylinder_faces": [
+          3
+        ],
+        "noncircular_planar_inner_wires": [
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 13,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 15,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          }
+        ],
+        "scanned_faces": 42,
+        "scanned_solids": 1,
+        "whole_part_reason": "only axis-aligned planes and Z-axis cylinders are qualified"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        0.5972387820002041,
+        0.6662777469973662,
+        0.6968877719991724
+      ],
+      "median_seconds": 0.6662777469973662
+    },
+    {
+      "id": "build123d_screw",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "build123d_screw.step",
+        "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+        "source_bytes": 503360,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 46,
+          "edge_count": 72,
+          "face_count": 28,
+          "shell_count": 1,
+          "solid_count": 1,
+          "absolute_volume": 332.27626441996176,
+          "surface_area": 465.6340004256301,
+          "surface_centroid": [
+            0.0036706721038034106,
+            0.011192216947356117,
+            -4.760759699569666
+          ],
+          "bounds_min": [
+            -5.1732391067990005,
+            -5.1817342798411925,
+            -12.0000001
+          ],
+          "bounds_max": [
+            5.173239106782001,
+            5.1817342798411925,
+            1e-07
+          ],
+          "maximum_vertex_tolerance": 2.2030701788977597e-07,
+          "maximum_edge_tolerance": 2.2030701788977597e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              8
+            ],
+            [
+              "cylinder",
+              10
+            ],
+            [
+              "cone",
+              2
+            ],
+            [
+              "bspline",
+              6
+            ],
+            [
+              "other",
+              2
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 1,
+        "unit_contexts": [
+          {
+            "context_id": 6812,
+            "length_unit_id": 6813,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              6813
+            ]
+          }
+        ],
+        "holes": [],
+        "recognized_hole_count": 0,
+        "hole_count": null,
+        "status": "unresolved",
+        "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [],
+        "external_cylinder_faces": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          26
+        ],
+        "noncircular_planar_inner_wires": [],
+        "scanned_faces": 28,
+        "scanned_solids": 1,
+        "whole_part_reason": "only planar and cylindrical support surfaces are qualified"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        1.323886919002689,
+        1.2906699539962574,
+        1.3034045140011585
+      ],
+      "median_seconds": 1.3034045140011585
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "ublox_sam_ap203.step",
+        "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+        "source_bytes": 359113,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 248,
+          "edge_count": 298,
+          "face_count": 98,
+          "shell_count": 3,
+          "solid_count": 3,
+          "absolute_volume": 1309.8835809072764,
+          "surface_area": 1569.4091088559207,
+          "surface_centroid": [
+            -2.9760777874343867,
+            1.5093115344344166,
+            11.996278951480775
+          ],
+          "bounds_min": [
+            -10.735882487445165,
+            -0.9706265601910136,
+            4.243994172449168
+          ],
+          "bounds_max": [
+            4.764619880759867,
+            5.408361273825762,
+            19.7444965406542
+          ],
+          "maximum_vertex_tolerance": 0.00025118410251590885,
+          "maximum_edge_tolerance": 0.00025118410251590885,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 1,
+        "unit_contexts": [
+          {
+            "context_id": 955,
+            "length_unit_id": 3280,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3280
+            ]
+          },
+          {
+            "context_id": 2279,
+            "length_unit_id": 2314,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2314
+            ]
+          },
+          {
+            "context_id": 2507,
+            "length_unit_id": 2974,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2974
+            ]
+          },
+          {
+            "context_id": 3808,
+            "length_unit_id": 1338,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1338
+            ]
+          }
+        ],
+        "holes": [],
+        "recognized_hole_count": 0,
+        "hole_count": null,
+        "status": "unresolved",
+        "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [
+          {
+            "face_index": 16,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 18,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 20,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 22,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          }
+        ],
+        "external_cylinder_faces": [
+          61,
+          64,
+          66,
+          68,
+          69,
+          70,
+          71,
+          73,
+          75,
+          79,
+          81,
+          83,
+          84,
+          85,
+          86,
+          95,
+          97
+        ],
+        "noncircular_planar_inner_wires": [
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 8,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 8,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 87,
+            "edge_count": 6,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 96,
+            "edge_count": 2,
+            "circular_outer_boundary": false
+          }
+        ],
+        "scanned_faces": 98,
+        "scanned_solids": 3,
+        "whole_part_reason": "複数ソリッドまたは非ソリッドを全体の板モデルとして確定しません。"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        1.1434489840030437,
+        1.0439338799988036,
+        1.147540243997355
+      ],
+      "median_seconds": 1.1434489840030437
+    },
+    {
+      "id": "ublox_sam_ap214",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "ublox_sam_ap214.step",
+        "source_sha256": "ffe3856676d3c4677373b95ca4740a30ba19d3af86ecb6c170caf4c89d06c495",
+        "source_bytes": 416065,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 248,
+          "edge_count": 298,
+          "face_count": 98,
+          "shell_count": 3,
+          "solid_count": 3,
+          "absolute_volume": 1309.8835809072764,
+          "surface_area": 1569.4091088559207,
+          "surface_centroid": [
+            -2.9760777874343867,
+            1.5093115344344166,
+            11.996278951480775
+          ],
+          "bounds_min": [
+            -10.735882487445165,
+            -0.9706265601910136,
+            4.243994172449168
+          ],
+          "bounds_max": [
+            4.764619880759867,
+            5.408361273825762,
+            19.7444965406542
+          ],
+          "maximum_vertex_tolerance": 0.00025118410251590885,
+          "maximum_edge_tolerance": 0.00025118410251590885,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              71
+            ],
+            [
+              "cylinder",
+              21
+            ],
+            [
+              "bspline",
+              6
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 1,
+        "unit_contexts": [
+          {
+            "context_id": 58,
+            "length_unit_id": 1049,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1049
+            ]
+          },
+          {
+            "context_id": 98,
+            "length_unit_id": 187,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              187
+            ]
+          },
+          {
+            "context_id": 140,
+            "length_unit_id": 814,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              814
+            ]
+          },
+          {
+            "context_id": 153,
+            "length_unit_id": 1219,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1219
+            ]
+          },
+          {
+            "context_id": 228,
+            "length_unit_id": 2379,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2379
+            ]
+          },
+          {
+            "context_id": 235,
+            "length_unit_id": 2480,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2480
+            ]
+          },
+          {
+            "context_id": 438,
+            "length_unit_id": 2547,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2547
+            ]
+          },
+          {
+            "context_id": 513,
+            "length_unit_id": 183,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              183
+            ]
+          },
+          {
+            "context_id": 522,
+            "length_unit_id": 3060,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3060
+            ]
+          },
+          {
+            "context_id": 537,
+            "length_unit_id": 2795,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2795
+            ]
+          },
+          {
+            "context_id": 589,
+            "length_unit_id": 2982,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2982
+            ]
+          },
+          {
+            "context_id": 656,
+            "length_unit_id": 2226,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2226
+            ]
+          },
+          {
+            "context_id": 708,
+            "length_unit_id": 3289,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3289
+            ]
+          },
+          {
+            "context_id": 870,
+            "length_unit_id": 4077,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4077
+            ]
+          },
+          {
+            "context_id": 880,
+            "length_unit_id": 1228,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1228
+            ]
+          },
+          {
+            "context_id": 901,
+            "length_unit_id": 3291,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3291
+            ]
+          },
+          {
+            "context_id": 948,
+            "length_unit_id": 3273,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3273
+            ]
+          },
+          {
+            "context_id": 1043,
+            "length_unit_id": 263,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              263
+            ]
+          },
+          {
+            "context_id": 1231,
+            "length_unit_id": 3452,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3452
+            ]
+          },
+          {
+            "context_id": 1412,
+            "length_unit_id": 176,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              176
+            ]
+          },
+          {
+            "context_id": 1416,
+            "length_unit_id": 2523,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2523
+            ]
+          },
+          {
+            "context_id": 1550,
+            "length_unit_id": 1363,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1363
+            ]
+          },
+          {
+            "context_id": 1580,
+            "length_unit_id": 2721,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2721
+            ]
+          },
+          {
+            "context_id": 1758,
+            "length_unit_id": 1276,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1276
+            ]
+          },
+          {
+            "context_id": 1801,
+            "length_unit_id": 456,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              456
+            ]
+          },
+          {
+            "context_id": 1843,
+            "length_unit_id": 1211,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1211
+            ]
+          },
+          {
+            "context_id": 1861,
+            "length_unit_id": 1708,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1708
+            ]
+          },
+          {
+            "context_id": 1903,
+            "length_unit_id": 2968,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2968
+            ]
+          },
+          {
+            "context_id": 1959,
+            "length_unit_id": 4468,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4468
+            ]
+          },
+          {
+            "context_id": 1991,
+            "length_unit_id": 81,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              81
+            ]
+          },
+          {
+            "context_id": 2032,
+            "length_unit_id": 2383,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2383
+            ]
+          },
+          {
+            "context_id": 2083,
+            "length_unit_id": 3257,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3257
+            ]
+          },
+          {
+            "context_id": 2282,
+            "length_unit_id": 2539,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2539
+            ]
+          },
+          {
+            "context_id": 2360,
+            "length_unit_id": 1925,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1925
+            ]
+          },
+          {
+            "context_id": 2425,
+            "length_unit_id": 4753,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4753
+            ]
+          },
+          {
+            "context_id": 2432,
+            "length_unit_id": 4256,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4256
+            ]
+          },
+          {
+            "context_id": 2448,
+            "length_unit_id": 3385,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3385
+            ]
+          },
+          {
+            "context_id": 2479,
+            "length_unit_id": 1641,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1641
+            ]
+          },
+          {
+            "context_id": 2502,
+            "length_unit_id": 2384,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2384
+            ]
+          },
+          {
+            "context_id": 2582,
+            "length_unit_id": 4116,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4116
+            ]
+          },
+          {
+            "context_id": 2661,
+            "length_unit_id": 3769,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3769
+            ]
+          },
+          {
+            "context_id": 2696,
+            "length_unit_id": 3337,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3337
+            ]
+          },
+          {
+            "context_id": 2854,
+            "length_unit_id": 584,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              584
+            ]
+          },
+          {
+            "context_id": 2871,
+            "length_unit_id": 407,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              407
+            ]
+          },
+          {
+            "context_id": 2996,
+            "length_unit_id": 3300,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3300
+            ]
+          },
+          {
+            "context_id": 3042,
+            "length_unit_id": 951,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              951
+            ]
+          },
+          {
+            "context_id": 3250,
+            "length_unit_id": 745,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              745
+            ]
+          },
+          {
+            "context_id": 3298,
+            "length_unit_id": 3896,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3896
+            ]
+          },
+          {
+            "context_id": 3475,
+            "length_unit_id": 1269,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1269
+            ]
+          },
+          {
+            "context_id": 3518,
+            "length_unit_id": 3900,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3900
+            ]
+          },
+          {
+            "context_id": 3573,
+            "length_unit_id": 4413,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4413
+            ]
+          },
+          {
+            "context_id": 3644,
+            "length_unit_id": 3020,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3020
+            ]
+          },
+          {
+            "context_id": 3766,
+            "length_unit_id": 2164,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              2164
+            ]
+          },
+          {
+            "context_id": 3777,
+            "length_unit_id": 498,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              498
+            ]
+          },
+          {
+            "context_id": 3929,
+            "length_unit_id": 3050,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3050
+            ]
+          },
+          {
+            "context_id": 3972,
+            "length_unit_id": 1659,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1659
+            ]
+          },
+          {
+            "context_id": 4086,
+            "length_unit_id": 1324,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1324
+            ]
+          },
+          {
+            "context_id": 4109,
+            "length_unit_id": 212,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              212
+            ]
+          },
+          {
+            "context_id": 4156,
+            "length_unit_id": 1572,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1572
+            ]
+          },
+          {
+            "context_id": 4180,
+            "length_unit_id": 4616,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4616
+            ]
+          },
+          {
+            "context_id": 4242,
+            "length_unit_id": 1062,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1062
+            ]
+          },
+          {
+            "context_id": 4270,
+            "length_unit_id": 3903,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3903
+            ]
+          },
+          {
+            "context_id": 4332,
+            "length_unit_id": 957,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              957
+            ]
+          },
+          {
+            "context_id": 4346,
+            "length_unit_id": 1954,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1954
+            ]
+          },
+          {
+            "context_id": 4349,
+            "length_unit_id": 1000,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1000
+            ]
+          },
+          {
+            "context_id": 4366,
+            "length_unit_id": 3100,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3100
+            ]
+          },
+          {
+            "context_id": 4422,
+            "length_unit_id": 3670,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3670
+            ]
+          },
+          {
+            "context_id": 4453,
+            "length_unit_id": 1646,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1646
+            ]
+          },
+          {
+            "context_id": 4471,
+            "length_unit_id": 253,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              253
+            ]
+          },
+          {
+            "context_id": 4801,
+            "length_unit_id": 4096,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              4096
+            ]
+          }
+        ],
+        "holes": [],
+        "recognized_hole_count": 0,
+        "hole_count": null,
+        "status": "unresolved",
+        "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [
+          {
+            "face_index": 16,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 18,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 20,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          },
+          {
+            "face_index": 22,
+            "reason": "円筒面・境界の許容差が検証許容差を超えています。"
+          }
+        ],
+        "external_cylinder_faces": [
+          61,
+          64,
+          66,
+          68,
+          69,
+          70,
+          71,
+          73,
+          75,
+          79,
+          81,
+          83,
+          84,
+          85,
+          86,
+          95,
+          97
+        ],
+        "noncircular_planar_inner_wires": [
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 8,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 1,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 8,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 34,
+            "edge_count": 4,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 87,
+            "edge_count": 6,
+            "circular_outer_boundary": false
+          },
+          {
+            "plane_face": 96,
+            "edge_count": 2,
+            "circular_outer_boundary": false
+          }
+        ],
+        "scanned_faces": 98,
+        "scanned_solids": 3,
+        "whole_part_reason": "複数ソリッドまたは非ソリッドを全体の板モデルとして確定しません。"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        1.3205580249996274,
+        1.1682700329984073,
+        1.2574840650049737
+      ],
+      "median_seconds": 1.2574840650049737
+    },
+    {
+      "id": "ublox_emmy",
+      "result": {
+        "inventory_version": "1.9.0",
+        "file_name": "ublox_emmy.step",
+        "source_sha256": "0a26ff1a9b3782691344d95570d7b67e6afe76efca5d2a8d4ee7a51c6cf13b1a",
+        "source_bytes": 242333,
+        "length_unit": "mm",
+        "conditions": {
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の円形貫通穴を局所検証（最大512面）。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。部分確認では認識した円形穴の数と、全体の穴数不明を区別。候補が0件でも穴なしとしません。",
+          "length_tolerance_mm": 1e-05,
+          "fit_relative_tolerance": 1e-08
+        },
+        "metrics": {
+          "vertex_count": 582,
+          "edge_count": 873,
+          "face_count": 399,
+          "shell_count": 54,
+          "solid_count": 54,
+          "absolute_volume": 250.58335464370816,
+          "surface_area": 1436.2206776614678,
+          "surface_centroid": [
+            -5.958927105322117,
+            8.976316582198212,
+            1.0404315256781893
+          ],
+          "bounds_min": [
+            -12.925000100001393,
+            -0.8000000999997022,
+            -0.03000010000000169
+          ],
+          "bounds_max": [
+            0.875000099998657,
+            19.0000001000003,
+            2.4800001000000482
+          ],
+          "maximum_vertex_tolerance": 1e-07,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "surface_counts": [
+            [
+              "plane",
+              385
+            ],
+            [
+              "cylinder",
+              14
+            ]
+          ],
+          "analyzer_valid": true
+        },
+        "analysis_mode": "public_inspection",
+        "roots": 1,
+        "unit_contexts": [
+          {
+            "context_id": 120,
+            "length_unit_id": 435,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              435,
+              1712
+            ]
+          },
+          {
+            "context_id": 443,
+            "length_unit_id": 1097,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1097,
+              2143
+            ]
+          },
+          {
+            "context_id": 456,
+            "length_unit_id": 1116,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1116,
+              2144
+            ]
+          },
+          {
+            "context_id": 468,
+            "length_unit_id": 1138,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1138,
+              2145
+            ]
+          },
+          {
+            "context_id": 529,
+            "length_unit_id": 1307,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1307,
+              2146
+            ]
+          },
+          {
+            "context_id": 814,
+            "length_unit_id": 1338,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1338,
+              2147
+            ]
+          },
+          {
+            "context_id": 827,
+            "length_unit_id": 1357,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              1357,
+              2148
+            ]
+          }
+        ],
+        "holes": [],
+        "recognized_hole_count": 0,
+        "hole_count": null,
+        "status": "unresolved",
+        "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+        "withheld_cylinders": [
+          {
+            "face_index": 329,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 362,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 365,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 367,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 368,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 369,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          },
+          {
+            "face_index": 377,
+            "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+          }
+        ],
+        "external_cylinder_faces": [
+          330,
+          363,
+          364,
+          372,
+          373,
+          374,
+          378
+        ],
+        "noncircular_planar_inner_wires": [],
+        "scanned_faces": 399,
+        "scanned_solids": 54,
+        "whole_part_reason": "複数ソリッドまたは非ソリッドを全体の板モデルとして確定しません。",
+        "preview_reason": "3D表示を省略しました。測定結果は保持しています。 workspace snapshot supports at most 256 faces and 512 edges"
+      },
+      "repeat_results_identical": true,
+      "seconds": [
+        0.8389669059979497,
+        0.8614009939992684,
+        0.8814793709971127
+      ],
+      "median_seconds": 0.8614009939992684
+    }
+  ]
+}

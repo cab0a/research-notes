@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index
+summary,cadquery_assembly.step,1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5,unresolved,,,,,,,,,,,,mm,条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。,0,

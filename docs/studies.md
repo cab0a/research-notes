@@ -2042,3 +2042,5 @@ The complete notes contain the narrower limitations for each experiment.
 - v1.2–v1.5: [Independent revision comparison and HTML reports](cad-revision-comparison.md)
 - v1.6–v1.7: [Fixed revision evaluation and licensed public artifacts](../notes/step-revision-benchmark.md)
 - v1.8.0: [Single-STEP hole inventory evaluation](../notes/step-hole-inventory.md) — [guide](cad-hole-inventory.md), [evidence](../results/hole-inventory/verification.json)
+
+- v1.9.0: [Public STEP circular hole verification](../notes/public-step-hole-inventory.md) — [evidence](../results/public-hole-inventory/results.json)
