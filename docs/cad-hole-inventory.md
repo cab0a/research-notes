@@ -1,8 +1,10 @@
-# STEP Hole Inventory — v1.11.0
+# STEP Hole Inventory — v1.12.0
 
 ## 日本語概要
 
 STEPを1つ読み込み、丸穴と直線状の貫通長孔を画面・Python API・CLI・CSVでまとめて扱います。公開ブラケットでは丸穴5か所と長孔6か所を確認できます。穴番号・内壁・表の行を選択すると、対応する面と行を強調します。確認した11か所は全穴数の保証ではなく、全体数は不明のままです。該当しない寸法は画面では「—」、CSVでは空欄にします。
+
+v1.12では[誤認識・例外の検証](../notes/hole-recognition-robustness.md)を追加しました。くぼみの底にある丸穴は保留し、面・辺・頂点の許容差を確認します。100万mm離した座標の検証で見逃しが残っているため、認識できなかった結果は人の確認へ返します。
 
 
 ---
@@ -10,7 +12,8 @@ STEPを1つ読み込み、丸穴と直線状の貫通長孔を画面・Python AP
 ## English Summary
 
 Public inspection combines the v1.9 circular-hole and v1.10 straight-slot
-rules in one typed inventory. Geometry thresholds are unchanged. Qualified
+rules in one typed inventory. Version 1.12 adds conservative validation of
+recessed round openings, opening faces and vertices. Qualified
 plates retain complete inventories; public parts retain unknown whole counts.
 See the [integration study](../notes/unified-hole-inventory.md),
 [circular-hole evidence](../notes/public-step-hole-inventory.md) and
@@ -80,7 +83,7 @@ CSVはUTF-8 BOM付きです。既存19列の後に新しい9列を追加しま�
 曲がった長孔・分割円筒・段付き穴・交差穴・ねじ・複雑な止まり穴は対象外です。円形外周の開口面は段付き穴の段差と
 区別せず保留するため、ワッシャーなども対象外です。他部品による穴のふさがりは確認しません。
 
-局所検証の面・辺許容差上限は0.00001 mm、半径・深さがその100倍以下のものは保留します。
+局所検証の面・辺・頂点許容差上限は0.00001 mm、半径・深さがその100倍以下のものは保留します。丸穴では開口面の外周にある壁も調べ、周囲より奥にある開口を段差・ポケット内の穴として保留します。
 板の再構成は従来の長さ許容差・体積差・面積差の条件を維持します。
 判定閾値は測定精度保証ではありません。詳細は実験ノートと実測JSONを参照してください。長孔処理だけ失敗した場合は、確認済みの丸穴を保持し、長孔の保留理由を記録します。
 
@@ -88,11 +91,14 @@ CSVはUTF-8 BOM付きです。既存19列の後に新しい9列を追加しま�
 名前・理由・穴数不明に置き換えます。古い画面状態からの要求を拒否します。
 ネイティブ処理を同一プロセスで実行し、CPU・メモリの強制上限はありません。
 
+自作44形状による検証では、STEP読込後の取得対象32個中30個を取得し、誤取得は0個でした。原点から100万mm離した1モデルの丸穴・長孔2個は保留しました。合成モデルの固定評価であり、一般の製造部品に対する精度保証ではありません。別部品による開口のふさがりは、この一覧の対象外です。
+
 ## CLI and Python
 
 ```bash
 python -m research_notes.hole_inventory fixtures/public-step-corpus/sources/build123d_bracket.step --public --output-dir output/bracket-unified
 python -m research_notes.unified_hole_benchmark --output-dir output/unified-check --repeats 3
+python -m research_notes.hole_robustness --output-dir output/hole-robustness-check --repeats 2
 ```
 
 The installed alias is `research-hole-list`. Outputs are `holes.csv`,

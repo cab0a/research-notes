@@ -65,14 +65,23 @@ def scan_circular_through_holes(shape):
     from OCP.BRepClass3d import BRepClass3d_SolidClassifier
     from OCP.BRepTools import BRepTools
     from OCP.BRep import BRep_Tool
+    from OCP.BRepCheck import BRepCheck_Analyzer
     from OCP.GeomAbs import GeomAbs_Cylinder
-    from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
+    from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
     from OCP.TopoDS import TopoDS
     from OCP.gp import gp_Pnt
 
+    if shape.IsNull():
+        raise ValueError('円形穴の検証には有効なソリッドB-Repが必要です。')
     faces, edges, solids = (indexed_shapes(shape,t) for t in (TopAbs_FACE,TopAbs_EDGE,TopAbs_SOLID))
-    if faces.Extent()>512:
+    if not 0 < faces.Extent() <= 512:
         raise ValueError('円形穴の検証は最大512面です。')
+    if not solids.Extent() or not BRepCheck_Analyzer(shape).IsValid():
+        raise ValueError('円形穴の検証には有効なソリッドB-Repが必要です。')
+    edge_faces = {}
+    for i in range(1, faces.Extent()+1):
+        for edge in iter_shapes(faces.FindKey(i), TopAbs_EDGE):
+            edge_faces.setdefault(edges.FindIndex(edge), set()).add(i)
     owners={i:[] for i in range(1,faces.Extent()+1)}
     classifiers={}
     for s in range(1,solids.Extent()+1):
@@ -105,6 +114,22 @@ def scan_circular_through_holes(shape):
                 raise ValueError('両端の平面にある完全な円形の内周を確認できません。止まり穴・段付き穴などを保留します。')
             if any(end['circular_outer_boundary'] for end in ends):
                 raise ValueError('円形外周の開口面は段付き穴の内部段差と区別せず保留します。ワッシャー等も対象外です。')
+            for end in ends:
+                opening = TopoDS.Face_s(faces.FindKey(end['plane_face']))
+                neighbors = set().union(*(edge_faces[edges.FindIndex(e)] - {end['plane_face']}
+                                         for e in iter_shapes(BRepTools.OuterWire_s(opening), TopAbs_EDGE)))
+                normal = _face_geometry(opening)[1]
+                if not neighbors or all(sum((p-c)*n for p,c,n in zip(
+                        surface_area_and_centroid(TopoDS.Face_s(faces.FindKey(f)))[1], end['center'], normal)) > TOL
+                        for f in neighbors):
+                    raise ValueError('開口面が周囲の壁より奥にあります。段付き穴・ポケット内の穴として保留します。')
+            # Opening evidence and vertices must obey the same tolerance gate.
+            for f in {i, *(end['plane_face'] for end in ends)}:
+                member = TopoDS.Face_s(faces.FindKey(f))
+                if BRep_Tool.Tolerance_s(member)>TOL or any(
+                        BRep_Tool.Tolerance_s(TopoDS.Edge_s(e))>TOL for e in iter_shapes(member,TopAbs_EDGE)) or any(
+                        BRep_Tool.Tolerance_s(TopoDS.Vertex_s(v))>TOL for v in iter_shapes(member,TopAbs_VERTEX)):
+                    raise ValueError('円筒面・開口面・辺・頂点の許容差が検証許容差を超えています。')
             cylinder=surface.Cylinder();radius=cylinder.Radius();direction=list(cylinder.Axis().Direction().Coord())
             entry,exit=sorted((r['center'] for r in ends),reverse=True)
             depth=_distance(entry,exit)

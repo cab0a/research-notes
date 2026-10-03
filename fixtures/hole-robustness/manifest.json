@@ -1,0 +1,1384 @@
+{
+  "version": "1.12.0",
+  "provenance": "Repository-authored synthetic controls; no customer data or external samples.",
+  "license": "Same as research repository; see LICENSING.md.",
+  "truth_basis": "Construction parameters and analytic transformations fixed before recognition. Same OCCT kernel; not independent metrology.",
+  "controls": [
+    {
+      "identifier": "mixed",
+      "category": "qualified",
+      "description": "Separate round hole and straight through slot.",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              7.0,
+              5.0,
+              0.0
+            ],
+            [
+              7.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              27.0,
+              5.0,
+              0.0
+            ],
+            [
+              27.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/mixed.step",
+      "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+      "source_bytes": 43078,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "rotated_30",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 0.5235987755982988 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              4.2204019504096415,
+              7.461736935526155,
+              -0.7146252738206504
+            ],
+            [
+              5.404282286244106,
+              7.156885188070841,
+              3.0939824458714047
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              21.73230230640636,
+              15.862358753514776,
+              -5.485673271145303
+            ],
+            [
+              22.916182642240823,
+              15.557507006059462,
+              -1.6770655514532478
+            ]
+          ],
+          "long_direction": [
+            0.875595017799836,
+            0.420031090899431,
+            -0.23855239986623264
+          ]
+        }
+      ],
+      "source_path": "sources/rotated_30.step",
+      "source_sha256": "50b74d2e0f89ff5889fcb9146d4bfb84a37ce8d6ecd401871baf43e487c4ea81",
+      "source_bytes": 47820,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "rotated_3d",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 0.73 rad about (1,2,3), translation (13, -7, 21).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              15.852225796609433,
+              1.0875307211984815,
+              20.324237586997867
+            ],
+            [
+              17.496474992214875,
+              0.8114609755138957,
+              23.96020101891911
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              31.1197504115856,
+              12.509308268042403,
+              14.2872110174432
+            ],
+            [
+              32.76399960719104,
+              12.233238522357816,
+              17.923174449364442
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/rotated_3d.step",
+      "source_sha256": "83f78c03121f8b83f799cecec38bb84ccd177289ddaea44ce6fb8a6669533d3c",
+      "source_bytes": 47673,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "flipped",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 3.141592653589793 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              -4.571428571428572,
+              -0.14285714285714235,
+              7.2857142857142865
+            ],
+            [
+              -2.8571428571428577,
+              3.2857142857142865,
+              8.428571428571429
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              -21.71428571428572,
+              5.571428571428575,
+              15.857142857142858
+            ],
+            [
+              -20.000000000000004,
+              9.000000000000004,
+              17.0
+            ]
+          ],
+          "long_direction": [
+            -0.8571428571428572,
+            0.28571428571428586,
+            0.42857142857142855
+          ]
+        }
+      ],
+      "source_path": "sources/flipped.step",
+      "source_sha256": "c436802dc1aa38b61653dac8a632a2effc01f81db57257557af315c467f951c5",
+      "source_bytes": 47132,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "near_quarter_turn",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 1.5707963277948966 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              -2.794632920186367,
+              8.041057506160913,
+              1.237505969288181
+            ],
+            [
+              0.20059987311302807,
+              8.686298254511215,
+              3.8089345392881806
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              -1.3660615101863702,
+              26.933874880906377,
+              -5.167229417208795
+            ],
+            [
+              1.629171283113025,
+              27.57911562925668,
+              -2.5958008472087957
+            ]
+          ],
+          "long_direction": [
+            0.07142857049999984,
+            0.9446408687372732,
+            -0.3202367693248488
+          ]
+        }
+      ],
+      "source_path": "sources/near_quarter_turn.step",
+      "source_sha256": "215f4a6455d1b026646e991f2078998053619c25c444efc083f5c20b936cbfa9",
+      "source_bytes": 47216,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "small_001",
+      "category": "qualified",
+      "description": "Uniform scale 0.01, rotation 0.0 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.02,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              0.07,
+              0.05,
+              0.0
+            ],
+            [
+              0.07,
+              0.05,
+              0.04
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.02,
+          "length_mm": 0.06,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              0.27,
+              0.05,
+              0.0
+            ],
+            [
+              0.27,
+              0.05,
+              0.04
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/small_001.step",
+      "source_sha256": "b0741a85744a99d189366f6fdd5443ed4088f05bb687ee40de756fb2c669e317",
+      "source_bytes": 43525,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "small_01",
+      "category": "qualified",
+      "description": "Uniform scale 0.1, rotation 0.0 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.2,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              0.7000000000000001,
+              0.5,
+              0.0
+            ],
+            [
+              0.7000000000000001,
+              0.5,
+              0.4
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.2,
+          "length_mm": 0.6000000000000001,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              2.7,
+              0.5,
+              0.0
+            ],
+            [
+              2.7,
+              0.5,
+              0.4
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/small_01.step",
+      "source_sha256": "627a03445e9a6ae871afb568aa6e502d5d2842672fecd94552b6c5c1ffad129f",
+      "source_bytes": 42864,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "large_10",
+      "category": "qualified",
+      "description": "Uniform scale 10.0, rotation 0.0 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 20.0,
+          "depth_mm": 40.0,
+          "ends_mm": [
+            [
+              70.0,
+              50.0,
+              0.0
+            ],
+            [
+              70.0,
+              50.0,
+              40.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 20.0,
+          "length_mm": 60.0,
+          "depth_mm": 40.0,
+          "ends_mm": [
+            [
+              270.0,
+              50.0,
+              0.0
+            ],
+            [
+              270.0,
+              50.0,
+              40.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/large_10.step",
+      "source_sha256": "afd97b78edbd35d5af52fbb4ad091faf00d859b499d5304111a388bada8e35ae",
+      "source_bytes": 42865,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "large_100",
+      "category": "stress",
+      "description": "Uniform scale 100.0, rotation 0.0 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 200.0,
+          "depth_mm": 400.0,
+          "ends_mm": [
+            [
+              700.0,
+              500.0,
+              0.0
+            ],
+            [
+              700.0,
+              500.0,
+              400.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 200.0,
+          "length_mm": 600.0,
+          "depth_mm": 400.0,
+          "ends_mm": [
+            [
+              2700.0,
+              500.0,
+              0.0
+            ],
+            [
+              2700.0,
+              500.0,
+              400.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/large_100.step",
+      "source_sha256": "e7987f7d7588c0e0626dd1e5e0265bd3b15fe8d3087d719174339e0d2ae2f67e",
+      "source_bytes": 43339,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "translated_1e6",
+      "category": "stress",
+      "description": "Uniform scale 1.0, rotation 0.0 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000007.0,
+              -999995.0,
+              1000000.0
+            ],
+            [
+              1000007.0,
+              -999995.0,
+              1000004.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000027.0,
+              -999995.0,
+              1000000.0
+            ],
+            [
+              1000027.0,
+              -999995.0,
+              1000004.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/translated_1e6.step",
+      "source_sha256": "cc5d69fe18089364500e068b4f77691f17ea18accb3468ff371a3161c4e5f551",
+      "source_bytes": 43241,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "combined",
+      "category": "qualified",
+      "description": "Uniform scale 0.1, rotation 0.73 rad about (1,2,3), translation (10000.0, -10000.0, 10000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.2,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              10000.285222579661,
+              -9999.19124692788,
+              9999.9324237587
+            ],
+            [
+              10000.449647499221,
+              -9999.218853902448,
+              10000.296020101892
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.2,
+          "length_mm": 0.6000000000000001,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              10001.811975041159,
+              -9998.049069173196,
+              9999.328721101745
+            ],
+            [
+              10001.976399960718,
+              -9998.076676147764,
+              9999.692317444937
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/combined.step",
+      "source_sha256": "dceb7263b95f69e825bbc92d22d9ff248b92998966b0202ddfc3f81133429f68",
+      "source_bytes": 50349,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "large_combined",
+      "category": "stress",
+      "description": "Uniform scale 100.0, rotation 0.73 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 200.0,
+          "depth_mm": 400.0,
+          "ends_mm": [
+            [
+              1000285.222579661,
+              -999191.2469278801,
+              999932.4237586998
+            ],
+            [
+              1000449.6474992215,
+              -999218.8539024487,
+              1000296.020101892
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 200.0,
+          "length_mm": 600.0,
+          "depth_mm": 400.0,
+          "ends_mm": [
+            [
+              1001811.9750411586,
+              -998049.0691731957,
+              999328.7211017443
+            ],
+            [
+              1001976.399960719,
+              -998076.6761477642,
+              999692.3174449365
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/large_combined.step",
+      "source_sha256": "2b28ca30cffe864d33bcfccd6d7b56c6c6f9cb6aafeac6c00153bfe7ce2fe5a2",
+      "source_bytes": 50552,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "radius_above_gate",
+      "category": "qualified",
+      "description": "Uniform scale 0.00101, rotation 0.0 rad about (1,2,3), translation (0, 0, 0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.00202,
+          "depth_mm": 0.00404,
+          "ends_mm": [
+            [
+              0.00707,
+              0.005050000000000001,
+              0.0
+            ],
+            [
+              0.00707,
+              0.005050000000000001,
+              0.00404
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.00202,
+          "length_mm": 0.00606,
+          "depth_mm": 0.00404,
+          "ends_mm": [
+            [
+              0.027270000000000003,
+              0.005050000000000001,
+              0.0
+            ],
+            [
+              0.027270000000000003,
+              0.005050000000000001,
+              0.00404
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/radius_above_gate.step",
+      "source_sha256": "d148edad7270d5af43071522d2dc2d763cb5ef2b2e2f1bd02580b0b70d690b14",
+      "source_bytes": 44373,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "depth_above_gate",
+      "category": "qualified",
+      "description": "Through length 0.00101 mm, above the 100*TOL local gate.",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 0.00101,
+          "ends_mm": [
+            [
+              7.0,
+              5.0,
+              0.0
+            ],
+            [
+              7.0,
+              5.0,
+              0.00101
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 0.00101,
+          "ends_mm": [
+            [
+              27.0,
+              5.0,
+              0.0
+            ],
+            [
+              27.0,
+              5.0,
+              0.00101
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/depth_above_gate.step",
+      "source_sha256": "dc482e5c11bbbd423768f8d1b68c04e460179f401111feadb66bb4dd71cd9fc2",
+      "source_bytes": 43333,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "radius_at_gate",
+      "category": "boundary_withheld",
+      "description": "Physical openings exist; radius at/below 100*TOL is deliberately withheld.",
+      "expected": [],
+      "source_path": "sources/radius_at_gate.step",
+      "source_sha256": "ed415e29cd9b9ddd33d91c0bda41b1307dfc759b4813320880ac10ddba93ff1e",
+      "source_bytes": 43799,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "radius_below_gate",
+      "category": "boundary_withheld",
+      "description": "Physical openings exist; radius at/below 100*TOL is deliberately withheld.",
+      "expected": [],
+      "source_path": "sources/radius_below_gate.step",
+      "source_sha256": "1910fd581b6f7bbd393ae78aa5403c7c2c9b71114552b942e8c11feff800debb",
+      "source_bytes": 44310,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "depth_below_gate",
+      "category": "boundary_withheld",
+      "description": "Physical openings exist; through length below 100*TOL is deliberately withheld.",
+      "expected": [],
+      "source_path": "sources/depth_below_gate.step",
+      "source_sha256": "2975fe27d9d950924bfe8143c2aa30a006b1dd05b622a77304f18b2cb653c9f9",
+      "source_bytes": 43304,
+      "constructed_topology": [
+        22,
+        33,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_blind",
+      "category": "unsupported",
+      "description": "Flat-bottom round recess.",
+      "expected": [],
+      "source_path": "sources/circle_blind.step",
+      "source_sha256": "b6210853b9fe3b2e2fcffc9d713ed7472f884b298ff711d59ac16bcaf18a295c",
+      "source_bytes": 26720,
+      "constructed_topology": [
+        14,
+        21,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_counterbore",
+      "category": "unsupported",
+      "description": "Circular counter-recess around a smaller bore.",
+      "expected": [],
+      "source_path": "sources/circle_counterbore.step",
+      "source_sha256": "ae08f4ad0aa25910f340dea22bb78ba1585acae4b0a786de015b776d1b56e5f9",
+      "source_bytes": 30317,
+      "constructed_topology": [
+        16,
+        24,
+        11,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_rectangular_shoulder",
+      "category": "unsupported",
+      "description": "Round bore under a rectangular counter-recess.",
+      "expected": [],
+      "source_path": "sources/circle_rectangular_shoulder.step",
+      "source_sha256": "0feaa855fe8b06a358973c51dc8159ad69ac2c78c56379b6271435b22bc838c2",
+      "source_bytes": 40677,
+      "constructed_topology": [
+        22,
+        33,
+        14,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_countersink",
+      "category": "unsupported",
+      "description": "Conical countersink around a smaller bore.",
+      "expected": [],
+      "source_path": "sources/circle_countersink.step",
+      "source_sha256": "4151ee938b0e9e46fdc2edced98fb23bc71e2745d40ed7b1e353aadc99ecfef7",
+      "source_bytes": 28952,
+      "constructed_topology": [
+        15,
+        23,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_edge_notch",
+      "category": "unsupported",
+      "description": "Round cut opens onto the outside edge.",
+      "expected": [],
+      "source_path": "sources/circle_edge_notch.step",
+      "source_sha256": "b7c9d35ed0b1187b08e8653b4b8395db5a3a9b5657e1c739598c26a1f6cbde49",
+      "source_bytes": 30044,
+      "constructed_topology": [
+        16,
+        24,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_intersection",
+      "category": "unsupported",
+      "description": "Intersecting bores have trimmed cylinders.",
+      "expected": [],
+      "source_path": "sources/circle_intersection.step",
+      "source_sha256": "f4c11bacbb5899a86f214af94a181f8dd45d36ddfd924571e247a82df2f1f3cd",
+      "source_bytes": 33991,
+      "constructed_topology": [
+        18,
+        27,
+        11,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_boss",
+      "category": "unsupported",
+      "description": "Exterior cylinder is material, not a cavity.",
+      "expected": [],
+      "source_path": "sources/circle_boss.step",
+      "source_sha256": "c5de87ce5b4e0d95276271fa3a7c658c40d187699a109ce88734e35ed565d70a",
+      "source_bytes": 26729,
+      "constructed_topology": [
+        14,
+        21,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_internal_void",
+      "category": "unsupported",
+      "description": "Cylindrical cavity has neither outer opening.",
+      "expected": [],
+      "source_path": "sources/circle_internal_void.step",
+      "source_sha256": "88cb7fbbddc13c97fe12c695653df97b374a45a6980581046df065ecd8454943",
+      "source_bytes": 27010,
+      "constructed_topology": [
+        14,
+        21,
+        11,
+        2,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_tapered",
+      "category": "unsupported",
+      "description": "Conical through passage.",
+      "expected": [],
+      "source_path": "sources/circle_tapered.step",
+      "source_sha256": "58f6b31aa081e01622c7d945d2c712f2c3b6859aaa40e16b58b56e66d0954963",
+      "source_bytes": 26628,
+      "constructed_topology": [
+        14,
+        21,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_split_face",
+      "category": "unsupported",
+      "description": "Same bore with the cylindrical wall split into faces.",
+      "expected": [],
+      "source_path": "sources/circle_split_face.step",
+      "source_sha256": "ed42bf4cbbbfc8ce32ecf412c1f63d7c137470bce745d65661a24cd1f548ee5a",
+      "source_bytes": 29990,
+      "constructed_topology": [
+        16,
+        24,
+        10,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "circle_spline",
+      "category": "unsupported",
+      "description": "Exact bore converted to NURBS supports.",
+      "expected": [],
+      "source_path": "sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "source_bytes": 34825,
+      "constructed_topology": [
+        14,
+        21,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "ellipse",
+      "category": "unsupported",
+      "description": "Elliptical through opening.",
+      "expected": [],
+      "source_path": "sources/ellipse.step",
+      "source_sha256": "f3a2241aed5684c8c42568aaeb52fd7acd8a179c2d264caf7407f4980c4f836d",
+      "source_bytes": 82083,
+      "constructed_topology": [
+        14,
+        21,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "rectangle",
+      "category": "unsupported",
+      "description": "Rectangular through opening.",
+      "expected": [],
+      "source_path": "sources/rectangle.step",
+      "source_sha256": "65863c7f284cff624dd021986c7c6b2eeea8f8e8c61411231303d357e6d8770d",
+      "source_bytes": 37417,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slanted_ellipse",
+      "category": "unsupported",
+      "description": "Elliptical prism skew to its opening plane.",
+      "expected": [],
+      "source_path": "sources/slanted_ellipse.step",
+      "source_sha256": "a792bfb5f6eb75db7516c39b665f04e24b2a709b40ea4a4a396af111e761516f",
+      "source_bytes": 85937,
+      "constructed_topology": [
+        14,
+        21,
+        9,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "washer",
+      "category": "unsupported",
+      "description": "Annular outer face is ambiguous with a shoulder.",
+      "expected": [],
+      "source_path": "sources/washer.step",
+      "source_sha256": "8b6910e223db2bc4db9755abe82d4aa72891807c858c9f5860b22ec6a8b1d4c6",
+      "source_bytes": 9198,
+      "constructed_topology": [
+        4,
+        6,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_blind",
+      "category": "unsupported",
+      "description": "Capsule-shaped blind pocket.",
+      "expected": [],
+      "source_path": "sources/slot_blind.step",
+      "source_sha256": "01bda9e943d309e6368536269e51917e80f7fbd4681c85686e743a6a5ef39758",
+      "source_bytes": 38242,
+      "constructed_topology": [
+        20,
+        30,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_counterbore",
+      "category": "unsupported",
+      "description": "Larger capsule counter-recess.",
+      "expected": [],
+      "source_path": "sources/slot_counterbore.step",
+      "source_sha256": "02050b8ba21aadddea6f468bad1b9d0059551862c195bf15c770b2a413efdfc3",
+      "source_bytes": 55058,
+      "constructed_topology": [
+        28,
+        42,
+        17,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_rectangular_shoulder",
+      "category": "unsupported",
+      "description": "Slot under a rectangular counter-recess.",
+      "expected": [],
+      "source_path": "sources/slot_rectangular_shoulder.step",
+      "source_sha256": "62fd72bf9bbb25ecb1900c379de398bb980f64339128624f20f68f6bc4a7a400",
+      "source_bytes": 53846,
+      "constructed_topology": [
+        28,
+        42,
+        17,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_open_notch",
+      "category": "unsupported",
+      "description": "Capsule cut opens onto the outside edge.",
+      "expected": [],
+      "source_path": "sources/slot_open_notch.step",
+      "source_sha256": "b25bf01d3cfea14173d829e0fa623d630a96ea9ea8beb95e6ccc540c741c66a6",
+      "source_bytes": 38302,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_boss",
+      "category": "unsupported",
+      "description": "Exterior capsule protrusion.",
+      "expected": [],
+      "source_path": "sources/slot_boss.step",
+      "source_sha256": "020a8e7d00b543e06127ed9c5c7e769d6107a7dc91e4302b8b5eab6f29a5558d",
+      "source_bytes": 38247,
+      "constructed_topology": [
+        20,
+        30,
+        13,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_interrupted",
+      "category": "unsupported",
+      "description": "Bridge is fused across the passage.",
+      "expected": [],
+      "source_path": "sources/slot_interrupted.step",
+      "source_sha256": "92ea39dc478ba2cdc87795c2b72f5cb6f5bc201e5c5e4371ca27d43f480571b1",
+      "source_bytes": 63617,
+      "constructed_topology": [
+        36,
+        50,
+        18,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_curved",
+      "category": "unsupported",
+      "description": "Quarter-annular through cut, not a straight capsule.",
+      "expected": [],
+      "source_path": "sources/slot_curved.step",
+      "source_sha256": "0a2d33aea0676ed72b653dcb8c104639ef6f2e344e4ccb1db9df6ede2b45f261",
+      "source_bytes": 37378,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_unequal_ends",
+      "category": "unsupported",
+      "description": "Unequal semicircle radii with non-tangent sides.",
+      "expected": [],
+      "source_path": "sources/slot_unequal_ends.step",
+      "source_sha256": "af4bdc4c31670acbd4e48c1d3a4fa27a74b878de33546ada9759a38a96f670c9",
+      "source_bytes": 40028,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_skew_passage",
+      "category": "unsupported",
+      "description": "Capsule extrusion skew to its opening planes.",
+      "expected": [],
+      "source_path": "sources/slot_skew_passage.step",
+      "source_sha256": "a3bf4c00851f818b73bbd9d73f78fcac24d04b73201f248b8225fa53989cd3cd",
+      "source_bytes": 180102,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "slot_spline",
+      "category": "unsupported",
+      "description": "Exact capsule converted to NURBS supports.",
+      "expected": [],
+      "source_path": "sources/slot_spline.step",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "source_bytes": 48380,
+      "constructed_topology": [
+        20,
+        30,
+        12,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "mixed_with_blind",
+      "category": "qualified",
+      "description": "One supported circle and slot plus a blind round recess.",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              7.0,
+              5.0,
+              0.0
+            ],
+            [
+              7.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              27.0,
+              5.0,
+              0.0
+            ],
+            [
+              27.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/mixed_with_blind.step",
+      "source_sha256": "7bd7d230ee799de933ce3d62bc0b4269ab97a8a7d0b55dc856cabe8ee65e37db",
+      "source_bytes": 46896,
+      "constructed_topology": [
+        24,
+        36,
+        15,
+        1,
+        1
+      ]
+    },
+    {
+      "identifier": "assembly_obstructed",
+      "category": "known_limit",
+      "description": "Separate solids cap the openings; local per-part holes remain qualified.",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              7.0,
+              5.0,
+              0.0
+            ],
+            [
+              7.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              27.0,
+              5.0,
+              0.0
+            ],
+            [
+              27.0,
+              5.0,
+              4.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/assembly_obstructed.step",
+      "source_sha256": "872f6e6f407b1ce6c54db28b23744aa000d97f989a897667d0663e185a7076e7",
+      "source_bytes": 60797,
+      "constructed_topology": [
+        30,
+        45,
+        19,
+        2,
+        2
+      ]
+    }
+  ]
+}

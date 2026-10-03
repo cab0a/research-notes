@@ -1,7 +1,7 @@
 """Locally qualify straight, constant-width capsule through slots (v1.10).
 
-The result is never a certificate of all openings in a part. This research API
-is separate from the circular-hole UI/CSV, pending the v1.11 integration.
+The result is never a certificate of all openings in a part. The dedicated API
+and CLI are also used by the unified hole inventory introduced in v1.11.
 """
 from __future__ import annotations
 
@@ -117,10 +117,11 @@ def scan_straight_through_slots(shape):
     from OCP.BRepClass3d import BRepClass3d_SolidClassifier
     from OCP.BRepTools import BRepTools
     from OCP.GeomAbs import GeomAbs_Plane, GeomAbs_Line, GeomAbs_Cylinder
-    from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_WIRE, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
+    from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_WIRE, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
     from OCP.TopoDS import TopoDS
     from OCP.gp import gp_Pnt
 
+    _require(not shape.IsNull(), 'A valid solid B-Rep is required.')
     faces, edges, solids = (indexed_shapes(shape, t) for t in (TopAbs_FACE, TopAbs_EDGE, TopAbs_SOLID))
     _require(0 < faces.Extent() <= MAX_FACES, 'Slot qualification requires 1..512 faces.')
     _require(solids.Extent() > 0 and BRepCheck_Analyzer(shape).IsValid(), 'A valid solid B-Rep is required.')
@@ -202,8 +203,9 @@ def scan_straight_through_slots(shape):
             for f in participating:
                 face = TopoDS.Face_s(faces.FindKey(f))
                 _require(BRep_Tool.Tolerance_s(face) <= TOL and all(
-                    BRep_Tool.Tolerance_s(TopoDS.Edge_s(e)) <= TOL for e in iter_shapes(face, TopAbs_EDGE)),
-                    'Face/edge tolerance exceeds the qualification tolerance.')
+                    BRep_Tool.Tolerance_s(TopoDS.Edge_s(e)) <= TOL for e in iter_shapes(face, TopAbs_EDGE)) and all(
+                    BRep_Tool.Tolerance_s(TopoDS.Vertex_s(v)) <= TOL for v in iter_shapes(face, TopAbs_VERTEX)),
+                    'Face/edge/vertex tolerance exceeds the qualification tolerance.')
             classifier = classifiers[solid]
 
             def material(p):

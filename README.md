@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.11.0では、丸穴と長孔を画面・Python API・CLI・CSVで統合しました。公開ブラケットの丸穴5か所・長孔6か所を同じ一覧に表示し、3D上の穴番号・内壁と表の行を対応させて選択できます。丸穴は径、長孔は幅・全長・長手方向を表示します。全体の穴数は未確定のまま保持します。[操作手順](docs/cad-hole-inventory.md)と[統合の検証記録](notes/unified-hole-inventory.md)をご覧ください。
+v1.12.0では、丸穴・長孔の誤認識と例外を自作44形状で検証しました。四角いくぼみの底にある丸穴を通常の貫通穴として取得してしまうケースを修正し、開口面・辺・頂点の許容差も確認します。STEP読込後は取得対象32個中30個を取得し、この範囲で誤取得は0個でした。100万mm離した座標では2個を見逃すため、残る限界も記録しています。公開ブラケットの丸穴5か所・長孔6か所を維持しています。[検証結果](notes/hole-recognition-robustness.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,7 +45,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.11.0. Scoped references, dimensional
+The current implementation version is v1.12.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -53,7 +53,26 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Unified Circular Holes and Slots: v1.11.0
+## Hole Recognition Robustness: v1.12.0
+
+Forty-four authored shapes are checked before STEP exchange, after exchange,
+and through the unified API, twice per path. The imported/unified paths match
+30 of 32 eligible authored features, with zero false accepted rows in this
+fixed set and two retained misses at a 1,000,000 mm coordinate offset.
+Twenty-eight controls intentionally qualify no rows. Nine tolerance mutations
+and 17 exception observations supplement the geometry matrix.
+
+The circular scanner now withholds a bore on a recessed rectangular shoulder.
+Both scanners check evidence vertices; circles also validate opening faces and
+the solid before classification. These conservative checks do not certify a
+complete count of public parts. See the [study](notes/hole-recognition-robustness.md)
+for the scoped before/after regression, stress misses and known assembly limit.
+
+```bash
+python -m research_notes.hole_robustness --output-dir output/hole-robustness-check --repeats 2
+```
+
+## Unified Circular Holes and Slots: introduced in v1.11.0
 
 The local `/holes` screen, Python `analyze_step(..., inspection=True)`, and
 `research-hole-list --public` now share one typed inventory. The fixed bracket

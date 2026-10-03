@@ -10,7 +10,7 @@ import platform
 import statistics
 import time
 
-from research_notes.hole_inventory import analyze_step, inventory_csv, inventory_svg
+from research_notes.hole_inventory import VERSION, analyze_step, inventory_csv, inventory_svg
 from research_notes.public_hole_benchmark import boundary_crosscheck as circle_crosscheck
 from research_notes.public_step import read_step_for_inspection
 from research_notes.public_step_corpus import CORPUS, verify_corpus
@@ -51,7 +51,7 @@ def run(output, repeats=3):
             (output/'bracket.svg').write_text(inventory_svg(result),encoding='utf-8')
     code_paths = [Path(__file__),Path(__file__).with_name('hole_inventory.py'),Path(__file__).with_name('slot_inventory.py'),
                   Path(__file__).with_name('public_hole_inventory.py'),Path(__file__).parent/'cad_editor/holes.js']
-    report = {'version':'1.11.0','repeats':repeats,'passed':all(r['passed'] for r in records) and circle_audit['passed'] and slot_audit['passed'] and slot_rows_match,
+    report = {'version':VERSION,'repeats':repeats,'passed':all(r['passed'] for r in records) and circle_audit['passed'] and slot_audit['passed'] and slot_rows_match,
               'selection':'Same six frozen files (five families), used in development; integration regression, not held-out recognition accuracy.',
               'summary':{'inputs':len(records),'imported':sum(r['result']['status']!='rejected' for r in records),
                          'verified_circular_holes':sum(r['result']['recognized_circular_hole_count'] for r in records),

@@ -2047,3 +2047,4 @@ The complete notes contain the narrower limitations for each experiment.
 - v1.10.0: [Bracket straight through-slot recognition](../notes/bracket-slot-inventory.md) — [evidence](../results/bracket-slot-inventory/results.json)
 
 - v1.11.0: [Unified circular-hole and slot inventory](../notes/unified-hole-inventory.md) — [evidence](../results/unified-hole-inventory/results.json)
+- v1.12.0: [Hole recognition false positives, abstention and exceptions](../notes/hole-recognition-robustness.md) — [evidence](../results/hole-robustness/results.json)

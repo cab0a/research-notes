@@ -1,0 +1,83 @@
+{
+  "version": "1.12.0",
+  "date": "2026-10-03",
+  "passed": true,
+  "tests": {
+    "command": "python -m pytest tests/test_hole_robustness.py tests/test_unified_hole_inventory.py tests/test_public_hole_inventory.py tests/test_hole_inventory.py tests/test_slot_inventory.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py tests/test_public_step_corpus.py tests/test_feature_recognition.py -q",
+    "passed": 345,
+    "duration_seconds": 172.31,
+    "new_robustness_tests": 145,
+    "platform": "WSL Ubuntu, Python 3.12.14, cadquery-ocp 7.9.3.1.1; other platform results not claimed"
+  },
+  "study": {
+    "controls": 44,
+    "paths": 3,
+    "records": 132,
+    "repeats": 2,
+    "input_evaluations": 264,
+    "tolerance_checks": 9,
+    "exception_observations": 17,
+    "all_expected_features_recognized": false,
+    "unified_matched_features": 30,
+    "unified_expected_features": 32,
+    "unified_misses": 2,
+    "false_positives": 0,
+    "code_and_source_hashes_checked": true,
+    "pass_definition": "No false accepted features or measurement errors; declared supported controls match truth. Stress misses are retained and reported. Exceptions must preserve request state or emit rejection with unknown count."
+  },
+  "public_regression": {
+    "repeats": 3,
+    "inputs": 6,
+    "imported": 6,
+    "verified_circular_holes": 5,
+    "verified_slots": 6,
+    "unknown_whole_counts": 6,
+    "frozen_sources_and_old_evidence_unchanged": true
+  },
+  "cli": [
+    {
+      "id": "bracket",
+      "exit_code": 2,
+      "status": "partial",
+      "recognized": 11,
+      "whole_count": null,
+      "csv_sha256": "ccb230a815b8b6fe0b0a7174a9d219f4af322c8601ef8bfd35e97d5477d6fa95",
+      "matches_benchmark": true
+    },
+    {
+      "id": "recess",
+      "exit_code": 2,
+      "status": "unresolved",
+      "recognized": 0,
+      "whole_count": null,
+      "csv_sha256": "3bb8c6c1d0748ec4ee3bc803ad77f9599b1785dccd57df75bf2155b5178ef75a",
+      "matches_benchmark": true
+    }
+  ],
+  "installed_version": "1.12.0",
+  "wheel": {
+    "filename": "research_notes-1.12.0-py3-none-any.whl",
+    "sha256": "a79791180f9a72c406b510b67ea9a71b1256eaa1871a926658e5b92124ce9612",
+    "modules_and_assets_match_source": [
+      "hole_robustness.py",
+      "hole_robustness_controls.py",
+      "hole_inventory.py",
+      "public_hole_inventory.py",
+      "slot_inventory.py",
+      "cad_editor/holes.html",
+      "cad_editor/holes.js"
+    ]
+  },
+  "figure": {
+    "path": "examples.png",
+    "sha256": "e3b50a82741745a5f22553264b602d5e4b3db9d85cd3f6ca9f0879019a45e605",
+    "plotter_sha256": "87735b856c05c195bb20e9c5126c99bf7a98fb8dbc0004bcbbc41188eba75d63",
+    "verified": "Rendered frozen STEP edges and measured wall evidence; visually inspected."
+  },
+  "scope": [
+    "Development controls with shared base models, not held-out population accuracy.",
+    "Same OCCT kernel for model creation, exchange and recognition; not independent metrology.",
+    "Large-coordinate misses and per-component assembly obstruction limit are retained.",
+    "No native crash injection or hard CPU/memory deadlines claimed."
+  ]
+}

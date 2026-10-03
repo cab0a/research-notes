@@ -15,7 +15,7 @@ import tempfile
 from research_notes.cad_api import CadAPIError
 from research_notes.revision_detection import LENGTH_TOL, FIT_REL_TOL
 
-VERSION = "1.11.0"
+VERSION = "1.12.0"
 MAX_SOURCE_BYTES = 2_000_000
 STATUS_LABELS = {"complete": "対応範囲内で一覧取得", "partial": "穴を部分確認・全体は保留", "unresolved": "形状の判定保留", "rejected": "読込条件で拒否"}
 TYPE_LABELS = {"through": "丸穴・貫通", "blind": "丸穴・平底止まり", "straight_through_slot": "長孔・貫通"}

@@ -39,7 +39,7 @@ jobs:
           git clone https://github.com/IfcOpenShell/step-file-parser.git external/ifcopenshell_step_file_parser
           git -C external/ifcopenshell_step_file_parser checkout --detach 9400d243d880dace57490949d74ab1932ce99a09
       - name: Check API and native operation behavior
-        run: python -m pytest tests/test_step_part21.py tests/test_express_schema.py tests/test_sketch_constraints.py tests/test_parametric_features.py tests/test_deterministic_recompute.py tests/test_assembly_constraints.py tests/test_engineering_analysis.py tests/test_operational_studies.py tests/test_release_studies.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py tests/test_hole_inventory.py tests/test_public_hole_inventory.py tests/test_slot_inventory.py tests/test_unified_hole_inventory.py -k "not artifacts_reproduce" -q
+        run: python -m pytest tests/test_step_part21.py tests/test_express_schema.py tests/test_sketch_constraints.py tests/test_parametric_features.py tests/test_deterministic_recompute.py tests/test_assembly_constraints.py tests/test_engineering_analysis.py tests/test_operational_studies.py tests/test_release_studies.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py tests/test_hole_inventory.py tests/test_public_hole_inventory.py tests/test_slot_inventory.py tests/test_unified_hole_inventory.py tests/test_hole_robustness.py -k "not artifacts_reproduce" -q
       - name: Record actual platform contracts
         run: python -m research_notes.cad_platform --label ${{ matrix.label }} --output-dir cad-observations
       - uses: actions/upload-artifact@v7

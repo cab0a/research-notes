@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,circle_rectangular_shoulder.step,0feaa855fe8b06a358973c51dc8159ad69ac2c78c56379b6271435b22bc838c2,unresolved,,,,,,,,,,,,mm,丸穴0か所・長孔0か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。,0,,,,,,,,0,0,1.12.0

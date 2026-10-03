@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,circle_internal_void.step,88cb7fbbddc13c97fe12c695653df97b374a45a6980581046df065ecd8454943,unresolved,,,,,,,,,,,,mm,丸穴0か所・長孔0か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。,0,,,,,,,,0,0,1.12.0

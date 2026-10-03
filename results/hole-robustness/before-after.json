@@ -1,0 +1,97 @@
+{
+  "version": "1.12.0",
+  "id": "circle_rectangular_shoulder",
+  "source_sha256": "0feaa855fe8b06a358973c51dc8159ad69ac2c78c56379b6271435b22bc838c2",
+  "baseline_commit": "71f9e4cdb232e025af5e1c992a6f7bff9b3b9681",
+  "baseline_module_sha256": "b38e79fcc4c33d61744530bb9f3e83b7e057c318811f94dcc1b9e4ddd1ea43b8",
+  "baseline_scope": "Historical v1.11 scanner source executed with this study runtime and unchanged geometry helpers; not a full historical environment recreation.",
+  "reproduction": "Load public_hole_inventory.py from the named Git commit and call its scan_circular_through_holes on the frozen fixture.",
+  "observations": [
+    {
+      "stage": "constructed",
+      "expected_qualified_holes": 0,
+      "before_recognized": 1,
+      "after_recognized": 0,
+      "before_rows": [
+        {
+          "kind": "through",
+          "diameter_mm": 2.0,
+          "x_mm": 7.0,
+          "y_mm": 5.0,
+          "entry_z_mm": 2.0,
+          "depth_mm": 2.0,
+          "axis": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "faces": [
+            13
+          ],
+          "solid_index": 1,
+          "opening_faces": [
+            4,
+            14
+          ],
+          "opening_edges": [
+            20,
+            32
+          ],
+          "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+          "radial_material_samples": 48,
+          "axial_void_samples": 5,
+          "id": "H1"
+        }
+      ],
+      "after_reasons": [
+        {
+          "face_index": 13,
+          "reason": "開口面が周囲の壁より奥にあります。段付き穴・ポケット内の穴として保留します。"
+        }
+      ]
+    },
+    {
+      "stage": "step_imported",
+      "expected_qualified_holes": 0,
+      "before_recognized": 1,
+      "after_recognized": 0,
+      "before_rows": [
+        {
+          "kind": "through",
+          "diameter_mm": 2.0,
+          "x_mm": 7.0,
+          "y_mm": 5.0,
+          "entry_z_mm": 2.0,
+          "depth_mm": 2.0,
+          "axis": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "faces": [
+            13
+          ],
+          "solid_index": 1,
+          "opening_faces": [
+            4,
+            14
+          ],
+          "opening_edges": [
+            20,
+            32
+          ],
+          "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+          "radial_material_samples": 48,
+          "axial_void_samples": 5,
+          "id": "H1"
+        }
+      ],
+      "after_reasons": [
+        {
+          "face_index": 13,
+          "reason": "開口面が周囲の壁より奥にあります。段付き穴・ポケット内の穴として保留します。"
+        }
+      ]
+    }
+  ]
+}
