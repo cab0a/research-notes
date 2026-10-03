@@ -50,7 +50,8 @@ def run(output, repeats=3):
             slot_rows_match = adapted_slots == scan_straight_through_slots(shape)['slots']
             (output/'bracket.svg').write_text(inventory_svg(result),encoding='utf-8')
     code_paths = [Path(__file__),Path(__file__).with_name('hole_inventory.py'),Path(__file__).with_name('slot_inventory.py'),
-                  Path(__file__).with_name('public_hole_inventory.py'),Path(__file__).parent/'cad_editor/holes.js']
+                  Path(__file__).with_name('public_hole_inventory.py'),Path(__file__).with_name('local_material.py'),
+                  Path(__file__).parent/'cad_editor/holes.js']
     report = {'version':VERSION,'repeats':repeats,'passed':all(r['passed'] for r in records) and circle_audit['passed'] and slot_audit['passed'] and slot_rows_match,
               'selection':'Same six frozen files (five families), used in development; integration regression, not held-out recognition accuracy.',
               'summary':{'inputs':len(records),'imported':sum(r['result']['status']!='rejected' for r in records),

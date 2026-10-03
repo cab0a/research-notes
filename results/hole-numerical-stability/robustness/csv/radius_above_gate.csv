@@ -1,0 +1,4 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,radius_above_gate.step,d148edad7270d5af43071522d2dc2d763cb5ef2b2e2f1bd02580b0b70d690b14,partial,,,,,,,,,,,,mm,丸穴1か所・長孔1か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。,2,,,,,,,,1,1,1.13.0
+hole,radius_above_gate.step,d148edad7270d5af43071522d2dc2d763cb5ef2b2e2f1bd02580b0b70d690b14,partial,,H1,through,0.00202,0.00707,0.00505,0.00404,0.00404,0.0,0.0,-1.0,mm,,2,1,circular_hole,,,,,,1,1,1.13.0
+hole,radius_above_gate.step,d148edad7270d5af43071522d2dc2d763cb5ef2b2e2f1bd02580b0b70d690b14,partial,,S1,straight_through_slot,,0.02727,0.00505,0.00404,0.00404,0.0,0.0,-1.0,mm,,2,1,straight_slot,0.00202,0.00606,1.0,0.0,0.0,1,1,1.13.0

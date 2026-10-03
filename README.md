@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.12.0では、丸穴・長孔の誤認識と例外を自作44形状で検証しました。四角いくぼみの底にある丸穴を通常の貫通穴として取得してしまうケースを修正し、開口面・辺・頂点の許容差も確認します。STEP読込後は取得対象32個中30個を取得し、この範囲で誤取得は0個でした。100万mm離した座標では2個を見逃すため、残る限界も記録しています。公開ブラケットの丸穴5か所・長孔6か所を維持しています。[検証結果](notes/hole-recognition-robustness.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
+v1.13.0では、丸穴・長孔の材料判定を部品の近くの座標で行い、100万mm離したモデルの取りこぼしを修正しました。出力する位置・面番号と許容差の基準は維持します。既存44形状のSTEP読込後は取得対象32個中32個を取得し、誤取得は0個でした。追加の遠方座標12形状ではSTEP交換後に見逃しが残るため、その条件も記録しています。公開ブラケットの丸穴5か所・長孔6か所を維持しています。[数値安定化の検証結果](notes/hole-numerical-stability.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,7 +45,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.12.0. Scoped references, dimensional
+The current implementation version is v1.13.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -53,7 +53,25 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Hole Recognition Robustness: v1.12.0
+## Hole Numerical Stability: v1.13.0
+
+Both local recognizers classify material on a private solid translated near
+its bounding-box centre. Evidence, output coordinates, face IDs and original
+tolerance gates stay on the input shape. The existing 1,000,000 mm offset
+regression now measures its circle and slot; the 44-control imported/unified
+matrix matches 32/32 eligible features with no false accepted rows.
+
+Twelve additional offset/scale/rotation controls match 24/24 features in native
+B-Rep, but only 8/24 after STEP exchange. Changed angular spans, tolerances and
+opening evidence retain 16 misses, reported against the same authored truth.
+No whole-part completeness or general real-part accuracy is inferred. See the
+[study and limitations](notes/hole-numerical-stability.md).
+
+```bash
+python -m research_notes.hole_numerical_stability --output-dir output/hole-numerical-stability-check --repeats 2
+```
+
+## Hole Recognition Robustness: introduced in v1.12.0
 
 Forty-four authored shapes are checked before STEP exchange, after exchange,
 and through the unified API, twice per path. The imported/unified paths match

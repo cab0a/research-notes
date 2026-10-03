@@ -59,7 +59,7 @@ def test_csv_has_11_typed_rows_and_preserves_inapplicable_and_unknown_blanks(bra
     assert len(rows) == 12 and summary['record_type'] == 'summary'
     assert summary['recognized_hole_count'] == '11'
     assert summary['recognized_circular_hole_count'] == '5' and summary['recognized_slot_count'] == '6'
-    assert all(row['hole_count'] == '' and row['inventory_version'] == '1.12.0' for row in rows)
+    assert all(row['hole_count'] == '' and row['inventory_version'] == '1.13.0' for row in rows)
     for row in holes[:5]:
         assert row['feature_type'] == 'circular_hole' and row['diameter_mm']
         assert all(row[k] == '' for k in ('width_mm','length_mm','long_axis_x','long_axis_y','long_axis_z'))

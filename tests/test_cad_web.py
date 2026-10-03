@@ -285,7 +285,7 @@ def test_comparison_enforces_local_request_guards(server, revision_sources, head
 
 def test_comparison_assets_and_malformed_actions(server):
     status, _, page = call(server, "/revisions")
-    assert status == 200 and b"__TOKEN__" not in page and b"1.12.0" in page
+    assert status == 200 and b"__TOKEN__" not in page and b"1.13.0" in page
     for asset in ("revisions.js", "revisions.css"):
         assert call(server, "/" + asset)[0] == 200
     before = revision_state(server)

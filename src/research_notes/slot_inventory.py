@@ -12,6 +12,7 @@ from pathlib import Path
 
 from research_notes.brep_runtime import indexed_shapes, iter_shapes, surface_area_and_centroid
 from research_notes.feature_recognition import _face_geometry
+from research_notes.local_material import LocalMaterialClassifier
 from research_notes.public_hole_inventory import PUBLIC_BUDGET, TOL
 
 ANGLE_TOL = 1e-7
@@ -114,12 +115,10 @@ def scan_straight_through_slots(shape):
     from OCP.BRep import BRep_Tool
     from OCP.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Surface
     from OCP.BRepCheck import BRepCheck_Analyzer
-    from OCP.BRepClass3d import BRepClass3d_SolidClassifier
     from OCP.BRepTools import BRepTools
     from OCP.GeomAbs import GeomAbs_Plane, GeomAbs_Line, GeomAbs_Cylinder
     from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_WIRE, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
     from OCP.TopoDS import TopoDS
-    from OCP.gp import gp_Pnt
 
     _require(not shape.IsNull(), 'A valid solid B-Rep is required.')
     faces, edges, solids = (indexed_shapes(shape, t) for t in (TopAbs_FACE, TopAbs_EDGE, TopAbs_SOLID))
@@ -133,7 +132,7 @@ def scan_straight_through_slots(shape):
             edge_faces.setdefault(e, set()).add(i)
     for s in range(1, solids.Extent() + 1):
         solid = TopoDS.Solid_s(solids.FindKey(s))
-        classifiers[s] = BRepClass3d_SolidClassifier(solid)
+        classifiers[s] = LocalMaterialClassifier(solid, TOL)
         for f in iter_shapes(solid, TopAbs_FACE):
             owners[faces.FindIndex(f)].add(s)
 
@@ -208,9 +207,7 @@ def scan_straight_through_slots(shape):
                     'Face/edge/vertex tolerance exceeds the qualification tolerance.')
             classifier = classifiers[solid]
 
-            def material(p):
-                classifier.Perform(gp_Pnt(*p), TOL)
-                return classifier.State()
+            material = classifier.state
 
             offset = max(20 * TOL, min(radius, spacing, depth) * 1e-4)
             material_samples = 0

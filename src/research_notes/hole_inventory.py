@@ -15,7 +15,7 @@ import tempfile
 from research_notes.cad_api import CadAPIError
 from research_notes.revision_detection import LENGTH_TOL, FIT_REL_TOL
 
-VERSION = "1.12.0"
+VERSION = "1.13.0"
 MAX_SOURCE_BYTES = 2_000_000
 STATUS_LABELS = {"complete": "対応範囲内で一覧取得", "partial": "穴を部分確認・全体は保留", "unresolved": "形状の判定保留", "rejected": "読込条件で拒否"}
 TYPE_LABELS = {"through": "丸穴・貫通", "blind": "丸穴・平底止まり", "straight_through_slot": "長孔・貫通"}
@@ -181,7 +181,9 @@ def analyze_step(source, file_name="uploaded.step", *, preview=True, inspection=
                     'axis_reference': '選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。',
                     'count_policy': '全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。',
                     'slot_measurements': '長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。',
-                    'local_qualification_tolerance_mm': 1e-5}
+                    'local_qualification_tolerance_mm': 1e-5,
+                    'material_classification_frame': '材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。',
+                    'material_coordinate_resolution_limit_mm': 1e-5 / 16}
                 if include_slots and analysis['status'] != 'complete':
                     _merge_slots(analysis, imported.shape)
             else:

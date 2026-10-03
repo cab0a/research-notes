@@ -1,0 +1,4 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,assembly_obstructed.step,872f6e6f407b1ce6c54db28b23744aa000d97f989a897667d0663e185a7076e7,partial,,,,,,,,,,,,mm,丸穴1か所・長孔1か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。,2,,,,,,,,1,1,1.13.0
+hole,assembly_obstructed.step,872f6e6f407b1ce6c54db28b23744aa000d97f989a897667d0663e185a7076e7,partial,,H1,through,2.0,7.0,5.0,4.0,4.0,0.0,0.0,-1.0,mm,,2,1,circular_hole,,,,,,1,1,1.13.0
+hole,assembly_obstructed.step,872f6e6f407b1ce6c54db28b23744aa000d97f989a897667d0663e185a7076e7,partial,,S1,straight_through_slot,,27.0,5.0,4.0,4.0,0.0,0.0,-1.0,mm,,2,1,straight_slot,2.0,6.0,1.0,0.0,0.0,1,1,1.13.0

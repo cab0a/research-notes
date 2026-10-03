@@ -1,10 +1,10 @@
-# STEP Hole Inventory — v1.12.0
+# STEP Hole Inventory — v1.13.0
 
 ## 日本語概要
 
 STEPを1つ読み込み、丸穴と直線状の貫通長孔を画面・Python API・CLI・CSVでまとめて扱います。公開ブラケットでは丸穴5か所と長孔6か所を確認できます。穴番号・内壁・表の行を選択すると、対応する面と行を強調します。確認した11か所は全穴数の保証ではなく、全体数は不明のままです。該当しない寸法は画面では「—」、CSVでは空欄にします。
 
-v1.12では[誤認識・例外の検証](../notes/hole-recognition-robustness.md)を追加しました。くぼみの底にある丸穴は保留し、面・辺・頂点の許容差を確認します。100万mm離した座標の検証で見逃しが残っているため、認識できなかった結果は人の確認へ返します。
+v1.13では[数値判定の安定化](../notes/hole-numerical-stability.md)を追加しました。材料判定を部品の近くの座標で行い、既存の100万mm移動モデルを取得できるようにしました。出力座標と判定の許容差は維持します。STEP交換で円弧の角度や許容差などが変わる追加条件には見逃しが残り、人の確認へ返します。v1.12の段差・ポケット内の穴の保留と、面・辺・頂点の許容差の確認も維持します。
 
 
 ---
@@ -13,7 +13,9 @@ v1.12では[誤認識・例外の検証](../notes/hole-recognition-robustness.md
 
 Public inspection combines the v1.9 circular-hole and v1.10 straight-slot
 rules in one typed inventory. Version 1.12 adds conservative validation of
-recessed round openings, opening faces and vertices. Qualified
+recessed round openings, opening faces and vertices. Version 1.13 translates
+only the material classifier's private solid and samples into a per-solid
+local frame, retaining output coordinates and all qualification gates. Qualified
 plates retain complete inventories; public parts retain unknown whole counts.
 See the [integration study](../notes/unified-hole-inventory.md),
 [circular-hole evidence](../notes/public-step-hole-inventory.md) and
@@ -60,7 +62,7 @@ STEPを外部へ送信せず、外部参照も取得しません。終了時に�
 | inventory_version | 一覧形式のバージョン |
 | source_sha256 | 読み込んだバイト列のSHA-256 |
 
-mmへ変換したSTEP座標を維持し、原点への移動・自動位置合わせはしません。
+表示・CSV・JSONはmmへ変換したSTEP座標を維持し、自動位置合わせはしません。材料判定用の内部コピーだけを、ソリッドごとの原点近傍へ平行移動します。入力形状や出力位置・面番号を変更しません。
 部分確認では2開口中心の辞書順が大きい側を選び、板全体の確定では上面を選びます。
 長孔の長手方向は半円中心の辞書順で決めます。方向の符号は加工方向の推定ではありません。
 画面は小数点以下最大6桁に丸め、CSVには解析値を保持します。元CADの公称寸法・公差・設計履歴ではありません。
@@ -91,7 +93,9 @@ CSVはUTF-8 BOM付きです。既存19列の後に新しい9列を追加しま�
 名前・理由・穴数不明に置き換えます。古い画面状態からの要求を拒否します。
 ネイティブ処理を同一プロセスで実行し、CPU・メモリの強制上限はありません。
 
-自作44形状による検証では、STEP読込後の取得対象32個中30個を取得し、誤取得は0個でした。原点から100万mm離した1モデルの丸穴・長孔2個は保留しました。合成モデルの固定評価であり、一般の製造部品に対する精度保証ではありません。別部品による開口のふさがりは、この一覧の対象外です。
+v1.13で再評価した既存44形状では、STEP読込後の取得対象32個中32個を取得し、誤取得は0個でした。原点から100万mm離した既存モデルの丸穴・長孔2個も取得します。追加した遠方座標12形状では、作成直後24個中24個、STEP交換後24個中8個を取得しました。残る16個は円弧角度・許容差・開口証拠などの条件で保留します。合成モデルの固定評価であり、一般の製造部品に対する精度保証ではありません。別部品による開口のふさがりは、この一覧の対象外です。
+
+材料判定では、浮動小数点の座標間隔が長さ許容差の1/16（0.000000625 mm）を超えるサンプルを保留します。局所座標への移動で、入力時点で失われた桁は回復できません。この間隔の条件も測定精度の保証ではありません。
 
 ## CLI and Python
 
@@ -99,6 +103,7 @@ CSVはUTF-8 BOM付きです。既存19列の後に新しい9列を追加しま�
 python -m research_notes.hole_inventory fixtures/public-step-corpus/sources/build123d_bracket.step --public --output-dir output/bracket-unified
 python -m research_notes.unified_hole_benchmark --output-dir output/unified-check --repeats 3
 python -m research_notes.hole_robustness --output-dir output/hole-robustness-check --repeats 2
+python -m research_notes.hole_numerical_stability --output-dir output/hole-numerical-stability-check --repeats 2
 ```
 
 The installed alias is `research-hole-list`. Outputs are `holes.csv`,

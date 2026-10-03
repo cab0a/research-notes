@@ -1,0 +1,620 @@
+{
+  "version": "1.13.0",
+  "provenance": "Repository-authored translated synthetic controls.",
+  "license": "Same as research repository; see LICENSING.md.",
+  "truth_basis": "Construction dimensions and analytic rigid/scale transforms; same OCCT, not independent metrology.",
+  "controls": [
+    {
+      "identifier": "offset_1000000_scale_1_0",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 0.0 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000007.0,
+              -999995.0,
+              1000000.0
+            ],
+            [
+              1000007.0,
+              -999995.0,
+              1000004.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000027.0,
+              -999995.0,
+              1000000.0
+            ],
+            [
+              1000027.0,
+              -999995.0,
+              1000004.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_1000000_scale_1_0.step",
+      "source_sha256": "cc5d69fe18089364500e068b4f77691f17ea18accb3468ff371a3161c4e5f551",
+      "source_bytes": 43241
+    },
+    {
+      "identifier": "offset_1000000_scale_1_0_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 1.0, rotation 0.73 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000002.8522257966,
+              -999991.9124692788,
+              999999.324237587
+            ],
+            [
+              1000004.4964749923,
+              -999992.1885390244,
+              1000002.960201019
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              1000018.1197504116,
+              -999980.4906917319,
+              999993.2872110175
+            ],
+            [
+              1000019.7639996072,
+              -999980.7667614777,
+              999996.9231744494
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_1000000_scale_1_0_rotated.step",
+      "source_sha256": "0ebcc87ab113fb912ae0f777d46549f299b3fd1119b669c59cdb7ca13fa98da2",
+      "source_bytes": 49633
+    },
+    {
+      "identifier": "offset_1000000_scale_0_01",
+      "category": "qualified",
+      "description": "Uniform scale 0.01, rotation 0.0 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.02,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              1000000.07,
+              -999999.95,
+              1000000.0
+            ],
+            [
+              1000000.07,
+              -999999.95,
+              1000000.04
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.02,
+          "length_mm": 0.06,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              1000000.27,
+              -999999.95,
+              1000000.0
+            ],
+            [
+              1000000.27,
+              -999999.95,
+              1000000.04
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_1000000_scale_0_01.step",
+      "source_sha256": "25b5cec767e52fcacd52fa6fe9aaea0552a58038daef7f21d226612ef3419364",
+      "source_bytes": 46132
+    },
+    {
+      "identifier": "offset_1000000_scale_0_1_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 0.1, rotation 0.73 rad about (1,2,3), translation (1000000.0, -1000000.0, 1000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.2,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              1000000.2852225796,
+              -999999.1912469278,
+              999999.9324237587
+            ],
+            [
+              1000000.4496474992,
+              -999999.2188539024,
+              1000000.2960201019
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.2,
+          "length_mm": 0.6000000000000001,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              1000001.8119750412,
+              -999998.0490691732,
+              999999.3287211017
+            ],
+            [
+              1000001.9763999607,
+              -999998.0766761478,
+              999999.692317445
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_1000000_scale_0_1_rotated.step",
+      "source_sha256": "aae81f1fc1ded77e20fc0f219df63146e69e58bf311e4d8b5f15020c96c5a092",
+      "source_bytes": 50685
+    },
+    {
+      "identifier": "offset_10000000_scale_1_0",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 0.0 rad about (1,2,3), translation (10000000.0, -10000000.0, 10000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              10000007.0,
+              -9999995.0,
+              10000000.0
+            ],
+            [
+              10000007.0,
+              -9999995.0,
+              10000004.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              10000027.0,
+              -9999995.0,
+              10000000.0
+            ],
+            [
+              10000027.0,
+              -9999995.0,
+              10000004.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_10000000_scale_1_0.step",
+      "source_sha256": "0441e530b2cfcb0f20724a3366bbae5c1f48ff8ca3c4000e5a8db223122f2d89",
+      "source_bytes": 43384
+    },
+    {
+      "identifier": "offset_10000000_scale_1_0_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 1.0, rotation 0.73 rad about (1,2,3), translation (10000000.0, -10000000.0, 10000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              10000002.852225797,
+              -9999991.912469279,
+              9999999.324237587
+            ],
+            [
+              10000004.496474992,
+              -9999992.188539024,
+              10000002.96020102
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              10000018.119750412,
+              -9999980.490691733,
+              9999993.287211018
+            ],
+            [
+              10000019.763999607,
+              -9999980.766761478,
+              9999996.92317445
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_10000000_scale_1_0_rotated.step",
+      "source_sha256": "1378c16721ce2580ff722f0072e8d6cfc1566088e25fdbc285d298d2b9aa0b0f",
+      "source_bytes": 49633
+    },
+    {
+      "identifier": "offset_10000000_scale_0_01",
+      "category": "exchange_limit",
+      "description": "Uniform scale 0.01, rotation 0.0 rad about (1,2,3), translation (10000000.0, -10000000.0, 10000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.02,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              10000000.07,
+              -9999999.95,
+              10000000.0
+            ],
+            [
+              10000000.07,
+              -9999999.95,
+              10000000.04
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.02,
+          "length_mm": 0.06,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              10000000.27,
+              -9999999.95,
+              10000000.0
+            ],
+            [
+              10000000.27,
+              -9999999.95,
+              10000000.04
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_10000000_scale_0_01.step",
+      "source_sha256": "b452eb12554a59c57f38aaa950988a223db0d1c43cc59a3bc28b83057f0693ab",
+      "source_bytes": 46315
+    },
+    {
+      "identifier": "offset_10000000_scale_0_1_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 0.1, rotation 0.73 rad about (1,2,3), translation (10000000.0, -10000000.0, 10000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.2,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              10000000.285222579,
+              -9999999.191246929,
+              9999999.93242376
+            ],
+            [
+              10000000.4496475,
+              -9999999.218853902,
+              10000000.296020102
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.2,
+          "length_mm": 0.6000000000000001,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              10000001.811975041,
+              -9999998.049069174,
+              9999999.328721102
+            ],
+            [
+              10000001.97639996,
+              -9999998.076676147,
+              9999999.692317445
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_10000000_scale_0_1_rotated.step",
+      "source_sha256": "30f2d68dfba13f6c26456a1ba776ecdc96f739d14aa126d966cf7aac212e8cd2",
+      "source_bytes": 50666
+    },
+    {
+      "identifier": "offset_100000000_scale_1_0",
+      "category": "qualified",
+      "description": "Uniform scale 1.0, rotation 0.0 rad about (1,2,3), translation (100000000.0, -100000000.0, 100000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              100000007.0,
+              -99999995.0,
+              100000000.0
+            ],
+            [
+              100000007.0,
+              -99999995.0,
+              100000004.0
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              100000027.0,
+              -99999995.0,
+              100000000.0
+            ],
+            [
+              100000027.0,
+              -99999995.0,
+              100000004.0
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_100000000_scale_1_0.step",
+      "source_sha256": "66440a5001786d8cbe6cb0624b619155518548ac85eb18c795409f90adcebdc1",
+      "source_bytes": 43605
+    },
+    {
+      "identifier": "offset_100000000_scale_1_0_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 1.0, rotation 0.73 rad about (1,2,3), translation (100000000.0, -100000000.0, 100000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 2.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              100000002.8522258,
+              -99999991.91246928,
+              99999999.32423759
+            ],
+            [
+              100000004.496475,
+              -99999992.18853903,
+              100000002.96020103
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 2.0,
+          "length_mm": 6.0,
+          "depth_mm": 4.0,
+          "ends_mm": [
+            [
+              100000018.11975041,
+              -99999980.49069174,
+              99999993.28721102
+            ],
+            [
+              100000019.76399961,
+              -99999980.76676148,
+              99999996.92317446
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_100000000_scale_1_0_rotated.step",
+      "source_sha256": "aee3f0dfe9f54526ff61752ca5862552189f552a245b3acf28c57385d5180bf5",
+      "source_bytes": 49636
+    },
+    {
+      "identifier": "offset_100000000_scale_0_01",
+      "category": "exchange_limit",
+      "description": "Uniform scale 0.01, rotation 0.0 rad about (1,2,3), translation (100000000.0, -100000000.0, 100000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.02,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              100000000.07,
+              -99999999.95,
+              100000000.0
+            ],
+            [
+              100000000.07,
+              -99999999.95,
+              100000000.04
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.02,
+          "length_mm": 0.06,
+          "depth_mm": 0.04,
+          "ends_mm": [
+            [
+              100000000.27,
+              -99999999.95,
+              100000000.0
+            ],
+            [
+              100000000.27,
+              -99999999.95,
+              100000000.04
+            ]
+          ],
+          "long_direction": [
+            1.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "source_path": "sources/offset_100000000_scale_0_01.step",
+      "source_sha256": "05898092d782ee2f106854845dc921d2b23ca35ce185f8af94feed04b3bda31d",
+      "source_bytes": 46453
+    },
+    {
+      "identifier": "offset_100000000_scale_0_1_rotated",
+      "category": "exchange_limit",
+      "description": "Uniform scale 0.1, rotation 0.73 rad about (1,2,3), translation (100000000.0, -100000000.0, 100000000.0).",
+      "expected": [
+        {
+          "feature_type": "circular_hole",
+          "diameter_mm": 0.2,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              100000000.28522258,
+              -99999999.19124693,
+              99999999.93242376
+            ],
+            [
+              100000000.4496475,
+              -99999999.2188539,
+              100000000.2960201
+            ]
+          ],
+          "long_direction": null
+        },
+        {
+          "feature_type": "straight_slot",
+          "width_mm": 0.2,
+          "length_mm": 0.6000000000000001,
+          "depth_mm": 0.4,
+          "ends_mm": [
+            [
+              100000001.81197505,
+              -99999998.04906917,
+              99999999.3287211
+            ],
+            [
+              100000001.97639996,
+              -99999998.07667615,
+              99999999.69231744
+            ]
+          ],
+          "long_direction": [
+            0.7633762307488082,
+            0.571088877342196,
+            -0.30185132847773344
+          ]
+        }
+      ],
+      "source_path": "sources/offset_100000000_scale_0_1_rotated.step",
+      "source_sha256": "53d6cca9dc5d7f54e01c67c285aa2bd7125048596572513d635b725387c3b828",
+      "source_bytes": 50689
+    }
+  ]
+}

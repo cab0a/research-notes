@@ -1,0 +1,205 @@
+{
+  "version": "1.13.0",
+  "date": "2026-10-03",
+  "passed": true,
+  "tests": {
+    "command": "python -m pytest tests/test_hole_numerical_stability.py tests/test_hole_robustness.py tests/test_unified_hole_inventory.py tests/test_public_hole_inventory.py tests/test_hole_inventory.py tests/test_slot_inventory.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py tests/test_public_step_corpus.py tests/test_feature_recognition.py -q",
+    "passed": 450,
+    "new_numerical_tests": 105,
+    "duration_seconds": 120.54,
+    "platform": "WSL Ubuntu, Python 3.12.14, cadquery-ocp 7.9.3.1.1; other platform results not claimed"
+  },
+  "existing_controls": {
+    "controls": 44,
+    "paths": 3,
+    "repeats": 2,
+    "summary": {
+      "constructed": {
+        "executions": 44,
+        "expected_features": 32,
+        "matched_features": 28,
+        "false_positives": 0,
+        "missed_features": 4,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 28,
+        "max_length_error_mm": 6.493717247355563e-10,
+        "max_direction_error": 5.000000413701855e-10
+      },
+      "step_scanners": {
+        "executions": 44,
+        "expected_features": 32,
+        "matched_features": 32,
+        "false_positives": 0,
+        "missed_features": 0,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 28,
+        "max_length_error_mm": 2.836194066662721e-07,
+        "max_direction_error": 9.900032460485875e-09
+      },
+      "unified": {
+        "executions": 44,
+        "expected_features": 32,
+        "matched_features": 32,
+        "false_positives": 0,
+        "missed_features": 0,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 28,
+        "max_length_error_mm": 2.836194066662721e-07,
+        "max_direction_error": 9.900032460485875e-09
+      }
+    },
+    "tolerance_checks": 9,
+    "exception_observations": 17
+  },
+  "additional_controls": {
+    "controls": 12,
+    "paths": 3,
+    "repeats": 2,
+    "summary": {
+      "constructed": {
+        "executions": 12,
+        "expected_features": 24,
+        "matched_features": 24,
+        "false_positives": 0,
+        "missed_features": 0,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 0,
+        "max_length_error_mm": 2.1073424255447017e-08,
+        "max_direction_error": 3.8351914824485966e-08
+      },
+      "step_scanners": {
+        "executions": 12,
+        "expected_features": 24,
+        "matched_features": 8,
+        "false_positives": 0,
+        "missed_features": 16,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 0,
+        "max_length_error_mm": 0.0,
+        "max_direction_error": 0.0
+      },
+      "unified": {
+        "executions": 12,
+        "expected_features": 24,
+        "matched_features": 8,
+        "false_positives": 0,
+        "missed_features": 16,
+        "measurement_errors": 0,
+        "intended_zero_row_cases": 0,
+        "max_length_error_mm": 0.0,
+        "max_direction_error": 0.0
+      }
+    },
+    "all_expected_features_recognized": false,
+    "frozen_repeat_matrix_identical": true
+  },
+  "public_regression": {
+    "inputs": 6,
+    "imported": 6,
+    "verified_circular_holes": 5,
+    "verified_slots": 6,
+    "unknown_whole_counts": 6,
+    "repeats": 3,
+    "all_hole_rows_unchanged": true
+  },
+  "code_and_source_hashes_checked": true,
+  "prior_sources_and_evidence_unchanged": true,
+  "cli": [
+    {
+      "id": "far",
+      "command": [
+        "output/venv312/bin/research-hole-list",
+        "fixtures/hole-robustness/sources/translated_1e6.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.13/far"
+      ],
+      "exit_code": 2,
+      "status": "partial",
+      "recognized": 2,
+      "whole_count": null,
+      "csv_sha256": "f505e3217dc0c75790b6c09588e515fd50d98ee28ad0af2061cad3d57b086596",
+      "matches_benchmark": true,
+      "source_unchanged": true
+    },
+    {
+      "id": "bracket",
+      "command": [
+        "output/venv312/bin/research-hole-list",
+        "fixtures/public-step-corpus/sources/build123d_bracket.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.13/bracket"
+      ],
+      "exit_code": 2,
+      "status": "partial",
+      "recognized": 11,
+      "whole_count": null,
+      "csv_sha256": "73309c7f9f1f9aace00193ca45b25d2dbcf36200a7fceb7fb8a2329168ad263b",
+      "matches_benchmark": true,
+      "source_unchanged": true
+    },
+    {
+      "id": "recess",
+      "command": [
+        "output/venv312/bin/research-hole-list",
+        "fixtures/hole-robustness/sources/circle_rectangular_shoulder.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.13/recess"
+      ],
+      "exit_code": 2,
+      "status": "unresolved",
+      "recognized": 0,
+      "whole_count": null,
+      "csv_sha256": "f5927ef4ee3d84e041411736d43f856599faf08d38eca2a558e3bb73e0871ab5",
+      "matches_benchmark": true,
+      "source_unchanged": true
+    },
+    {
+      "id": "exchange_limit",
+      "command": [
+        "output/venv312/bin/research-hole-list",
+        "fixtures/hole-numerical-stability/sources/offset_1000000_scale_1_0_rotated.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.13/exchange_limit"
+      ],
+      "exit_code": 2,
+      "status": "unresolved",
+      "recognized": 0,
+      "whole_count": null,
+      "csv_sha256": "9ea1aa9d7cd97ee3bb4ae34fc8e260acb7c4e9db2b2c0c0fe5e03c7a25ba8b24",
+      "matches_benchmark": true,
+      "source_unchanged": true
+    }
+  ],
+  "installed_version": "1.13.0",
+  "wheel": {
+    "filename": "research_notes-1.13.0-py3-none-any.whl",
+    "sha256": "09899489253e7c6f136883b4964f0cdf09c0928c2485aa96d1d5b2fe6b630394",
+    "modules_and_assets_match_source": [
+      "local_material.py",
+      "hole_numerical_stability.py",
+      "hole_robustness.py",
+      "hole_inventory.py",
+      "public_hole_inventory.py",
+      "slot_inventory.py",
+      "unified_hole_benchmark.py",
+      "cad_editor/holes.html",
+      "cad_editor/holes.js"
+    ]
+  },
+  "figure": {
+    "path": "counts.png",
+    "sha256": "0ee7006cb0520d7227508029131989a562e6bd76d008b73a69d83c0d77df0ef0",
+    "plotter_sha256": "cb013f8565d5c31fa72360e72d20dbdc8cadd3e49abebf120286ec18f4558629",
+    "verified": "Rendered recorded matched/missed counts; visually inspected."
+  },
+  "scope": [
+    "Synthetic development controls, same OCCT kernel; not held-out population accuracy or independent metrology.",
+    "Additional STEP exchange misses remain explicitly counted against authored truth.",
+    "Original tolerances, face IDs, coordinates and unknown whole counts retained.",
+    "No hard native CPU/memory deadlines or assembly clearance certificate added."
+  ]
+}

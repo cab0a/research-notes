@@ -10,6 +10,7 @@ from pathlib import Path
 
 from research_notes.brep_runtime import indexed_shapes, iter_shapes, surface_area_and_centroid
 from research_notes.feature_recognition import _face_geometry
+from research_notes.local_material import LocalMaterialClassifier
 from research_notes.spatial_workflow import WorkBudget
 
 TOL = 1e-5
@@ -62,14 +63,12 @@ def scan_circular_through_holes(shape):
     exact support, full-ring, adjacency and area checks. The result is partial.
     """
     from OCP.BRepAdaptor import BRepAdaptor_Surface
-    from OCP.BRepClass3d import BRepClass3d_SolidClassifier
     from OCP.BRepTools import BRepTools
     from OCP.BRep import BRep_Tool
     from OCP.BRepCheck import BRepCheck_Analyzer
     from OCP.GeomAbs import GeomAbs_Cylinder
     from OCP.TopAbs import TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_SOLID, TopAbs_IN, TopAbs_OUT
     from OCP.TopoDS import TopoDS
-    from OCP.gp import gp_Pnt
 
     if shape.IsNull():
         raise ValueError('円形穴の検証には有効なソリッドB-Repが必要です。')
@@ -86,7 +85,7 @@ def scan_circular_through_holes(shape):
     classifiers={}
     for s in range(1,solids.Extent()+1):
         solid=TopoDS.Solid_s(solids.FindKey(s))
-        classifiers[s]=BRepClass3d_SolidClassifier(solid)
+        classifiers[s]=LocalMaterialClassifier(solid,TOL)
         for face in iter_shapes(solid,TopAbs_FACE):
             owners[faces.FindIndex(face)].append(s)
     rims, other_wires=circular_inner_rims(shape)
@@ -150,9 +149,7 @@ def scan_circular_through_holes(shape):
             if abs(area-2*math.pi*radius*depth)>max(1e-7,area*1e-8):
                 raise ValueError('円筒面の面積に切欠き・追加境界があります。')
             classifier=classifiers[owners[i][0]]
-            def material(point):
-                classifier.Perform(gp_Pnt(*point),TOL)
-                return classifier.State()
+            material=classifier.state
             u0,u1,v0,v1=BRepTools.UVBounds_s(face)
             offset=max(20*TOL,min(radius,depth)*1e-4)
             for fraction in (.2,.5,.8):

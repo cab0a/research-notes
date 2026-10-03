@@ -1,0 +1,511 @@
+{
+  "baseline_commit": "5182f09b53fa824f119bf8fd51ab855d5824d212",
+  "baseline_scanner_sha256": {
+    "src/research_notes/public_hole_inventory.py": "45514260798f7216e7e4f6115b082643649450aa57a0f40390f26d51d7d62788",
+    "src/research_notes/slot_inventory.py": "d351ffe06b9d2abe51b9fef0cd1a1d50899fd86a7390b16f475f4d7a233ac75e"
+  },
+  "source_path": "fixtures/hole-robustness/sources/translated_1e6.step",
+  "source_sha256": "cc5d69fe18089364500e068b4f77691f17ea18accb3468ff371a3161c4e5f551",
+  "comparison_scope": "Pinned v1.12 scanner sources with unchanged shared geometry helpers in the current runtime; not a recreation of the entire historical environment.",
+  "records": [
+    {
+      "path": "constructed",
+      "before": {
+        "holes": [],
+        "circle_diagnostics": {
+          "recognized_hole_count": 0,
+          "hole_count": null,
+          "status": "unresolved",
+          "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+          "withheld_cylinders": [
+            {
+              "face_index": 9,
+              "reason": "円筒壁の内外の材料状態を確認できません。"
+            },
+            {
+              "face_index": 10,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            },
+            {
+              "face_index": 12,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            }
+          ],
+          "external_cylinder_faces": [],
+          "noncircular_planar_inner_wires": [
+            {
+              "plane_face": 2,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            },
+            {
+              "plane_face": 4,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1
+        },
+        "slot_diagnostics": {
+          "schema_version": "1.10.0",
+          "status": "unresolved",
+          "recognized_slot_count": 0,
+          "whole_opening_count": null,
+          "withheld_candidates": [
+            {
+              "wall_faces": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "opening_faces": [
+                2,
+                4
+              ],
+              "reason": "Wall material/void samples do not match a cavity."
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1,
+          "length_tolerance_mm": 1e-05,
+          "angular_tolerance": 1e-07,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+        }
+      },
+      "after": {
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 1000007.0,
+            "y_mm": -999995.0,
+            "entry_z_mm": 1000004.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "faces": [
+              9
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              2,
+              4
+            ],
+            "opening_edges": [
+              10,
+              21
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H1",
+            "feature_type": "circular_hole"
+          },
+          {
+            "kind": "straight_through_slot",
+            "width_mm": 2.0,
+            "length_mm": 6.0,
+            "depth_mm": 4.0,
+            "entry_center_mm": [
+              1000027.0,
+              -999995.0,
+              1000004.0
+            ],
+            "exit_center_mm": [
+              1000027.0,
+              -999995.0,
+              1000000.0
+            ],
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "solid_index": 1,
+            "wall_faces": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "opening_faces": [
+              2,
+              4
+            ],
+            "opening_edges": [
+              [
+                11,
+                12,
+                13,
+                14
+              ],
+              [
+                22,
+                23,
+                24,
+                25
+              ]
+            ],
+            "wall_material_samples": 72,
+            "passage_void_samples": 15,
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "id": "S1",
+            "feature_type": "straight_slot",
+            "x_mm": 1000027.0,
+            "y_mm": -999995.0,
+            "entry_z_mm": 1000004.0,
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          }
+        ],
+        "circle_diagnostics": {
+          "recognized_hole_count": 1,
+          "hole_count": null,
+          "status": "partial",
+          "reason": "円形貫通穴1個を局所検証しました。長穴・複雑な穴を含む全体の穴数は確定していません。",
+          "withheld_cylinders": [
+            {
+              "face_index": 10,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            },
+            {
+              "face_index": 12,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            }
+          ],
+          "external_cylinder_faces": [],
+          "noncircular_planar_inner_wires": [
+            {
+              "plane_face": 2,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            },
+            {
+              "plane_face": 4,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1
+        },
+        "slot_diagnostics": {
+          "schema_version": "1.10.0",
+          "status": "partial",
+          "recognized_slot_count": 1,
+          "whole_opening_count": null,
+          "withheld_candidates": [],
+          "scanned_faces": 13,
+          "scanned_solids": 1,
+          "length_tolerance_mm": 1e-05,
+          "angular_tolerance": 1e-07,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+        }
+      },
+      "before_audit": {
+        "expected_features": 2,
+        "recognized_features": 0,
+        "matched_features": 0,
+        "false_positives": [],
+        "missed_truth_indices": [
+          0,
+          1
+        ],
+        "measurement_errors": 0,
+        "measurements": [],
+        "max_length_error_mm": null,
+        "max_direction_error": null
+      },
+      "after_audit": {
+        "expected_features": 2,
+        "recognized_features": 2,
+        "matched_features": 2,
+        "false_positives": [],
+        "missed_truth_indices": [],
+        "measurement_errors": 0,
+        "measurements": [
+          {
+            "hole_id": "H1",
+            "truth_index": 0,
+            "max_length_error_mm": 0.0,
+            "max_direction_error": 0.0,
+            "passed": true
+          },
+          {
+            "hole_id": "S1",
+            "truth_index": 1,
+            "max_length_error_mm": 0.0,
+            "max_direction_error": 0.0,
+            "passed": true
+          }
+        ],
+        "max_length_error_mm": 0.0,
+        "max_direction_error": 0.0
+      },
+      "passed": true
+    },
+    {
+      "path": "step_scanners",
+      "before": {
+        "holes": [],
+        "circle_diagnostics": {
+          "recognized_hole_count": 0,
+          "hole_count": null,
+          "status": "unresolved",
+          "reason": "条件を満たす円形貫通穴を確認できませんでした。長穴・複雑な穴を含む全体の穴数は確定していません。",
+          "withheld_cylinders": [
+            {
+              "face_index": 9,
+              "reason": "円筒壁の内外の材料状態を確認できません。"
+            },
+            {
+              "face_index": 10,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            },
+            {
+              "face_index": 12,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            }
+          ],
+          "external_cylinder_faces": [],
+          "noncircular_planar_inner_wires": [
+            {
+              "plane_face": 2,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            },
+            {
+              "plane_face": 4,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1
+        },
+        "slot_diagnostics": {
+          "schema_version": "1.10.0",
+          "status": "unresolved",
+          "recognized_slot_count": 0,
+          "whole_opening_count": null,
+          "withheld_candidates": [
+            {
+              "wall_faces": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "opening_faces": [
+                2,
+                4
+              ],
+              "reason": "Wall material/void samples do not match a cavity."
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1,
+          "length_tolerance_mm": 1e-05,
+          "angular_tolerance": 1e-07,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+        }
+      },
+      "after": {
+        "holes": [
+          {
+            "kind": "through",
+            "diameter_mm": 2.0,
+            "x_mm": 1000007.0,
+            "y_mm": -999995.0,
+            "entry_z_mm": 1000004.0,
+            "depth_mm": 4.0,
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "faces": [
+              9
+            ],
+            "solid_index": 1,
+            "opening_faces": [
+              2,
+              4
+            ],
+            "opening_edges": [
+              10,
+              21
+            ],
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "radial_material_samples": 48,
+            "axial_void_samples": 5,
+            "id": "H1",
+            "feature_type": "circular_hole"
+          },
+          {
+            "kind": "straight_through_slot",
+            "width_mm": 2.0,
+            "length_mm": 6.0,
+            "depth_mm": 4.0,
+            "entry_center_mm": [
+              1000027.0,
+              -999995.0,
+              1000004.0
+            ],
+            "exit_center_mm": [
+              1000027.0,
+              -999995.0,
+              1000000.0
+            ],
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "solid_index": 1,
+            "wall_faces": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "opening_faces": [
+              2,
+              4
+            ],
+            "opening_edges": [
+              [
+                11,
+                12,
+                13,
+                14
+              ],
+              [
+                22,
+                23,
+                24,
+                25
+              ]
+            ],
+            "wall_material_samples": 72,
+            "passage_void_samples": 15,
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "id": "S1",
+            "feature_type": "straight_slot",
+            "x_mm": 1000027.0,
+            "y_mm": -999995.0,
+            "entry_z_mm": 1000004.0,
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          }
+        ],
+        "circle_diagnostics": {
+          "recognized_hole_count": 1,
+          "hole_count": null,
+          "status": "partial",
+          "reason": "円形貫通穴1個を局所検証しました。長穴・複雑な穴を含む全体の穴数は確定していません。",
+          "withheld_cylinders": [
+            {
+              "face_index": 10,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            },
+            {
+              "face_index": 12,
+              "reason": "円筒が一周していません。長穴・切欠き・面分割などを保留します。"
+            }
+          ],
+          "external_cylinder_faces": [],
+          "noncircular_planar_inner_wires": [
+            {
+              "plane_face": 2,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            },
+            {
+              "plane_face": 4,
+              "edge_count": 4,
+              "circular_outer_boundary": false
+            }
+          ],
+          "scanned_faces": 13,
+          "scanned_solids": 1
+        },
+        "slot_diagnostics": {
+          "schema_version": "1.10.0",
+          "status": "partial",
+          "recognized_slot_count": 1,
+          "whole_opening_count": null,
+          "withheld_candidates": [],
+          "scanned_faces": 13,
+          "scanned_solids": 1,
+          "length_tolerance_mm": 1e-05,
+          "angular_tolerance": 1e-07,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate."
+        }
+      },
+      "before_audit": {
+        "expected_features": 2,
+        "recognized_features": 0,
+        "matched_features": 0,
+        "false_positives": [],
+        "missed_truth_indices": [
+          0,
+          1
+        ],
+        "measurement_errors": 0,
+        "measurements": [],
+        "max_length_error_mm": null,
+        "max_direction_error": null
+      },
+      "after_audit": {
+        "expected_features": 2,
+        "recognized_features": 2,
+        "matched_features": 2,
+        "false_positives": [],
+        "missed_truth_indices": [],
+        "measurement_errors": 0,
+        "measurements": [
+          {
+            "hole_id": "H1",
+            "truth_index": 0,
+            "max_length_error_mm": 0.0,
+            "max_direction_error": 0.0,
+            "passed": true
+          },
+          {
+            "hole_id": "S1",
+            "truth_index": 1,
+            "max_length_error_mm": 0.0,
+            "max_direction_error": 0.0,
+            "passed": true
+          }
+        ],
+        "max_length_error_mm": 0.0,
+        "max_direction_error": 0.0
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

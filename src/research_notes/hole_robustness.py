@@ -217,7 +217,8 @@ def run(output, *, fixture_dir=Path('fixtures/hole-robustness'), refresh_fixture
     exceptions=exception_checks((fixture_dir/'sources/mixed.step').read_bytes())
     summaries={p:summarize(records,p) for p in ('constructed','step_scanners','unified')}
     paths=[Path(__file__),Path(__file__).with_name('hole_robustness_controls.py'),Path(__file__).with_name('public_hole_inventory.py'),
-           Path(__file__).with_name('slot_inventory.py'),Path(__file__).with_name('hole_inventory.py')]
+           Path(__file__).with_name('slot_inventory.py'),Path(__file__).with_name('hole_inventory.py'),
+           Path(__file__).with_name('local_material.py')]
     report={'version':VERSION,'passed':all(r['passed'] for r in records+tolerance+exceptions),
             'pass_definition':'No false accepted features or measurement errors; declared supported controls match truth. Stress misses are retained and reported. Exceptions must preserve request state or emit rejection with unknown count.',
             'all_expected_features_recognized':all(not r['audit']['missed_truth_indices'] for r in records),
