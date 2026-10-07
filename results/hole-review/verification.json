@@ -1,0 +1,177 @@
+{
+  "version": "1.14.0",
+  "date": "2026-10-07",
+  "passed": true,
+  "tests": {
+    "command": "python -m pytest tests/test_hole_review.py tests/test_hole_numerical_stability.py tests/test_hole_robustness.py tests/test_unified_hole_inventory.py tests/test_public_hole_inventory.py tests/test_hole_inventory.py tests/test_slot_inventory.py tests/test_cad_web.py tests/test_revision_detection.py tests/test_revision_benchmark.py tests/test_public_step_corpus.py tests/test_feature_recognition.py -q",
+    "passed": 517,
+    "new_review_tests": 67,
+    "duration_seconds": 133.972,
+    "observed_timestamp": "2026-10-03T22:42:47.242255+09:00",
+    "junit_sha256": "852ea9a31d7483045b52616adfec1197ad221204508bc402b2d048c5c652b6d3",
+    "platform": {
+      "python": "3.12.14",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "cadquery_ocp": "7.9.3.1.1"
+    },
+    "other_platform_results_not_claimed": true
+  },
+  "fixed_input_study": {
+    "inputs": 69,
+    "repeats": 2,
+    "previous_geometry_public_inputs": 62,
+    "prior_measurements_and_states_unchanged": true,
+    "summary": {
+      "robustness": {
+        "inputs": 44,
+        "recognized_features": 32,
+        "review_items": 144
+      },
+      "numerical": {
+        "inputs": 12,
+        "recognized_features": 8,
+        "review_items": 51
+      },
+      "public": {
+        "inputs": 6,
+        "recognized_features": 11,
+        "review_items": 114
+      },
+      "certified": {
+        "inputs": 2,
+        "recognized_features": 1,
+        "review_items": 0
+      },
+      "intake": {
+        "inputs": 5,
+        "recognized_features": 0,
+        "review_items": 5
+      }
+    },
+    "result_sha256": "afcfa326deff5222792c28be9526e9ac44158b8bd252791cb32b8e350ca472f9"
+  },
+  "cli": [
+    {
+      "id": "bracket",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/venv312/bin/research-hole-list",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/public-step-corpus/sources/build123d_bracket.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.14/bracket"
+      ],
+      "exit_code": 2,
+      "status": "partial",
+      "recognized": 11,
+      "whole_count": null,
+      "count_state": "unknown",
+      "matches_python_api": true,
+      "source_unchanged": true,
+      "review_csv_sha256": "5afbb4e5072b73abf5db782c9bbd3107c380888b673b0e3a92b8843393513463"
+    },
+    {
+      "id": "shoulder",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/venv312/bin/research-hole-list",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/hole-robustness/sources/circle_rectangular_shoulder.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.14/shoulder"
+      ],
+      "exit_code": 2,
+      "status": "unresolved",
+      "recognized": 0,
+      "whole_count": null,
+      "count_state": "unknown",
+      "matches_python_api": true,
+      "source_unchanged": true,
+      "review_csv_sha256": "b67460f7eb4d31294b7a929f26445aa9c893204489abed16d6e4edf21600316b"
+    },
+    {
+      "id": "certified_zero",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/venv312/bin/research-hole-list",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/hole-inventory/sources/no_holes.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.14/certified_zero"
+      ],
+      "exit_code": 0,
+      "status": "complete",
+      "recognized": 0,
+      "whole_count": 0,
+      "count_state": "certified_zero",
+      "matches_python_api": true,
+      "source_unchanged": true,
+      "review_csv_sha256": "845db72fc0cbc839a3a41cbcf2def440011629d5dea0162c05dfb70cec047258"
+    },
+    {
+      "id": "rejected",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/venv312/bin/research-hole-list",
+        "/home/nakanishi/inefficiencylab/research-notes/output/invalid-review.step",
+        "--public",
+        "--output-dir",
+        "/home/nakanishi/inefficiencylab/research-notes/output/cli-v1.14/rejected"
+      ],
+      "exit_code": 2,
+      "status": "rejected",
+      "recognized": 0,
+      "whole_count": null,
+      "count_state": "unknown",
+      "matches_python_api": true,
+      "source_unchanged": true,
+      "review_csv_sha256": "ec058d8633a6298da02d927a0d477bbd0c6b0bc02ccd52ca5492059f64a23db2"
+    }
+  ],
+  "browser": {
+    "states_verified": [
+      "unconfirmed_zero",
+      "certified_zero",
+      "bracket_partial_11",
+      "input_rejected_unanalysed"
+    ],
+    "technical_details_and_next_action_visible": true,
+    "download": {
+      "input": "fixtures/hole-robustness/sources/circle_rectangular_shoulder.step",
+      "file": "results/hole-review/browser-review.csv",
+      "sha256": "b67460f7eb4d31294b7a929f26445aa9c893204489abed16d6e4edf21600316b",
+      "matches_python_api": true,
+      "browser": "Codex in-app browser",
+      "note": "Browser download event observer timed out, but the button saved this matching file in Downloads."
+    },
+    "screenshot": {
+      "path": "review-desktop.jpg",
+      "sha256": "0bb420176487c64e8ea81ef2a44acbd25b23392c9608ed107fb156f822c9a223"
+    },
+    "scope": "Default desktop viewport; no mobile or cross-browser behavior claimed."
+  },
+  "installed_version": "1.14.0",
+  "wheel": {
+    "filename": "research_notes-1.14.0-py3-none-any.whl",
+    "sha256": "7f9c0f2b772f5863ee30010ca8b54fd6eb97c9f9fa1656350e1c8d06f7c5bddd",
+    "modules_and_assets_match_source": [
+      "hole_review.py",
+      "hole_review_benchmark.py",
+      "hole_inventory.py",
+      "public_hole_inventory.py",
+      "slot_inventory.py",
+      "local_material.py",
+      "cad_web.py",
+      "cad_editor/holes.html",
+      "cad_editor/holes.css",
+      "cad_editor/holes.js",
+      "cad_editor/index.html",
+      "cad_editor/revisions.html"
+    ]
+  },
+  "javascript_syntax_check": true,
+  "code_source_baseline_hashes_checked": true,
+  "prior_sources_and_evidence_unchanged": true,
+  "scope": [
+    "Failed-check explanations, not inferred manufacturing feature classes or missing-hole counts.",
+    "Existing recognition gates, dimensional measurements and unknown whole-part counts retained.",
+    "Unknown exception, preview-only failure, revision/token guards and request-state preservation exercised in tests.",
+    "No new recognition scope, automatic repair or assembly-clearance guarantee."
+  ]
+}

@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,result_status,hole_count,hole_id,hole_type,diameter_mm,center_x_mm,center_y_mm,entry_z_mm,depth_mm,axis_x,axis_y,axis_z,unit,reason,recognized_hole_count,solid_index,feature_type,width_mm,length_mm,long_axis_x,long_axis_y,long_axis_z,recognized_circular_hole_count,recognized_slot_count,inventory_version
+summary,malformed.step,f1234d75178d892a133a410355a5a990cf75d2f33eba25d575943d4df632f3a4,rejected,,,,,,,,,,,,,STEP inspection preflight: unexpected_token,0,,,,,,,,0,0,1.14.0

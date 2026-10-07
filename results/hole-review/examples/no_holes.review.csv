@@ -1,0 +1,2 @@
+﻿record_type,file_name,source_sha256,inventory_version,review_schema_version,result_status,hole_count,recognized_hole_count,count_state,review_item_count,review_id,reason_code,category,scope,severity,title,explanation,next_action,face_indices,edge_indices,raw_reason
+summary,no_holes.step,33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e,1.14.0,1.0.0,complete,0,0,certified_zero,0,,,,,,,対応範囲内で穴0か所を確認しました。,,,,

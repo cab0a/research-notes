@@ -13,6 +13,7 @@ from pathlib import Path
 from research_notes.brep_runtime import indexed_shapes, iter_shapes, surface_area_and_centroid
 from research_notes.feature_recognition import _face_geometry
 from research_notes.local_material import LocalMaterialClassifier
+from research_notes.hole_review import qualification_error, error_code
 from research_notes.public_hole_inventory import PUBLIC_BUDGET, TOL
 
 ANGLE_TOL = 1e-7
@@ -34,7 +35,7 @@ def _dot(a, b):
 def _unit(a):
     length = math.sqrt(_dot(a, a))
     if length <= 100 * TOL:
-        raise ValueError('Length is too close to the qualification tolerance.')
+        raise qualification_error('Length is too close to the qualification tolerance.')
     return [x / length for x in a], length
 
 
@@ -44,7 +45,7 @@ def _clean(a):
 
 def _require(condition, message):
     if not condition:
-        raise ValueError(message)
+        raise qualification_error(message)
 
 
 def _capsule(wire, edges):
@@ -70,7 +71,7 @@ def _capsule(wire, edges):
         elif c.GetType() == GeomAbs_Line:
             lines.append(item)
         else:
-            raise ValueError('Opening contains a non-circular/non-linear edge.')
+            raise qualification_error('Opening contains a non-circular/non-linear edge.')
     _require(len(arcs) == len(lines) == 2, 'Opening needs two semicircles and two straight sides.')
     # Quantized ordering avoids tiny coordinate noise deciding an axis sign.
     arcs.sort(key=lambda a: _clean(a['center']))
@@ -171,7 +172,7 @@ def scan_straight_through_slots(shape):
                 rims.append({**rim, 'plane_face': i, 'walls': walls,
                              'normal': list(surface.Plane().Axis().Direction().Coord())})
             except (ValueError, RuntimeError) as exc:
-                withheld.append({'opening_face': i, 'opening_edges': ids, 'reason': str(exc)})
+                withheld.append({'opening_face': i, 'opening_edges': ids, 'reason': str(exc), 'reason_code': error_code(exc)})
 
     groups = {}
     for rim in rims:
@@ -277,7 +278,7 @@ def scan_straight_through_slots(shape):
                          'measurement_basis': 'two_inner_capsule_rims_and_four_untrimmed_walls'})
         except (ValueError, RuntimeError) as exc:
             withheld.append({'wall_faces': list(walls), 'opening_faces': sorted(e['plane_face'] for e in ends),
-                             'reason': str(exc)})
+                             'reason': str(exc), 'reason_code': error_code(exc)})
     rows.sort(key=lambda r: (r['solid_index'], r['entry_center_mm'], r['width_mm'], r['length_mm']))
     for index, row in enumerate(rows, 1):
         row['id'] = f'S{index}'

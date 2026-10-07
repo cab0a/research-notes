@@ -14,8 +14,9 @@ import tempfile
 
 from research_notes.cad_api import CadAPIError
 from research_notes.revision_detection import LENGTH_TOL, FIT_REL_TOL
+from research_notes.hole_review import attach_review, review_csv, error_code
 
-VERSION = "1.13.0"
+VERSION = "1.14.0"
 MAX_SOURCE_BYTES = 2_000_000
 STATUS_LABELS = {"complete": "対応範囲内で一覧取得", "partial": "穴を部分確認・全体は保留", "unresolved": "形状の判定保留", "rejected": "読込条件で拒否"}
 TYPE_LABELS = {"through": "丸穴・貫通", "blind": "丸穴・平底止まり", "straight_through_slot": "長孔・貫通"}
@@ -119,7 +120,7 @@ def _merge_slots(analysis, shape):
     try:
         slots = scan_straight_through_slots(shape)
     except (ValueError, RuntimeError) as error:
-        analysis['slot_scan'] = {'status': 'unresolved', 'reason': str(error), 'recognized_slot_count': 0}
+        analysis['slot_scan'] = {'status': 'unresolved', 'reason': str(error), 'reason_code': error_code(error), 'recognized_slot_count': 0}
         analysis['reason'] += ' 長孔の判定は保留しました。'+str(error)
         return
     analysis['slot_scan'] = {k: v for k, v in slots.items() if k != 'slots'}
@@ -166,6 +167,7 @@ def analyze_step(source, file_name="uploaded.step", *, preview=True, inspection=
               "source_bytes": len(source), "length_unit": None, "conditions": CONDITIONS,
               "preview": None, "metrics": None, "analysis_mode": "public_inspection" if inspection else "legacy_plate",
               "feature_scope": "circular_and_slots" if inspection and include_slots else "circular_only"}
+    failure = None
     try:
         with tempfile.TemporaryDirectory(prefix="research-cad-holes-") as directory:
             path = Path(directory) / 'source.step'
@@ -197,8 +199,10 @@ def analyze_step(source, file_name="uploaded.step", *, preview=True, inspection=
             except (CadAPIError, ValueError, RuntimeError) as error:
                 result['preview_reason'] = '3D表示を省略しました。測定結果は保持しています。 '+str(error)
     except (ValueError, RuntimeError, OSError) as error:
+        failure = error
         result.update(status="rejected", reason=str(error), hole_count=None, holes=[])
     _inventory_rows(result)
+    attach_review(result, failure)
     json.dumps(result, allow_nan=False)
     return result
 
@@ -273,10 +277,10 @@ class HoleInventory:
 
     def action(self, operation, payload):
         self.guard(payload.get('revision_token'))
-        if operation == 'csv':
+        if operation in {'csv', 'review-csv'}:
             if not self.result:
                 raise CadAPIError('no_source', 'STEPを開いてください。')
-            return inventory_csv(self.result)
+            return inventory_csv(self.result) if operation == 'csv' else review_csv(self.result)
         if operation == 'demo':
             from research_notes.revision_detection import plate_shape
             from research_notes.step_writer_modes import prepare_step_write
@@ -298,11 +302,12 @@ def main(argv=None):
     result = analyze_step(source, args.step.name, inspection=args.public, include_slots=not args.circular_only)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir/'holes.csv').write_bytes(inventory_csv(result))
+    (args.output_dir/'review.csv').write_bytes(review_csv(result))
     (args.output_dir/'inventory.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     svg = inventory_svg(result)
     if svg:
         (args.output_dir/'holes.svg').write_text(svg, encoding='utf-8')
-    print(json.dumps({k: result[k] for k in ('status', 'hole_count', 'recognized_hole_count', 'recognized_circular_hole_count', 'recognized_slot_count', 'reason')}, ensure_ascii=False))
+    print(json.dumps({k: result[k] for k in ('status', 'hole_count', 'recognized_hole_count', 'recognized_circular_hole_count', 'recognized_slot_count', 'reason', 'review_summary')}, ensure_ascii=False))
     return 0 if result['status'] == 'complete' else 2
 
 

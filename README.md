@@ -2,7 +2,7 @@
 
 ## 日本語概要
 
-v1.13.0では、丸穴・長孔の材料判定を部品の近くの座標で行い、100万mm離したモデルの取りこぼしを修正しました。出力する位置・面番号と許容差の基準は維持します。既存44形状のSTEP読込後は取得対象32個中32個を取得し、誤取得は0個でした。追加の遠方座標12形状ではSTEP交換後に見逃しが残るため、その条件も記録しています。公開ブラケットの丸穴5か所・長孔6か所を維持しています。[数値安定化の検証結果](notes/hole-numerical-stability.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
+v1.14.0では、穴の判定を保留した理由と「次に確認すること」を日本語で表示します。読込条件、精度、開口や内壁の条件を整理し、元の技術メッセージと参照可能な面番号も残します。画面・Python API・CLIで扱い、確認用CSVへ保存できます。69入力を各2回評価し、既存の取得値・判定状態を維持しました。公開ブラケットは丸穴5か所・長孔6か所を取得しますが、全体の穴数は未確定です。[説明機能と検証結果](notes/hole-review-explanations.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -45,7 +45,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.13.0. Scoped references, dimensional
+The current implementation version is v1.14.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -53,7 +53,23 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Hole Numerical Stability: v1.13.0
+## Hole Review Explanations: v1.14.0
+
+The local viewer, Python API and CLI expose Japanese explanations, next actions
+and original check evidence for withheld results. Separate `review.csv` output
+keeps the existing hole CSV layout intact. Certified zero, unknown zero and
+unanalysed inputs remain distinct; explanation counts are never hole counts.
+
+Sixty-nine inputs are evaluated twice, including 62 previous geometry/public
+inputs with unchanged v1.13 measurements and count states. See the
+[review study](notes/hole-review-explanations.md) and
+[verification record](results/hole-review/verification.json).
+
+```bash
+python -m research_notes.hole_review_benchmark --output-dir output/hole-review-check --repeats 2
+```
+
+## Hole Numerical Stability: introduced in v1.13.0
 
 Both local recognizers classify material on a private solid translated near
 its bounding-box centre. Evidence, output coordinates, face IDs and original

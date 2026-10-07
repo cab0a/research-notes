@@ -1,0 +1,70 @@
+﻿id,group,status,hole_count,recognized_hole_count,count_state,review_items,reason_codes,repeat_results_identical,measurements_unchanged,passed
+mixed,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+rotated_30,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+rotated_3d,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+flipped,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+near_quarter_turn,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+small_001,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+small_01,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+large_10,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+large_100,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+translated_1e6,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+combined,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+large_combined,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+radius_above_gate,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+depth_above_gate,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+radius_at_gate,robustness,unresolved,,0,unknown,7,circular_span feature_too_small no_qualified_features slot_boundary whole_count_unknown,True,True,True
+radius_below_gate,robustness,unresolved,,0,unknown,7,circular_span feature_too_small no_qualified_features slot_boundary whole_count_unknown,True,True,True
+depth_below_gate,robustness,unresolved,,0,unknown,6,circular_span feature_too_small no_qualified_features whole_count_unknown,True,True,True
+circle_blind,robustness,unresolved,,0,unknown,3,no_qualified_features opening_pair whole_count_unknown,True,True,True
+circle_counterbore,robustness,unresolved,,0,unknown,4,no_qualified_features opening_pair shoulder_ambiguity whole_count_unknown,True,True,True
+circle_rectangular_shoulder,robustness,unresolved,,0,unknown,4,no_qualified_features shoulder_ambiguity slot_boundary whole_count_unknown,True,True,True
+circle_countersink,robustness,unresolved,,0,unknown,3,no_qualified_features opening_pair whole_count_unknown,True,True,True
+circle_edge_notch,robustness,unresolved,,0,unknown,3,circular_span no_qualified_features whole_count_unknown,True,True,True
+circle_intersection,robustness,unresolved,,0,unknown,7,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+circle_boss,robustness,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+circle_internal_void,robustness,unresolved,,0,unknown,3,no_qualified_features opening_pair whole_count_unknown,True,True,True
+circle_tapered,robustness,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+circle_split_face,robustness,unresolved,,0,unknown,6,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+circle_spline,robustness,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+ellipse,robustness,unresolved,,0,unknown,4,no_qualified_features opening_boundary_unqualified whole_count_unknown,True,True,True
+rectangle,robustness,unresolved,,0,unknown,4,no_qualified_features slot_boundary whole_count_unknown,True,True,True
+slanted_ellipse,robustness,unresolved,,0,unknown,4,no_qualified_features opening_boundary_unqualified whole_count_unknown,True,True,True
+washer,robustness,unresolved,,0,unknown,3,no_qualified_features shoulder_ambiguity whole_count_unknown,True,True,True
+slot_blind,robustness,unresolved,,0,unknown,5,circular_span no_qualified_features opening_pair whole_count_unknown,True,True,True
+slot_counterbore,robustness,unresolved,,0,unknown,9,circular_span no_qualified_features opening_pair shoulder_ambiguity whole_count_unknown,True,True,True
+slot_rectangular_shoulder,robustness,unresolved,,0,unknown,7,circular_span no_qualified_features opening_pair shoulder_ambiguity slot_boundary whole_count_unknown,True,True,True
+slot_open_notch,robustness,unresolved,,0,unknown,3,circular_span no_qualified_features whole_count_unknown,True,True,True
+slot_boss,robustness,unresolved,,0,unknown,3,no_qualified_features opening_pair whole_count_unknown,True,True,True
+slot_interrupted,robustness,unresolved,,0,unknown,9,circular_span no_qualified_features slot_boundary topology_unconfirmed whole_count_unknown,True,True,True
+slot_curved,robustness,unresolved,,0,unknown,5,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+slot_unequal_ends,robustness,unresolved,,0,unknown,6,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+slot_skew_passage,robustness,unresolved,,0,unknown,4,no_qualified_features slot_boundary whole_count_unknown,True,True,True
+slot_spline,robustness,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+mixed_with_blind,robustness,partial,,2,unknown,2,opening_pair whole_count_unknown,True,True,True
+assembly_obstructed,robustness,partial,,2,unknown,1,whole_count_unknown,True,True,True
+offset_1000000_scale_1_0,numerical,partial,,2,unknown,1,whole_count_unknown,True,True,True
+offset_1000000_scale_1_0_rotated,numerical,unresolved,,0,unknown,7,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+offset_1000000_scale_0_01,numerical,partial,,2,unknown,1,whole_count_unknown,True,True,True
+offset_1000000_scale_0_1_rotated,numerical,unresolved,,0,unknown,7,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+offset_10000000_scale_1_0,numerical,partial,,2,unknown,1,whole_count_unknown,True,True,True
+offset_10000000_scale_1_0_rotated,numerical,unresolved,,0,unknown,7,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+offset_10000000_scale_0_01,numerical,unresolved,,0,unknown,4,no_qualified_features shoulder_ambiguity whole_count_unknown,True,True,True
+offset_10000000_scale_0_1_rotated,numerical,unresolved,,0,unknown,7,circular_span no_qualified_features slot_boundary whole_count_unknown,True,True,True
+offset_100000000_scale_1_0,numerical,partial,,2,unknown,1,whole_count_unknown,True,True,True
+offset_100000000_scale_1_0_rotated,numerical,unresolved,,0,unknown,7,no_qualified_features slot_boundary tolerance_exceeded whole_count_unknown,True,True,True
+offset_100000000_scale_0_01,numerical,unresolved,,0,unknown,4,no_qualified_features shoulder_ambiguity whole_count_unknown,True,True,True
+offset_100000000_scale_0_1_rotated,numerical,unresolved,,0,unknown,4,no_qualified_features slot_boundary whole_count_unknown,True,True,True
+cadquery_assembly,public,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+build123d_bracket,public,partial,,11,unknown,1,whole_count_unknown,True,True,True
+build123d_screw,public,unresolved,,0,unknown,2,no_qualified_features whole_count_unknown,True,True,True
+ublox_sam_ap203,public,unresolved,,0,unknown,50,no_qualified_features slot_boundary tolerance_exceeded whole_count_unknown,True,True,True
+ublox_sam_ap214,public,unresolved,,0,unknown,50,no_qualified_features slot_boundary tolerance_exceeded whole_count_unknown,True,True,True
+ublox_emmy,public,unresolved,,0,unknown,9,circular_span no_qualified_features whole_count_unknown,True,True,True
+no_holes,certified,complete,0,0,certified_zero,0,,True,True,True
+single,certified,complete,1,1,certified_count,0,,True,True,True
+malformed,intake,rejected,,0,unknown,1,input_parse_failed,True,True,True
+truncated,intake,rejected,,0,unknown,1,input_parse_failed,True,True,True
+missing_unit,intake,rejected,,0,unknown,1,input_units,True,True,True
+unsupported_unit,intake,rejected,,0,unknown,1,input_units,True,True,True
+external,intake,rejected,,0,unknown,1,external_reference,True,True,True

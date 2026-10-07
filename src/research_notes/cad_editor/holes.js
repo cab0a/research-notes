@@ -7,10 +7,10 @@ const number=value=>Number.isFinite(value)?Number(value.toFixed(6)).toString():'
 const direction=value=>Array.isArray(value)?value.map(v=>Number(v.toFixed(6))).join(', '):'—';
 const featureColor=h=>h.feature_type==='straight_slot'?'#169b9c':'#e4a13b';
 function message(text,error=false){el('message').textContent=text;el('message').className=error?'error':'';}
-function buttons(){['demo','refresh','file'].forEach(id=>el(id).disabled=busy||!state);el('upload').disabled=busy||!state||!el('file').files.length;el('csv').disabled=busy||!state?.result;}
+function buttons(){['demo','refresh','file'].forEach(id=>el(id).disabled=busy||!state);el('upload').disabled=busy||!state||!el('file').files.length;['csv','review-csv'].forEach(id=>el(id).disabled=busy||!state?.result);}
 async function request(operation,payload={},file=null){
   const response=await fetch('/api/holes/'+operation,{method:'POST',headers:{'X-CAD-Token':token,'Content-Type':file?'application/step':'application/json',...(file?{'X-File-Name':encodeURIComponent(file.name),'X-CAD-Revision':state.revision_token}:{})},body:file||JSON.stringify({...payload,revision_token:state.revision_token})});
-  if(response.ok&&operation==='csv')return response.blob();
+  if(response.ok&&['csv','review-csv'].includes(operation))return response.blob();
   const data=await response.json();if(data.state){state=data.state;render();}if(!response.ok)throw new Error(data.error?.detail||'処理に失敗しました。');return data;
 }
 async function run(action){busy=true;buttons();try{await action();}catch(error){message(error.message,true);}finally{busy=false;buttons();}}
@@ -28,7 +28,19 @@ function render(){
   if(!r?.holes.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=12;td.textContent=!r?'STEP未読込':r.hole_count===0?'対応範囲内で穴0個を確認しました。':'穴一覧を確定できません。穴数は不明です。';tr.append(td);el('rows').append(tr);}
   if(Array.from(el('hole').options).some(o=>o.value===previous))el('hole').value=previous;
   el('conditions').replaceChildren();if(r)Object.entries(r.conditions).forEach(([,value])=>{const p=document.createElement('p');p.textContent=typeof value==='number'?`判定条件値: ${value}`:value;el('conditions').append(p);});
-  el('hash').textContent=r?'入力SHA-256: '+r.source_sha256:'';select();buttons();
+  el('hash').textContent=r?'入力SHA-256: '+r.source_sha256:'';renderReview(r);select();buttons();
+}
+function renderReview(r){
+  el('review-card').hidden=!r;el('review-list').replaceChildren();el('review-summary').textContent=r?.review_summary?.headline||'';el('review-count-policy').textContent=r?.review_summary?.item_count_policy||'';if(!r)return;
+  if(!r.review_items.length){const p=document.createElement('p');p.textContent='追加の確認事項はありません。対応範囲内の結果です。';el('review-list').append(p);return;}
+  r.review_summary.groups.forEach(group=>{
+    const details=document.createElement('details'),summary=document.createElement('summary');details.className='review-group';details.open=r.review_items.length<=10;summary.textContent=`${group.label} · 説明 ${group.item_count} 件`;details.append(summary);
+    r.review_items.filter(item=>item.category===group.category).forEach(item=>{
+      const article=document.createElement('article'),title=document.createElement('h3'),explanation=document.createElement('p'),action=document.createElement('p'),technical=document.createElement('details'),technicalTitle=document.createElement('summary'),location=document.createElement('p'),raw=document.createElement('p');
+      article.className='review-item';article.dataset.review=item.id;title.textContent=`${item.id} · ${item.title}`;explanation.textContent=item.explanation;action.className='next-action';action.textContent='確認すること：'+item.next_action;
+      technicalTitle.textContent='技術詳細・該当面';location.className='review-location';location.textContent=`理由コード：${item.code} / 面：${item.face_indices.join(', ')||'特定なし'} / 辺：${item.edge_indices.join(', ')||'特定なし'}`;raw.className='raw-reason';raw.textContent=item.raw_reason||'この説明に対応する個別の技術メッセージはありません。';technical.append(technicalTitle,location,raw);article.append(title,explanation,action,technical);details.append(article);
+    });el('review-list').append(details);
+  });
 }
 function select(){
   document.querySelectorAll('#rows tr').forEach(row=>row.classList.toggle('selected',row.dataset.hole===el('hole').value));
@@ -60,4 +72,5 @@ el('reset').onclick=()=>{endDrag();yaw=.65;pitch=-.55;el('zoom').value='1';draw(
 el('demo').onclick=()=>run(async()=>{await request('demo');message('3穴のサンプルを読み込みました。');});
 el('upload').onclick=()=>run(async()=>{const file=el('file').files[0];if(!file)return;if(!file.size||file.size>2000000)throw new Error('空でない2 MB以下のSTEPを選択してください。');await request('open',{},file);el('file').value='';message(state.result.status==='complete'?'穴一覧を取得しました。':state.result.status==='partial'?'穴を部分確認しました。丸穴・長孔の内訳と全体数不明を確認してください。':'一覧を確定できません。判定理由を確認してください。',state.result.status==='rejected');});
 el('csv').onclick=()=>run(async()=>{const blob=await request('csv'),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hole-inventory.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);message('判定状態と穴一覧のCSVダウンロードを開始しました。');});
+el('review-csv').onclick=()=>run(async()=>{const blob=await request('review-csv'),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hole-review.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);message('判定理由と確認することのCSVダウンロードを開始しました。');});
 el('refresh').onclick=()=>run(refresh);run(refresh);

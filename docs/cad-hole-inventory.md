@@ -1,10 +1,10 @@
-# STEP Hole Inventory — v1.13.0
+# STEP Hole Inventory — v1.14.0
 
 ## 日本語概要
 
 STEPを1つ読み込み、丸穴と直線状の貫通長孔を画面・Python API・CLI・CSVでまとめて扱います。公開ブラケットでは丸穴5か所と長孔6か所を確認できます。穴番号・内壁・表の行を選択すると、対応する面と行を強調します。確認した11か所は全穴数の保証ではなく、全体数は不明のままです。該当しない寸法は画面では「—」、CSVでは空欄にします。
 
-v1.13では[数値判定の安定化](../notes/hole-numerical-stability.md)を追加しました。材料判定を部品の近くの座標で行い、既存の100万mm移動モデルを取得できるようにしました。出力座標と判定の許容差は維持します。STEP交換で円弧の角度や許容差などが変わる追加条件には見逃しが残り、人の確認へ返します。v1.12の段差・ポケット内の穴の保留と、面・辺・頂点の許容差の確認も維持します。
+v1.14では[判定保留の説明](../notes/hole-review-explanations.md)を追加しました。「確認が必要な内容」で、確認できなかった条件と次に確認することを表示します。元メッセージと面・辺番号は技術詳細へ残し、確認用CSVにも保存できます。穴の種類を推測して断定する機能ではありません。v1.13の[数値判定の安定化](../notes/hole-numerical-stability.md)、出力座標、許容差と既存の取得値は維持します。
 
 
 ---
@@ -17,6 +17,8 @@ recessed round openings, opening faces and vertices. Version 1.13 translates
 only the material classifier's private solid and samples into a per-solid
 local frame, retaining output coordinates and all qualification gates. Qualified
 plates retain complete inventories; public parts retain unknown whole counts.
+Version 1.14 adds structured review explanations and next actions, with a separate
+review CSV. Failed checks describe uncertainty rather than inferred hole types.
 See the [integration study](../notes/unified-hole-inventory.md),
 [circular-hole evidence](../notes/public-step-hole-inventory.md) and
 [slot evidence](../notes/bracket-slot-inventory.md).
@@ -33,8 +35,9 @@ python -m research_notes.cad_web
 
 1. **3穴のサンプルを開く**、またはSTEPを選び **選択したSTEPを開く**。
 2. 一覧取得・部分確認・保留・拒否と、全体の穴数が確定しているかを確認。
-3. 図をドラッグして回転。H/S番号・内壁・表の行を選択すると、対応面と行を強調。番号マーカーはEnter/Spaceでも選択できます。
-4. **判定結果と穴一覧をCSV保存**からダウンロード。
+3. **確認が必要な内容**で理由と確認手順を確認。**技術詳細・該当面**から元メッセージと参照番号を確認。
+4. 図をドラッグして回転。H/S番号・内壁・表の行を選択すると、対応面と行を強調。番号マーカーはEnter/Spaceでも選択できます。
+5. **判定結果と穴一覧をCSV保存**、**確認内容をCSV保存**からそれぞれダウンロード。
 
 公開例は `fixtures/public-step-corpus/sources/build123d_bracket.step` です。
 丸穴H1–H5と長孔S1–S6を表示します。長孔は幅4.5 mm・全長7.5 mm・貫通長3 mmです。全体の穴数は不明です。
@@ -71,6 +74,30 @@ CSVはUTF-8 BOM付きです。既存19列の後に新しい9列を追加しま�
 全体の穴0個を確定した場合は0、部分確認・保留・拒否は穴数を空欄にします。
 候補0件を「穴なし」とは扱いません。ファイル名等の数式先頭記号をエスケープします。
 
+## 確認内容と別のCSV
+
+「開口付近の段差を確認」「STEP出力精度を確認」など、理由に応じた次の確認手順を表示します。
+読込、精度・許容差、認識範囲、形状証拠、処理失敗、全体確認、表示の7分類です。
+未知のエラーは原因を推測せず、一般的な説明と元メッセージを残します。
+面・辺番号は入力内の参照用で、元CADや別のSTEPの永続IDではありません。
+
+`review_summary.count_state` は `certified_zero`、`certified_count`、`unknown` のいずれかです。
+対応範囲内で穴0件を確定した場合と、取得0件でも穴の有無が未確定の場合を区別します。
+読込拒否では解析未完了と説明します。説明件数は穴数ではなく、同じ開口から複数の記録が生じる場合があります。
+
+確認用CSVは穴一覧CSVとは別です。先頭summary行と、理由ごとのreview行を保存します。
+UTF-8 BOM付きで、不明な全体数は空欄、数式先頭記号はエスケープします。
+
+| 列 | 内容 |
+| --- | --- |
+| record_type / file_name / source_sha256 | summaryまたはreview、入力名、入力バイト列のSHA-256 |
+| inventory_version / review_schema_version | 一覧版1.14.0、説明形式1.0.0 |
+| result_status / hole_count / recognized_hole_count / count_state | 判定状態、確定した全体数、確認した行数、確定状態 |
+| review_item_count / review_id | 説明記録数、結果内のR番号 |
+| reason_code / category / scope / severity | 理由コード、分類、検査範囲、reviewまたはnotice |
+| title / explanation / next_action | 見出し、説明、次に確認すること |
+| face_indices / edge_indices / raw_reason | 参照可能な面・辺番号（空白区切り）、元の技術メッセージ |
+
 ## 対応範囲
 
 画面と `--public` は2 MB以下、対応するSI・換算単位をmmへ変換します。
@@ -104,9 +131,10 @@ python -m research_notes.hole_inventory fixtures/public-step-corpus/sources/buil
 python -m research_notes.unified_hole_benchmark --output-dir output/unified-check --repeats 3
 python -m research_notes.hole_robustness --output-dir output/hole-robustness-check --repeats 2
 python -m research_notes.hole_numerical_stability --output-dir output/hole-numerical-stability-check --repeats 2
+python -m research_notes.hole_review_benchmark --output-dir output/hole-review-check --repeats 2
 ```
 
-The installed alias is `research-hole-list`. Outputs are `holes.csv`,
+The installed alias is `research-hole-list`. Outputs are `holes.csv`, `review.csv`,
 `inventory.json` and `holes.svg`. Complete results exit 0; partial, unresolved
 and rejected results exit 2, after writing outputs. A missing preview has a
 placeholder SVG. Without `--public`, the strict plate importer retains its
@@ -118,11 +146,14 @@ The standalone v1.10 `research-slot-list` API/CLI is also retained.
 
 ```python
 from pathlib import Path
-from research_notes.hole_inventory import analyze_step, inventory_csv
+from research_notes.hole_inventory import analyze_step, inventory_csv, review_csv
 source = Path("fixtures/public-step-corpus/sources/build123d_bracket.step")
 result = analyze_step(source.read_bytes(), source.name, inspection=True)
 Path("bracket-holes.csv").write_bytes(inventory_csv(result))
+Path("bracket-review.csv").write_bytes(review_csv(result))
 print(result["recognized_hole_count"], result["hole_count"])  # 11, None
+for item in result["review_items"]:
+    print(item["title"], item["next_action"])
 ```
 
 `holes` now contains both feature types. `kind` retains `through`/`blind` for
@@ -135,3 +166,7 @@ with `recognized_circular_hole_count` and `recognized_slot_count` subtotals.
 
 API, CLI and HTTP CSV bytes are compared in tests. The browser-saved CSV also
 matches the benchmark bytes. See the [verification record](../results/unified-hole-inventory/verification.json).
+
+Version 1.14 also compares the review CSV through Python, CLI and HTTP.
+The browser-saved review CSV matches the API bytes; see the
+[review verification record](../results/hole-review/verification.json).

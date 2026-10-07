@@ -1,0 +1,3 @@
+﻿record_type,file_name,source_sha256,inventory_version,review_schema_version,result_status,hole_count,recognized_hole_count,count_state,review_item_count,review_id,reason_code,category,scope,severity,title,explanation,next_action,face_indices,edge_indices,raw_reason
+summary,malformed.step,f1234d75178d892a133a410355a5a990cf75d2f33eba25d575943d4df632f3a4,1.14.0,1.0.0,rejected,,0,unknown,1,,,,,,,読込を完了できませんでした。穴の有無は未判定です。,,,,
+review,malformed.step,f1234d75178d892a133a410355a5a990cf75d2f33eba25d575943d4df632f3a4,1.14.0,1.0.0,rejected,,0,unknown,1,R1,input_parse_failed,input,input,review,STEPの構文・読込前の条件を確認できません,読込前の検査を通過していないため、穴の解析は完了していません。,ファイルが途中で切れていないか確認し、元CADからSTEPを再出力してください。技術詳細も確認してください。,,,STEP inspection preflight: unexpected_token

@@ -11,6 +11,7 @@ from pathlib import Path
 from research_notes.brep_runtime import indexed_shapes, iter_shapes, surface_area_and_centroid
 from research_notes.feature_recognition import _face_geometry
 from research_notes.local_material import LocalMaterialClassifier
+from research_notes.hole_review import qualification_error, error_code
 from research_notes.spatial_workflow import WorkBudget
 
 TOL = 1e-5
@@ -71,12 +72,12 @@ def scan_circular_through_holes(shape):
     from OCP.TopoDS import TopoDS
 
     if shape.IsNull():
-        raise ValueError('円形穴の検証には有効なソリッドB-Repが必要です。')
+        raise qualification_error('円形穴の検証には有効なソリッドB-Repが必要です。')
     faces, edges, solids = (indexed_shapes(shape,t) for t in (TopAbs_FACE,TopAbs_EDGE,TopAbs_SOLID))
     if not 0 < faces.Extent() <= 512:
-        raise ValueError('円形穴の検証は最大512面です。')
+        raise qualification_error('円形穴の検証は最大512面です。')
     if not solids.Extent() or not BRepCheck_Analyzer(shape).IsValid():
-        raise ValueError('円形穴の検証には有効なソリッドB-Repが必要です。')
+        raise qualification_error('円形穴の検証には有効なソリッドB-Repが必要です。')
     edge_faces = {}
     for i in range(1, faces.Extent()+1):
         for edge in iter_shapes(faces.FindKey(i), TopAbs_EDGE):
@@ -100,19 +101,19 @@ def scan_circular_through_holes(shape):
             convex.append(i);continue
         try:
             if BRep_Tool.Tolerance_s(face)>TOL or any(BRep_Tool.Tolerance_s(TopoDS.Edge_s(e))>TOL for e in iter_shapes(face,TopAbs_EDGE)):
-                raise ValueError('円筒面・境界の許容差が検証許容差を超えています。')
+                raise qualification_error('円筒面・境界の許容差が検証許容差を超えています。')
             if len(owners[i])!=1:
-                raise ValueError('単一ソリッドに属する円筒面ではありません。')
+                raise qualification_error('単一ソリッドに属する円筒面ではありません。')
             if geometry[7] is None or geometry[7]>-0.99:
-                raise ValueError('内向きの円筒面を確認できません。')
+                raise qualification_error('内向きの円筒面を確認できません。')
             if abs(geometry[2]-2*math.pi)>1e-7:
-                raise ValueError('円筒が一周していません。長穴・切欠き・面分割などを保留します。')
+                raise qualification_error('円筒が一周していません。長穴・切欠き・面分割などを保留します。')
             boundary={edges.FindIndex(e) for e in iter_shapes(face,TopAbs_EDGE)}
             ends=[rim_edges[e] for e in boundary if e in rim_edges]
             if len(ends)!=2 or ends[0]['plane_face']==ends[1]['plane_face']:
-                raise ValueError('両端の平面にある完全な円形の内周を確認できません。止まり穴・段付き穴などを保留します。')
+                raise qualification_error('両端の平面にある完全な円形の内周を確認できません。止まり穴・段付き穴などを保留します。')
             if any(end['circular_outer_boundary'] for end in ends):
-                raise ValueError('円形外周の開口面は段付き穴の内部段差と区別せず保留します。ワッシャー等も対象外です。')
+                raise qualification_error('円形外周の開口面は段付き穴の内部段差と区別せず保留します。ワッシャー等も対象外です。')
             for end in ends:
                 opening = TopoDS.Face_s(faces.FindKey(end['plane_face']))
                 neighbors = set().union(*(edge_faces[edges.FindIndex(e)] - {end['plane_face']}
@@ -121,33 +122,33 @@ def scan_circular_through_holes(shape):
                 if not neighbors or all(sum((p-c)*n for p,c,n in zip(
                         surface_area_and_centroid(TopoDS.Face_s(faces.FindKey(f)))[1], end['center'], normal)) > TOL
                         for f in neighbors):
-                    raise ValueError('開口面が周囲の壁より奥にあります。段付き穴・ポケット内の穴として保留します。')
+                    raise qualification_error('開口面が周囲の壁より奥にあります。段付き穴・ポケット内の穴として保留します。')
             # Opening evidence and vertices must obey the same tolerance gate.
             for f in {i, *(end['plane_face'] for end in ends)}:
                 member = TopoDS.Face_s(faces.FindKey(f))
                 if BRep_Tool.Tolerance_s(member)>TOL or any(
                         BRep_Tool.Tolerance_s(TopoDS.Edge_s(e))>TOL for e in iter_shapes(member,TopAbs_EDGE)) or any(
                         BRep_Tool.Tolerance_s(TopoDS.Vertex_s(v))>TOL for v in iter_shapes(member,TopAbs_VERTEX)):
-                    raise ValueError('円筒面・開口面・辺・頂点の許容差が検証許容差を超えています。')
+                    raise qualification_error('円筒面・開口面・辺・頂点の許容差が検証許容差を超えています。')
             cylinder=surface.Cylinder();radius=cylinder.Radius();direction=list(cylinder.Axis().Direction().Coord())
             entry,exit=sorted((r['center'] for r in ends),reverse=True)
             depth=_distance(entry,exit)
             if radius<=100*TOL or depth<=100*TOL:
-                raise ValueError('半径または深さが検証許容差に近すぎます。')
+                raise qualification_error('半径または深さが検証許容差に近すぎます。')
             axis=[(b-a)/depth for a,b in zip(entry,exit)]
             if abs(sum(a*b for a,b in zip(axis,direction)))<1-1e-8:
-                raise ValueError('開口間の方向が円筒軸と一致しません。')
+                raise qualification_error('開口間の方向が円筒軸と一致しません。')
             origin=list(cylinder.Location().Coord())
             for end in ends:
                 delta=[v-o for v,o in zip(end['center'],origin)]
                 axial=sum(v*d for v,d in zip(delta,direction))
                 if math.sqrt(sum((v-axial*d)**2 for v,d in zip(delta,direction)))>TOL or abs(end['radius']-radius)>TOL:
-                    raise ValueError('円筒面と開口円の位置・径が一致しません。')
+                    raise qualification_error('円筒面と開口円の位置・径が一致しません。')
                 if abs(sum(a*b for a,b in zip(end['normal'],direction)))<1-1e-8:
-                    raise ValueError('開口平面が円筒軸に直交しません。')
+                    raise qualification_error('開口平面が円筒軸に直交しません。')
             area,_=surface_area_and_centroid(face)
             if abs(area-2*math.pi*radius*depth)>max(1e-7,area*1e-8):
-                raise ValueError('円筒面の面積に切欠き・追加境界があります。')
+                raise qualification_error('円筒面の面積に切欠き・追加境界があります。')
             classifier=classifiers[owners[i][0]]
             material=classifier.state
             u0,u1,v0,v1=BRepTools.UVBounds_s(face)
@@ -155,16 +156,16 @@ def scan_circular_through_holes(shape):
             for fraction in (.2,.5,.8):
                 center=[a+fraction*(b-a) for a,b in zip(entry,exit)]
                 if material(center)!=TopAbs_OUT:
-                    raise ValueError('穴内部に材料または不確定な境界があります。')
+                    raise qualification_error('穴内部に材料または不確定な境界があります。')
                 for angle in range(8):
                     point=list(surface.Value(u0+(angle+.37)*(u1-u0)/8,v0+fraction*(v1-v0)).Coord())
                     delta=[v-o for v,o in zip(point,origin)];axial=sum(v*d for v,d in zip(delta,direction))
                     radial=[(v-axial*d)/radius for v,d in zip(delta,direction)]
                     if material([v-offset*r for v,r in zip(point,radial)])!=TopAbs_OUT or material([v+offset*r for v,r in zip(point,radial)])!=TopAbs_IN:
-                        raise ValueError('円筒壁の内外の材料状態を確認できません。')
+                        raise qualification_error('円筒壁の内外の材料状態を確認できません。')
             for point in ([a-offset*d for a,d in zip(entry,axis)],[b+offset*d for b,d in zip(exit,axis)]):
                 if material(point)!=TopAbs_OUT:
-                    raise ValueError('両端の開口を確認できません。')
+                    raise qualification_error('両端の開口を確認できません。')
             clean=lambda values:[0. if abs(x)<1e-12 else round(float(x),9) for x in values]
             entry,axis=clean(entry),clean(axis)
             rows.append({'kind':'through','diameter_mm':round(2*radius,9),'x_mm':entry[0],'y_mm':entry[1],
@@ -173,7 +174,7 @@ def scan_circular_through_holes(shape):
                          'opening_edges':sorted(r['edge'] for r in ends), 'measurement_basis':'cylinder_support_and_two_inner_circular_rims',
                          'radial_material_samples':48,'axial_void_samples':5})
         except (ValueError,RuntimeError) as error:
-            withheld.append({'face_index':i,'reason':str(error)})
+            withheld.append({'face_index':i,'reason':str(error),'reason_code':error_code(error)})
     rows.sort(key=lambda h:(h['solid_index'],h['x_mm'],h['y_mm'],h['entry_z_mm'],h['diameter_mm']))
     for index,row in enumerate(rows,1):row['id']=f'H{index}'
     return {'holes':rows,'recognized_hole_count':len(rows),'hole_count':None,

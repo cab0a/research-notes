@@ -45,7 +45,7 @@ class BrowserEditor:
         self.storage.cleanup()
 
     def state(self):
-        return {"editor_version": "1.13.0", "revision_token": self.workspace.revision_token,
+        return {"editor_version": "1.14.0", "revision_token": self.workspace.revision_token,
                 "file_name": self.file_name, "snapshot": self.snapshot, "original": self.original}
 
     def guard(self, token):
@@ -253,8 +253,9 @@ class EditorHandler(BaseHTTPRequestHandler):
                         if not isinstance(payload, dict):
                             raise CadAPIError("invalid_request", "JSON object required")
                         result = inventory.action(path.removeprefix("/api/holes/"), payload)
-                        if path == "/api/holes/csv":
-                            self.send(200, result, "text/csv; charset=utf-8", download="hole-inventory.csv")
+                        if path in {"/api/holes/csv", "/api/holes/review-csv"}:
+                            filename = "hole-inventory.csv" if path.endswith("/csv") else "hole-review.csv"
+                            self.send(200, result, "text/csv; charset=utf-8", download=filename)
                             return
                     self.send(200, {"result": result, "state": inventory.state()})
                     return
@@ -304,7 +305,7 @@ def main():
     parser.add_argument("--open-browser", action="store_true")
     args = parser.parse_args()
     with EditorServer(args.port) as server:
-        print(f"Research CAD v1.13.0: {server.url} (Ctrl+C to stop)", flush=True)
+        print(f"Research CAD v1.14.0: {server.url} (Ctrl+C to stop)", flush=True)
         print(f"STEP revision comparison: {server.url}/revisions", flush=True)
         print(f"STEP hole inventory: {server.url}/holes", flush=True)
         if args.open_browser:
