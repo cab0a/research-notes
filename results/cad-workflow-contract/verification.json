@@ -1,0 +1,79 @@
+{
+  "adoption_decision": "not_evaluated",
+  "artifact_sha256": {
+    "contract-review.json": "de49260bd47cfcf767d978e11577639a3cd180e660e73062336958c84aa86f88",
+    "reference-contract.json": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "results.json": "6ed8bb0d6096ec6afb9e719d3776707c582eaf597081605e9374c0d9bb5513fd",
+    "sources.json": "a50bbc83d84cc2c6068a6cad02a46d48872986b715a77007c3daf655c4ee0a19"
+  },
+  "base_commit": "afbdb60251d2e17cd6b1a935d1b4c5302da372ff",
+  "claim_boundary": "Reference definition, existing-inventory semantics, tests and packaging only; no customer workbook, suitability model or measured SME advantage.",
+  "cli": {
+    "adoption_decision": "not_evaluated",
+    "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "installed_entry_point": "research-workflow-contract",
+    "invalid_exit": 2,
+    "stdout_file_python_equal": true,
+    "valid_exit": 0
+  },
+  "customer_approved": false,
+  "date": "2026-10-19",
+  "definition_controls": {
+    "passed": 11,
+    "total": 11
+  },
+  "documentation": {
+    "files_checked": [
+      "README.md",
+      "docs/cad-workflow-contract.md",
+      "docs/cad-hole-inventory.md",
+      "docs/studies.md",
+      "notes/cad-workflow-definition.md",
+      "notes/sme-cad-automation-roadmap.md",
+      "fixtures/cad-workflow-contract/README.md",
+      "results/cad-workflow-contract/README.md"
+    ],
+    "local_links_checked": 732,
+    "verification_links_created_with_this_record": 5
+  },
+  "inventory_controls": {
+    "inputs": 7,
+    "passed": 7,
+    "repeats": 2,
+    "scope": "Known development controls, not blinded business performance"
+  },
+  "operator_time_measured": false,
+  "package": {
+    "bytes": 608050,
+    "command": "output/venv312/bin/python -m pip wheel --no-deps . --wheel-dir output/workflow-contract-checks/dist",
+    "entry_point_and_module_checked": true,
+    "metadata_version": "1.15.0",
+    "sha256": "984ef66c4598f865112dca2ab9af0ef60e8c25be11c29bfcd4b28659d1e43397",
+    "three_editor_versions_checked": true,
+    "wheel": "output/workflow-contract-checks/dist/research_notes-1.15.0-py3-none-any.whl"
+  },
+  "passed": true,
+  "recognizer_paths_unchanged": [
+    "src/research_notes/hole_inventory.py",
+    "src/research_notes/public_hole_inventory.py",
+    "src/research_notes/slot_inventory.py",
+    "src/research_notes/local_material.py"
+  ],
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "tests": {
+    "command": "output/venv312/bin/python -m pytest -q --junitxml=output/workflow-contract-checks/tests.xml",
+    "errors": 0,
+    "failures": 0,
+    "junit_sha256": "1104e57dcf140f5c0de4f74d42db314bae12c36bb3856099ea4ff113552dd859",
+    "log_sha256": "da4014c913b328d4d6432ad3077d843298f3c8155edff9105ad66306dd9d7fde",
+    "new_workflow_contract_tests": 28,
+    "seconds": 359.752,
+    "skipped": 0,
+    "tests": 1225
+  },
+  "version": "1.15.0"
+}

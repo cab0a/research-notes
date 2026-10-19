@@ -2,7 +2,9 @@
 
 ## 日本語概要
 
-v1.14.0では、穴の判定を保留した理由と「次に確認すること」を日本語で表示します。読込条件、精度、開口や内壁の条件を整理し、元の技術メッセージと参照可能な面番号も残します。画面・Python API・CLIで扱い、確認用CSVへ保存できます。69入力を各2回評価し、既存の取得値・判定状態を維持しました。公開ブラケットは丸穴5か所・長孔6か所を取得しますが、全体の穴数は未確定です。[説明機能と検証結果](notes/hole-review-explanations.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
+v1.15.0では、「受領部品の穴情報を既存帳票へ転記する」一業務の研究用基準を固定しました。必須17項目、全体穴数と認識行数の区別、独立した正解、準備・確認・訂正を含む比較方法を定義し、定義チェック用のPython API・CLIを追加しました。11種類の不適切な定義と、既存7入力を各2回確認しています。顧客帳票への転記・作業時間・導入効果は未評価です。[研究ノート](notes/cad-workflow-definition.md)と[操作ガイド](docs/cad-workflow-contract.md)をご覧ください。
+
+既存の画面・Python API・CLIでは丸穴と直線長孔を一覧化し、保留理由と次の確認を日本語で表示できます。公開ブラケットは丸穴5か所・長孔6か所の部分結果で、全体穴数は不明です。[穴一覧の操作手順](docs/cad-hole-inventory.md)と[v1.14の検証](notes/hole-review-explanations.md)も保持しています。
 
 今後の基盤選定に向けて、[OCCT・SMLib・SolidCraft・ClassCADの比較調査](notes/cad-platform-selection.md)を追加しました。OCCT/SMLib系の隔離実測では固定STEP 64件の読込と計測・再出力を調べ、OCCT自身の積分条件による差も記録しました。汎用CADの自作を広げる前に、計測条件・認識の比較・受領データの確認業務を優先する提案です。SolidCraft/ClassCADは資料調査で、基盤の移行は未実施です。[初回のSMLib資料調査](notes/smlib-usd-brep-investigation.md)も残しています。
 
@@ -12,7 +14,7 @@ v1.14.0では、穴の判定を保留した理由と「次に確認すること�
 
 [STEPを必須にしないB-Rep認識の再調査](notes/brep-native-recognition-strategy.md)では、各基盤のB-Repと保存済み履歴を直接利用し、既存機能で足りる部分と不足を整理しました。SolidCraft配布版では、ネイティブ文書の再読込後の穴定義・選択した長孔の幅6/全長20 mm・2形状の差分を小例で確認しています。ClassCADは公開API調査まで。認識器の全面的な作り直しやSTEP経由を前提にしません。
 
-**今後の計画は[中小企業向けCAD周辺業務の自動化](notes/sme-cad-automation-roadmap.md)です。** 少量サンプルから適用範囲と残る確認を見極め、既存帳票へ接続し、準備・確認・訂正を含む総工数で効果を測ります。最初の題材は「受領CADの穴情報→既存Excel」、区切りはv1.24相当の業務PoCです。少数サンプルから未見部品での成立を予測することは研究仮説であり、新規性・優位性は未実証です。[以前の100項目](notes/brep-recognition-roadmap-100.md)は技術候補の記録として残し、実装順にはしません。現行版と過去の検証結果は変更していません。
+**今後の計画は[中小企業向けCAD周辺業務の自動化](notes/sme-cad-automation-roadmap.md)です。** 少量サンプルから適用範囲と残る確認を見極め、既存帳票へ接続し、準備・確認・訂正を含む総工数で効果を測ります。最初の題材は「受領CADの穴情報→既存Excel」、区切りはv1.24相当の業務PoCです。v1.15では研究用の業務・評価定義を固定しました。少数サンプルから未見部品での成立を予測することは研究仮説であり、新規性・優位性は未実証です。[以前の100項目](notes/brep-recognition-roadmap-100.md)は技術候補の記録として残し、実装順にはしません。過去の検証結果は保持しています。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -55,7 +57,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.14.0. Scoped references, dimensional
+The current implementation version is v1.15.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -63,7 +65,22 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Hole Review Explanations: v1.14.0
+## SME Workflow Reference Definition: v1.15.0
+
+A frozen definition specifies 17 conditional fields, whole-part completeness,
+source coordinates, independent truth and setup-inclusive comparisons for one
+hole inventory -> existing table task. Python/CLI checks reject 11 deliberate
+definition errors; seven existing inventory inputs are checked twice. This does
+not write a customer workbook, predict applicability or measure operator savings.
+See the [study](notes/cad-workflow-definition.md),
+[guide](docs/cad-workflow-contract.md) and
+[verification](results/cad-workflow-contract/verification.json).
+
+```bash
+python -m research_notes.workflow_contract fixtures/cad-workflow-contract/reference-contract.json
+```
+
+## Hole Review Explanations: introduced in v1.14.0
 
 The local viewer, Python API and CLI expose Japanese explanations, next actions
 and original check evidence for withheld results. Separate `review.csv` output

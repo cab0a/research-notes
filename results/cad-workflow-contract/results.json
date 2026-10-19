@@ -1,0 +1,1873 @@
+{
+  "adoption_decision": "not_evaluated",
+  "claim_boundary": "Definition and seven existing-inventory controls only. Not operator timing, customer workbook output, suitability prediction or SME benefit evaluation.",
+  "customer_approved": false,
+  "definition": {
+    "adoption_decision": "not_evaluated",
+    "claim_boundary": "業務・評価の定義を確認した結果です。CADの適用可否、顧客合意、性能・省力化の判定ではありません。",
+    "contract_id": "single-part-hole-inventory-to-existing-table-reference-v1",
+    "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "customer_approved": false,
+    "definition_state": "research_definition_fixed",
+    "definition_valid": true,
+    "issues": [],
+    "performance_measured": false,
+    "schema_version": "1.0.0",
+    "version": "1.15.0"
+  },
+  "definition_controls": [
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.completion.unknown_is_zero",
+      "id": "unknown_to_zero",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.completion.unknown_is_zero"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.completion.unanalysed_is_zero",
+      "id": "unanalysed_to_zero",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.completion.unanalysed_is_zero"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.completion.partial_is_complete",
+      "id": "partial_to_complete",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.completion.partial_is_complete"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.completion.whole_count_required",
+      "id": "count_not_required",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.completion.whole_count_required"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.coordinates.origin",
+      "id": "wrong_coordinate_origin",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.coordinates.origin"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.fields.diameter_mm.required_when",
+      "id": "diameter_for_slots",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.fields.diameter_mm.required_when"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.coordinates.length_unit",
+      "id": "wrong_length_unit",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.coordinates.length_unit"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.truth.recognizer_output_is_truth",
+      "id": "recognizer_as_truth",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.truth.recognizer_output_is_truth"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.truth.split_unit",
+      "id": "leaking_family_split",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.truth.split_unit"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.required_metrics",
+      "id": "review_time_omitted",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.required_metrics"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "definition_valid": false,
+      "expected_issue_path": "$.acceptance.customer_agreed",
+      "id": "pretend_customer_agreement",
+      "issues": [
+        {
+          "code": "policy_mismatch",
+          "message": "基準業務の範囲・座標・完全性の定義と一致しません。",
+          "path": "$.acceptance.customer_agreed"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "hashes": {
+    "experiments/run_workflow_contract_study.py": "7a44cf26573c3d3d0438aabf5696c1a2d186af14ba15ff6f7ca497bc4ad66540",
+    "fixtures/cad-workflow-contract/reference-cases.json": "99135c27babb85805dba93741b3b815cd50d9c38b570dd88b063f4058b67d75c",
+    "fixtures/cad-workflow-contract/reference-contract.json": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "fixtures/hole-inventory/manifest.json": "7d85e3b5528913341a517ed496a8e6100dbdc958966273847b5d3a2d116ed26e",
+    "fixtures/hole-robustness/manifest.json": "3e133780fdc758aed6b76b46999f055eaad6da7295a8c1e07103c629d7a36a3d",
+    "fixtures/public-step-corpus/manifest.json": "84cd83cbfd5616b1b14ca027d73dd8e157455ed544b38a53f92e3c7f95c1ca39",
+    "src/research_notes/hole_inventory.py": "88f7a7d3446c72d15e2c373cdbb6ed6d4eb627b52094d19c9db1a6a27fb81308",
+    "src/research_notes/workflow_contract.py": "134f8625b7e1474e20ac64fa5b29bae0c0ed6defee23bee4ed5f335bb31d8195"
+  },
+  "inventory_observations": [
+    {
+      "checks": {
+        "dimensions_match_independent_recipe": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true,
+        "whole_count_matches_independent_recipe": true
+      },
+      "extraction_seconds": [
+        1.95590012500179,
+        0.042242667001119116
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "no_holes",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "area_gate_mm2": 4.16e-06,
+        "area_residual_mm2": 0.0,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "feature_scope": "circular_and_slots",
+        "file_name": "no_holes.step",
+        "hole_count": 0,
+        "holes": [],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "material_gate_mm3": 4.8e-06,
+        "material_residual_mm3": 0.0,
+        "metrics": {
+          "absolute_volume": 480.0,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 12,
+          "face_count": 6,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 416.0,
+          "surface_centroid": [
+            6.0,
+            5.0,
+            2.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ]
+          ],
+          "vertex_count": 8
+        },
+        "preview": null,
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "recognized_circular_hole_count": 0,
+        "recognized_hole_count": 0,
+        "recognized_slot_count": 0,
+        "review_items": [],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "certified_zero",
+          "groups": [],
+          "headline": "対応範囲内で穴0か所を確認しました。",
+          "item_count": 0,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": false
+        },
+        "roots": 1,
+        "source_bytes": 15403,
+        "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+        "status": "complete",
+        "unit_contexts": [
+          {
+            "context_id": 345,
+            "length_unit_id": 346,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              346
+            ]
+          }
+        ]
+      },
+      "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "truth_origin": "independent_recipe",
+      "whole_count_truth": 0
+    },
+    {
+      "checks": {
+        "dimensions_match_independent_recipe": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true,
+        "whole_count_matches_independent_recipe": true
+      },
+      "extraction_seconds": [
+        0.12009788500290597,
+        0.058112524002353894
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "single",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "area_gate_mm2": 4.348495559215404e-06,
+        "area_residual_mm2": 1.6484591469634324e-12,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "feature_scope": "circular_and_slots",
+        "file_name": "single.step",
+        "hole_count": 1,
+        "holes": [
+          {
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "depth_mm": 4.0,
+            "diameter_mm": 2.0,
+            "entry_z_mm": 4.0,
+            "faces": [
+              7
+            ],
+            "feature_type": "circular_hole",
+            "id": "H1",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "width_mm": null,
+            "x_mm": 6.0,
+            "y_mm": 5.0
+          }
+        ],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "material_gate_mm3": 4.674336293856403e-06,
+        "material_residual_mm3": 0.0,
+        "metrics": {
+          "absolute_volume": 467.43362938564036,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 434.84955592154046,
+          "surface_centroid": [
+            6.0000000000000036,
+            5.0,
+            2.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "preview": null,
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "recognized_circular_hole_count": 1,
+        "recognized_hole_count": 1,
+        "recognized_slot_count": 0,
+        "review_items": [],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "certified_count",
+          "groups": [],
+          "headline": "対応範囲内で穴1か所を確認しました。",
+          "item_count": 0,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": false
+        },
+        "roots": 1,
+        "source_bytes": 18998,
+        "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+        "status": "complete",
+        "unit_contexts": [
+          {
+            "context_id": 429,
+            "length_unit_id": 430,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              430
+            ]
+          }
+        ]
+      },
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "truth_origin": "independent_recipe",
+      "whole_count_truth": 1
+    },
+    {
+      "checks": {
+        "dimensions_match_independent_recipe": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true,
+        "whole_count_matches_independent_recipe": true
+      },
+      "extraction_seconds": [
+        0.05711585899916827,
+        0.0574868530020467
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "blind_top",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "area_gate_mm2": 4.2856637061436e-06,
+        "area_residual_mm2": 7.958078640513122e-13,
+        "bounds_max": [
+          12.0,
+          10.0,
+          4.0
+        ],
+        "bounds_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "feature_scope": "circular_and_slots",
+        "file_name": "blind_top.step",
+        "hole_count": 1,
+        "holes": [
+          {
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "depth_mm": 2.0,
+            "diameter_mm": 2.0,
+            "entry_z_mm": 4.0,
+            "faces": [
+              7
+            ],
+            "feature_type": "circular_hole",
+            "id": "H1",
+            "kind": "blind",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "width_mm": null,
+            "x_mm": 6.0,
+            "y_mm": 5.0
+          }
+        ],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "material_gate_mm3": 4.737168146928203e-06,
+        "material_residual_mm3": 0.0,
+        "metrics": {
+          "absolute_volume": 473.71681469282026,
+          "analyzer_valid": true,
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 15,
+          "face_count": 8,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 428.56637061436,
+          "surface_centroid": [
+            6.000000000000003,
+            5.000000000000001,
+            2.0146609387436847
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              7
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "preview": null,
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "recognized_circular_hole_count": 1,
+        "recognized_hole_count": 1,
+        "recognized_slot_count": 0,
+        "review_items": [],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "certified_count",
+          "groups": [],
+          "headline": "対応範囲内で穴1か所を確認しました。",
+          "item_count": 0,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": false
+        },
+        "roots": 1,
+        "source_bytes": 19214,
+        "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+        "status": "complete",
+        "unit_contexts": [
+          {
+            "context_id": 435,
+            "length_unit_id": 436,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              436
+            ]
+          }
+        ]
+      },
+      "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "truth_origin": "independent_recipe",
+      "whole_count_truth": 1
+    },
+    {
+      "checks": {
+        "dimensions_match_independent_recipe": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true,
+        "whole_count_matches_independent_recipe": true
+      },
+      "extraction_seconds": [
+        0.056826788997568656,
+        0.15117052099958528
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "translated",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "area_gate_mm2": 4.348495559215404e-06,
+        "area_residual_mm2": 1.6484591469634324e-12,
+        "bounds_max": [
+          42.0,
+          -10.0,
+          11.0
+        ],
+        "bounds_min": [
+          30.0,
+          -20.0,
+          7.0
+        ],
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "feature_scope": "circular_and_slots",
+        "file_name": "translated.step",
+        "hole_count": 1,
+        "holes": [
+          {
+            "axis": [
+              0,
+              0,
+              -1
+            ],
+            "depth_mm": 4.0,
+            "diameter_mm": 2.0,
+            "entry_z_mm": 11.0,
+            "faces": [
+              7
+            ],
+            "feature_type": "circular_hole",
+            "id": "H1",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "width_mm": null,
+            "x_mm": 36.0,
+            "y_mm": -15.0
+          }
+        ],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "material_gate_mm3": 4.674336293856403e-06,
+        "material_residual_mm3": 0.0,
+        "metrics": {
+          "absolute_volume": 467.43362938564036,
+          "analyzer_valid": true,
+          "bounds_max": [
+            42.0000001,
+            -9.9999999,
+            11.0000001
+          ],
+          "bounds_min": [
+            29.9999999,
+            -20.0000001,
+            6.9999999
+          ],
+          "edge_count": 15,
+          "face_count": 7,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 434.84955592154046,
+          "surface_centroid": [
+            36.0,
+            -15.0,
+            9.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              6
+            ],
+            [
+              "cylinder",
+              1
+            ]
+          ],
+          "vertex_count": 10
+        },
+        "preview": null,
+        "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+        "recognized_circular_hole_count": 1,
+        "recognized_hole_count": 1,
+        "recognized_slot_count": 0,
+        "review_items": [],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "certified_count",
+          "groups": [],
+          "headline": "対応範囲内で穴1か所を確認しました。",
+          "item_count": 0,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": false
+        },
+        "roots": 1,
+        "source_bytes": 19085,
+        "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+        "status": "complete",
+        "unit_contexts": [
+          {
+            "context_id": 429,
+            "length_unit_id": 430,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              430
+            ]
+          }
+        ]
+      },
+      "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+      "truth_origin": "independent_recipe",
+      "whole_count_truth": 1
+    },
+    {
+      "checks": {
+        "partial_keeps_unknown_total": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true
+      },
+      "extraction_seconds": [
+        0.20862645600209362,
+        0.1386297540011583
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "mixed_circle_slot",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "external_cylinder_faces": [],
+        "feature_scope": "circular_and_slots",
+        "file_name": "mixed_circle_slot.step",
+        "hole_count": null,
+        "holes": [
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 4.0,
+            "diameter_mm": 2.0,
+            "entry_z_mm": 4.0,
+            "faces": [
+              9
+            ],
+            "feature_type": "circular_hole",
+            "id": "H1",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              10,
+              21
+            ],
+            "opening_faces": [
+              2,
+              4
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 7.0,
+            "y_mm": 5.0
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 4.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              27.0,
+              5.0,
+              4.0
+            ],
+            "entry_z_mm": 4.0,
+            "exit_center_mm": [
+              27.0,
+              5.0,
+              0.0
+            ],
+            "faces": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "feature_type": "straight_slot",
+            "id": "S1",
+            "kind": "straight_through_slot",
+            "length_mm": 6.0,
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                11,
+                12,
+                13,
+                14
+              ],
+              [
+                22,
+                23,
+                24,
+                25
+              ]
+            ],
+            "opening_faces": [
+              2,
+              4
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 2.0,
+            "x_mm": 27.0,
+            "y_mm": 5.0
+          }
+        ],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "metrics": {
+          "absolute_volume": 1366.8672587712863,
+          "analyzer_valid": true,
+          "bounds_max": [
+            36.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "edge_count": 33,
+          "face_count": 13,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 1133.699111843081,
+          "surface_centroid": [
+            18.227839014301587,
+            5.042339276355227,
+            2.0
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              10
+            ],
+            [
+              "cylinder",
+              3
+            ]
+          ],
+          "vertex_count": 22
+        },
+        "noncircular_planar_inner_wires": [
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 2
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 4
+          }
+        ],
+        "preview": null,
+        "reason": "丸穴1か所・長孔1か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。",
+        "recognized_circular_hole_count": 1,
+        "recognized_hole_count": 2,
+        "recognized_slot_count": 1,
+        "review_items": [
+          {
+            "category": "coverage",
+            "category_label": "全体確認の保留",
+            "code": "whole_count_unknown",
+            "edge_indices": [],
+            "explanation": "取得した行は、条件を満たして確認できた穴だけです。未対応形状や見逃しの有無は確定していません。",
+            "face_indices": [],
+            "id": "R1",
+            "next_action": "元CADや図面で部品全体を確認し、取得した一覧と照合してください。",
+            "raw_reason": "段差・ポケット・斜面は判定範囲外です。",
+            "scope": "whole_part",
+            "severity": "review",
+            "title": "全体の穴数は未確定です"
+          }
+        ],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "unknown",
+          "groups": [
+            {
+              "category": "coverage",
+              "item_count": 1,
+              "label": "全体確認の保留"
+            }
+          ],
+          "headline": "確認できた穴は2か所です。全体の穴数は未確定です。",
+          "item_count": 1,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": true
+        },
+        "roots": 1,
+        "scanned_faces": 13,
+        "scanned_solids": 1,
+        "slot_scan": {
+          "angular_tolerance": 1e-07,
+          "length_tolerance_mm": 1e-05,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate.",
+          "recognized_slot_count": 1,
+          "scanned_faces": 13,
+          "scanned_solids": 1,
+          "schema_version": "1.10.0",
+          "status": "partial",
+          "whole_opening_count": null,
+          "withheld_candidates": []
+        },
+        "source_bytes": 43078,
+        "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+        "status": "partial",
+        "unit_contexts": [
+          {
+            "context_id": 901,
+            "length_unit_id": 902,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              902
+            ]
+          }
+        ],
+        "whole_part_reason": "段差・ポケット・斜面は判定範囲外です。",
+        "withheld_cylinders": []
+      },
+      "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+      "truth_origin": "independent_recipe",
+      "whole_count_truth": 2
+    },
+    {
+      "checks": {
+        "partial_keeps_unknown_total": true,
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true
+      },
+      "extraction_seconds": [
+        0.801016797999182,
+        0.8183779559985851
+      ],
+      "family_id": "published-build123d-bracket",
+      "id": "public_bracket",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "conditions": {
+          "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+          "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+          "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "local_qualification_tolerance_mm": 1e-05,
+          "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+          "material_coordinate_resolution_limit_mm": 6.25e-07,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+          "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+        },
+        "external_cylinder_faces": [
+          3
+        ],
+        "feature_scope": "circular_and_slots",
+        "file_name": "public_bracket.step",
+        "hole_count": null,
+        "holes": [
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": 3.3,
+            "entry_z_mm": 14.5,
+            "faces": [
+              10
+            ],
+            "feature_type": "circular_hole",
+            "id": "H1",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              9,
+              34
+            ],
+            "opening_faces": [
+              1,
+              16
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 3.0,
+            "y_mm": -15.5
+          },
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": 3.3,
+            "entry_z_mm": 45.5,
+            "faces": [
+              12
+            ],
+            "feature_type": "circular_hole",
+            "id": "H2",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              11,
+              38
+            ],
+            "opening_faces": [
+              1,
+              16
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 3.0,
+            "y_mm": -15.5
+          },
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": 32.0,
+            "entry_z_mm": 30.0,
+            "faces": [
+              11
+            ],
+            "feature_type": "circular_hole",
+            "id": "H3",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              10,
+              36
+            ],
+            "opening_faces": [
+              1,
+              16
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 3.0,
+            "y_mm": 0.0
+          },
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": 3.3,
+            "entry_z_mm": 14.5,
+            "faces": [
+              8
+            ],
+            "feature_type": "circular_hole",
+            "id": "H4",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              7,
+              30
+            ],
+            "opening_faces": [
+              1,
+              16
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 3.0,
+            "y_mm": 15.5
+          },
+          {
+            "axial_void_samples": 5,
+            "axis": [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": 3.3,
+            "entry_z_mm": 45.5,
+            "faces": [
+              9
+            ],
+            "feature_type": "circular_hole",
+            "id": "H5",
+            "kind": "through",
+            "length_mm": null,
+            "longitudinal_direction": null,
+            "measurement_basis": "cylinder_support_and_two_inner_circular_rims",
+            "opening_edges": [
+              8,
+              32
+            ],
+            "opening_faces": [
+              1,
+              16
+            ],
+            "radial_material_samples": 48,
+            "solid_index": 1,
+            "width_mm": null,
+            "x_mm": 3.0,
+            "y_mm": 15.5
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              10.0,
+              -14.0,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              10.0,
+              -14.0,
+              0.0
+            ],
+            "faces": [
+              19,
+              20,
+              21,
+              22
+            ],
+            "feature_type": "straight_slot",
+            "id": "S1",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                72,
+                73,
+                74,
+                75
+              ],
+              [
+                43,
+                44,
+                45,
+                46
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              19,
+              20,
+              21,
+              22
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 10.0,
+            "y_mm": -14.0
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              10.0,
+              14.0,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              10.0,
+              14.0,
+              0.0
+            ],
+            "faces": [
+              31,
+              32,
+              33,
+              34
+            ],
+            "feature_type": "straight_slot",
+            "id": "S2",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                84,
+                85,
+                86,
+                87
+              ],
+              [
+                55,
+                56,
+                57,
+                58
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              31,
+              32,
+              33,
+              34
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 10.0,
+            "y_mm": 14.0
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              20.0,
+              -15.5,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              20.0,
+              -15.5,
+              0.0
+            ],
+            "faces": [
+              23,
+              24,
+              25,
+              26
+            ],
+            "feature_type": "straight_slot",
+            "id": "S3",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                76,
+                77,
+                78,
+                79
+              ],
+              [
+                47,
+                48,
+                49,
+                50
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              23,
+              24,
+              25,
+              26
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 20.0,
+            "y_mm": -15.5
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              20.0,
+              15.5,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              20.0,
+              15.5,
+              0.0
+            ],
+            "faces": [
+              35,
+              36,
+              37,
+              38
+            ],
+            "feature_type": "straight_slot",
+            "id": "S4",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                88,
+                89,
+                90,
+                91
+              ],
+              [
+                59,
+                60,
+                61,
+                62
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              35,
+              36,
+              37,
+              38
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 20.0,
+            "y_mm": 15.5
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              30.0,
+              -14.0,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              30.0,
+              -14.0,
+              0.0
+            ],
+            "faces": [
+              27,
+              28,
+              29,
+              30
+            ],
+            "feature_type": "straight_slot",
+            "id": "S5",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                80,
+                81,
+                82,
+                83
+              ],
+              [
+                51,
+                52,
+                53,
+                54
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              27,
+              28,
+              29,
+              30
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 30.0,
+            "y_mm": -14.0
+          },
+          {
+            "axis": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "depth_mm": 3.0,
+            "diameter_mm": null,
+            "entry_center_mm": [
+              30.0,
+              14.0,
+              3.0
+            ],
+            "entry_z_mm": 3.0,
+            "exit_center_mm": [
+              30.0,
+              14.0,
+              0.0
+            ],
+            "faces": [
+              39,
+              40,
+              41,
+              42
+            ],
+            "feature_type": "straight_slot",
+            "id": "S6",
+            "kind": "straight_through_slot",
+            "length_mm": 7.5,
+            "longitudinal_direction": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "measurement_basis": "two_inner_capsule_rims_and_four_untrimmed_walls",
+            "opening_edges": [
+              [
+                92,
+                93,
+                94,
+                95
+              ],
+              [
+                63,
+                64,
+                65,
+                66
+              ]
+            ],
+            "opening_faces": [
+              15,
+              13
+            ],
+            "passage_void_samples": 15,
+            "solid_index": 1,
+            "through_direction": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "wall_faces": [
+              39,
+              40,
+              41,
+              42
+            ],
+            "wall_material_samples": 72,
+            "width_mm": 4.5,
+            "x_mm": 30.0,
+            "y_mm": 14.0
+          }
+        ],
+        "inventory_version": "1.14.0",
+        "length_unit": "mm",
+        "metrics": {
+          "absolute_volume": 7061.1553017856795,
+          "analyzer_valid": true,
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "edge_count": 120,
+          "face_count": 42,
+          "maximum_edge_tolerance": 1e-07,
+          "maximum_face_tolerance": 1e-07,
+          "maximum_vertex_tolerance": 1e-07,
+          "shell_count": 1,
+          "solid_count": 1,
+          "surface_area": 6221.9841290626955,
+          "surface_centroid": [
+            10.018072747189672,
+            -5.358204789713305e-14,
+            13.928466523749618
+          ],
+          "surface_counts": [
+            [
+              "plane",
+              24
+            ],
+            [
+              "cylinder",
+              18
+            ]
+          ],
+          "vertex_count": 80
+        },
+        "noncircular_planar_inner_wires": [
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 13
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          },
+          {
+            "circular_outer_boundary": false,
+            "edge_count": 4,
+            "plane_face": 15
+          }
+        ],
+        "preview": null,
+        "reason": "丸穴5か所・長孔6か所を局所検証しました。未対応形状を含む全体の穴数は確定していません。",
+        "recognized_circular_hole_count": 5,
+        "recognized_hole_count": 11,
+        "recognized_slot_count": 6,
+        "review_items": [
+          {
+            "category": "coverage",
+            "category_label": "全体確認の保留",
+            "code": "whole_count_unknown",
+            "edge_indices": [],
+            "explanation": "取得した行は、条件を満たして確認できた穴だけです。未対応形状や見逃しの有無は確定していません。",
+            "face_indices": [],
+            "id": "R1",
+            "next_action": "元CADや図面で部品全体を確認し、取得した一覧と照合してください。",
+            "raw_reason": "only axis-aligned planes and Z-axis cylinders are qualified",
+            "scope": "whole_part",
+            "severity": "review",
+            "title": "全体の穴数は未確定です"
+          }
+        ],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "unknown",
+          "groups": [
+            {
+              "category": "coverage",
+              "item_count": 1,
+              "label": "全体確認の保留"
+            }
+          ],
+          "headline": "確認できた穴は11か所です。全体の穴数は未確定です。",
+          "item_count": 1,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": true
+        },
+        "roots": 1,
+        "scanned_faces": 42,
+        "scanned_solids": 1,
+        "slot_scan": {
+          "angular_tolerance": 1e-07,
+          "length_tolerance_mm": 1e-05,
+          "reason": "Locally verified slots only; no whole-part opening count or absence certificate.",
+          "recognized_slot_count": 6,
+          "scanned_faces": 42,
+          "scanned_solids": 1,
+          "schema_version": "1.10.0",
+          "status": "partial",
+          "whole_opening_count": null,
+          "withheld_candidates": []
+        },
+        "source_bytes": 165860,
+        "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+        "status": "partial",
+        "unit_contexts": [
+          {
+            "context_id": 3331,
+            "length_unit_id": 3332,
+            "millimetres_per_source_unit": 1.0,
+            "unit_chain": [
+              3332
+            ]
+          }
+        ],
+        "whole_part_reason": "only axis-aligned planes and Z-axis cylinders are qualified",
+        "withheld_cylinders": []
+      },
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "truth_origin": "unknown_whole_count",
+      "whole_count_truth": null
+    },
+    {
+      "checks": {
+        "repeat_results_identical": true,
+        "type_specific_dimensions": true,
+        "unanalysed_is_not_zero": true
+      },
+      "extraction_seconds": [
+        0.0007037770010356326,
+        0.0003241869999328628
+      ],
+      "family_id": "transport-negative-control",
+      "id": "invalid_transport",
+      "passed": true,
+      "result": {
+        "analysis_mode": "public_inspection",
+        "conditions": {
+          "axis_reference": "開口から穴の内部へ向かう単位ベクトル。貫通穴は-Zを選択。",
+          "coordinate_reference": "STEP内の座標系を維持。X/Yは円筒軸、Zは穴の開口平面との交点（mm）。貫通穴は上面を開口として表示。",
+          "count_policy": "板と穴の再構成が入力と一致した場合のみ全体の穴数を表示。保留・拒否では穴数は不明。",
+          "fit_relative_tolerance": 1e-08,
+          "length_tolerance_mm": 1e-05,
+          "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+          "scope": "軸に平行な長方形の板と、互いに離れたZ方向の円筒貫通穴・平底の止まり穴。単体ソリッド・最大24面。"
+        },
+        "feature_scope": "circular_and_slots",
+        "file_name": "invalid_transport.step",
+        "hole_count": null,
+        "holes": [],
+        "inventory_version": "1.14.0",
+        "length_unit": null,
+        "metrics": null,
+        "preview": null,
+        "reason": "STEP inspection preflight: unexpected_token",
+        "recognized_circular_hole_count": 0,
+        "recognized_hole_count": 0,
+        "recognized_slot_count": 0,
+        "review_items": [
+          {
+            "category": "input",
+            "category_label": "入力・読込条件",
+            "code": "input_parse_failed",
+            "edge_indices": [],
+            "explanation": "読込前の検査を通過していないため、穴の解析は完了していません。",
+            "face_indices": [],
+            "id": "R1",
+            "next_action": "ファイルが途中で切れていないか確認し、元CADからSTEPを再出力してください。技術詳細も確認してください。",
+            "raw_reason": "STEP inspection preflight: unexpected_token",
+            "scope": "input",
+            "severity": "review",
+            "title": "STEPの構文・読込前の条件を確認できません"
+          }
+        ],
+        "review_schema_version": "1.0.0",
+        "review_summary": {
+          "candidate_observation_count": 0,
+          "count_state": "unknown",
+          "groups": [
+            {
+              "category": "input",
+              "item_count": 1,
+              "label": "入力・読込条件"
+            }
+          ],
+          "headline": "読込を完了できませんでした。穴の有無は未判定です。",
+          "item_count": 1,
+          "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+          "manual_review_required": true
+        },
+        "source_bytes": 8,
+        "source_sha256": "fd76cc99c903f60264665da57143b57311324f2e47cd403fa49443227e9f8161",
+        "status": "rejected"
+      },
+      "source_sha256": "fd76cc99c903f60264665da57143b57311324f2e47cd403fa49443227e9f8161",
+      "truth_origin": "authored_invalid_transport",
+      "whole_count_truth": null
+    }
+  ],
+  "operator_time_measured": false,
+  "passed": true,
+  "repeats": 2,
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "version": "1.15.0"
+}

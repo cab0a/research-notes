@@ -1,0 +1,13 @@
+{
+  "adoption_decision": "not_evaluated",
+  "claim_boundary": "業務・評価の定義を確認した結果です。CADの適用可否、顧客合意、性能・省力化の判定ではありません。",
+  "contract_id": "single-part-hole-inventory-to-existing-table-reference-v1",
+  "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+  "customer_approved": false,
+  "definition_state": "research_definition_fixed",
+  "definition_valid": true,
+  "issues": [],
+  "performance_measured": false,
+  "schema_version": "1.0.0",
+  "version": "1.15.0"
+}

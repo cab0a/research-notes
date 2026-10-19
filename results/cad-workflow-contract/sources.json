@@ -1,0 +1,72 @@
+{
+  "version": "1.15.0",
+  "date": "2026-10-19",
+  "sources": [
+    {
+      "id": "feature_dimensions",
+      "url": "https://arxiv.org/abs/2408.06891v2",
+      "resolved_url": "https://arxiv.org/abs/2408.06891v2",
+      "review_scope": "abstract and metadata; no independent performance reproduction",
+      "retrieved_on": "2026-10-19",
+      "cache_path": "output/workflow-contract-prior-art-2026-10-19/feature_dimensions.html",
+      "sha256": "6207bd7008d1f9c99ccf859b35d2c41f19b86c1e713f1a39c06f6959d71df544",
+      "bytes": 45044,
+      "status": "retrieved"
+    },
+    {
+      "id": "selective_classification",
+      "url": "https://arxiv.org/abs/1705.08500v2",
+      "resolved_url": "https://arxiv.org/abs/1705.08500v2",
+      "review_scope": "abstract and metadata; not a risk guarantee for CAD",
+      "retrieved_on": "2026-10-19",
+      "cache_path": "output/workflow-contract-prior-art-2026-10-19/selective_classification.html",
+      "sha256": "1fc8023418fe3ced138e20bb3f0a422f6b4888663b0b0ff9b66d1bc3236724e5",
+      "bytes": 41266,
+      "status": "retrieved"
+    },
+    {
+      "id": "learning_curves",
+      "url": "https://arxiv.org/abs/2201.12150v2",
+      "resolved_url": "https://arxiv.org/abs/2201.12150v2",
+      "review_scope": "abstract and metadata; not a few-sample sufficiency guarantee",
+      "retrieved_on": "2026-10-19",
+      "cache_path": "output/workflow-contract-prior-art-2026-10-19/learning_curves.html",
+      "sha256": "0169749965dde0bf0630449162f328d0aad028b74ac4a941081225916bfe85b5",
+      "bytes": 44886,
+      "status": "retrieved"
+    },
+    {
+      "id": "validate",
+      "url": "https://www.kubotekkosmos.com/mbd-file-utilities/validate",
+      "resolved_url": "https://www.kubotekkosmos.com/mbd-file-utilities/validate",
+      "review_scope": "provider product description; no product execution or price comparison",
+      "retrieved_on": "2026-10-19",
+      "cache_path": "output/workflow-contract-prior-art-2026-10-19/validate.html",
+      "sha256": "b5ed28c394b3cb8da6c1603fe77a530a6ec4da7e14c4f95f05701b3ae73c2032",
+      "bytes": 144310,
+      "status": "retrieved"
+    },
+    {
+      "id": "caddi",
+      "url": "https://caddi.com/ja-jp/platform/",
+      "resolved_url": "https://caddi.com/ja-jp/platform/",
+      "review_scope": "provider product description; no product execution or price comparison",
+      "retrieved_on": "2026-10-19",
+      "cache_path": "output/workflow-contract-prior-art-2026-10-19/caddi.html",
+      "sha256": "3598e386c689e46dde82c5b8ffb5ff16760f0a9e0be0bac7345e6dbf0cbe5b21",
+      "bytes": 1759267,
+      "status": "retrieved"
+    }
+  ],
+  "prior_kernel_and_recognition_evidence": [
+    {
+      "path": "results/native-brep-recognition/sources.json",
+      "sha256": "4d3af4a69cb8f6678a7b95ac8330b317dbb66d70fadb0fb338165c5344c6eb83"
+    },
+    {
+      "path": "results/recognition-catalog/sources.json",
+      "sha256": "c09c7eea5e9fef47d6f3dac1f69a8735f7dc62de6d951a557eafbcf8cbac19e1"
+    }
+  ],
+  "scope": "Task, baseline and evaluation-definition review. Not a systematic novelty proof or provider performance benchmark."
+}
