@@ -1,0 +1,88 @@
+{
+  "adoption_decision": "not_evaluated",
+  "artifact_sha256": {
+    "results.json": "4397fbb38e1171cfe98fbcaa08b94b7b64505b6a4f842dfd8deda742131c6723",
+    "synthetic-report.json": "4714d6d7c000cfa37f097aa74aba9d26441cdd73dd106318f786228f76bd19ae",
+    "synthetic-session.json": "4295a78bf95b3e4f04405c81a24aadbbc2c48818d8b0191eebecaf27b0fcf8d0",
+    "unmeasured-report.json": "79da63faa3abb85c64aea29259739769a7b920e5c978afaa3a461b829f273c92",
+    "unmeasured-session.json": "19f6082083e07626edade0f5d8a228e2a2365294008c9c42898abf1d3e7401ba"
+  },
+  "base_commit": "f33cee9d81334ac438543bc31da20abe798d99e4",
+  "claim_boundary": "Timing/quality recording software, synthetic controls and separate machine observations only. Field operator baseline remains pending.",
+  "cli": {
+    "init_record_quality_report_checked": true,
+    "installed_entry_point": "research-workflow-baseline",
+    "invalid_exit": 2,
+    "invalid_record_preserves_input": true,
+    "json_stdout_file_python_equal": true,
+    "operator_time_measured": false,
+    "smoke_record_kind": "synthetic_control",
+    "timer_stdin_pause_resume_checked": true,
+    "unfinished_exit": 130
+  },
+  "customer_workbook_available": false,
+  "date": "2026-10-19",
+  "documentation": {
+    "files_checked": [
+      "README.md",
+      "docs/cad-workflow-baseline.md",
+      "docs/cad-workflow-contract.md",
+      "docs/cad-hole-inventory.md",
+      "docs/studies.md",
+      "notes/cad-workflow-baseline.md",
+      "notes/sme-cad-automation-roadmap.md",
+      "fixtures/cad-workflow-baseline/README.md",
+      "results/cad-workflow-baseline/README.md"
+    ],
+    "local_links_checked": 746,
+    "verification_links_created_with_this_record": 5
+  },
+  "field_baseline_complete": false,
+  "manual_error_rate_measured": false,
+  "operator_time_measured": false,
+  "package": {
+    "bytes": 616166,
+    "command": "output/venv312/bin/python -m pip wheel --no-deps . --wheel-dir output/workflow-baseline-checks/dist",
+    "entry_points_module_readme_checked": true,
+    "metadata_version": "1.16.0",
+    "sha256": "51229f7ad9766dc374ba3b879f0cfe0ec66669409c74bb5fcb14cc65cdd082ae",
+    "three_editor_versions_checked": true,
+    "wheel": "output/workflow-baseline-checks/dist/research_notes-1.16.0-py3-none-any.whl"
+  },
+  "passed": true,
+  "prior_definition_recognition_and_evidence_unchanged": [
+    "src/research_notes/workflow_contract.py",
+    "src/research_notes/hole_inventory.py",
+    "src/research_notes/public_hole_inventory.py",
+    "src/research_notes/slot_inventory.py",
+    "src/research_notes/local_material.py",
+    "fixtures/cad-workflow-contract",
+    "results/cad-workflow-contract"
+  ],
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "study": {
+    "accounting_checks": 6,
+    "machine_inputs": 7,
+    "previous_inventory_results_equal": true,
+    "rejected_controls": 12,
+    "repeats": 2,
+    "synthetic_total_seconds": 340
+  },
+  "tests": {
+    "command": "output/venv312/bin/python -m pytest -q --junitxml=output/workflow-baseline-checks/tests.xml",
+    "errors": 0,
+    "failures": 0,
+    "junit_sha256": "ab870f741f3da31207c726188115a360120451a9759de7d09589ec3618fc646f",
+    "log_sha256": "465525fa15f4e309b710356853c80f2b86a638375420563e7bac1883487553d9",
+    "new_workflow_baseline_tests": 39,
+    "seconds": 348.169,
+    "skipped": 0,
+    "tests": 1264
+  },
+  "time_saving_seconds": null,
+  "version": "1.16.0"
+}

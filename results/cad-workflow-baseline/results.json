@@ -1,0 +1,239 @@
+{
+  "accounting_checks": {
+    "synthetic_errors_are_not_lost": true,
+    "synthetic_is_not_operator_evidence": true,
+    "synthetic_not_needed_is_explicit": true,
+    "synthetic_time_matches_independent_arithmetic": true,
+    "unmeasured_quality_is_null": true,
+    "unmeasured_time_is_null": true
+  },
+  "adoption_decision": "not_evaluated",
+  "claim_boundary": "Accounting software controls and machine extraction only. Synthetic timing/quality is not operator evidence; no business baseline or time-saving claim.",
+  "customer_workbook_available": false,
+  "data_summary": {
+    "families": 3,
+    "inputs": 7,
+    "invalid_transport_controls": 1,
+    "statuses": {
+      "complete": 4,
+      "partial": 2,
+      "rejected": 1
+    },
+    "step_inputs": 6,
+    "step_inputs_with_known_whole_truth": 5,
+    "step_inputs_with_unknown_whole_truth": 1
+  },
+  "date": "2026-10-19",
+  "hashes": {
+    "experiments/run_workflow_baseline_study.py": "bfc4517a4db757aff85702c02bac74256109ae0749e8891e62116521662e7286",
+    "fixtures/cad-workflow-baseline/control-plan.json": "c0ef5c866a65be3af85e47e96ace1d5b372d1994d997ff2c67b0e2b73fca1c3f",
+    "fixtures/cad-workflow-contract/reference-cases.json": "99135c27babb85805dba93741b3b815cd50d9c38b570dd88b063f4058b67d75c",
+    "fixtures/cad-workflow-contract/reference-contract.json": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "fixtures/hole-inventory/manifest.json": "7d85e3b5528913341a517ed496a8e6100dbdc958966273847b5d3a2d116ed26e",
+    "fixtures/hole-robustness/manifest.json": "3e133780fdc758aed6b76b46999f055eaad6da7295a8c1e07103c629d7a36a3d",
+    "fixtures/public-step-corpus/manifest.json": "84cd83cbfd5616b1b14ca027d73dd8e157455ed544b38a53f92e3c7f95c1ca39",
+    "src/research_notes/hole_inventory.py": "88f7a7d3446c72d15e2c373cdbb6ed6d4eb627b52094d19c9db1a6a27fb81308",
+    "src/research_notes/workflow_baseline.py": "b35ae9abfd70ba51644f8cba05cb8ea0d52eb939dd9a6adf631dcc0a143738a7"
+  },
+  "machine_observations": [
+    {
+      "bytes": 15403,
+      "extraction_seconds": [
+        0.8704252820025431,
+        0.044614420003199484
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "no_holes",
+      "recognized_rows": 0,
+      "repeat_results_identical": true,
+      "result_sha256": "cec99302250eb1bfc281ace93cbec1303028437685f6305cbfac59b42e3b10f5",
+      "source_kind": "step",
+      "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "status": "complete",
+      "truth_origin": "independent_recipe",
+      "whole_count": 0,
+      "whole_count_truth": 0
+    },
+    {
+      "bytes": 18998,
+      "extraction_seconds": [
+        0.12636625599770923,
+        0.06239818900212413
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "single",
+      "recognized_rows": 1,
+      "repeat_results_identical": true,
+      "result_sha256": "1331eeeb8f8572cc12ebb99a36a1c00e33550864c46f8f74d12bd52ce3b09f12",
+      "source_kind": "step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "status": "complete",
+      "truth_origin": "independent_recipe",
+      "whole_count": 1,
+      "whole_count_truth": 1
+    },
+    {
+      "bytes": 19214,
+      "extraction_seconds": [
+        0.06890456399924005,
+        0.06845503300064593
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "blind_top",
+      "recognized_rows": 1,
+      "repeat_results_identical": true,
+      "result_sha256": "176e3cd667afb3a2e31e3d14411c4312d573b271e93d70ebea71338519d37740",
+      "source_kind": "step",
+      "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "status": "complete",
+      "truth_origin": "independent_recipe",
+      "whole_count": 1,
+      "whole_count_truth": 1
+    },
+    {
+      "bytes": 19085,
+      "extraction_seconds": [
+        0.08264231199791539,
+        0.13643713199780905
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "translated",
+      "recognized_rows": 1,
+      "repeat_results_identical": true,
+      "result_sha256": "152bdb22b18d9a94475c370dfb61036ec337591c8f017eb5c2deee64b7a05d34",
+      "source_kind": "step",
+      "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+      "status": "complete",
+      "truth_origin": "independent_recipe",
+      "whole_count": 1,
+      "whole_count_truth": 1
+    },
+    {
+      "bytes": 43078,
+      "extraction_seconds": [
+        0.12309421300233225,
+        0.11974618699969142
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "mixed_circle_slot",
+      "recognized_rows": 2,
+      "repeat_results_identical": true,
+      "result_sha256": "71df73cce5c19b429acc51230a7789c9bdcf86258759876459d9330fc66d2263",
+      "source_kind": "step",
+      "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+      "status": "partial",
+      "truth_origin": "independent_recipe",
+      "whole_count": null,
+      "whole_count_truth": 2
+    },
+    {
+      "bytes": 165860,
+      "extraction_seconds": [
+        0.8111310820022481,
+        0.8283777059987187
+      ],
+      "family_id": "published-build123d-bracket",
+      "id": "public_bracket",
+      "recognized_rows": 11,
+      "repeat_results_identical": true,
+      "result_sha256": "653c1f9782c0bff163a62a0d01df5e838e397306cab0cc8757c24e859784580a",
+      "source_kind": "step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "status": "partial",
+      "truth_origin": "unknown_whole_count",
+      "whole_count": null,
+      "whole_count_truth": null
+    },
+    {
+      "bytes": 8,
+      "extraction_seconds": [
+        0.0005399100009526592,
+        0.0003443850000621751
+      ],
+      "family_id": "transport-negative-control",
+      "id": "invalid_transport",
+      "recognized_rows": 0,
+      "repeat_results_identical": true,
+      "result_sha256": "2602d3c7ee84b1b6a8dbc2dcad11ef90df5f129dc83e1559a6b95be8cdf55ee9",
+      "source_kind": "invalid_transport",
+      "source_sha256": "fd76cc99c903f60264665da57143b57311324f2e47cd403fa49443227e9f8161",
+      "status": "rejected",
+      "truth_origin": "authored_invalid_transport",
+      "whole_count": null,
+      "whole_count_truth": null
+    }
+  ],
+  "manual_error_rate_measured": false,
+  "negative_controls": [
+    {
+      "id": "double_counted_phase",
+      "reason": "完了した工程に重複記録できません。訂正・再実行は別工程へ記録してください。",
+      "rejected": true
+    },
+    {
+      "id": "negative_time",
+      "reason": "時間は有限の0〜604800秒、計測根拠は記録種別に合わせてください。",
+      "rejected": true
+    },
+    {
+      "id": "boolean_time",
+      "reason": "時間は有限の0〜604800秒、計測根拠は記録種別に合わせてください。",
+      "rejected": true
+    },
+    {
+      "id": "synthetic_as_operator",
+      "reason": "時間は有限の0〜604800秒、計測根拠は記録種別に合わせてください。",
+      "rejected": true
+    },
+    {
+      "id": "omitted_correction_as_zero",
+      "reason": "時間は有限の0〜604800秒、計測根拠は記録種別に合わせてください。",
+      "rejected": true
+    },
+    {
+      "id": "unknown_truth_as_zero_errors",
+      "reason": "正解不明を誤り0として登録できません。",
+      "rejected": true
+    },
+    {
+      "id": "partial_truth_as_whole_errors",
+      "reason": "部分確認から全体の見逃し・完了誤りを0と断定できません。",
+      "rejected": true
+    },
+    {
+      "id": "recognizer_as_truth",
+      "reason": "正解は独立したレシピ・人の確認から作ってください。",
+      "rejected": true
+    },
+    {
+      "id": "no_checked_fields_as_zero_errors",
+      "reason": "誤り数には1件以上の確認が必要で、確認した項目数以下にしてください。",
+      "rejected": true
+    },
+    {
+      "id": "different_recipe_count",
+      "reason": "レシピの全体数と一致しません。新しい人の確認は別の出所を指定してください。",
+      "rejected": true
+    },
+    {
+      "id": "definition_digest_changed",
+      "reason": "業務定義のハッシュが不一致です。",
+      "rejected": true
+    },
+    {
+      "id": "manifest_digest_changed",
+      "reason": "部品manifestのハッシュが不一致です。",
+      "rejected": true
+    }
+  ],
+  "operator_time_measured": false,
+  "passed": true,
+  "repeats": 2,
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "time_saving_seconds": null,
+  "version": "1.16.0"
+}

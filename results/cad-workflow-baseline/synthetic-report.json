@@ -1,0 +1,230 @@
+{
+  "adoption_decision": "not_evaluated",
+  "baseline_record_complete": false,
+  "case_manifest_sha256": "45d76d75c8c3b6a1937a960af2fac00095f0d2a82738e4fe2be5b5242cde8189",
+  "case_order_frozen": true,
+  "claim_boundary": "利用者が記録した基準作業の集計です。記録の完全性と業務の成功は別です。実測の独立監査・顧客合意・省力化や採否の判定ではありません。",
+  "context_complete": true,
+  "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+  "created_at": "2026-10-19T00:00:00+00:00",
+  "customer_approved": false,
+  "error_counts": {
+    "false_complete": {
+      "known_total": 1,
+      "total": 1,
+      "unknown_cases": 0
+    },
+    "incorrect_fields": {
+      "known_total": 1,
+      "total": 1,
+      "unknown_cases": 0
+    },
+    "missed_features": {
+      "known_total": 1,
+      "total": 1,
+      "unknown_cases": 0
+    }
+  },
+  "known_active_seconds": 340,
+  "measurement_state": "synthetic_control",
+  "method": "manual_cad_and_transcription",
+  "missing_or_unfinished_phases": 0,
+  "not_needed_phases": 3,
+  "operator_reference": "synthetic-control",
+  "operator_time_measured": false,
+  "phases": [
+    {
+      "accounted": true,
+      "case_id": null,
+      "known_seconds": 30,
+      "not_needed": false,
+      "phase": "input_preparation",
+      "seconds": 30
+    },
+    {
+      "accounted": true,
+      "case_id": null,
+      "known_seconds": 90,
+      "not_needed": false,
+      "phase": "truth_labeling",
+      "seconds": 90
+    },
+    {
+      "accounted": true,
+      "case_id": null,
+      "known_seconds": 45,
+      "not_needed": false,
+      "phase": "setup",
+      "seconds": 45
+    },
+    {
+      "accounted": true,
+      "case_id": null,
+      "known_seconds": 15,
+      "not_needed": false,
+      "phase": "training",
+      "seconds": 15
+    },
+    {
+      "accounted": true,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": true,
+      "phase": "update",
+      "seconds": 0
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 5,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": 5
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 10,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": 10
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 20,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": 20
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 15,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": 15
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 10,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": 10
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": true,
+      "phase": "correction",
+      "seconds": 0
+    },
+    {
+      "accounted": true,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": true,
+      "phase": "rerun",
+      "seconds": 0
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 10,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": 10
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 15,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": 15
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 30,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": 30
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 20,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": 20
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 15,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": 15
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 5,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": 5
+    },
+    {
+      "accounted": true,
+      "case_id": "single",
+      "known_seconds": 5,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": 5
+    }
+  ],
+  "planned_case_ids": [
+    "no_holes",
+    "single"
+  ],
+  "planned_cases": 2,
+  "quality": [
+    {
+      "case_id": "no_holes",
+      "checked_fields": 5,
+      "false_complete": false,
+      "incorrect_fields": 0,
+      "missed_features": 0,
+      "truth_hole_count": 0,
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#no_holes",
+      "truth_scope": "whole_part"
+    },
+    {
+      "case_id": "single",
+      "checked_fields": 17,
+      "false_complete": true,
+      "incorrect_fields": 1,
+      "missed_features": 1,
+      "truth_hole_count": 1,
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#single",
+      "truth_scope": "whole_part"
+    }
+  ],
+  "quality_complete": true,
+  "quality_unknown_cases": 0,
+  "record_kind": "synthetic_control",
+  "session_id": "synthetic-arithmetic-control",
+  "session_sha256": "4295a78bf95b3e4f04405c81a24aadbbc2c48818d8b0191eebecaf27b0fcf8d0",
+  "time_saving_seconds": null,
+  "timing_complete": true,
+  "tool_reference": "synthetic CAD context",
+  "total_active_seconds": 340,
+  "version": "1.16.0",
+  "whole_truth_unknown_cases": 0,
+  "workbook_reference": "synthetic table context"
+}

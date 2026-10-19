@@ -1,0 +1,22 @@
+{
+  "version": "1.16.0",
+  "record_kind": "synthetic_control",
+  "scope": "Invented timing and quality values for software arithmetic checks; not operator trials or CAD accuracy.",
+  "case_ids": ["no_holes", "single"],
+  "batch_seconds": {
+    "input_preparation": 30,
+    "truth_labeling": 90,
+    "setup": 45,
+    "training": 15,
+    "update": "not_needed"
+  },
+  "case_seconds": {
+    "no_holes": {"input_check": 5, "cad_open": 10, "cad_check": 20, "transfer": 15, "final_check": 10, "correction": "not_needed", "rerun": "not_needed"},
+    "single": {"input_check": 10, "cad_open": 15, "cad_check": 30, "transfer": 20, "final_check": 15, "correction": 5, "rerun": 5}
+  },
+  "case_quality": {
+    "no_holes": {"checked_fields": 5, "incorrect_fields": 0, "missed_features": 0, "false_complete": false},
+    "single": {"checked_fields": 17, "incorrect_fields": 1, "missed_features": 1, "false_complete": true}
+  },
+  "expected": {"total_active_seconds": 340, "not_needed_phases": 3, "incorrect_fields": 1, "missed_features": 1, "false_complete": 1}
+}

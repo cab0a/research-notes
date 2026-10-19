@@ -1,0 +1,570 @@
+{
+  "adoption_decision": "not_evaluated",
+  "baseline_record_complete": false,
+  "case_manifest_sha256": "99135c27babb85805dba93741b3b815cd50d9c38b570dd88b063f4058b67d75c",
+  "case_order_frozen": true,
+  "claim_boundary": "利用者が記録した基準作業の集計です。記録の完全性と業務の成功は別です。実測の独立監査・顧客合意・省力化や採否の判定ではありません。",
+  "context_complete": false,
+  "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+  "created_at": "2026-10-19T00:00:00+00:00",
+  "customer_approved": false,
+  "error_counts": {
+    "false_complete": {
+      "known_total": 0,
+      "total": null,
+      "unknown_cases": 7
+    },
+    "incorrect_fields": {
+      "known_total": 0,
+      "total": null,
+      "unknown_cases": 7
+    },
+    "missed_features": {
+      "known_total": 0,
+      "total": null,
+      "unknown_cases": 7
+    }
+  },
+  "known_active_seconds": 0,
+  "measurement_state": "not_measured",
+  "method": "manual_cad_and_transcription",
+  "missing_or_unfinished_phases": 54,
+  "not_needed_phases": 0,
+  "operator_reference": "pending-participant",
+  "operator_time_measured": false,
+  "phases": [
+    {
+      "accounted": false,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_preparation",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "truth_labeling",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "setup",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "training",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": null,
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "update",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "no_holes",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "single",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "blind_top",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "translated",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "mixed_circle_slot",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "public_bracket",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "input_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_open",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "cad_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "transfer",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "final_check",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "correction",
+      "seconds": null
+    },
+    {
+      "accounted": false,
+      "case_id": "invalid_transport",
+      "known_seconds": 0,
+      "not_needed": false,
+      "phase": "rerun",
+      "seconds": null
+    }
+  ],
+  "planned_case_ids": [
+    "no_holes",
+    "single",
+    "blind_top",
+    "translated",
+    "mixed_circle_slot",
+    "public_bracket",
+    "invalid_transport"
+  ],
+  "planned_cases": 7,
+  "quality": [
+    {
+      "case_id": "no_holes",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "single",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "blind_top",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "translated",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "mixed_circle_slot",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "public_bracket",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    },
+    {
+      "case_id": "invalid_transport",
+      "checked_fields": null,
+      "false_complete": null,
+      "incorrect_fields": null,
+      "missed_features": null,
+      "truth_hole_count": null,
+      "truth_origin": "unknown",
+      "truth_reference": "not_recorded",
+      "truth_scope": "unknown"
+    }
+  ],
+  "quality_complete": false,
+  "quality_unknown_cases": 7,
+  "record_kind": "operator_observation",
+  "session_id": "unmeasured-reference-template",
+  "session_sha256": "19f6082083e07626edade0f5d8a228e2a2365294008c9c42898abf1d3e7401ba",
+  "time_saving_seconds": null,
+  "timing_complete": false,
+  "tool_reference": null,
+  "total_active_seconds": null,
+  "version": "1.16.0",
+  "whole_truth_unknown_cases": 7,
+  "workbook_reference": null
+}
