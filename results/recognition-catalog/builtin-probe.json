@@ -1,0 +1,1300 @@
+{
+  "date": "2026-10-19",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "baseline_commit": "2840cee10b1994b40ceded62d4b88b1c85abfe89",
+  "probe_sha256": "3785cc5d6a276acada52bdea594f58dbfb3ad2f0e328930a644e19eac73f3959",
+  "primitive_helper_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "process_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds_soft": 20,
+    "cpu_seconds_hard": 21,
+    "wall_seconds": 30,
+    "max_workers": 2
+  },
+  "observations": 30,
+  "states": {
+    "ok": 30
+  },
+  "limits": [
+    "One recorded observation per task; not a precision or performance benchmark.",
+    "Only existing smlibpy APIs called; no custom recognizer or production change.",
+    "Selections, draft classes and bends do not certify full manufacturing-feature recognition.",
+    "K-factor is a supplied default, not a recovered material/process property.",
+    "Quiddity and C++ analytic promotion were not executed in this probe."
+  ],
+  "records": [
+    {
+      "case": "box",
+      "operation": "selectors",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 6,
+        "input_surface_types": {
+          "plane": 6
+        },
+        "cylindrical_face_count": 0,
+        "circular_edge_count": 0,
+        "edge_convexity": {
+          "convex": 12
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.27414363299976685
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.4029894380000769,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "box",
+      "operation": "fillets",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 6,
+        "input_surface_types": {
+          "plane": 6
+        },
+        "selected_face_count": 0,
+        "selected_surface_types": {},
+        "selected_original_face_indices": [],
+        "worker_seconds": 0.26946249499997066
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.4015971600001649,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "box",
+      "operation": "bends",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 6,
+        "input_surface_types": {
+          "plane": 6
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.08610374300042167
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.20679865700003575,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "box",
+      "operation": "draft",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 6,
+        "input_surface_types": {
+          "plane": 6
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "undercut": 1,
+          "positive": 1,
+          "vertical": 4
+        },
+        "angles": [
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          }
+        ],
+        "worker_seconds": 0.0939284640007827
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21802647700133093,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "round_plate",
+      "operation": "selectors",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 7,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 1
+        },
+        "cylindrical_face_count": 1,
+        "circular_edge_count": 2,
+        "edge_convexity": {
+          "convex": 14
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.1246566609988804
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2531361920009658,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "round_plate",
+      "operation": "fillets",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 7,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 1
+        },
+        "selected_face_count": 0,
+        "selected_surface_types": {},
+        "selected_original_face_indices": [],
+        "worker_seconds": 0.12239765699996497
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2385351200009609,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "round_plate",
+      "operation": "bends",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 7,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 1
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.1117845219996525
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.23554051999963121,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "round_plate",
+      "operation": "draft",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 7,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 1
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "undercut": 1,
+          "positive": 1,
+          "vertical": 5
+        },
+        "angles": [
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          }
+        ],
+        "worker_seconds": 0.12120647099982307
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2516880040002434,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "slot_plate",
+      "operation": "selectors",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 11,
+        "input_surface_types": {
+          "plane": 8,
+          "cylinder": 3
+        },
+        "cylindrical_face_count": 3,
+        "circular_edge_count": 6,
+        "edge_convexity": {
+          "convex": 22,
+          "smooth": 5
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.13128422400041018
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2717908869999519,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "slot_plate",
+      "operation": "fillets",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 11,
+        "input_surface_types": {
+          "plane": 8,
+          "cylinder": 3
+        },
+        "selected_face_count": 1,
+        "selected_surface_types": {
+          "cylinder": 1
+        },
+        "selected_original_face_indices": [
+          9
+        ],
+        "worker_seconds": 0.11567316299988306
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.25370012700113875,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "slot_plate",
+      "operation": "bends",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 11,
+        "input_surface_types": {
+          "plane": 8,
+          "cylinder": 3
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.11623886200140987
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.23425075900013326,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "slot_plate",
+      "operation": "draft",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 11,
+        "input_surface_types": {
+          "plane": 8,
+          "cylinder": 3
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "undercut": 1,
+          "positive": 1,
+          "vertical": 9
+        },
+        "angles": [
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          }
+        ],
+        "worker_seconds": 0.1573853699992469
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2957968789996812,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "filleted_box",
+      "operation": "selectors",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 10,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 4
+        },
+        "cylindrical_face_count": 4,
+        "circular_edge_count": 8,
+        "edge_convexity": {
+          "convex": 16,
+          "smooth": 8
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.11569097699975828
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.22404353499950957,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "filleted_box",
+      "operation": "fillets",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 10,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 4
+        },
+        "selected_face_count": 4,
+        "selected_surface_types": {
+          "cylinder": 4
+        },
+        "selected_original_face_indices": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "worker_seconds": 0.10791626899845141
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.22333647300001758,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "filleted_box",
+      "operation": "bends",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 10,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 4
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.10393694900085393
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2062527060006687,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "filleted_box",
+      "operation": "draft",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 10,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 4
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "vertical": 8,
+          "undercut": 1,
+          "positive": 1
+        },
+        "angles": [
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          }
+        ],
+        "worker_seconds": 0.1372792339989246
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2451305800004775,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "folded_sheet",
+      "operation": "selectors",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 14,
+        "input_surface_types": {
+          "cylinder": 2,
+          "plane": 12
+        },
+        "cylindrical_face_count": 2,
+        "circular_edge_count": 4,
+        "edge_convexity": {
+          "convex": 20,
+          "smooth": 8
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.10613806400033354
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21683285899962357,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "folded_sheet",
+      "operation": "fillets",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 14,
+        "input_surface_types": {
+          "cylinder": 2,
+          "plane": 12
+        },
+        "selected_face_count": 2,
+        "selected_surface_types": {
+          "cylinder": 2
+        },
+        "selected_original_face_indices": [
+          1,
+          2
+        ],
+        "worker_seconds": 0.108579108999038
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.22365254900068976,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "folded_sheet",
+      "operation": "bends",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 14,
+        "input_surface_types": {
+          "cylinder": 2,
+          "plane": 12
+        },
+        "bend_count": 1,
+        "bends": [
+          {
+            "angle_deg": 90.0,
+            "inside_radius_mm": 2.0,
+            "thickness_mm": 2.0,
+            "length_mm": 40.0,
+            "axis_origin": [
+              17.738053289415348,
+              20.000000000000014,
+              4.0
+            ],
+            "axis_direction": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "k_factor_input": 0.44
+          }
+        ],
+        "worker_seconds": 0.11580364799920062
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.23387031700076477,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "folded_sheet",
+      "operation": "draft",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 14,
+        "input_surface_types": {
+          "cylinder": 2,
+          "plane": 12
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "undercut": 2,
+          "insufficient": 1,
+          "vertical": 9,
+          "positive": 2
+        },
+        "angles": [
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 1.0287208897357225e-11
+          },
+          {
+            "kind": "insufficient",
+            "min_deg": -1.0198245519913693e-11,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -4.770832022195275e-15,
+            "max_deg": -4.770832022195275e-15
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 3.1805546814635168e-15,
+            "max_deg": 3.1805546814635168e-15
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          }
+        ],
+        "worker_seconds": 0.12165243399977044
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.24383418800061918,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "bracket",
+      "operation": "selectors",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 42,
+        "input_surface_types": {
+          "plane": 24,
+          "cylinder": 18
+        },
+        "cylindrical_face_count": 18,
+        "circular_edge_count": 36,
+        "edge_convexity": {
+          "convex": 88,
+          "smooth": 26,
+          "concave": 1
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.2533175309999933
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.36748051200083864,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "bracket",
+      "operation": "fillets",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 42,
+        "input_surface_types": {
+          "plane": 24,
+          "cylinder": 18
+        },
+        "selected_face_count": 13,
+        "selected_surface_types": {
+          "cylinder": 13
+        },
+        "selected_original_face_indices": [
+          3,
+          20,
+          22,
+          24,
+          26,
+          28,
+          30,
+          32,
+          34,
+          36,
+          38,
+          40,
+          42
+        ],
+        "worker_seconds": 0.2388899709985708
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.3570502889997442,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "bracket",
+      "operation": "bends",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 42,
+        "input_surface_types": {
+          "plane": 24,
+          "cylinder": 18
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.23924765799893066
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.34726400900035514,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "bracket",
+      "operation": "draft",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 42,
+        "input_surface_types": {
+          "plane": 24,
+          "cylinder": 18
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "vertical": 31,
+          "undercut": 7,
+          "positive": 4
+        },
+        "angles": [
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 1.5076774593612745e-14
+          },
+          {
+            "kind": "positive",
+            "min_deg": 45.00000000000001,
+            "max_deg": 45.00000000000001
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 45.00000000000001,
+            "max_deg": 45.00000000000001
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": 0.0,
+            "max_deg": 0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          }
+        ],
+        "worker_seconds": 0.391540440999961
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.5075616089998221,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "spline_bore",
+      "operation": "selectors",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 9,
+        "input_surface_types": {
+          "bspline": 9
+        },
+        "cylindrical_face_count": 0,
+        "circular_edge_count": 0,
+        "edge_convexity": {
+          "convex": 19,
+          "concave": 1
+        },
+        "note": "Surface/edge counts are not recognized hole or slot counts.",
+        "worker_seconds": 0.1107826000006753
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21888596000098914,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "spline_bore",
+      "operation": "fillets",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 9,
+        "input_surface_types": {
+          "bspline": 9
+        },
+        "selected_face_count": 0,
+        "selected_surface_types": {},
+        "selected_original_face_indices": [],
+        "worker_seconds": 0.10409939300006954
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21925008000107482,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "spline_bore",
+      "operation": "bends",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 9,
+        "input_surface_types": {
+          "bspline": 9
+        },
+        "bend_count": 0,
+        "bends": [],
+        "worker_seconds": 0.10040107200074999
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21184283899856382,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "spline_bore",
+      "operation": "draft",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 9,
+        "input_surface_types": {
+          "bspline": 9
+        },
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "face_kinds": {
+          "vertical": 7,
+          "positive": 1,
+          "undercut": 1
+        },
+        "angles": [
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "positive",
+            "min_deg": 90.0,
+            "max_deg": 90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -1.2722218725854067e-14,
+            "max_deg": 2.5444437451708134e-14
+          },
+          {
+            "kind": "undercut",
+            "min_deg": -90.0,
+            "max_deg": -90.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -2.5444437451708134e-14,
+            "max_deg": 2.5444437451708134e-14
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          },
+          {
+            "kind": "vertical",
+            "min_deg": -0.0,
+            "max_deg": -0.0
+          }
+        ],
+        "worker_seconds": 0.16622066099989752
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.2858651219994499,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "box",
+      "operation": "parting_line",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 6,
+        "input_surface_types": {
+          "plane": 6
+        },
+        "wire_count": 1,
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "worker_seconds": 0.10011856900018756
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.21064235199992254,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "case": "round_plate",
+      "operation": "parting_line",
+      "result": {
+        "status": "ok",
+        "package_version": "0.3.5",
+        "input_face_count": 7,
+        "input_surface_types": {
+          "plane": 6,
+          "cylinder": 1
+        },
+        "wire_count": 2,
+        "pull_direction": [
+          0,
+          0,
+          1
+        ],
+        "worker_seconds": 0.17141866099882463
+      },
+      "exit_code": 0,
+      "wall_seconds": 0.30417745299928356,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

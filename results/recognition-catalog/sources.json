@@ -1,0 +1,341 @@
+{
+  "date": "2026-10-19",
+  "baseline_commit": "2840cee10b1994b40ceded62d4b88b1c85abfe89",
+  "scope": "Recognition capability inventory; existing API call observations and published wheel inspection; no recognizer port or production migration.",
+  "pins": {
+    "nvidia_usd_brep": {
+      "version": "1.0.0",
+      "commit": "c9c5979f04cea8c38213004d4f04df0dcfb40d05"
+    },
+    "smlibpy": {
+      "version": "0.3.5",
+      "commit": "316514b421285ae5abdfe5ed24936bd24ed9dec1"
+    },
+    "quiddity": {
+      "tag": "quiddity-v0.3.11",
+      "commit": "f035e9675c6c823eb23287e0e490c031d010afad",
+      "version": "0.3.11",
+      "wheel": "quiddity-0.3.11-py3-none-any.whl",
+      "wheel_sha256_verified": "950828b5f23b38ac1deb17bf9d478c15ba5c79b9c799b8bf5ebb6197dd332cdf",
+      "uploaded_at": "2026-10-15T17:42:33.479103Z"
+    }
+  },
+  "previous_public_api_audit": {
+    "path": "results/recognition-availability/sources.json",
+    "sha256": "54bc03ca186a3cc4646a03321b58b5da5843a3ef53476abb925d6157d9202743",
+    "record_count": 363
+  },
+  "additional_sources": [
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmBSplineCurve.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmBSplineCurve.cpp",
+      "sha256": "93c905a12c4124f6761f63ca9dbe2e2ffe400eb32b493c3d514be42de2c41138",
+      "bytes": 321412,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmBSplineCurveNLib.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmBSplineCurveNLib.cpp",
+      "sha256": "6da68b15fc211fdee7aea746c72af575f20c43e04cb17ee69f78223018a00859",
+      "bytes": 219180,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmBSplineSurface.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmBSplineSurface.cpp",
+      "sha256": "f99a3b406641889e17d117e7d76ef45e24a5ec3b291adbca963f9b773057598a",
+      "bytes": 273967,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmPlane.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmPlane.cpp",
+      "sha256": "5e554da57cd7b642ceb46c0528d582a906993fcde94779ab8a7a2328ec6e48e5",
+      "bytes": 184600,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmCone.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmCone.cpp",
+      "sha256": "74a065f859c430cfa2183798467a323f0692445831c94952f35b04cd5b6df8c2",
+      "bytes": 291086,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmSphere.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmSphere.cpp",
+      "sha256": "1524b8de556dd1e726e13bfe9f4a07b5b3eb4092776c0f1bd01b2c66526c0a41",
+      "bytes": 168446,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmSurfOfRevolution.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmSurfOfRevolution.cpp",
+      "sha256": "1366bc85dc515f2e95486878a6ba24ac9bcad73d04ee7b54a85be91496ea3cfe",
+      "bytes": 308782,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmSurfOfExtrusion.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmSurfOfExtrusion.cpp",
+      "sha256": "230cf2faddb5d8c4dae0350adb062b7ba4bb52e9dffebe3fdf5e398179dc6156",
+      "bytes": 228175,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmEllipse.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmEllipse.cpp",
+      "sha256": "d985473838df9da9a42cef6e4e37abc2b53b756668312e96f39a77b0875696af",
+      "bytes": 183470,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmLine.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmLine.cpp",
+      "sha256": "bac43a837e3a675d78c7b7fd7504ae88d0808d2b1ae3e988471a3993ca0df58f",
+      "bytes": 106811,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmParabola.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmParabola.cpp",
+      "sha256": "3957de2972b30b3bbf730db532c3f76c84c50789a5ff39fd9b6ededf47ba0d0c",
+      "bytes": 28148,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmHyperbola.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmHyperbola.cpp",
+      "sha256": "5b1d72b786d18c9089be3506a27c84038304c3251f7e4691f6f71d63faa808c5",
+      "bytes": 30159,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SmPyLib/stubs/usd_brep/__init__.pyi",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/stubs/usd_brep/__init__.pyi",
+      "sha256": "6072ac37174ba4f24ec092cc4545fd81881a22c77f7635308390f2417467e758",
+      "bytes": 33375,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SmPyLib/src/SmPyBorrowedGeometry.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyBorrowedGeometry.cpp",
+      "sha256": "c3dc7a5aaa4b047287f1884cc56ec85b6f6e57969327e361fc7b333ac964562c",
+      "bytes": 5032,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SM_API/inc/SmApiQueries.h",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiQueries.h",
+      "sha256": "59e8a99a62b7dfc4663c8b2f3e9e23a62b9477a15223a71347dd5e394575e4ee",
+      "bytes": 23052,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SM_API/inc/SmApiSurfaces.h",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiSurfaces.h",
+      "sha256": "09b657cfef07158dd00dbbece14baa961ea9cca24facde1be1b3be4883252a45",
+      "bytes": 7362,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SM_API/inc/SmApiCurves.h",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiCurves.h",
+      "sha256": "0dfd139e35adcc01324668b7377f70dadc5e093dbfff1ac12c43842db46a6b27",
+      "bytes": 16244,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/usd-brep-pypi.json",
+      "url": "https://pypi.org/pypi/usd-brep/1.0.0/json",
+      "sha256": "ff88b56e7c4546c09e02aac4412a338ea08c46d1863deca776fa0c92b7fb5ba6",
+      "bytes": 6878,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/smlibpy-pypi.json",
+      "url": "https://pypi.org/pypi/smlibpy/0.3.5/json",
+      "sha256": "ac6279aee4ffc0b4c8a49d0bd397e195c50d30600ae06aad086b777335a382d5",
+      "bytes": 38976,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-pypi.json",
+      "url": "https://pypi.org/pypi/quiddity/json",
+      "sha256": "84ba01747b242f9a0c5ff551d9136a37260fc294a9cedc1ee7944c380867f068",
+      "bytes": 59949,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-tags.json",
+      "url": "https://api.github.com/repos/pzfreo/quiddity/tags?per_page=50",
+      "sha256": "cca69b2a71685d7678357806506673b6e42665a3e0025d980c5fb66154554539",
+      "bytes": 20851,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-releases.json",
+      "url": "https://api.github.com/repos/pzfreo/quiddity/releases?per_page=30",
+      "sha256": "7f62e2a10bf0e05bdba9d11ce07e640210d89974f9e4db8830387580ab6905b6",
+      "bytes": 84422,
+      "status": "ok"
+    },
+    {
+      "url": "https://smlibpy.classcad.ch/docs/sheetmetal/",
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://smlibpy.classcad.ch/docs/measuring/",
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/smlibpy-selecting.html",
+      "url": "https://smlibpy.classcad.ch/docs/selecting/",
+      "sha256": "60a81832a3b5b2d2c12fde75ea00d45f6a77a8cfcc2b9e5161affc5a6f770492",
+      "bytes": 49930,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/smlibpy-api.html",
+      "url": "https://smlibpy.classcad.ch/docs/api/",
+      "sha256": "dc1905461586986e7b294766445913071e13fd8ee44da471af2ab5aa2c920048",
+      "bytes": 324072,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmCurve.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmCurve.cpp",
+      "sha256": "f0c0a7fb5a6d800556bb206a5f0e80ac2c6f0a65edb101c1629ae2a2b33a6b24",
+      "bytes": 1259178,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmSurface.cpp",
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmSurface.cpp",
+      "sha256": "218a360a80b68d4dec70a7b3e1cab5d8d89a375f41cd5564e2e058c6629740be",
+      "bytes": 1590396,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/smlibpy-sheet-metal.html",
+      "url": "https://smlibpy.classcad.ch/docs/sheet-metal/",
+      "sha256": "e4214393845256422bd3a996c4008c0e4bacd6eb8ff382084d49a232830b9589",
+      "bytes": 73643,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/smlibpy-analysis.html",
+      "url": "https://smlibpy.classcad.ch/docs/analysis/",
+      "sha256": "22cc60d7767e5cd58649d6d91e273c12a8acecec18e97aecc56478748e2a5102",
+      "bytes": 81638,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/README.md",
+      "url": "https://raw.githubusercontent.com/pzfreo/quiddity/f035e9675c6c823eb23287e0e490c031d010afad/README.md",
+      "sha256": "a8e35dce347429f7ffd5189294abf0852111173bf78d8e5dc6c62d93f3edcb14",
+      "bytes": 20555,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/docs/capabilities.md",
+      "url": "https://raw.githubusercontent.com/pzfreo/quiddity/f035e9675c6c823eb23287e0e490c031d010afad/docs/capabilities.md",
+      "sha256": "9e200a0917965610e3f1de48d7382f24d24083e529cd54793b0c7df3ff739d8c",
+      "bytes": 89757,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/pzfreo/quiddity/f035e9675c6c823eb23287e0e490c031d010afad/pyproject.toml",
+      "sha256": "ae4cb90f5e56874d919538884a3dbc171010ca76df4ef4828d66f3aa7d058f00",
+      "bytes": 4097,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/LICENSE",
+      "url": "https://raw.githubusercontent.com/pzfreo/quiddity/f035e9675c6c823eb23287e0e490c031d010afad/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/RELEASE_NOTES.md",
+      "url": "https://raw.githubusercontent.com/pzfreo/quiddity/f035e9675c6c823eb23287e0e490c031d010afad/RELEASE_NOTES.md",
+      "sha256": "d9ea4f8da069d209c6c7724e0ff62f7845c3f2f3db6590fe693aa22fdf318c34",
+      "bytes": 77339,
+      "status": "ok"
+    },
+    {
+      "path": "output/recognition-catalog-2026-10-19/quiddity-release/quiddity-0.3.11-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/db/bf/98098a3eec4b34f331a7fc09116bddf15b41b01a74f369600f7e226e9f1a/quiddity-0.3.11-py3-none-any.whl",
+      "sha256": "950828b5f23b38ac1deb17bf9d478c15ba5c79b9c799b8bf5ebb6197dd332cdf",
+      "bytes": 586172,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/src/SmCircle.cpp",
+      "path": "output/recognition-catalog-2026-10-19/nvidia/source/SMLib/src/SmCircle.cpp",
+      "sha256": "70e1a503cb628ac58f4c1d92aba463240fb8e4dbdc71ca62508290fa478b62f1",
+      "bytes": 23310,
+      "status": "ok"
+    }
+  ],
+  "runtime_environment": {
+    "python": "3.12.14 (main, Sep 24 2026, 17:57:43) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "smlibpy": "0.3.5",
+    "numpy": "2.4.6",
+    "native_files": [
+      {
+        "path": "smlibpy/_core.cpython-312-x86_64-linux-gnu.so",
+        "sha256": "1e135051dc5bfcf144964fa029b0f8b1a36c1a24b6f0cc87014b7f6357b6f7dc"
+      }
+    ]
+  },
+  "local_files": [
+    {
+      "path": "experiments/run_recognition_builtin_probe.py",
+      "sha256": "3785cc5d6a276acada52bdea594f58dbfb3ad2f0e328930a644e19eac73f3959"
+    },
+    {
+      "path": "experiments/inspect_recognition_distribution.py",
+      "sha256": "26b98c4202bebe8336f09f6b64ef13c2d5fadde020430ee73ac1101a1ab8500f"
+    },
+    {
+      "path": "experiments/run_cad_kernel_probe.py",
+      "sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d"
+    },
+    {
+      "path": "notes/released-recognition-catalog.md",
+      "sha256": "dcf3f80178acc80eb610d6f77fab1e7a7c7580161c489aa04af3e57b65f0b8ad"
+    },
+    {
+      "path": "results/recognition-catalog/README.md",
+      "sha256": "797e86b1923bc6e03f41158d8be9a51be0742a260e4d3ae406ba3c10ed139d07"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "results/recognition-catalog/builtin-matrix.csv",
+      "sha256": "077de76463f2a6acfee3618ba6f404a4ed7b9e25b8c52c5f7dc989d7d7225f0d"
+    },
+    {
+      "path": "results/recognition-catalog/builtin-probe.json",
+      "sha256": "bb032b245091deec3edc7fe9ac644ab3c2716a9352af203c3cda1d4bd5644429"
+    },
+    {
+      "path": "results/recognition-catalog/quiddity-0.3.11-inventory.json",
+      "sha256": "4f20274451d241f13dea0509d0ccacb83f59d661be61bb94ecdb91d0bd39d9b6"
+    }
+  ],
+  "executed": {
+    "smlibpy_builtin_tasks": 30,
+    "quiddity_recognition": false,
+    "smlib_cpp_analytic_promotion": false,
+    "classcad_engine": false,
+    "solidcraft_app": false
+  },
+  "production_dependencies_code_fixtures_and_old_results_changed": false
+}

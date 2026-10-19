@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19",
+  "scope": "Existing-API smoke observations, shipped-interface audit and provenance checks; no production release validation.",
+  "compiled_scripts": 2,
+  "recorded_native_tasks": 30,
+  "completed_native_tasks": 30,
+  "authored_controls": "passed: plain box, bore face exclusion, four rounded corners, one bend with known dimensions",
+  "shipped_quiddity_families": 36,
+  "quiddity_entry_points_checked_against_shipped_exports": 36,
+  "quiddity_recognition_executed": false,
+  "wrong_wheel_digest": "rejected before output creation",
+  "additional_cached_sources_verified": 35,
+  "predecessor_audit_sha256": "verified",
+  "evidence_and_local_files_verified": 8,
+  "document_local_links_verified": 19,
+  "all_json_finite": true,
+  "existing_production_code_dependencies_fixtures_and_results": "unchanged",
+  "limits": [
+    "Task completion and authored-control agreement do not establish general recognition accuracy.",
+    "Curve/surface promotion in C++ was source-reviewed, not executed.",
+    "Fillet, bend and draft outputs are not a non-overlapping manufacturing-feature census."
+  ]
+}

@@ -1,0 +1,1319 @@
+{
+  "wheel": "quiddity-0.3.11-py3-none-any.whl",
+  "wheel_sha256": "950828b5f23b38ac1deb17bf9d478c15ba5c79b9c799b8bf5ebb6197dd332cdf",
+  "metadata_version": "0.3.11",
+  "license_expression": [
+    "Apache-2.0"
+  ],
+  "requires_python": [
+    "<3.15,>=3.11"
+  ],
+  "requires_dist": [
+    "build123d<0.14,>=0.9",
+    "numpy>=1.24",
+    "scipy>=1.10"
+  ],
+  "contract_member": "quiddity/capabilities.json",
+  "contract_sha256": "31bcca885fc1c56b64fb4720425428d8273cde7eb9dbff28bebac3ed3f0d1f1d",
+  "format_version": 2,
+  "family_count": 36,
+  "families": [
+    {
+      "id": "angled-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_angled_steps"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "AngledStep",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "at",
+            "axis",
+            "corner",
+            "leg1",
+            "leg2",
+            "length"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blends",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_blends"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Blend",
+          "role": "output",
+          "field_names": [
+            "path",
+            "radius",
+            "side"
+          ]
+        },
+        {
+          "name": "CircularBlendPath",
+          "role": "nested",
+          "field_names": [
+            "center",
+            "normal",
+            "radius"
+          ]
+        },
+        {
+          "name": "StraightBlendPath",
+          "role": "nested",
+          "field_names": [
+            "at",
+            "direction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bosses",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_bosses"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "BossRecord",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "diameter",
+            "height",
+            "location"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chamfers",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_chamfers"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Chamfer",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "at",
+            "axis",
+            "corner",
+            "leg1",
+            "leg2",
+            "turned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "circular-blind-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_circular_blind_steps"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "CircularBlindStep",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "centreline",
+            "length",
+            "radius",
+            "section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "circular-face-patterns",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_circular_face_patterns"
+      ],
+      "introduced_in": "0.3.6",
+      "records": [
+        {
+          "name": "CircularFacePattern",
+          "role": "output",
+          "field_names": [
+            "axis_direction",
+            "axis_origin",
+            "count",
+            "fit_error",
+            "pitch_degrees",
+            "seed_index"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "countersinks",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_countersinks"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "CounterSink",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "depth",
+            "drill_diameter",
+            "included_angle",
+            "location",
+            "major_diameter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double-d-bores",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_double_d_bores"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "DoubleDBore",
+          "role": "output",
+          "field_names": [
+            "across_flats",
+            "axis",
+            "depth",
+            "flat_direction",
+            "location",
+            "major_diameter",
+            "through"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "face-levels",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_face_levels"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "FaceLevel",
+          "role": "evidence",
+          "field_names": [
+            "body_key",
+            "x_span",
+            "y_span",
+            "z"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fillets",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_fillets"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Fillet",
+          "role": "output",
+          "field_names": [
+            "at",
+            "axis",
+            "radius",
+            "side",
+            "turned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flats",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_flats"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Flat",
+          "role": "output",
+          "field_names": [
+            "across",
+            "at",
+            "axis",
+            "axis_direction",
+            "axis_line",
+            "stock_span"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "freeform-surfaces",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_freeform_surfaces"
+      ],
+      "introduced_in": "0.3.6",
+      "records": [
+        {
+          "name": "BSplineSurfaceSupport",
+          "role": "nested",
+          "field_names": [
+            "poles",
+            "u_degree",
+            "u_knots",
+            "u_multiplicities",
+            "u_periodic",
+            "v_degree",
+            "v_knots",
+            "v_multiplicities",
+            "v_periodic",
+            "weights"
+          ]
+        },
+        {
+          "name": "FreeformSurface",
+          "role": "output",
+          "field_names": [
+            "construction_axis",
+            "construction_kind",
+            "construction_vector",
+            "continuity_group",
+            "continuity_links",
+            "face",
+            "offset_basis",
+            "offset_distance",
+            "offset_partner",
+            "support",
+            "support_kind"
+          ]
+        },
+        {
+          "name": "SurfaceContinuityLink",
+          "role": "nested",
+          "field_names": [
+            "kind",
+            "other_face"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grooves",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_grooves"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Groove",
+          "role": "output",
+          "field_names": [
+            "at",
+            "axis",
+            "diameter",
+            "profile",
+            "width"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gusset-rib-patterns",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_gusset_rib_patterns"
+      ],
+      "introduced_in": "0.2.10",
+      "records": [
+        {
+          "name": "GussetRibArray",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "pitch",
+            "ribs"
+          ]
+        },
+        {
+          "name": "GussetRibMirrorPair",
+          "role": "output",
+          "field_names": [
+            "mirror_plane",
+            "ribs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gusset-ribs",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_gusset_ribs"
+      ],
+      "introduced_in": "0.2.10",
+      "records": [
+        {
+          "name": "GussetRib",
+          "role": "output",
+          "field_names": [
+            "body_key",
+            "directions",
+            "legs",
+            "supports",
+            "thickness_axis",
+            "thickness_bounds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hole-patterns",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_hole_patterns"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "BoltCircle",
+          "role": "output",
+          "field_names": [
+            "center",
+            "diameter",
+            "holes"
+          ]
+        },
+        {
+          "name": "LinearArray",
+          "role": "output",
+          "field_names": [
+            "direction",
+            "holes",
+            "pitch"
+          ]
+        },
+        {
+          "name": "RectGrid",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "center",
+            "col_pitch",
+            "cols",
+            "holes",
+            "row_pitch",
+            "rows"
+          ]
+        },
+        {
+          "name": "RectangularHoleSet",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "center",
+            "height",
+            "holes",
+            "width"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "holes",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_holes"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "CounterBore",
+          "role": "nested",
+          "field_names": [
+            "depth",
+            "diameter"
+          ]
+        },
+        {
+          "name": "HoleRecord",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "bottom",
+            "cbore",
+            "csink",
+            "depth",
+            "diameter",
+            "location",
+            "spotface"
+          ]
+        },
+        {
+          "name": "HoleSpec",
+          "role": "evidence",
+          "field_names": [
+            "axis",
+            "bottom",
+            "cbore",
+            "csink",
+            "depth",
+            "diameter",
+            "spotface"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interior-voids",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_interior_voids"
+      ],
+      "introduced_in": "0.3.9",
+      "records": [
+        {
+          "name": "InteriorVoid",
+          "role": "output",
+          "field_names": [
+            "air_samples",
+            "body_index",
+            "body_key",
+            "enclosed_samples",
+            "estimated_volume",
+            "grid_pitch",
+            "openings",
+            "void_faces",
+            "volume_method"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oblique-through-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_oblique_through_steps"
+      ],
+      "introduced_in": "0.3.9",
+      "records": [
+        {
+          "name": "ObliqueThroughStep",
+          "role": "output",
+          "field_names": [
+            "across_direction",
+            "at",
+            "body_key",
+            "depth",
+            "depth_direction",
+            "length",
+            "run",
+            "wall_outline"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oriented-chamfers",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_oriented_chamfers"
+      ],
+      "introduced_in": "0.3.9",
+      "records": [
+        {
+          "name": "OrientedChamfer",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "at",
+            "body_key",
+            "corner",
+            "leg1",
+            "leg1_direction",
+            "leg2",
+            "leg2_direction",
+            "length",
+            "run",
+            "support_spans"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oriented-slot-patterns",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_oriented_slot_patterns"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "OrientedSlotArray",
+          "role": "output",
+          "field_names": [
+            "direction",
+            "pitch",
+            "slots"
+          ]
+        },
+        {
+          "name": "OrientedSlotGrid",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "center",
+            "col_pitch",
+            "cols",
+            "row_pitch",
+            "rows",
+            "slots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oriented-slots",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_oriented_slots"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "OrientedSlot",
+          "role": "output",
+          "field_names": [
+            "body_key",
+            "center",
+            "length",
+            "long_direction",
+            "source",
+            "width",
+            "width_direction"
+          ]
+        },
+        {
+          "name": "PassageEnds",
+          "role": "nested",
+          "field_names": [
+            "high_capped",
+            "high_gradient",
+            "low_capped",
+            "low_gradient"
+          ]
+        },
+        {
+          "name": "SectionPassage",
+          "role": "nested",
+          "field_names": [
+            "ends",
+            "frame",
+            "run_interval",
+            "section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paired-ramp-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_paired_ramp_steps"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "PairedRampStep",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "at",
+            "axis",
+            "half_width",
+            "half_widths",
+            "length",
+            "opening_direction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plates",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_plates"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Plate",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "body_key",
+            "hi",
+            "lo",
+            "u",
+            "v"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "polygonal-bosses",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_polygonal_bosses"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "PolygonalBoss",
+          "role": "output",
+          "field_names": [
+            "across_flats",
+            "axis",
+            "base",
+            "center",
+            "flat_centres",
+            "flat_directions",
+            "side_count",
+            "top"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "polygonal-stock",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_polygonal_stock"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "PolygonalStock",
+          "role": "output",
+          "field_names": [
+            "across_flats",
+            "axis",
+            "base",
+            "center",
+            "flat_centres",
+            "flat_directions",
+            "side_count",
+            "top"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rectangular-pads",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_rectangular_pads"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "RaisedPad",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "direction",
+            "x0",
+            "x1",
+            "y0",
+            "y1",
+            "z0",
+            "z1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "repeating-radial-profiles",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_repeating_radial_profiles"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "RepeatingRadialProfile",
+          "role": "evidence",
+          "field_names": [
+            "axis",
+            "centre",
+            "edge_count",
+            "repeat_count",
+            "sector_signature",
+            "span"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "risers",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_risers"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "RiserEvidence",
+          "role": "evidence",
+          "field_names": [
+            "axis",
+            "body_key",
+            "body_levels",
+            "hi_at_envelope",
+            "lo_at_envelope",
+            "other_axis",
+            "other_positions",
+            "positions",
+            "tol",
+            "vertical",
+            "z_hi",
+            "z_lo"
+          ]
+        },
+        {
+          "name": "StepShoulder",
+          "role": "projection",
+          "field_names": [
+            "axis",
+            "position"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-recesses",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_section_recesses"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "ClosedSectionProfile",
+          "role": "nested",
+          "field_names": [
+            "boundary",
+            "closure"
+          ]
+        },
+        {
+          "name": "CylindricalEndSurface",
+          "role": "nested",
+          "field_names": [
+            "axis_direction",
+            "axis_point",
+            "branch",
+            "radius",
+            "type"
+          ]
+        },
+        {
+          "name": "OpenSectionProfile",
+          "role": "nested",
+          "field_names": [
+            "boundary",
+            "closure",
+            "material_side",
+            "opening"
+          ]
+        },
+        {
+          "name": "PassageFrame",
+          "role": "nested",
+          "field_names": [
+            "origin",
+            "run",
+            "u",
+            "v"
+          ]
+        },
+        {
+          "name": "PassageSection",
+          "role": "nested",
+          "field_names": [
+            "boundary"
+          ]
+        },
+        {
+          "name": "PassageSectionVertex",
+          "role": "nested",
+          "field_names": [
+            "bulge",
+            "point"
+          ]
+        },
+        {
+          "name": "PlanarEndSurface",
+          "role": "nested",
+          "field_names": [
+            "gradient",
+            "type"
+          ]
+        },
+        {
+          "name": "PlanarEndTerm",
+          "role": "nested",
+          "field_names": [
+            "gradient",
+            "height"
+          ]
+        },
+        {
+          "name": "PlanarEnvelopeEndSurface",
+          "role": "nested",
+          "field_names": [
+            "operator",
+            "terms",
+            "type"
+          ]
+        },
+        {
+          "name": "SectionEnd",
+          "role": "nested",
+          "field_names": [
+            "condition",
+            "surface"
+          ]
+        },
+        {
+          "name": "SectionRecess",
+          "role": "output",
+          "field_names": [
+            "body",
+            "classification",
+            "evidence",
+            "geometry",
+            "index"
+          ]
+        },
+        {
+          "name": "SectionRecessArray",
+          "role": "projection",
+          "field_names": [
+            "direction",
+            "members",
+            "pitch"
+          ]
+        },
+        {
+          "name": "SectionRecessBodyRef",
+          "role": "nested",
+          "field_names": [
+            "index"
+          ]
+        },
+        {
+          "name": "SectionRecessClassification",
+          "role": "nested",
+          "field_names": [
+            "feature_kind",
+            "section_shape"
+          ]
+        },
+        {
+          "name": "SectionRecessDocument",
+          "role": "aggregate",
+          "field_names": [
+            "bodies",
+            "faces",
+            "occurrences",
+            "patterns",
+            "reference_scope",
+            "refusals",
+            "schema_version"
+          ]
+        },
+        {
+          "name": "SectionRecessEnds",
+          "role": "nested",
+          "field_names": [
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "SectionRecessEvidence",
+          "role": "nested",
+          "field_names": [
+            "constituent_faces",
+            "defining_faces"
+          ]
+        },
+        {
+          "name": "SectionRecessFaceRef",
+          "role": "nested",
+          "field_names": [
+            "index"
+          ]
+        },
+        {
+          "name": "SectionRecessGeometry",
+          "role": "nested",
+          "field_names": [
+            "ends",
+            "frame",
+            "profile",
+            "run_interval",
+            "type"
+          ]
+        },
+        {
+          "name": "SectionRecessGrid",
+          "role": "projection",
+          "field_names": [
+            "center",
+            "col_direction",
+            "col_pitch",
+            "cols",
+            "members",
+            "row_direction",
+            "row_pitch",
+            "rows"
+          ]
+        },
+        {
+          "name": "SectionRecessRefusal",
+          "role": "projection",
+          "field_names": [
+            "body",
+            "evidence",
+            "reason"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sheet-metal-bodies",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_sheet_metal_bodies"
+      ],
+      "introduced_in": "0.3.5",
+      "records": [
+        {
+          "name": "FlatOverlapWitness",
+          "role": "nested",
+          "field_names": [
+            "area",
+            "first_index",
+            "first_kind",
+            "second_index",
+            "second_kind"
+          ]
+        },
+        {
+          "name": "FlatPatternPlan",
+          "role": "nested",
+          "field_names": [
+            "base_flange",
+            "bend_strips",
+            "flat_faces",
+            "k_factor",
+            "overlap_witnesses",
+            "tessellation_tolerance",
+            "tree_bends",
+            "valid_blank"
+          ]
+        },
+        {
+          "name": "FormedSheetFeature",
+          "role": "nested",
+          "field_names": [
+            "faces",
+            "paired_faces"
+          ]
+        },
+        {
+          "name": "SheetBend",
+          "role": "nested",
+          "field_names": [
+            "angle_degrees",
+            "axis_direction",
+            "axis_origin",
+            "bend_allowance",
+            "face_pairs",
+            "first_flange",
+            "index",
+            "inner_radius",
+            "neutral_radius",
+            "reference_skin",
+            "second_flange"
+          ]
+        },
+        {
+          "name": "SheetEdgeTreatment",
+          "role": "nested",
+          "field_names": [
+            "face",
+            "kind",
+            "radius"
+          ]
+        },
+        {
+          "name": "SheetFlange",
+          "role": "nested",
+          "field_names": [
+            "area",
+            "index",
+            "mate_faces",
+            "normal",
+            "origin",
+            "reference_faces"
+          ]
+        },
+        {
+          "name": "SheetMetalBody",
+          "role": "output",
+          "field_names": [
+            "bends",
+            "body_index",
+            "body_key",
+            "cut_edge_faces",
+            "edge_treatments",
+            "first_side_faces",
+            "flanges",
+            "flat_pattern",
+            "flat_pattern_status",
+            "formed_features",
+            "paired_area_fraction",
+            "second_side_faces",
+            "thickness"
+          ]
+        },
+        {
+          "name": "UnfoldedBendStrip",
+          "role": "nested",
+          "field_names": [
+            "bend",
+            "corners",
+            "source_face_pair"
+          ]
+        },
+        {
+          "name": "UnfoldedFlangeFace",
+          "role": "nested",
+          "field_names": [
+            "flange",
+            "source_face",
+            "triangles",
+            "vertices"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slot-patterns",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_slot_patterns"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "SlotArray",
+          "role": "output",
+          "field_names": [
+            "direction",
+            "pitch",
+            "slots"
+          ]
+        },
+        {
+          "name": "SlotGrid",
+          "role": "output",
+          "field_names": [
+            "angle",
+            "center",
+            "col_pitch",
+            "cols",
+            "row_pitch",
+            "rows",
+            "slots"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slots",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_slots"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "Slot",
+          "role": "output",
+          "field_names": [
+            "body_key",
+            "corner_radius",
+            "d_hi",
+            "d_lo",
+            "end_radius",
+            "hi",
+            "length",
+            "lo",
+            "long_axis",
+            "w_center",
+            "width",
+            "width_axis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thin-wall-bodies",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_thin_wall_bodies"
+      ],
+      "introduced_in": "0.3.5",
+      "records": [
+        {
+          "name": "ShellHistoryHint",
+          "role": "nested",
+          "field_names": [
+            "after_shell_cut_faces",
+            "basis",
+            "before_shell_collar_pairs",
+            "direction",
+            "inner_faces",
+            "opening_rims",
+            "outer_faces"
+          ]
+        },
+        {
+          "name": "ThinWallBody",
+          "role": "output",
+          "field_names": [
+            "body_index",
+            "body_key",
+            "face_pairs",
+            "history_hint",
+            "paired_area_fraction",
+            "rim_regions",
+            "thickness",
+            "unpaired_face_classes",
+            "unpaired_faces"
+          ]
+        },
+        {
+          "name": "UnpairedWallFace",
+          "role": "nested",
+          "field_names": [
+            "face",
+            "kind"
+          ]
+        },
+        {
+          "name": "WallFacePair",
+          "role": "nested",
+          "field_names": [
+            "first_face",
+            "second_face",
+            "thickness"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "through-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_through_steps"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "ThroughStep",
+          "role": "output",
+          "field_names": [
+            "at",
+            "axis",
+            "body_key",
+            "endpoint_scopes",
+            "length",
+            "section"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "turned-steps",
+      "status": "supported",
+      "entry_points": [
+        "quiddity.recognise_turned_steps"
+      ],
+      "introduced_in": "0.2.0",
+      "records": [
+        {
+          "name": "TurnedProfile",
+          "role": "aggregate",
+          "field_names": [
+            "axis",
+            "profile",
+            "steps"
+          ]
+        },
+        {
+          "name": "TurnedProfileKey",
+          "role": "nested",
+          "field_names": [
+            "axis",
+            "axis_origin",
+            "body_bounds",
+            "body_key"
+          ]
+        },
+        {
+          "name": "TurnedStep",
+          "role": "output",
+          "field_names": [
+            "axis",
+            "diameter",
+            "hi",
+            "lo",
+            "profile"
+          ]
+        }
+      ]
+    }
+  ],
+  "package_executed": false,
+  "claim": "Shipped interface/manifest inspection, not measured recognition accuracy or recall."
+}
