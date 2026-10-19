@@ -2050,3 +2050,7 @@ The complete notes contain the narrower limitations for each experiment.
 - v1.12.0: [Hole recognition false positives, abstention and exceptions](../notes/hole-recognition-robustness.md) — [evidence](../results/hole-robustness/results.json)
 - v1.13.0: [Hole material classification in per-solid local coordinates](../notes/hole-numerical-stability.md) — [evidence](../results/hole-numerical-stability/results.json), [existing-control regression](../results/hole-numerical-stability/robustness/results.json)
 - v1.14.0: [Hole review explanations and next actions](../notes/hole-review-explanations.md) — [69-input evidence](../results/hole-review/results.json), [matrix](../results/hole-review/matrix.csv), [verification](../results/hole-review/verification.json)
+
+## Kernel Selection Research
+
+- 2026-10-19: [NVIDIA SMLib / USD BRep investigation and proposed direction](../notes/smlib-usd-brep-investigation.md) — [source versions, URLs and hashes](../results/smlib-investigation/2026-10-19-sources.json). Documentation/source review only; no runtime benchmark or migration implemented.

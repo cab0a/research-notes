@@ -1,0 +1,376 @@
+{
+  "study": "SMLib / USD BRep source investigation",
+  "date": "2026-10-19",
+  "timezone": "Asia/Tokyo",
+  "status": "documentation_and_source_review_only",
+  "upstream_installed": false,
+  "upstream_built": false,
+  "upstream_executed": false,
+  "geometry_benchmark_performed": false,
+  "production_dependencies_changed": false,
+  "research_notes_baseline": {
+    "version": "1.14.0",
+    "commit": "3a00aeffdbd4d4f974e281a95d64a64dce1f8287",
+    "file_sha256": {
+      "pyproject.toml": "dcfd836d88809a305c035fb5a7513233c0aed1215f1bc1ece799defc97cc6758",
+      "LICENSING.md": "f2391cd5954f390113de2f8798e2a29fe67ca94c3fc395e5f30daa826701f37a",
+      "src/research_notes/public_step.py": "76f7238e98a63e1b1deb9d36e19d82ede604a7eada21de63b24997518e8e7c03",
+      "src/research_notes/public_hole_inventory.py": "9a576b646daf05e2af6885c9c3161a34300252e6ce26b716ad463dd5d72acb6a",
+      "src/research_notes/slot_inventory.py": "5fff79fdfc54de2ea62aff462c1f1e31259268369e0713b3daef875e1815742a",
+      "src/research_notes/local_material.py": "2cad7afd6d7ddf1d35245221078341619278025211c00be310f1dabd43c91230",
+      "src/research_notes/step_writer_modes.py": "8ec7112130e0a97b625ae64f763ee0f580e1951eacddcf4d24a6e06aa9138a86",
+      "results/hole-review/verification.json": "90b03cc934ae5699a8d8b021d95ca3c58dcde03c5e051f9b48db61e6d4e34fce",
+      "results/hole-review/results.json": "afcfa326deff5222792c28be9526e9ac44158b8bd252791cb32b8e350ca472f9"
+    }
+  },
+  "official_usd_brep": {
+    "repository": "https://api.github.com/repos/NVIDIA-Omniverse/usd-brep",
+    "sha": "c9c5979f04cea8c38213004d4f04df0dcfb40d05",
+    "commit_date": "2026-10-09T02:41:44Z",
+    "commit_message": "Release 1.0.0.",
+    "tree_truncated": false,
+    "tree_entries": 1674,
+    "tags": [
+      "v1.0.0"
+    ],
+    "releases": [
+      "v1.0.0"
+    ],
+    "release_url": "https://github.com/NVIDIA-Omniverse/usd-brep/releases/tag/v1.0.0",
+    "release_published_utc": "2026-10-09T02:41:48Z",
+    "changelog_date": "2026-10-08",
+    "source_files": {
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/README.md",
+        "bytes": 5580,
+        "sha256": "d9daa1907b7de216fbefc54a794e796a1aa2b45532122e41a1e786931e51c172"
+      },
+      "CHANGELOG.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/CHANGELOG.md",
+        "bytes": 204,
+        "sha256": "fe5767c6494368c40632f980e93c893acd1ba29d35be1fd39fdc2f7358ea9b91"
+      },
+      "VERSION": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/VERSION",
+        "bytes": 6,
+        "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/LICENSE",
+        "bytes": 11449,
+        "sha256": "83ab8ebac4587a65c32ed2dbdba3c00a86c315a6562929ddff3ec17a175e6065"
+      },
+      "THIRD_PARTY_NOTICES.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/THIRD_PARTY_NOTICES.md",
+        "bytes": 26162,
+        "sha256": "9fcacebdd1d3e2559959cc504331b0f58d3b3f460b9da5caea4efc84fd20eb7b"
+      },
+      "KNOWN_ISSUES.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/KNOWN_ISSUES.md",
+        "bytes": 4874,
+        "sha256": "4602b1ad0310a005a00c65a2cfcb2d3708f2e3d32daf1ada9137e7732382c0e7"
+      },
+      "CONTRIBUTING.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/CONTRIBUTING.md",
+        "bytes": 2836,
+        "sha256": "1c31541f2e223ea0ed41ca75da5601bdfea71676193d2d88461d7e3848e61c1a"
+      },
+      "pyproject.toml": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/pyproject.toml",
+        "bytes": 701,
+        "sha256": "febffe5c0a0d7994ce3c25032950c934e04989e1ceee6b2948375cc7888064ab"
+      },
+      "premake5-libraries.lua": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/premake5-libraries.lua",
+        "bytes": 5032,
+        "sha256": "a67f09a6db88b8e33b6c836c4e62431c7663c707284282d2d09e6a131c5576f7"
+      },
+      "docs/python.rst": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/docs/python.rst",
+        "bytes": 2205,
+        "sha256": "61f72b78b17f059bbf5fdf3e4e583c39814ce167a6278f9ba3460694ee86df06"
+      },
+      "source/SM_API/inc/SmApiImportExport.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiImportExport.h",
+        "bytes": 2224,
+        "sha256": "2e92dfca6f91087d897444d4fd360858a6ede867a87148dd5d11a18fac22c4ff"
+      },
+      "source/SM_API/src/SmApiImportExport.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/src/SmApiImportExport.cpp",
+        "bytes": 2883,
+        "sha256": "ae756f739fe74029503cb569e29dc9d0cbaf19e33791a1813ffd79b411f05860"
+      },
+      "source/SM_API/inc/SmApiBrep.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiBrep.h",
+        "bytes": 42447,
+        "sha256": "ca08db54ad2211c4c98eb229bb875573e799fe731b9226288737181705fb4296"
+      },
+      "source/SM_API/inc/SmApiQueries.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiQueries.h",
+        "bytes": 23052,
+        "sha256": "59e8a99a62b7dfc4663c8b2f3e9e23a62b9477a15223a71347dd5e394575e4ee"
+      },
+      "source/SM_API/inc/SmApiTypes.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiTypes.h",
+        "bytes": 1049,
+        "sha256": "cc13f3f2a5489e3a7d1434d63733f928b3ac388ccc94cdaf0869198919146710"
+      },
+      "source/OCCT_BREP_IMPORT/src/OcctFileConverter.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/OCCT_BREP_IMPORT/src/OcctFileConverter.cpp",
+        "bytes": 4123,
+        "sha256": "6989e451f2c7b5e8f6ed3a7bb0eb1fb3a0b04c615cdd769a3c2a7701ef93d7fe"
+      },
+      "source/OCCT_BREP_EXPORT/inc/OcctExport.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/OCCT_BREP_EXPORT/inc/OcctExport.h",
+        "bytes": 833,
+        "sha256": "7f4d285679d25beae54e0f3cbe942bdf734826274e4cd69a03499d2a96ae41b4"
+      },
+      "tools/occt_to_usd/occt_to_usd.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/tools/occt_to_usd/occt_to_usd.cpp",
+        "bytes": 1326,
+        "sha256": "e86079d7660b028c58e45136388121ffdc2d4d6f58227ec6663697cc9e078f06"
+      },
+      "Examples/PyAPI/README.md": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/Examples/PyAPI/README.md",
+        "bytes": 774,
+        "sha256": "0f1959e306ccd309f0e9707441ed4929e7f3f4f1997a93ff3bfbda82053245ca"
+      },
+      "Examples/PyAPI/round_corner_pipe.py": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/Examples/PyAPI/round_corner_pipe.py",
+        "bytes": 7667,
+        "sha256": "909c2516359c38d69d35272efc4ea10302cdc23433a9c0a18aa32d770b86818f"
+      },
+      "deps/target-deps.packman.xml": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/deps/target-deps.packman.xml",
+        "bytes": 254,
+        "sha256": "62388bdfd83762767dd076bd8522ed849cfd87b71e8deb2b862fe6bf3766f1be"
+      },
+      "deps/target-deps-python.packman.xml": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/deps/target-deps-python.packman.xml",
+        "bytes": 340,
+        "sha256": "b80e48f73f957f15cc0a22f5218c629a69245422597ac5958c4ba91eb1a45928"
+      },
+      "source/SmPyLib/src/SmPyFileIo.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyFileIo.cpp",
+        "bytes": 2711,
+        "sha256": "3d54c46231ff95901a821cac00c5d6dd38eae95ea8545043c8ebce27e4dd8766"
+      },
+      "source/SmPyLib/src/SmPyQueries.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyQueries.cpp",
+        "bytes": 31343,
+        "sha256": "a5243b4386c250094ca015a5d03eb75f0115ee29943564585c72a886b7a3cd7f"
+      },
+      "source/SmPyLib/src/SmPyTypes.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyTypes.cpp",
+        "bytes": 64094,
+        "sha256": "2eb7e75c7b7feeec502ff335ff26822481a6bcdfe6022ffabd166724e39bf43f"
+      },
+      "source/SmPyLib/src/SmPyBorrowedGeometry.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyBorrowedGeometry.cpp",
+        "bytes": 5032,
+        "sha256": "c3dc7a5aaa4b047287f1884cc56ec85b6f6e57969327e361fc7b333ac964562c"
+      },
+      "source/SmPyLib/stubs/usd_brep/__init__.pyi": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/stubs/usd_brep/__init__.pyi",
+        "bytes": 33375,
+        "sha256": "6072ac37174ba4f24ec092cc4545fd81881a22c77f7635308390f2417467e758"
+      },
+      "source/SmPyLib/python/usd_brep/__init__.py": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/python/usd_brep/__init__.py",
+        "bytes": 3366,
+        "sha256": "0ab2a015c94f21e728f6ca8b2405ed9a7295c81731f4ee6df087628c114eb7e9"
+      },
+      "source/SM_API/inc/SmApiPrimitives.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiPrimitives.h",
+        "bytes": 16135,
+        "sha256": "97dfdbc9c4922ffb102015560d9c6a8018b9d8d6656d9e7504b2202609d9c22d"
+      },
+      "source/SM_API/inc/SmApiSurfaces.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiSurfaces.h",
+        "bytes": 7362,
+        "sha256": "09b657cfef07158dd00dbbece14baa961ea9cca24facde1be1b3be4883252a45"
+      },
+      "source/SM_API/inc/SmApiFillets.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SM_API/inc/SmApiFillets.h",
+        "bytes": 1505,
+        "sha256": "09435d1d8ea802fdbee181d577e515b3ebdc3aae6721844a7aeb7e979667706d"
+      },
+      "source/SMLib/inc/SmSTEPSurface.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SMLib/inc/SmSTEPSurface.h",
+        "bytes": 8637,
+        "sha256": "2248b0049ae2e814212c1d538e4053400a0ecadb9ec68d8a2adaf51fbf6df9ce"
+      },
+      "source/OCCT_BREP_IMPORT/inc/OcctFileSource.h": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/OCCT_BREP_IMPORT/inc/OcctFileSource.h",
+        "bytes": 6493,
+        "sha256": "745b68643bc0fee27583e28c83fa68191a005f3d3e5518e46a0ef05d47bef5ab"
+      },
+      "source/OCCT_BREP_EXPORT/src/OcctExport.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/OCCT_BREP_EXPORT/src/OcctExport.cpp",
+        "bytes": 1189,
+        "sha256": "18f913cf0df3151925c2957ef05ab75af0cd61456ae7455d241eea19f60ef819"
+      },
+      "source/SmPyLib/src/SmPyUsd.cpp": {
+        "url": "https://raw.githubusercontent.com/NVIDIA-Omniverse/usd-brep/c9c5979f04cea8c38213004d4f04df0dcfb40d05/source/SmPyLib/src/SmPyUsd.cpp",
+        "bytes": 32072,
+        "sha256": "81f9d725e882263bd27646e2dd59e47bb903faa51cf194083e96a1c5bb0e9e87"
+      }
+    },
+    "package": {
+      "version": "1.0.0",
+      "metadata_url": "https://pypi.org/pypi/usd-brep/1.0.0/json",
+      "requires_python": "<3.13,>=3.12",
+      "requires_dist": [
+        "usd-validation-nvidia[usd]<2,>=1.22.0; extra == \"validation\""
+      ],
+      "license_expression": "Apache-2.0 AND LicenseRef-TOST-1.0 AND BSD-2-Clause AND BSD-3-Clause AND MIT AND BSL-1.0",
+      "metadata_sha256": "ab8739aeff97287ec5da0f0cb6d7418055c4cde65cf542bed291f385a3a71b3e",
+      "wheels": [
+        {
+          "filename": "usd_brep-1.0.0-cp312-cp312-manylinux_2_34_aarch64.whl",
+          "size": 87648022,
+          "uploaded_utc": "2026-10-09T20:34:29.147922Z",
+          "sha256": "7852717824667b1ee1bbc605dd203c5f55bb48b96bd8e3467df3e993ed522a2f"
+        },
+        {
+          "filename": "usd_brep-1.0.0-cp312-cp312-manylinux_2_34_x86_64.whl",
+          "size": 90209258,
+          "uploaded_utc": "2026-10-09T20:34:50.982757Z",
+          "sha256": "691e9f8186878c3a68aabd1bded27c92b7dd2fd9b03ace2f729b459053711d0e"
+        },
+        {
+          "filename": "usd_brep-1.0.0-cp312-cp312-win_amd64.whl",
+          "size": 17576347,
+          "uploaded_utc": "2026-10-09T20:35:08.306629Z",
+          "sha256": "0dfddd377592e0548b5ff730f045950dc3bd0113a41025125bd902988dbba08c"
+        }
+      ]
+    }
+  },
+  "third_party_smlibpy": {
+    "repository": "https://github.com/awv-informatik/smlibpy",
+    "tag": "v0.3.5",
+    "commit": "316514b421285ae5abdfe5ed24936bd24ed9dec1",
+    "nvidia_official_package": false,
+    "source_files": {
+      ".gitmodules": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/.gitmodules",
+        "bytes": 120,
+        "sha256": "6443e4077e7487d871c2d5043c8ff1d8d8d5c662773669de64252784ca308c7f"
+      },
+      "CMakeLists.txt": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/CMakeLists.txt",
+        "bytes": 7452,
+        "sha256": "d2172e33077a7a43b58d747a58b555c732aac72efaa7efa5e16248af70da8bd3"
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/LICENSE",
+        "bytes": 1074,
+        "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2"
+      },
+      "NOTICE": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/NOTICE",
+        "bytes": 1205,
+        "sha256": "06166b36fd4fb06bac0426ff1586a200330ae04ad2ab4e72bcb7bfa115dac117"
+      },
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/README.md",
+        "bytes": 14554,
+        "sha256": "2272475bdabaa2fdb3b2f0c12cadf7966d6f2bc8b5fbb01ad7ca8ddb3265f349"
+      },
+      "pyproject.toml": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/pyproject.toml",
+        "bytes": 2823,
+        "sha256": "ac7080721e2bab1f82beaa81081a14c75fb68708b575b810b66b21c225dccc9b"
+      },
+      "src/cpp/step_build.cpp": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/cpp/step_build.cpp",
+        "bytes": 34172,
+        "sha256": "2dfb7b36cdb24730ebe4c6619d58887ddeb5b0f8790b5aa892e919ff0d36e81a"
+      },
+      "src/cpp/step_build.h": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/cpp/step_build.h",
+        "bytes": 2037,
+        "sha256": "af9f9a9959b20f13ab010d45df8cf9d0841f5fd02aea7a794829e18d4053fde6"
+      },
+      "src/smlibpy/step.py": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/smlibpy/step.py",
+        "bytes": 21256,
+        "sha256": "bebd98937dee04635a4778abfdba018786c3848c28ced4529383c069b175f18b"
+      },
+      "src/smlibpy/step_import.py": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/smlibpy/step_import.py",
+        "bytes": 47143,
+        "sha256": "d6beee069f86d81269ef01715a990c691e1f1db117cdb4ae538bd2a7f2d52f86"
+      },
+      "src/smlibpy/step_reader.py": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/smlibpy/step_reader.py",
+        "bytes": 43847,
+        "sha256": "ca96c282d9941bd0bef5e6b7de76da436cc7719862e407388466d44fba0c6012"
+      },
+      "third_party/patches/README.md": {
+        "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/third_party/patches/README.md",
+        "bytes": 6937,
+        "sha256": "d988141ac43259b7a1fe1be8e44ee6506a5996289533dfa9086e3fb411e6e6e6"
+      }
+    },
+    "package": {
+      "version": "0.3.5",
+      "metadata_url": "https://pypi.org/pypi/smlibpy/0.3.5/json",
+      "requires_python": ">=3.10",
+      "requires_dist": [
+        "numpy>=1.24",
+        "mcp>=1.20; extra == \"mcp\"",
+        "websockets>=13; extra == \"mcp\"",
+        "pytest>=8; extra == \"test\"",
+        "mkdocs-material>=9.5; extra == \"docs\"",
+        "mkdocstrings[python]>=0.26; extra == \"docs\""
+      ],
+      "license_expression": "MIT AND Apache-2.0 AND OFL-1.1",
+      "metadata_sha256": "e9da946d943d4040ff0ee53d35bf65dcc080aeea36f3f2998d2a6c8967164097",
+      "wheels": [
+        {
+          "filename": "smlibpy-0.3.5-cp312-cp312-macosx_11_0_arm64.whl",
+          "size": 6667776,
+          "uploaded_utc": "2026-10-17T19:10:54.452194Z",
+          "sha256": "1abb57cd3d11243e1d15431083c6d3e5d5184fa577719b6ad47dd5aad49cbec4"
+        },
+        {
+          "filename": "smlibpy-0.3.5-cp312-cp312-macosx_11_0_x86_64.whl",
+          "size": 7241490,
+          "uploaded_utc": "2026-10-17T19:10:56.657987Z",
+          "sha256": "88eb5f31c399035fa969c479267d6ea6604a34fedad161bc8ae2e0874d10ffa7"
+        },
+        {
+          "filename": "smlibpy-0.3.5-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl",
+          "size": 8024952,
+          "uploaded_utc": "2026-10-17T19:10:58.451039Z",
+          "sha256": "90f846d263875a7e0c066f34fc5492ddb4762818b259581a6611dad21bf9d6d7"
+        },
+        {
+          "filename": "smlibpy-0.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "size": 8792930,
+          "uploaded_utc": "2026-10-17T19:11:00.430447Z",
+          "sha256": "cd1b9c4a61ddbf938023cc7f65b534e01b1851d581ff686803e6cba875b15839"
+        },
+        {
+          "filename": "smlibpy-0.3.5-cp312-cp312-win_amd64.whl",
+          "size": 7468686,
+          "uploaded_utc": "2026-10-17T19:23:33.455118Z",
+          "sha256": "ab1826120a9140c952dbbe520bc27a7a325db098e2bf023e0295ada116f67a91"
+        }
+      ]
+    },
+    "patch_claims_independently_reproduced": false
+  },
+  "additional_primary_references": [
+    "https://www.apache.org/licenses/LICENSE-2.0",
+    "https://occt3d.com/dev/doc/overview/html/occt_public_license.html"
+  ],
+  "limits": [
+    "STEP direct I/O absence is a bounded finding from the inspected official API and conversion sources, not a claim about every historical/commercial SMLib product.",
+    "Third-party API and patch claims are distinct from NVIDIA upstream and have not been executed here.",
+    "No measured accuracy, performance, installation, portability or customer ROI conclusions.",
+    "Raw upstream files are cached under ignored output/, not relicensed or vendored into this repository."
+  ]
+}
