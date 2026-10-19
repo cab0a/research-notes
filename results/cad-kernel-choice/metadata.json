@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-19",
+  "group": "metadata",
+  "observations": 2,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "baseline_commit": "a91a960dc5ac5687f6ad87557cf393e180524022",
+  "probe_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "process_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds": 30,
+    "wall_seconds": 40,
+    "max_workers": 2
+  },
+  "limitations": [
+    "Linux/WSL pilot using resource limits; not a Windows-native execution test.",
+    "Pilot observations; one recorded run per task, not general accuracy or a speed benchmark.",
+    "No SMLib hole-recognition port; cylindrical supports are not hole counts.",
+    "Intake paths use native readers and do not include the production Part 21/units/external-reference admission contract.",
+    "OCCT validity and SMLib manifold/positive-volume checks differ.",
+    "smlibpy includes kernel patches and independent integration; it is not the unmodified NVIDIA kernel."
+  ],
+  "records": [
+    {
+      "key": "metadata-occt",
+      "id": "unicode_box",
+      "backend": "occt",
+      "mode": "metadata",
+      "source_path": "results/cad-kernel-choice/unicode-input.step",
+      "expected_name": "穴板_日本語",
+      "export_path": "results/cad-kernel-choice/unicode-occt.step",
+      "source_sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "metadata",
+        "status": "ok",
+        "input": {
+          "control_id": "unicode",
+          "stage": "source_import",
+          "file_name": "unicode-input.step",
+          "source_sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3",
+          "source_bytes": 15917,
+          "top_level_shape_count": 1,
+          "product_definition_count": 1,
+          "advanced_face_count": 6,
+          "names": [
+            "穴板_日本語"
+          ],
+          "colors": [
+            [
+              0.8500000238418579,
+              0.15000000596046448,
+              0.10000000149011612
+            ]
+          ],
+          "metrics": {
+            "vertex_count": 8,
+            "edge_count": 12,
+            "face_count": 6,
+            "shell_count": 1,
+            "solid_count": 1,
+            "absolute_volume": 3000.0,
+            "surface_area": 1699.9999999999995,
+            "surface_centroid": [
+              10.0,
+              15.0,
+              2.5
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "bounds_max": [
+              20.0000001,
+              30.0000001,
+              5.0000001
+            ],
+            "maximum_vertex_tolerance": 1e-07,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "analyzer_valid": true
+          }
+        },
+        "output": {
+          "control_id": "unicode",
+          "stage": "reexport_import",
+          "file_name": "unicode-occt.step",
+          "source_sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3",
+          "source_bytes": 15917,
+          "top_level_shape_count": 1,
+          "product_definition_count": 1,
+          "advanced_face_count": 6,
+          "names": [
+            "穴板_日本語"
+          ],
+          "colors": [
+            [
+              0.8500000238418579,
+              0.15000000596046448,
+              0.10000000149011612
+            ]
+          ],
+          "metrics": {
+            "vertex_count": 8,
+            "edge_count": 12,
+            "face_count": 6,
+            "shell_count": 1,
+            "solid_count": 1,
+            "absolute_volume": 3000.0,
+            "surface_area": 1699.9999999999995,
+            "surface_centroid": [
+              10.0,
+              15.0,
+              2.5
+            ],
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "bounds_max": [
+              20.0000001,
+              30.0000001,
+              5.0000001
+            ],
+            "maximum_vertex_tolerance": 1e-07,
+            "maximum_edge_tolerance": 1e-07,
+            "maximum_face_tolerance": 1e-07,
+            "surface_counts": [
+              [
+                "plane",
+                6
+              ]
+            ],
+            "analyzer_valid": true
+          }
+        },
+        "export_path": "results/cad-kernel-choice/unicode-occt.step",
+        "seconds_inside_worker": 1.0657809229996928
+      },
+      "exit_code": 0,
+      "process_seconds": 1.43483233599909,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/results/cad-kernel-choice/unicode-occt.step(361 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "key": "metadata-smlibpy",
+      "id": "unicode_box",
+      "backend": "smlibpy",
+      "mode": "metadata",
+      "source_path": "results/cad-kernel-choice/unicode-input.step",
+      "expected_name": "穴板_日本語",
+      "export_path": "results/cad-kernel-choice/unicode-smlibpy.step",
+      "source_sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "metadata",
+        "status": "ok",
+        "input": {
+          "names": [
+            "ç©´æ¿_æ¥æ¬èª"
+          ],
+          "colors": [
+            [
+              0.930924556504,
+              0.423582879168,
+              0.349190215138
+            ]
+          ],
+          "metrics": {
+            "volume": 3000.0,
+            "area": 1700.0000000000007,
+            "faces": 6,
+            "solids": 1,
+            "valid": true,
+            "bounds_min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "bounds_max": [
+              20.0,
+              30.0,
+              5.0
+            ],
+            "cylindrical_supports": [],
+            "body_details": [
+              {
+                "type": "Part",
+                "volume": 3000.0,
+                "area": 1700.0000000000007,
+                "faces": 6,
+                "valid": true,
+                "bounds_min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "bounds_max": [
+                  20.0,
+                  30.0,
+                  5.0
+                ],
+                "cylindrical_supports": []
+              }
+            ],
+            "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+          }
+        },
+        "output": {
+          "names": [
+            "??????_?????????"
+          ],
+          "colors": [
+            [
+              0.930924556504,
+              0.423582879168,
+              0.349190215138
+            ]
+          ],
+          "metrics": {
+            "volume": 3000.0,
+            "area": 1700.0000000000007,
+            "faces": 6,
+            "solids": 1,
+            "valid": true,
+            "bounds_min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "bounds_max": [
+              20.0,
+              30.0,
+              5.0
+            ],
+            "cylindrical_supports": [],
+            "body_details": [
+              {
+                "type": "Part",
+                "volume": 3000.0,
+                "area": 1700.0000000000007,
+                "faces": 6,
+                "valid": true,
+                "bounds_min": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "bounds_max": [
+                  20.0,
+                  30.0,
+                  5.0
+                ],
+                "cylindrical_supports": []
+              }
+            ],
+            "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+          }
+        },
+        "export_path": "results/cad-kernel-choice/unicode-smlibpy.step",
+        "seconds_inside_worker": 0.09634774100049981
+      },
+      "exit_code": 0,
+      "process_seconds": 0.21070476299973961,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

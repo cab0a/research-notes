@@ -2054,3 +2054,4 @@ The complete notes contain the narrower limitations for each experiment.
 ## Kernel Selection Research
 
 - 2026-10-19: [NVIDIA SMLib / USD BRep investigation and proposed direction](../notes/smlib-usd-brep-investigation.md) — [source versions, URLs and hashes](../results/smlib-investigation/2026-10-19-sources.json). Documentation/source review only; no runtime benchmark or migration implemented.
+- 2026-10-19 follow-up: [OCCT, SMLib, SolidCraft and ClassCAD platform selection](../notes/cad-platform-selection.md) — [263 bounded task observations](../results/cad-kernel-choice/summary.json), [methods and reproduction](../results/cad-kernel-choice/README.md), [source/environment hashes](../results/cad-kernel-choice/sources.json). OCCT/usd-brep/smlibpy executed in isolated environments; one integration task hit its CPU budget. SolidCraft/SolidCore/ClassCAD source review only; no production backend migration.

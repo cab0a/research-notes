@@ -1,0 +1,6327 @@
+{
+  "date": "2026-10-19",
+  "group": "roundtrip",
+  "observations": 36,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "baseline_commit": "a91a960dc5ac5687f6ad87557cf393e180524022",
+  "probe_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "process_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds": 30,
+    "wall_seconds": 40,
+    "max_workers": 2
+  },
+  "limitations": [
+    "Linux/WSL pilot using resource limits; not a Windows-native execution test.",
+    "Pilot observations; one recorded run per task, not general accuracy or a speed benchmark.",
+    "No SMLib hole-recognition port; cylindrical supports are not hole counts.",
+    "Intake paths use native readers and do not include the production Part 21/units/external-reference admission contract.",
+    "OCCT validity and SMLib manifold/positive-volume checks differ.",
+    "smlibpy includes kernel patches and independent integration; it is not the unmodified NVIDIA kernel."
+  ],
+  "records": [
+    {
+      "id": "circle_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "key": "export-circle_spline-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4320553446477,
+          "area": 483.02937420590547,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+        "seconds_inside_worker": 1.4519602510008554
+      },
+      "exit_code": 0,
+      "process_seconds": 1.9493956309997884,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step(567 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "circle_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "key": "export-circle_spline-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4336549600794,
+          "area": 482.8495687087545,
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 531.4336549600794,
+              "area": 482.8495687087545,
+              "faces": 9,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+        "seconds_inside_worker": 0.12277846300094097
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2511125359997095,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "slot_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/slot_spline.step",
+      "key": "export-slot_spline-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.31623922314003,
+          "area": 498.8301701377176,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+        "seconds_inside_worker": 1.229533651001475
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7187789830004476,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step(784 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "slot_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/slot_spline.step",
+      "key": "export-slot_spline-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.4336379514972,
+          "area": 498.8495602044685,
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 499.4336379514972,
+              "area": 498.8495602044685,
+              "faces": 12,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+        "seconds_inside_worker": 0.14529347499956202
+      },
+      "exit_code": 0,
+      "process_seconds": 0.30721946400080924,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_bracket",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "key": "export-build123d_bracket-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.1553017856795,
+          "area": 6221.9841290626955,
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+        "seconds_inside_worker": 1.3748796210002183
+      },
+      "exit_code": 0,
+      "process_seconds": 1.8337853249995533,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step(3362 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_bracket",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "key": "export-build123d_bracket-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.1553017855595,
+          "area": 6221.984129062696,
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -4.440892098501e-16,
+            -20.5,
+            -4.440892098501e-16
+          ],
+          "bounds_max": [
+            35.0,
+            20.5,
+            51.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 7061.1553017855595,
+              "area": 6221.984129062696,
+              "faces": 42,
+              "valid": true,
+              "bounds_min": [
+                -4.440892098501e-16,
+                -20.5,
+                -4.440892098501e-16
+              ],
+              "bounds_max": [
+                35.0,
+                20.5,
+                51.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 3.0,
+                  "origin": [
+                    3.0,
+                    -20.5,
+                    3.0
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    15.5,
+                    14.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    15.5,
+                    45.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    -15.5,
+                    14.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 16.0,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    30.0
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    -15.5,
+                    45.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    -12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    18.5,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    21.5,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    -12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    18.5,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    21.5,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+        "seconds_inside_worker": 0.3004759699997521
+      },
+      "exit_code": 0,
+      "process_seconds": 0.43413150500055053,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_screw",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_screw.step",
+      "key": "export-build123d_screw-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+      "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 332.27626441996176,
+          "area": 465.6340004256301,
+          "bounds_min": [
+            -5.1732391067990005,
+            -5.1817342798411925,
+            -12.0000001
+          ],
+          "bounds_max": [
+            5.173239106782001,
+            5.1817342798411925,
+            1e-07
+          ],
+          "faces": 28,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            2.2030701788977597e-07,
+            2.2030701788977597e-07,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+        "seconds_inside_worker": 1.7028890960009448
+      },
+      "exit_code": 0,
+      "process_seconds": 2.151199980000456,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step(6814 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_screw",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_screw.step",
+      "key": "export-build123d_screw-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+      "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 315.37128568505034,
+          "area": 457.98970277666075,
+          "faces": 34,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -5.114897010999579,
+            -5.181801948466,
+            -12.0
+          ],
+          "bounds_max": [
+            5.114897012917173,
+            5.181801948466001,
+            0.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 315.37128568505034,
+              "area": 457.98970277666075,
+              "faces": 34,
+              "valid": true,
+              "bounds_min": [
+                -5.114897010999579,
+                -5.181801948466,
+                -12.0
+              ],
+              "bounds_max": [
+                5.114897012917173,
+                5.181801948466001,
+                0.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+        "seconds_inside_worker": 0.9708121319999918
+      },
+      "exit_code": 0,
+      "process_seconds": 1.111210007000409,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 6e-02 of its value: integrated as the faces are, 315.3712857\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/ublox_sam_ap203.step",
+      "key": "export-ublox_sam_ap203-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8835809072764,
+          "area": 1569.4091088559207,
+          "bounds_min": [
+            -10.735882487445165,
+            -0.9706265601910136,
+            4.243994172449168
+          ],
+          "bounds_max": [
+            4.764619880759867,
+            5.408361273825762,
+            19.7444965406542
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 0.9999992529250937,
+              "origin": [
+                1.4878883223646984,
+                -0.9703253760884962,
+                7.481900153510928
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250955,
+              "origin": [
+                1.4878883223646966,
+                -0.9703253760884973,
+                16.481901647661296
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9499992902788409,
+              "origin": [
+                -7.562113134431911,
+                -0.9703253760884973,
+                16.53190161030754
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250951,
+              "origin": [
+                -7.512113171785671,
+                -0.9703253760884962,
+                7.48190015351093
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                1.1281100897232479,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.7071067811865469,
+                0.0,
+                -0.7071067811865481
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                6.0063486469435645
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                3.0478181242467977,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                4.347818124246798,
+                5.348110089723248,
+                5.589191359418186
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                3.464975411772176,
+                5.348110089723248,
+                4.706348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                5.248110089723248,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.7071067811865469,
+                0.0,
+                -0.7071067811865481
+              ]
+            },
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            }
+          ],
+          "tolerances": [
+            0.00025118410251590885,
+            0.00025118410251590885,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+        "seconds_inside_worker": 1.6821657580003375
+      },
+      "exit_code": 0,
+      "process_seconds": 2.2768157880000217,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 0                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step(10061 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/ublox_sam_ap203.step",
+      "key": "export-ublox_sam_ap203-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8804534924511,
+          "area": 1569.408015434954,
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "bounds_min": [
+            -10.735631303342648,
+            -0.9703753760884977,
+            4.244245356551684
+          ],
+          "bounds_max": [
+            4.76436869665735,
+            5.408110089723246,
+            19.744245356551684
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                1.1281100897232479,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.707106781186547,
+                0.0,
+                -0.7071067811865482
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                6.0063486469435645
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                3.0478181242467977,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                4.347818124246798,
+                5.348110089723248,
+                5.589191359418186
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                3.464975411772176,
+                5.348110089723248,
+                4.706348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                5.248110089723248,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.707106781186547,
+                0.0,
+                -0.7071067811865482
+              ]
+            },
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.9999992529250937,
+              "origin": [
+                1.4878883223646984,
+                -0.9703253760884962,
+                7.481900153510928
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250955,
+              "origin": [
+                1.4878883223646966,
+                -0.9703253760884973,
+                16.481901647661296
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9499992902788409,
+              "origin": [
+                -7.562113134431911,
+                -0.9703253760884973,
+                16.53190161030754
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147353e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250951,
+              "origin": [
+                -7.512113171785671,
+                -0.9703253760884962,
+                7.48190015351093
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473535e-16
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 968.3352228348386,
+              "area": 691.3991652187505,
+              "faces": 38,
+              "valid": true,
+              "bounds_min": [
+                -10.452181875753205,
+                1.0281100897232478,
+                4.506348646943564
+              ],
+              "bounds_max": [
+                4.547818124246799,
+                5.408110089723246,
+                19.506348646943568
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 0.5715034071370334,
+                  "origin": [
+                    -3.711209838357073,
+                    5.408110089723246,
+                    12.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -10.352181875753201,
+                    1.128110089723248,
+                    19.506348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -10.452181875753203,
+                    1.128110089723248,
+                    19.406348646943563
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    4.447818124246798,
+                    1.128110089723248,
+                    19.506348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000014,
+                  "origin": [
+                    3.9771074461281484,
+                    1.1281100897232479,
+                    5.077059325062226
+                  ],
+                  "axis": [
+                    -0.707106781186547,
+                    0.0,
+                    -0.7071067811865482
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -10.452181875753203,
+                    1.128110089723248,
+                    4.606348646943565
+                  ],
+                  "axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.4999999999999996,
+                  "origin": [
+                    -8.952181875753203,
+                    5.348110089723248,
+                    6.0063486469435645
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.4999999999999996,
+                  "origin": [
+                    -8.952181875753203,
+                    5.348110089723248,
+                    18.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.4999999999999996,
+                  "origin": [
+                    3.0478181242467977,
+                    5.348110089723248,
+                    18.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -10.352181875753201,
+                    5.248110089723248,
+                    12.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -2.9521818757532023,
+                    5.248110089723248,
+                    19.406348646943563
+                  ],
+                  "axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.19999999999999965,
+                  "origin": [
+                    4.347818124246798,
+                    5.348110089723248,
+                    5.589191359418186
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    4.447818124246798,
+                    5.248110089723248,
+                    12.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000026,
+                  "origin": [
+                    -2.9521818757532023,
+                    5.248110089723248,
+                    4.606348646943565
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.19999999999999965,
+                  "origin": [
+                    3.464975411772176,
+                    5.348110089723248,
+                    4.706348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.10000000000000014,
+                  "origin": [
+                    3.9771074461281484,
+                    5.248110089723248,
+                    5.077059325062226
+                  ],
+                  "axis": [
+                    -0.707106781186547,
+                    0.0,
+                    -0.7071067811865482
+                  ]
+                },
+                {
+                  "radius": 0.5715034071370334,
+                  "origin": [
+                    -3.711209838357073,
+                    5.408110089723246,
+                    12.006348646943565
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Part",
+              "volume": 216.22499999999994,
+              "area": 536.3,
+              "faces": 6,
+              "valid": true,
+              "bounds_min": [
+                -10.735631303342648,
+                0.10705527478784134,
+                4.244245356551684
+              ],
+              "bounds_max": [
+                4.76436869665735,
+                1.0070552747878414,
+                19.744245356551684
+              ],
+              "cylindrical_supports": []
+            },
+            {
+              "type": "Part",
+              "volume": 125.32023065761243,
+              "area": 341.70885021620353,
+              "faces": 54,
+              "valid": true,
+              "bounds_min": [
+                -10.662112424710488,
+                -0.9703753760884977,
+                4.331900900586113
+              ],
+              "bounds_max": [
+                4.637887575289513,
+                0.12976212391150435,
+                19.631900900586114
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 0.9999992529250937,
+                  "origin": [
+                    1.4878883223646984,
+                    -0.9703253760884962,
+                    7.481900153510928
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.2246467991473532e-16
+                  ]
+                },
+                {
+                  "radius": 0.9999992529250955,
+                  "origin": [
+                    1.4878883223646966,
+                    -0.9703253760884973,
+                    16.481901647661296
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.2246467991473532e-16
+                  ]
+                },
+                {
+                  "radius": 0.9499992902788409,
+                  "origin": [
+                    -7.562113134431911,
+                    -0.9703253760884973,
+                    16.53190161030754
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.224646799147353e-16
+                  ]
+                },
+                {
+                  "radius": 0.9999992529250951,
+                  "origin": [
+                    -7.512113171785671,
+                    -0.9703253760884962,
+                    7.48190015351093
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.2246467991473535e-16
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+        "seconds_inside_worker": 0.4300134960012656
+      },
+      "exit_code": 0,
+      "process_seconds": 0.5632746089995635,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 8e-05 of its value: integrated as the faces are, 125.3202307\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "id": "single",
+      "group": "certified",
+      "source_path": "fixtures/hole-inventory/sources/single.step",
+      "key": "export-single-occt",
+      "mode": "intake",
+      "backend": "occt",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/single-occt.step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.43362938564036,
+          "area": 434.84955592154046,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 1.0,
+              "origin": [
+                6.0,
+                5.0,
+                -1.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/single-occt.step",
+        "seconds_inside_worker": 1.2094682270017074
+      },
+      "exit_code": 0,
+      "process_seconds": 1.656405800000357,
+      "stdout_tail": "\u001b[32;1m\n*******************************************************************\n******        Statistics on Transfer (Write)                 ******\u001b[0m\n\u001b[32;1m\n*******************************************************************\n******        Transfer Mode = 0  I.E.  As Is       ******\u001b[0m\n\u001b[32;1m******        Transferring Shape, ShapeType = 2                      ******\u001b[0m\n\u001b[32;1m** WorkSession : Sending all data\u001b[0m\n\u001b[32;1m Step File Name : /home/nakanishi/inefficiencylab/research-notes/output/kernel-comparison-2026-10-19/roundtrip/single-occt.step(434 ents)  Write  Done\u001b[0m\n",
+      "stderr_tail": ""
+    },
+    {
+      "id": "single",
+      "group": "certified",
+      "source_path": "fixtures/hole-inventory/sources/single.step",
+      "key": "export-single-smlibpy",
+      "mode": "intake",
+      "backend": "smlibpy",
+      "heal": false,
+      "export_path": "output/kernel-comparison-2026-10-19/roundtrip/single-smlibpy.step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.43362938564087,
+          "area": 434.84955592153864,
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            12.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 1.0,
+              "origin": [
+                6.0,
+                5.0,
+                -1.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 467.43362938564087,
+              "area": 434.84955592153864,
+              "faces": 7,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                12.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 1.0,
+                  "origin": [
+                    6.0,
+                    5.0,
+                    -1.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "export_path": "output/kernel-comparison-2026-10-19/roundtrip/single-smlibpy.step",
+        "seconds_inside_worker": 0.11494145100004971
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2508669640010339,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-circle_spline-from-occt-by-occt",
+      "id": "circle_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+      "source_sha256": "e6789ba043e441719dfe9781258bff10ba6465809fd3f8cf3d82f135e3a29178",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4320553446477,
+          "area": 483.02937420590547,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.3578113509993273
+      },
+      "exit_code": 0,
+      "process_seconds": 1.8086326220000046,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-circle_spline-from-occt-by-smlibpy",
+      "id": "circle_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+      "source_sha256": "e6789ba043e441719dfe9781258bff10ba6465809fd3f8cf3d82f135e3a29178",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4336549600794,
+          "area": 482.8495687087545,
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 531.4336549600794,
+              "area": 482.8495687087545,
+              "faces": 9,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.12008196399983717
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2498893379997753,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-circle_spline-from-smlibpy-by-occt",
+      "id": "circle_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+      "source_sha256": "e9ff1af4f7a7710e8367df0e51c16e8131ea59ad3bb4f9dae56843e9d09190f8",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.356126543118,
+          "area": 482.9154810036109,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.316476407000664
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7732881080009975,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-circle_spline-from-smlibpy-by-smlibpy",
+      "id": "circle_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+      "source_sha256": "e9ff1af4f7a7710e8367df0e51c16e8131ea59ad3bb4f9dae56843e9d09190f8",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4336549600794,
+          "area": 482.8495687087545,
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 531.4336549600794,
+              "area": 482.8495687087545,
+              "faces": 9,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.11210776600091776
+      },
+      "exit_code": 0,
+      "process_seconds": 0.25105450400042173,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-slot_spline-from-occt-by-occt",
+      "id": "slot_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+      "source_sha256": "f997414a35fc02a46115b8d06fffe139ad883d97800942be8be1ef577baeca7e",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.31623922314003,
+          "area": 498.8301701377176,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.2991506180005672
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7954647910009953,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-slot_spline-from-occt-by-smlibpy",
+      "id": "slot_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+      "source_sha256": "f997414a35fc02a46115b8d06fffe139ad883d97800942be8be1ef577baeca7e",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.4336379514972,
+          "area": 498.8495602044685,
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 499.4336379514972,
+              "area": 498.8495602044685,
+              "faces": 12,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.1233843230002094
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2670102840002073,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-slot_spline-from-smlibpy-by-occt",
+      "id": "slot_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+      "source_sha256": "47a17014f7ed281d8692ceb4d8ae95c70ecf9948d16f43e88ad76e3851065adf",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.35251040094425,
+          "area": 498.88457690442385,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.2569272229993658
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7188557659992512,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-slot_spline-from-smlibpy-by-smlibpy",
+      "id": "slot_spline",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+      "source_sha256": "47a17014f7ed281d8692ceb4d8ae95c70ecf9948d16f43e88ad76e3851065adf",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.43363795149736,
+          "area": 498.8495602044685,
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            14.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 499.43363795149736,
+              "area": 498.8495602044685,
+              "faces": 12,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                14.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.12029377999897406
+      },
+      "exit_code": 0,
+      "process_seconds": 0.26689121199888177,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_bracket-from-occt-by-occt",
+      "id": "build123d_bracket",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+      "source_sha256": "5ecffb5ee350447c88d9753ab9f237466e18a1dc2563d99fdf411f93832c5230",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.155301785823,
+          "area": 6221.984129062685,
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.490438943999834
+      },
+      "exit_code": 0,
+      "process_seconds": 1.933215664999807,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_bracket-from-occt-by-smlibpy",
+      "id": "build123d_bracket",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+      "source_sha256": "5ecffb5ee350447c88d9753ab9f237466e18a1dc2563d99fdf411f93832c5230",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.1553017855595,
+          "area": 6221.984129062696,
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -4.440892098501e-16,
+            -20.5,
+            -4.440892098501e-16
+          ],
+          "bounds_max": [
+            35.0,
+            20.5,
+            51.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 7061.1553017855595,
+              "area": 6221.984129062696,
+              "faces": 42,
+              "valid": true,
+              "bounds_min": [
+                -4.440892098501e-16,
+                -20.5,
+                -4.440892098501e-16
+              ],
+              "bounds_max": [
+                35.0,
+                20.5,
+                51.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 3.0,
+                  "origin": [
+                    3.0,
+                    -20.5,
+                    3.0
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    15.5,
+                    14.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    15.5,
+                    45.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    -15.5,
+                    14.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 16.0,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    30.0
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.65,
+                  "origin": [
+                    0.0,
+                    -15.5,
+                    45.5
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    -12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    18.5,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    21.5,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    -15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    -12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    10.0,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    18.5,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    21.5,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    12.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.25,
+                  "origin": [
+                    30.0,
+                    15.5,
+                    0.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.2664789970003767
+      },
+      "exit_code": 0,
+      "process_seconds": 0.4211573699994915,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_bracket-from-smlibpy-by-occt",
+      "id": "build123d_bracket",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+      "source_sha256": "d3a4c4295b7ee867e6078ee1819f4fb8c30232b62813b25aa0edd9b794c2fcbb",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7065.622602666728,
+          "area": 6222.857044674363,
+          "bounds_min": [
+            -1.2426407871192853,
+            -22.550001100000003,
+            -1.2426407871192848
+          ],
+          "bounds_max": [
+            35.0000001,
+            22.550001100000003,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.4255053699998825
+      },
+      "exit_code": 0,
+      "process_seconds": 1.8982147499991697,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_bracket-from-smlibpy-by-smlibpy",
+      "id": "build123d_bracket",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+      "source_sha256": "d3a4c4295b7ee867e6078ee1819f4fb8c30232b62813b25aa0edd9b794c2fcbb",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.155301785559,
+          "area": 6221.9841290626955,
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -4.440892098501e-16,
+            -20.5,
+            -4.440892098501e-16
+          ],
+          "bounds_max": [
+            35.0,
+            20.5,
+            51.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 7061.155301785559,
+              "area": 6221.9841290626955,
+              "faces": 42,
+              "valid": true,
+              "bounds_min": [
+                -4.440892098501e-16,
+                -20.5,
+                -4.440892098501e-16
+              ],
+              "bounds_max": [
+                35.0,
+                20.5,
+                51.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.27075316199989174
+      },
+      "exit_code": 0,
+      "process_seconds": 0.40502357999866945,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_screw-from-occt-by-occt",
+      "id": "build123d_screw",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+      "source_sha256": "8bc77abf5eb65fd6e72026074fb29a864780d6e52955d1150ecde03cf4408e99",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 332.2762697314604,
+          "area": 465.6340097944636,
+          "bounds_min": [
+            -5.1732391067990005,
+            -5.1817342798411925,
+            -12.0000001
+          ],
+          "bounds_max": [
+            5.173239106782001,
+            5.1817342798411925,
+            1e-07
+          ],
+          "faces": 28,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1.7851889136658502e-07,
+            1.7851889136658502e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.4287123109988897
+      },
+      "exit_code": 0,
+      "process_seconds": 1.9714038029997027,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_screw-from-occt-by-smlibpy",
+      "id": "build123d_screw",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+      "source_sha256": "8bc77abf5eb65fd6e72026074fb29a864780d6e52955d1150ecde03cf4408e99",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 315.37128568505034,
+          "area": 457.98970277666075,
+          "faces": 34,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -5.114897010999579,
+            -5.181801948466,
+            -12.0
+          ],
+          "bounds_max": [
+            5.114897012917173,
+            5.181801948466001,
+            0.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 315.37128568505034,
+              "area": 457.98970277666075,
+              "faces": 34,
+              "valid": true,
+              "bounds_min": [
+                -5.114897010999579,
+                -5.181801948466,
+                -12.0
+              ],
+              "bounds_max": [
+                5.114897012917173,
+                5.181801948466001,
+                0.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 2.458734122635,
+                  "origin": [
+                    0.0,
+                    0.0,
+                    -12.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.8015120350009965
+      },
+      "exit_code": 0,
+      "process_seconds": 0.9392716380007187,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 6e-02 of its value: integrated as the faces are, 315.3712857\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "key": "reread-build123d_screw-from-smlibpy-by-occt",
+      "id": "build123d_screw",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+      "source_sha256": "9f2a5e0cb06e478dd958dbb1ec0488daa7157fbeaa5a57e874c45ad89842ff4b",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 333.91945973527623,
+          "area": 465.6411391223691,
+          "bounds_min": [
+            -5.181802048466001,
+            -5.181802048466001,
+            -12.000000100000005
+          ],
+          "bounds_max": [
+            5.181802048466,
+            5.181802048466001,
+            1e-07
+          ],
+          "faces": 34,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            2.0240010126223256e-06,
+            2.0240010126223256e-06,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.7883241579984315
+      },
+      "exit_code": 0,
+      "process_seconds": 2.2820636550004565,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-build123d_screw-from-smlibpy-by-smlibpy",
+      "id": "build123d_screw",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+      "source_sha256": "9f2a5e0cb06e478dd958dbb1ec0488daa7157fbeaa5a57e874c45ad89842ff4b",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 325.46177466694587,
+          "area": 436.4777223612084,
+          "faces": 34,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            -5.114897010999579,
+            -5.181801948466,
+            -12.0
+          ],
+          "bounds_max": [
+            5.114897012917173,
+            5.181801948466001,
+            0.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 325.46177466694587,
+              "area": 436.4777223612084,
+              "faces": 34,
+              "valid": true,
+              "bounds_min": [
+                -5.114897010999579,
+                -5.181801948466,
+                -12.0
+              ],
+              "bounds_max": [
+                5.114897012917173,
+                5.181801948466001,
+                0.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 1.2374757429988676
+      },
+      "exit_code": 0,
+      "process_seconds": 1.4549514630016347,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 5e-02 of its value: integrated as the faces are, 325.4617747\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "key": "reread-ublox_sam_ap203-from-occt-by-occt",
+      "id": "ublox_sam_ap203",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+      "source_sha256": "658bd97c9d23c5dee1dac304cd160fa23243ce461f3b19b3dc814a3c44f9eead",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8835809072682,
+          "area": 1569.4091088559223,
+          "bounds_min": [
+            -10.735882487445794,
+            -0.9706265601907947,
+            4.243994172449205
+          ],
+          "bounds_max": [
+            4.7646198807597955,
+            5.408361273825794,
+            19.744496540654794
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879996,
+                16.481901647661
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.949999290279,
+              "origin": [
+                -7.562113134431,
+                -0.9703253760879996,
+                16.531901610307
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                -7.512113171785,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                19.406348646944
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                1.128110089723,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                4.606348646943999
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                6.006348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                3.047818124247,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                19.406348646944
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                4.347818124247,
+                5.348110089723001,
+                5.589191359419
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                4.606348646943999
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                3.464975411772,
+                5.348110089723001,
+                4.706348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                5.248110089722999,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            }
+          ],
+          "tolerances": [
+            0.00025118410279474434,
+            0.00025118410279474434,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.72028842400141
+      },
+      "exit_code": 0,
+      "process_seconds": 2.2138018639998336,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-ublox_sam_ap203-from-occt-by-smlibpy",
+      "id": "ublox_sam_ap203",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+      "source_sha256": "658bd97c9d23c5dee1dac304cd160fa23243ce461f3b19b3dc814a3c44f9eead",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8804534924661,
+          "area": 1569.4080154349572,
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "bounds_min": [
+            -10.735631303343,
+            -0.970375376088,
+            4.244245356552
+          ],
+          "bounds_max": [
+            4.764368696657,
+            5.4081100897229994,
+            19.744245356552
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879996,
+                16.481901647661
+              ],
+              "axis": [
+                -1.232595164407831e-32,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.949999290279,
+              "origin": [
+                -7.562113134431,
+                -0.9703253760879996,
+                16.531901610307
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                -7.512113171785,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                1.232595164407831e-32,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                19.406348646944
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                1.128110089723,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                4.606348646943999
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                6.006348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                3.047818124247,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                19.406348646944
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                4.347818124247,
+                5.348110089723001,
+                5.589191359419
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                4.606348646943999
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                3.464975411772,
+                5.348110089723001,
+                4.706348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                5.248110089722999,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 125.32023065762017,
+              "area": 341.70885021620757,
+              "faces": 54,
+              "valid": true,
+              "bounds_min": [
+                -10.66211242471,
+                -0.970375376088,
+                4.331900900586
+              ],
+              "bounds_max": [
+                4.6378875752900015,
+                0.12976212391200184,
+                19.631900900586
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 0.999999252925,
+                  "origin": [
+                    1.4878883223650003,
+                    -0.9703253760879985,
+                    7.481900153511001
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.224646799147e-16
+                  ]
+                },
+                {
+                  "radius": 0.999999252925,
+                  "origin": [
+                    1.4878883223650003,
+                    -0.9703253760879996,
+                    16.481901647661
+                  ],
+                  "axis": [
+                    -1.232595164407831e-32,
+                    1.0,
+                    1.224646799147e-16
+                  ]
+                },
+                {
+                  "radius": 0.949999290279,
+                  "origin": [
+                    -7.562113134431,
+                    -0.9703253760879996,
+                    16.531901610307
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    1.224646799147e-16
+                  ]
+                },
+                {
+                  "radius": 0.999999252925,
+                  "origin": [
+                    -7.512113171785,
+                    -0.9703253760879985,
+                    7.481900153511001
+                  ],
+                  "axis": [
+                    1.232595164407831e-32,
+                    1.0,
+                    1.224646799147e-16
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Part",
+              "volume": 216.22499999999994,
+              "area": 536.3,
+              "faces": 6,
+              "valid": true,
+              "bounds_min": [
+                -10.735631303343,
+                0.107055274788,
+                4.244245356552
+              ],
+              "bounds_max": [
+                4.764368696657,
+                1.007055274788,
+                19.744245356552
+              ],
+              "cylindrical_supports": []
+            },
+            {
+              "type": "Part",
+              "volume": 968.335222834846,
+              "area": 691.3991652187495,
+              "faces": 38,
+              "valid": true,
+              "bounds_min": [
+                -10.452181875753,
+                1.028110089723,
+                4.506348646944
+              ],
+              "bounds_max": [
+                4.547818124247,
+                5.4081100897229994,
+                19.506348646943998
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 0.571503407137,
+                  "origin": [
+                    -3.711209838357,
+                    5.4081100897229994,
+                    12.006348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -10.352181875753,
+                    1.128110089723,
+                    19.506348646943998
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -10.452181875753,
+                    1.128110089723,
+                    19.406348646944
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    4.447818124247,
+                    1.128110089723,
+                    19.506348646943998
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    3.977107446128,
+                    1.128110089723,
+                    5.077059325063
+                  ],
+                  "axis": [
+                    -0.7071067811865476,
+                    0.0,
+                    -0.7071067811865476
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -10.452181875753,
+                    1.128110089723,
+                    4.606348646943999
+                  ],
+                  "axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.5,
+                  "origin": [
+                    -8.952181875753,
+                    5.348110089723001,
+                    6.006348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.5,
+                  "origin": [
+                    -8.952181875753,
+                    5.348110089723001,
+                    18.006348646943998
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 1.5,
+                  "origin": [
+                    3.047818124247,
+                    5.348110089723001,
+                    18.006348646943998
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -10.352181875753,
+                    5.248110089722999,
+                    12.006348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -2.952181875753,
+                    5.248110089722999,
+                    19.406348646944
+                  ],
+                  "axis": [
+                    1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.2,
+                  "origin": [
+                    4.347818124247,
+                    5.348110089723001,
+                    5.589191359419
+                  ],
+                  "axis": [
+                    0.0,
+                    1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    4.447818124247,
+                    5.248110089722999,
+                    12.006348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    -1.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    -2.952181875753,
+                    5.248110089722999,
+                    4.606348646943999
+                  ],
+                  "axis": [
+                    -1.0,
+                    0.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.2,
+                  "origin": [
+                    3.464975411772,
+                    5.348110089723001,
+                    4.706348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                },
+                {
+                  "radius": 0.1,
+                  "origin": [
+                    3.977107446128,
+                    5.248110089722999,
+                    5.077059325063
+                  ],
+                  "axis": [
+                    -0.7071067811865476,
+                    0.0,
+                    -0.7071067811865476
+                  ]
+                },
+                {
+                  "radius": 0.571503407137,
+                  "origin": [
+                    -3.711209838357,
+                    5.4081100897229994,
+                    12.006348646944
+                  ],
+                  "axis": [
+                    0.0,
+                    -1.0,
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.5180478020010924
+      },
+      "exit_code": 0,
+      "process_seconds": 0.6936721410002065,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 8e-05 of its value: integrated as the faces are, 125.3202307\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "key": "reread-ublox_sam_ap203-from-smlibpy-by-occt",
+      "id": "ublox_sam_ap203",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "source_sha256": "d7f79a958ca900eacdf49fa5a87cdb8d7039b60be002667e41e111855904ef16",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1310.0676919693753,
+          "area": 1569.4186074856605,
+          "bounds_min": [
+            -11.073753403415363,
+            -1.0255775601910138,
+            3.884777119281407
+          ],
+          "bounds_max": [
+            5.169389651908955,
+            5.512704242157589,
+            20.127920174605727
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            0.0002511841025160975,
+            0.0002511841025160975,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.5358453069984535
+      },
+      "exit_code": 0,
+      "process_seconds": 1.9727368639996712,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-ublox_sam_ap203-from-smlibpy-by-smlibpy",
+      "id": "ublox_sam_ap203",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "source_sha256": "d7f79a958ca900eacdf49fa5a87cdb8d7039b60be002667e41e111855904ef16",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8804534924511,
+          "area": 1569.408015434954,
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "bounds_min": [
+            -10.735631303342648,
+            -0.9703753760884977,
+            4.244245356551684
+          ],
+          "bounds_max": [
+            4.76436869665735,
+            5.408110089723246,
+            19.744245356551684
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 968.3352228348389,
+              "area": 691.3991652187506,
+              "faces": 38,
+              "valid": true,
+              "bounds_min": [
+                -10.452181875753205,
+                1.0281100897232478,
+                4.506348646943564
+              ],
+              "bounds_max": [
+                4.547818124246799,
+                5.408110089723246,
+                19.506348646943568
+              ],
+              "cylindrical_supports": []
+            },
+            {
+              "type": "Part",
+              "volume": 216.22499999999994,
+              "area": 536.3,
+              "faces": 6,
+              "valid": true,
+              "bounds_min": [
+                -10.735631303342648,
+                0.10705527478784134,
+                4.244245356551684
+              ],
+              "bounds_max": [
+                4.76436869665735,
+                1.0070552747878414,
+                19.744245356551684
+              ],
+              "cylindrical_supports": []
+            },
+            {
+              "type": "Part",
+              "volume": 125.32023065761243,
+              "area": 341.70885021620353,
+              "faces": 54,
+              "valid": true,
+              "bounds_min": [
+                -10.662112424710488,
+                -0.9703753760884977,
+                4.331900900586113
+              ],
+              "bounds_max": [
+                4.637887575289513,
+                0.12976212391150435,
+                19.631900900586114
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.39389415299956454
+      },
+      "exit_code": 0,
+      "process_seconds": 0.5270152400007646,
+      "stdout_tail": "",
+      "stderr_tail": "/home/nakanishi/inefficiencylab/research-notes/experiments/run_cad_kernel_probe.py:75: RuntimeWarning: mass properties: the faces of this part do not meet exactly (there are gaps between them), so its volume is uncertain by about 8e-05 of its value: integrated as the faces are, 125.3202307\n  details.append({'type': type(body).__name__, 'volume': float(body.volume), 'area': float(body.area),\n"
+    },
+    {
+      "key": "reread-single-from-occt-by-occt",
+      "id": "single",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/single-occt.step",
+      "source_sha256": "a75e4dae032150bad6fed1da3aaea020e3b7cce55c468b1ecca01cb732ca8cbe",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.43362938564036,
+          "area": 434.84955592154046,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 1.0,
+              "origin": [
+                6.0,
+                5.0,
+                -1.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.2399743599999056
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7019257939991803,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-single-from-occt-by-smlibpy",
+      "id": "single",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "occt",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/single-occt.step",
+      "source_sha256": "a75e4dae032150bad6fed1da3aaea020e3b7cce55c468b1ecca01cb732ca8cbe",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.43362938564087,
+          "area": 434.84955592153864,
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            12.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [
+            {
+              "radius": 1.0,
+              "origin": [
+                6.0,
+                5.0,
+                -1.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 467.43362938564087,
+              "area": 434.84955592153864,
+              "faces": 7,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                12.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": [
+                {
+                  "radius": 1.0,
+                  "origin": [
+                    6.0,
+                    5.0,
+                    -1.0
+                  ],
+                  "axis": [
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.10782851499971002
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2289432069992472,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-single-from-smlibpy-by-occt",
+      "id": "single",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "occt",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/single-smlibpy.step",
+      "source_sha256": "4daa896606ce337da6aca02a046c46abe265041fb1335a34a3c206a967149feb",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.4334823590228,
+          "area": 434.89354605154443,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -0.2000011
+          ],
+          "bounds_max": [
+            12.0000001,
+            10.0000001,
+            4.200001100000001
+          ],
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "seconds_inside_worker": 1.323665401998369
+      },
+      "exit_code": 0,
+      "process_seconds": 1.817358415999479,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "reread-single-from-smlibpy-by-smlibpy",
+      "id": "single",
+      "mode": "intake",
+      "group": "roundtrip_reread",
+      "writer_backend": "smlibpy",
+      "backend": "smlibpy",
+      "heal": false,
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/single-smlibpy.step",
+      "source_sha256": "4daa896606ce337da6aca02a046c46abe265041fb1335a34a3c206a967149feb",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "intake",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 467.43362938564087,
+          "area": 434.84955592153864,
+          "faces": 7,
+          "solids": 1,
+          "valid": true,
+          "bounds_min": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "bounds_max": [
+            12.0,
+            10.0,
+            4.0
+          ],
+          "cylindrical_supports": [],
+          "body_details": [
+            {
+              "type": "Part",
+              "volume": 467.43362938564087,
+              "area": 434.84955592153864,
+              "faces": 7,
+              "valid": true,
+              "bounds_min": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "bounds_max": [
+                12.0,
+                10.0,
+                4.0
+              ],
+              "cylindrical_supports": []
+            }
+          ],
+          "measurement_implementation": "smlibpy custom integration, not upstream SmBrep default integration"
+        },
+        "seconds_inside_worker": 0.1000827659991046
+      },
+      "exit_code": 0,
+      "process_seconds": 0.2277591019992542,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

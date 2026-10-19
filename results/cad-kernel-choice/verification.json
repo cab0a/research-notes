@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-19",
+  "scope": "research scripts, evidence and documentation; not a production release regression run",
+  "probe_compile": "passed",
+  "summarizer": "passed; 263 observations including one expected CPU-limited measurement",
+  "evidence_hashes_checked": 23,
+  "local_code_hashes_checked": 3,
+  "cached_primary_source_hashes_checked": 49,
+  "local_document_links_checked": 27,
+  "json_non_finite_values": "none",
+  "existing_production_code_fixtures_and_results": "unchanged against baseline HEAD",
+  "notes": [
+    "No full production test suite rerun; no production implementation changed.",
+    "Reader completion, backend validity and recognition correctness are separate claims."
+  ]
+}

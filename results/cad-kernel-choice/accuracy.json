@@ -1,0 +1,2703 @@
+{
+  "date": "2026-10-19",
+  "group": "accuracy",
+  "observations": 15,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "baseline_commit": "a91a960dc5ac5687f6ad87557cf393e180524022",
+  "probe_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "process_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds": 30,
+    "wall_seconds": 40,
+    "max_workers": 2
+  },
+  "limitations": [
+    "Linux/WSL pilot using resource limits; not a Windows-native execution test.",
+    "Pilot observations; one recorded run per task, not general accuracy or a speed benchmark.",
+    "No SMLib hole-recognition port; cylindrical supports are not hole counts.",
+    "Intake paths use native readers and do not include the production Part 21/units/external-reference admission contract.",
+    "OCCT validity and SMLib manifold/positive-volume checks differ.",
+    "smlibpy includes kernel patches and independent integration; it is not the unmodified NVIDIA kernel."
+  ],
+  "records": [
+    {
+      "id": "circle_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "key": "accuracy-circle_spline-source",
+      "backend": "occt",
+      "mode": "accuracy",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4320553446477,
+          "area": 483.02937420590547,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 531.4336046770605,
+            "area": 482.84963004739615,
+            "reported_volume_error": 1.8452044811648712e-09,
+            "reported_area_error": 1.8452044601628524e-09,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 531.4336293856439,
+            "area": 482.84963004739615,
+            "reported_volume_error": 1.4390031692003837e-09,
+            "reported_area_error": 1.8452044601628524e-09,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 531.4336311702605,
+            "area": 482.8495505676886,
+            "reported_volume_error": 2.3474103675735088e-11,
+            "reported_area_error": 2.3474082673716057e-11,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 531.4336293856442,
+            "area": 482.8495505676886,
+            "reported_volume_error": 2.0851130998518104e-11,
+            "reported_area_error": 2.3474082673716057e-11,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 0.9641582959993684
+      },
+      "exit_code": 0,
+      "process_seconds": 1.374479831998542,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "circle_spline",
+      "group": "robustness",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+      "key": "accuracy-circle_spline-from-occt",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "occt",
+      "source_sha256": "e6789ba043e441719dfe9781258bff10ba6465809fd3f8cf3d82f135e3a29178",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.4320553446477,
+          "area": 483.02937420590547,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 531.4336046770605,
+            "area": 482.84963004739615,
+            "reported_volume_error": 1.8452044811648712e-09,
+            "reported_area_error": 1.8452044601628524e-09,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 531.4336293856439,
+            "area": 482.84963004739615,
+            "reported_volume_error": 1.4390031692003837e-09,
+            "reported_area_error": 1.8452044601628524e-09,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 531.4336311702605,
+            "area": 482.8495505676886,
+            "reported_volume_error": 2.3474103675735088e-11,
+            "reported_area_error": 2.3474082673716057e-11,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 531.4336293856442,
+            "area": 482.8495505676886,
+            "reported_volume_error": 2.0851130998518104e-11,
+            "reported_area_error": 2.3474082673716057e-11,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 0.9551708849994611
+      },
+      "exit_code": 0,
+      "process_seconds": 1.3610813609993784,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "circle_spline",
+      "group": "robustness",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+      "key": "accuracy-circle_spline-from-smlibpy",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "smlibpy",
+      "source_sha256": "e9ff1af4f7a7710e8367df0e51c16e8131ea59ad3bb4f9dae56843e9d09190f8",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 531.356126543118,
+          "area": 482.9154810036109,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 9,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 531.4335776534582,
+            "area": 482.8495895119925,
+            "reported_volume_error": 2.331468351712829e-16,
+            "reported_area_error": 2.8271513785335e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 531.4336023620657,
+            "area": 482.8495895119925,
+            "reported_volume_error": 3.4920953042340236e-11,
+            "reported_area_error": 2.8271513785335e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 531.4336041466822,
+            "area": 482.84951003232095,
+            "reported_volume_error": 4.2407404786605386e-16,
+            "reported_area_error": 2.8271603191066293e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 531.4336023620657,
+            "area": 482.84951003232095,
+            "reported_volume_error": 3.4907331861764574e-13,
+            "reported_area_error": 2.8271603191066293e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 0.9925246009988768
+      },
+      "exit_code": 0,
+      "process_seconds": 1.3965340249997098,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "slot_spline",
+      "group": "robustness",
+      "source_path": "fixtures/hole-robustness/sources/slot_spline.step",
+      "key": "accuracy-slot_spline-source",
+      "backend": "occt",
+      "mode": "accuracy",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.31623922314003,
+          "area": 498.8301701377176,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 499.4336103174509,
+            "area": 498.8495596406891,
+            "reported_volume_error": 2.61482249743997e-10,
+            "reported_area_error": 2.614822720916694e-10,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 499.4336293856392,
+            "area": 498.8495596406891,
+            "reported_volume_error": 6.021084286263801e-09,
+            "reported_area_error": 2.614822720916694e-10,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 499.43363027386226,
+            "area": 498.84955577344317,
+            "reported_volume_error": 5.211253754305226e-13,
+            "reported_area_error": 5.211253754305222e-13,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 499.4336293856392,
+            "area": 498.84955577344317,
+            "reported_volume_error": 6.323170340609995e-11,
+            "reported_area_error": 5.211253754305222e-13,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 0.9737885180002195
+      },
+      "exit_code": 0,
+      "process_seconds": 1.3688165719995595,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "slot_spline",
+      "group": "robustness",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+      "key": "accuracy-slot_spline-from-occt",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "occt",
+      "source_sha256": "f997414a35fc02a46115b8d06fffe139ad883d97800942be8be1ef577baeca7e",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.31623922314003,
+          "area": 498.8301701377176,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 499.4336103174509,
+            "area": 498.8495596406891,
+            "reported_volume_error": 2.61482249743997e-10,
+            "reported_area_error": 2.614822720916694e-10,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 499.4336293856392,
+            "area": 498.8495596406891,
+            "reported_volume_error": 6.021084286263801e-09,
+            "reported_area_error": 2.614822720916694e-10,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 499.43363027386226,
+            "area": 498.84955577344317,
+            "reported_volume_error": 5.211253754305226e-13,
+            "reported_area_error": 5.211253754305222e-13,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 499.4336293856392,
+            "area": 498.84955577344317,
+            "reported_volume_error": 6.323170340609995e-11,
+            "reported_area_error": 5.211253754305222e-13,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.008524832999683
+      },
+      "exit_code": 0,
+      "process_seconds": 1.4181762480002362,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "slot_spline",
+      "group": "robustness",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+      "key": "accuracy-slot_spline-from-smlibpy",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "smlibpy",
+      "source_sha256": "47a17014f7ed281d8692ceb4d8ae95c70ecf9948d16f43e88ad76e3851065adf",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 499.35251040094425,
+          "area": 498.88457690442385,
+          "bounds_min": [
+            -1e-07,
+            -1e-07,
+            -1e-07
+          ],
+          "bounds_max": [
+            14.0000001,
+            10.0000001,
+            4.0000001
+          ],
+          "faces": 12,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 499.4336079789886,
+            "area": 498.84955613299564,
+            "reported_volume_error": 2.775557561562891e-16,
+            "reported_area_error": 5.654318596986197e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 499.4336270471803,
+            "area": 498.84955613299564,
+            "reported_volume_error": 4.6065314085343983e-11,
+            "reported_area_error": 5.654318596986197e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 499.4336279354035,
+            "area": 498.8495522657548,
+            "reported_volume_error": 2.9147387145759553e-16,
+            "reported_area_error": 2.845394078147701e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 499.4336270471803,
+            "area": 498.8495522657548,
+            "reported_volume_error": 4.831348719447662e-13,
+            "reported_area_error": 2.845394078147701e-16,
+            "integration_origin": [
+              7.0,
+              5.0,
+              2.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.000311473999318
+      },
+      "exit_code": 0,
+      "process_seconds": 1.4107899290011119,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_bracket",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "key": "accuracy-build123d_bracket-source",
+      "backend": "occt",
+      "mode": "accuracy",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.1553017856795,
+          "area": 6221.9841290626955,
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 7061.155301764728,
+            "area": 6221.98412906269,
+            "reported_volume_error": 4.970198893838222e-16,
+            "reported_area_error": 2.827159716856646e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 7061.155301785568,
+            "area": 6221.98412906269,
+            "reported_volume_error": 3.1610590574081828e-09,
+            "reported_area_error": 2.827159716856646e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 7061.155301785749,
+            "area": 6221.98412906269,
+            "reported_volume_error": 4.229064463207715e-16,
+            "reported_area_error": 2.8271597168566453e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 7061.155301785568,
+            "area": 6221.98412906269,
+            "reported_volume_error": 1.0137465748058755e-09,
+            "reported_area_error": 2.8271597168566453e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.1759846320001088
+      },
+      "exit_code": 0,
+      "process_seconds": 1.6046611259989731,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_bracket",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+      "key": "accuracy-build123d_bracket-from-occt",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "occt",
+      "source_sha256": "5ecffb5ee350447c88d9753ab9f237466e18a1dc2563d99fdf411f93832c5230",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7061.155301785823,
+          "area": 6221.984129062685,
+          "bounds_min": [
+            -1.000000004440892e-07,
+            -20.5000001,
+            -1.000000004440892e-07
+          ],
+          "bounds_max": [
+            35.0000001,
+            20.5000001,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 3.0,
+              "origin": [
+                3.0,
+                -20.5,
+                3.0
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                14.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 16.0,
+              "origin": [
+                0.0,
+                0.0,
+                30.0
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 1.65,
+              "origin": [
+                0.0,
+                -15.5,
+                45.5
+              ],
+              "axis": [
+                -1.0,
+                -0.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                -12.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                10.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                18.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                21.5,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                12.5,
+                0.0
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.25,
+              "origin": [
+                30.0,
+                15.5,
+                0.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 7061.155301764601,
+            "area": 6221.984129062628,
+            "reported_volume_error": 4.970198893838222e-16,
+            "reported_area_error": 2.3357742380509923e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 7061.155301785715,
+            "area": 6221.984129062628,
+            "reported_volume_error": 3.161059055225852e-09,
+            "reported_area_error": 2.3357742380509923e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 7061.1553017856195,
+            "area": 6221.984129062627,
+            "reported_volume_error": 7.788318779212509e-16,
+            "reported_area_error": 2.827159716856723e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 7061.155301785715,
+            "area": 6221.984129062627,
+            "reported_volume_error": 1.0137465726235896e-09,
+            "reported_area_error": 2.827159716856723e-16,
+            "integration_origin": [
+              17.5,
+              0.0,
+              25.5
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.1805178209997393
+      },
+      "exit_code": 0,
+      "process_seconds": 1.6168593950005743,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_bracket",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+      "key": "accuracy-build123d_bracket-from-smlibpy",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "smlibpy",
+      "source_sha256": "d3a4c4295b7ee867e6078ee1819f4fb8c30232b62813b25aa0edd9b794c2fcbb",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 7065.622602666728,
+          "area": 6222.857044674363,
+          "bounds_min": [
+            -1.2426407871192853,
+            -22.550001100000003,
+            -1.2426407871192848
+          ],
+          "bounds_max": [
+            35.0000001,
+            22.550001100000003,
+            51.0000001
+          ],
+          "faces": 42,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            1e-07,
+            1e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 7061.154889922724,
+            "area": 6221.984229740153,
+            "reported_volume_error": 6.230654101362526e-16,
+            "reported_area_error": 3.4268597557494114e-16,
+            "integration_origin": [
+              16.878679656440358,
+              0.0,
+              24.878679656440358
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 7061.155301785543,
+            "area": 6221.984229740153,
+            "reported_volume_error": 3.807636151028893e-09,
+            "reported_area_error": 3.4268597557494114e-16,
+            "integration_origin": [
+              16.878679656440358,
+              0.0,
+              24.878679656440358
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 7061.155319169783,
+            "area": 6221.984125053248,
+            "reported_volume_error": 4.672991295067235e-16,
+            "reported_area_error": 6.853720566098624e-16,
+            "integration_origin": [
+              16.878679656440358,
+              0.0,
+              24.878679656440358
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 7061.155301785543,
+            "area": 6221.984125053248,
+            "reported_volume_error": 1.0131883768850642e-09,
+            "reported_area_error": 6.853720566098624e-16,
+            "integration_origin": [
+              16.878679656440358,
+              0.0,
+              24.878679656440358
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.1638253729997814
+      },
+      "exit_code": 0,
+      "process_seconds": 1.5200490309998713,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_screw",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_screw.step",
+      "key": "accuracy-build123d_screw-source",
+      "backend": "occt",
+      "mode": "accuracy",
+      "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 332.27626441996176,
+          "area": 465.6340004256301,
+          "bounds_min": [
+            -5.1732391067990005,
+            -5.1817342798411925,
+            -12.0000001
+          ],
+          "bounds_max": [
+            5.173239106782001,
+            5.1817342798411925,
+            1e-07
+          ],
+          "faces": 28,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            2.2030701788977597e-07,
+            2.2030701788977597e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 336.7362861662961,
+            "area": 465.634205322446,
+            "reported_volume_error": 4.904172201852757e-12,
+            "reported_area_error": 2.6515213825028363e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 336.73628856811894,
+            "area": 465.634205322446,
+            "reported_volume_error": 2.9645806363222075e-08,
+            "reported_area_error": 2.6515213825028363e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 336.7362861646918,
+            "area": 465.634205322446,
+            "reported_volume_error": 4.457896990624725e-12,
+            "reported_area_error": 2.651496250670711e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 336.7362861242907,
+            "area": 465.634205322446,
+            "reported_volume_error": 4.0995741813178067e-10,
+            "reported_area_error": 2.651496250670711e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 2.041954768999858
+      },
+      "exit_code": 0,
+      "process_seconds": 2.4950277989992173,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_screw",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+      "key": "accuracy-build123d_screw-from-occt",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "occt",
+      "source_sha256": "8bc77abf5eb65fd6e72026074fb29a864780d6e52955d1150ecde03cf4408e99",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 332.2762697314604,
+          "area": 465.6340097944636,
+          "bounds_min": [
+            -5.1732391067990005,
+            -5.1817342798411925,
+            -12.0000001
+          ],
+          "bounds_max": [
+            5.173239106782001,
+            5.1817342798411925,
+            1e-07
+          ],
+          "faces": 28,
+          "solids": 1,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 2.458734122635,
+              "origin": [
+                0.0,
+                0.0,
+                -12.0
+              ],
+              "axis": [
+                -0.0,
+                -0.0,
+                -1.0
+              ]
+            }
+          ],
+          "tolerances": [
+            1.7851889136658502e-07,
+            1.7851889136658502e-07,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 336.73628610526356,
+            "area": 465.63420524769015,
+            "reported_volume_error": 4.9042759301930765e-12,
+            "reported_area_error": 2.6514836847546486e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 336.73628884714986,
+            "area": 465.63420524769015,
+            "reported_volume_error": 2.985554892947476e-08,
+            "reported_area_error": 2.6514836847546486e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 336.7362861036607,
+            "area": 465.63420524769,
+            "reported_volume_error": 4.458004484945833e-12,
+            "reported_area_error": 2.6514836847546498e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 336.73628607204034,
+            "area": 465.63420524769,
+            "reported_volume_error": 4.21411089056317e-10,
+            "reported_area_error": 2.6514836847546498e-12,
+            "integration_origin": [
+              -8.499867476530198e-12,
+              0.0,
+              -6.0
+            ]
+          }
+        ],
+        "seconds_inside_worker": 2.6136755629995605
+      },
+      "exit_code": 0,
+      "process_seconds": 3.016216517999055,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "build123d_screw",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+      "key": "accuracy-build123d_screw-from-smlibpy",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "smlibpy",
+      "source_sha256": "9f2a5e0cb06e478dd958dbb1ec0488daa7157fbeaa5a57e874c45ad89842ff4b",
+      "result": {
+        "status": "process_failed"
+      },
+      "exit_code": -24,
+      "process_seconds": 30.02953614499893,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "group": "public",
+      "source_path": "fixtures/public-step-corpus/sources/ublox_sam_ap203.step",
+      "key": "accuracy-ublox_sam_ap203-source",
+      "backend": "occt",
+      "mode": "accuracy",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8835809072764,
+          "area": 1569.4091088559207,
+          "bounds_min": [
+            -10.735882487445165,
+            -0.9706265601910136,
+            4.243994172449168
+          ],
+          "bounds_max": [
+            4.764619880759867,
+            5.408361273825762,
+            19.7444965406542
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 0.9999992529250937,
+              "origin": [
+                1.4878883223646984,
+                -0.9703253760884962,
+                7.481900153510928
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250955,
+              "origin": [
+                1.4878883223646966,
+                -0.9703253760884973,
+                16.481901647661296
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9499992902788409,
+              "origin": [
+                -7.562113134431911,
+                -0.9703253760884973,
+                16.53190161030754
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.9999992529250951,
+              "origin": [
+                -7.512113171785671,
+                -0.9703253760884962,
+                7.48190015351093
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.2246467991473532e-16
+              ]
+            },
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                1.128110089723248,
+                19.506348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                1.1281100897232479,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.7071067811865469,
+                0.0,
+                -0.7071067811865481
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.452181875753203,
+                1.128110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                6.0063486469435645
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                -8.952181875753203,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.4999999999999996,
+              "origin": [
+                3.0478181242467977,
+                5.348110089723248,
+                18.006348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -10.352181875753201,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                19.406348646943563
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                4.347818124246798,
+                5.348110089723248,
+                5.589191359418186
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                4.447818124246798,
+                5.248110089723248,
+                12.006348646943565
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000026,
+              "origin": [
+                -2.9521818757532023,
+                5.248110089723248,
+                4.606348646943565
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.19999999999999965,
+              "origin": [
+                3.464975411772176,
+                5.348110089723248,
+                4.706348646943565
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.10000000000000014,
+              "origin": [
+                3.9771074461281484,
+                5.248110089723248,
+                5.077059325062226
+              ],
+              "axis": [
+                -0.7071067811865469,
+                0.0,
+                -0.7071067811865481
+              ]
+            },
+            {
+              "radius": 0.5715034071370334,
+              "origin": [
+                -3.711209838357073,
+                5.408110089723246,
+                12.006348646943565
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            }
+          ],
+          "tolerances": [
+            0.00025118410251590885,
+            0.00025118410251590885,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 1309.8838205736272,
+            "area": 1569.407987927012,
+            "reported_volume_error": 5.303445801156231e-09,
+            "reported_area_error": 1.4699147494543783e-08,
+            "integration_origin": [
+              -2.985631303342649,
+              2.2188673568173742,
+              11.994245356551684
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 1309.883820558398,
+            "area": 1569.407987927012,
+            "reported_volume_error": 9.920796771280452e-10,
+            "reported_area_error": 1.4699147494543783e-08,
+            "integration_origin": [
+              -2.985631303342649,
+              2.2188673568173742,
+              11.994245356551684
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 1309.8838205579364,
+            "area": 1569.4079879338506,
+            "reported_volume_error": 6.890392167111069e-10,
+            "reported_area_error": 8.956287617232627e-10,
+            "integration_origin": [
+              -2.985631303342649,
+              2.2188673568173742,
+              11.994245356551684
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 1309.8838205589548,
+            "area": 1569.4079879338506,
+            "reported_volume_error": 4.564595015501879e-12,
+            "reported_area_error": 8.956287617232627e-10,
+            "integration_origin": [
+              -2.985631303342649,
+              2.2188673568173742,
+              11.994245356551684
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.7234750600000552
+      },
+      "exit_code": 0,
+      "process_seconds": 2.129191082000034,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+      "key": "accuracy-ublox_sam_ap203-from-occt",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "occt",
+      "source_sha256": "658bd97c9d23c5dee1dac304cd160fa23243ce461f3b19b3dc814a3c44f9eead",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1309.8835809072682,
+          "area": 1569.4091088559223,
+          "bounds_min": [
+            -10.735882487445794,
+            -0.9706265601907947,
+            4.243994172449205
+          ],
+          "bounds_max": [
+            4.7646198807597955,
+            5.408361273825794,
+            19.744496540654794
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                1.4878883223650003,
+                -0.9703253760879996,
+                16.481901647661
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.949999290279,
+              "origin": [
+                -7.562113134431,
+                -0.9703253760879996,
+                16.531901610307
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.999999252925,
+              "origin": [
+                -7.512113171785,
+                -0.9703253760879985,
+                7.481900153511001
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                1.224646799147e-16
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                19.406348646944
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                1.128110089723,
+                19.506348646943998
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                1.128110089723,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.452181875753,
+                1.128110089723,
+                4.606348646943999
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                6.006348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                -8.952181875753,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 1.5,
+              "origin": [
+                3.047818124247,
+                5.348110089723001,
+                18.006348646943998
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -10.352181875753,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                19.406348646944
+              ],
+              "axis": [
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                4.347818124247,
+                5.348110089723001,
+                5.589191359419
+              ],
+              "axis": [
+                0.0,
+                1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                4.447818124247,
+                5.248110089722999,
+                12.006348646944
+              ],
+              "axis": [
+                0.0,
+                0.0,
+                -1.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                -2.952181875753,
+                5.248110089722999,
+                4.606348646943999
+              ],
+              "axis": [
+                -1.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.2,
+              "origin": [
+                3.464975411772,
+                5.348110089723001,
+                4.706348646944
+              ],
+              "axis": [
+                0.0,
+                -1.0,
+                0.0
+              ]
+            },
+            {
+              "radius": 0.1,
+              "origin": [
+                3.977107446128,
+                5.248110089722999,
+                5.077059325063
+              ],
+              "axis": [
+                -0.7071067811865476,
+                0.0,
+                -0.7071067811865476
+              ]
+            },
+            {
+              "radius": 0.571503407137,
+              "origin": [
+                -3.711209838357,
+                5.4081100897229994,
+                12.006348646944
+              ],
+              "axis": [
+                -0.0,
+                -1.0,
+                -0.0
+              ]
+            }
+          ],
+          "tolerances": [
+            0.00025118410279474434,
+            0.00025118410279474434,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 1309.8838205736183,
+            "area": 1569.4079879270125,
+            "reported_volume_error": 5.303445798543493e-09,
+            "reported_area_error": 1.4699147487303845e-08,
+            "integration_origin": [
+              -2.9856313033429993,
+              2.2188673568175,
+              11.994245356552
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 1309.8838205584013,
+            "area": 1569.4079879270125,
+            "reported_volume_error": 9.920794082820087e-10,
+            "reported_area_error": 1.4699147487303845e-08,
+            "integration_origin": [
+              -2.9856313033429993,
+              2.2188673568175,
+              11.994245356552
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 1309.8838205579273,
+            "area": 1569.407987933851,
+            "reported_volume_error": 6.890392170895145e-10,
+            "reported_area_error": 8.956287608542197e-10,
+            "integration_origin": [
+              -2.9856313033429993,
+              2.2188673568175,
+              11.994245356552
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 1309.8838205589586,
+            "area": 1569.407987933851,
+            "reported_volume_error": 4.564439088485783e-12,
+            "reported_area_error": 8.956287608542197e-10,
+            "integration_origin": [
+              -2.9856313033429993,
+              2.2188673568175,
+              11.994245356552
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.5600578480007243
+      },
+      "exit_code": 0,
+      "process_seconds": 1.9313872269995045,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "group": "public",
+      "source_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "key": "accuracy-ublox_sam_ap203-from-smlibpy",
+      "backend": "occt",
+      "mode": "accuracy",
+      "writer_backend": "smlibpy",
+      "source_sha256": "d7f79a958ca900eacdf49fa5a87cdb8d7039b60be002667e41e111855904ef16",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "accuracy",
+        "status": "ok",
+        "import_completed": true,
+        "metrics": {
+          "volume": 1310.0676919693753,
+          "area": 1569.4186074856605,
+          "bounds_min": [
+            -11.073753403415363,
+            -1.0255775601910138,
+            3.884777119281407
+          ],
+          "bounds_max": [
+            5.169389651908955,
+            5.512704242157589,
+            20.127920174605727
+          ],
+          "faces": 98,
+          "solids": 3,
+          "valid": true,
+          "cylindrical_supports": [],
+          "tolerances": [
+            0.0002511841025160975,
+            0.0002511841025160975,
+            1e-07
+          ]
+        },
+        "integrations": [
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-07,
+            "volume": 1309.8838205517209,
+            "area": 1569.4079879170342,
+            "reported_volume_error": 5.332521988965355e-09,
+            "reported_area_error": 1.4699147755499596e-08,
+            "integration_origin": [
+              -2.952181875753204,
+              2.243563340983288,
+              12.006348646943566
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-07,
+            "volume": 1309.883820553575,
+            "area": 1569.4079879170342,
+            "reported_volume_error": 9.905562764205872e-10,
+            "reported_area_error": 1.4699147755499596e-08,
+            "integration_origin": [
+              -2.952181875753204,
+              2.243563340983288,
+              12.006348646943566
+            ]
+          },
+          {
+            "method": "adaptive_gauss",
+            "epsilon": 1e-09,
+            "volume": 1309.883820553458,
+            "area": 1569.4079879310152,
+            "reported_volume_error": 6.92816105545396e-10,
+            "reported_area_error": 8.956287942029051e-10,
+            "integration_origin": [
+              -2.952181875753204,
+              2.243563340983288,
+              12.006348646943566
+            ]
+          },
+          {
+            "method": "gauss_kronrod_spans",
+            "epsilon": 1e-09,
+            "volume": 1309.883820553575,
+            "area": 1569.4079879310152,
+            "reported_volume_error": 4.551470334104878e-12,
+            "reported_area_error": 8.956287942029051e-10,
+            "integration_origin": [
+              -2.952181875753204,
+              2.243563340983288,
+              12.006348646943566
+            ]
+          }
+        ],
+        "seconds_inside_worker": 1.7398939340000652
+      },
+      "exit_code": 0,
+      "process_seconds": 2.10424822800087,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

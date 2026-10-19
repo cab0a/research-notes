@@ -1,0 +1,708 @@
+{
+  "date": "2026-10-19",
+  "baseline_commit": "a91a960dc5ac5687f6ad87557cf393e180524022",
+  "scope": "source review plus bounded OCCT/usd-brep/smlibpy local pilot; SolidCraft/SolidCore/ClassCAD not executed",
+  "snapshots": {
+    "date": "2026-10-19",
+    "solidcraft": {
+      "tag": "v0.15.0",
+      "commit": "fa691707c224cae580c42201ed3a22d5e4b8c716",
+      "release_published_at": "2026-10-17T15:55:08Z"
+    },
+    "classcad_ai": {
+      "branch": "next",
+      "commit": "23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8"
+    },
+    "solidcore": {
+      "branch": "main",
+      "commit": "6bb8f514f5fd0afcfa5240afde5792aac6eb4b54"
+    }
+  },
+  "sources": [
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/README.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/README.md",
+      "sha256": "7650fb61874622ecbb1dac97ba341659bddf284d2069f27983ded1c9dd3128a3",
+      "bytes": 23388,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/Cargo.toml",
+      "sha256": "036ec19bcbebcb8d1ad6a668bded622fde8de7bb6091f9ebd91b584ae3463123",
+      "bytes": 5560,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/crates/kernel/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/Cargo.toml",
+      "sha256": "692c44f5cba13a85b4a7996a1f45bff4152895f91e0bebcfd0366af0b1de0079",
+      "bytes": 1140,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/docs/oracle.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/oracle.md",
+      "sha256": "990bbd47599014ab46d48665755a7dbd3fd791812799d016c74f6866ba310ab2",
+      "bytes": 24650,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/docs/features.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/features.md",
+      "sha256": "aa79e51a787b5be29a3af27c76598328f14bf4811bf020f918a686982136f0cc",
+      "bytes": 24608,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/ROADMAP.md",
+      "path": "solidcraft/docs/ROADMAP.md",
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/LICENSE-MIT",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/LICENSE-MIT",
+      "sha256": "1a26c1e94401d5d221896c74dd1c58d227edc64516da95aaac6f675567c8af63",
+      "bytes": 1080,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/LICENSE-APACHE",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/LICENSE-APACHE",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/README.md",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/README.md",
+      "sha256": "59fd793c36c4ff2b1275e1e54ad66930e14f2a487d88e3e183d67ff695fbee1f",
+      "bytes": 4450,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/package.json",
+      "sha256": "44a71e2ce9293116f0bc90039947332b3b181fb53e2d4e1e94be8393e2e321b3",
+      "bytes": 1212,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/app/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/app/package.json",
+      "sha256": "c0dfe5fa44bf4811a0d95d73a4cff474af3927145a6f6c98f841b2e91662f23f",
+      "bytes": 708,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/buerli-ai/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/buerli-ai/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/buerli-ai/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/buerli-ai/package.json",
+      "sha256": "ed84e167d28aab8ee578b4d8163874db219c2b18690cd43125f2ecb3890183dd",
+      "bytes": 2101,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/mcp/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/mcp/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/mcp/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/mcp/package.json",
+      "sha256": "262c61ba5e2134d778234b8f600b07a341a5399d6a16a9a51af6f3f394b97a41",
+      "bytes": 1957,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/mcp/viewer-page/fonts/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/mcp/viewer-page/fonts/LICENSE.txt",
+      "sha256": "94224fe93410777239ede58535dc010d06ec28a7b1b8eed0f3f9523113d11141",
+      "bytes": 235,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/relay/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/relay/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/relay/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/relay/package.json",
+      "sha256": "140044bd065d128c778ae76ca476c8ffb415d83797412269cdaf510a1dc5655c",
+      "bytes": 897,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/renderer/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/renderer/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/renderer/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/renderer/package.json",
+      "sha256": "62f104737b17948ba1287ef467b735a2208f54afc8f98e6e8e856b90ceec010f",
+      "bytes": 1815,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/script/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/script/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/script/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/script/package.json",
+      "sha256": "a12c140757ee468aacade73af3a1b1b06806cacb712400e75a5dbc7aa144e771",
+      "bytes": 1355,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/skill/LICENSE",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/skill/LICENSE",
+      "sha256": "a9138a8bc254960190facce0a11d3f4379045b320e3c648248a5e3941362cdc2",
+      "bytes": 1074,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai/packages/skill/package.json",
+      "url": "https://raw.githubusercontent.com/awv-informatik/classcad-ai/23e406652bf70e7bdb156aae1d4ddc4cb9ee75d8/packages/skill/package.json",
+      "sha256": "4a6fa6f5856cc59739e9a9039ba73b8a28dda25df054418c73f389363dda2e77",
+      "bytes": 2020,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-architecture.html",
+      "url": "https://classcad.ch/docs/architecture/",
+      "sha256": "a22f7ef99aea540e790e7729d10a8c8aa8b8c3201a39f9f2e84395d7edfcde0d",
+      "bytes": 19539,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-smlib.html",
+      "url": "https://classcad.ch/docs/architecture/classcad_and_smlib/",
+      "sha256": "80bc038bf55ddf2a297fb7a0e0c0c47f848a100ba240bfbe0fa7a884e0fa6385",
+      "bytes": 23342,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-native.html",
+      "url": "https://classcad.ch/docs/native/",
+      "sha256": "f12b273566ea593fa0d3c104529ffab48209ab8f848e5e2f30d751ac25be7e8d",
+      "bytes": 36296,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-introduction.html",
+      "url": "https://classcad.ch/docs/",
+      "sha256": "e0300bfd8434612fb0a20fbed3851472ce63f3260ce5c20e6116c0d0f8b7fdf0",
+      "bytes": 20801,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-plans.html",
+      "url": "https://classcad.ch/plans/",
+      "sha256": "fff1da2bcf4a141f21d5aaae7836751603b39cc3150831f647d387e76375a2db",
+      "bytes": 14211,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/awv-pricing.html",
+      "url": "https://awv-informatik.ch/blog/pricing/",
+      "sha256": "4c0bf543fa653b53cb617c467890df71a67526ffa39dd745dff37c4c4d27bfc3",
+      "bytes": 25780,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/awv-license.html",
+      "url": "https://awv-informatik.ch/license/",
+      "sha256": "de5851f6346b33ce71f7eac3fa475748bc69fba5963a65f96dbe4e3bf046407a",
+      "bytes": 28040,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/classcad-ai.html",
+      "url": "https://classcad.ai/",
+      "sha256": "01e105766b8b08b729c543b42d27752971e97cee98979369d786a29779f926d3",
+      "bytes": 65880,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft-issue-331.json",
+      "url": "https://api.github.com/repos/tangency-labs/solidcraft/issues/331",
+      "sha256": "b568d52b943ec6ea4e030298de47e011ab226dca503f37e7576e3c27e9248058",
+      "bytes": 5202,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft-issue-331-comments.json",
+      "url": "https://api.github.com/repos/tangency-labs/solidcraft/issues/331/comments",
+      "sha256": "3b15fb1a80ea20a09636f0933c60c0d2f2e1b83911da0fd5f1b69783058f299d",
+      "bytes": 28636,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/BRepGProp.hxx",
+      "url": "https://raw.githubusercontent.com/Open-Cascade-SAS/OCCT/V7_9_3/src/BRepGProp/BRepGProp.hxx",
+      "sha256": "43480da7e8841dfebad4b69f50ca7c4d47b47835eb90f2f0fc4ae3afb192b0b5",
+      "bytes": 13239,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/STEPControl_Reader.hxx",
+      "url": "https://raw.githubusercontent.com/Open-Cascade-SAS/OCCT/V7_9_3/src/STEPControl/STEPControl_Reader.hxx",
+      "sha256": "327a85abdb101c6d4a1965a7731fee94922d06a8a9e97bc56f30e8dc558a8c37",
+      "bytes": 7060,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/BRepAdaptor_Surface.hxx",
+      "url": "https://raw.githubusercontent.com/Open-Cascade-SAS/OCCT/V7_9_3/src/BRepAdaptor/BRepAdaptor_Surface.hxx",
+      "sha256": "9c0ec62550710d85cdf8a3960eb825c50f2e5788a86934fc935a41ee72d1ddb2",
+      "bytes": 11897,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/BRepClass3d_SolidClassifier.hxx",
+      "url": "https://raw.githubusercontent.com/Open-Cascade-SAS/OCCT/V7_9_3/src/BRepClass3d/BRepClass3d_SolidClassifier.hxx",
+      "sha256": "bcc2ef86922903e31803d0a0e444534038326b21a2944dacf6afdd49ffc78644",
+      "bytes": 2367,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/occt-license.html",
+      "url": "https://dev.opencascade.org/resources/licensing",
+      "sha256": "8967c6fa7e1e1728e6f7f201bbfd24bb3aca498bc1102f11c8db8a037d305b2a",
+      "bytes": 46095,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/OCCT_LGPL_EXCEPTION.txt",
+      "url": "https://raw.githubusercontent.com/Open-Cascade-SAS/OCCT/V7_9_3/OCCT_LGPL_EXCEPTION.txt",
+      "sha256": "04580a884ea6cea294402649ff7b5cbb167d47462d1340a4ed33e550db10a81b",
+      "bytes": 663,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcraft/ROADMAP.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/ROADMAP.md",
+      "sha256": "3a0e39bff7fb1aed60030b91079a375ff6cb4961902d16d341ab7b8d6e206570",
+      "bytes": 58503,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/README.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/README.md",
+      "sha256": "4949f915196db5067193b8021f13efffb306c7b2ae48724c8cf58d92cba3f0e6",
+      "bytes": 5812,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/Cargo.toml",
+      "sha256": "a34d1658e1dae5868e0a8420796bc3414b611c7fddd4f5d7f2f9aeb5ac053779",
+      "bytes": 2450,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/crates/solidcore/Cargo.toml",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/crates/solidcore/Cargo.toml",
+      "sha256": "214caf0c10831f77c4e97f4d964d3f5779a60c57450fa0ae5aaf6412162a4006",
+      "bytes": 564,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/plan/STATUS.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/plan/STATUS.md",
+      "sha256": "6a12767c3fef56a88864080a7e6b7716ec2683b895c97ab3e8ea24808c264357",
+      "bytes": 96357,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/ATTRIBUTION.md",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/ATTRIBUTION.md",
+      "sha256": "c66a2878a359b9c11e3fe79aec8cd8f2875c9cb8e0f6989bc0ac55053f315994",
+      "bytes": 3794,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/NOTICE",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/NOTICE",
+      "sha256": "4c2710901b020ae1a789bc8d73a914cf4f0781b8b1ce1fca3d39e29b04f841c9",
+      "bytes": 1486,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/solidcore/LICENSE",
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcore/6bb8f514f5fd0afcfa5240afde5792aac6eb4b54/LICENSE",
+      "sha256": "83ab8ebac4587a65c32ed2dbdba3c00a86c315a6562929ddff3ec17a175e6065",
+      "bytes": 11449,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/smlibpy/src/smlibpy/shapes.py",
+      "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/smlibpy/shapes.py",
+      "sha256": "048fd3a1550d936c9b186d65bebc210071d23fb325817e862e778e47998bc3f8",
+      "bytes": 146236,
+      "status": "ok"
+    },
+    {
+      "path": "output/cad-platform-sources-2026-10-19/smlibpy/src/cpp/measure.cpp",
+      "url": "https://raw.githubusercontent.com/awv-informatik/smlibpy/316514b421285ae5abdfe5ed24936bd24ed9dec1/src/cpp/measure.cpp",
+      "sha256": "89a04cc91b0ff3ca0759706b2431321615502b284ab5df18ed5912c8576e1e67",
+      "bytes": 57770,
+      "status": "ok"
+    }
+  ],
+  "prior_nvidia_smlibpy_source_record": "results/smlib-investigation/2026-10-19-sources.json",
+  "prior_record_sha256": "37617cfd465464d12a2890d2223c164e36a16c898e851704e89215bf4a507dfc",
+  "environments": {
+    "occt": {
+      "python": "3.12.14 (main, Sep 24 2026, 17:57:43) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "packages": {
+        "Pygments": "2.21.0",
+        "matplotlib": "3.11.1",
+        "opencv-python-headless": "4.13.0.92",
+        "imageio-ffmpeg": "0.6.0",
+        "cycler": "0.12.1",
+        "numpy": "2.4.6",
+        "pillow": "12.3.0",
+        "lark-parser": "0.12.0",
+        "six": "1.17.0",
+        "packaging": "26.3",
+        "python-dateutil": "2.9.0.post0",
+        "pytest": "9.1.1",
+        "cadquery-ocp": "7.9.3.1.1",
+        "pyparsing": "3.2.5",
+        "antlr4-python3-runtime": "4.9.3",
+        "vtk": "9.6.2",
+        "fonttools": "4.66.0",
+        "pyproject_hooks": "1.3.3",
+        "cadquery-ocp-proxy": "7.9.3.1.1",
+        "iniconfig": "2.3.0",
+        "research-notes": "1.14.0",
+        "pip": "26.2.1",
+        "contourpy": "1.4.0",
+        "build": "1.6.1",
+        "pluggy": "1.6.0",
+        "kiwisolver": "1.5.1"
+      },
+      "native_files": [
+        {
+          "package": "cadquery-ocp",
+          "path": "OCP/OCP.cpython-312-x86_64-linux-gnu.so",
+          "sha256": "a81aab3e4f0790974aee16b3af33fc65e2ba8e2939113628ee089503c4c24a7e",
+          "bytes": 167679929
+        },
+        {
+          "package": "cadquery-ocp",
+          "path": "cadquery_ocp.libs/libfreeimage-3-bcaddc28.18.0.so",
+          "sha256": "e618627d9d2cfa63160b5ee7c0352459f70585e835e29046e5f020478b2d5d22",
+          "bytes": 872009
+        }
+      ]
+    },
+    "usd-brep": {
+      "python": "3.12.14 (main, Sep 24 2026, 17:57:43) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "packages": {
+        "usd-brep": "1.0.0",
+        "pip": "25.0.1"
+      },
+      "native_files": [
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/_omni_solid.cpython-312-x86_64-linux-gnu.so",
+          "sha256": "fb28fcff954b8fd8ace272316723a0979809dfb052fb1d2e9a08ca3f4bf1a53c",
+          "bytes": 55392104
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libBREP_SM_USD.so",
+          "sha256": "27bd5095fb56b02c3f5763817e47d5c11c8ef867050c51715db82e48e6b513af",
+          "bytes": 11483944
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libBREP_USD_DATA.so",
+          "sha256": "f16e977836a2f23dc1f28e03a4cbbaa954e5cfc3d518dc0fb4a56f2684d86ad4",
+          "bytes": 9069736
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libSMLib.so",
+          "sha256": "9d4693015045f7cdd88cd08ee866e4723631e209f95b1aae5938abeee9ac5344",
+          "bytes": 110230112
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libSM_API.so",
+          "sha256": "d3e2b84183fb265d62dcdb5dfb27f6ecf25adb11206c83a364ff3ee9f79c19b8",
+          "bytes": 4276536
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libSM_API_USD.so",
+          "sha256": "6a415267aef99a0ea416d4d2ee3e470568e4268e5442175d888e8c44de45d49d",
+          "bytes": 8130440
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_ar.so",
+          "sha256": "7d4a88779c5dcb792ecb1885e2fe218fa0e06ee5777bc2caa7fb18fb6935cee8",
+          "bytes": 546440
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_arch.so",
+          "sha256": "8274748628e693b461d4084f403ad3dd679692d198bec6966f329c3f7a72b997",
+          "bytes": 430128
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_gf.so",
+          "sha256": "3ae294415bb1d06e58103fb59fdf46b0a7016be3cc56893a5e610e4a54aaf128",
+          "bytes": 896640
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_js.so",
+          "sha256": "a4f5ea5aef640f14ba1e95476a6aa587dd0ae35d23c81a4af09d9d21cb205975",
+          "bytes": 321720
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_kind.so",
+          "sha256": "f8420e0fe6e75fa8a82b5ab2a2ba15d4b8daeb574eff86549b302b389fef55bd",
+          "bytes": 112568
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_pcp.so",
+          "sha256": "eae68054950e495c4572553be3fe9a6cbe555ae176fcb3867025e4dcbe67a8bd",
+          "bytes": 3151200
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_plug.so",
+          "sha256": "23efd31908309855ab72e96c46a0bda04f3abe63d1f86f2b0388a81252ff8e52",
+          "bytes": 640928
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_python.so",
+          "sha256": "3e87ee1585d09ffaa1434a89052a5af3ad4bfe2861166e669470245172bdbebc",
+          "bytes": 502848
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_sdf.so",
+          "sha256": "36572033c3d41cbdf65662010d60c9b1c978076369cc431743a9b81db0d208d7",
+          "bytes": 16691208
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_sdr.so",
+          "sha256": "baf85a3a32527c25524e5f49f74d281e596440d00a7a4bdbb9651fb4cd8cd660",
+          "bytes": 754320
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_tf.so",
+          "sha256": "f93d4294afffe24b6d3d4ea4aed85b1c484a1cfce9b812758283fd12706c5386",
+          "bytes": 2111016
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_trace.so",
+          "sha256": "8b276c8dd291e5c29ecab3274ee4e37165463a26f05bbd73bc0c3ace0a69ed2c",
+          "bytes": 892760
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_ts.so",
+          "sha256": "c29a0594e33209f73b59ba219f15ddb3c40bf791aa2c469274b06fc3f01af011",
+          "bytes": 699664
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_usd.so",
+          "sha256": "e58ba85228f95bf04ddab7fe1c8fbda53d0e1ef46f3e3df7e1e532f1d16c799d",
+          "bytes": 10204640
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_usdGeom.so",
+          "sha256": "f5a854f2b06e7fa7890367c0833dbaeea4f035762b44326a6be5095f580d7e73",
+          "bytes": 3136616
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_usdShade.so",
+          "sha256": "5b64b9f27001a2abfcfd8db16a623c0f962f09e4775a5583cc8b27f83113f90e",
+          "bytes": 1351936
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_usdUtils.so",
+          "sha256": "d47d62121a1b9ed56fa7879854856ddf2fb61670401cfd035a626aed9765cc9a",
+          "bytes": 1879184
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_vt.so",
+          "sha256": "cd042941b2ac8c468959dcbfdc3bdf1f87dc41385a3d18bd4845424bf5e2eb45",
+          "bytes": 6230904
+        },
+        {
+          "package": "usd-brep",
+          "path": "usd_brep/libusd_work.so",
+          "sha256": "a43dd69878dd918f5a3b8f7b951bddc13e57589508eaf1a19e09c91cac2ab0d5",
+          "bytes": 122720
+        }
+      ]
+    },
+    "smlibpy": {
+      "python": "3.12.14 (main, Sep 24 2026, 17:57:43) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "packages": {
+        "numpy": "2.4.6",
+        "smlibpy": "0.3.5",
+        "pip": "25.0.1"
+      },
+      "native_files": [
+        {
+          "package": "smlibpy",
+          "path": "smlibpy/_core.cpython-312-x86_64-linux-gnu.so",
+          "sha256": "1e135051dc5bfcf144964fa029b0f8b1a36c1a24b6f0cc87014b7f6357b6f7dc",
+          "bytes": 17048992
+        }
+      ]
+    }
+  },
+  "local_files": [
+    {
+      "path": "experiments/run_cad_kernel_probe.py",
+      "sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d"
+    },
+    {
+      "path": "experiments/summarize_cad_kernel_probe.py",
+      "sha256": "ef03db502a7e5728604c5e517270cdb4bb7a67481d02cb8f114f9f8cac1c40b5"
+    },
+    {
+      "path": "src/research_notes/brep_runtime.py",
+      "sha256": "32cd7563ff5e80d4b432dfc35f55b46ebc2dc07d2918bb7a64c976a30dac3b78"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "results/cad-kernel-choice/accuracy.json",
+      "sha256": "554d46c204c81448a2eb605e442d5c7874b6c0c38de530561185d4aa69a128fe"
+    },
+    {
+      "path": "results/cad-kernel-choice/intake-matrix.csv",
+      "sha256": "1a282535724dba24a1ec1b7c7f3db11a98aa5345d84712ed9c7c53aed33f793c"
+    },
+    {
+      "path": "results/cad-kernel-choice/intake.json",
+      "sha256": "3f141f827e6ed847879c0882fb1ca095d4b42864949a85c06b33f98fa6acaf99"
+    },
+    {
+      "path": "results/cad-kernel-choice/metadata.json",
+      "sha256": "8fe002b9b97f0e824128e301b1cd91339bcc52c2a1346c1fe62e73348520d4c1"
+    },
+    {
+      "path": "results/cad-kernel-choice/primitives.json",
+      "sha256": "5adf4f73545754e4e4b8cbc4e98f94073f34bf34524b2ba9cf63ba49f7ff0de5"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/build123d_bracket-occt.step",
+      "sha256": "5ecffb5ee350447c88d9753ab9f237466e18a1dc2563d99fdf411f93832c5230"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/build123d_bracket-smlibpy.step",
+      "sha256": "d3a4c4295b7ee867e6078ee1819f4fb8c30232b62813b25aa0edd9b794c2fcbb"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/build123d_screw-occt.step",
+      "sha256": "8bc77abf5eb65fd6e72026074fb29a864780d6e52955d1150ecde03cf4408e99"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/build123d_screw-smlibpy.step",
+      "sha256": "9f2a5e0cb06e478dd958dbb1ec0488daa7157fbeaa5a57e874c45ad89842ff4b"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/circle_spline-occt.step",
+      "sha256": "e6789ba043e441719dfe9781258bff10ba6465809fd3f8cf3d82f135e3a29178"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/circle_spline-smlibpy.step",
+      "sha256": "e9ff1af4f7a7710e8367df0e51c16e8131ea59ad3bb4f9dae56843e9d09190f8"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/single-occt.step",
+      "sha256": "a75e4dae032150bad6fed1da3aaea020e3b7cce55c468b1ecca01cb732ca8cbe"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/single-smlibpy.step",
+      "sha256": "4daa896606ce337da6aca02a046c46abe265041fb1335a34a3c206a967149feb"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/slot_spline-occt.step",
+      "sha256": "f997414a35fc02a46115b8d06fffe139ad883d97800942be8be1ef577baeca7e"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/slot_spline-smlibpy.step",
+      "sha256": "47a17014f7ed281d8692ceb4d8ae95c70ecf9948d16f43e88ad76e3851065adf"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/ublox_sam_ap203-occt.step",
+      "sha256": "658bd97c9d23c5dee1dac304cd160fa23243ce461f3b19b3dc814a3c44f9eead"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "sha256": "d7f79a958ca900eacdf49fa5a87cdb8d7039b60be002667e41e111855904ef16"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip-archive.json",
+      "sha256": "4f1a5b88523b0a0b2c7d1a1fcb08dcae9d041eef61ee271020a0871f6be96f19"
+    },
+    {
+      "path": "results/cad-kernel-choice/roundtrip.json",
+      "sha256": "2bc19befe97ff37917026b9e810278278a06f25f92d679ee77ad8b8a8b1610bd"
+    },
+    {
+      "path": "results/cad-kernel-choice/summary.json",
+      "sha256": "d2d240ace6da48ef05aee31196ceaeaf757c506d629bb3701f85d92715d41a1d"
+    },
+    {
+      "path": "results/cad-kernel-choice/unicode-input.step",
+      "sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3"
+    },
+    {
+      "path": "results/cad-kernel-choice/unicode-occt.step",
+      "sha256": "a115de9e576c132bc44630867fb38c3d311219c0189aecbea81501ccd95680a3"
+    },
+    {
+      "path": "results/cad-kernel-choice/unicode-smlibpy.step",
+      "sha256": "eb6148607a16f4739b920ab0fde9971f2727d0f2b9c1f9bbc5afe5da449b42cf"
+    }
+  ],
+  "licensing": "Upstream licenses remain separate from this repository license. No ClassCAD account, activation, engine license or paid plan used."
+}

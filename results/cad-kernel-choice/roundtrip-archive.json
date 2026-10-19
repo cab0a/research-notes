@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-19",
+  "files": [
+    {
+      "id": "circle_spline",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/circle_spline-occt.step",
+      "sha256": "e6789ba043e441719dfe9781258bff10ba6465809fd3f8cf3d82f135e3a29178",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "circle_spline",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/circle_spline-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/circle_spline-smlibpy.step",
+      "sha256": "e9ff1af4f7a7710e8367df0e51c16e8131ea59ad3bb4f9dae56843e9d09190f8",
+      "source_path": "fixtures/hole-robustness/sources/circle_spline.step",
+      "source_sha256": "f52ac6a3129dfd27dc80930588b83f1e55b9497f3fa900827c25b850e840c57f",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "slot_spline",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/slot_spline-occt.step",
+      "sha256": "f997414a35fc02a46115b8d06fffe139ad883d97800942be8be1ef577baeca7e",
+      "source_path": "fixtures/hole-robustness/sources/slot_spline.step",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "slot_spline",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/slot_spline-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/slot_spline-smlibpy.step",
+      "sha256": "47a17014f7ed281d8692ceb4d8ae95c70ecf9948d16f43e88ad76e3851065adf",
+      "source_path": "fixtures/hole-robustness/sources/slot_spline.step",
+      "source_sha256": "4def883714e6338c5c3ff52d3c1a3dc275886251a3d6fe59b95e3e57531261cd",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "build123d_bracket",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/build123d_bracket-occt.step",
+      "sha256": "5ecffb5ee350447c88d9753ab9f237466e18a1dc2563d99fdf411f93832c5230",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "build123d_bracket",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_bracket-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/build123d_bracket-smlibpy.step",
+      "sha256": "d3a4c4295b7ee867e6078ee1819f4fb8c30232b62813b25aa0edd9b794c2fcbb",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "build123d_screw",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/build123d_screw-occt.step",
+      "sha256": "8bc77abf5eb65fd6e72026074fb29a864780d6e52955d1150ecde03cf4408e99",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_screw.step",
+      "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "build123d_screw",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/build123d_screw-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/build123d_screw-smlibpy.step",
+      "sha256": "9f2a5e0cb06e478dd958dbb1ec0488daa7157fbeaa5a57e874c45ad89842ff4b",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_screw.step",
+      "source_sha256": "9498de2cbecee702169508984ceba3b87f72c6be83029f57f2de6da2f615bf41",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/ublox_sam_ap203-occt.step",
+      "sha256": "658bd97c9d23c5dee1dac304cd160fa23243ce461f3b19b3dc814a3c44f9eead",
+      "source_path": "fixtures/public-step-corpus/sources/ublox_sam_ap203.step",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "ublox_sam_ap203",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/ublox_sam_ap203-smlibpy.step",
+      "sha256": "d7f79a958ca900eacdf49fa5a87cdb8d7039b60be002667e41e111855904ef16",
+      "source_path": "fixtures/public-step-corpus/sources/ublox_sam_ap203.step",
+      "source_sha256": "341cd6ac9109f1bc420ef77cc1c4d8748b63e504427ccec33a03552f9166b365",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "single",
+      "writer_backend": "occt",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/single-occt.step",
+      "path": "results/cad-kernel-choice/roundtrip/single-occt.step",
+      "sha256": "a75e4dae032150bad6fed1da3aaea020e3b7cce55c468b1ecca01cb732ca8cbe",
+      "source_path": "fixtures/hole-inventory/sources/single.step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    },
+    {
+      "id": "single",
+      "writer_backend": "smlibpy",
+      "original_path": "output/kernel-comparison-2026-10-19/roundtrip/single-smlibpy.step",
+      "path": "results/cad-kernel-choice/roundtrip/single-smlibpy.step",
+      "sha256": "4daa896606ce337da6aca02a046c46abe265041fb1335a34a3c206a967149feb",
+      "source_path": "fixtures/hole-inventory/sources/single.step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "modified": "Re-exported by the named backend on 2026-10-19; not an upstream original."
+    }
+  ]
+}

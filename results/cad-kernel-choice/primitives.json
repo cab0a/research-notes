@@ -1,0 +1,968 @@
+{
+  "date": "2026-10-19",
+  "group": "primitives",
+  "observations": 18,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "baseline_commit": "a91a960dc5ac5687f6ad87557cf393e180524022",
+  "probe_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "process_limits": {
+    "address_space_bytes": 4294967296,
+    "cpu_seconds": 30,
+    "wall_seconds": 40,
+    "max_workers": 2
+  },
+  "limitations": [
+    "Linux/WSL pilot using resource limits; not a Windows-native execution test.",
+    "Pilot observations; one recorded run per task, not general accuracy or a speed benchmark.",
+    "No SMLib hole-recognition port; cylindrical supports are not hole counts.",
+    "Intake paths use native readers and do not include the production Part 21/units/external-reference admission contract.",
+    "OCCT validity and SMLib manifold/positive-volume checks differ.",
+    "smlibpy includes kernel patches and independent integration; it is not the unmodified NVIDIA kernel."
+  ],
+  "records": [
+    {
+      "key": "primitive-occt-box",
+      "id": "box",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 3000.0,
+            "area": 1699.9999999999995,
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "bounds_max": [
+              20.0000001,
+              30.0000001,
+              5.0000001
+            ],
+            "faces": 6,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [],
+            "tolerances": [
+              1e-07,
+              1e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 2.6749844169792005e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 3000.0,
+          "area": 1700.0
+        },
+        "seconds_inside_worker": 1.048500625000088
+      },
+      "exit_code": 0,
+      "process_seconds": 1.4253703099984705,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-occt-cylinder",
+      "id": "cylinder",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 62.83185307179585,
+            "area": 87.96459430051421,
+            "bounds_min": [
+              -2.0000001,
+              -2.0000001,
+              -1e-07
+            ],
+            "bounds_max": [
+              2.0000001,
+              2.0000001,
+              5.0000001
+            ],
+            "faces": 3,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [
+              {
+                "radius": 2.0,
+                "origin": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "tolerances": [
+              1e-07,
+              1e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 2.2617277734851674e-16,
+              "area": 0.0
+            }
+          }
+        ],
+        "truth": {
+          "volume": 62.83185307179586,
+          "area": 87.96459430051421
+        },
+        "seconds_inside_worker": 1.0479505870007415
+      },
+      "exit_code": 0,
+      "process_seconds": 1.421933669000282,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-occt-sphere",
+      "id": "sphere",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 33.51032163829113,
+            "area": 50.26548245743669,
+            "bounds_min": [
+              -2.0000001,
+              -2.0000001,
+              -2.0000001
+            ],
+            "bounds_max": [
+              2.0000001,
+              2.0000001,
+              2.0000001
+            ],
+            "faces": 1,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [],
+            "tolerances": [
+              1e-07,
+              1e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 2.1203697876423447e-16,
+              "area": 0.0
+            }
+          }
+        ],
+        "truth": {
+          "volume": 33.510321638291124,
+          "area": 50.26548245743669
+        },
+        "seconds_inside_worker": 0.8908489879995614
+      },
+      "exit_code": 0,
+      "process_seconds": 1.2645342340001662,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-occt-round_plate",
+      "id": "round_plate",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 2937.1681469282044,
+            "area": 1737.6991118430772,
+            "bounds_min": [
+              -1e-07,
+              -1e-07,
+              -1e-07
+            ],
+            "bounds_max": [
+              20.0000001,
+              30.0000001,
+              5.0000001
+            ],
+            "faces": 7,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [
+              {
+                "radius": 2.0,
+                "origin": [
+                  5.0,
+                  6.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "tolerances": [
+              1.0000000088817842e-07,
+              1e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 2.61695104628407e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2937.1681469282044,
+          "area": 1737.6991118430776
+        },
+        "seconds_inside_worker": 0.9205442469992704
+      },
+      "exit_code": 0,
+      "process_seconds": 1.2937289780002175,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-occt-slot_plate",
+      "id": "slot_plate",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 2817.1681469282044,
+            "area": 1749.6991118430772,
+            "bounds_min": [
+              -1.5e-07,
+              -1.5e-07,
+              -1.5e-07
+            ],
+            "bounds_max": [
+              20.00000015,
+              30.00000015,
+              5.00000015
+            ],
+            "faces": 11,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [
+              {
+                "radius": 2.0,
+                "origin": [
+                  10.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "radius": 2.0,
+                "origin": [
+                  16.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "radius": 2.0,
+                "origin": [
+                  16.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "tolerances": [
+              1.5e-07,
+              1.5e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 1.6142002435400014e-16,
+              "area": 2.599003153218999e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2817.168146928204,
+          "area": 1749.6991118430776
+        },
+        "seconds_inside_worker": 1.3750749850005377
+      },
+      "exit_code": 0,
+      "process_seconds": 1.744667513999957,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-occt-mixed_plate",
+      "id": "mixed_plate",
+      "backend": "occt",
+      "mode": "primitive",
+      "result": {
+        "backend": "occt",
+        "version": "7.9.3.1.1",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": "OCCT default integration",
+            "volume": 2754.3362938564087,
+            "area": 1787.3982236861548,
+            "bounds_min": [
+              -1.5e-07,
+              -1.5e-07,
+              -1.5e-07
+            ],
+            "bounds_max": [
+              20.00000015,
+              30.00000015,
+              5.00000015
+            ],
+            "faces": 12,
+            "solids": 1,
+            "valid": true,
+            "cylindrical_supports": [
+              {
+                "radius": 2.0,
+                "origin": [
+                  5.0,
+                  6.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "radius": 2.0,
+                "origin": [
+                  10.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "radius": 2.0,
+                "origin": [
+                  16.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "radius": 2.0,
+                "origin": [
+                  16.0,
+                  20.0,
+                  -1.0
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              }
+            ],
+            "tolerances": [
+              1.5e-07,
+              1.5e-07,
+              1e-07
+            ],
+            "relative_errors": {
+              "volume": 1.651023340544092e-16,
+              "area": 1.2720929920939436e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2754.3362938564082,
+          "area": 1787.398223686155
+        },
+        "seconds_inside_worker": 1.3685842649992992
+      },
+      "exit_code": 0,
+      "process_seconds": 1.7408682360000967,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-box",
+      "id": "box",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 3000.0000000000005,
+            "area": 1700.0000000000005,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.5158245029548803e-16,
+              "area": 2.6749844169792005e-16
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 3000.0000000000005,
+            "area": 1700.0000000000005,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.5158245029548803e-16,
+              "area": 2.6749844169792005e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 3000.0,
+          "area": 1700.0
+        },
+        "seconds_inside_worker": 0.08386206800059881
+      },
+      "exit_code": 0,
+      "process_seconds": 0.19594508200134442,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-cylinder",
+      "id": "cylinder",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 62.83185307179589,
+            "area": 87.96459430201999,
+            "valid": true,
+            "relative_errors": {
+              "volume": 4.523455546970335e-16,
+              "area": 1.711804820560631e-11
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 62.83185307179589,
+            "area": 87.96459430053775,
+            "valid": true,
+            "relative_errors": {
+              "volume": 4.523455546970335e-16,
+              "area": 2.676916371903516e-13
+            }
+          }
+        ],
+        "truth": {
+          "volume": 62.83185307179586,
+          "area": 87.96459430051421
+        },
+        "seconds_inside_worker": 0.09061926199865411
+      },
+      "exit_code": 0,
+      "process_seconds": 0.19680315400000836,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-sphere",
+      "id": "sphere",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 33.510321638291124,
+            "area": 50.26548245743669,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 0.0
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 33.510321638291124,
+            "area": 50.26548245743669,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 0.0
+            }
+          }
+        ],
+        "truth": {
+          "volume": 33.510321638291124,
+          "area": 50.26548245743669
+        },
+        "seconds_inside_worker": 0.08320183499927225
+      },
+      "exit_code": 0,
+      "process_seconds": 0.18640338700060965,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-round_plate",
+      "id": "round_plate",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 2937.1681469282053,
+            "area": 1737.6991118430778,
+            "valid": true,
+            "relative_errors": {
+              "volume": 3.096501991975197e-16,
+              "area": 1.308475523142035e-16
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2937.1681469282053,
+            "area": 1737.6991118430778,
+            "valid": true,
+            "relative_errors": {
+              "volume": 3.096501991975197e-16,
+              "area": 1.308475523142035e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2937.1681469282044,
+          "area": 1737.6991118430776
+        },
+        "seconds_inside_worker": 0.08666465399983281
+      },
+      "exit_code": 0,
+      "process_seconds": 0.19312254699980258,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-slot_plate",
+      "id": "slot_plate",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 2817.1681469282053,
+            "area": 1749.6991118430778,
+            "valid": true,
+            "relative_errors": {
+              "volume": 4.842600730620004e-16,
+              "area": 1.2995015766094995e-16
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2817.1681469282053,
+            "area": 1749.6991118430778,
+            "valid": true,
+            "relative_errors": {
+              "volume": 4.842600730620004e-16,
+              "area": 1.2995015766094995e-16
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2817.168146928204,
+          "area": 1749.6991118430776
+        },
+        "seconds_inside_worker": 0.09628189199975168
+      },
+      "exit_code": 0,
+      "process_seconds": 0.1972360599993408,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-smlibpy-mixed_plate",
+      "id": "mixed_plate",
+      "backend": "smlibpy",
+      "mode": "primitive",
+      "result": {
+        "backend": "smlibpy",
+        "version": "0.3.5",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 1e-07,
+            "volume": 2754.33629385641,
+            "area": 1787.3982236861552,
+            "valid": true,
+            "relative_errors": {
+              "volume": 6.604093362176368e-16,
+              "area": 1.2720929920939436e-16
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2754.3362938564087,
+            "area": 1787.398223686155,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.651023340544092e-16,
+              "area": 0.0
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2754.3362938564082,
+          "area": 1787.398223686155
+        },
+        "seconds_inside_worker": 0.10413871099990502
+      },
+      "exit_code": 0,
+      "process_seconds": 0.20573897900067095,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-box",
+      "id": "box",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 3000.0,
+            "area": 1700.0,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 0.0
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 3000.0,
+            "area": 1700.0,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0,
+              "area": 0.0
+            }
+          }
+        ],
+        "truth": {
+          "volume": 3000.0,
+          "area": 1700.0
+        },
+        "seconds_inside_worker": 0.04236430900164123
+      },
+      "exit_code": 0,
+      "process_seconds": 0.1185655740009679,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-cylinder",
+      "id": "cylinder",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 62.86244955977865,
+            "area": 88.04091855955049,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0004869582303712982,
+              "area": 0.0008676702216750567
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 62.83185295735149,
+            "area": 87.9632481095237,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.8214388110302513e-09,
+              "area": 1.5303782177454895e-05
+            }
+          }
+        ],
+        "truth": {
+          "volume": 62.83185307179586,
+          "area": 87.96459430051421
+        },
+        "seconds_inside_worker": 0.04927267499988375
+      },
+      "exit_code": 0,
+      "process_seconds": 0.12968896600068547,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-sphere",
+      "id": "sphere",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 33.49536143489159,
+            "area": 50.20906394997087,
+            "valid": true,
+            "relative_errors": {
+              "volume": 0.0004464356851304485,
+              "area": 0.0011224105431315561
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 33.51032146461606,
+            "area": 50.279836579383925,
+            "valid": true,
+            "relative_errors": {
+              "volume": 5.182733360846847e-09,
+              "area": 0.00028556618270579695
+            }
+          }
+        ],
+        "truth": {
+          "volume": 33.510321638291124,
+          "area": 50.26548245743669
+        },
+        "seconds_inside_worker": 0.18009499800064077
+      },
+      "exit_code": 0,
+      "process_seconds": 0.27767138899980637,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-round_plate",
+      "id": "round_plate",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 2937.1448301636183,
+            "area": 1737.7550983502308,
+            "valid": true,
+            "relative_errors": {
+              "volume": 7.938518811207951e-06,
+              "area": 3.2218757995342134e-05
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2937.1681464959274,
+            "area": 1737.6940139300957,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.4717472695228632e-10,
+              "area": 2.9337144429467394e-06
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2937.1681469282044,
+          "area": 1737.6991118430776
+        },
+        "seconds_inside_worker": 0.06382316000053834
+      },
+      "exit_code": 0,
+      "process_seconds": 0.16078538200054027,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-slot_plate",
+      "id": "slot_plate",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 2817.1450146242087,
+            "area": 1749.703248610359,
+            "valid": true,
+            "relative_errors": {
+              "volume": 8.211190382955633e-06,
+              "area": 2.3642735218597727e-06
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2817.1681468084726,
+            "area": 1749.7023707324984,
+            "valid": true,
+            "relative_errors": {
+              "volume": 4.2500601052213404e-11,
+              "area": 1.8625427644621965e-06
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2817.168146928204,
+          "area": 1749.6991118430776
+        },
+        "seconds_inside_worker": 0.07473184000082256
+      },
+      "exit_code": 0,
+      "process_seconds": 0.17962626199914666,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "key": "primitive-usd-brep-mixed_plate",
+      "id": "mixed_plate",
+      "backend": "usd-brep",
+      "mode": "primitive",
+      "result": {
+        "backend": "usd-brep",
+        "version": "1.0.0",
+        "mode": "primitive",
+        "status": "ok",
+        "measurements": [
+          {
+            "accuracy": 0.001,
+            "volume": 2754.289844787827,
+            "area": 1787.45834696059,
+            "valid": true,
+            "relative_errors": {
+              "volume": 1.6863978696029805e-05,
+              "area": 3.3637313519875626e-05
+            }
+          },
+          {
+            "accuracy": 1e-09,
+            "volume": 2754.3362933044004,
+            "area": 1787.3963846625943,
+            "valid": true,
+            "relative_errors": {
+              "volume": 2.0041409105729813e-10,
+              "area": 1.0288829519552352e-06
+            }
+          }
+        ],
+        "truth": {
+          "volume": 2754.3362938564082,
+          "area": 1787.398223686155
+        },
+        "seconds_inside_worker": 0.08366533099979279
+      },
+      "exit_code": 0,
+      "process_seconds": 0.17667125099978875,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

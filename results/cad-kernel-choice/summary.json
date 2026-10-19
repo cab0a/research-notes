@@ -1,0 +1,188 @@
+{
+  "date": "2026-10-19",
+  "probe_sha256": "3ac42bd306e4a7f1f514f030605137198c365065286afe56fdc8ab7e0324af5d",
+  "total_task_observations": 263,
+  "states": {
+    "primitives": {
+      "ok": 18
+    },
+    "intake": {
+      "ok": 192
+    },
+    "roundtrip": {
+      "ok": 36
+    },
+    "accuracy": {
+      "ok": 14,
+      "process_failed": 1
+    },
+    "metadata": {
+      "ok": 2
+    }
+  },
+  "input_groups": {
+    "robustness": 44,
+    "numerical": 12,
+    "public": 6,
+    "certified": 2
+  },
+  "intake_diagnostic_differences": [
+    {
+      "backend": "smlibpy",
+      "heal": false,
+      "inputs": 64,
+      "volume_difference_gt_1e_minus_6": 8,
+      "bounds_difference_gt_1e_minus_4_mm": 4
+    },
+    {
+      "backend": "smlibpy",
+      "heal": true,
+      "inputs": 64,
+      "volume_difference_gt_1e_minus_6": 8,
+      "bounds_difference_gt_1e_minus_4_mm": 4
+    }
+  ],
+  "primitive_maximum_relative_errors": [
+    {
+      "backend": "occt",
+      "accuracy": "OCCT default integration",
+      "maximum_volume_relative_error": 2.2617277734851674e-16,
+      "maximum_area_relative_error": 2.6749844169792005e-16
+    },
+    {
+      "backend": "usd-brep",
+      "accuracy": 0.001,
+      "maximum_volume_relative_error": 0.0004869582303712982,
+      "maximum_area_relative_error": 0.0011224105431315561
+    },
+    {
+      "backend": "usd-brep",
+      "accuracy": 1e-09,
+      "maximum_volume_relative_error": 5.182733360846847e-09,
+      "maximum_area_relative_error": 0.00028556618270579695
+    },
+    {
+      "backend": "smlibpy",
+      "accuracy": 1e-07,
+      "maximum_volume_relative_error": 6.604093362176368e-16,
+      "maximum_area_relative_error": 1.711804820560631e-11
+    },
+    {
+      "backend": "smlibpy",
+      "accuracy": 1e-09,
+      "maximum_volume_relative_error": 4.842600730620004e-16,
+      "maximum_area_relative_error": 2.676916371903516e-13
+    }
+  ],
+  "occt_integration_comparison": [
+    {
+      "key": "accuracy-circle_spline-source",
+      "volume_default": 531.4320553446477,
+      "volume_gk_spans_1e_minus_9": 531.4336293856442
+    },
+    {
+      "key": "accuracy-circle_spline-from-occt",
+      "volume_default": 531.4320553446477,
+      "volume_gk_spans_1e_minus_9": 531.4336293856442
+    },
+    {
+      "key": "accuracy-circle_spline-from-smlibpy",
+      "volume_default": 531.356126543118,
+      "volume_gk_spans_1e_minus_9": 531.4336023620657
+    },
+    {
+      "key": "accuracy-slot_spline-source",
+      "volume_default": 499.31623922314003,
+      "volume_gk_spans_1e_minus_9": 499.4336293856392
+    },
+    {
+      "key": "accuracy-slot_spline-from-occt",
+      "volume_default": 499.31623922314003,
+      "volume_gk_spans_1e_minus_9": 499.4336293856392
+    },
+    {
+      "key": "accuracy-slot_spline-from-smlibpy",
+      "volume_default": 499.35251040094425,
+      "volume_gk_spans_1e_minus_9": 499.4336270471803
+    },
+    {
+      "key": "accuracy-build123d_bracket-source",
+      "volume_default": 7061.1553017856795,
+      "volume_gk_spans_1e_minus_9": 7061.155301785568
+    },
+    {
+      "key": "accuracy-build123d_bracket-from-occt",
+      "volume_default": 7061.155301785823,
+      "volume_gk_spans_1e_minus_9": 7061.155301785715
+    },
+    {
+      "key": "accuracy-build123d_bracket-from-smlibpy",
+      "volume_default": 7065.622602666728,
+      "volume_gk_spans_1e_minus_9": 7061.155301785543
+    },
+    {
+      "key": "accuracy-build123d_screw-source",
+      "volume_default": 332.27626441996176,
+      "volume_gk_spans_1e_minus_9": 336.7362861242907
+    },
+    {
+      "key": "accuracy-build123d_screw-from-occt",
+      "volume_default": 332.2762697314604,
+      "volume_gk_spans_1e_minus_9": 336.73628607204034
+    },
+    {
+      "key": "accuracy-ublox_sam_ap203-source",
+      "volume_default": 1309.8835809072764,
+      "volume_gk_spans_1e_minus_9": 1309.8838205589548
+    },
+    {
+      "key": "accuracy-ublox_sam_ap203-from-occt",
+      "volume_default": 1309.8835809072682,
+      "volume_gk_spans_1e_minus_9": 1309.8838205589586
+    },
+    {
+      "key": "accuracy-ublox_sam_ap203-from-smlibpy",
+      "volume_default": 1310.0676919693753,
+      "volume_gk_spans_1e_minus_9": 1309.883820553575
+    }
+  ],
+  "unicode_metadata": [
+    {
+      "backend": "occt",
+      "expected_name": "穴板_日本語",
+      "input_names": [
+        "穴板_日本語"
+      ],
+      "output_names": [
+        "穴板_日本語"
+      ],
+      "name_preserved": true,
+      "note": "Color channels are recorded but not compared: color-space conventions differ."
+    },
+    {
+      "backend": "smlibpy",
+      "expected_name": "穴板_日本語",
+      "input_names": [
+        "ç©´æ¿_æ¥æ¬èª"
+      ],
+      "output_names": [
+        "??????_?????????"
+      ],
+      "name_preserved": false,
+      "note": "Color channels are recorded but not compared: color-space conventions differ."
+    }
+  ],
+  "failed_observations": [
+    {
+      "key": "accuracy-build123d_screw-from-smlibpy",
+      "exit_code": -24
+    }
+  ],
+  "claim_boundaries": [
+    "Read/import observations are not hole recognition or production admission tests.",
+    "OCCT default mass properties are a comparison route, not ground truth.",
+    "Difference thresholds only select diagnostics, not correctness acceptance.",
+    "No universal winner or speed comparison is established.",
+    "SolidCraft, SolidCore and ClassCAD were source-reviewed, not executed."
+  ]
+}

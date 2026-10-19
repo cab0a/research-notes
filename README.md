@@ -4,7 +4,7 @@
 
 v1.14.0では、穴の判定を保留した理由と「次に確認すること」を日本語で表示します。読込条件、精度、開口や内壁の条件を整理し、元の技術メッセージと参照可能な面番号も残します。画面・Python API・CLIで扱い、確認用CSVへ保存できます。69入力を各2回評価し、既存の取得値・判定状態を維持しました。公開ブラケットは丸穴5か所・長孔6か所を取得しますが、全体の穴数は未確定です。[説明機能と検証結果](notes/hole-review-explanations.md)と[操作手順](docs/cad-hole-inventory.md)をご覧ください。
 
-今後の基盤選定に向けて、[NVIDIA SMLib / USD BRepの調査メモ](notes/smlib-usd-brep-investigation.md)を追加しました。公式公開版と第三者のSTEP対応、既知問題、現行OCCT基盤との比較評価案を整理しています。採用・移行や実測比較はこれからです。
+今後の基盤選定に向けて、[OCCT・SMLib・SolidCraft・ClassCADの比較調査](notes/cad-platform-selection.md)を追加しました。OCCT/SMLib系の隔離実測では固定STEP 64件の読込と計測・再出力を調べ、OCCT自身の積分条件による差も記録しました。汎用CADの自作を広げる前に、計測条件・認識の比較・受領データの確認業務を優先する提案です。SolidCraft/ClassCADは資料調査で、基盤の移行は未実施です。[初回のSMLib資料調査](notes/smlib-usd-brep-investigation.md)も残しています。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
