@@ -1,8 +1,10 @@
 # STEP Mastery, Python Parser, and 3D Tool Roadmap
 
-最新のv1.15以降の計画は[ネイティブB-Rep認識の再調査と計画](../notes/brep-native-recognition-strategy.md)を参照。以下はSTEP学習・基盤実装を中心にした従来の道筋として保持する。現在は各基盤のB-Rep・履歴・既存認識APIを直接利用し、STEPを必須の内部形式にはしない。
+**最新の研究ゴール・実装計画：** [中小企業向けCAD周辺業務の自動化](../notes/sme-cad-automation-roadmap.md)。以下の学習・機能拡張の道筋と、後続の100項目は旧候補として保持する。現在は一業務の導入負担・確認工数・未見データでの成立を評価する計画を優先する。
 
-その先は[100項目のロードマップ](../notes/brep-recognition-roadmap-100.md)に整理した。最初の一区切りはv1.34相当。後続の形状拡張・検索・編集・業務接続は、効果を見て選ぶ研究候補である。
+既存機能の調査は[ネイティブB-Rep認識の再調査](../notes/brep-native-recognition-strategy.md)を参照。以下はSTEP学習・基盤実装を中心にした従来の道筋として保持する。各基盤のB-Rep・履歴・既存認識APIを直接利用し、STEPを必須の内部形式にはしない。
+
+その先の旧候補は[100項目のロードマップ](../notes/brep-recognition-roadmap-100.md)に記録した。形状拡張・検索・編集・業務接続は、効果を見て選ぶための技術候補である。
 
 ## 日本語概要
 
