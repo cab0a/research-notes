@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-19",
+  "result": "passed",
+  "cli_invocations": 8,
+  "completed_invocations": 8,
+  "authored_examples": 3,
+  "fixed_source_hashes_verified": 271,
+  "live_source_hashes_verified": 3,
+  "checks": [
+    "round feature diameter/position/type after native reopening",
+    "two cylindrical wall faces are not two holes",
+    "profile and selected B-Rep slot width=6, center distance=14, overall length=20",
+    "comparison max deviation=2 and body-volume delta=64",
+    "one New-only region; sampled region volume differs from exact body-volume delta",
+    "two native documents contain no B-Rep cache",
+    "22 prior tasks use directly authored smlibpy Parts; no new rerun claimed",
+    "all JSON numbers finite",
+    "probe script hash and Python compilation",
+    "git diff --check"
+  ],
+  "local_markdown_links_checked": 773,
+  "prior_results_and_production_code_changed": false,
+  "new_evidence_sha256": "61bd59b2d8ad6446c6ad888894a4bda2831437f0171f987807a1c3f3a18d35be",
+  "source_manifest_sha256": "4d3af4a69cb8f6678a7b95ac8330b317dbb66d70fadb0fb338165c5344c6eb83",
+  "limits": [
+    "Not a broad accuracy/performance or security benchmark.",
+    "No automatic whole-part slot inventory or through-hole certification demonstrated.",
+    "ClassCAD engine and SCBREP03 accuracy unexecuted; see study for other limits."
+  ]
+}

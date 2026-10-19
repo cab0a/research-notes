@@ -1,0 +1,1708 @@
+{
+  "schema": "native-brep-command-observations/1",
+  "investigation_date": "2026-10-19",
+  "provider": "SolidCraft",
+  "version_output": "solidcraft-cli 0.15.0\n",
+  "source_revision": "fa691707c224cae580c42201ed3a22d5e4b8c716",
+  "binary_sha256": "acf0ec79058998b2b34e3b64cd0cff5e40e8353f314800e95b180edfb5245d02",
+  "probe_sha256": "2fa1f56a56d29242a83f0f154bc05fbcaf1d75672dca11274ba83e0283d8d15a",
+  "command_count": 392,
+  "scope": "Native authored/reopened documents; no STEP import/export; no exhaustive hole or slot inventory.",
+  "native_files": [
+    {
+      "name": "round_native.solidcraft",
+      "sha256": "7d7679fb5759ae1f2fa5c7504d27078f2e0fdc28501c784ecfacf7ddc47cd2e5",
+      "bytes": 614,
+      "members": [
+        "document.json",
+        "container.json"
+      ]
+    },
+    {
+      "name": "slot_native.solidcraft",
+      "sha256": "a435277ebfc9da5979d70fa6183ebc901ebb86c175e56f6b619b8ceaeae3ccaa",
+      "bytes": 1011,
+      "members": [
+        "document.json",
+        "container.json"
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "label": "version",
+      "arguments": [
+        "--version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": "solidcraft-cli 0.15.0\n",
+      "status": "completed"
+    },
+    {
+      "label": "commands",
+      "arguments": [
+        "commands"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "count": 392,
+        "canonical_json_sha256": "3ecb86eff67c3e1b47a62c4e83214f5daf91c78950c18ae10a51cb6a37af545c",
+        "relevant_commands": [
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "min_radius",
+            "id": "inspect.minimum_radius",
+            "label": "Minimum Radius Analysis",
+            "panel": "INSPECT",
+            "params": "curves?: [sketch curve ids] (sketch?) | edges?: [[x,y,z]…] | faces?: [[x,y,z]…] (default: every face of every body); the smallest radius of curvature of each and where it is",
+            "shortcut": null,
+            "tab": "SKETCH"
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "draft_analysis",
+            "id": "inspect.draft",
+            "label": "Draft Analysis",
+            "panel": "INSPECT",
+            "params": "pull?: [x,y,z] direction (default Z); angle?: degrees (default 1); clear?: true turns the analysis off",
+            "shortcut": null,
+            "tab": "SKETCH"
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "continuity",
+            "id": "inspect.continuity",
+            "label": "Continuity Analysis",
+            "panel": "INSPECT",
+            "params": "body?: name (default: the visible bodies); edges?: [x,y,z] points or {\"index\": i} (default: every edge of the body; a pick must match one body); samples?: 3…257 stations along each edge, ends included (default 33); gap_tolerance_mm? (default 0.001), angle_tolerance_deg? (default 1), curvature_tolerance_per_mm? (default 0.01); add?: true keeps the seams already shaded and adds these (measuring an edge again replaces it); clear?: true turns the analysis off. → each edge's worst gap (G0), normal angle (G1) and curvature jump (G2) as {value, at: [x,y,z], edge_fraction}, its verdict (smooth, curvature_jump, sharp or gap) and a summary; the seams are shaded in the viewport",
+            "shortcut": null,
+            "tab": "SURFACE"
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "hole",
+            "id": "solid.hole",
+            "label": "Hole",
+            "panel": "CREATE",
+            "params": "position: [x,y,z] on a face (numbers, or length expressions the hole follows) | sketch + points: [sketch point ids] (one hole each, perpendicular to the sketch, into the material on whichever side of the sketch plane it is) | sketch alone (every sketch point: standalone points and circle centres); flip?: bool (sketch points: drill to the other side); direction?: [x,y,z] (default: into the face, against its outward normal; one that leaves the face is mirrored into it; ignored with sketch points); diameter | thread (a tapped hole: the tap drill, major − pitch) | clearance: \"M6\" with fit?: close|normal|loose (ISO 273); depth? (default through all) | to?: [x,y,z] (To Object: drill to that face or point); type?: simple|drilled|counterbore|countersink; tip_angle?; cb_diameter?, cb_depth?; cs_diameter?, cs_angle?; thread?: \"M6\" (cosmetic)",
+            "shortcut": "H",
+            "tab": "SOLID"
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "interference",
+            "id": "inspect.clearance",
+            "label": "Clearance",
+            "panel": "",
+            "params": "bodies?: [names] (default: every solid body, in world placement, but those in `against`); against?: [names] (only pairs with one body in `bodies` and the other here); min_volume?: mm³ (default 0.01: smaller overlaps count as contact); clearance?: mm (default 0: report pairs closer than this); nearest?: n (each body of `bodies` gets its n nearest others); skip_within?: \"occurrence\" (pairs of bodies of one occurrence) | \"component\" (pairs of bodies inside one placed component, its subcomponents included) | null; tolerance?: mm (default 1e-6: a gap below it is contact, 0) → overlaps: [{a, b, volume_mm3, area_mm2, bbox, center}]; near: [{a, b, distance_mm, from, to, overlap_mm3?: a contact's shared volume below min_volume, exact?: false when measured on the meshes}], nearest by body (the same for pairs that overlap: 0); nearest: {body: [{body, distance_mm}]}; unchecked: [{a, b, reason}] (pairs whose overlap could not be worked out); pairs_checked; pairs_pruned (ruled out by their boxes); ms. Distances are measured on the exact faces and edges, the meshes only rule pairs out",
+            "shortcut": null,
+            "tab": ""
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "inspect",
+            "id": "timeline.inspect",
+            "label": "Inspect Feature",
+            "panel": "",
+            "params": "feature: id|name → type, definition (the fields timeline.edit's set changes, with their current values), inputs: [{label, param, expression, unit}] (named inputs parameters.change can also set), error, warning",
+            "shortcut": null,
+            "tab": ""
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "measure",
+            "id": "inspect.measure",
+            "label": "Measure",
+            "panel": "INSPECT",
+            "params": "bodies?: [names] (default all); or items: [1-2 selections] → length/area/volume; diameter, radius, circumference or arc_length/angle_deg of circles, arcs and cylinders; slot sizes; min (distance_mm, from, to), max, center_distance (centre to centre, or from an axis) and angle",
+            "shortcut": "I",
+            "tab": "SOLID"
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "inspect",
+            "id": "document.inspect",
+            "label": "Inspect Design",
+            "panel": "",
+            "params": "measure?: bool (include body measurements)",
+            "shortcut": null,
+            "tab": ""
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "inspect",
+            "id": "model.faces",
+            "label": "List Faces",
+            "panel": "",
+            "params": "body: name → per face: index, name (what face.delete, sheet.convert `face`, solid.shell … take in place of a point), exact, area, centroid (not always on the face), plane_normal, point (a point on the face that picks it), cylinder? ({origin, axis, radius} of a cylindrical face)",
+            "shortcut": null,
+            "tab": ""
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "inspect",
+            "id": "model.threads",
+            "label": "List Threads",
+            "panel": "",
+            "params": "",
+            "shortcut": null,
+            "tab": ""
+          },
+          {
+            "disabled_reason": null,
+            "enabled": true,
+            "icon": "compare",
+            "id": "inspect.compare",
+            "label": "Compare Bodies",
+            "panel": "",
+            "params": "a, b: body names (default: the two selected bodies, or the design's only two), in world placement; tolerance?: mm (0.001 to 10, default 0.01): surfaces closer than this agree; spacing?: mm (default 0.5): the largest piece of a face sampled as one point, coarser for a body that would need more than max_points? (default 8 million, up to 50 million) samples; max_regions? (default 50); color?: true | {only_in_a?, only_in_b?: \"#rrggbb\"} (colours the faces that hold a region, red where only a has material and green where only b has: the faces mostly beyond the tolerance, else the one with the largest share; an undo step) → a, b: volume_mm3, area_mm2, center_of_mass, bbox; difference: b − a; deviation: a_to_b, b_to_a (max_mm, mean_mm, at, area_beyond_mm2); regions, largest first: side (only_in_a | only_in_b), volume_mm3 (integrated along lines through the region: resolution), area_mm2, max_deviation_mm, at, center, bbox, faces_a, faces_b (face indices, as model.faces lists them); identical; verdict; warnings (a body whose surface does not enclose what it measures, lines left out). Works from the two surfaces, without a boolean of the bodies, so near-identical bodies compare too",
+            "shortcut": null,
+            "tab": ""
+          }
+        ]
+      },
+      "status": "completed"
+    },
+    {
+      "label": "round_native",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/round_native.json",
+        "--results",
+        "--save",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/round_native.solidcraft"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "bodies": [
+            "Plate"
+          ],
+          "changed_bodies": [],
+          "created_bodies": [
+            "Plate"
+          ],
+          "feature": 1,
+          "ms": 13.755063,
+          "name": "Stock",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "bodies": [
+            "Plate"
+          ],
+          "changed_bodies": [
+            "Plate"
+          ],
+          "created_bodies": [],
+          "feature": 2,
+          "ms": 66.84502400000001,
+          "name": "Hole_A",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "active_sketch": null,
+          "bodies": [
+            {
+              "feature": 1,
+              "name": "Plate",
+              "visible": true
+            }
+          ],
+          "dirty": true,
+          "hidden_origin": [],
+          "marker": 2,
+          "metadata": {},
+          "name": "Untitled",
+          "params": [],
+          "path": null,
+          "redo": 0,
+          "revision": 5,
+          "selection": [],
+          "sketches": [],
+          "timeline": [
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 1,
+              "ms": 13.755063,
+              "name": "Stock",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "BoxFeature",
+              "warning": null
+            },
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 2,
+              "ms": 66.84502400000001,
+              "name": "Hole_A",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "HoleFeature",
+              "warning": null
+            }
+          ],
+          "undo": 2,
+          "units": "mm"
+        },
+        {
+          "body": "Plate",
+          "faces": [
+            {
+              "area": 1172.5298823529413,
+              "centroid": [
+                20.234280746789445,
+                15.117140373394717,
+                0.0
+              ],
+              "exact": true,
+              "index": 0,
+              "name": "F1:-z",
+              "plane_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "point": [
+                31.186899718867473,
+                13.064209031234501,
+                0.0
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                0.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 1,
+              "name": "F1:-y",
+              "plane_normal": [
+                0.0,
+                -1.0,
+                -0.0
+              ],
+              "point": [
+                37.65564437074637,
+                0.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                40.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 2,
+              "name": "F1:+x",
+              "plane_normal": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                40.0,
+                27.70690632574555,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                30.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 3,
+              "name": "F1:+y",
+              "plane_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "point": [
+                2.344355629253626,
+                30.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                0.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 4,
+              "name": "F1:-x",
+              "plane_normal": [
+                -1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                0.0,
+                2.2930936742544508,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 46.78637264234861,
+              "centroid": [
+                8.920818264252265,
+                11.534249885014006,
+                2.5
+              ],
+              "cylinder": {
+                "axis": [
+                  0.0,
+                  -0.0,
+                  -1.0
+                ],
+                "origin": [
+                  9.999999999999998,
+                  10.000000000000002,
+                  0.0
+                ],
+                "radius": 3.0000000000000013
+              },
+              "exact": true,
+              "index": 5,
+              "name": "F2:bore:side:0",
+              "plane_normal": null,
+              "point": [
+                7.942903559140844,
+                12.183656161808589,
+                2.8178950416845754
+              ]
+            },
+            {
+              "area": 46.78637264234864,
+              "centroid": [
+                11.079181735747733,
+                8.465750114985994,
+                2.5000000000000004
+              ],
+              "cylinder": {
+                "axis": [
+                  -0.0,
+                  0.0,
+                  -1.0
+                ],
+                "origin": [
+                  10.000000000000004,
+                  9.999999999999991,
+                  0.0
+                ],
+                "radius": 2.9999999999999987
+              },
+              "exact": true,
+              "index": 6,
+              "name": "F2:bore:side:1",
+              "plane_normal": null,
+              "point": [
+                11.359826702757964,
+                7.3258886824841305,
+                2.1821049583154264
+              ]
+            },
+            {
+              "area": 1172.5298823529413,
+              "centroid": [
+                20.234280746789445,
+                15.117140373394717,
+                5.0
+              ],
+              "exact": true,
+              "index": 7,
+              "name": "F1:+z",
+              "plane_normal": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "point": [
+                31.18689971886748,
+                13.064209031234501,
+                5.0
+              ]
+            }
+          ]
+        },
+        {
+          "boolean_diagnostics": {
+            "events": [],
+            "truncated": false
+          },
+          "definition": {
+            "diameter": "6",
+            "direction": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "hole": {
+              "type": "simple"
+            },
+            "position": [
+              10.0,
+              10.0,
+              5.0
+            ]
+          },
+          "error": null,
+          "id": 2,
+          "inputs": [
+            {
+              "expression": "6",
+              "label": "Diameter",
+              "param": "d4",
+              "unit": "mm"
+            }
+          ],
+          "name": "Hole_A",
+          "omitted": [],
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "HoleFeature",
+          "warning": null
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "label": "round_reopened",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/round_reopened.json",
+        "--results",
+        "--in",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/round_native.solidcraft"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "active_sketch": null,
+          "bodies": [
+            {
+              "feature": 1,
+              "name": "Plate",
+              "visible": true
+            }
+          ],
+          "dirty": false,
+          "hidden_origin": [],
+          "marker": 2,
+          "metadata": {},
+          "name": "round_native",
+          "params": [],
+          "path": "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/round_native.solidcraft",
+          "redo": 0,
+          "revision": 1,
+          "selection": [],
+          "sketches": [],
+          "timeline": [
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 1,
+              "ms": 13.64022,
+              "name": "Stock",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "BoxFeature",
+              "warning": null
+            },
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 2,
+              "ms": 71.169165,
+              "name": "Hole_A",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "HoleFeature",
+              "warning": null
+            }
+          ],
+          "undo": 0,
+          "units": "mm"
+        },
+        {
+          "body": "Plate",
+          "faces": [
+            {
+              "area": 1172.5298823529413,
+              "centroid": [
+                20.234280746789445,
+                15.117140373394717,
+                0.0
+              ],
+              "exact": true,
+              "index": 0,
+              "name": "F1:-z",
+              "plane_normal": [
+                0.0,
+                0.0,
+                -1.0
+              ],
+              "point": [
+                31.186899718867473,
+                13.064209031234501,
+                0.0
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                0.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 1,
+              "name": "F1:-y",
+              "plane_normal": [
+                0.0,
+                -1.0,
+                -0.0
+              ],
+              "point": [
+                37.65564437074637,
+                0.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                40.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 2,
+              "name": "F1:+x",
+              "plane_normal": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                40.0,
+                27.70690632574555,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                30.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 3,
+              "name": "F1:+y",
+              "plane_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "point": [
+                2.344355629253626,
+                30.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                0.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 4,
+              "name": "F1:-x",
+              "plane_normal": [
+                -1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                0.0,
+                2.2930936742544508,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 46.78637264234861,
+              "centroid": [
+                8.920818264252265,
+                11.534249885014006,
+                2.5
+              ],
+              "cylinder": {
+                "axis": [
+                  0.0,
+                  -0.0,
+                  -1.0
+                ],
+                "origin": [
+                  9.999999999999998,
+                  10.000000000000002,
+                  0.0
+                ],
+                "radius": 3.0000000000000013
+              },
+              "exact": true,
+              "index": 5,
+              "name": "F2:bore:side:0",
+              "plane_normal": null,
+              "point": [
+                7.942903559140844,
+                12.183656161808589,
+                2.8178950416845754
+              ]
+            },
+            {
+              "area": 46.78637264234864,
+              "centroid": [
+                11.079181735747733,
+                8.465750114985994,
+                2.5000000000000004
+              ],
+              "cylinder": {
+                "axis": [
+                  -0.0,
+                  0.0,
+                  -1.0
+                ],
+                "origin": [
+                  10.000000000000004,
+                  9.999999999999991,
+                  0.0
+                ],
+                "radius": 2.9999999999999987
+              },
+              "exact": true,
+              "index": 6,
+              "name": "F2:bore:side:1",
+              "plane_normal": null,
+              "point": [
+                11.359826702757964,
+                7.3258886824841305,
+                2.1821049583154264
+              ]
+            },
+            {
+              "area": 1172.5298823529413,
+              "centroid": [
+                20.234280746789445,
+                15.117140373394717,
+                5.0
+              ],
+              "exact": true,
+              "index": 7,
+              "name": "F1:+z",
+              "plane_normal": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "point": [
+                31.18689971886748,
+                13.064209031234501,
+                5.0
+              ]
+            }
+          ]
+        },
+        {
+          "boolean_diagnostics": {
+            "events": [],
+            "truncated": false
+          },
+          "definition": {
+            "diameter": "6",
+            "direction": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "hole": {
+              "type": "simple"
+            },
+            "position": [
+              10.0,
+              10.0,
+              5.0
+            ]
+          },
+          "error": null,
+          "id": 2,
+          "inputs": [
+            {
+              "expression": "6",
+              "label": "Diameter",
+              "param": "d4",
+              "unit": "mm"
+            }
+          ],
+          "name": "Hole_A",
+          "omitted": [],
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "HoleFeature",
+          "warning": null
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "label": "slot_seed",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/slot_seed.json",
+        "--results"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "bodies": [
+            "Plate"
+          ],
+          "changed_bodies": [],
+          "created_bodies": [
+            "Plate"
+          ],
+          "feature": 1,
+          "ms": 11.927321,
+          "name": "Stock",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "attachment": "fixed",
+          "created": {
+            "constraints": [],
+            "curves": [],
+            "dimensions": [],
+            "points": []
+          },
+          "name": "SlotSketch",
+          "projected": null,
+          "sketch": 2
+        },
+        {
+          "constraints": [
+            "k1",
+            "k2",
+            "k3",
+            "k4",
+            "k5"
+          ],
+          "created": {
+            "constraints": [
+              "k1",
+              "k2",
+              "k3",
+              "k4",
+              "k5"
+            ],
+            "curves": [
+              "l1",
+              "a1",
+              "l2",
+              "a2"
+            ],
+            "dimensions": [],
+            "points": [
+              "p1",
+              "p2",
+              "p3",
+              "p4",
+              "a1.center",
+              "a2.center"
+            ]
+          },
+          "curves": [
+            "l1",
+            "a1",
+            "l2",
+            "a2"
+          ],
+          "sketch": {
+            "dof": 5,
+            "solved": true
+          }
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "label": "slot_native",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/slot_native.json",
+        "--results",
+        "--save",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/slot_native.solidcraft"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "bodies": [
+            "Plate"
+          ],
+          "changed_bodies": [],
+          "created_bodies": [
+            "Plate"
+          ],
+          "feature": 1,
+          "ms": 12.533971,
+          "name": "Stock",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "attachment": "fixed",
+          "created": {
+            "constraints": [],
+            "curves": [],
+            "dimensions": [],
+            "points": []
+          },
+          "name": "SlotSketch",
+          "projected": null,
+          "sketch": 2
+        },
+        {
+          "constraints": [
+            "k1",
+            "k2",
+            "k3",
+            "k4",
+            "k5"
+          ],
+          "created": {
+            "constraints": [
+              "k1",
+              "k2",
+              "k3",
+              "k4",
+              "k5"
+            ],
+            "curves": [
+              "l1",
+              "a1",
+              "l2",
+              "a2"
+            ],
+            "dimensions": [],
+            "points": [
+              "p1",
+              "p2",
+              "p3",
+              "p4",
+              "a1.center",
+              "a2.center"
+            ]
+          },
+          "curves": [
+            "l1",
+            "a1",
+            "l2",
+            "a2"
+          ],
+          "sketch": {
+            "dof": 5,
+            "solved": true
+          }
+        },
+        {
+          "center_from": [
+            24.0,
+            15.0,
+            5.0
+          ],
+          "center_to": [
+            10.0,
+            15.0,
+            5.0
+          ],
+          "items": [
+            {
+              "area_mm2": 112.27433388230814,
+              "slot": {
+                "center_distance": 14.0,
+                "centers": [
+                  [
+                    24.0,
+                    15.0,
+                    5.0
+                  ],
+                  [
+                    10.0,
+                    15.0,
+                    5.0
+                  ]
+                ],
+                "overall_length": 20.0,
+                "width": 6.0
+              },
+              "type": "profile"
+            }
+          ],
+          "slot": {
+            "center_distance": 14.0,
+            "centers": [
+              [
+                24.0,
+                15.0,
+                5.0
+              ],
+              [
+                10.0,
+                15.0,
+                5.0
+              ]
+            ],
+            "overall_length": 20.0,
+            "width": 6.0
+          }
+        },
+        {
+          "profiles": 1,
+          "sketch": 2
+        },
+        {
+          "bodies": [
+            "Plate"
+          ],
+          "changed_bodies": [
+            "Plate"
+          ],
+          "created_bodies": [],
+          "feature": 3,
+          "ms": 83.68288799999999,
+          "name": "SlotCut",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "active_sketch": null,
+          "bodies": [
+            {
+              "feature": 1,
+              "name": "Plate",
+              "visible": true
+            }
+          ],
+          "dirty": true,
+          "hidden_origin": [],
+          "marker": 3,
+          "metadata": {},
+          "name": "Untitled",
+          "params": [],
+          "path": null,
+          "redo": 0,
+          "revision": 8,
+          "selection": [],
+          "sketches": [
+            {
+              "curves": 4,
+              "dof": 5,
+              "id": 2,
+              "name": "SlotSketch",
+              "profiles": 1,
+              "status": "solved",
+              "visible": false
+            }
+          ],
+          "timeline": [
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 1,
+              "ms": 12.533971,
+              "name": "Stock",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "BoxFeature",
+              "warning": null
+            },
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 2,
+              "ms": 0.208309,
+              "name": "SlotSketch",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "Sketch",
+              "warning": null
+            },
+            {
+              "boolean_diagnostics": {
+                "events": [],
+                "truncated": false
+              },
+              "error": null,
+              "id": 3,
+              "ms": 83.68288799999999,
+              "name": "SlotCut",
+              "rolled_back": false,
+              "suppressed": false,
+              "type": "ExtrudeFeature",
+              "warning": null
+            }
+          ],
+          "undo": 4,
+          "units": "mm"
+        },
+        {
+          "body": "Plate",
+          "faces": [
+            {
+              "area": 1088.5298823529408,
+              "centroid": [
+                20.30721283665482,
+                15.000000000000005,
+                0.0
+              ],
+              "exact": true,
+              "index": 0,
+              "name": "F1:-z",
+              "plane_normal": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "point": [
+                34.4045001062163,
+                15.000000000000002,
+                0.0
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                0.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 1,
+              "name": "F1:-y",
+              "plane_normal": [
+                0.0,
+                -1.0,
+                -0.0
+              ],
+              "point": [
+                37.65564437074637,
+                0.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                40.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 2,
+              "name": "F1:+x",
+              "plane_normal": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                40.0,
+                27.70690632574555,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 200.0,
+              "centroid": [
+                20.000000000000004,
+                30.0,
+                2.5000000000000004
+              ],
+              "exact": true,
+              "index": 3,
+              "name": "F1:+y",
+              "plane_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "point": [
+                2.344355629253626,
+                30.0,
+                2.344355629253626
+              ]
+            },
+            {
+              "area": 150.0,
+              "centroid": [
+                0.0,
+                15.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 4,
+              "name": "F1:-x",
+              "plane_normal": [
+                -1.0,
+                0.0,
+                0.0
+              ],
+              "point": [
+                0.0,
+                2.2930936742544508,
+                2.2930936742544508
+              ]
+            },
+            {
+              "area": 70.0,
+              "centroid": [
+                17.0,
+                12.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 5,
+              "name": "F3:side:l1",
+              "plane_normal": [
+                0.0,
+                1.0,
+                0.0
+              ],
+              "point": [
+                12.066965626340746,
+                12.0,
+                2.066965626340747
+              ]
+            },
+            {
+              "area": 46.78637264234864,
+              "centroid": [
+                8.124218581913931,
+                15.0,
+                2.5000000000000004
+              ],
+              "cylinder": {
+                "axis": [
+                  0.0,
+                  -0.0,
+                  -1.0
+                ],
+                "origin": [
+                  10.0,
+                  15.0,
+                  0.0
+                ],
+                "radius": 2.9999999999999996
+              },
+              "exact": true,
+              "index": 6,
+              "name": "F3:side:a2",
+              "plane_normal": null,
+              "point": [
+                7.030434852854359,
+                14.573757302868557,
+                2.8178950416845745
+              ]
+            },
+            {
+              "area": 70.0,
+              "centroid": [
+                17.0,
+                18.0,
+                2.5
+              ],
+              "exact": true,
+              "index": 7,
+              "name": "F3:side:l2",
+              "plane_normal": [
+                0.0,
+                -1.0,
+                -0.0
+              ],
+              "point": [
+                21.933034373659254,
+                18.0,
+                2.066965626340747
+              ]
+            },
+            {
+              "area": 46.78637264234861,
+              "centroid": [
+                25.875781418086074,
+                15.000000000000002,
+                2.500000000000001
+              ],
+              "cylinder": {
+                "axis": [
+                  -0.0,
+                  -0.0,
+                  -1.0
+                ],
+                "origin": [
+                  24.0,
+                  15.0,
+                  0.0
+                ],
+                "radius": 3.0
+              },
+              "exact": true,
+              "index": 8,
+              "name": "F3:side:a1",
+              "plane_normal": null,
+              "point": [
+                26.96956514714564,
+                15.426242697131437,
+                2.817895041684575
+              ]
+            },
+            {
+              "area": 1088.5298823529408,
+              "centroid": [
+                20.30721283665482,
+                15.000000000000005,
+                5.000000000000001
+              ],
+              "exact": true,
+              "index": 9,
+              "name": "F1:+z",
+              "plane_normal": [
+                0.0,
+                0.0,
+                1.0
+              ],
+              "point": [
+                34.4045001062163,
+                15.000000000000002,
+                5.0
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "label": "slot_face_reopened",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/slot_face_reopened.json",
+        "--results",
+        "--in",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/slot_native.solidcraft"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "angle_deg": 180.0,
+          "arc_length": 9.424777960769378,
+          "center": [
+            10.0,
+            15.0,
+            2.500000000000001
+          ],
+          "center_from": [
+            10.0,
+            15.0,
+            2.500000000000001
+          ],
+          "center_to": [
+            24.0,
+            15.0,
+            2.500000000000001
+          ],
+          "diameter": 5.999999999999999,
+          "items": [
+            {
+              "angle_deg": 180.0,
+              "arc_length": 9.424777960769378,
+              "area_mm2": 47.03898483861395,
+              "axis": [
+                0.0,
+                -0.0,
+                -1.0
+              ],
+              "center": [
+                10.0,
+                15.0,
+                2.500000000000001
+              ],
+              "diameter": 5.999999999999999,
+              "planar": false,
+              "radius": 2.9999999999999996,
+              "round": "cylinder",
+              "slot": {
+                "center_distance": 14.0,
+                "centers": [
+                  [
+                    10.0,
+                    15.0,
+                    2.500000000000001
+                  ],
+                  [
+                    24.0,
+                    15.0,
+                    2.500000000000001
+                  ]
+                ],
+                "overall_length": 20.0,
+                "width": 5.999999999999999
+              },
+              "type": "face"
+            }
+          ],
+          "radius": 2.9999999999999996,
+          "slot": {
+            "center_distance": 14.0,
+            "centers": [
+              [
+                10.0,
+                15.0,
+                2.500000000000001
+              ],
+              [
+                24.0,
+                15.0,
+                2.500000000000001
+              ]
+            ],
+            "overall_length": 20.0,
+            "width": 5.999999999999999
+          }
+        },
+        {
+          "boolean_diagnostics": {
+            "events": [],
+            "truncated": false
+          },
+          "definition": {
+            "extent": {
+              "convention": "total_distance",
+              "direction": "negative",
+              "distance": "5"
+            },
+            "operation": "cut",
+            "profiles": {
+              "type": "all"
+            },
+            "sketch": 2,
+            "targets": [
+              "Plate"
+            ]
+          },
+          "error": null,
+          "id": 3,
+          "inputs": [
+            {
+              "expression": "5",
+              "label": "Distance",
+              "param": "d5",
+              "unit": "mm"
+            }
+          ],
+          "name": "SlotCut",
+          "omitted": [],
+          "rolled_back": false,
+          "suppressed": false,
+          "type": "ExtrudeFeature",
+          "warning": null
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "label": "compare_native",
+      "arguments": [
+        "run",
+        "/home/nakanishi/inefficiencylab/research-notes/output/brep-native-capabilities-2026-10-19/final-probe/compare_native.json",
+        "--results"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output": [
+        {
+          "bodies": [
+            "Old"
+          ],
+          "changed_bodies": [],
+          "created_bodies": [
+            "Old"
+          ],
+          "feature": 1,
+          "ms": 12.393588000000001,
+          "name": "Box1",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "bodies": [
+            "Old",
+            "New"
+          ],
+          "changed_bodies": [],
+          "created_bodies": [
+            "New"
+          ],
+          "feature": 2,
+          "ms": 9.713263,
+          "name": "Box2",
+          "removed_bodies": [],
+          "warning": null
+        },
+        {
+          "a": {
+            "area_mm2": 304.0,
+            "bbox": {
+              "max": [
+                10.0,
+                8.0,
+                4.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "center_of_mass": [
+              5.0,
+              4.0,
+              2.0
+            ],
+            "edges": 12,
+            "face_types": {
+              "plane": 6
+            },
+            "faces": 6,
+            "kernel": {
+              "edges": 12,
+              "faces": 6,
+              "shells": 1,
+              "vertices": 8
+            },
+            "name": "Old",
+            "vertices": 8,
+            "volume_mm3": 320.0
+          },
+          "b": {
+            "area_mm2": 352.0,
+            "bbox": {
+              "max": [
+                12.0,
+                8.0,
+                4.0
+              ],
+              "min": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "center_of_mass": [
+              6.0,
+              4.0,
+              2.0
+            ],
+            "edges": 12,
+            "face_types": {
+              "plane": 6
+            },
+            "faces": 6,
+            "kernel": {
+              "edges": 12,
+              "faces": 6,
+              "shells": 1,
+              "vertices": 8
+            },
+            "name": "New",
+            "vertices": 8,
+            "volume_mm3": 384.0
+          },
+          "deviation": {
+            "a_to_b": {
+              "area_beyond_mm2": 32.0,
+              "area_mm2": 304.0,
+              "at": [
+                10.0,
+                4.0,
+                2.0
+              ],
+              "max_mm": 2.0,
+              "mean_mm": 0.08799342105263172,
+              "points": 9410
+            },
+            "b_to_a": {
+              "area_beyond_mm2": 77.5625,
+              "area_mm2": 352.0,
+              "at": [
+                12.0,
+                0.0,
+                0.0
+              ],
+              "max_mm": 2.0,
+              "mean_mm": 0.3177490234375,
+              "points": 10322
+            },
+            "max_mm": 2.0
+          },
+          "difference": {
+            "area_mm2": 48.0,
+            "bbox_max": [
+              2.0,
+              0.0,
+              0.0
+            ],
+            "bbox_min": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "center_of_mass": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "center_of_mass_distance_mm": 1.0,
+            "volume_mm3": 64.0,
+            "volume_percent": 20.0
+          },
+          "identical": false,
+          "only_in_a": {
+            "regions": 0,
+            "volume_mm3": 0.0
+          },
+          "only_in_b": {
+            "regions": 1,
+            "volume_mm3": 63.97026022304832
+          },
+          "regions": [
+            {
+              "area_a_mm2": 32.0,
+              "area_b_mm2": 77.5625,
+              "area_mm2": 109.5625,
+              "at": [
+                10.0,
+                4.0,
+                2.0
+              ],
+              "bbox": {
+                "max": [
+                  12.000000000000004,
+                  7.99860029739777,
+                  4.000906
+                ],
+                "min": [
+                  9.999999999999998,
+                  0.002317769516728574,
+                  0.0009060000000000144
+                ]
+              },
+              "center": [
+                11.0,
+                4.000459033457245,
+                2.0009060000000427
+              ],
+              "faces_a": [
+                2
+              ],
+              "faces_b": [
+                0,
+                1,
+                2,
+                3,
+                5
+              ],
+              "index": 1,
+              "material_of": "New",
+              "max_deviation_mm": 2.0,
+              "resolution": {
+                "along": "X",
+                "line_spacing_mm": [
+                  0.03345724907063197,
+                  0.03333333333333333
+                ],
+                "lines": 40350,
+                "skipped_lines": 0
+              },
+              "side": "only_in_b",
+              "volume_mm3": 63.97026022304832
+            }
+          ],
+          "sampling": {
+            "chord_mm": 0.0025,
+            "spacing_mm": 0.5,
+            "triangles_a": 12,
+            "triangles_b": 12
+          },
+          "tolerance_mm": 0.01,
+          "unlisted_regions": 0,
+          "verdict": "1 region differs by more than 0.01 mm: 0 with material only in `Old` (0.000 mm³), 1 only in `New` (63.970 mm³)",
+          "warnings": []
+        }
+      ],
+      "status": "completed"
+    }
+  ]
+}

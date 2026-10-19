@@ -1,5 +1,7 @@
 # STEP Mastery, Python Parser, and 3D Tool Roadmap
 
+最新のv1.15以降の計画は[ネイティブB-Rep認識の再調査と計画](../notes/brep-native-recognition-strategy.md)を参照。以下はSTEP学習・基盤実装を中心にした従来の道筋として保持する。現在は各基盤のB-Rep・履歴・既存認識APIを直接利用し、STEPを必須の内部形式にはしない。
+
 ## 日本語概要
 
 STEP規格をPythonパーサーとして実装・検証し、構文・意味・幾何・位相を分離して合成証拠を残す道筋です。

@@ -1,0 +1,1998 @@
+{
+  "date": "2026-10-19",
+  "assembled_at": "2026-10-19T05:19:49.797525+00:00",
+  "baseline_commit": "15b9ced5b696a2d0fb2b7e899659189d191efd7c",
+  "scope": "Native B-Rep queries, stored features and recognition gaps; no mandatory STEP intermediary.",
+  "pins": {
+    "solidcraft": {
+      "version": "0.15.0",
+      "commit": "fa691707c224cae580c42201ed3a22d5e4b8c716"
+    },
+    "nvidia_usd_brep": {
+      "version": "1.0.0",
+      "commit": "c9c5979f04cea8c38213004d4f04df0dcfb40d05"
+    },
+    "smlibpy": {
+      "version": "0.3.5",
+      "commit": "316514b421285ae5abdfe5ed24936bd24ed9dec1"
+    },
+    "classcad": {
+      "public_api_package": "21.2.0",
+      "engine_executed": false
+    }
+  },
+  "source_acquisition_count": 274,
+  "fixed_solidcraft_source_count": 271,
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/anchor_frame.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/anchor_frame.rs",
+      "sha256": "370345299c535a573ab7f817a6f85268e207efb53d4e4684dd4dde30b00b9b4a",
+      "bytes": 1352,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/appearance.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/appearance.rs",
+      "sha256": "a04ceae94a7056890194734f10eb860f277b5a34517abfe3ae0135ee201746a3",
+      "bytes": 12743,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/assembly.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/assembly.rs",
+      "sha256": "0215159472052c37f7e741fd39badfd9740ce8975e0d69474977dad4e8c68ea8",
+      "bytes": 15903,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/body_transfer.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/body_transfer.rs",
+      "sha256": "2a01445f7112256330f1b017a074b0613abd39c60627b54d78ffb7fb57b92873",
+      "bytes": 4064,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/body_transfer_sheet.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/body_transfer_sheet.rs",
+      "sha256": "a639c66d81d0ce8388bcc92716a304ebce1a351d6570332c5a3a95921f261c69",
+      "bytes": 2318,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/canvas.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/canvas.rs",
+      "sha256": "53cc4e5c5e671cb419eb5851131bb15b155192ab0bbc36f692283ebf83c781b4",
+      "bytes": 6493,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/clipboard.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/clipboard.rs",
+      "sha256": "53418e62a5f778e3663e15fc8b176993608fb44a2c05ada0ec4064c1a4e1bd0f",
+      "bytes": 13444,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config.rs",
+      "sha256": "b7096f3484bdab4e8ddc7acb35b0b01de90c246480071a443a9bb9c7f4fbd0f6",
+      "bytes": 17151,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config_certificates.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config_certificates.rs",
+      "sha256": "67d853099249973193ee986f1f6a32dc633d2faf043e53d4b4f3f96b6a995051",
+      "bytes": 51963,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config_clone.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config_clone.rs",
+      "sha256": "6c901c0e166914e8055c15da1e0552ab4752a71babb9370195a9669331fedf90",
+      "bytes": 10932,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config_rules.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config_rules.rs",
+      "sha256": "bda1df49418d903d2baf19018486c7569254ad976a80cb4ee0d9b2b894122879",
+      "bytes": 32210,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config_shell_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config_shell_tests.rs",
+      "sha256": "636f220b89dda31006d7ae3187940590593f6882fe4e651a3f9d7fdaf7aaa973",
+      "bytes": 31304,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/config_styles.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/config_styles.rs",
+      "sha256": "cd030ab043b1f722507692b0637796943fe994fbc1b56be4aea3882cd5c2b008",
+      "bytes": 22329,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/construct.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/construct.rs",
+      "sha256": "54cc9f7be47939733983d69f0435ddb77c001949c6e55c8695239d73c3eaca0d",
+      "bytes": 26951,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/display_quality.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/display_quality.rs",
+      "sha256": "fd11928acdd447d74307767fd795b53d8704eaffe0a30c8bb5013cb8a9b3fa67",
+      "bytes": 10907,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/document.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/document.rs",
+      "sha256": "f2d32d551fc396045bbc37d7a9fa2d4e8a251654befe450e4411e9df94c10d42",
+      "bytes": 140352,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/eval.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/eval.rs",
+      "sha256": "9d89135c1e61e767153e8ed90bd8002a78141fbf4355aa268eb7846d4df7bd43",
+      "bytes": 299077,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/eval_cost_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/eval_cost_tests.rs",
+      "sha256": "7e95a509d808cea9a98590ddc6285ac7e50f0038b2073f49f5daf0ffa74c70f2",
+      "bytes": 6974,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/eval_more.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/eval_more.rs",
+      "sha256": "8f8940a2257348a50094a8a88109837cace15e283bcb1ca52349a5fdbb055ba7",
+      "bytes": 97364,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/eval_surface.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/eval_surface.rs",
+      "sha256": "944b3531d1e7b6d8828b861a83660600da7152873a24bcf0802600799201837d",
+      "bytes": 37356,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/expr.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/expr.rs",
+      "sha256": "a80ecfc9d393c87f03bbea0f833d85364ccdfd728d2381a4bb0a28db62bdd7b6",
+      "bytes": 46391,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/face_anchor.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/face_anchor.rs",
+      "sha256": "09ff1e9e731cd8d4a4a3674c771b8f885b57c890e72310526f249072b4ef26ee",
+      "bytes": 29745,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/feature_geometry.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/feature_geometry.rs",
+      "sha256": "d314f0fb86e9f33b647230bd6f44af5139f3f4f616d62e5f5448569a1191a5e8",
+      "bytes": 4570,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/feature_refs.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/feature_refs.rs",
+      "sha256": "6ded236b1bc46fbb27a72c07926469acc125836caecb8cd62c1c145c5b24388f",
+      "bytes": 2016,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/feature_walk_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/feature_walk_tests.rs",
+      "sha256": "ec81829abc5860e9111367521e20c165e725c57ead8e9267c768b052b1b4e92b",
+      "bytes": 9631,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/feature_walk_tests/fixtures.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/feature_walk_tests/fixtures.rs",
+      "sha256": "583129c90356d450801b3dfac1aff357e22b7a95731dca8a6e06e225cc84bbf0",
+      "bytes": 18190,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format.rs",
+      "sha256": "3bbcab6552bcc95d694745aa2f6452ef30e797f7e8a4b7c1c3abf08d9f596577",
+      "bytes": 113652,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v23/import-fcstd-3dm.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v23/import-fcstd-3dm.rs",
+      "sha256": "58952587e0f2588b6d9e0ef592565f05052865f3e3550dc87eb0e82e708f0cb3",
+      "bytes": 317,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v23/motion-link-coupling.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v23/motion-link-coupling.rs",
+      "sha256": "e625d8b5dc4fb7dfb0094854385c0afec36e12e4addc75bfaa6741cb47063b00",
+      "bytes": 578,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v24/edge-flange-corner-relief.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v24/edge-flange-corner-relief.rs",
+      "sha256": "cde6d497dc09dba566242323640a18b00e497ce03811a11e0345abf86bde1e8a",
+      "bytes": 472,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/class-a-surfaces.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/class-a-surfaces.rs",
+      "sha256": "c8485b33055237985b17f97eed3f1d71320f6c392519b56eb7bfab0b8dac17c7",
+      "bytes": 462,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/feature-pattern-alignment.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/feature-pattern-alignment.rs",
+      "sha256": "d54c61f75ac204280b444bee2ddd7fa4b2bfcefc62f564cf05f24750f656060d",
+      "bytes": 366,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/flipped-sketch-plane.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/flipped-sketch-plane.rs",
+      "sha256": "75efaca41c83df7bcbc04aee184a6470356ba05a275f3cb6485ec5fb7eb6d669",
+      "bytes": 479,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/infinite-sketch-lines.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/infinite-sketch-lines.rs",
+      "sha256": "9074bd639a1302305e986bf154f0f72a9783046dab75e0fb669e7d8cb6087fa1",
+      "bytes": 401,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/patch-continuity-and-points.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/patch-continuity-and-points.rs",
+      "sha256": "e0d042801994be8e066bd8df3f81a9551a34ba58641c5d23aea9924261a3f4b4",
+      "bytes": 487,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/placed-plane-origins.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/placed-plane-origins.rs",
+      "sha256": "aee7946f7331afb5e9810365fe8cb18d8dd8b104a6ea2cfb512e3ca86335fb00",
+      "bytes": 369,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/sketch-pattern-directions.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/sketch-pattern-directions.rs",
+      "sha256": "414b5aa1029a6b96d63351587f9afd5e2ad869749956302202a1393e94588708",
+      "bytes": 462,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v25/split-by-sketch-line.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v25/split-by-sketch-line.rs",
+      "sha256": "36aae32121a1857bfe841f20343ca8166ea3922fe3f7ed5b0484395fe7a66c83",
+      "bytes": 381,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v26/cam-couplings.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v26/cam-couplings.rs",
+      "sha256": "b04bfe1bc153c5df4fc8ed7db769c0173b38c5cca395f1aa43dd4faba1f3d79a",
+      "bytes": 720,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v26/fillet-corner-and-loft-continuity.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v26/fillet-corner-and-loft-continuity.rs",
+      "sha256": "fc878fa1684d8d03903e7eba74ed6a25ced9957ab23754a04fae970ef84ae384",
+      "bytes": 667,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v26/hole-position-expressions.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v26/hole-position-expressions.rs",
+      "sha256": "a984ecfddb2b75088cacb8f768fe85eab0f6182890d4e55196e2a32da67ac46e",
+      "bytes": 459,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v26/mirror-placements.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v26/mirror-placements.rs",
+      "sha256": "a36ae341742e6eda7125f8e57bbb1594ab97e32f8b4a3379696420fa120d693c",
+      "bytes": 472,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format/v26/sweep-guide-rails.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format/v26/sweep-guide-rails.rs",
+      "sha256": "2cd7417b9f5537b9e602986b20f2bf86dfb4feefa2449d18e9f02a8bfeeac266",
+      "bytes": 437,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/format_offsets.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/format_offsets.rs",
+      "sha256": "af431562413049332efd97aad6138f4f6f2a1230b0fea57b9147312d0379e8e3",
+      "bytes": 23056,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/history_names.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/history_names.rs",
+      "sha256": "bb4c769921dc08d8e04f1ee7b0bededb369d1abf1fd63af625c2b98111921a8e",
+      "bytes": 17798,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/history_names_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/history_names_tests.rs",
+      "sha256": "737c23c161e0288d32f756f5b07f1e03b77c0ff0d1046f8320c06208e81be04a",
+      "bytes": 3450,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/joints.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/joints.rs",
+      "sha256": "76e2413cb028b42c8c16c7039785d38698cc26680c7c3728fdc6cb87c01e205a",
+      "bytes": 69269,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/joints_cam.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/joints_cam.rs",
+      "sha256": "0c81b6dc6c3556ede91e7245400ed79ad936837c921885aacd854b1099a3c1ce",
+      "bytes": 52056,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/joints_reach.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/joints_reach.rs",
+      "sha256": "eca17849d072a382c0ce307f60622204270ed4c235577701f8631edb2c550a45",
+      "bytes": 21042,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/lib.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/lib.rs",
+      "sha256": "f0a75f7ab624e69e4edb8726078e044496e4269b0b6b31a043fc64b2856d4bf1",
+      "bytes": 3160,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/lineage.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/lineage.rs",
+      "sha256": "cad92328496238b704dcc72dce30947324ebc97e5634bdd872894df52834f920",
+      "bytes": 24605,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/metadata.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/metadata.rs",
+      "sha256": "f5cf49da5e2ad23584ae78d42234c9f7dec5840005a2f0599ff5d49d7004a06d",
+      "bytes": 11008,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/motion.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/motion.rs",
+      "sha256": "42c146768b10cc973ca72de3e52e39b85438941cd21d70fe211e5a1f69285728",
+      "bytes": 2574,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/name_lookup.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/name_lookup.rs",
+      "sha256": "461c9cda6b11704eb0e1ea9ed823ba9831690b1362a8f19af0621643fedcd4b6",
+      "bytes": 19042,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/named_projection_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/named_projection_tests.rs",
+      "sha256": "413dd617c9852cfbfe9c75cafe5230bdbd7b01328a76a270ee3583ee02a20c1b",
+      "bytes": 2994,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/names.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/names.rs",
+      "sha256": "62c6018db5ddcf987adc9e3eb0c1b7eb0796463643f5c2d059b621ad8d2a945e",
+      "bytes": 3375,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/naming.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/naming.rs",
+      "sha256": "75c1d05708540abd904cc99faf813c7c453c0af7f47f6852addb6ff8a8b0e244",
+      "bytes": 40928,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/params.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/params.rs",
+      "sha256": "8cbe1a8d993ee4b2ab7bf685a249cce43b52e241be9cdecc809bc7db6dc0fcde",
+      "bytes": 36961,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/pbr_appearance.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/pbr_appearance.rs",
+      "sha256": "aa6a7e38e01d64852d102b1487599231d2ad653f63ab6d879b0a61e0be3f83f2",
+      "bytes": 3077,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/physical_material.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/physical_material.rs",
+      "sha256": "23606189cd63e4269e3075a91ebfc685b8f89f3611db4e16c2376de53e9e7954",
+      "bytes": 17629,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/physical_material_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/physical_material_tests.rs",
+      "sha256": "fc4017daf6e40408feb5fd01cd6b7c67986e92885d3eac27ac7d006b744c2b4b",
+      "bytes": 12390,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/piece_names.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/piece_names.rs",
+      "sha256": "2fbbb624be7dd3fdeb884c731fa2c0cabaa2ddbb93883101217dd7888c44c31f",
+      "bytes": 5047,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/plastic.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/plastic.rs",
+      "sha256": "2a6dbad07597fe331bb5cf2a1f11f12e1bfbc38a2a2f8029fc0a7152a72aa7d4",
+      "bytes": 8393,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/points.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/points.rs",
+      "sha256": "7959bc0c9c31e6d269b7fc985732bab589873d80e9f930d9f468479c61291c7e",
+      "bytes": 1707,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/profile_refs.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/profile_refs.rs",
+      "sha256": "7edd422ba24591e21a4de5d3f2116b12ee270e79fd35d0841ca80a89a34fa279",
+      "bytes": 26802,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/progress.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/progress.rs",
+      "sha256": "30b244ce6abc92ed745f83847a87e34fa40821d9c91d1a2923b211c3d678257e",
+      "bytes": 10724,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/project.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/project.rs",
+      "sha256": "796c33c6c63156d09e3b4ff96c084e1db9e32e29c510f82688e89fa1469b2d71",
+      "bytes": 63394,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/project3d.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/project3d.rs",
+      "sha256": "23fe0ff5f198ad5264714c53565ceaff8beb8109c85e09d28479346ae6f69065",
+      "bytes": 18754,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/project_order.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/project_order.rs",
+      "sha256": "bf23d2b48c1013be3109446b3ea9891de43f41a435149d83e93519762083afe8",
+      "bytes": 21158,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/render_settings.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/render_settings.rs",
+      "sha256": "568e70cb0193d675dfc6a1def105ffb059025e11b41109a463490b6249182c04",
+      "bytes": 11815,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/sheet.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/sheet.rs",
+      "sha256": "5bc5e5e59253ae0f3bef6962db0778bff5ccc05f0498ac8e1a908c8e68834dbe",
+      "bytes": 420283,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/sheet_convert.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/sheet_convert.rs",
+      "sha256": "dfcec41f4f2aaf5b2a8ce1ba5e3e2b757f5010da0f2d288debe77d0ec9718bb3",
+      "bytes": 56229,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/tests.rs",
+      "sha256": "bee8a730ec68215b8aaf525eda440e98ea3626c8d75e910b37715e50d60c478b",
+      "bytes": 16704,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/doc/src/walk.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/doc/src/walk.rs",
+      "sha256": "3dd8ec01778e02f4de591dcc412213e4294f227d4307e8448bc214aa7a8a7c5f",
+      "bytes": 15581,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/cmd/inspect.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/cmd/inspect.rs",
+      "sha256": "00fc0f53c91b467174ad3626aaf3f0f7fb62bd5564782b92d48e7462490bc82a",
+      "bytes": 30347,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/cmd/measure_sel.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/cmd/measure_sel.rs",
+      "sha256": "0ea5574a71424032dfe377f59cf1fb4918eb10987767c960f2c1353b5228fc0e",
+      "bytes": 23762,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/cmd/measure_shape.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/cmd/measure_shape.rs",
+      "sha256": "03d383f12e80dbaecddc0370a3c10dab8c087b5021117e979312e0828c79ccff",
+      "bytes": 22091,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/cmd/surface_analysis.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/cmd/surface_analysis.rs",
+      "sha256": "8a4a916dad38df4864349e485ba6562cb7b8a9b7d1ec4a7e04af613b6108942a",
+      "bytes": 23151,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/lib.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/lib.rs",
+      "sha256": "6acbadd3c54dd67b89cc60c8bf881dc7be93adbec35106443316efc048493e89",
+      "bytes": 45258,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/catalog.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/catalog.rs",
+      "sha256": "0b2faa3b81bdcfc8a2b5507ed6a9050ad3af001e3d2ede49b66b88493bb2a27f",
+      "bytes": 11782,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/catalog_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/catalog_tests.rs",
+      "sha256": "2aeb3e0f3bc99f8c9be69898c1949c8e186fe2e6b37a976283dedc42965dd2d1",
+      "bytes": 6768,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/design.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/design.rs",
+      "sha256": "23feef0f26c3b2d7ce2b9ad64d413f28a9d83d465b4b59c78c13dbfc2ea65043",
+      "bytes": 60047,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/design/native_cache.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/design/native_cache.rs",
+      "sha256": "8e2e74e94305d941ef303b7436bfc6f6f17e722edc008795ea98e43edc87d2f8",
+      "bytes": 5990,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/design/thumbnail.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/design/thumbnail.rs",
+      "sha256": "4a0047a110208f0983548b01b146c40400040285331fac7958659d91ce73253a",
+      "bytes": 3609,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/design_metadata.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/design_metadata.rs",
+      "sha256": "bd7abe25c0542b4478b3762a144b927b69efef10ee456af95a7453c45b7bfd4a",
+      "bytes": 5522,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/dxf.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/dxf.rs",
+      "sha256": "6bda757356afa055bba52d9b71b52c84e66065795b3f613f20e61b513379884a",
+      "bytes": 25255,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/dxf_out.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/dxf_out.rs",
+      "sha256": "bafc11adf1e89d0a8e1cda4e013786c24cc2310ef257f9fcd2ccfdff67343e27",
+      "bytes": 41710,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/gltf_in.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/gltf_in.rs",
+      "sha256": "d72922d38fb6613d7d6a05d8197cc4352c93b8b99f605a372f8db8182a4b01bc",
+      "bytes": 39437,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/gltf_in_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/gltf_in_tests.rs",
+      "sha256": "96c5e02c4b8d66fdd8fca01bab910d5aa693c00689894af5992e09ad8292b6b9",
+      "bytes": 21125,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/legacy_dir.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/legacy_dir.rs",
+      "sha256": "dbe80660cde51c43cb5b097f448bfa9d2c90803ec1a439add1879aa7ee15ff3b",
+      "bytes": 5806,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/lib.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/lib.rs",
+      "sha256": "aed37f4914e7a673a0e8328ca343223f1f0b9b04c543c484c4e0ee10642c79e2",
+      "bytes": 48514,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/mutate.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/mutate.rs",
+      "sha256": "4f21d1205894af5229b0601278f69d0fc4c26cd9113fa1ab734fd35df8bb000b",
+      "bytes": 21577,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/native_cad.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/native_cad.rs",
+      "sha256": "9c13ddbfdd9a3b66abd042a2fb191cce6d79963cdbadd4c085ff3263a90278cb",
+      "bytes": 8569,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/native_cad/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/native_cad/tests.rs",
+      "sha256": "6f37020736ebbc2237791470d2902db4ca1afa7b933581ad7764b7eca268c003",
+      "bytes": 5594,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/obj.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/obj.rs",
+      "sha256": "69d289749420414ebd910566b6a9f3fc81db40d17949fa6c7995e183f70afc3c",
+      "bytes": 6367,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/safe_write.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/safe_write.rs",
+      "sha256": "cb3e541ea102e2eafe568a7afb387ff827a2906e256a9f171319213a72beed65",
+      "bytes": 17400,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/sketch2d.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/sketch2d.rs",
+      "sha256": "12a4849c596a9c7fdf2cc61f54d814ecb517344eefc00782604b6d81e0d5ab79",
+      "bytes": 2118,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/svg.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/svg.rs",
+      "sha256": "d4838aa8daf14d3b5f9b802afc354996c8e1d9d4e772d27d27b0676093d07e10",
+      "bytes": 22565,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/threemf.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/threemf.rs",
+      "sha256": "ee73817858412d293f30477f28e242f25eae5f5e7189d50159fcb056ec0b58e4",
+      "bytes": 39210,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/urdf.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/urdf.rs",
+      "sha256": "9766c08bd1676108160ff2c6859101fda31e42030620ebb59b1af8f8cf8bb327",
+      "bytes": 39310,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/io/src/vfs.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/io/src/vfs.rs",
+      "sha256": "f29fea402daa744553c004a83db150af86779324ab9754363b0ef2d52b0f60ec",
+      "bytes": 38696,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend.rs",
+      "sha256": "b08a8db16ef69a38a349758d01e0566d6c58b1d5caa730b20ede461d975004e5",
+      "bytes": 141600,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend_corner.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend_corner.rs",
+      "sha256": "659192a9be94079b9c66f72a8f966de664fde114a89280ca584bdf7ab82e0708",
+      "bytes": 76295,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend_fit.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend_fit.rs",
+      "sha256": "79b212a3919fe6392d64c5692429014be058f9cfc1a8b70969cc39146af7390e",
+      "bytes": 28049,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend_variable.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend_variable.rs",
+      "sha256": "28fb054fb74bc17dc32effb5754a9f2522c101ae775351ab88054e17fbce11cb",
+      "bytes": 47651,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend_vertex.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend_vertex.rs",
+      "sha256": "af8d70234be73c46f6e3a1b92c973f117ce3cd8d4c72be3222f9b4a0652bcc44",
+      "bytes": 20915,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/blend_wrong_way_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/blend_wrong_way_tests.rs",
+      "sha256": "a7574b6c2443f6986da09fb119633fcdc4d64a9b966c6223a6b6449d3d4fe64b",
+      "bytes": 2646,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/body.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/body.rs",
+      "sha256": "3d41d6b10cc789d0e7e5e1080b0f2b4e48f453ceb24be49cbd83153612af8f21",
+      "bytes": 73861,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/body_lump_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/body_lump_tests.rs",
+      "sha256": "baa1c39a2f6c8dad5d7a52e0ad619d1b886952606f88e3ba0acc600aa45dce71",
+      "bytes": 17983,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boolean_diagnostics.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boolean_diagnostics.rs",
+      "sha256": "6be39361b32015c0c372408f1f571c8fda7f4d405d90fe75259c95fa4ad6a199",
+      "bytes": 10791,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boolean_guard.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boolean_guard.rs",
+      "sha256": "3bdf3d7986e651c0a29ed9766972c3f7a2b2c48c71837000104e0ce334226ae0",
+      "bytes": 10598,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boolean_history_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boolean_history_tests.rs",
+      "sha256": "cd56309043a0da8277b16c768d7bb1aa3e6e60bf57c898fc4f74135b1cd9435e",
+      "bytes": 24787,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boolean_record.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boolean_record.rs",
+      "sha256": "9113810953530f777d3fa986933cf612feac6cd84cd2be8254f1fb9221280bc0",
+      "bytes": 11628,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/bore_guard.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/bore_guard.rs",
+      "sha256": "238223ad4551a1127724fcbee371689af99fa8fd57ddbc4fe4629bac5277ba97",
+      "bytes": 8327,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/bore_union_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/bore_union_tests.rs",
+      "sha256": "7b55471cdcfeee21a8ab87351d6748a1c4087a5fbdeec87833534b0ab0b6883c",
+      "bytes": 7037,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boundary.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boundary.rs",
+      "sha256": "f583941b99d133a1db37895fe86e91e28e2eff202aae2c1e81df903a5c0e9f56",
+      "bytes": 5930,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/boundary_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/boundary_tests.rs",
+      "sha256": "023a81193d7c21832de27feb886788c87e47440c4d4aca77214c575fccdd3e0f",
+      "bytes": 13565,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/bridge.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/bridge.rs",
+      "sha256": "3fea77678a09912622d4f90156220c79a5b582203e1393fa3110b834667dfa31",
+      "bytes": 34961,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/bridge_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/bridge_tests.rs",
+      "sha256": "d5c7bbf81bad69d7aea46ff8287da074af6f1087ffb2678943e511b659a5cd2b",
+      "bytes": 12445,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/build.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/build.rs",
+      "sha256": "668690d2933009eb5aee2b35d9ff0274911140d30320df6b6bf618c53f5760f8",
+      "bytes": 107912,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/clearance.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/clearance.rs",
+      "sha256": "bf480bc7818872d6b7ad264b2d5fbfe728a04bf4255abe7de2c60cf15e418a07",
+      "bytes": 19140,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/coaxial_overlap.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/coaxial_overlap.rs",
+      "sha256": "7a171f45c25176aa6f3ca4968d2dcbcebfdd5db842a90f6eee8b3741645fc0e5",
+      "bytes": 18940,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/continuity.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/continuity.rs",
+      "sha256": "fcfc9b740bd58a3b383948e231c4c857e03e704592289668700f4b5ff97d465c",
+      "bytes": 22363,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/coplanar.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/coplanar.rs",
+      "sha256": "1a8a1bb67e9e5e4b40629f338dcfcab789b9ccd1bdf4ca3dfe3dcff55abb1f8b",
+      "bytes": 89497,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/coplanar_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/coplanar_tests.rs",
+      "sha256": "3710fa2a7dca79ac24e9b1a7b44265b3b6287e212ee9c69a495dc62de5e2ea9f",
+      "bytes": 8983,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/corner_g2.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/corner_g2.rs",
+      "sha256": "247117550f703e554141701a662d61a4ffb43ef42d58a40c37e6cb6555714efc",
+      "bytes": 27658,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/corner_g2_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/corner_g2_tests.rs",
+      "sha256": "1ab3f2e85fd31d77bf80c6c9d4204ce14af7a24b80fb6b67f9747e051212b837",
+      "bytes": 8026,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/curveblend.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/curveblend.rs",
+      "sha256": "95901384290b2a0970597f298bf87146524400bd70c48af12c7683addb5f3c73",
+      "bytes": 115774,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/curveblend_law_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/curveblend_law_tests.rs",
+      "sha256": "665765a01748f6175b6c175031744e112f76f1f2d456713e611a6ef8f3a040be",
+      "bytes": 16648,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/curveblend_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/curveblend_tests.rs",
+      "sha256": "c501523707e740aecb9dad73e770349aef97d4a7bf0452c5b008cff0d7bf077a",
+      "bytes": 39798,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/curvecorner.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/curvecorner.rs",
+      "sha256": "374391315347a01533c228c6e15bbf4f99fb46267c3836d0be1c1c0b2d3cc2bc",
+      "bytes": 64512,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/curvecorner_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/curvecorner_tests.rs",
+      "sha256": "4b035d794fc1031234fd69aab80f1e898a6275eae11a1248a1be1f37f4377d23",
+      "bytes": 14305,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/delete_face.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/delete_face.rs",
+      "sha256": "a9b1d3c875adeaca4ce37b0fe0b367babfae35d349195df55398c1d78648b10d",
+      "bytes": 20114,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/display_mesh_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/display_mesh_tests.rs",
+      "sha256": "7fdbc1092702f5755100b9381a060684727442a2a6fc11d528e923bf1728980c",
+      "bytes": 19517,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/distance.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/distance.rs",
+      "sha256": "960373bcfa977b69315a8d747d9e566705ccf99e2cf92479faea8dfee99a3d38",
+      "bytes": 13698,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/edge_polyline_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/edge_polyline_tests.rs",
+      "sha256": "34dc3510a7dabe6c23d18383c2923ae7057c4e71d0c646f9a8c0b2ac49373dc0",
+      "bytes": 6391,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/emboss.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/emboss.rs",
+      "sha256": "a1b30714460cc821683a2388e0cb219aa79aced1fd532e98f0c915414eed94d6",
+      "bytes": 37630,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/face_params.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/face_params.rs",
+      "sha256": "6bd6123cd8cb8580ad1aaa327398a98757d3f05c1547ed6a0c8a23844ab43942",
+      "bytes": 12713,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/face_source_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/face_source_tests.rs",
+      "sha256": "887ed5cbdef74810a01c10277bed9712931c8548395a1abfc611be6238867f70",
+      "bytes": 15461,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/fair.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/fair.rs",
+      "sha256": "4d89d1994233d2c6dd96bcfd8060472fe4febe225ab2d1527722415fa7dacc4f",
+      "bytes": 82199,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/fill.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/fill.rs",
+      "sha256": "8320dcd1b8d8f8bed8c41ba2e936a68bbec68de467b713a5ae5d0735a7914ad9",
+      "bytes": 46569,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/fill_general_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/fill_general_tests.rs",
+      "sha256": "7560ed38b7a67897343664d9444bd6c03f32c0ccee132f8eb793808d56bf7e23",
+      "bytes": 25515,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/freeform.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/freeform.rs",
+      "sha256": "ecd041aa1783667d696f2452fa96e0a676c9fa66723e648bb61e6efe23758a85",
+      "bytes": 1435,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/fuzz.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/fuzz.rs",
+      "sha256": "34f34f686fe3d7e6908c16c0b9a5c2736f8c53d8342f0ede3ed6dc8f4c9a9ad2",
+      "bytes": 6554,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/heal.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/heal.rs",
+      "sha256": "2ec91222eea4340b71f1313fcd31561adc717794443ef7947bd2bb0813e99d19",
+      "bytes": 31448,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/helix.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/helix.rs",
+      "sha256": "aa46f9b119a88e79ace28e107c966a45772cc0ecf764b2f0198d5f551ab67c37",
+      "bytes": 15796,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/history.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/history.rs",
+      "sha256": "ba2f01f1c69313d7ab0107231c827fbbe8ba4baaee01553dcdf082d93cd6a02f",
+      "bytes": 19627,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/history_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/history_tests.rs",
+      "sha256": "004e44bb75b04d7f704bb3aecabb27445985d304fff1026d91fd245242f855e8",
+      "bytes": 12907,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/iges_in.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/iges_in.rs",
+      "sha256": "eba7d1a35eb70c9e143587c4bb95770916527d390a9cbe1efb8d50582e96ba0b",
+      "bytes": 58923,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/iges_in/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/iges_in/tests.rs",
+      "sha256": "a44b6900a220b2b54af38eeffab23c2ecd51b46560b5274f84d5aee94214b3dc",
+      "bytes": 10914,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/iges_out.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/iges_out.rs",
+      "sha256": "cb0403195b8c7bde906dd7a8f75c5f37b394caea15a71d2871f4949519359f32",
+      "bytes": 29713,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/intersection_curve_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/intersection_curve_tests.rs",
+      "sha256": "6cc4518c0ec28a4acbac9a7d2b2bcf4e639295851b07c8361f49f20a137fab43",
+      "bytes": 5815,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_1038_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_1038_tests.rs",
+      "sha256": "5f312153c8709e4eadc16089f15ccbf046537e7fe9dd95ae2c816b3ea84f9fe7",
+      "bytes": 4452,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_1080_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_1080_tests.rs",
+      "sha256": "883ac7feb2111c557aa9afa9fc98d922557dfb19d6024be482521bf145e15458",
+      "bytes": 6461,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_1510_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_1510_tests.rs",
+      "sha256": "d00d27d5f0dea67334546aba702010027dabc5dfa877c93504f477eec520402c",
+      "bytes": 4491,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_324_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_324_tests.rs",
+      "sha256": "2a26670ea6ce771aef3cbde5030ad2f2179b99e135a4c96d8b3e7f73d3fd1561",
+      "bytes": 1871,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_616_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_616_tests.rs",
+      "sha256": "c10496360d66abbea8846a89b679c6fede45ab780750f40d0b685c3f33a30af1",
+      "bytes": 10365,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_674_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_674_tests.rs",
+      "sha256": "a51c8876cd424dfdcb19b3770308fb09b3c3b4ea8f05a819facd62c3ed7fca58",
+      "bytes": 3812,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_679_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_679_tests.rs",
+      "sha256": "46dd266fb3970c6625dd49450377f794bbcb73f3ed57ffb50b3fc67b5a77743f",
+      "bytes": 5632,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_788_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_788_tests.rs",
+      "sha256": "b528aee5e8d273491fe032248efd30e44212af8ad43643e477707f8f2d37d77f",
+      "bytes": 6647,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_851_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_851_tests.rs",
+      "sha256": "26443d0c5284e38b7e23de24514b8301c766658ba9db3529ac99321eb6a8965f",
+      "bytes": 21879,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/issue_871_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/issue_871_tests.rs",
+      "sha256": "d371b5f06b9795c1807e567556c972997302462d38286ce50f85f3d84f643b81",
+      "bytes": 2498,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/join_between_caps_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/join_between_caps_tests.rs",
+      "sha256": "e9314b0dbb48f02427e6dca8720cd4e4324a9d6fe979fe35b065b4ec237e939a",
+      "bytes": 2601,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/lib.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/lib.rs",
+      "sha256": "f36034e09f2bc43998d68195b20d880786a3d51fa5022dd6198df1aa79fb2119",
+      "bytes": 8681,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/lip.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/lip.rs",
+      "sha256": "011b57320f96de90fde0f38dbeed3ef17ed05a07a51dbe9f1121a57e8d923432",
+      "bytes": 11491,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/loft_blend.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/loft_blend.rs",
+      "sha256": "05f9eb61d72a2ddaf5da85af122595f7c9494f21cb090209b8cd4ed549c0973a",
+      "bytes": 29193,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/loft_blend_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/loft_blend_tests.rs",
+      "sha256": "8f586abfe96d8ebbabdae38fcd916fb4b2a86e86c541a2af8b2654ca6412dd0f",
+      "bytes": 25209,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/loopblend.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/loopblend.rs",
+      "sha256": "ba028ff1800320bddbd2d504cf021c49527b482eb6caedac6a3afdb85d4b6f58",
+      "bytes": 40220,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/matchsurf.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/matchsurf.rs",
+      "sha256": "ad21212ecf1fd6598d02a490af50fcdc4794b079c379a38342d7465c2b102c4b",
+      "bytes": 28142,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/matchsurf_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/matchsurf_tests.rs",
+      "sha256": "a67158d9fb70635b5c4cd7f832c31634740f052cdef7dba79fee0d6453ca6a03",
+      "bytes": 11671,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/measure.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/measure.rs",
+      "sha256": "26034ca2a84d909f5e5d484c0cabdcd22e432b961d9c5700af70615b90f89110",
+      "bytes": 4576,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/mesh_convert.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/mesh_convert.rs",
+      "sha256": "982246e109a52b8270d07073fad4ebcf144bdbde16c05096a165a7747665905e",
+      "bytes": 25656,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/meshbody.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/meshbody.rs",
+      "sha256": "75557f3654c0162b63cde91c8d0b8754979686ca5719e605908ab7f4680264f9",
+      "bytes": 8413,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/modify_history_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/modify_history_tests.rs",
+      "sha256": "62efb814d31eb631645570919262845d787c7d9ff3972d89bd9f48ff69222083",
+      "bytes": 21665,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native.rs",
+      "sha256": "452169e523e4da11621d5e6048c4cf9dd8689024a5ce264fd7934392ad1e7679",
+      "bytes": 13085,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/adapter.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/adapter.rs",
+      "sha256": "413e486bfe4c842d60a9c1b589c811672aabfccf4c12d18e1d0459f5106fd889",
+      "bytes": 17289,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/analytic.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/analytic.rs",
+      "sha256": "d91d0d47f49a5acd0fd6f49b6cd9225499f390a64f2d5b11411a12d5807caa55",
+      "bytes": 3502,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/binary.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/binary.rs",
+      "sha256": "c9277bdc3026485ffdc9d582b8d3c58c48c7f643634d057648e1c5454e34a32f",
+      "bytes": 4113,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/fit.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/fit.rs",
+      "sha256": "44570d6f2ead71a1de4a47e4b5fdc0791f9ff8cead4f85dae84cccbbde1afecf",
+      "bytes": 3966,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/metadata.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/metadata.rs",
+      "sha256": "81cdeab473525b3abe1fc69cbecadb7123179079e424c8faa11b64cc99670f71",
+      "bytes": 16880,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/native/preview.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/native/preview.rs",
+      "sha256": "a3eeec3b65aa5df0f1a8d57026ee5a1be472cf97ea459d42616d3c3a23a294b6",
+      "bytes": 6749,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/numbered.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/numbered.rs",
+      "sha256": "730897cadb7a9e9ec7e2397ffd2a5cde9681434f6b35d3331c4151570ddadb77",
+      "bytes": 9829,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/offset.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/offset.rs",
+      "sha256": "415d22c14707375e454cff5de9fe5c668beff2fb7b05757f61c3a436d2022b54",
+      "bytes": 67732,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/ops.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/ops.rs",
+      "sha256": "3d9ad852860c5c446b2d8501cdb63dc6b895e115e9d857355d4ca04d722f6012",
+      "bytes": 85612,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/outline.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/outline.rs",
+      "sha256": "c2f9a0a1f9aa598ab98e566f91a526b44cd5790689fc548000c963e1d0cedf52",
+      "bytes": 23225,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/outline_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/outline_tests.rs",
+      "sha256": "0da56de85f80e8e4d4ee41b22d02f6b55ca9b757992c21fef5c7d012ec744221",
+      "bytes": 2692,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/par.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/par.rs",
+      "sha256": "74acdd7ccbb1cbfdbe639d7c42541f29e66693455dc261715d24bff79fd34367",
+      "bytes": 7294,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/pinch_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/pinch_tests.rs",
+      "sha256": "185c71697e95004b174baa6b54e65fcead27dbe9a3cd54b515c24f6f6711452b",
+      "bytes": 11289,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/placement_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/placement_tests.rs",
+      "sha256": "3080592ffd21542ec0c49a93a37b58fd6e54cfaf9e368ac13ad0c9eee582c125",
+      "bytes": 5260,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/planar_faces.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/planar_faces.rs",
+      "sha256": "1cddf4c49e405483aae228681d3850d0794536d31357916183eb2138f2520f3f",
+      "bytes": 5243,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/planar_faces_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/planar_faces_tests.rs",
+      "sha256": "cb9688b2ea278ff6d53e7c026195586cb95ed9359955a6882ee1f2af9a222ce3",
+      "bytes": 8018,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/planar_regularize.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/planar_regularize.rs",
+      "sha256": "ed11d85276fd56251b060bc8650bd7eeb6571d953d243c6f6423a29ddea136e3",
+      "bytes": 16307,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/planar_sources.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/planar_sources.rs",
+      "sha256": "6e7060e486212b425f52067562c8297eca87b07d520a9e0c0f5ed3d6e4b19a83",
+      "bytes": 33194,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/plane_fit.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/plane_fit.rs",
+      "sha256": "33db82c721409b7f150b68ef33044cf149cbbbc3b3f95e8d2de0c518f55ad56e",
+      "bytes": 6305,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/polybool.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/polybool.rs",
+      "sha256": "e6b08473e52de8abd52717fe65667c7c2bf08f88abd66c03447dc045d65bc523",
+      "bytes": 56829,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/polyhedron.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/polyhedron.rs",
+      "sha256": "f14c7e7eabfa0c0801f56c22ed5d55f1754cc11fd3044c445526d06cd4237a95",
+      "bytes": 41446,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism.rs",
+      "sha256": "913eeb57da1f4077a962f784cd1e8c12635d9434690543b39422361f443231d8",
+      "bytes": 173192,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_curve.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_curve.rs",
+      "sha256": "4618d6ca60b137431e8349546bac346dce9bd284990531c6570b0c295716102c",
+      "bytes": 24134,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_fast_path_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_fast_path_tests.rs",
+      "sha256": "b3c9a7105e7a206e4a6e63ac11b1ee69357aa095fc87c32aeea72534e697bb6e",
+      "bytes": 3416,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_lineage.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_lineage.rs",
+      "sha256": "37612e7b638db1fc70ef63bfa52da54062fe54c99ee5d04579dde36024023140",
+      "bytes": 27552,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_local.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_local.rs",
+      "sha256": "3a9f52effa63ecdd1f31fe189459e4c45be6060d4ae99715c81a44e8ab1a1926",
+      "bytes": 15961,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_measure.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_measure.rs",
+      "sha256": "026c2b30e69cb64c6a7495d21c64c2ee3ab9ba8dfe985f2d8d40c3d5ca546545",
+      "bytes": 39720,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/prism_spline_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/prism_spline_tests.rs",
+      "sha256": "44acf4988404b18859dc62c05a77ecd16effeefe369773f40c5299b75df6316d",
+      "bytes": 4515,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/profile.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/profile.rs",
+      "sha256": "49e9c2bd4d9530d6ca847b26c887d635018b2728b39c237dec3cab4bca9d01c2",
+      "bytes": 4512,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/provenance.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/provenance.rs",
+      "sha256": "6be04cba8b8b2594d57e71e8868ec40fb94f689cd2d2b6c5f5903240cd27ad53",
+      "bytes": 26220,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/record.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/record.rs",
+      "sha256": "b3b5a9911dc02bf5d98df69851fd3c9196985d080573800c18732f2a65632c99",
+      "bytes": 25469,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/record_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/record_tests.rs",
+      "sha256": "0cd5c68714437a3d7fc890b22d754025510831f13d6a3320cd553456108e0b4a",
+      "bytes": 28598,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/refine_cache_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/refine_cache_tests.rs",
+      "sha256": "ab75136121a1aca2819a70b42e9ff147c58a9730f43c2df424e5a20a2b84648c",
+      "bytes": 2344,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/regularization_protection_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/regularization_protection_tests.rs",
+      "sha256": "83795fea82f0e0d26f8765e01401a2f8be3a2c7650d28225187e9662b2d4df3e",
+      "bytes": 3410,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/seam_faces.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/seam_faces.rs",
+      "sha256": "a2933573940a25ccac5c1a722fe47baa00dfa78940940d61a909b3297fd7237a",
+      "bytes": 4691,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/seam_faces_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/seam_faces_tests.rs",
+      "sha256": "916abd69076640916fdd8fe650bc0e640ef7c2930d2b5b7ecbf5e01c3e8958cf",
+      "bytes": 3984,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/sew.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/sew.rs",
+      "sha256": "c32b6375ac1aaa5cfe12c3bc093a972a4e22f83411eaaa1e9ae9d435a1927e51",
+      "bytes": 62058,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/shell_groups.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/shell_groups.rs",
+      "sha256": "774e0b2cd05266d86ffcf1dd0a0884fd823dc742762f324cef8d120fe4e5db70",
+      "bytes": 10776,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/smooth_edges.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/smooth_edges.rs",
+      "sha256": "2dd25a83b2f58e6964976da4ef0fa3668408745a1a7258712ab7fe6e169bdf85",
+      "bytes": 15863,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/spline_conv.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/spline_conv.rs",
+      "sha256": "b2f4dd93e206823bd70c0af86743cd3ecb2f856fc00e2eab9f25c0053cac6008",
+      "bytes": 3192,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/splitface.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/splitface.rs",
+      "sha256": "3ab0c6325b88ffd15725188b7476941dee0375c9cd48d5c70b6d44aeebc4af24",
+      "bytes": 73481,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step.rs",
+      "sha256": "be4d4cd608bf4539892aee838752f703ea088b3ef7c11282c2e98f18f0f38035",
+      "bytes": 4473,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/brep.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/brep.rs",
+      "sha256": "d47c1e4d2120a208962bf923659bba30e244ff02e46d4f858910b694a1ec9bb5",
+      "bytes": 21139,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/conic_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/conic_tests.rs",
+      "sha256": "1453c963d477ea763595c6c971d6c855596ce9e4ade6e533509f00860f911018",
+      "bytes": 10489,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/geom.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/geom.rs",
+      "sha256": "4e1ea3dba6f1e207f5ab428584d5f381c67aab84e1c2696f21cf79c25cbca3c8",
+      "bytes": 49904,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/mod.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/mod.rs",
+      "sha256": "90d9a28f86c620286b4b5bf63066758b1863d1ebb96ed5bd44545c43349b479a",
+      "bytes": 55619,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/p21.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/p21.rs",
+      "sha256": "6ec2e758facc152915e49e16690ca27cacdacb0d5b283e2cc3367cccfa559192",
+      "bytes": 20273,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/parallel.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/parallel.rs",
+      "sha256": "ed0448130e4932c1a7207ba27043f0804cc3292431c337b7d6670295720d1ef4",
+      "bytes": 2327,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/split.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/split.rs",
+      "sha256": "0e9ff59ed91382d4ec4464eaa6e79675541c8608e438113ab846586ff572b063",
+      "bytes": 21178,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_in/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_in/tests.rs",
+      "sha256": "e8ecfcd756f969201f1c1d7a3667f653aab24241c5c0a22f1e55910012b8e7f8",
+      "bytes": 81997,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/step_out.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/step_out.rs",
+      "sha256": "1ded0c3a92f95180b977337f3308ce66c85e63466535284c253db0543436b385",
+      "bytes": 90732,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surface_extend.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surface_extend.rs",
+      "sha256": "267732d47f16c05106ac99a5f53560ede79cbe869b794e56ae841a3ad0f1acb8",
+      "bytes": 86094,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surface_kind.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surface_kind.rs",
+      "sha256": "9a9636a6690bcbf6cdd01f97f6898b99d39fc47f5bc2d20ca0e3e33503a786a4",
+      "bytes": 8461,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surface_offset.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surface_offset.rs",
+      "sha256": "9c97a6030ad91ff785714eafb8798ee7b5c9b68b0118633ec7569501f176953d",
+      "bytes": 21286,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surface_ruled.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surface_ruled.rs",
+      "sha256": "76c83dcdac4501a6b86542071c36b382e8a6f2012e011628d5a82303a132b5f0",
+      "bytes": 45399,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surface_untrim.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surface_untrim.rs",
+      "sha256": "df65fd6f8ee68f11781e4ab60e3ccb5b2b4783800c43481230644535d7d4e9a6",
+      "bytes": 21093,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/surfaces.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/surfaces.rs",
+      "sha256": "90ebf687c18ff9bb40f057e016e98930486b1014dde598104cf27d79a40cdfa2",
+      "bytes": 88405,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/sweep_path.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/sweep_path.rs",
+      "sha256": "bd8f02256745830f8466c2f72493afb99e311ada06b9a11c214c5ffe1590b0f4",
+      "bytes": 51125,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/sweep_rails_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/sweep_rails_tests.rs",
+      "sha256": "22f780df6e694018db500ed54173391d6bd1c13457aa493762045e95bf739235",
+      "bytes": 8494,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tangent_cylinders.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tangent_cylinders.rs",
+      "sha256": "1d05f3a2a4a2e5b2effdacad5156122c4311725e423a53a844505f56bcea1634",
+      "bytes": 8831,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/taper_mesh_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/taper_mesh_tests.rs",
+      "sha256": "8b49eeb8165f5087e1b493352f86092c38c23cbf992686a897bd0793b6823b21",
+      "bytes": 7351,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/cdt.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/cdt.rs",
+      "sha256": "f0b9d87839a734ef38c68696bd669066135573c2c40d608f97db453739edb0eb",
+      "bytes": 21057,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/collar.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/collar.rs",
+      "sha256": "c41926d5256e55f6e527af3fc1d91110af1e50573015a1db008a75ec67c3c8ef",
+      "bytes": 12014,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/coons.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/coons.rs",
+      "sha256": "37687114c511aa4625f43ffbe7ecf09c6b61cf1d06d3accc9a3c4d7de12f87fe",
+      "bytes": 23847,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/cutgrid.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/cutgrid.rs",
+      "sha256": "2969d95445c8b055289b5e94bee0381332bd705c2c7a05175886662663511946",
+      "bytes": 22431,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/edges.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/edges.rs",
+      "sha256": "731aa6da77796c79bd5342fc810eebe64ecefc93c36d60a2c3bf6466cce2ae92",
+      "bytes": 11501,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/grid.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/grid.rs",
+      "sha256": "d148cf186d01fb11256baafcf1754561af4df9a90d63b92efb5c51a5f9998db2",
+      "bytes": 12993,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/mod.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/mod.rs",
+      "sha256": "7800bf23e0daf2581583680cbbbc641af2ba8ec36e88df3797434accb80d5032",
+      "bytes": 33575,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/motorcycle.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/motorcycle.rs",
+      "sha256": "120fbe9b6fc04edcfa8eaca7d1d11c7557580e54777c105642515d5cc23d25ad",
+      "bytes": 15463,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/pieces.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/pieces.rs",
+      "sha256": "6760ee52cabf5b3bfc4141516a6cb27508dad21004ebeeacb73bf8b65fe01639",
+      "bytes": 14428,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/seam.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/seam.rs",
+      "sha256": "30184579974dc0877494de77aed584e95e58c83ba419fa9098bbd4bf870ac4d4",
+      "bytes": 17416,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/size.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/size.rs",
+      "sha256": "1b7047a975a0c8e5dda38d5d75558dfe996ae066886baded6960d30d6eb58063",
+      "bytes": 11447,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/ssi.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/ssi.rs",
+      "sha256": "224a121fa8e1bf55f25ee2ccad4c7a07a3c0de60481a508f9791f6b89fee58b0",
+      "bytes": 13282,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/surface.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/surface.rs",
+      "sha256": "8211f53cf13a6dddd93a20935afa7c7973f053a8fdc7e11c9b4778520bd79dcc",
+      "bytes": 7406,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/tests.rs",
+      "sha256": "fac569b586f051d67869fb37ae9aa8a2e02fc74eee15a87d6d836062827208ba",
+      "bytes": 14459,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tess/uv.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tess/uv.rs",
+      "sha256": "d68b80a65cfb555ba49c99eb0f9336aeaa59d2088c69d1d3ecdfa0d60d0f7d2f",
+      "bytes": 13833,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tests.rs",
+      "sha256": "0ef2ada48232ca8be252391dbb53a00858d5deb4ca58d2e94e1065a3602d5755",
+      "bytes": 150837,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/thread_display_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/thread_display_tests.rs",
+      "sha256": "9e0e6b8e6c9477e50cf5317b5a5a3389355c5422b33c4362cc5c19a0b01f0fc4",
+      "bytes": 12276,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/thread_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/thread_tests.rs",
+      "sha256": "b64c4eede97ed71c5f00720bdd9ab4eb9ae468caaef52281c17a56bdf9572661",
+      "bytes": 3761,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/topo.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/topo.rs",
+      "sha256": "424959738478c809c5e97c56f19ea9fbf135b62ba056b7973790e58d8c3464d2",
+      "bytes": 29766,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/touching_walls.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/touching_walls.rs",
+      "sha256": "9ab134e8e0bde08353a97db6629302a1b2e8424f5d92b9f1cf9c23e4a05f7365",
+      "bytes": 8254,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/tspline.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/tspline.rs",
+      "sha256": "84c6b61125aeac0219722c1e1c9b1be04af24f043e53003ac1db83422675c327",
+      "bytes": 10480,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/untouched_faces_tests.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/untouched_faces_tests.rs",
+      "sha256": "3118b829a465c2e044e44bdbd217e82b42c623454180bdaf1648cbcdccd5b97b",
+      "bytes": 11053,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/kernel/src/watch.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/kernel/src/watch.rs",
+      "sha256": "5e370343a2287fcf741bdd1aaa8d7a6d97303077686e972c60abda2ae2895385",
+      "bytes": 1686,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/book/src/dev/features.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/book/src/dev/features.md",
+      "sha256": "ae6453f470be812a5d036024790eb6eda1f357fd6775ed48d3d84abc4958ad45",
+      "bytes": 34,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/book/src/dev/kernel.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/book/src/dev/kernel.md",
+      "sha256": "839dce894d731a112f40214c0c990babfb4717059833aebd045469316f07218a",
+      "bytes": 2066,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/book/src/dev/naming.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/book/src/dev/naming.md",
+      "sha256": "1e69270f5677f4d3f0b1a8e23194ffae412b83d50c5d68bb866977b910a0d930",
+      "bytes": 8266,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/book/src/guide/features.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/book/src/guide/features.md",
+      "sha256": "2ca644c67844966322f40822e47efbb44345de714fd39c9055bbf59e7d4cd549",
+      "bytes": 16594,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/design-container.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/design-container.md",
+      "sha256": "c74bca749a64f5b5419db45cc43d58429778bdf1efcf57d9ebf1023605ed846b",
+      "bytes": 14339,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/step-import.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/step-import.md",
+      "sha256": "9af6dc78f30a81c2d63bf42fbd35e8eb3e403b57483e4e92b201fed008ee61e2",
+      "bytes": 9716,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/docs/native-brep.md",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/docs/native-brep.md",
+      "sha256": "fc517f3adc90aa8d49301165cf153a8cd8a2267d4356160b9053984bc15a5f56",
+      "bytes": 9898,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/apps/solidcraft-cli/src/main.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/apps/solidcraft-cli/src/main.rs",
+      "sha256": "5b600ee146ddecb064fff8af11dba3999b6f11d5da7ef92d184bbc2f886e25ae",
+      "bytes": 34121,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/apps/solidcraft-cli/src/recipe.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/apps/solidcraft-cli/src/recipe.rs",
+      "sha256": "efb8177e6d76af8f0120ff153e737daa5c888798bc5250daab97cc61907ee5cf",
+      "bytes": 32255,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/geom/src/brep.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/geom/src/brep.rs",
+      "sha256": "3b65e8d9628adb92035bd7657d315aac521cb85674be5677f66a06a3ebfe70fc",
+      "bytes": 17344,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/engine/src/cmd/compare.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/engine/src/cmd/compare.rs",
+      "sha256": "d680b6d43e8587eb7316a6f4ed494748637e9873d1cc666df7767b74993cac57",
+      "bytes": 15802,
+      "status": "ok"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tangency-labs/solidcraft/fa691707c224cae580c42201ed3a22d5e4b8c716/crates/geom/src/compare.rs",
+      "path": "output/brep-native-capabilities-2026-10-19/solidcraft/crates/geom/src/compare.rs",
+      "sha256": "f8a19fd67f1b122f895130c5a73c2c37af937d32bd6a012f5592ac76c77fe6ef",
+      "bytes": 36232,
+      "status": "ok"
+    },
+    {
+      "url": "https://classcad.ch/docs/api-usage/classcadPartVsSolidApi/",
+      "path": "output/brep-native-capabilities-2026-10-19/classcad/part-vs-solid.html",
+      "sha256": "97881a3d4bc253e76300ed29b790e9a80b0a0c06446b4302dab63505b6b4c198",
+      "bytes": 39393,
+      "status": "ok",
+      "kind": "live_official_documentation",
+      "retrieved_on": "2026-10-19",
+      "not_fixed_package_runtime_evidence": true
+    },
+    {
+      "url": "https://classcad.ch/docs/",
+      "path": "output/brep-native-capabilities-2026-10-19/classcad/runtime-introduction.html",
+      "sha256": "e0300bfd8434612fb0a20fbed3851472ce63f3260ce5c20e6116c0d0f8b7fdf0",
+      "bytes": 20801,
+      "status": "ok",
+      "kind": "live_official_documentation",
+      "retrieved_on": "2026-10-19",
+      "not_fixed_package_runtime_evidence": true
+    },
+    {
+      "url": "https://classcad.ch/docs/architecture/classcad_and_smlib/",
+      "path": "output/brep-native-capabilities-2026-10-19/classcad/classcad-smlib.html",
+      "sha256": "80bc038bf55ddf2a297fb7a0e0c0c47f848a100ba240bfbe0fa7a884e0fa6385",
+      "bytes": 23342,
+      "status": "ok",
+      "kind": "live_official_documentation",
+      "retrieved_on": "2026-10-19",
+      "not_fixed_package_runtime_evidence": true
+    }
+  ],
+  "release_archive": {
+    "url": "https://github.com/tangency-labs/solidcraft/releases/download/v0.15.0/solidcraft-0.15.0-linux-x86_64.tar.gz",
+    "sha256": "4d62f8e41a92d150da5bd1152ea5d22230a4893e33e81cb573cebab81475bf4f",
+    "bytes": 61643519
+  },
+  "binary": {
+    "member": "solidcraft-0.15.0-linux-x86_64/bin/solidcraft-cli",
+    "sha256": "acf0ec79058998b2b34e3b64cd0cff5e40e8353f314800e95b180edfb5245d02",
+    "version_output": "solidcraft-cli 0.15.0\n"
+  },
+  "prior_evidence": [
+    {
+      "path": "results/recognition-catalog/sources.json",
+      "sha256": "c09c7eea5e9fef47d6f3dac1f69a8735f7dc62de6d951a557eafbcf8cbac19e1"
+    },
+    {
+      "path": "results/recognition-catalog/builtin-probe.json",
+      "sha256": "bb032b245091deec3edc7fe9ac644ab3c2716a9352af203c3cda1d4bd5644429"
+    },
+    {
+      "path": "results/recognition-availability/sources.json",
+      "sha256": "54bc03ca186a3cc4646a03321b58b5da5843a3ef53476abb925d6157d9202743"
+    },
+    {
+      "path": "results/cad-kernel-choice/sources.json",
+      "sha256": "f485e62a7c1e10b5bf9993d1807056df5cb2df9466b227883a887293e533a056"
+    }
+  ],
+  "probe": {
+    "path": "experiments/run_native_brep_probe.py",
+    "sha256": "2fa1f56a56d29242a83f0f154bc05fbcaf1d75672dca11274ba83e0283d8d15a"
+  },
+  "observations": {
+    "path": "results/native-brep-recognition/solidcraft-observations.json",
+    "sha256": "61bd59b2d8ad6446c6ad888894a4bda2831437f0171f987807a1c3f3a18d35be"
+  },
+  "not_executed": [
+    "ClassCAD engine",
+    "SMLib C++ analytic promotion",
+    "Quiddity recognition",
+    "SCBREP03 accuracy roundtrip"
+  ],
+  "production_implementation_changed": false
+}
