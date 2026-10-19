@@ -1,0 +1,645 @@
+{
+  "adoption_decision": "not_evaluated",
+  "baseline_binding": {
+    "case_id": "translated",
+    "case_manifest_sha256": "1e4bb647b24525249a7acbf2eda75ab1ee741fe02be1d501f97f2d20c0546c74",
+    "family_id": "authored-prismatic-plate",
+    "record_kind": "operator_observation",
+    "session_id": "unmeasured-extraction-reference",
+    "session_modified": false,
+    "session_sha256": "8db22b2ead15ca772a048c6b3f4b7fec6eaf436f46686373de4418f93be45cc0",
+    "timing_or_quality_record_added": false
+  },
+  "business_completion": "not_evaluated",
+  "caller_input": {
+    "part_reference": "research-control:translated"
+  },
+  "claim_boundary": "既存抽出の観測値と出所の接続です。値の存在は業務への自動採用・全体完了・加工精度・顧客合意・省力化を意味しません。",
+  "connector_version": "1.17.0",
+  "contract": {
+    "acceptance": {
+      "customer_agreed": false,
+      "dimension_match_tolerance_mm": 1e-06,
+      "max_false_auto_fields": 0,
+      "max_false_complete_parts": 0,
+      "max_missed_required_features": 0,
+      "net_time_saving_minutes_must_exceed": 0.0,
+      "planning_runs": 20,
+      "scope": "fixed_labeled_evaluation_set_only"
+    },
+    "comparison": {
+      "baselines": [
+        "manual_cad_and_transcription",
+        "existing_extraction_with_full_review"
+      ],
+      "quality_matched": true,
+      "time_scope": "setup_plus_all_operator_work_and_execution"
+    },
+    "completion": {
+      "confirmed_zero_requires_full_coverage": true,
+      "partial_is_complete": false,
+      "unanalysed_is_zero": false,
+      "unknown_is_zero": false,
+      "unresolved_required_fields_block_completion": true,
+      "whole_count_required": true
+    },
+    "contract_id": "single-part-hole-inventory-to-existing-table-reference-v1",
+    "coordinates": {
+      "axis": "opening_to_inside",
+      "length_unit": "mm",
+      "origin": "source_model_origin",
+      "position": "selected_opening_center",
+      "rounding": "presentation_only",
+      "slot_axis_sign": "lexicographic_end_centers",
+      "slot_length": "overall_including_semicircle_ends",
+      "transform": "none"
+    },
+    "customer_inputs": {
+      "actual_workbook": "pending_customer_agreement",
+      "coordinate_basis": "pending_customer_agreement",
+      "data_use_conditions": "pending_customer_agreement",
+      "field_mapping": "pending_customer_agreement",
+      "quality_and_time_targets": "pending_customer_agreement"
+    },
+    "definition_status": "research_reference",
+    "fields": {
+      "count_state": {
+        "level": "summary",
+        "meaning": "全体数の確定値あり・確定した0・不明を区別する。",
+        "required_when": "always",
+        "unit": "state"
+      },
+      "depth_mm": {
+        "level": "feature",
+        "meaning": "円形穴では確認した円柱壁の軸方向深さ、長孔では貫通長。ドリル先端や公称加工深さではない。",
+        "required_when": "all_features",
+        "unit": "mm"
+      },
+      "diameter_mm": {
+        "level": "feature",
+        "meaning": "丸穴の解析円柱の幾何径。長孔では非該当、元CADの公称径ではない。",
+        "required_when": "circular_hole",
+        "unit": "mm"
+      },
+      "entry_center_mm": {
+        "level": "feature",
+        "meaning": "選択した開口の中心XYZ。入力モデルの原点・座標を維持。出口や板厚中央とは別。",
+        "required_when": "all_features",
+        "unit": "mm_vector3"
+      },
+      "face_references": {
+        "level": "feature",
+        "meaning": "測定・判定に用いた入力内の面参照。再出力後の永続参照ではない。",
+        "required_when": "all_features",
+        "unit": "input_local_indices"
+      },
+      "feature_id": {
+        "level": "feature",
+        "meaning": "入力結果内のH/S番号。別ファイルでの同一形状の永続IDではない。",
+        "required_when": "all_features",
+        "unit": "input_local_id"
+      },
+      "feature_type": {
+        "level": "feature",
+        "meaning": "丸穴または直線長孔の幾何分類。用途や加工履歴の推定ではない。",
+        "required_when": "all_features",
+        "unit": "type"
+      },
+      "hole_type": {
+        "level": "feature",
+        "meaning": "円形貫通・円形平底止まり・直線貫通長孔の区別。未認識の種類は推測しない。",
+        "required_when": "all_features",
+        "unit": "type"
+      },
+      "inward_axis": {
+        "level": "feature",
+        "meaning": "選択開口から穴内部への単位方向。実加工の工具方向を保証しない。",
+        "required_when": "all_features",
+        "unit": "unit_vector3"
+      },
+      "length_mm": {
+        "level": "feature",
+        "meaning": "直線長孔の両端半円を含む全長。中心距離とは区別する。",
+        "required_when": "straight_slot",
+        "unit": "mm"
+      },
+      "long_axis": {
+        "level": "feature",
+        "meaning": "直線長孔の長手単位方向。半円中心の辞書順で符号を決め、加工方向とはしない。",
+        "required_when": "straight_slot",
+        "unit": "unit_vector3"
+      },
+      "part_reference": {
+        "level": "summary",
+        "meaning": "この業務で利用者が指定する部品参照。ファイル名から図番や品番を推定しない。",
+        "required_when": "always",
+        "unit": "text"
+      },
+      "recognized_hole_count": {
+        "level": "summary",
+        "meaning": "確認して列挙した丸穴と長孔の行数。全体数とは別。",
+        "required_when": "always",
+        "unit": "count"
+      },
+      "solid_index": {
+        "level": "feature",
+        "meaning": "入力内のソリッド参照。基準業務は単一ソリッドで、元CADの製品IDではない。",
+        "required_when": "all_features",
+        "unit": "input_local_index"
+      },
+      "source_sha256": {
+        "level": "summary",
+        "meaning": "入力バイト列のSHA-256。部品の同一性や版の意味を保証するIDではない。",
+        "required_when": "always",
+        "unit": "sha256"
+      },
+      "whole_hole_count": {
+        "level": "summary",
+        "meaning": "対応範囲内の全体確認が成立した場合だけ数値。部分結果・未解析では不明。",
+        "required_when": "always",
+        "unit": "count_or_unknown"
+      },
+      "width_mm": {
+        "level": "feature",
+        "meaning": "直線長孔の半円端の直径に相当する一定幅。丸穴では非該当。",
+        "required_when": "straight_slot",
+        "unit": "mm"
+      }
+    },
+    "required_metrics": [
+      "false_auto_fields",
+      "missed_required_features",
+      "false_complete_parts",
+      "unknown_truth_parts",
+      "review_parts",
+      "total_parts",
+      "setup_sample_count",
+      "setup_minutes",
+      "manual_task_minutes",
+      "execution_minutes",
+      "review_minutes",
+      "correction_minutes",
+      "rerun_minutes",
+      "update_minutes"
+    ],
+    "schema_version": "1.0.0",
+    "truth": {
+      "allowed_sources": [
+        "independent_recipe",
+        "independent_human_review"
+      ],
+      "freeze_before_evaluation": true,
+      "recognizer_output_is_truth": false,
+      "split_unit": "part_family",
+      "unknown_truth": "retain_unknown_and_report_count"
+    },
+    "workflow": {
+      "external_metadata": "manual_with_source_never_infer",
+      "feature_scope": [
+        "circular_through",
+        "circular_flat_bottom_blind",
+        "straight_through_slot"
+      ],
+      "part_unit": "single_solid_part",
+      "stages": [
+        "input_check",
+        "extract",
+        "review",
+        "transfer",
+        "final_check"
+      ],
+      "title": "受領した単体部品の穴情報を既存帳票へ転記し、確認を引き渡す"
+    }
+  },
+  "contract_conformance": "not_evaluated",
+  "contract_sha256": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+  "customer_approved": false,
+  "features": [
+    {
+      "fields": {
+        "depth_mm": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/depth_mm"
+            ]
+          },
+          "unit": "mm",
+          "value": 4.0
+        },
+        "diameter_mm": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/diameter_mm"
+            ]
+          },
+          "unit": "mm",
+          "value": 2.0
+        },
+        "entry_center_mm": {
+          "availability": "present",
+          "provenance": {
+            "operation": "xyz_vector",
+            "paths": [
+              "/inventory/holes/0/x_mm",
+              "/inventory/holes/0/y_mm",
+              "/inventory/holes/0/entry_z_mm"
+            ]
+          },
+          "unit": "mm_vector3",
+          "value": [
+            36.0,
+            -15.0,
+            11.0
+          ]
+        },
+        "face_references": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/faces"
+            ]
+          },
+          "unit": "input_local_indices",
+          "value": [
+            7
+          ]
+        },
+        "feature_id": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/id"
+            ]
+          },
+          "unit": "input_local_id",
+          "value": "H1"
+        },
+        "feature_type": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/feature_type"
+            ]
+          },
+          "unit": "type",
+          "value": "circular_hole"
+        },
+        "hole_type": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/kind"
+            ]
+          },
+          "unit": "type",
+          "value": "through"
+        },
+        "inward_axis": {
+          "availability": "present",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/axis"
+            ]
+          },
+          "unit": "unit_vector3",
+          "value": [
+            0,
+            0,
+            -1
+          ]
+        },
+        "length_mm": {
+          "availability": "not_applicable",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/length_mm"
+            ]
+          },
+          "unit": "mm",
+          "value": null
+        },
+        "long_axis": {
+          "availability": "not_applicable",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/longitudinal_direction"
+            ]
+          },
+          "unit": "unit_vector3",
+          "value": null
+        },
+        "solid_index": {
+          "availability": "present",
+          "provenance": {
+            "operation": "sole_solid_index",
+            "paths": [
+              "/inventory/metrics/solid_count"
+            ]
+          },
+          "unit": "input_local_index",
+          "value": 1
+        },
+        "width_mm": {
+          "availability": "not_applicable",
+          "provenance": {
+            "operation": "copy",
+            "paths": [
+              "/inventory/holes/0/width_mm"
+            ]
+          },
+          "unit": "mm",
+          "value": null
+        }
+      }
+    }
+  ],
+  "input_observations": {
+    "inventory_status": "complete",
+    "length_unit": "mm",
+    "metrics": {
+      "absolute_volume": 467.43362938564036,
+      "analyzer_valid": true,
+      "bounds_max": [
+        42.0000001,
+        -9.9999999,
+        11.0000001
+      ],
+      "bounds_min": [
+        29.9999999,
+        -20.0000001,
+        6.9999999
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.84955592154046,
+      "surface_centroid": [
+        36.0,
+        -15.0,
+        9.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "provenance_paths": [
+      "/inventory/metrics",
+      "/inventory/length_unit"
+    ],
+    "roots": 1,
+    "single_solid_observed": true,
+    "unit_contexts": [
+      {
+        "context_id": 429,
+        "length_unit_id": 430,
+        "millimetres_per_source_unit": 1.0,
+        "unit_chain": [
+          430
+        ]
+      }
+    ]
+  },
+  "inventory": {
+    "analysis_mode": "public_inspection",
+    "area_gate_mm2": 4.348495559215404e-06,
+    "area_residual_mm2": 1.6484591469634324e-12,
+    "bounds_max": [
+      42.0,
+      -10.0,
+      11.0
+    ],
+    "bounds_min": [
+      30.0,
+      -20.0,
+      7.0
+    ],
+    "conditions": {
+      "axis_reference": "選択した開口から反対の開口（穴内部）へ向かう単位ベクトル。",
+      "coordinate_reference": "mmへ変換したSTEP座標。X/Y/開口Zは表示用に選んだ開口中心。局所検証では開口中心の辞書順が大きい側を選択し、加工方向は推定しません。",
+      "count_policy": "全体確定の場合のみhole_countを表示。確認できた穴の行数と丸穴・長孔の内訳を表示し、全体の穴数不明と区別。候補が0件でも穴なしとしません。",
+      "fit_relative_tolerance": 1e-08,
+      "length_tolerance_mm": 1e-05,
+      "local_qualification_tolerance_mm": 1e-05,
+      "material_classification_frame": "材料判定だけ、ソリッドごとの原点近傍へ平行移動。入力の面ID・許容差と出力座標は維持。拡大縮小・形状修復はしません。",
+      "material_coordinate_resolution_limit_mm": 6.25e-07,
+      "measurement_scope": "幾何からの測定値。元CADの公称寸法・公差・設計履歴ではありません。",
+      "scope": "2 MB以下。検査用読込で複数単位定義・複数ソリッドに対応。全体確定は従来の板モデル。その他は両端が平面の丸穴と、条件を満たす直線状の貫通長孔を局所検証（最大512面）。",
+      "slot_measurements": "長孔の幅は半円の直径、全長は両端の半円を含む長さ。位置は選択した開口の中心。長手方向と貫通方向は別の単位ベクトルです。丸穴の幅・全長・長手方向と、長孔の穴径は該当なし。"
+    },
+    "feature_scope": "circular_and_slots",
+    "file_name": "translated.step",
+    "hole_count": 1,
+    "holes": [
+      {
+        "axis": [
+          0,
+          0,
+          -1
+        ],
+        "depth_mm": 4.0,
+        "diameter_mm": 2.0,
+        "entry_z_mm": 11.0,
+        "faces": [
+          7
+        ],
+        "feature_type": "circular_hole",
+        "id": "H1",
+        "kind": "through",
+        "length_mm": null,
+        "longitudinal_direction": null,
+        "width_mm": null,
+        "x_mm": 36.0,
+        "y_mm": -15.0
+      }
+    ],
+    "inventory_version": "1.14.0",
+    "length_unit": "mm",
+    "material_gate_mm3": 4.674336293856403e-06,
+    "material_residual_mm3": 0.0,
+    "metrics": {
+      "absolute_volume": 467.43362938564036,
+      "analyzer_valid": true,
+      "bounds_max": [
+        42.0000001,
+        -9.9999999,
+        11.0000001
+      ],
+      "bounds_min": [
+        29.9999999,
+        -20.0000001,
+        6.9999999
+      ],
+      "edge_count": 15,
+      "face_count": 7,
+      "maximum_edge_tolerance": 1e-07,
+      "maximum_face_tolerance": 1e-07,
+      "maximum_vertex_tolerance": 1e-07,
+      "shell_count": 1,
+      "solid_count": 1,
+      "surface_area": 434.84955592154046,
+      "surface_centroid": [
+        36.0,
+        -15.0,
+        9.0
+      ],
+      "surface_counts": [
+        [
+          "plane",
+          6
+        ],
+        [
+          "cylinder",
+          1
+        ]
+      ],
+      "vertex_count": 10
+    },
+    "preview": null,
+    "reason": "板と円筒穴の再構成を、入力の材料領域・面積と照合しました。",
+    "recognized_circular_hole_count": 1,
+    "recognized_hole_count": 1,
+    "recognized_slot_count": 0,
+    "review_items": [],
+    "review_schema_version": "1.0.0",
+    "review_summary": {
+      "candidate_observation_count": 0,
+      "count_state": "certified_count",
+      "groups": [],
+      "headline": "対応範囲内で穴1か所を確認しました。",
+      "item_count": 0,
+      "item_count_policy": "説明件数は検査の記録数です。同じ開口から複数の記録が生じる場合があり、未取得の穴数や全体の穴数を示しません。",
+      "manual_review_required": false
+    },
+    "roots": 1,
+    "source_bytes": 19085,
+    "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+    "status": "complete",
+    "unit_contexts": [
+      {
+        "context_id": 429,
+        "length_unit_id": 430,
+        "millimetres_per_source_unit": 1.0,
+        "unit_chain": [
+          430
+        ]
+      }
+    ]
+  },
+  "inventory_sha256": "152bdb22b18d9a94475c370dfb61036ec337591c8f017eb5c2deee64b7a05d34",
+  "route": {
+    "entry_point": "research_notes.hole_inventory.analyze_step",
+    "id": "existing_occt_step_hole_inventory",
+    "inventory_version": "1.14.0",
+    "options": {
+      "include_slots": true,
+      "inspection": true,
+      "preview": false
+    },
+    "runtime": {
+      "cadquery_ocp": "7.9.3.1.1",
+      "package_version": "1.17.0",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "python": "3.12.14",
+      "selected_implementation_sha256": {
+        "hole_inventory.py": "88f7a7d3446c72d15e2c373cdbb6ed6d4eb627b52094d19c9db1a6a27fb81308",
+        "hole_review.py": "17462987a27e1e9c13d0284c271ff12e486017dfcce5688e24c872d08c35598e",
+        "local_material.py": "2cad7afd6d7ddf1d35245221078341619278025211c00be310f1dabd43c91230",
+        "public_hole_inventory.py": "9a576b646daf05e2af6885c9c3161a34300252e6ce26b716ad463dd5d72acb6a",
+        "slot_inventory.py": "5fff79fdfc54de2ea62aff462c1f1e31259268369e0713b3daef875e1815742a",
+        "workflow_extraction.py": "bb427f8c441bfb7cb33897a8761b7fcd03fa124a68ada98d49837f1b26279392"
+      }
+    }
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "bytes": 19085,
+    "file_name": "translated.step",
+    "format": "STEP_Part21",
+    "sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e"
+  },
+  "summary": {
+    "count_state": {
+      "availability": "present",
+      "provenance": {
+        "operation": "copy",
+        "paths": [
+          "/inventory/review_summary/count_state"
+        ]
+      },
+      "unit": "state",
+      "value": "certified_count"
+    },
+    "part_reference": {
+      "availability": "present",
+      "provenance": {
+        "operation": "copy",
+        "paths": [
+          "/caller_input/part_reference"
+        ]
+      },
+      "unit": "text",
+      "value": "research-control:translated"
+    },
+    "recognized_hole_count": {
+      "availability": "present",
+      "provenance": {
+        "operation": "copy",
+        "paths": [
+          "/inventory/recognized_hole_count"
+        ]
+      },
+      "unit": "count",
+      "value": 1
+    },
+    "source_sha256": {
+      "availability": "present",
+      "provenance": {
+        "operation": "copy",
+        "paths": [
+          "/inventory/source_sha256"
+        ]
+      },
+      "unit": "sha256",
+      "value": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e"
+    },
+    "whole_hole_count": {
+      "availability": "present",
+      "provenance": {
+        "operation": "copy",
+        "paths": [
+          "/inventory/hole_count"
+        ]
+      },
+      "unit": "count_or_unknown",
+      "value": 1
+    }
+  },
+  "timing": {
+    "extraction_seconds": 0.07262510800137534,
+    "operator_time_measured": false,
+    "scope": "inventory_call_only"
+  }
+}

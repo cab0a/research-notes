@@ -1,0 +1,153 @@
+{
+  "cases": [
+    {
+      "dimensions_truth": [],
+      "family_id": "authored-prismatic-plate",
+      "handling_control": "full_count_reference",
+      "id": "no_holes",
+      "source_path": "fixtures/hole-inventory/sources/no_holes.step",
+      "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#no_holes",
+      "whole_count_truth": 0
+    },
+    {
+      "dimensions_truth": [
+        {
+          "axis": [
+            0,
+            0,
+            -1
+          ],
+          "depth_mm": 4.0,
+          "diameter_mm": 2.0,
+          "entry_z_mm": 4.0,
+          "kind": "through",
+          "x_mm": 6.0,
+          "y_mm": 5.0
+        }
+      ],
+      "family_id": "authored-prismatic-plate",
+      "handling_control": "full_count_reference",
+      "id": "single",
+      "source_path": "fixtures/hole-inventory/sources/single.step",
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#single",
+      "whole_count_truth": 1
+    },
+    {
+      "dimensions_truth": [
+        {
+          "axis": [
+            0,
+            0,
+            -1
+          ],
+          "depth_mm": 2.0,
+          "diameter_mm": 2.0,
+          "entry_z_mm": 4.0,
+          "kind": "blind",
+          "x_mm": 6.0,
+          "y_mm": 5.0
+        }
+      ],
+      "family_id": "authored-prismatic-plate",
+      "handling_control": "full_count_reference",
+      "id": "blind_top",
+      "source_path": "fixtures/hole-inventory/sources/blind_top.step",
+      "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#blind_top",
+      "whole_count_truth": 1
+    },
+    {
+      "dimensions_truth": [
+        {
+          "axis": [
+            0,
+            0,
+            -1
+          ],
+          "depth_mm": 4.0,
+          "diameter_mm": 2.0,
+          "entry_z_mm": 11.0,
+          "kind": "through",
+          "x_mm": 36.0,
+          "y_mm": -15.0
+        }
+      ],
+      "family_id": "authored-prismatic-plate",
+      "handling_control": "full_count_reference",
+      "id": "translated",
+      "source_path": "fixtures/hole-inventory/sources/translated.step",
+      "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-inventory/manifest.json#translated",
+      "whole_count_truth": 1
+    },
+    {
+      "dimensions_truth": null,
+      "family_id": "authored-prismatic-plate",
+      "handling_control": "partial_must_not_be_complete",
+      "id": "mixed_circle_slot",
+      "source_path": "fixtures/hole-robustness/sources/mixed.step",
+      "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+      "truth_origin": "independent_recipe",
+      "truth_reference": "fixtures/hole-robustness/manifest.json#mixed",
+      "whole_count_truth": 2
+    },
+    {
+      "dimensions_truth": null,
+      "family_id": "published-build123d-bracket",
+      "handling_control": "partial_must_not_be_complete",
+      "id": "public_bracket",
+      "source_path": "fixtures/public-step-corpus/sources/build123d_bracket.step",
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "truth_origin": "unknown_whole_count",
+      "truth_reference": "fixtures/public-step-corpus/manifest.json",
+      "whole_count_truth": null
+    },
+    {
+      "dimensions_truth": null,
+      "family_id": "transport-negative-control",
+      "handling_control": "unanalysed_must_not_be_zero",
+      "id": "invalid_transport",
+      "source_path": null,
+      "source_sha256": "fd76cc99c903f60264665da57143b57311324f2e47cd403fa49443227e9f8161",
+      "source_text": "not STEP",
+      "truth_origin": "authored_invalid_transport",
+      "truth_reference": "literal non-STEP bytes",
+      "whole_count_truth": null
+    },
+    {
+      "family_id": "authored-prismatic-plate",
+      "id": "ellipse",
+      "source_path": "fixtures/hole-robustness/sources/ellipse.step",
+      "source_sha256": "f3a2241aed5684c8c42568aaeb52fd7acd8a179c2d264caf7407f4980c4f836d",
+      "truth_origin": "not_assigned_for_connector_control",
+      "truth_reference": "fixtures/hole-robustness/manifest.json#ellipse",
+      "whole_count_truth": null
+    },
+    {
+      "family_id": "published-cadquery-assembly",
+      "id": "public_assembly",
+      "source_path": "fixtures/public-step-corpus/sources/cadquery_assembly.step",
+      "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "truth_origin": "not_assigned_for_connector_control",
+      "truth_reference": "fixtures/public-step-corpus/manifest.json",
+      "whole_count_truth": null
+    },
+    {
+      "family_id": "authored-unit-context-control",
+      "id": "missing_units",
+      "source_path": "fixtures/ap242-assemblies/missing_length_unit.step",
+      "source_sha256": "9573e68fc4a4c4003731bf8ca06e2aaf9013807d190be207573e2554385fa86c",
+      "truth_origin": "not_assigned_for_connector_control",
+      "truth_reference": "fixtures/ap242-assemblies/manifest.csv",
+      "whole_count_truth": null
+    }
+  ],
+  "scope": "Existing-route field/provenance controls; not unseen accuracy or workflow eligibility evaluation.",
+  "version": "1.17.0"
+}

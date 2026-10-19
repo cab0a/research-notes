@@ -1,6 +1,6 @@
 # STEP Hole Inventory — v1.14.0
 
-穴一覧のJSON/CSV仕様・認識条件はv1.14.0です。パッケージと画面はv1.16.0となり、別機能として[業務・評価定義の確認](cad-workflow-contract.md)と[基準作業の時間・品質記録](cad-workflow-baseline.md)を追加しました。既存の穴一覧を顧客帳票へ自動転記する機能を追加した版ではありません。
+穴一覧のJSON/CSV仕様・認識条件はv1.14.0です。パッケージと画面はv1.17.0となり、別機能として[業務・評価定義の確認](cad-workflow-contract.md)、[基準作業の記録](cad-workflow-baseline.md)、[既存抽出と業務項目・出所の接続](cad-workflow-extraction.md)を使えます。既存の穴一覧を顧客帳票へ自動転記する機能を追加した版ではありません。
 
 ## 日本語概要
 

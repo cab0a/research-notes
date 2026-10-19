@@ -1,0 +1,297 @@
+{
+  "adoption_decision": "not_evaluated",
+  "business_completion": "not_evaluated",
+  "claim_boundary": "Known-input connector, provenance and case-binding controls only; not new recognition accuracy, job suitability, operator savings or customer acceptance.",
+  "customer_workbook_available": false,
+  "date": "2026-10-19",
+  "field_baseline_complete": false,
+  "hashes": {
+    "experiments/run_workflow_extraction_study.py": "d844ae111b58f48c2e67dee7192be74cecbac2d01ace1e35bb025719202b3a12",
+    "fixtures/cad-workflow-contract/reference-contract.json": "f51df3cb1ec2649ee9580d5f8cb7d3ec6e4634af44b72fcb39826c817108ec7c",
+    "fixtures/cad-workflow-extraction/manifest.json": "1e4bb647b24525249a7acbf2eda75ab1ee741fe02be1d501f97f2d20c0546c74",
+    "fixtures/public-step-corpus/manifest.json": "84cd83cbfd5616b1b14ca027d73dd8e157455ed544b38a53f92e3c7f95c1ca39",
+    "src/research_notes/hole_inventory.py": "88f7a7d3446c72d15e2c373cdbb6ed6d4eb627b52094d19c9db1a6a27fb81308",
+    "src/research_notes/workflow_baseline.py": "b35ae9abfd70ba51644f8cba05cb8ea0d52eb939dd9a6adf631dcc0a143738a7",
+    "src/research_notes/workflow_contract.py": "134f8625b7e1474e20ac64fa5b29bae0c0ed6defee23bee4ed5f335bb31d8195",
+    "src/research_notes/workflow_extraction.py": "bb427f8c441bfb7cb33897a8761b7fcd03fa124a68ada98d49837f1b26279392"
+  },
+  "observations": [
+    {
+      "artifact": "observations/no_holes.json",
+      "artifact_sha256": "712cf51100cae332180eaa63fd1363c9de21f551aa0ed579da519b3d2575e2a4",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        1.114464880000014,
+        0.047972890999517404
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "no_holes",
+      "inventory_sha256": "cec99302250eb1bfc281ace93cbec1303028437685f6305cbfac59b42e3b10f5",
+      "inventory_status": "complete",
+      "passed": true,
+      "provenance_cells": 5,
+      "recognized_rows": 0,
+      "source_sha256": "33871f5b9d3c61f305e5609d9da20ab97cb522ecbad8b23c4ab222d4a0f2f49e",
+      "whole_count": 0
+    },
+    {
+      "artifact": "observations/single.json",
+      "artifact_sha256": "f2d12d6f6b9b2e89a9c2537e272c462d923bf3243e1cd9fbfbd075c17961da42",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.15011658399816952,
+        0.07024575600007665
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "single",
+      "inventory_sha256": "1331eeeb8f8572cc12ebb99a36a1c00e33550864c46f8f74d12bd52ce3b09f12",
+      "inventory_status": "complete",
+      "passed": true,
+      "provenance_cells": 17,
+      "recognized_rows": 1,
+      "source_sha256": "12fbbac25268597f5e1e166587ff374fd8ea907389adc3d713a8789af2edd6cd",
+      "whole_count": 1
+    },
+    {
+      "artifact": "observations/blind_top.json",
+      "artifact_sha256": "ce777ef17743fd907b8420e626391a0d10cf3d119c4282c0919edec56c44705b",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.07118618599997717,
+        0.07061204100318719
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "blind_top",
+      "inventory_sha256": "176e3cd667afb3a2e31e3d14411c4312d573b271e93d70ebea71338519d37740",
+      "inventory_status": "complete",
+      "passed": true,
+      "provenance_cells": 17,
+      "recognized_rows": 1,
+      "source_sha256": "6f847591fba52bbd02e28f4d85ca238294675722931fa423570722d8671fa32d",
+      "whole_count": 1
+    },
+    {
+      "artifact": "observations/translated.json",
+      "artifact_sha256": "60b86ca30a2a7e1e402d201bfe1925af759387e696f74246d03719a6aee987b2",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.07262510800137534,
+        0.15407845899972017
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "translated",
+      "inventory_sha256": "152bdb22b18d9a94475c370dfb61036ec337591c8f017eb5c2deee64b7a05d34",
+      "inventory_status": "complete",
+      "passed": true,
+      "provenance_cells": 17,
+      "recognized_rows": 1,
+      "source_sha256": "fa9d701149515ddef7ef87eee30cafe7a98c1d0ba5ea7edd4615f649c6086c5e",
+      "whole_count": 1
+    },
+    {
+      "artifact": "observations/mixed_circle_slot.json",
+      "artifact_sha256": "2a8607a09365dedca0767226b7fb8e68a39909cce8981d58ab8b1ab9365b1801",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.14308425299896044,
+        0.13582049899923732
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "mixed_circle_slot",
+      "inventory_sha256": "71df73cce5c19b429acc51230a7789c9bdcf86258759876459d9330fc66d2263",
+      "inventory_status": "partial",
+      "passed": true,
+      "provenance_cells": 29,
+      "recognized_rows": 2,
+      "source_sha256": "10a79cc882b73500e82dfa97b40886af93ccb882ecb1d0c611d44e6e132b9245",
+      "whole_count": null
+    },
+    {
+      "artifact": "observations/public_bracket.json",
+      "artifact_sha256": "06a969863d23c4d75faaf9a6b7240fd5316bebf4870d63951006e2a80892342a",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        1.1667620340012945,
+        1.2347990249982104
+      ],
+      "family_id": "published-build123d-bracket",
+      "id": "public_bracket",
+      "inventory_sha256": "653c1f9782c0bff163a62a0d01df5e838e397306cab0cc8757c24e859784580a",
+      "inventory_status": "partial",
+      "passed": true,
+      "provenance_cells": 137,
+      "recognized_rows": 11,
+      "source_sha256": "bc7b546d7062b56d93ad3a82fc90f25aa44e3930a9e98bdc93c5d409e4a84c2d",
+      "whole_count": null
+    },
+    {
+      "artifact": "observations/invalid_transport.json",
+      "artifact_sha256": "73fd5ace9637e5aff24d4ce2a70b91f6c61085bca2b2e1e0d06fb38e9c68dc1e",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "previous_inventory_unchanged": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.000657820997730596,
+        0.0007431110025208909
+      ],
+      "family_id": "transport-negative-control",
+      "id": "invalid_transport",
+      "inventory_sha256": "2602d3c7ee84b1b6a8dbc2dcad11ef90df5f129dc83e1559a6b95be8cdf55ee9",
+      "inventory_status": "rejected",
+      "passed": true,
+      "provenance_cells": 5,
+      "recognized_rows": 0,
+      "source_sha256": "fd76cc99c903f60264665da57143b57311324f2e47cd403fa49443227e9f8161",
+      "whole_count": null
+    },
+    {
+      "artifact": "observations/ellipse.json",
+      "artifact_sha256": "5acddc938013e71360655639caf5bb077a5e0c6f074cb436c3f9c99ca37f4e5f",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.1920192549987405,
+        0.2753468039991276
+      ],
+      "family_id": "authored-prismatic-plate",
+      "id": "ellipse",
+      "inventory_sha256": "b9d33281f0fa8fcf1a42029b8429265a2051e8c62b907b08bcca8528d3a615e8",
+      "inventory_status": "unresolved",
+      "passed": true,
+      "provenance_cells": 5,
+      "recognized_rows": 0,
+      "source_sha256": "f3a2241aed5684c8c42568aaeb52fd7acd8a179c2d264caf7407f4980c4f836d",
+      "whole_count": null
+    },
+    {
+      "artifact": "observations/public_assembly.json",
+      "artifact_sha256": "6f350a697232b664f0de94e3b1ff6aab1f2aaadadc15ee2c213982ea76287433",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.05555032599659171,
+        0.0734662520007987
+      ],
+      "family_id": "published-cadquery-assembly",
+      "id": "public_assembly",
+      "inventory_sha256": "8ba808c30541644aff316bbb59e8d94db368cda3ff829a0890f6e6d4508b808d",
+      "inventory_status": "unresolved",
+      "passed": true,
+      "provenance_cells": 5,
+      "recognized_rows": 0,
+      "source_sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "whole_count": null
+    },
+    {
+      "artifact": "observations/missing_units.json",
+      "artifact_sha256": "6cd9b453fb1857da311e79f803dc67b1d4c797f221656b200d5a6c38fccf98cc",
+      "checks": {
+        "all_17_fields_mapped_when_features_exist": true,
+        "all_provenance_resolves_and_matches": true,
+        "baseline_session_unchanged": true,
+        "no_business_or_operator_claim": true,
+        "repeat_observations_equal_without_timing": true,
+        "source_and_case_binding_match": true
+      },
+      "extraction_seconds": [
+        0.008616756000265013,
+        0.007892880999861518
+      ],
+      "family_id": "authored-unit-context-control",
+      "id": "missing_units",
+      "inventory_sha256": "e6bc20a1d327a6d3ead0b4e92b1f9be50cf0f0df28b8485b00d40cb5c4031e19",
+      "inventory_status": "rejected",
+      "passed": true,
+      "provenance_cells": 5,
+      "recognized_rows": 0,
+      "source_sha256": "9573e68fc4a4c4003731bf8ca06e2aaf9013807d190be207573e2554385fa86c",
+      "whole_count": null
+    }
+  ],
+  "operator_time_measured": false,
+  "passed": true,
+  "repeats": 2,
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "summary": {
+    "inputs": 10,
+    "previous_inventory_controls": 7,
+    "provenance_cells": 242,
+    "statuses": {
+      "complete": 4,
+      "partial": 2,
+      "rejected": 2,
+      "unresolved": 2
+    }
+  },
+  "version": "1.17.0"
+}

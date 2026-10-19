@@ -2,7 +2,9 @@
 
 ## 日本語概要
 
-v1.16.0では、現在のCAD確認・転記・チェックを工程別に記録するPython API・CLIを追加しました。中断/再開できるタイマーと、準備・正解付け・訂正・更新を含む集計を使えます。未測定の時間や正解不明の誤りは0にしません。合成値で集計を検証し、既存7入力の機械処理を各2回測定しました。**利用者と実帳票による現場基準の測定は未完了です。** [研究ノート](notes/cad-workflow-baseline.md)と[操作ガイド](docs/cad-workflow-baseline.md)をご覧ください。
+v1.17.0では、既存のSTEP読込・丸穴/長孔認識を業務定義の17項目へ接続しました。値・単位・入力条件・元JSONの参照先を保存し、基準記録とは部品ID・入力SHA-256を照合します。既存10入力を各2回確認し、従来7入力の抽出結果も維持しています。値が存在することと、業務に自動採用できることは別で、適用可否・帳票への実転記は未実装です。[研究ノート](notes/cad-workflow-extraction.md)と[操作ガイド](docs/cad-workflow-extraction.md)をご覧ください。
+
+v1.16の工程タイマー・時間/品質の記録も使えます。**利用者と実帳票による現場基準の測定は未完了です。** [基準作業の研究](notes/cad-workflow-baseline.md)と[記録ガイド](docs/cad-workflow-baseline.md)を参照してください。
 
 v1.15で固定した必須17項目、全体穴数と認識行数の区別、独立した正解、比較・採否基準は維持します。[業務定義の研究](notes/cad-workflow-definition.md)と[定義チェック](docs/cad-workflow-contract.md)も利用できます。顧客帳票への実転記・導入効果は未評価です。
 
@@ -16,7 +18,7 @@ v1.15で固定した必須17項目、全体穴数と認識行数の区別、独�
 
 [STEPを必須にしないB-Rep認識の再調査](notes/brep-native-recognition-strategy.md)では、各基盤のB-Repと保存済み履歴を直接利用し、既存機能で足りる部分と不足を整理しました。SolidCraft配布版では、ネイティブ文書の再読込後の穴定義・選択した長孔の幅6/全長20 mm・2形状の差分を小例で確認しています。ClassCADは公開API調査まで。認識器の全面的な作り直しやSTEP経由を前提にしません。
 
-**今後の計画は[中小企業向けCAD周辺業務の自動化](notes/sme-cad-automation-roadmap.md)です。** 少量サンプルから適用範囲と残る確認を見極め、既存帳票へ接続し、準備・確認・訂正を含む総工数で効果を測ります。最初の題材は「受領CADの穴情報→既存Excel」、区切りはv1.24相当の業務PoCです。v1.15で研究用の定義を固定し、v1.16で基準作業の記録機能を追加しました。現場実測・少数サンプルからの予測・新規性・優位性は未実証です。[以前の100項目](notes/brep-recognition-roadmap-100.md)は技術候補の記録として残し、実装順にはしません。過去の検証結果は保持しています。
+**今後の計画は[中小企業向けCAD周辺業務の自動化](notes/sme-cad-automation-roadmap.md)です。** 少量サンプルから適用範囲と残る確認を見極め、既存帳票へ接続し、準備・確認・訂正を含む総工数で効果を測ります。最初の題材は「受領CADの穴情報→既存Excel」、区切りはv1.24相当の業務PoCです。v1.15の定義・v1.16の記録に、v1.17で既存抽出の値と出所を接続しました。現場実測・少数サンプルからの予測・新規性・優位性は未実証です。[以前の100項目](notes/brep-recognition-roadmap-100.md)は技術候補の記録として残し、実装順にはしません。過去の検証結果は保持しています。
 
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
@@ -59,7 +61,7 @@ bound synthetic 3D dataset, explainable binary baselines, and a versioned
 parametric feature graph, and bounded 2D sketch constraints and dimension
 edits, five parameterized feature families, deterministic dependency recompute,
 STEP reconstruction candidates, and an assisted terminal/Python modeling tool.
-The current implementation version is v1.16.0. Scoped references, dimensional
+The current implementation version is v1.17.0. Scoped references, dimensional
 expressions, authored feature history, and reusable constrained assemblies extend
 this modeling track.
 
@@ -67,7 +69,23 @@ Unlike `vision-playground`, which compares image-processing methods as a stable
 experiment suite, this repository preserves how questions, controls, evidence,
 and claim boundaries evolve from one study to the next.
 
-## Workflow Baseline Recording: v1.16.0
+## Existing Inventory to Workflow Fields: v1.17.0
+
+A single existing STEP inventory call supplies the 17 reference fields with
+values, units and pointers into its retained JSON snapshot. The connector
+records input/shape conditions and runtime, and optionally verifies a baseline
+case by source/contract hash without adding human timing or quality records.
+Ten known inputs are checked twice, including seven unchanged prior results.
+Field presence is not a workflow suitability or completion decision.
+See the [study](notes/cad-workflow-extraction.md),
+[guide](docs/cad-workflow-extraction.md) and
+[verification](results/cad-workflow-extraction/verification.json).
+
+```bash
+python -m research_notes.workflow_extraction fixtures/public-step-corpus/sources/build123d_bracket.step --contract fixtures/cad-workflow-contract/reference-contract.json --output-dir output/workflow-extraction
+```
+
+## Workflow Baseline Recording: introduced in v1.16.0
 
 Record CAD inspection, transcription, checks and setup/truth-labeling effort
 with an interruptible local timer or stopwatch observations. JSON/Markdown
