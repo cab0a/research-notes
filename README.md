@@ -6,6 +6,8 @@ v1.14.0では、穴の判定を保留した理由と「次に確認すること�
 
 今後の基盤選定に向けて、[OCCT・SMLib・SolidCraft・ClassCADの比較調査](notes/cad-platform-selection.md)を追加しました。OCCT/SMLib系の隔離実測では固定STEP 64件の読込と計測・再出力を調べ、OCCT自身の積分条件による差も記録しました。汎用CADの自作を広げる前に、計測条件・認識の比較・受領データの確認業務を優先する提案です。SolidCraft/ClassCADは資料調査で、基盤の移行は未実施です。[初回のSMLib資料調査](notes/smlib-usd-brep-investigation.md)も残しています。
 
+[認識機能の再利用調査](notes/recognition-reuse-audit.md)では、SMLib系の曲面・フィレット認識と、独立した穴・長孔認識ライブラリーを区別しました。既存認識器を先に評価し、満たす機能は再利用する方針です。SMLibへの認識処理の移植は必須工程にしません。
+
 研究・教育・個人的実験にはPolyForm Noncommercial 1.0.0を適用し、商用利用は別契約です。
 
 ---
