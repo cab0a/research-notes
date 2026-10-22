@@ -2,6 +2,8 @@
 
 ## 日本語概要
 
+2D→CAD研究で、**ポケット内の貫通穴・平底止まり穴・座ぐり付き貫通穴・側面穴**と、**連鎖寸法・同径穴の数量・数値公差**を追加しました。自作FreeCADの20入力を各1回実行し、13入力で復元・編集後が一致、7入力は深さ不足・数量矛盾・方向の曖昧さ・未対応表記により保留しました。[最新の結果HTML](results/drawing-machining/report.html)、[研究記録](notes/drawing-machining.md)、[実行手順](docs/drawing-machining.md)を参照してください。**今回は依頼に従いテストコード追加・テストスイート実行をしていません。** 開発例の観測であり、回帰・未知図面の性能は未確認です。公差の保存と、はめあい・製造合否の判断は区別しています。
+
 2D→CAD研究を**ポケット＋穴・複数ポケット・角の段差＋穴**へ拡張しました。処理を固定してから作った未調整9部品では、SVG9入力で復元・編集が一致し、DXF9入力は開口方向の根拠不足で保留しました。開発・文字ID選択・欠落対照を含む32入力を各2回評価し、誤確定は観測していません。[最新の結果HTML](results/drawing-composites/report.html)、[研究結果と次の計画](notes/drawing-composites.md)、[再現手順](docs/drawing-composites.md)で確認できます。互いに離れた切削形状・同じFreeCAD作者経路内の結果であり、交差形状や顧客図面への対応ではありません。別CADの情報保持と人の作業時間短縮は未実証です。
 
 2D→CAD研究で、**別CAD・隠れ線／断面・未調整24部品**を評価しました。復元処理を固定してから48入力を各2回調べ、40入力で復元・編集が一致、8入力を保留（DXFの開口方向不明6件、SVGの寸法ラベル対応不明2件）。別途、LibreCADのSVG再出力4部品では寸法注記が失われ、保留しました。[最新の結果HTML](results/drawing-generalization/report.html)、[研究結果と次の計画](notes/drawing-generalization.md)、[再現手順](docs/drawing-generalization.md)を参照してください。誤確定0件は今回の固定入力内の観測で、顧客図面・未知の部品種別の精度ではありません。3D表示の左右ドラッグも修正しました。
@@ -49,6 +51,15 @@ Commercial use requires a separate written license. See
 inquiry process.
 
 ## Overview
+
+A [machining drawing extension](notes/drawing-machining.md) adds a through bore
+inside a pocket, flat-bottom blind bores, counterbored through bores, side bores,
+axis-aligned dimension chains, same-diameter quantity callouts and numeric
+deviation metadata. Thirteen of twenty development SVG/DXF inputs reconstruct
+and edit consistently with authoring truth; seven withhold. Each was executed
+once for saved demonstrations. **No tests were added or test suites run, as requested.**
+See the [latest HTML](results/drawing-machining/report.html) and
+[execution guide](docs/drawing-machining.md); generalization and regression remain unmeasured.
 
 A [compound drawing study](notes/drawing-composites.md) reconstructs separated
 pockets, corner steps and through holes. After freezing the interpreter, nine

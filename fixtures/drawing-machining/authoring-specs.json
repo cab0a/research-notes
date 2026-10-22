@@ -1,0 +1,259 @@
+[
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "pocket_through",
+    "p": {
+      "features": [
+        {
+          "depth": 6,
+          "kind": "pocket",
+          "length": 26,
+          "opening": "top",
+          "width": 32,
+          "x": 12,
+          "y": 12
+        },
+        {
+          "axis": "z",
+          "diameter": 8,
+          "extent": "through",
+          "kind": "bore",
+          "u": 28,
+          "v": 25
+        }
+      ],
+      "length": 64,
+      "thickness": 18,
+      "width": 90
+    },
+    "scale": 1,
+    "variant": null
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "blind_z",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "depth": 8,
+          "diameter": 10,
+          "entry": "positive",
+          "extent": "blind",
+          "kind": "bore",
+          "u": 26,
+          "v": 22
+        }
+      ],
+      "length": 54,
+      "thickness": 20,
+      "width": 72
+    },
+    "scale": 1,
+    "variant": null
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "counterbore",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "counter_depth": 5,
+          "counter_diameter": 12,
+          "diameter": 6,
+          "entry": "positive",
+          "kind": "counterbore",
+          "u": 28,
+          "v": 24
+        }
+      ],
+      "length": 60,
+      "thickness": 18,
+      "width": 80
+    },
+    "scale": 1,
+    "variant": null
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "side_blind",
+    "p": {
+      "features": [
+        {
+          "axis": "x",
+          "depth": 22,
+          "diameter": 8,
+          "entry": "positive",
+          "extent": "blind",
+          "kind": "bore",
+          "u": 28,
+          "v": 12
+        }
+      ],
+      "length": 60,
+      "thickness": 24,
+      "width": 80
+    },
+    "scale": 1,
+    "variant": null
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "side_through",
+    "p": {
+      "features": [
+        {
+          "axis": "x",
+          "diameter": 8,
+          "extent": "through",
+          "kind": "bore",
+          "u": 28,
+          "v": 12
+        }
+      ],
+      "length": 60,
+      "thickness": 24,
+      "width": 80
+    },
+    "scale": 1,
+    "variant": null
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "chain_quantity",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "diameter": 6,
+          "extent": "through",
+          "kind": "bore",
+          "u": 20,
+          "v": 18
+        },
+        {
+          "axis": "z",
+          "diameter": 6,
+          "extent": "through",
+          "kind": "bore",
+          "u": 58,
+          "v": 42
+        }
+      ],
+      "length": 60,
+      "thickness": 14,
+      "width": 84
+    },
+    "scale": 1,
+    "variant": "chain_quantity"
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "toleranced_bore",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "depth": 8,
+          "diameter": 10,
+          "entry": "positive",
+          "extent": "blind",
+          "kind": "bore",
+          "u": 26,
+          "v": 22
+        }
+      ],
+      "length": 54,
+      "thickness": 20,
+      "width": 72
+    },
+    "scale": 1,
+    "variant": "tolerance"
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "missing_depth",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "depth": 8,
+          "diameter": 10,
+          "entry": "positive",
+          "extent": "blind",
+          "kind": "bore",
+          "u": 26,
+          "v": 22
+        }
+      ],
+      "length": 54,
+      "thickness": 20,
+      "width": 72
+    },
+    "scale": 1,
+    "variant": "missing_depth"
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "wrong_quantity",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "diameter": 6,
+          "extent": "through",
+          "kind": "bore",
+          "u": 20,
+          "v": 18
+        },
+        {
+          "axis": "z",
+          "diameter": 6,
+          "extent": "through",
+          "kind": "bore",
+          "u": 58,
+          "v": 42
+        }
+      ],
+      "length": 60,
+      "thickness": 14,
+      "width": 84
+    },
+    "scale": 1,
+    "variant": "wrong_quantity"
+  },
+  {
+    "family": "machining",
+    "font": 2.8,
+    "id": "unsupported_fit",
+    "p": {
+      "features": [
+        {
+          "axis": "z",
+          "depth": 8,
+          "diameter": 10,
+          "entry": "positive",
+          "extent": "blind",
+          "kind": "bore",
+          "u": 26,
+          "v": 22
+        }
+      ],
+      "length": 54,
+      "thickness": 20,
+      "width": 72
+    },
+    "scale": 1,
+    "variant": "fit"
+  }
+]

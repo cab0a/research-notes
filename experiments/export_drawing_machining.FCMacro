@@ -1,0 +1,66 @@
+"""Independent FreeCAD authoring, using the existing native TechDraw exporter."""
+from pathlib import Path
+BASE=Path(__file__).with_name('export_drawing_families.FCMacro')
+source=BASE.read_text();a=source.index('SPECS=[');b=source.index('\nrecords=[]',a)
+source=source[:a]+"SPECS=json.loads(Path(os.environ['RESEARCH_DRAWING_SPECS']).read_text())"+source[b:]
+source=source.replace('def shape(f,p):', '''def shape(f,p):
+    if f=='machining':
+        s=Part.makeBox(p['width'],p['length'],p['thickness'])
+        for q in p['features']:
+            if q['kind']=='pocket':
+                tool=Part.makeBox(q['width'],q['length'],q['depth'],App.Vector(q['x'],q['y'],p['thickness']-q['depth'] if q['opening']=='top' else 0))
+                s=s.cut(tool);continue
+            axis=q['axis'];span=p[{'x':'width','y':'length','z':'thickness'}[axis]]
+            positive=q.get('entry','positive')=='positive';v=span if positive else 0
+            origin={'z':(q['u'],q['v'],v),'x':(v,q['u'],q['v']),'y':(q['u'],v,q['v'])}[axis]
+            d={'x':(1,0,0),'y':(0,1,0),'z':(0,0,1)}[axis];direction=App.Vector(*[n*(-1 if positive else 1) for n in d])
+            depth=q.get('depth',span);s=s.cut(Part.makeCylinder(q['diameter']/2,depth,App.Vector(*origin),direction))
+            if q['kind']=='counterbore':s=s.cut(Part.makeCylinder(q['counter_diameter']/2,q['counter_depth'],App.Vector(*origin),direction))
+        return s.removeSplitter()''')
+source=source.replace("    if f=='plate':\n        p['width']+=5", """    if f=='machining':
+        p['width']+=4;p['thickness']+=2
+        for q in p['features']:
+            if q['kind']=='pocket':q['depth']+=1
+            else:
+                q['diameter']+=.5
+                if q['kind']=='counterbore':q['counter_diameter']+=.5;q['counter_depth']+=1
+                elif q['extent']=='blind':q['depth']+=1
+        return p
+    if f=='plate':
+        p['width']+=5""")
+old="                if f in ('plate','pocket'):"
+new="""                if f=='machining':
+                    w,l,t=p['width'],p['length'],p['thickness']
+                    for role,u,v in [('front',w,t),('top',w,l),('right',l,t)]:
+                        linear(role,0,(0,0),(u,0));linear(role,1,(0,0),(0,v))
+                    if variant=='tolerance':
+                        for d in dimensions:d.FormatSpec='%.2w ±0.2'
+                    previous={};hole_index=0
+                    for i,q in enumerate(p['features']):
+                        off=30+28*i
+                        if q['kind']=='pocket':
+                            x,y,a,b=q['x'],q['y'],q['width'],q['length']
+                            linear('top',0,(0,0),(x,y),off);linear('top',1,(0,0),(x,y),off)
+                            linear('top',0,(x,y),(x+a,y),off+14);linear('top',1,(x,y),(x,y+b),off+14)
+                            linear('front',1,(x,t-q['depth']),(0,t),32)
+                            continue
+                        role={'z':'top','x':'right','y':'front'}[q['axis']];u,v=q['u'],q['v']
+                        anchor=previous.get(role,(0,0)) if variant in ('chain_quantity','wrong_quantity') else (0,0)
+                        linear(role,0,anchor,(u,v),off);linear(role,1,anchor,(u,v),off);previous[role]=(u,v)
+                        if variant in ('chain_quantity','wrong_quantity') and hole_index>0:hole_index+=1;continue
+                        span={'top':(w,l),'right':(l,t),'front':(w,t)}[role]
+                        diameter(role,q['diameter'],span[0]/2+24+10*i,span[1]/2+16+12*i,False,1,(u,v))
+                        count=(2 if variant=='chain_quantity' else 3) if variant in ('chain_quantity','wrong_quantity') else 1
+                        text=('' if count==1 else str(count)+' x ')+'%.2w'
+                        if variant=='tolerance':text+=' +0.2/-0.1'
+                        if variant=='fit':text+=' H7'
+                        if q['kind']=='counterbore' or q['extent']=='through':text+=' THRU'
+                        elif variant!='missing_depth':text+=' DEPTH '+str(q['depth'])
+                        dimensions[-1].FormatSpec=text
+                        if q['kind']=='counterbore':
+                            diameter(role,q['counter_diameter'],-span[0]/2-30,span[1]/2+32,False,1,(u,v))
+                            dimensions[-1].FormatSpec='%.2w DEPTH '+str(q['counter_depth'])
+                        hole_index+=1
+                elif f in ('plate','pocket'):"""
+assert source.count(old)==1;source=source.replace(old,new)
+exec(compile(source,str(BASE),'exec'))

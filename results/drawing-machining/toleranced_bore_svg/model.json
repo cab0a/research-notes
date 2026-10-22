@@ -1,0 +1,121 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "path:42"
+    ],
+    "feature_1.u": [
+      "path:36"
+    ],
+    "feature_1.v": [
+      "path:39"
+    ],
+    "front.extent0": [
+      "path:12"
+    ],
+    "front.extent1": [
+      "path:15"
+    ],
+    "right.extent0": [
+      "path:57"
+    ],
+    "right.extent1": [
+      "path:60"
+    ],
+    "top.extent0": [
+      "path:30"
+    ],
+    "top.extent1": [
+      "path:33"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "depth": 8.0,
+        "diameter": 10.0,
+        "entry": "positive",
+        "extent": "blind",
+        "kind": "bore",
+        "u": 26.0,
+        "v": 22.0
+      }
+    ],
+    "length": 54.0,
+    "thickness": 20.0,
+    "width": 72.0
+  },
+  "source_sha256": "98d0a066965248877de4b6068515c836512acd512b660baca0fa7a625eeefc38",
+  "tolerances": [
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:12",
+      "nominal_mm": 72.0,
+      "source_text": "72 ±0.2",
+      "view": "front"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:15",
+      "nominal_mm": 20.0,
+      "source_text": "20 ±0.2",
+      "view": "front"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:30",
+      "nominal_mm": 72.0,
+      "source_text": "72 ±0.2",
+      "view": "top"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:33",
+      "nominal_mm": 54.0,
+      "source_text": "54 ±0.2",
+      "view": "top"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:57",
+      "nominal_mm": 54.0,
+      "source_text": "54 ±0.2",
+      "view": "right"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "path:60",
+      "nominal_mm": 20.0,
+      "source_text": "20 ±0.2",
+      "view": "right"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.1,
+        "upper": 0.2
+      },
+      "dimension_id": "path:42",
+      "nominal_mm": 10.0,
+      "source_text": "10 +0.2/-0.1 DEPTH 8",
+      "view": "top"
+    }
+  ]
+}

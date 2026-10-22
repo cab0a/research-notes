@@ -1,0 +1,67 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "path:46"
+    ],
+    "feature_1.u": [
+      "path:40"
+    ],
+    "feature_1.v": [
+      "path:43"
+    ],
+    "feature_2.callouts": [
+      "path:46"
+    ],
+    "feature_2.u": [
+      "path:40",
+      "path:49"
+    ],
+    "feature_2.v": [
+      "path:43",
+      "path:52"
+    ],
+    "front.extent0": [
+      "path:13"
+    ],
+    "front.extent1": [
+      "path:16"
+    ],
+    "right.extent0": [
+      "path:68"
+    ],
+    "right.extent1": [
+      "path:71"
+    ],
+    "top.extent0": [
+      "path:34"
+    ],
+    "top.extent1": [
+      "path:37"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "diameter": 6.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 20.0,
+        "v": 18.0
+      },
+      {
+        "axis": "z",
+        "diameter": 6.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 58.0,
+        "v": 42.0
+      }
+    ],
+    "length": 60.0,
+    "thickness": 14.0,
+    "width": 84.0
+  },
+  "source_sha256": "2c30500e215cb8a649b008a9752d3f6cfcfcbb8273a0abf2b4ce33e081a678e7",
+  "tolerances": []
+}

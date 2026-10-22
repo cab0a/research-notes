@@ -42,3 +42,9 @@ fixtures/drawing-composites/controls/** -text -whitespace
 results/drawing-composites/*/input.* -text -whitespace
 results/drawing-composites/*.csv -text -whitespace
 results/drawing-composites/librecad-render/** -text -whitespace
+
+fixtures/drawing-machining/inputs/** -text -whitespace
+fixtures/drawing-machining/evaluation/**/*.step -text -whitespace
+fixtures/drawing-machining/authoring/*.FCStd binary
+results/drawing-machining/*/input.* -text -whitespace
+results/drawing-machining/*.csv -text -whitespace

@@ -15,6 +15,21 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Machining intersections, bore variants and dimension syntax
+
+The bounded model adds a Z-through bore fully inside a pocket, flat-bottom blind
+bores, counterbored through bores and side bores. Signed dimension paths recover
+chained positions; quantity callouts and numeric tolerances retain source IDs.
+Nominal geometry and tolerance metadata are separate. Twenty native FreeCAD
+SVG/DXF development inputs were executed once: thirteen original/edited models
+agree with authoring truth and seven withhold. **No tests were added or run at
+the user's request.** These are saved demonstrations, not held-out or regression results.
+
+- [Research and limitations](../notes/drawing-machining.md)
+- [Result HTML](../results/drawing-machining/report.html)
+- [Execution guide](drawing-machining.md)
+- [Fixed input provenance](../fixtures/drawing-machining/README.md)
+
 ### Separated compound features, dimension-ID review and frozen holdout
 
 Pockets plus holes, two pockets of different depths, and corner steps plus holes

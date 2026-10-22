@@ -1,0 +1,72 @@
+{
+  "bindings": {
+    "feature_2.callouts": [
+      "path:68"
+    ],
+    "feature_2.u": [
+      "path:62"
+    ],
+    "feature_2.v": [
+      "path:65"
+    ],
+    "front.extent0": [
+      "path:14"
+    ],
+    "front.extent1": [
+      "path:17"
+    ],
+    "pocket.depth": [
+      "path:20"
+    ],
+    "pocket.length": [
+      "path:59"
+    ],
+    "pocket.width": [
+      "path:56"
+    ],
+    "pocket.x": [
+      "path:50"
+    ],
+    "pocket.y": [
+      "path:53"
+    ],
+    "right.extent0": [
+      "path:85"
+    ],
+    "right.extent1": [
+      "path:88"
+    ],
+    "top.extent0": [
+      "path:44"
+    ],
+    "top.extent1": [
+      "path:47"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "depth": 6.0,
+        "kind": "pocket",
+        "length": 26.0,
+        "opening": "top",
+        "width": 32.0,
+        "x": 12.0,
+        "y": 12.0
+      },
+      {
+        "axis": "z",
+        "diameter": 8.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 28.0,
+        "v": 25.0
+      }
+    ],
+    "length": 64.0,
+    "thickness": 18.0,
+    "width": 90.0
+  },
+  "source_sha256": "fa7a6a6cd443b8f47895a27c0cd8050ee1358a2ae0b7984646a48b2cc223333e",
+  "tolerances": []
+}

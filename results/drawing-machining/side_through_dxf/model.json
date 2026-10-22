@@ -1,0 +1,48 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "A80"
+    ],
+    "feature_1.u": [
+      "A6C"
+    ],
+    "feature_1.v": [
+      "A76"
+    ],
+    "front.extent0": [
+      "A30"
+    ],
+    "front.extent1": [
+      "A3A"
+    ],
+    "right.extent0": [
+      "A58"
+    ],
+    "right.extent1": [
+      "A62"
+    ],
+    "top.extent0": [
+      "A44"
+    ],
+    "top.extent1": [
+      "A4E"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "x",
+        "diameter": 8.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 28.0,
+        "v": 12.0
+      }
+    ],
+    "length": 60.0,
+    "thickness": 24.0,
+    "width": 80.0
+  },
+  "source_sha256": "aa6be31d1073f352bf30d1be5c933e4830e925996078bda89e8bd38c36832553",
+  "tolerances": []
+}

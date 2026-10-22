@@ -1,0 +1,15 @@
+{
+  "base_commit": "283384e",
+  "boundaries": [
+    "no interacting side bores",
+    "no drill-tip cones",
+    "no fit/GD&T interpretation",
+    "no tolerance stack analysis",
+    "no arbitrary contour or customer-drawing accuracy"
+  ],
+  "date": "2026-10-22",
+  "human_inputs": "mm, projection/view mapping, bounded stock-machining family; no numeric shape overrides",
+  "scope": "Internal rectangular pocket containing a Z-through bore; flat-bottom blind, counterbored through and side bores; graphical chain/quantity/numeric tolerances.",
+  "stage": "development demonstrations; no held-out/generalization experiment",
+  "tests": "No test additions or test execution, as requested. One-pass CAD reconstruction demonstrations recorded separately."
+}

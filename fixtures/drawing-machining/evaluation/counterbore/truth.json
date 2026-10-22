@@ -1,0 +1,40 @@
+{
+  "edited_parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "counter_depth": 6,
+        "counter_diameter": 12.5,
+        "diameter": 6.5,
+        "entry": "positive",
+        "kind": "counterbore",
+        "u": 28,
+        "v": 24
+      }
+    ],
+    "length": 60,
+    "thickness": 20,
+    "width": 84
+  },
+  "hashes": {
+    "edited-truth.step": "b1591a898dde289dd1d136df44524f7b28eb34da97dd8bfd336fc2754fd405fe",
+    "truth.step": "a6ff362929341a086fb7e2c4bda35e25f2271becaca56dd2694eef7d71c6cc33"
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "counter_depth": 5,
+        "counter_diameter": 12,
+        "diameter": 6,
+        "entry": "positive",
+        "kind": "counterbore",
+        "u": 28,
+        "v": 24
+      }
+    ],
+    "length": 60,
+    "thickness": 18,
+    "width": 80
+  }
+}

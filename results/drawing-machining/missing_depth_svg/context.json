@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "bounded_stock_machining",
+  "projection": "third_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:0",
+    "right": "path:45",
+    "top": "path:18"
+  }
+}

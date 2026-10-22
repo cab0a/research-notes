@@ -14,6 +14,16 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
+For the latest machining-feature extension, see [the execution guide](drawing-machining.md).
+It records one-pass development demonstrations for intersecting pocket/through-hole
+cuts, bore variants, dimension chains, quantities and numeric tolerance metadata.
+No test code was added and no test suite was executed for this change, as requested.
+
+```bash
+python -m experiments.run_drawing_machining --output-dir output/drawing-machining-replay
+python -m research_notes.drawing_machining_report output/drawing-machining-replay
+```
+
 For the latest separated compound-feature study, see
 [the compound reconstruction guide](drawing-composites.md). Thirty-two inputs
 repeat twice, including nine new SVG/DXF configuration pairs generated after

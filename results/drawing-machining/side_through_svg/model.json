@@ -1,0 +1,48 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "path:58"
+    ],
+    "feature_1.u": [
+      "path:52"
+    ],
+    "feature_1.v": [
+      "path:55"
+    ],
+    "front.extent0": [
+      "path:11"
+    ],
+    "front.extent1": [
+      "path:14"
+    ],
+    "right.extent0": [
+      "path:46"
+    ],
+    "right.extent1": [
+      "path:49"
+    ],
+    "top.extent0": [
+      "path:28"
+    ],
+    "top.extent1": [
+      "path:31"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "x",
+        "diameter": 8.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 28.0,
+        "v": 12.0
+      }
+    ],
+    "length": 60.0,
+    "thickness": 24.0,
+    "width": 80.0
+  },
+  "source_sha256": "30a1974a1f7215a974727a9ab80d070dfe26d1269e260fcd6dbf4d1c3f3393ea",
+  "tolerances": []
+}

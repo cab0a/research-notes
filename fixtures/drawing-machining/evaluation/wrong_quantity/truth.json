@@ -1,0 +1,52 @@
+{
+  "edited_parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "diameter": 6.5,
+        "extent": "through",
+        "kind": "bore",
+        "u": 20,
+        "v": 18
+      },
+      {
+        "axis": "z",
+        "diameter": 6.5,
+        "extent": "through",
+        "kind": "bore",
+        "u": 58,
+        "v": 42
+      }
+    ],
+    "length": 60,
+    "thickness": 16,
+    "width": 88
+  },
+  "hashes": {
+    "edited-truth.step": "c9824200c98fff8d5ed85f99a71421f5b8b9c668e61bb9d10384dac91ba74f7b",
+    "truth.step": "4ccc4e18661b77ce7444bad76f2e7eb50f0ccd756077177c4e9cf343957678bb"
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "diameter": 6,
+        "extent": "through",
+        "kind": "bore",
+        "u": 20,
+        "v": 18
+      },
+      {
+        "axis": "z",
+        "diameter": 6,
+        "extent": "through",
+        "kind": "bore",
+        "u": 58,
+        "v": 42
+      }
+    ],
+    "length": 60,
+    "thickness": 14,
+    "width": 84
+  }
+}

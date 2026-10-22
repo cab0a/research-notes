@@ -1,0 +1,121 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "A80"
+    ],
+    "feature_1.u": [
+      "A6C"
+    ],
+    "feature_1.v": [
+      "A76"
+    ],
+    "front.extent0": [
+      "A30"
+    ],
+    "front.extent1": [
+      "A3A"
+    ],
+    "right.extent0": [
+      "A58"
+    ],
+    "right.extent1": [
+      "A62"
+    ],
+    "top.extent0": [
+      "A44"
+    ],
+    "top.extent1": [
+      "A4E"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "depth": 8.0,
+        "diameter": 10.0,
+        "entry": "positive",
+        "extent": "blind",
+        "kind": "bore",
+        "u": 26.0,
+        "v": 22.0
+      }
+    ],
+    "length": 54.0,
+    "thickness": 20.0,
+    "width": 72.0
+  },
+  "source_sha256": "b43530d08b067185dee21c1eb95a9ef98705d9419dd3743e6b8b3c72fc683283",
+  "tolerances": [
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A30",
+      "nominal_mm": 72.0,
+      "source_text": "72 ±0.2",
+      "view": "front"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A3A",
+      "nominal_mm": 20.0,
+      "source_text": "20 ±0.2",
+      "view": "front"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A44",
+      "nominal_mm": 72.0,
+      "source_text": "72 ±0.2",
+      "view": "top"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A4E",
+      "nominal_mm": 54.0,
+      "source_text": "54 ±0.2",
+      "view": "top"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A58",
+      "nominal_mm": 54.0,
+      "source_text": "54 ±0.2",
+      "view": "right"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.2,
+        "upper": 0.2
+      },
+      "dimension_id": "A62",
+      "nominal_mm": 20.0,
+      "source_text": "20 ±0.2",
+      "view": "right"
+    },
+    {
+      "deviations_mm": {
+        "lower": -0.1,
+        "upper": 0.2
+      },
+      "dimension_id": "A80",
+      "nominal_mm": 10.0,
+      "source_text": "10 +0.2/-0.1 DEPTH 8",
+      "view": "top"
+    }
+  ]
+}

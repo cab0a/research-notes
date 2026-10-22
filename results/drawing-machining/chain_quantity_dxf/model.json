@@ -1,0 +1,67 @@
+{
+  "bindings": {
+    "feature_1.callouts": [
+      "A90"
+    ],
+    "feature_1.u": [
+      "A7C"
+    ],
+    "feature_1.v": [
+      "A86"
+    ],
+    "feature_2.callouts": [
+      "A90"
+    ],
+    "feature_2.u": [
+      "A7C",
+      "A98"
+    ],
+    "feature_2.v": [
+      "A86",
+      "AA2"
+    ],
+    "front.extent0": [
+      "A40"
+    ],
+    "front.extent1": [
+      "A4A"
+    ],
+    "right.extent0": [
+      "A68"
+    ],
+    "right.extent1": [
+      "A72"
+    ],
+    "top.extent0": [
+      "A54"
+    ],
+    "top.extent1": [
+      "A5E"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "axis": "z",
+        "diameter": 6.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 20.0,
+        "v": 18.0
+      },
+      {
+        "axis": "z",
+        "diameter": 6.0,
+        "extent": "through",
+        "kind": "bore",
+        "u": 58.0,
+        "v": 42.0
+      }
+    ],
+    "length": 60.0,
+    "thickness": 14.0,
+    "width": 84.0
+  },
+  "source_sha256": "56fd8cbc48658fdca49dabea25205675db8a597989c9288209bfe3e424e21e56",
+  "tolerances": []
+}
