@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "stepped_shaft",
+  "projection": "third_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:0",
+    "right": "path:47",
+    "top": "path:22"
+  }
+}

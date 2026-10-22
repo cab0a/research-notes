@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "plate",
+  "projection": "third_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:17",
+    "right": "path:44",
+    "top": "path:0"
+  }
+}

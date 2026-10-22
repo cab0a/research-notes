@@ -1,0 +1,23 @@
+{
+  "ai_used": false,
+  "detail": "projection required",
+  "evidence": null,
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "plate",
+    "projection": "unknown",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:44",
+      "top": "path:17"
+    }
+  },
+  "input_format": "svg",
+  "method": "declared_family_graphical_dimensions",
+  "original_history_recovered": false,
+  "reason_code": "projection_unknown",
+  "source_sha256": "49fec39a9bc0bf7b60465eaa64f75559dfd099b95dcf0acdd0fcb8098aab1c49",
+  "status": "withheld"
+}

@@ -1,0 +1,33 @@
+{
+  "cad_area": 4318.68583470577,
+  "cad_volume": 10810.555321405445,
+  "edited_parameters": {
+    "holes": [
+      {
+        "diameter": 6,
+        "x": 14,
+        "y": 11
+      }
+    ],
+    "length": 34,
+    "thickness": 9,
+    "width": 51
+  },
+  "family": "plate",
+  "hashes": {
+    "edited-truth.step": "245c3394509b7bc500da9fa926488800aed581cf0d82ae638b9dee6e8012f73c",
+    "truth.step": "215780fcba27fc1fca76732464ebfd640829d6796c7970a11f451c74778b7543"
+  },
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 5,
+        "x": 13,
+        "y": 11
+      }
+    ],
+    "length": 34,
+    "thickness": 7,
+    "width": 46
+  }
+}

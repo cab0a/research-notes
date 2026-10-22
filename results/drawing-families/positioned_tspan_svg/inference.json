@@ -1,0 +1,23 @@
+{
+  "ai_used": false,
+  "detail": "only unpositioned unstyled tspan runs are supported",
+  "evidence": null,
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "plate",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:44",
+      "top": "path:17"
+    }
+  },
+  "input_format": "svg",
+  "method": "declared_family_graphical_dimensions",
+  "original_history_recovered": false,
+  "reason_code": "svg_text_layout",
+  "source_sha256": "652dcdc63d9cbe14a549d7647a203bb6fd5d8eb66a356049d8d5b2ddeedb3bdd",
+  "status": "withheld"
+}

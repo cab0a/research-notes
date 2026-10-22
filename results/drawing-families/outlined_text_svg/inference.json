@@ -1,0 +1,23 @@
+{
+  "ai_used": false,
+  "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+  "evidence": null,
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "plate",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:51",
+      "top": "path:19"
+    }
+  },
+  "input_format": "svg",
+  "method": "declared_family_graphical_dimensions",
+  "original_history_recovered": false,
+  "reason_code": "text_unavailable",
+  "source_sha256": "b800f1bf24fa768c2e9e32f553c9441963fa624dbf0870ffc4141bddb4e5e264",
+  "status": "withheld"
+}

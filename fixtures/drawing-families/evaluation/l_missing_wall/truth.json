@@ -1,0 +1,23 @@
+{
+  "cad_area": 4809.999999999999,
+  "cad_volume": 9800.0,
+  "edited_parameters": {
+    "base_thickness": 6,
+    "height": 27,
+    "length": 30,
+    "wall_thickness": 5,
+    "width": 45
+  },
+  "family": "l_bracket",
+  "hashes": {
+    "edited-truth.step": "510822ffdf69a274b68e6d54f2e18d4d12f1bd3e2c028d5db8115265a713d523",
+    "truth.step": "bee0cca0c08012a81ba6efabe0fb00cdc3ad4ea7a02956e5f719b278b0090ba2"
+  },
+  "parameters": {
+    "base_thickness": 5,
+    "height": 24,
+    "length": 30,
+    "wall_thickness": 5,
+    "width": 40
+  }
+}

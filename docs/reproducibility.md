@@ -14,7 +14,18 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
-For the latest paired SVG/DXF experiment, see [the SVG comparison guide](cad-svg-dxf.md).
+For the latest family expansion, see [the drawing families guide](drawing-families.md).
+It preserves new FreeCAD exports, drawing-only worker inputs, an unchanged-code
+baseline, independent authoring truth and expected withholding reasons.
+Twenty-one positive and eleven negative inputs are evaluated twice. The report
+also exports human view context for CLI recalculation; it does not calculate CAD
+inside the browser. Fixed-input replay needs no FreeCAD, GPU or AI API.
+
+```bash
+python -m experiments.run_drawing_families --output-dir output/drawing-families-reproduction --repeats 2
+```
+
+For the preceding paired SVG/DXF experiment, see [the SVG comparison guide](cad-svg-dxf.md).
 It reuses the exact previous CAD exports and adds no dependency. Each format is
 interpreted separately; source CAD and paired DXF are not SVG worker inputs.
 Five positive pairs and four withheld pairs are evaluated twice, including native

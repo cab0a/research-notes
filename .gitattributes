@@ -18,3 +18,10 @@ fixtures/cad-drawing-exports/evaluation/*.step -text -whitespace
 fixtures/cad-drawing-exports/authoring/*.FCStd binary
 results/cad-drawing-exports/*/input.* -text -whitespace
 results/cad-svg-dxf/*/input.* -text -whitespace
+fixtures/drawing-families/inputs/** -text -whitespace
+fixtures/drawing-families/variants/** -text -whitespace
+fixtures/drawing-families/evaluation/**/*.step -text -whitespace
+fixtures/drawing-families/authoring/*.FCStd binary
+fixtures/drawing-families/licenses/** -text -whitespace
+results/drawing-families/*/input.* -text -whitespace
+results/drawing-families/*.csv -text -whitespace

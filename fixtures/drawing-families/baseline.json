@@ -1,0 +1,235 @@
+{
+  "base_commit": "c95aeca568b0f77127479198cb4e13b2522e0ac2",
+  "code_hashes": {
+    "src/research_notes/cad_drawing_import.py": "1f5b7e26990f9c4435914ff4b1275c43025922045d0d86f314ce7d46f7ff489f",
+    "src/research_notes/cad_svg_import.py": "1c6ce92d13c643470ee6886f9056f5e526de889eca4e1bcce25f62885c38b4f2",
+    "src/research_notes/svg_drawing_graphics.py": "c8abb203849d459104ca9ecd6f0e1869b909925e14aae2bcc2af2d396459c825"
+  },
+  "observations": [
+    {
+      "detail": null,
+      "id": "unseen_small_svg",
+      "initial_unseen_setting": true,
+      "reason": null,
+      "status": "candidate"
+    },
+    {
+      "detail": null,
+      "id": "unseen_small_dxf",
+      "initial_unseen_setting": true,
+      "reason": null,
+      "status": "candidate"
+    },
+    {
+      "detail": "unclassified path topology",
+      "id": "unseen_large_svg",
+      "initial_unseen_setting": true,
+      "reason": "svg_path",
+      "status": "withheld"
+    },
+    {
+      "detail": null,
+      "id": "unseen_large_dxf",
+      "initial_unseen_setting": true,
+      "reason": null,
+      "status": "candidate"
+    },
+    {
+      "detail": null,
+      "id": "two_holes_svg",
+      "initial_unseen_setting": false,
+      "reason": null,
+      "status": "candidate"
+    },
+    {
+      "detail": null,
+      "id": "two_holes_dxf",
+      "initial_unseen_setting": false,
+      "reason": null,
+      "status": "candidate"
+    },
+    {
+      "detail": "one baseline hole target",
+      "id": "three_shared_svg",
+      "initial_unseen_setting": false,
+      "reason": "dimension_target_ambiguous",
+      "status": "withheld"
+    },
+    {
+      "detail": "one baseline hole required",
+      "id": "three_shared_dxf",
+      "initial_unseen_setting": false,
+      "reason": "dimension_target_ambiguous",
+      "status": "withheld"
+    },
+    {
+      "detail": "2 x 6 THRU",
+      "id": "quantity_two_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_annotation",
+      "status": "withheld"
+    },
+    {
+      "detail": "2 x 6 THRU",
+      "id": "quantity_two_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_annotation",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "l_bracket_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "l_bracket_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "stepped_shaft_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "stepped_shaft_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "pocket_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "pocket_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "l_missing_wall_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "l_missing_wall_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "shaft_missing_small_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "shaft_missing_small_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family",
+      "id": "pocket_missing_depth_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "declared mm plate family required",
+      "id": "pocket_missing_depth_dxf",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_context",
+      "status": "withheld"
+    },
+    {
+      "detail": "only M/L/H/V/C/Z paths are covered",
+      "id": "arc_circle_svg",
+      "initial_unseen_setting": false,
+      "reason": "svg_path",
+      "status": "withheld"
+    },
+    {
+      "detail": "only M/L/H/V/C/Z paths are covered",
+      "id": "quadratic_lines_svg",
+      "initial_unseen_setting": false,
+      "reason": "svg_path",
+      "status": "withheld"
+    },
+    {
+      "detail": "plain visible XML text required",
+      "id": "tspan_text_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_svg",
+      "status": "withheld"
+    },
+    {
+      "detail": "leader and opposite circle arrows required",
+      "id": "split_dimensions_svg",
+      "initial_unseen_setting": false,
+      "reason": "diameter_target_ambiguous",
+      "status": "withheld"
+    },
+    {
+      "detail": "one parallel nearby text baseline required",
+      "id": "moved_labels_svg",
+      "initial_unseen_setting": false,
+      "reason": "dimension_label_ambiguous",
+      "status": "withheld"
+    },
+    {
+      "detail": "positive uniform scale and rotation required",
+      "id": "outlined_text_svg",
+      "initial_unseen_setting": false,
+      "reason": "svg_transform",
+      "status": "withheld"
+    },
+    {
+      "detail": "plain visible XML text required",
+      "id": "positioned_tspan_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_svg",
+      "status": "withheld"
+    },
+    {
+      "detail": "3 x 6 THRU",
+      "id": "bad_quantity_svg",
+      "initial_unseen_setting": false,
+      "reason": "unsupported_annotation",
+      "status": "withheld"
+    },
+    {
+      "detail": "explicit projection",
+      "id": "missing_projection_svg",
+      "initial_unseen_setting": false,
+      "reason": "projection_unknown",
+      "status": "withheld"
+    },
+    {
+      "detail": "circle must belong to top view",
+      "id": "wrong_views_svg",
+      "initial_unseen_setting": false,
+      "reason": "svg_curve",
+      "status": "withheld"
+    }
+  ],
+  "warning": "Initial unseen settings are now observed development data; later adapted results are not held-out accuracy."
+}

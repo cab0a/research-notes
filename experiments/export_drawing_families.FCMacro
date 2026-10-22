@@ -1,0 +1,160 @@
+"""Own CAD authoring for drawing-family exploration; never imported by inference."""
+import os,json,traceback,math,copy
+from pathlib import Path
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part,TechDraw,TechDrawGui
+from PySide import QtCore
+
+OUT=Path(os.environ['RESEARCH_CAD_EXPORT']).resolve()
+OUT.mkdir(parents=True,exist_ok=False)
+SPECS=[
+ dict(id='unseen_small',family='plate',p=dict(width=46,length=34,thickness=7,holes=[dict(x=13,y=11,diameter=5)]),scale=.85,font=2.5),
+ dict(id='unseen_large',family='plate',p=dict(width=60,length=42,thickness=10,holes=[dict(x=20,y=14,diameter=8)]),scale=1.2,font=4.2),
+ dict(id='two_holes',family='plate',p=dict(width=54,length=40,thickness=8,holes=[dict(x=12,y=10,diameter=6),dict(x=38,y=28,diameter=8)])),
+ dict(id='three_shared',family='plate',p=dict(width=54,length=40,thickness=8,holes=[dict(x=12,y=10,diameter=6),dict(x=12,y=28,diameter=6),dict(x=38,y=20,diameter=6)])),
+ dict(id='quantity_two',family='plate',p=dict(width=54,length=40,thickness=8,holes=[dict(x=12,y=10,diameter=6),dict(x=38,y=28,diameter=6)]),variant='quantity'),
+ dict(id='l_bracket',family='l_bracket',p=dict(width=40,length=30,height=24,base_thickness=5,wall_thickness=5)),
+ dict(id='stepped_shaft',family='stepped_shaft',p=dict(length1=24,length2=16,diameter1=16,diameter2=10)),
+ dict(id='pocket',family='pocket',p=dict(width=60,length=40,thickness=12,pocket_x=12,pocket_y=10,pocket_width=20,pocket_length=14,pocket_depth=4)),
+ dict(id='l_missing_wall',family='l_bracket',p=dict(width=40,length=30,height=24,base_thickness=5,wall_thickness=5),variant='missing_wall'),
+ dict(id='shaft_missing_small',family='stepped_shaft',p=dict(length1=24,length2=16,diameter1=16,diameter2=10),variant='missing_small'),
+ dict(id='pocket_missing_depth',family='pocket',p=dict(width=60,length=40,thickness=12,pocket_x=12,pocket_y=10,pocket_width=20,pocket_length=14,pocket_depth=4),variant='missing_depth'),
+]
+records=[];active=None
+
+def shape(f,p):
+    if f=='plate':
+        s=Part.makeBox(p['width'],p['length'],p['thickness'])
+        for h in p['holes']:s=s.cut(Part.makeCylinder(h['diameter']/2,p['thickness'],App.Vector(h['x'],h['y'],0)))
+        return s.removeSplitter()
+    if f=='l_bracket':
+        return Part.makeBox(p['width'],p['length'],p['base_thickness']).fuse(Part.makeBox(p['width'],p['wall_thickness'],p['height'])).removeSplitter()
+    if f=='stepped_shaft':
+        return Part.makeCylinder(p['diameter1']/2,p['length1'],App.Vector(0,0,0),App.Vector(1,0,0)).fuse(Part.makeCylinder(p['diameter2']/2,p['length2'],App.Vector(p['length1'],0,0),App.Vector(1,0,0))).removeSplitter()
+    return Part.makeBox(p['width'],p['length'],p['thickness']).cut(Part.makeBox(p['pocket_width'],p['pocket_length'],p['pocket_depth'],App.Vector(p['pocket_x'],p['pocket_y'],p['thickness']-p['pocket_depth']))).removeSplitter()
+
+def edited(f,p):
+    p=copy.deepcopy(p)
+    if f=='plate':
+        p['width']+=5;p['thickness']+=2
+        if p['holes']:
+            h=min(p['holes'],key=lambda h:(h['x'],h['y']));h['diameter']+=1;h['x']+=1
+    elif f=='l_bracket':p['width']+=5;p['height']+=3;p['base_thickness']+=1
+    elif f=='stepped_shaft':p['length1']+=4;p['diameter2']+=1
+    else:p['width']+=5;p['pocket_width']+=2;p['pocket_depth']+=1
+    return p
+
+def vertices(view):
+    found=[]
+    for i in range(100):
+        try:found.append((i,view.getVertexByIndex(i).Point))
+        except ValueError:
+            if i:break
+    return found
+
+def edges(view):
+    found=[]
+    for i in range(1,100):
+        try:found.append((i,view.getEdgeByIndex(i)))
+        except ValueError:break
+    return found
+
+def start(index=0):
+    global active
+    if index==len(SPECS):
+        (OUT/'export-log.json').write_text(json.dumps(dict(version=App.Version(),occt=Part.OCC_VERSION,records=records),indent=2))
+        Gui.getMainWindow().close();return
+    try:
+        spec=SPECS[index];f=spec['family'];p=spec['p'];variant=spec.get('variant')
+        scale=spec.get('scale',1.);font=spec.get('font',3.);dest=OUT/spec['id'];dest.mkdir()
+        doc=App.newDocument('Family'+str(index));active=doc
+        obj=doc.addObject('Part::Feature','Source');obj.Shape=shape(f,p)
+        page=doc.addObject('TechDraw::DrawPage','Page');page.Scale=scale
+        template=OUT/'blank.svg';template.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="420mm" height="297mm" viewBox="0 0 420 297"><rect x="1" y="1" width="418" height="295" fill="none" stroke="black" stroke-width="0.2"/></svg>')
+        tpl=doc.addObject('TechDraw::DrawSVGTemplate','Template');tpl.Template=str(template);page.Template=tpl
+        views={}
+        for role,direction,xaxis,position in [('front',(0,-1,0),(1,0,0),(180,85)),('top',(0,0,1),(1,0,0),(180,205)),('right',(1,0,0),(0,1,0),(320,85))]:
+            v=doc.addObject('TechDraw::DrawViewPart',role.title());page.addView(v);v.Source=[obj]
+            v.Direction=App.Vector(*direction);v.XDirection=App.Vector(*xaxis);v.X,v.Y=position;v.HardHidden=True
+            v.ViewObject.LineWidth=.3;v.ViewObject.HiddenWidth=.15;views[role]=v
+        doc.recompute();Gui.activeDocument().getObject(page.Name).show()
+        def annotate():
+            try:
+                dimensions=[]
+                def vertex(role,x,y):
+                    vv=vertices(views[role]);xmin=min(q.x for _,q in vv);ymin=min(q.y for _,q in vv)
+                    i,q=min(vv,key=lambda v:(v[1].x-xmin-x)**2+(v[1].y-ymin-y)**2)
+                    assert abs(q.x-xmin-x)<1e-5 and abs(q.y-ymin-y)<1e-5,(spec['id'],role,x,y,[(i,q.x,q.y) for i,q in vv])
+                    return 'Vertex'+str(i)
+                def dim(role,kind,refs,x,y,text=None):
+                    d=doc.addObject('TechDraw::DrawViewDimension','D');page.addView(d);d.Type=kind
+                    d.References2D=[(views[role],tuple(refs))];d.X=x;d.Y=y;d.FormatSpec=text or '%.2w';d.ViewObject.Fontsize=font;dimensions.append(d)
+                def linear(role,axis,a,b,offset=14):
+                    vv=vertices(views[role]);xs=[q.x for _,q in vv];ys=[q.y for _,q in vv]
+                    x=(a[0]+b[0])/2+min(xs);y=(a[1]+b[1])/2+min(ys)
+                    if axis==0:y=min(ys)*scale-offset
+                    else:x=min(xs)*scale-offset
+                    dim(role,'DistanceX' if axis==0 else 'DistanceY',[vertex(role,*a),vertex(role,*b)],x,y)
+                def diameter(role,diam,x,y,thru=False,count=1,center=None):
+                    matches=[(i,e) for i,e in edges(views[role]) if isinstance(e.Curve,Part.Circle) and abs(e.Curve.Radius-diam/2)<1e-5]
+                    if center is not None:
+                        vv=vertices(views[role]);xmin=min(q.x for _,q in vv);ymin=min(q.y for _,q in vv)
+                        matches=[(i,e) for i,e in matches if abs(e.Curve.Center.x-xmin-center[0])<1e-5 and abs(e.Curve.Center.y-ymin-center[1])<1e-5]
+                    assert matches,(spec['id'],diam,center)
+                    dim(role,'Diameter',['Edge'+str(matches[0][0])],x,y,('' if count==1 else str(count)+' x ')+'%.2w'+(' THRU' if thru else ''))
+                if f in ('plate','pocket'):
+                    w,l,t=p['width'],p['length'],p['thickness']
+                    for role,u,v in [('front',w,t),('top',w,l),('right',l,t)]:
+                        linear(role,0,(0,0),(u,0));linear(role,1,(0,0),(0,v))
+                    if f=='plate':
+                        seenx=set();seeny=set()
+                        for i,h in enumerate(p['holes']):
+                            x,y,d=h['x'],h['y'],h['diameter']
+                            if x not in seenx:linear('top',0,(0,0),(x,y),28+14*i);seenx.add(x)
+                            if y not in seeny:linear('top',1,(0,0),(x,y),28+14*i);seeny.add(y)
+                            if variant!='quantity' or i==0:
+                                diameter('top',d,w*scale/2+25+15*i,l*scale/2+14+14*i,True,len(p['holes']) if variant=='quantity' else 1,(x,y))
+                    else:
+                        x,y,a,b,d=p['pocket_x'],p['pocket_y'],p['pocket_width'],p['pocket_length'],p['pocket_depth']
+                        linear('top',0,(0,0),(x,y),28);linear('top',1,(0,0),(x,y),28)
+                        linear('top',0,(x,y),(x+a,y),42);linear('top',1,(x,y),(x,y+b),42)
+                        if variant!='missing_depth':linear('front',1,(x,t-d),(0,t),30)
+                elif f=='l_bracket':
+                    w,l,h,b,t=(p[k] for k in ('width','length','height','base_thickness','wall_thickness'))
+                    linear('front',0,(0,0),(w,0));linear('front',1,(0,0),(0,h))
+                    linear('top',0,(0,0),(w,0));linear('top',1,(0,0),(0,l))
+                    linear('right',0,(0,0),(l,0));linear('right',1,(0,0),(0,h))
+                    linear('right',1,(l,0),(l,b),30)
+                    if variant!='missing_wall':linear('right',0,(0,h),(t,h),30)
+                else:
+                    a,b,d,e=(p[k] for k in ('length1','length2','diameter1','diameter2'));low=(d-e)/2
+                    for role in ('front','top'):
+                        linear(role,0,(0,0),(a+b,low))
+                        linear(role,1,(0,0),(0,d))
+                        linear(role,0,(0,0),(a,0),28)
+                        if variant!='missing_small':linear(role,1,(a+b,low),(a+b,low+e),28)
+                    diameter('right',d,d/2+25,d/2+15)
+                    if variant!='missing_small':diameter('right',e,-d/2-25,d/2+30)
+                doc.recompute()
+                def export():
+                    try:
+                        TechDrawGui.exportPageAsSvg(page,str(dest/'drawing.svg'));TechDraw.writeDXFPage(page,str(dest/'drawing.dxf'))
+                        Part.export([obj],str(dest/'truth.step'))
+                        edit=edited(f,p);eo=doc.addObject('Part::Feature','EditedTruth');eo.Shape=shape(f,edit)
+                        Part.export([eo],str(dest/'edited-truth.step'));doc.saveAs(str(dest/'source.FCStd'))
+                        records.append({**spec,'edited_parameters':edit,'truth_volume':obj.Shape.Volume,'truth_area':obj.Shape.Area,
+                                        'dimensions':[dict(name=d.Name,type=d.Type,references=str(d.References2D)) for d in dimensions]})
+                        App.closeDocument(doc.Name);QtCore.QTimer.singleShot(200,lambda:start(index+1))
+                    except Exception:fail()
+                QtCore.QTimer.singleShot(1200,export)
+            except Exception:fail()
+        QtCore.QTimer.singleShot(1500,annotate)
+    except Exception:fail()
+
+def fail():
+    (OUT/'error.txt').write_text(traceback.format_exc())
+    if active:App.closeDocument(active.Name)
+    Gui.getMainWindow().close()
+
+QtCore.QTimer.singleShot(1000,start)

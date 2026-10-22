@@ -1,0 +1,39 @@
+{
+  "bindings": {
+    "hole_1.diameter": [
+      "path:41"
+    ],
+    "hole_1.x": [
+      "path:35"
+    ],
+    "hole_1.y": [
+      "path:38"
+    ],
+    "length": [
+      "path:32",
+      "path:55"
+    ],
+    "thickness": [
+      "path:14",
+      "path:58"
+    ],
+    "width": [
+      "path:29",
+      "path:11"
+    ]
+  },
+  "family": "plate",
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 8.0,
+        "x": 20.0,
+        "y": 14.0
+      }
+    ],
+    "length": 42.0,
+    "thickness": 10.0,
+    "width": 60.0
+  },
+  "source_sha256": "f949066951678325211d7ae70f1bda4fae26598828112c4002ba90bce9d16a85"
+}

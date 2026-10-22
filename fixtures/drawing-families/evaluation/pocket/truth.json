@@ -1,0 +1,29 @@
+{
+  "cad_area": 7472.0,
+  "cad_volume": 27679.999999999996,
+  "edited_parameters": {
+    "length": 40,
+    "pocket_depth": 5,
+    "pocket_length": 14,
+    "pocket_width": 22,
+    "pocket_x": 12,
+    "pocket_y": 10,
+    "thickness": 12,
+    "width": 65
+  },
+  "family": "pocket",
+  "hashes": {
+    "edited-truth.step": "45547acdd4e4ca3f22dc1aac73b98c49b8e7808e61d77fdf9f222b509d37bee0",
+    "truth.step": "b7c9bca4790bc2e0483ca7aa31b6946295ec3307951ab3c2ddcb537c02d72ad7"
+  },
+  "parameters": {
+    "length": 40,
+    "pocket_depth": 4,
+    "pocket_length": 14,
+    "pocket_width": 20,
+    "pocket_x": 12,
+    "pocket_y": 10,
+    "thickness": 12,
+    "width": 60
+  }
+}

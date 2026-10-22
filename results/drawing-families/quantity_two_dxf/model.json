@@ -1,0 +1,53 @@
+{
+  "bindings": {
+    "hole_1.diameter": [
+      "A90"
+    ],
+    "hole_1.x": [
+      "A7C"
+    ],
+    "hole_1.y": [
+      "A86"
+    ],
+    "hole_2.diameter": [
+      "A90"
+    ],
+    "hole_2.x": [
+      "A98"
+    ],
+    "hole_2.y": [
+      "AA2"
+    ],
+    "length": [
+      "A5E",
+      "A68"
+    ],
+    "thickness": [
+      "A4A",
+      "A72"
+    ],
+    "width": [
+      "A54",
+      "A40"
+    ]
+  },
+  "family": "plate",
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 12.0,
+        "y": 10.0
+      },
+      {
+        "diameter": 6.0,
+        "x": 38.0,
+        "y": 28.0
+      }
+    ],
+    "length": 40.0,
+    "thickness": 8.0,
+    "width": 54.0
+  },
+  "source_sha256": "03920b68b768bb8b8a75c5329091b26d60a7d68b00f87c89c3170d4b076f3d2c"
+}

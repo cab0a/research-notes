@@ -1,0 +1,21 @@
+{
+  "cad_area": 2111.150263212341,
+  "cad_volume": 6082.123377349839,
+  "edited_parameters": {
+    "diameter1": 16,
+    "diameter2": 11,
+    "length1": 28,
+    "length2": 16
+  },
+  "family": "stepped_shaft",
+  "hashes": {
+    "edited-truth.step": "303d01586f7fbaaaff3475b5aa2811db24a29961a1939bd15664ed5168d59e6f",
+    "truth.step": "090ed56c350620b96050c60bb6f2ed6591b0e63d1631fedcb379a8d386cc5143"
+  },
+  "parameters": {
+    "diameter1": 16,
+    "diameter2": 10,
+    "length1": 24,
+    "length2": 16
+  }
+}

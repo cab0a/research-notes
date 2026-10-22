@@ -15,6 +15,26 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Drawing families and human review (independent, no release number)
+
+New own-authored FreeCAD pages extend the declared-family baseline to multiple
+holes, an L bracket, a two-stage shaft and one rectangular pocket. Twenty-one
+positive inputs pass reconstruction and edit checks; eleven negative inputs
+withhold with expected reasons, repeated twice. Eight positive SVG/DXF pairs
+agree in parameters and original/edited volume IoU 1.0. Human view/projection
+context can be reviewed in the offline HTML, downloaded and rerun through the CLI.
+The initial unseen-setting baseline is preserved separately; adapted results are
+development results, not held-out, other-exporter or customer performance.
+
+- [Research and next priorities](../notes/drawing-families.md)
+- [Offline HTML](../results/drawing-families/report.html)
+- [Reproduction and review workflow](drawing-families.md)
+- [Frozen inputs and provenance](../fixtures/drawing-families/README.md)
+
+```bash
+python -m experiments.run_drawing_families --output-dir output/drawing-families-reproduction --repeats 2
+```
+
 ### Native SVG / DXF equivalence (independent, no release number)
 
 The same frozen FreeCAD exports are interpreted independently. SVG normalization

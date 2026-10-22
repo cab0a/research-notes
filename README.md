@@ -2,7 +2,9 @@
 
 ## 日本語概要
 
-実CAD出力SVGの**座標変換・4区間ベジェの円・回転文字**を扱い、同じ図面のDXFと比較しました。復元対象5組で抽出寸法差0 mm、復元／編集後の体積IoU 1.0。寸法不足など4組は両形式で同じ理由の保留でした。人によるビュー指定と矩形板の前提は残り、任意の曲線・実務図面の精度ではありません。[最新の結果HTML](results/cad-svg-dxf/report.html)、[研究ノートと次の実験](notes/cad-svg-dxf.md)、[閲覧・再現手順](docs/cad-svg-dxf.md)をご覧ください。
+2D→CAD研究を**複数穴・L字ブラケット・段付き軸・矩形ポケット**へ拡張しました。実FreeCAD出力22入力と派生SVG10入力を各2回検証し、正例21入力で復元・編集を確認、負例11入力は理由を照合して保留しています。SVG/DXFの正例8組は抽出寸法差0 mm、復元／編集後の体積IoU 1.0。[最新の結果HTML](results/drawing-families/report.html)には寸法根拠の強調・ビュー確認条件のJSON保存も追加しました。[研究結果と次の計画](notes/drawing-families.md)、[閲覧・再現手順](docs/drawing-families.md)をご覧ください。部品種別とビュー指定は人が与え、別CAD・顧客図面の精度は未評価です。版数と既存業務計画は変更していません。
+
+実CAD出力SVGの**座標変換・4区間ベジェの円・回転文字**を扱い、同じ図面のDXFと比較しました。復元対象5組で抽出寸法差0 mm、復元／編集後の体積IoU 1.0。寸法不足など4組は両形式で同じ理由の保留でした。人によるビュー指定と矩形板の前提は残り、任意の曲線・実務図面の精度ではありません。[当時の結果HTML](results/cad-svg-dxf/report.html)、[研究ノートと次の実験](notes/cad-svg-dxf.md)、[閲覧・再現手順](docs/cad-svg-dxf.md)をご覧ください。
 
 前回は2D→CAD研究を**実CAD出力**へ進め、FreeCAD 1.1.4のTechDrawからSVG/DXFを実際に保存しました。DXFの復元対象5条件でSTEP生成・寸法照合・再投影・編集を各2回検証し、寸法不足などのDXF4条件は保留。当時はSVG8出力が変換付きパス等で未対応でした。自作部品の実CAD出力であり、顧客図面や他CADの精度ではありません。[当時の結果HTML](results/cad-drawing-exports/report.html)、[研究ノート](notes/cad-drawing-exports.md)、[閲覧・再現手順](docs/cad-drawing-exports.md)も保持しています。
 
