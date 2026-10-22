@@ -1,0 +1,523 @@
+{
+  "version": [
+    "1",
+    "1",
+    "4",
+    "20260928 (Git shallow)",
+    "Unknown",
+    "2026/09/28 13:46:34",
+    "(HEAD detached at 4fd3bf320)",
+    "4fd3bf320d9566a27e60069fc8387448aaa3a094"
+  ],
+  "occt": "7.8.1",
+  "records": [
+    {
+      "family": "composite",
+      "font": 2.8,
+      "id": "pocket_hole",
+      "p": {
+        "features": [
+          {
+            "depth": 5,
+            "kind": "pocket",
+            "length": 16,
+            "width": 22,
+            "x": 12,
+            "y": 12
+          },
+          {
+            "diameter": 8,
+            "kind": "hole",
+            "x": 67,
+            "y": 47
+          }
+        ],
+        "length": 64,
+        "thickness": 14,
+        "width": 90
+      },
+      "scale": 1,
+      "edited_parameters": {
+        "features": [
+          {
+            "depth": 5.5,
+            "kind": "pocket",
+            "length": 16,
+            "width": 23,
+            "x": 12,
+            "y": 12
+          },
+          {
+            "diameter": 8.5,
+            "kind": "hole",
+            "x": 67.5,
+            "y": 47
+          }
+        ],
+        "length": 64,
+        "thickness": 15,
+        "width": 94
+      },
+      "truth_volume": 78176.28324559589,
+      "truth_area": 16463.327412287184,
+      "dimensions": [
+        {
+          "name": "D",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex2'))]"
+        },
+        {
+          "name": "D001",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D002",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex1', 'Vertex3'))]"
+        },
+        {
+          "name": "D003",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D004",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D005",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex3', 'Vertex2'))]"
+        },
+        {
+          "name": "D006",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D007",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D008",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex5'))]"
+        },
+        {
+          "name": "D009",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex6'))]"
+        },
+        {
+          "name": "D010",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex3'))]"
+        },
+        {
+          "name": "D011",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex10'))]"
+        },
+        {
+          "name": "D012",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex10'))]"
+        },
+        {
+          "name": "D013",
+          "type": "Diameter",
+          "references": "[(<DrawViewPart object>, ('Edge8',))]"
+        }
+      ]
+    },
+    {
+      "family": "composite",
+      "font": 2.8,
+      "id": "two_pockets",
+      "p": {
+        "features": [
+          {
+            "depth": 5,
+            "kind": "pocket",
+            "length": 15,
+            "width": 20,
+            "x": 10,
+            "y": 12
+          },
+          {
+            "depth": 8,
+            "kind": "pocket",
+            "length": 18,
+            "width": 24,
+            "x": 64,
+            "y": 43
+          }
+        ],
+        "length": 72,
+        "thickness": 18,
+        "width": 108
+      },
+      "scale": 1,
+      "edited_parameters": {
+        "features": [
+          {
+            "depth": 5.5,
+            "kind": "pocket",
+            "length": 15,
+            "width": 21,
+            "x": 10,
+            "y": 12
+          },
+          {
+            "depth": 8,
+            "kind": "pocket",
+            "length": 18,
+            "width": 24,
+            "x": 64,
+            "y": 43
+          }
+        ],
+        "length": 72,
+        "thickness": 19,
+        "width": 112
+      },
+      "truth_volume": 135012.0,
+      "truth_area": 23054.0,
+      "dimensions": [
+        {
+          "name": "D",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex2'))]"
+        },
+        {
+          "name": "D001",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D002",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex1', 'Vertex3'))]"
+        },
+        {
+          "name": "D003",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D004",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D005",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex3', 'Vertex2'))]"
+        },
+        {
+          "name": "D006",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D007",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D008",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex5'))]"
+        },
+        {
+          "name": "D009",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex6'))]"
+        },
+        {
+          "name": "D010",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex3'))]"
+        },
+        {
+          "name": "D011",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex8'))]"
+        },
+        {
+          "name": "D012",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex8'))]"
+        },
+        {
+          "name": "D013",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex8', 'Vertex9'))]"
+        },
+        {
+          "name": "D014",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex8', 'Vertex11'))]"
+        },
+        {
+          "name": "D015",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex8', 'Vertex3'))]"
+        }
+      ]
+    },
+    {
+      "family": "composite",
+      "font": 2.8,
+      "id": "step_hole",
+      "p": {
+        "features": [
+          {
+            "depth": 6,
+            "kind": "step",
+            "length": 20,
+            "width": 26,
+            "x": 0,
+            "y": 0
+          },
+          {
+            "diameter": 8,
+            "kind": "hole",
+            "x": 67,
+            "y": 46
+          }
+        ],
+        "length": 64,
+        "thickness": 16,
+        "width": 90
+      },
+      "scale": 1,
+      "edited_parameters": {
+        "features": [
+          {
+            "depth": 6.5,
+            "kind": "step",
+            "length": 20,
+            "width": 27,
+            "x": 0,
+            "y": 0
+          },
+          {
+            "diameter": 8.5,
+            "kind": "hole",
+            "x": 67.5,
+            "y": 46
+          }
+        ],
+        "length": 64,
+        "thickness": 17,
+        "width": 94
+      },
+      "truth_volume": 88235.752280681,
+      "truth_area": 16749.59289474462,
+      "dimensions": [
+        {
+          "name": "D",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D001",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex3', 'Vertex4'))]"
+        },
+        {
+          "name": "D002",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex6'))]"
+        },
+        {
+          "name": "D003",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex6'))]"
+        },
+        {
+          "name": "D004",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D005",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex3', 'Vertex2'))]"
+        },
+        {
+          "name": "D006",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D007",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex1'))]"
+        },
+        {
+          "name": "D008",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex1', 'Vertex4'))]"
+        },
+        {
+          "name": "D009",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex9'))]"
+        },
+        {
+          "name": "D010",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex9'))]"
+        },
+        {
+          "name": "D011",
+          "type": "Diameter",
+          "references": "[(<DrawViewPart object>, ('Edge8',))]"
+        }
+      ]
+    },
+    {
+      "family": "composite",
+      "font": 2.8,
+      "id": "mixed_pockets",
+      "p": {
+        "features": [
+          {
+            "depth": 5,
+            "kind": "pocket",
+            "length": 15,
+            "width": 20,
+            "x": 10,
+            "y": 12
+          },
+          {
+            "depth": 8,
+            "kind": "pocket",
+            "length": 18,
+            "opening": "bottom",
+            "width": 24,
+            "x": 64,
+            "y": 43
+          }
+        ],
+        "length": 72,
+        "thickness": 18,
+        "width": 108
+      },
+      "scale": 1,
+      "edited_parameters": {
+        "features": [
+          {
+            "depth": 5.5,
+            "kind": "pocket",
+            "length": 15,
+            "width": 21,
+            "x": 10,
+            "y": 12
+          },
+          {
+            "depth": 8,
+            "kind": "pocket",
+            "length": 18,
+            "opening": "bottom",
+            "width": 24,
+            "x": 64,
+            "y": 43
+          }
+        ],
+        "length": 72,
+        "thickness": 19,
+        "width": 112
+      },
+      "truth_volume": 135012.0,
+      "truth_area": 23054.0,
+      "dimensions": [
+        {
+          "name": "D",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex2'))]"
+        },
+        {
+          "name": "D001",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D002",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex1', 'Vertex3'))]"
+        },
+        {
+          "name": "D003",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex2', 'Vertex3'))]"
+        },
+        {
+          "name": "D004",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex3'))]"
+        },
+        {
+          "name": "D005",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex3', 'Vertex2'))]"
+        },
+        {
+          "name": "D006",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D007",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex4'))]"
+        },
+        {
+          "name": "D008",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex5'))]"
+        },
+        {
+          "name": "D009",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex7'))]"
+        },
+        {
+          "name": "D010",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex4', 'Vertex3'))]"
+        },
+        {
+          "name": "D011",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex8'))]"
+        },
+        {
+          "name": "D012",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex0', 'Vertex8'))]"
+        },
+        {
+          "name": "D013",
+          "type": "DistanceX",
+          "references": "[(<DrawViewPart object>, ('Vertex8', 'Vertex9'))]"
+        },
+        {
+          "name": "D014",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex8', 'Vertex11'))]"
+        },
+        {
+          "name": "D015",
+          "type": "DistanceY",
+          "references": "[(<DrawViewPart object>, ('Vertex10', 'Vertex3'))]"
+        }
+      ]
+    }
+  ]
+}

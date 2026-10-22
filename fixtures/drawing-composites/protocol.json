@@ -1,0 +1,13 @@
+{
+  "base_commit": "4bee4f8",
+  "development": "3 authored compositions plus a mixed top/bottom pocket control and former holdout pocket_1/4 promoted to development for review.",
+  "holdout": "9 new parameter configurations in 3 known compositions, SVG and DXF; freeze inference before CAD export, no adaptation after evaluation.",
+  "human_measurement": "Instrument interaction counts/time; agent-operated browser observations are not human productivity/ROI evidence.",
+  "scope": "Z-machined single stock plate, separated rectangular pockets/corner step and Z-through round holes; human view/family assumptions. Compare top/bottom openings.",
+  "seed": 2026102205,
+  "thresholds": {
+    "iou": 0.99999999,
+    "parameter_mm": 1e-06,
+    "projection_mm": 0.02
+  }
+}

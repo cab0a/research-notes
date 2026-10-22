@@ -15,6 +15,22 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Separated compound features, dimension-ID review and frozen holdout
+
+Pockets plus holes, two pockets of different depths, and corner steps plus holes
+are reconstructed as editable per-feature parameters. Nine freshly exported
+held-out configurations all reconstruct/edit from SVG; nine paired DXFs withhold
+for missing opening evidence. Four development SVGs include opposite-face
+pockets; two former failures resolve with actual browser-exported dimension IDs.
+Four negative controls withhold. All 32 inputs repeat twice with no false
+confirmations observed. This is known-family/configuration coverage, not customer
+or intersecting-feature accuracy. Agent interaction logs do not measure human ROI.
+
+- [Research, limits and next experiments](../notes/drawing-composites.md)
+- [Offline result HTML](../results/drawing-composites/report.html)
+- [Reproduction](drawing-composites.md)
+- [Fixed inputs and provenance](../fixtures/drawing-composites/README.md)
+
 ### Exporter boundaries, visibility/sections and frozen configuration holdout
 
 The interpreter was frozen before generating 24 new part configurations in four

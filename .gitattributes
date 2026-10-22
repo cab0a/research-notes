@@ -33,3 +33,12 @@ fixtures/drawing-generalization/portability/** -text -whitespace
 results/drawing-generalization/*/input.* -text -whitespace
 results/drawing-generalization/*/section.svg -text -whitespace
 results/drawing-generalization/*.csv -text -whitespace
+
+# Compound study evidence keeps exact author/exporter bytes for SHA-256 checks.
+fixtures/drawing-composites/**/inputs/** -text -whitespace
+fixtures/drawing-composites/**/evaluation/**/*.step -text -whitespace
+fixtures/drawing-composites/**/authoring/*.FCStd binary
+fixtures/drawing-composites/controls/** -text -whitespace
+results/drawing-composites/*/input.* -text -whitespace
+results/drawing-composites/*.csv -text -whitespace
+results/drawing-composites/librecad-render/** -text -whitespace

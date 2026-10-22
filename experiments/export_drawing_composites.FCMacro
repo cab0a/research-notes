@@ -1,0 +1,41 @@
+"""Extend our frozen FreeCAD authoring recipe with compound cuts and dimensions."""
+from pathlib import Path
+BASE=Path(__file__).with_name('export_drawing_families.FCMacro')
+source=BASE.read_text();a=source.index('SPECS=[');b=source.index('\nrecords=[]',a)
+source=source[:a]+"SPECS=json.loads(Path(os.environ['RESEARCH_DRAWING_SPECS']).read_text())"+source[b:]
+source=source.replace('def shape(f,p):', '''def shape(f,p):
+    if f=='composite':
+        s=Part.makeBox(p['width'],p['length'],p['thickness'])
+        for feature in p['features']:
+            if feature['kind']=='hole':tool=Part.makeCylinder(feature['diameter']/2,p['thickness'],App.Vector(feature['x'],feature['y'],0))
+            else:tool=Part.makeBox(feature['width'],feature['length'],feature['depth'],App.Vector(feature['x'],feature['y'],0 if feature.get('opening')=='bottom' else p['thickness']-feature['depth']))
+            s=s.cut(tool)
+        return s.removeSplitter()''')
+source=source.replace("    if f=='plate':\n        p['width']+=5", """    if f=='composite':
+        p['width']+=4;p['thickness']+=1
+        p['features'][0]['width']+=1;p['features'][0]['depth']+=.5
+        for feature in p['features']:
+            if feature['kind']=='hole':feature['x']+=.5;feature['diameter']+=.5
+        return p
+    if f=='plate':
+        p['width']+=5""")
+old="                if f in ('plate','pocket'):"
+new="""                if f=='composite':
+                    w,l,t=p['width'],p['length'],p['thickness']
+                    linear('front',0,(0,0),(w,0));linear('front',1,(w,0),(w,t))
+                    linear('top',0,(0,l),(w,l));linear('top',1,(w,0),(w,l))
+                    linear('right',0,(0,0),(l,0));linear('right',1,(l,0),(l,t))
+                    for i,feature in enumerate(p['features']):
+                        x,y=feature['x'],feature['y'];off=30+32*i
+                        if x:linear('top',0,(0,0),(x,y),off)
+                        if y:linear('top',1,(0,0),(x,y),off)
+                        if feature['kind']=='hole':
+                            diameter('top',feature['diameter'],w*scale/2+25+15*i,l*scale/2+14+14*i,True,1,(x,y))
+                        else:
+                            linear('top',0,(x,y),(x+feature['width'],y),off+14)
+                            linear('top',1,(x,y),(x,y+feature['length']),off+14)
+                            low=feature['depth'] if feature.get('opening')=='bottom' else t-feature['depth']
+                            linear('front',1,(x,low),(w,t),32+20*i)
+                elif f in ('plate','pocket'):"""
+assert source.count(old)==1;source=source.replace(old,new)
+exec(compile(source,str(BASE),'exec'))

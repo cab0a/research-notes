@@ -1,0 +1,54 @@
+{
+  "ai_used": false,
+  "detail": "choose a compatible text ID, without entering a numeric value",
+  "evidence": null,
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "axis_aligned_machined_plate",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:57",
+      "top": "path:21"
+    }
+  },
+  "input_format": "svg",
+  "method": "bounded_compound_plate_graphical_dimensions",
+  "original_history_recovered": false,
+  "reason_code": "dimension_label_ambiguous",
+  "review_request": {
+    "automatic_candidate_count": 0,
+    "choices": [
+      {
+        "direction": [
+          1.0,
+          0.0
+        ],
+        "height": 3.7,
+        "id": "text:5",
+        "origin": [
+          143.00300000000001,
+          145.36888000000002
+        ],
+        "text": "10"
+      }
+    ],
+    "dimension_id": "path:45",
+    "dimension_line": [
+      [
+        155.6,
+        147.02190000000002
+      ],
+      [
+        147.6,
+        147.02190000000002
+      ]
+    ],
+    "policy": "Manual choice may extend up to four text heights beyond endpoints; parallel baseline/gap and later dimension/geometry checks remain required.",
+    "view": "top"
+  },
+  "source_sha256": "62a275fa0ab098bb96e4c897d0a04de7a4facd1e046cd6d53e17ab558e68aa69",
+  "status": "withheld"
+}

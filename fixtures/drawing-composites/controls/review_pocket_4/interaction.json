@@ -1,0 +1,15 @@
+{
+  "drawing_sha256": "f9352b56fb9c06d805e05cb6ba2f73f5bd8d399c36b74c8517e8b3a01159bb2b",
+  "operator_kind": "agent",
+  "started_at": "2026-10-22T14:17:51.122Z",
+  "elapsed_ms": 11301,
+  "events": [
+    {
+      "action": "select_label",
+      "dimension_id": "path:40",
+      "text_id": "text:5",
+      "elapsed_ms": 11170.5
+    }
+  ],
+  "scope": "Start button to selection JSON export; excludes setup and CAD computation. Agent checks are not human performance evidence."
+}

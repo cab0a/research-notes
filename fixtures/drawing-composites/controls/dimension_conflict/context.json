@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "axis_aligned_machined_plate",
+  "projection": "third_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:0",
+    "right": "path:71",
+    "top": "path:23"
+  }
+}

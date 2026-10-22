@@ -1,0 +1,48 @@
+{
+  "edited_parameters": {
+    "features": [
+      {
+        "depth": 8.0,
+        "kind": "step",
+        "length": 22,
+        "width": 31,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "diameter": 9.5,
+        "kind": "hole",
+        "x": 97.5,
+        "y": 59
+      }
+    ],
+    "length": 79,
+    "thickness": 24,
+    "width": 126
+  },
+  "hashes": {
+    "edited-truth.step": "b1ac8b7e29b89c2c8c996d5e2ff8a88fc2938d80736176edfd14422132ad2983",
+    "truth.step": "456ca095a79001f42c9ee0137308cebb69c4cf19ca45ee4b65c94481f195c2bf"
+  },
+  "parameters": {
+    "features": [
+      {
+        "depth": 7.5,
+        "kind": "step",
+        "length": 22,
+        "width": 30,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "diameter": 9.0,
+        "kind": "hole",
+        "x": 97,
+        "y": 59
+      }
+    ],
+    "length": 79,
+    "thickness": 23,
+    "width": 122
+  }
+}

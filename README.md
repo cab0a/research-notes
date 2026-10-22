@@ -2,6 +2,8 @@
 
 ## 日本語概要
 
+2D→CAD研究を**ポケット＋穴・複数ポケット・角の段差＋穴**へ拡張しました。処理を固定してから作った未調整9部品では、SVG9入力で復元・編集が一致し、DXF9入力は開口方向の根拠不足で保留しました。開発・文字ID選択・欠落対照を含む32入力を各2回評価し、誤確定は観測していません。[最新の結果HTML](results/drawing-composites/report.html)、[研究結果と次の計画](notes/drawing-composites.md)、[再現手順](docs/drawing-composites.md)で確認できます。互いに離れた切削形状・同じFreeCAD作者経路内の結果であり、交差形状や顧客図面への対応ではありません。別CADの情報保持と人の作業時間短縮は未実証です。
+
 2D→CAD研究で、**別CAD・隠れ線／断面・未調整24部品**を評価しました。復元処理を固定してから48入力を各2回調べ、40入力で復元・編集が一致、8入力を保留（DXFの開口方向不明6件、SVGの寸法ラベル対応不明2件）。別途、LibreCADのSVG再出力4部品では寸法注記が失われ、保留しました。[最新の結果HTML](results/drawing-generalization/report.html)、[研究結果と次の計画](notes/drawing-generalization.md)、[再現手順](docs/drawing-generalization.md)を参照してください。誤確定0件は今回の固定入力内の観測で、顧客図面・未知の部品種別の精度ではありません。3D表示の左右ドラッグも修正しました。
 
 前回は2D→CAD研究を**複数穴・L字ブラケット・段付き軸・矩形ポケット**へ拡張しました。実FreeCAD出力22入力と派生SVG10入力を各2回検証し、正例21入力で復元・編集を確認、負例11入力は理由を照合して保留しています。SVG/DXFの正例8組は抽出寸法差0 mm、復元／編集後の体積IoU 1.0。[当時の結果HTML](results/drawing-families/report.html)には寸法根拠の強調・ビュー確認条件のJSON保存も追加しました。[研究結果](notes/drawing-families.md)、[閲覧・再現手順](docs/drawing-families.md)をご覧ください。部品種別とビュー指定は人が与え、この時点では別CAD・顧客図面の精度は未評価でした。版数と既存業務計画は変更していません。
@@ -47,6 +49,15 @@ Commercial use requires a separate written license. See
 inquiry process.
 
 ## Overview
+
+A [compound drawing study](notes/drawing-composites.md) reconstructs separated
+pockets, corner steps and through holes. After freezing the interpreter, nine
+new known-family configurations reconstruct and edit from SVG; paired DXFs
+withhold for missing opening evidence. Thirty-two inputs repeat twice with no
+observed false confirmations. Two source-bound dimension-ID review cases are
+development data; their agent interaction timings are not human ROI evidence.
+See the [latest offline HTML](results/drawing-composites/report.html) and
+[reproduction guide](docs/drawing-composites.md). No release or SME roadmap change.
 
 A [native CAD export follow-up](notes/cad-drawing-exports.md) uses unmodified
 FreeCAD 1.1.4 TechDraw SVG/DXF files. Five positive DXF conditions pass CAD,

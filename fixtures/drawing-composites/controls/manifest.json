@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "cohort": "review",
+      "context": "controls/review_pocket_1/context.json",
+      "context_sha256": "bcc477fe96103a15e2344ddc7462f79ea0b1db29b1532d4548d9342ab37c097c",
+      "derived": false,
+      "drawing": "controls/review_pocket_1/drawing.svg",
+      "drawing_sha256": "62a275fa0ab098bb96e4c897d0a04de7a4facd1e046cd6d53e17ab558e68aa69",
+      "edit_policy": "legacy_single_pocket",
+      "expected": "review_then_candidate",
+      "format": "svg",
+      "id": "review_pocket_1",
+      "original_sha256": "62a275fa0ab098bb96e4c897d0a04de7a4facd1e046cd6d53e17ab558e68aa69",
+      "part": "review_pocket_1",
+      "provenance": "fixtures/drawing-generalization/holdout/inputs/pocket_1",
+      "truth": "controls/review_pocket_1/evaluation"
+    },
+    {
+      "cohort": "review",
+      "context": "controls/review_pocket_4/context.json",
+      "context_sha256": "cbbc69838c51011bc775071a94a66b2fbd2c039b5db92878688328c74ed496fa",
+      "derived": false,
+      "drawing": "controls/review_pocket_4/drawing.svg",
+      "drawing_sha256": "f9352b56fb9c06d805e05cb6ba2f73f5bd8d399c36b74c8517e8b3a01159bb2b",
+      "edit_policy": "legacy_single_pocket",
+      "expected": "review_then_candidate",
+      "format": "svg",
+      "id": "review_pocket_4",
+      "original_sha256": "f9352b56fb9c06d805e05cb6ba2f73f5bd8d399c36b74c8517e8b3a01159bb2b",
+      "part": "review_pocket_4",
+      "provenance": "fixtures/drawing-generalization/holdout/inputs/pocket_4",
+      "truth": "controls/review_pocket_4/evaluation"
+    },
+    {
+      "cohort": "negative",
+      "context": "controls/missing_depth/context.json",
+      "context_sha256": "a9d859e6e1ff6fda84e31e35e4b750d9caff1a6ee32533e728a43e1d9a487255",
+      "derived": false,
+      "drawing": "controls/missing_depth/drawing.svg",
+      "drawing_sha256": "b36ebb47bfd88c4e4f111a90c15e335c55c1a3fca3e3014cfb2137f8517eabe5",
+      "expected": "withheld",
+      "format": "svg",
+      "id": "missing_depth",
+      "original_sha256": "b36ebb47bfd88c4e4f111a90c15e335c55c1a3fca3e3014cfb2137f8517eabe5",
+      "part": "missing_depth",
+      "provenance": "fixtures/drawing-generalization/development/inputs/no_depth"
+    },
+    {
+      "cohort": "negative",
+      "context": "controls/visibility_lost/context.json",
+      "context_sha256": "bcc477fe96103a15e2344ddc7462f79ea0b1db29b1532d4548d9342ab37c097c",
+      "derived": false,
+      "drawing": "controls/visibility_lost/drawing.svg",
+      "drawing_sha256": "a2a3458761ddb66114ba87f06af0e04dfa36d18133e11f2edc63c0a8d28e2e42",
+      "expected": "withheld",
+      "format": "svg",
+      "id": "visibility_lost",
+      "original_sha256": "a2a3458761ddb66114ba87f06af0e04dfa36d18133e11f2edc63c0a8d28e2e42",
+      "part": "visibility_lost",
+      "provenance": "fixtures/drawing-generalization/development/inputs/no_visibility"
+    },
+    {
+      "cohort": "negative",
+      "context": "controls/wrong_views/context.json",
+      "context_sha256": "a8cbd685c47b78fe047a28a4c38eeb7717deb3e082de6b7b9954f826dee4ef96",
+      "derived": true,
+      "drawing": "controls/wrong_views/drawing.svg",
+      "drawing_sha256": "748de2ad22a988a0d7a419c482e36a6ab6d8bea38f6f28704ceb28dff4cc2374",
+      "expected": "withheld",
+      "format": "svg",
+      "id": "wrong_views",
+      "original_sha256": "748de2ad22a988a0d7a419c482e36a6ab6d8bea38f6f28704ceb28dff4cc2374",
+      "part": "wrong_views",
+      "provenance": "fixtures/drawing-composites/development/inputs/pocket_hole"
+    },
+    {
+      "cohort": "negative",
+      "context": "controls/dimension_conflict/context.json",
+      "context_sha256": "08ff3eec0bd52035aa1411e96a514546cc59c349a911b904d05109d4641657aa",
+      "derived": true,
+      "drawing": "controls/dimension_conflict/drawing.svg",
+      "drawing_sha256": "924d2f958c233869875ad0e389ec235132056ce6a0303bf97d4500a5a334e456",
+      "expected": "withheld",
+      "format": "svg",
+      "id": "dimension_conflict",
+      "original_sha256": "748de2ad22a988a0d7a419c482e36a6ab6d8bea38f6f28704ceb28dff4cc2374",
+      "part": "dimension_conflict",
+      "provenance": "fixtures/drawing-composites/development/inputs/pocket_hole"
+    }
+  ]
+}

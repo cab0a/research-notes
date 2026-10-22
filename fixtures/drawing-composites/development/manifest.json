@@ -1,0 +1,111 @@
+{
+  "cases": [
+    {
+      "cohort": "development",
+      "context": "development/inputs/pocket_hole/context-svg.json",
+      "context_sha256": "08ff3eec0bd52035aa1411e96a514546cc59c349a911b904d05109d4641657aa",
+      "drawing": "development/inputs/pocket_hole/drawing.svg",
+      "drawing_sha256": "748de2ad22a988a0d7a419c482e36a6ab6d8bea38f6f28704ceb28dff4cc2374",
+      "expected": "candidate",
+      "format": "svg",
+      "id": "development_pocket_hole_svg",
+      "part": "pocket_hole",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/pocket_hole"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/pocket_hole/context-dxf.json",
+      "context_sha256": "672226bec31ee6738670f2543038fbfe775febaaf57e55ddcae441b866c974c9",
+      "drawing": "development/inputs/pocket_hole/drawing.dxf",
+      "drawing_sha256": "72dbf36ff106746ac6307cd6044214a90480779e22bf1050ad33970cb31f28c4",
+      "expected": "withheld",
+      "format": "dxf",
+      "id": "development_pocket_hole_dxf",
+      "part": "pocket_hole",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/pocket_hole"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/two_pockets/context-svg.json",
+      "context_sha256": "226702ef8e1d5d1ff9d39569af93e1a2802a71b8efdb82c0822f24bddb06ce81",
+      "drawing": "development/inputs/two_pockets/drawing.svg",
+      "drawing_sha256": "a4c2e72f38d6621ade5ce8c9ad58d12177e64d694f5ef8b00fdbb7740670d3cf",
+      "expected": "candidate",
+      "format": "svg",
+      "id": "development_two_pockets_svg",
+      "part": "two_pockets",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/two_pockets"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/two_pockets/context-dxf.json",
+      "context_sha256": "672226bec31ee6738670f2543038fbfe775febaaf57e55ddcae441b866c974c9",
+      "drawing": "development/inputs/two_pockets/drawing.dxf",
+      "drawing_sha256": "5ecd7686f0c6ba80e140263423112204da84fa627fbaefc4e79b73e0e1c000ba",
+      "expected": "withheld",
+      "format": "dxf",
+      "id": "development_two_pockets_dxf",
+      "part": "two_pockets",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/two_pockets"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/step_hole/context-svg.json",
+      "context_sha256": "f21fee98398c14fa6c5b00e50af6c07c0a15558ae93b47909f89494ff73e58f1",
+      "drawing": "development/inputs/step_hole/drawing.svg",
+      "drawing_sha256": "ef42750975893c1dd21da2c08163145ba47dbc8229446d9a9c79d84522620b5b",
+      "expected": "candidate",
+      "format": "svg",
+      "id": "development_step_hole_svg",
+      "part": "step_hole",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/step_hole"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/step_hole/context-dxf.json",
+      "context_sha256": "672226bec31ee6738670f2543038fbfe775febaaf57e55ddcae441b866c974c9",
+      "drawing": "development/inputs/step_hole/drawing.dxf",
+      "drawing_sha256": "4fb570e421c4da81d1e8d32c7f75313a5a460736409a2882b0f50e6ff47564d6",
+      "expected": "withheld",
+      "format": "dxf",
+      "id": "development_step_hole_dxf",
+      "part": "step_hole",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/step_hole"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/mixed_pockets/context-svg.json",
+      "context_sha256": "d237d5d8365d143d378305346e6be23238568ce6adacd6578d32a107541f7660",
+      "drawing": "development/inputs/mixed_pockets/drawing.svg",
+      "drawing_sha256": "933030773263c2981b6a0a053b59d5ad72ad0ace028cf2b5866945990a48d305",
+      "expected": "candidate",
+      "format": "svg",
+      "id": "development_mixed_pockets_svg",
+      "part": "mixed_pockets",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/mixed_pockets"
+    },
+    {
+      "cohort": "development",
+      "context": "development/inputs/mixed_pockets/context-dxf.json",
+      "context_sha256": "672226bec31ee6738670f2543038fbfe775febaaf57e55ddcae441b866c974c9",
+      "drawing": "development/inputs/mixed_pockets/drawing.dxf",
+      "drawing_sha256": "74e3493dd220e129785e6e4a64f5094b9b459fcd292dbaf76e1bb3d1dc00d245",
+      "expected": "withheld",
+      "format": "dxf",
+      "id": "development_mixed_pockets_dxf",
+      "part": "mixed_pockets",
+      "provenance": "Own FreeCAD TechDraw native export; authoring data evaluation-only",
+      "truth": "development/evaluation/mixed_pockets"
+    }
+  ],
+  "cohort": "development",
+  "frozen_at_utc": "2026-10-22T14:12:06.031990+00:00",
+  "source_sha256": "0fda54a43da1fea8f1a8da5cc10d81093efb907083f2d850c6bc3b60223aec2a"
+}

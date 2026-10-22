@@ -1,0 +1,40 @@
+{
+  "completed_at_utc": "2026-10-22T14:28:10.153338+00:00",
+  "source": "fixtures/drawing-composites/development/inputs/pocket_hole/drawing.dxf",
+  "source_sha256": "72dbf36ff106746ac6307cd6044214a90480779e22bf1050ad33970cb31f28c4",
+  "runtime": "LibreCAD 2.2.1.5 / Qt 5.15.2",
+  "environment": {
+    "QT_QPA_PLATFORM": "xcb"
+  },
+  "records": [
+    {
+      "format": "png",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/bin/librecad",
+        "dxf2png",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.png",
+        "/home/nakanishi/inefficiencylab/research-notes/results/drawing-composites/librecad-render/source.dxf"
+      ],
+      "returncode": 0,
+      "output_sha256": "62b6cad84d4dc09d64520fed21fa4bb28ddc0bf2310b60d0c43bd8326eb9c471"
+    },
+    {
+      "format": "svg",
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/bin/librecad",
+        "dxf2svg",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/results/drawing-composites/librecad-render/source.dxf"
+      ],
+      "returncode": 0,
+      "output_sha256": "fd0debb8e63c7ef3bfdc8524ad5edfe57bfc896f77b30169445ed8f99f30f48b"
+    }
+  ],
+  "scope": "2D re-export of the same FreeCAD DXF, not independent 3D CAD. PNG visual inspection only; no OCR or reconstruction."
+}

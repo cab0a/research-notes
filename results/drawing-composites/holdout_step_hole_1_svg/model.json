@@ -1,0 +1,64 @@
+{
+  "bindings": {
+    "feature_1.depth": [
+      "path:25"
+    ],
+    "feature_1.length": [
+      "path:57"
+    ],
+    "feature_1.width": [
+      "path:54"
+    ],
+    "feature_2.diameter": [
+      "path:66"
+    ],
+    "feature_2.x": [
+      "path:60"
+    ],
+    "feature_2.y": [
+      "path:63"
+    ],
+    "front.width": [
+      "path:19"
+    ],
+    "length": [
+      "path:51"
+    ],
+    "right.length": [
+      "path:84"
+    ],
+    "right.thickness": [
+      "path:87"
+    ],
+    "thickness": [
+      "path:22"
+    ],
+    "width": [
+      "path:48"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "depth": 6.5,
+        "kind": "step",
+        "length": 20.0,
+        "opening": "top",
+        "width": 28.0,
+        "x": 0.0,
+        "y": 0.0
+      },
+      {
+        "diameter": 8.0,
+        "kind": "hole",
+        "x": 106.0,
+        "y": 59.0
+      }
+    ],
+    "length": 77.0,
+    "thickness": 19.0,
+    "width": 129.0
+  },
+  "review_selections": {},
+  "source_sha256": "d637e73243179b9df65c3187aa2ec72bda00cb7f7124921beedb4d67e589e647"
+}

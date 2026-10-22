@@ -1,0 +1,6 @@
+LC_CrashHandler installed; on crash, log -> /home/nakanishi/.local/share/crash-20261022-142809-300399.log
+RS_DEBUG::setLevel(0)
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/share/librecad/qm
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/translations
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/share/librecad/qm
+Printing "/home/nakanishi/inefficiencylab/research-notes/results/drawing-composites/librecad-render/source.dxf" to "/home/nakanishi/inefficiencylab/research-notes/results/drawing-composites/librecad-render/drawing.png" Done

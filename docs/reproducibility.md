@@ -14,6 +14,17 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
+For the latest separated compound-feature study, see
+[the compound reconstruction guide](drawing-composites.md). Thirty-two inputs
+repeat twice, including nine new SVG/DXF configuration pairs generated after
+freezing, actual source-bound label-ID review, and missing/conflicting controls.
+Fixed replay requires no FreeCAD, LibreCAD, GPU or external AI API.
+
+```bash
+python -m experiments.run_drawing_composites --output-dir output/drawing-composites-replay --repeats 2
+python -m research_notes.drawing_composite_report output/drawing-composites-replay
+```
+
 For the latest exporter/ambiguity/untuned-configuration study, see
 [the frozen generalization guide](drawing-generalization.md). It records 24
 new configurations evaluated without retuning, actual LibreCAD export information

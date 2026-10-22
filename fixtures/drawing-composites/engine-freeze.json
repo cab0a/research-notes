@@ -1,0 +1,18 @@
+{
+  "frozen_at_utc": "2026-10-22T14:25:27.773746+00:00",
+  "inherited_freeze": "fixtures/drawing-generalization/engine-freeze.json",
+  "order": "Development/negative/review tests complete before held-out CAD drawings generated; no post-holdout inference retuning.",
+  "sha256": {
+    "experiments/export_drawing_composites.FCMacro": "0fda54a43da1fea8f1a8da5cc10d81093efb907083f2d850c6bc3b60223aec2a",
+    "experiments/prepare_drawing_composites.py": "5ea91563c4afa41f74fe65df201d6066cd572de17de889bef9ab53ccd652df46",
+    "fixtures/drawing-composites/controls/manifest.json": "b3d1ec5b99f2976dd491a8ec80ac62fca010785d7dbc4e890db80eb77caac150",
+    "fixtures/drawing-composites/controls/review_pocket_1/review.json": "b3133b36b97094d07ee52e5d4716a36f4bd34674bab0cd9e56909fd5568a2e15",
+    "fixtures/drawing-composites/controls/review_pocket_4/review.json": "f71785489477ed9b251c2190ec27d482a2bca7a1f291d6e7f8c12d4974832e2a",
+    "fixtures/drawing-composites/development-specs.json": "254ca03a580c4b8f8570926a2252dc188d95c5ef70c959d4a6236bdd470ddeb3",
+    "fixtures/drawing-composites/development/manifest.json": "c4bad21530293cfe57ee8fc1954a97672d29463a9508d99f2f63a142553f24d6",
+    "fixtures/drawing-composites/holdout-specs.json": "bab02de635dde961016221cc4538bd9a8da1b9387c8bfd3356c36f2e1073f3fc",
+    "fixtures/drawing-composites/protocol.json": "657b3efa58481ab5bf8bef6018dfb6f0f648042b731c09a23ab0231e7f478620",
+    "src/research_notes/drawing_composite_evidence.py": "3464a2727aa4f1a3331f9d9c4e809754e2931e112993ba1afda56271e6b30650",
+    "src/research_notes/drawing_composites.py": "e0058ba5952abf5f6804ca774e910ba6c10b427413df481b3fed73227b314d0d"
+  }
+}

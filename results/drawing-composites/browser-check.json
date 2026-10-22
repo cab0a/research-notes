@@ -1,0 +1,19 @@
+{
+  "url": "http://localhost:8765/results/drawing-composites/report.html",
+  "checks": [
+    "held-out two-pocket drawing and CAD visible",
+    "horizontal right drag rotates model in expected direction",
+    "edited model changes with camera preserved",
+    "corner-step and hole shown together",
+    "DXF withholding reason visible with no replacement truth model",
+    "completed HTML review JSON download equals fixed reviewed selection"
+  ],
+  "reviewDownloadMatches": true,
+  "consoleWarningsAndErrors": [],
+  "screenshots": [
+    "preview.png",
+    "preview-edited.png",
+    "review-confirmed.png"
+  ],
+  "scope": "Browser interaction by agent; not human productivity or ROI measurement."
+}

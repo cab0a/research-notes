@@ -1,0 +1,79 @@
+{
+  "bindings": {
+    "feature_1.depth": [
+      "path:21"
+    ],
+    "feature_1.length": [
+      "path:69"
+    ],
+    "feature_1.width": [
+      "path:66"
+    ],
+    "feature_1.x": [
+      "path:60"
+    ],
+    "feature_1.y": [
+      "path:63"
+    ],
+    "feature_2.depth": [
+      "path:24"
+    ],
+    "feature_2.length": [
+      "path:81"
+    ],
+    "feature_2.width": [
+      "path:78"
+    ],
+    "feature_2.x": [
+      "path:72"
+    ],
+    "feature_2.y": [
+      "path:75"
+    ],
+    "front.width": [
+      "path:15"
+    ],
+    "length": [
+      "path:57"
+    ],
+    "right.length": [
+      "path:99"
+    ],
+    "right.thickness": [
+      "path:102"
+    ],
+    "thickness": [
+      "path:18"
+    ],
+    "width": [
+      "path:54"
+    ]
+  },
+  "parameters": {
+    "features": [
+      {
+        "depth": 5.5,
+        "kind": "pocket",
+        "length": 15.0,
+        "opening": "top",
+        "width": 22.0,
+        "x": 10.0,
+        "y": 12.0
+      },
+      {
+        "depth": 8.5,
+        "kind": "pocket",
+        "length": 18.0,
+        "opening": "top",
+        "width": 24.0,
+        "x": 75.0,
+        "y": 53.0
+      }
+    ],
+    "length": 82.0,
+    "thickness": 19.0,
+    "width": 119.0
+  },
+  "review_selections": {},
+  "source_sha256": "89981586e7d0dfda27242945c9c933a4196c8750f9078ddb77e0dde6b57f788a"
+}
