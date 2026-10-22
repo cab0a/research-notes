@@ -1,0 +1,226 @@
+{
+  "cases": [
+    {
+      "context": "inputs/plain_third.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-0-hole",
+      "id": "plain_third",
+      "svg": "inputs/plain_third.svg",
+      "svg_sha256": "5f1cbfdf14a0d974286ac4e5f6ef4e17458ce75deff64af535fd26f3eb50208a",
+      "truth_key": "plain_third"
+    },
+    {
+      "context": "inputs/one_third.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_third",
+      "svg": "inputs/one_third.svg",
+      "svg_sha256": "0de856bff31d8310034dea581367bb3c8f94627f501d664ecac64bda9e288f5d",
+      "truth_key": "one_third"
+    },
+    {
+      "context": "inputs/one_first.context.json",
+      "context_sha256": "9281ae85f5eafb274927004b90a60db8f1af367d1e3aff74589b0b5e1c182931",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_first",
+      "svg": "inputs/one_first.svg",
+      "svg_sha256": "0eabc2d21448cc36d30fcc2ebbbfd9d4ca3fb914373c3ff0615dda21ca55a16d",
+      "truth_key": "one_first"
+    },
+    {
+      "context": "inputs/two_third.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_third",
+      "svg": "inputs/two_third.svg",
+      "svg_sha256": "db285d67090566ef0c8af56b99fbb86d4304f08640e34cce5fab90b693d958d7",
+      "truth_key": "two_third"
+    },
+    {
+      "context": "inputs/one_scaled.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_scaled",
+      "svg": "inputs/one_scaled.svg",
+      "svg_sha256": "ec6f2bd7fca4032626c9021737944186478dbf673344603dd8ca475e1f578046",
+      "truth_key": "one_scaled"
+    },
+    {
+      "context": "inputs/one_anonymous.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_anonymous",
+      "svg": "inputs/one_anonymous.svg",
+      "svg_sha256": "8c1dfb9b9a47bb53e0200a6dc71c75a7acb3b86aecc416a2dfb92bfa8ba55dcf",
+      "truth_key": "one_anonymous"
+    },
+    {
+      "context": "inputs/decimal_plate.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "decimal_plate",
+      "svg": "inputs/decimal_plate.svg",
+      "svg_sha256": "ba0b62aca2d7d4dada9a9c14bf3ed755db912b1fe31c6f7c5ca966125dd1b47f",
+      "truth_key": "decimal_plate"
+    },
+    {
+      "context": "inputs/two_reordered.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_reordered",
+      "svg": "inputs/two_reordered.svg",
+      "svg_sha256": "fc58f51ab4c090f4d0d6426bc28e704b745b486f7a7ef7735b0276aaeb236183",
+      "truth_key": "two_reordered"
+    },
+    {
+      "context": "inputs/missing_position.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "hole_position_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_position",
+      "svg": "inputs/missing_position.svg",
+      "svg_sha256": "9c27da96abf9c183a45d0409c8a31c0916374b9b7ec5ac69fa45ad05dd7d5658",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/missing_thickness.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "dimension_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_thickness",
+      "svg": "inputs/missing_thickness.svg",
+      "svg_sha256": "cf6e05ca73d92e84b354c84df28385025b0ca879a0cfb21d5300acf6c0c850e2",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/conflicting_width.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "dimension_conflict",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "conflicting_width",
+      "svg": "inputs/conflicting_width.svg",
+      "svg_sha256": "90bbb7cfdc4f0601e31ac3298fa46d1628f9474c3361630c8fdbfe6781b24bf6",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/ambiguous_label.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "dimension_text_ambiguous",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "ambiguous_label",
+      "svg": "inputs/ambiguous_label.svg",
+      "svg_sha256": "9d973ac6822601dcf44126766b461a1bb35754fca7b3f990dcb4306f1cc99480",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/missing_extension.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "extension_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_extension",
+      "svg": "inputs/missing_extension.svg",
+      "svg_sha256": "a7b3cc19eeecd7d0e341ecd2fe882a88855a3f0c15ed76eccdb95bde6475ca70",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/wrong_projection.context.json",
+      "context_sha256": "9281ae85f5eafb274927004b90a60db8f1af367d1e3aff74589b0b5e1c182931",
+      "expected_reason": "projection_layout_conflict",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "wrong_projection",
+      "svg": "inputs/wrong_projection.svg",
+      "svg_sha256": "0de856bff31d8310034dea581367bb3c8f94627f501d664ecac64bda9e288f5d",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/diameter_conflict.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "annotation_geometry_mismatch",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "diameter_conflict",
+      "svg": "inputs/diameter_conflict.svg",
+      "svg_sha256": "d2fd062afcfe30de22115885eb474e9b3680fcbcc1cacae55c317feb0ce973a2",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/ambiguous_extent.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "hole_extent_ambiguous",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "ambiguous_extent",
+      "svg": "inputs/ambiguous_extent.svg",
+      "svg_sha256": "c13d2ee003ad2626ebecb1409da745b52ba68ead6cf0bf55ff8934a441bcc08a",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/unsupported_tolerance.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "unsupported_annotation",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "unsupported_tolerance",
+      "svg": "inputs/unsupported_tolerance.svg",
+      "svg_sha256": "f0f4b5a93600952124e4b1b149cfb28cbe24b506bfdd1c0a8de156ecb3feec55",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/chain_dimension.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "unsupported_dimension_chain",
+      "expected_status": "withheld",
+      "family_id": "plate-2-hole",
+      "id": "chain_dimension",
+      "svg": "inputs/chain_dimension.svg",
+      "svg_sha256": "2f2a441335625b9341132883cb806e5de9d71033180fc0a17cd4a10fa48b9551",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/leader_misses_hole.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "leader_target_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "leader_misses_hole",
+      "svg": "inputs/leader_misses_hole.svg",
+      "svg_sha256": "e969e52e0b35eae057ed7f9d53d406eccfabcc1b108163991c0b25b47b940f79",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/unsupported_radius.context.json",
+      "context_sha256": "f1fff044ffb43476e37976d02118b5faf71b35b322384e49e0fcb90dc6b25caa",
+      "expected_reason": "unsupported_annotation",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "unsupported_radius",
+      "svg": "inputs/unsupported_radius.svg",
+      "svg_sha256": "74390717713dced7ff7b14e38937c78a239df33bfe7ba363fdfab3fe2ffdbbee",
+      "truth_key": null
+    }
+  ],
+  "schema_version": "1.0.0",
+  "scope": "Authored development controls, ordinary-looking bounded dimension graphics; not standards conformance or held-out real-drawing accuracy."
+}

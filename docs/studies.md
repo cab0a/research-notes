@@ -39,6 +39,26 @@ python experiments/run_drawing_to_cad.py --output-dir output/drawing-reproductio
 
 No release number is assigned; the v1.15–v1.24 SME workflow roadmap is unchanged.
 
+### Follow-up — Ordinary Dimension Graphics
+
+**Question:** Can numeric text be associated with outlines and holes using
+dimension lines, extension lines, triangular arrows and diameter leaders,
+without `W=` / `X=` parameter labels?
+
+**Finding:** Eight authored positive inputs, each repeated twice, pass CAD/STEP,
+dimensional, reprojection and edit checks. Twelve deliberate missing, conflicting
+or unsupported inputs are withheld with expected reasons. Native CAD exports,
+OCR, AI comparisons, general drafting notation and held-out families are untested.
+
+- [Study and next experiments](../notes/drawing-dimension-lines.md)
+- [Offline HTML results](../results/drawing-dimensions/report.html)
+- [Viewing and reproduction guide](drawing-dimension-lines.md)
+- [Measured observations](../results/drawing-dimensions/results.json)
+
+```bash
+python -m experiments.run_drawing_dimension_lines --output-dir output/dimension-reproduction --repeats 2
+```
+
 ## Blur Measurement and Localization
 
 ### v0.1.0 — Laplacian Variance as a Blur Heuristic

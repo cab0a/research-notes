@@ -1,0 +1,129 @@
+{
+  "base_commit": "ccda3bb1199059de29db8d3b313e79a5b5a104a7",
+  "browser_checks": {
+    "all_20_drawing_images_loaded": true,
+    "all_8_candidate_canvases_rendered": true,
+    "browser": "ChatGPT in-app browser on Windows host",
+    "empty_failed_filter": true,
+    "horizontal_page_overflow": false,
+    "keyboard_rotation": true,
+    "method": "CUA browser DOM observations and rendered screenshots; not an independent CAD numerical evaluator.",
+    "reset_camera": true,
+    "screenshot": "report-preview.png",
+    "screenshot_sha256": "c4e694bf8a36a0fcf47353d0dbe42a28671f23caa3b26f577683536e6f2a8f92",
+    "url": "http://127.0.0.1:8765/results/drawing-dimensions/report.html",
+    "view_selection_and_model_selection": true,
+    "withheld_filter_reason_and_no_canvas": true
+  },
+  "claim_boundary": "Authored development controls under explicit family, frame, unit and view assumptions; not OCR, drafting-standard compliance, real-drawing accuracy or a held-out benchmark.",
+  "date": "2026-10-22",
+  "dependencies": {
+    "cadquery-ocp": "7.9.3.1.1",
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6",
+    "pytest": "9.1.1"
+  },
+  "experiment": {
+    "command": "output/venv312/bin/python -m experiments.run_drawing_dimension_lines --output-dir results/drawing-dimensions --repeats 2",
+    "exit_code": 0,
+    "max_observed_errors": {
+      "area_vs_analytic_abs_error_mm2": 1.5916157281026244e-11,
+      "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+      "edited_hole_max_abs_error_mm": 0.0,
+      "edited_volume_vs_analytic_abs_error_mm3": 2.546585164964199e-11,
+      "hole_dimension_max_abs_error_mm": 0.0,
+      "sampled_projection_max_mm": 7.105427357601002e-15,
+      "volume_vs_analytic_abs_error_mm3": 1.8189894035458565e-11
+    },
+    "report_html_sha256": "587dc03787160e25e81bf5ba549f1c165d591b355f79db8059efb269ac52680e",
+    "results_sha256": "4a258ef328bb78605b9429d5509812e2211345b99b94959b656929a7d317161a",
+    "summary": {
+      "candidate_inputs": 8,
+      "candidate_successes": 8,
+      "correct_withholds": 12,
+      "false_confirmations": 0,
+      "inputs": 20,
+      "legacy_candidates_on_same_positive_inputs": 0,
+      "withheld_controls": 12
+    }
+  },
+  "full_suite": {
+    "command": "output/venv312/bin/python -m pytest -q --junitxml=output/drawing-dimension-checks/tests.xml",
+    "errors": 0,
+    "failures": 0,
+    "junit_seconds": 359.896,
+    "junit_sha256": "9a20486f3cb301adff05551692ba33a78d4b502122bface5dbfa4bed39477fe1",
+    "passed": 1366,
+    "skipped": 0,
+    "stdout_final_line": "1366 passed in 359.95s (0:05:59)",
+    "tests": 1366
+  },
+  "integrity": {
+    "embedded_drawing_count": 20,
+    "external_script_stylesheet_or_image_dependencies": 0,
+    "local_markdown_links_checked": 784,
+    "new_source_sha256": {
+      "experiments/build_drawing_dimension_fixtures.py": "920924fb02b77578b78a188d7de070da08309e83c7173fb7b89b782b70db4605",
+      "experiments/run_drawing_dimension_lines.py": "bb6a0f24e8e26ded2170511705eb934a4ce22678baf7e3d849ebb8004a875910",
+      "src/research_notes/drawing_dimension_report.py": "5b21893cc620b3063364619703f868cf9700a69a90ceb80e4b1b6ad5fb5c0479",
+      "src/research_notes/drawing_dimensions.py": "b14164192d7b68d058081b605b55d2a18f5b113b87ec0a2b990ac1f034606e44",
+      "tests/test_drawing_dimensions.py": "de59275c07c282195c62be1522ecd9bae7c537d6ed133c6e99dfcd42993abb39"
+    },
+    "original_svg_supplied_to_worker_without_truth_arguments": true,
+    "preexisting_changed_paths": [
+      "README.md",
+      "docs/reproducibility.md",
+      "docs/studies.md",
+      "notes/drawing-to-parametric-cad.md"
+    ],
+    "prior_code_tests_fixtures_results_unchanged": true,
+    "protected": {
+      "experiments/run_drawing_to_cad.py": {
+        "sha256": "9356736a4a4f2c958e08773527ffa735899c5dd1f46e2d0d1bf7b39c9d56225e",
+        "unchanged_from_base": true
+      },
+      "notes/sme-cad-automation-roadmap.md": {
+        "sha256": "fe19b6952a607ccb9923a4e492e1eb6eb9b899448528a71b9773d766fc207c8f",
+        "unchanged_from_base": true
+      },
+      "pyproject.toml": {
+        "sha256": "b690d5e1d31ebe3d3b51eb8eeb54ac3eaeb874ca5025ef1db7758ea5258106b2",
+        "unchanged_from_base": true
+      },
+      "src/research_notes/drawing_to_cad.py": {
+        "sha256": "7a428b83c7c806eeaf92e1bf6547fb14398177f9328dd33540b76c1c5bb74c25",
+        "unchanged_from_base": true
+      },
+      "tests/test_drawing_to_cad.py": {
+        "sha256": "5d6aa548b3ad403febd50f9fd9b646aacf2cea46d9cae474fe3422fbc645f8ef",
+        "unchanged_from_base": true
+      }
+    },
+    "report_resource_links_checked": 84,
+    "source_and_evaluation_hashes_match": true,
+    "withheld_cases_have_no_cad_artifacts": true
+  },
+  "not_executed": [
+    "native Windows CAD execution",
+    "native CAD SVG/DXF exports",
+    "OCR/raster recognition",
+    "VLM inference or training",
+    "external AI APIs",
+    "held-out family evaluation",
+    "independent CAD kernel evaluation",
+    "general drafting-standard conformance"
+  ],
+  "observed_development_issue": "Centroid-sorted preview triangles could paint across a through-hole. The report now uses a per-pixel depth buffer; CAD dimensions/volume were evaluated separately.",
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "package_version": "1.17.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "study": "Ordinary dimension graphics to parametric CAD",
+  "targeted_after_html_fixes": {
+    "command": "output/venv312/bin/python -m pytest tests/test_drawing_dimensions.py tests/test_drawing_to_cad.py -q",
+    "new_dimension_tests": 35,
+    "passed": 63
+  }
+}

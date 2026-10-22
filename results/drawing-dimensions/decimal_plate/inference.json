@@ -1,0 +1,493 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Authored vector dimension subset with explicit human priors; not OCR, general drafting notation or unique original history.",
+  "dimension_evidence": [
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          579.5
+        ],
+        [
+          437.5,
+          579.5
+        ]
+      ],
+      "arrow_ids": [
+        "p0_003",
+        "p0_004"
+      ],
+      "dimension_line_id": "p0_002",
+      "extension_ids": [
+        "p0_005",
+        "p0_006"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          627.5
+        ],
+        [
+          437.5,
+          627.5
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "p0_007",
+      "value_mm": 52.5,
+      "view": "front",
+      "visible_text": "52.5"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          437.5,
+          560.0
+        ],
+        [
+          437.5,
+          579.5
+        ]
+      ],
+      "arrow_ids": [
+        "p0_009",
+        "p0_010"
+      ],
+      "dimension_line_id": "p0_008",
+      "extension_ids": [
+        "p0_011",
+        "p0_012"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          489.5,
+          560.0
+        ],
+        [
+          489.5,
+          579.5
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "p0_013",
+      "value_mm": 6.5,
+      "view": "front",
+      "visible_text": "6.5"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          437.5,
+          220.0
+        ]
+      ],
+      "arrow_ids": [
+        "p1_003",
+        "p1_004"
+      ],
+      "dimension_line_id": "p1_002",
+      "extension_ids": [
+        "p1_005",
+        "p1_006"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          175.0
+        ],
+        [
+          437.5,
+          175.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "p1_007",
+      "value_mm": 52.5,
+      "view": "top",
+      "visible_text": "52.5"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          280.0,
+          331.75
+        ]
+      ],
+      "arrow_ids": [
+        "p1_009",
+        "p1_010"
+      ],
+      "dimension_line_id": "p1_008",
+      "extension_ids": [
+        "p1_011",
+        "p1_012"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          232.0,
+          220.0
+        ],
+        [
+          232.0,
+          331.75
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "p1_013",
+      "value_mm": 37.25,
+      "view": "top",
+      "visible_text": "37.25"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          292.0
+        ],
+        [
+          332.5,
+          292.0
+        ]
+      ],
+      "arrow_ids": [
+        "p1_016",
+        "p1_017"
+      ],
+      "circle_id": "p1_014",
+      "dimension_line_id": "p1_015",
+      "extension_ids": [
+        "p1_018",
+        "p1_019"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          280.0,
+          379.75
+        ],
+        [
+          332.5,
+          379.75
+        ]
+      ],
+      "parameter": "x",
+      "text_id": "p1_020",
+      "value_mm": 17.5,
+      "view": "top",
+      "visible_text": "17.5"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          332.5,
+          331.75
+        ],
+        [
+          332.5,
+          292.0
+        ]
+      ],
+      "arrow_ids": [
+        "p1_022",
+        "p1_023"
+      ],
+      "circle_id": "p1_014",
+      "dimension_line_id": "p1_021",
+      "extension_ids": [
+        "p1_024",
+        "p1_025"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          185.0,
+          331.75
+        ],
+        [
+          185.0,
+          292.0
+        ]
+      ],
+      "parameter": "y",
+      "text_id": "p1_026",
+      "value_mm": 13.25,
+      "view": "top",
+      "visible_text": "13.25"
+    },
+    {
+      "arrow_ids": [
+        "p1_028"
+      ],
+      "circle_id": "p1_014",
+      "dimension_line_id": "p1_027",
+      "kind": "hole_diameter",
+      "line_points_svg": [
+        [
+          338.33363094478904,
+          286.16636905521096
+        ],
+        [
+          512.5,
+          170.0
+        ]
+      ],
+      "text_id": "p1_029",
+      "value_mm": 5.5,
+      "view": "top",
+      "visible_text": "⌀5.5 THRU"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          880.0,
+          579.5
+        ],
+        [
+          991.75,
+          579.5
+        ]
+      ],
+      "arrow_ids": [
+        "p2_003",
+        "p2_004"
+      ],
+      "dimension_line_id": "p2_002",
+      "extension_ids": [
+        "p2_005",
+        "p2_006"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          880.0,
+          627.5
+        ],
+        [
+          991.75,
+          627.5
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "p2_007",
+      "value_mm": 37.25,
+      "view": "right",
+      "visible_text": "37.25"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          991.75,
+          560.0
+        ],
+        [
+          991.75,
+          579.5
+        ]
+      ],
+      "arrow_ids": [
+        "p2_009",
+        "p2_010"
+      ],
+      "dimension_line_id": "p2_008",
+      "extension_ids": [
+        "p2_011",
+        "p2_012"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          1043.75,
+          560.0
+        ],
+        [
+          1043.75,
+          579.5
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "p2_013",
+      "value_mm": 6.5,
+      "view": "right",
+      "visible_text": "6.5"
+    }
+  ],
+  "evidence": {
+    "L": [
+      {
+        "element_id": null,
+        "value_mm": 37.25,
+        "visible_text": "L=37.25"
+      },
+      {
+        "element_id": null,
+        "value_mm": 37.25,
+        "visible_text": "L=37.25"
+      }
+    ],
+    "T": [
+      {
+        "element_id": null,
+        "value_mm": 6.5,
+        "visible_text": "T=6.5"
+      },
+      {
+        "element_id": null,
+        "value_mm": 6.5,
+        "visible_text": "T=6.5"
+      }
+    ],
+    "W": [
+      {
+        "element_id": null,
+        "value_mm": 52.5,
+        "visible_text": "W=52.5"
+      },
+      {
+        "element_id": null,
+        "value_mm": 52.5,
+        "visible_text": "W=52.5"
+      }
+    ],
+    "holes": [
+      {
+        "circle_id": "p1_014",
+        "text_id": null,
+        "visible_text": "X=17.5 Y=13.25 DIA=5.5 THRU"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 5.5,
+        "x": 17.5,
+        "y": 13.25
+      }
+    ],
+    "length": 37.25,
+    "thickness": 6.5,
+    "width": 52.5
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "ba0b62aca2d7d4dada9a9c14bf3ed755db912b1fe31c6f7c5ca966125dd1b47f",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        280.0,
+        560.0,
+        157.5,
+        19.5
+      ],
+      "circles": [],
+      "extent_mm": [
+        52.5,
+        6.5
+      ],
+      "hidden_lines": [
+        [
+          [
+            14.75,
+            6.5
+          ],
+          [
+            14.75,
+            0.0
+          ]
+        ],
+        [
+          [
+            20.25,
+            6.5
+          ],
+          [
+            20.25,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "right": {
+      "box": [
+        880.0,
+        560.0,
+        111.75,
+        19.5
+      ],
+      "circles": [],
+      "extent_mm": [
+        37.25,
+        6.5
+      ],
+      "hidden_lines": [
+        [
+          [
+            10.5,
+            6.5
+          ],
+          [
+            10.5,
+            0.0
+          ]
+        ],
+        [
+          [
+            16.0,
+            6.5
+          ],
+          [
+            16.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "top": {
+      "box": [
+        280.0,
+        220.0,
+        157.5,
+        111.75
+      ],
+      "circles": [
+        {
+          "center": [
+            17.5,
+            13.25
+          ],
+          "id": "p1_014",
+          "radius": 2.75
+        }
+      ],
+      "extent_mm": [
+        52.5,
+        37.25
+      ],
+      "hidden_lines": []
+    }
+  }
+}

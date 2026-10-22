@@ -1,0 +1,493 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Authored vector dimension subset with explicit human priors; not OCR, general drafting notation or unique original history.",
+  "dimension_evidence": [
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          592.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "na0a0ddc9f1b098293e0a",
+        "n6d3547181ff02c30280d"
+      ],
+      "dimension_line_id": "ne0abb8b71a851ed4b98b",
+      "extension_ids": [
+        "n5912a2c04327f20ca11f",
+        "nc0d3cb87a7bbbcca6d3d"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          640.0
+        ],
+        [
+          440.0,
+          640.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "n161699f271c534d6900f",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          440.0,
+          560.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "n7e274d7bb9ab4d78bcd6",
+        "nd57aba7da17f8b48d98e"
+      ],
+      "dimension_line_id": "n69dc45dbcd9f24e6dae9",
+      "extension_ids": [
+        "n02905c072c98edfd95b0",
+        "n38714fa121df559ee9d5"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          492.0,
+          560.0
+        ],
+        [
+          492.0,
+          592.0
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "n7e3e8b3e948ce8e0e737",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          280.0,
+          340.0
+        ]
+      ],
+      "arrow_ids": [
+        "nc3572b4f692fdcce1b76",
+        "nb15868efbdcc7779e5e6"
+      ],
+      "dimension_line_id": "n3dfc89f48fec4d62fdb1",
+      "extension_ids": [
+        "ne7119facefe5d120f1da",
+        "n9040eb51ec6b22a9400d"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          232.0,
+          220.0
+        ],
+        [
+          232.0,
+          340.0
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "n9afd954066143d65eee6",
+      "value_mm": 30.0,
+      "view": "top",
+      "visible_text": "30"
+    },
+    {
+      "arrow_ids": [
+        "nfe6f5f6621eb90580eb5"
+      ],
+      "circle_id": "n5704d10f900c8821adeb",
+      "dimension_line_id": "nb29ef1e2f1bff1e596c9",
+      "kind": "hole_diameter",
+      "line_points_svg": [
+        [
+          336.4852813742386,
+          291.5147186257614
+        ],
+        [
+          515.0,
+          170.0
+        ]
+      ],
+      "text_id": "nbdb8ee85b4eef4799865",
+      "value_mm": 6.0,
+      "view": "top",
+      "visible_text": "⌀6 THRU"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          300.0
+        ],
+        [
+          328.0,
+          300.0
+        ]
+      ],
+      "arrow_ids": [
+        "n41b2714e882f02ada8fb",
+        "nf492de326a6aba5b3574"
+      ],
+      "circle_id": "n5704d10f900c8821adeb",
+      "dimension_line_id": "nc21a0dac7aa736d81255",
+      "extension_ids": [
+        "ndf6d271693d2933123d7",
+        "nb57a54dbc0d8e67350b2"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          280.0,
+          388.0
+        ],
+        [
+          328.0,
+          388.0
+        ]
+      ],
+      "parameter": "x",
+      "text_id": "n7069a5eee6cd1ef06e30",
+      "value_mm": 12.0,
+      "view": "top",
+      "visible_text": "12"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          440.0,
+          220.0
+        ]
+      ],
+      "arrow_ids": [
+        "n10ee61f8ce20910fb12b",
+        "n0dc9cb80f543f1b3310f"
+      ],
+      "dimension_line_id": "n7fd54a02abb7a269e6be",
+      "extension_ids": [
+        "n032f201ed81929cd2d8f",
+        "nbd7d321a4c3acb52c92e"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          175.0
+        ],
+        [
+          440.0,
+          175.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "n28c9262342059d8a3220",
+      "value_mm": 40.0,
+      "view": "top",
+      "visible_text": "40"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          328.0,
+          340.0
+        ],
+        [
+          328.0,
+          300.0
+        ]
+      ],
+      "arrow_ids": [
+        "n50a41a38709999f2ad0c",
+        "n5441983ceff59667b815"
+      ],
+      "circle_id": "n5704d10f900c8821adeb",
+      "dimension_line_id": "n1aa19ea253463eda34bb",
+      "extension_ids": [
+        "nf75f0e39b4dbf909057e",
+        "n35bfda0e675011f2cff1"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          185.0,
+          340.0
+        ],
+        [
+          185.0,
+          300.0
+        ]
+      ],
+      "parameter": "y",
+      "text_id": "n6090216229deb50af0a7",
+      "value_mm": 10.0,
+      "view": "top",
+      "visible_text": "10"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          1000.0,
+          560.0
+        ],
+        [
+          1000.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "n7f7474c1e58299eb1714",
+        "n82d209b06ef069de5529"
+      ],
+      "dimension_line_id": "n0c57ebcdedb4417ea5a1",
+      "extension_ids": [
+        "n81f54c2dcbd289f8612d",
+        "n25745855a0d8ee2cd68a"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          1052.0,
+          560.0
+        ],
+        [
+          1052.0,
+          592.0
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "n0b6c4e87d5a837314623",
+      "value_mm": 8.0,
+      "view": "right",
+      "visible_text": "8"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          880.0,
+          592.0
+        ],
+        [
+          1000.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "naff7e16f28bffd725397",
+        "n9df8585d23f00d22cf40"
+      ],
+      "dimension_line_id": "n5db9c7ee1b3b3acac14e",
+      "extension_ids": [
+        "na1f15bdbd5c57593f581",
+        "n995bd51b6daf1e5e4b2d"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          880.0,
+          640.0
+        ],
+        [
+          1000.0,
+          640.0
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "n76675ba97cf5b56e6d77",
+      "value_mm": 30.0,
+      "view": "right",
+      "visible_text": "30"
+    }
+  ],
+  "evidence": {
+    "L": [
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ],
+    "holes": [
+      {
+        "circle_id": "n5704d10f900c8821adeb",
+        "text_id": null,
+        "visible_text": "X=12 Y=10 DIA=6 THRU"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 12.0,
+        "y": 10.0
+      }
+    ],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "8c1dfb9b9a47bb53e0200a6dc71c75a7acb3b86aecc416a2dfb92bfa8ba55dcf",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        280.0,
+        560.0,
+        160.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            9.0,
+            8.0
+          ],
+          [
+            9.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            15.0,
+            8.0
+          ],
+          [
+            15.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "right": {
+      "box": [
+        880.0,
+        560.0,
+        120.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            7.0,
+            8.0
+          ],
+          [
+            7.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            13.0,
+            8.0
+          ],
+          [
+            13.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "top": {
+      "box": [
+        280.0,
+        220.0,
+        160.0,
+        120.0
+      ],
+      "circles": [
+        {
+          "center": [
+            12.0,
+            10.0
+          ],
+          "id": "n5704d10f900c8821adeb",
+          "radius": 3.0
+        }
+      ],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

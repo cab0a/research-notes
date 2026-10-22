@@ -1,0 +1,649 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Authored vector dimension subset with explicit human priors; not OCR, general drafting notation or unique original history.",
+  "dimension_evidence": [
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          592.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "na0a0ddc9f1b098293e0a",
+        "n6d3547181ff02c30280d"
+      ],
+      "dimension_line_id": "ne0abb8b71a851ed4b98b",
+      "extension_ids": [
+        "n5912a2c04327f20ca11f",
+        "nc0d3cb87a7bbbcca6d3d"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          640.0
+        ],
+        [
+          440.0,
+          640.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "n161699f271c534d6900f",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          440.0,
+          560.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "n7e274d7bb9ab4d78bcd6",
+        "nd57aba7da17f8b48d98e"
+      ],
+      "dimension_line_id": "n69dc45dbcd9f24e6dae9",
+      "extension_ids": [
+        "n02905c072c98edfd95b0",
+        "n38714fa121df559ee9d5"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          492.0,
+          560.0
+        ],
+        [
+          492.0,
+          592.0
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "n7e3e8b3e948ce8e0e737",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          440.0,
+          220.0
+        ]
+      ],
+      "arrow_ids": [
+        "n0dc9cb80f543f1b3310f",
+        "n032f201ed81929cd2d8f"
+      ],
+      "dimension_line_id": "n6d55ca67f14764d46d1f",
+      "extension_ids": [
+        "n89f44d62fdb128c9d810",
+        "n2b4fdcce1b763dfc187f"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          175.0
+        ],
+        [
+          440.0,
+          175.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "ne5325a6498b2c357fcda",
+      "value_mm": 40.0,
+      "view": "top",
+      "visible_text": "40"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          220.0
+        ],
+        [
+          280.0,
+          340.0
+        ]
+      ],
+      "arrow_ids": [
+        "n6893ca693dceb158e9d9",
+        "n3d65904015eceb51ec6b"
+      ],
+      "dimension_line_id": "n68ef7779e5e642ae42c2",
+      "extension_ids": [
+        "nc21a0dac7aa736d81255",
+        "n41b2714e882f02ada8fb"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          232.0,
+          220.0
+        ],
+        [
+          232.0,
+          340.0
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "n80465af60f90c4ac3b03",
+      "value_mm": 30.0,
+      "view": "top",
+      "visible_text": "30"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          320.0,
+          340.0
+        ],
+        [
+          320.0,
+          308.0
+        ]
+      ],
+      "arrow_ids": [
+        "nd9a1544141a4983ceff5",
+        "nf75f0e39b4dbf909057e"
+      ],
+      "circle_id": "n3fddf8e62266dc45d4ae",
+      "dimension_line_id": "n966721c2fdddd52a9e45",
+      "extension_ids": [
+        "n6090216229deb50af0a7",
+        "nb29ef1e2f1bff1e596c9"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          185.0,
+          340.0
+        ],
+        [
+          185.0,
+          308.0
+        ]
+      ],
+      "parameter": "y",
+      "text_id": "nfe6f5f6621eb90580eb5",
+      "value_mm": 8.0,
+      "view": "top",
+      "visible_text": "8"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          392.0,
+          340.0
+        ],
+        [
+          392.0,
+          256.0
+        ]
+      ],
+      "arrow_ids": [
+        "n73c993258ae682d24ca4",
+        "n5855ee2cd68a81f5e111"
+      ],
+      "circle_id": "n5db9c7ee1b3b3acac14e",
+      "dimension_line_id": "n09b069de55290e95fea4",
+      "extension_ids": [
+        "nc3610b6cff744e87d5a8",
+        "n70abd14eb6e9d9348103"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          143.0,
+          340.0
+        ],
+        [
+          143.0,
+          256.0
+        ]
+      ],
+      "parameter": "y",
+      "text_id": "na478899d7c241e265f56",
+      "value_mm": 21.0,
+      "view": "top",
+      "visible_text": "21"
+    },
+    {
+      "arrow_ids": [
+        "n8f64af6475919fbafca9"
+      ],
+      "circle_id": "n5db9c7ee1b3b3acac14e",
+      "dimension_line_id": "n7b3982295968fce44811",
+      "kind": "hole_diameter",
+      "line_points_svg": [
+        [
+          400.4852813742386,
+          247.51471862576142
+        ],
+        [
+          595.0,
+          125.0
+        ]
+      ],
+      "text_id": "nb0a9a83160e5dc506c4e",
+      "value_mm": 6.0,
+      "view": "top",
+      "visible_text": "⌀6 THRU"
+    },
+    {
+      "arrow_ids": [
+        "nee85f479986538b5d211"
+      ],
+      "circle_id": "n3fddf8e62266dc45d4ae",
+      "dimension_line_id": "ncb3bade83b19d8dbecf3",
+      "kind": "hole_diameter",
+      "line_points_svg": [
+        [
+          325.65685424949237,
+          302.34314575050763
+        ],
+        [
+          515.0,
+          170.0
+        ]
+      ],
+      "text_id": "nc9179ce8cdc48b680da7",
+      "value_mm": 4.0,
+      "view": "top",
+      "visible_text": "⌀4 THRU"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          308.0
+        ],
+        [
+          320.0,
+          308.0
+        ]
+      ],
+      "arrow_ids": [
+        "n93317746bcb86dd93116",
+        "na5ee1ef06e30b57aae87"
+      ],
+      "circle_id": "n3fddf8e62266dc45d4ae",
+      "dimension_line_id": "nf492de326a6aba5b3574",
+      "extension_ids": [
+        "n99f21aa11d7e9ea25346",
+        "n6dcf50a443e01a387099"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          280.0,
+          388.0
+        ],
+        [
+          320.0,
+          388.0
+        ]
+      ],
+      "parameter": "x",
+      "text_id": "ne30edb9dc98eec9166b3",
+      "value_mm": 10.0,
+      "view": "top",
+      "visible_text": "10"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          256.0
+        ],
+        [
+          392.0,
+          256.0
+        ]
+      ],
+      "arrow_ids": [
+        "n0d220cd5cdf6a681919a",
+        "na1f15bdbd5c57593f581"
+      ],
+      "circle_id": "n5db9c7ee1b3b3acac14e",
+      "dimension_line_id": "naff7e16f28bffd725397",
+      "extension_ids": [
+        "nebcd417ea5a176673ae6",
+        "n74c199eb17140c57edee"
+      ],
+      "kind": "hole_position",
+      "line_points_svg": [
+        [
+          280.0,
+          430.0
+        ],
+        [
+          392.0,
+          430.0
+        ]
+      ],
+      "parameter": "x",
+      "text_id": "neeb5bfb1e5497f743fbb",
+      "value_mm": 28.0,
+      "view": "top",
+      "visible_text": "28"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          880.0,
+          592.0
+        ],
+        [
+          1000.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "nd09bee688090bf201634",
+        "n37dba971d26207aecd1c"
+      ],
+      "dimension_line_id": "ndb7f04fe07f9800636f3",
+      "extension_ids": [
+        "n08151c8f67ec3bc24336",
+        "n2fed95a36f71a4cc543f"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          880.0,
+          640.0
+        ],
+        [
+          1000.0,
+          640.0
+        ]
+      ],
+      "parameter": "L",
+      "text_id": "n51b9d22bbd9d219c5f46",
+      "value_mm": 30.0,
+      "view": "right",
+      "visible_text": "30"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          1000.0,
+          560.0
+        ],
+        [
+          1000.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "n217913778e9bfceae395",
+        "neb5f9a7be4979a017bad"
+      ],
+      "dimension_line_id": "nb95205ac31d0247414e8",
+      "extension_ids": [
+        "n6c986e092d5349dfda17",
+        "ne296ec63c56a9c5cc9c6"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          1052.0,
+          560.0
+        ],
+        [
+          1052.0,
+          592.0
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "nc3eee337bbfb5a5fcca6",
+      "value_mm": 8.0,
+      "view": "right",
+      "visible_text": "8"
+    }
+  ],
+  "evidence": {
+    "L": [
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ],
+    "holes": [
+      {
+        "circle_id": "n3fddf8e62266dc45d4ae",
+        "text_id": null,
+        "visible_text": "X=10 Y=8 DIA=4 THRU"
+      },
+      {
+        "circle_id": "n5db9c7ee1b3b3acac14e",
+        "text_id": null,
+        "visible_text": "X=28 Y=21 DIA=6 THRU"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 4.0,
+        "x": 10.0,
+        "y": 8.0
+      },
+      {
+        "diameter": 6.0,
+        "x": 28.0,
+        "y": 21.0
+      }
+    ],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "fc58f51ab4c090f4d0d6426bc28e704b745b486f7a7ef7735b0276aaeb236183",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        280.0,
+        560.0,
+        160.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            31.0,
+            8.0
+          ],
+          [
+            31.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            8.0,
+            8.0
+          ],
+          [
+            8.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            25.0,
+            8.0
+          ],
+          [
+            25.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            12.0,
+            8.0
+          ],
+          [
+            12.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "right": {
+      "box": [
+        880.0,
+        560.0,
+        120.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            18.0,
+            8.0
+          ],
+          [
+            18.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            24.0,
+            8.0
+          ],
+          [
+            24.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            10.0,
+            8.0
+          ],
+          [
+            10.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            8.0
+          ],
+          [
+            6.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "top": {
+      "box": [
+        280.0,
+        220.0,
+        160.0,
+        120.0
+      ],
+      "circles": [
+        {
+          "center": [
+            10.0,
+            8.0
+          ],
+          "id": "n3fddf8e62266dc45d4ae",
+          "radius": 2.0
+        },
+        {
+          "center": [
+            28.0,
+            21.0
+          ],
+          "id": "n5db9c7ee1b3b3acac14e",
+          "radius": 3.0
+        }
+      ],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

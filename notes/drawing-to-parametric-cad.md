@@ -3,6 +3,10 @@
 調査・初回実験日: 2026-10-22。既存のv1.17.0上で行う独立した探索研究。
 リリース番号と[v1.15〜v1.24の業務自動化計画](sme-cad-automation-roadmap.md)は変更しない。
 
+続報: [通常の寸法線・補助線による限定実験](drawing-dimension-lines.md)と
+[閲覧用HTML](../results/drawing-dimensions/report.html)を追加した。
+以下は専用注記を使った初回の記録であり、当時の結果・未実施範囲を保持する。
+
 ## Research Question — 何を確かめるか
 
 中心課題は「2D機械図面から、幾何形状と設計寸法が正しく、寸法変更可能な

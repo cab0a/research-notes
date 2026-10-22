@@ -1,0 +1,22 @@
+{
+  "ai_used": false,
+  "detail": "front overall dimensions missing",
+  "dimension_evidence": [],
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "reason_code": "dimension_missing",
+  "schema_version": "1.0.0",
+  "source_sha256": "cf6e05ca73d92e84b354c84df28385025b0ca879a0cfb21d5300acf6c0c850e2",
+  "status": "withheld"
+}

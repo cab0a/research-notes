@@ -1,0 +1,97 @@
+{
+  "ai_used": false,
+  "detail": "R3",
+  "dimension_evidence": [
+    {
+      "anchor_points_svg": [
+        [
+          280.0,
+          592.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "p0_003",
+        "p0_004"
+      ],
+      "dimension_line_id": "p0_002",
+      "extension_ids": [
+        "p0_005",
+        "p0_006"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          280.0,
+          640.0
+        ],
+        [
+          440.0,
+          640.0
+        ]
+      ],
+      "parameter": "W",
+      "text_id": "p0_007",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "anchor_points_svg": [
+        [
+          440.0,
+          560.0
+        ],
+        [
+          440.0,
+          592.0
+        ]
+      ],
+      "arrow_ids": [
+        "p0_009",
+        "p0_010"
+      ],
+      "dimension_line_id": "p0_008",
+      "extension_ids": [
+        "p0_011",
+        "p0_012"
+      ],
+      "kind": "overall",
+      "line_points_svg": [
+        [
+          492.0,
+          560.0
+        ],
+        [
+          492.0,
+          592.0
+        ]
+      ],
+      "parameter": "T",
+      "text_id": "p0_013",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    }
+  ],
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "reason_code": "unsupported_annotation",
+  "schema_version": "1.0.0",
+  "source_sha256": "74390717713dced7ff7b14e38937c78a239df33bfe7ba363fdfab3fe2ffdbbee",
+  "status": "withheld"
+}

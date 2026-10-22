@@ -20,6 +20,14 @@ It reuses the existing geometry dependencies, needs no AI API or GPU, and reads
 only authored SVG/context files during reconstruction. Ground truth is separate.
 It was run on Ubuntu/WSL2; native Windows and upstream model inference are untested.
 
+The [dimension-line follow-up guide](drawing-dimension-lines.md) provides a local
+HTML report and the offline run command. It retains human view/family assumptions
+but derives dimension associations from the SVG graphics. Use a new output folder:
+
+```bash
+python -m experiments.run_drawing_dimension_lines --output-dir output/dimension-reproduction --repeats 2
+```
+
 Python 3.11 or newer is required. Python 3.12 and the exact runtime dependency
 versions in `pyproject.toml` define the reference environment.
 

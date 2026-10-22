@@ -1,0 +1,22 @@
+{
+  "ai_used": false,
+  "detail": "dimension/leader must have exactly one nearby numeric label",
+  "dimension_evidence": [],
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_0",
+      "right": "panel_2",
+      "top": "panel_1"
+    }
+  },
+  "method": "C_vector_dimension_line_association",
+  "original_authoring_history_recovered": false,
+  "reason_code": "dimension_text_ambiguous",
+  "schema_version": "1.0.0",
+  "source_sha256": "9d973ac6822601dcf44126766b461a1bb35754fca7b3f990dcb4306f1cc99480",
+  "status": "withheld"
+}

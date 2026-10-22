@@ -1,0 +1,150 @@
+{
+  "decimal_plate": {
+    "analytic_area": 5142.795348480289,
+    "analytic_volume": 12557.133586121976,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 5.5,
+          "x": 17.5,
+          "y": 13.25
+        }
+      ],
+      "length": 37.25,
+      "thickness": 6.5,
+      "width": 52.5
+    },
+    "sha256": "34f396b20a2de0cdc58ce2cc3cafcf9df33361c54fc2e87f0228e332900ef8cf",
+    "step": "decimal_plate.step"
+  },
+  "one_anonymous": {
+    "analytic_area": 3614.2477796076937,
+    "analytic_volume": 9373.805328941535,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 6.0,
+          "x": 12.0,
+          "y": 10.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "4e435a598b0f2ff510e0f886ed55f288f61593d7fc0141ec51ba633a5c78310d",
+    "step": "one_anonymous.step"
+  },
+  "one_first": {
+    "analytic_area": 3614.2477796076937,
+    "analytic_volume": 9373.805328941535,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 6.0,
+          "x": 12.0,
+          "y": 10.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "4e435a598b0f2ff510e0f886ed55f288f61593d7fc0141ec51ba633a5c78310d",
+    "step": "one_first.step"
+  },
+  "one_scaled": {
+    "analytic_area": 3614.2477796076937,
+    "analytic_volume": 9373.805328941535,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 6.0,
+          "x": 12.0,
+          "y": 10.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "4e435a598b0f2ff510e0f886ed55f288f61593d7fc0141ec51ba633a5c78310d",
+    "step": "one_scaled.step"
+  },
+  "one_third": {
+    "analytic_area": 3614.2477796076937,
+    "analytic_volume": 9373.805328941535,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 6.0,
+          "x": 12.0,
+          "y": 10.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "4e435a598b0f2ff510e0f886ed55f288f61593d7fc0141ec51ba633a5c78310d",
+    "step": "one_third.step"
+  },
+  "plain_third": {
+    "analytic_area": 3520.0,
+    "analytic_volume": 9600.0,
+    "parameters": {
+      "holes": [],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "f909274ee02019742e254b927b8096f974d8ba916fe05e5132773f8f438cf1c6",
+    "step": "plain_third.step"
+  },
+  "two_reordered": {
+    "analytic_area": 3689.646003293849,
+    "analytic_volume": 9273.274364026662,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 4.0,
+          "x": 10.0,
+          "y": 8.0
+        },
+        {
+          "diameter": 6.0,
+          "x": 28.0,
+          "y": 21.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "6fdfcca8ae7cd4495d58cbc8f2697b1ae68c89b533c3142529402ecd5b5bde9f",
+    "step": "two_reordered.step"
+  },
+  "two_third": {
+    "analytic_area": 3689.646003293849,
+    "analytic_volume": 9273.274364026662,
+    "parameters": {
+      "holes": [
+        {
+          "diameter": 4.0,
+          "x": 10.0,
+          "y": 8.0
+        },
+        {
+          "diameter": 6.0,
+          "x": 28.0,
+          "y": 21.0
+        }
+      ],
+      "length": 30.0,
+      "thickness": 8.0,
+      "width": 40.0
+    },
+    "sha256": "6fdfcca8ae7cd4495d58cbc8f2697b1ae68c89b533c3142529402ecd5b5bde9f",
+    "step": "two_third.step"
+  }
+}
