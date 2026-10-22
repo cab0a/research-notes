@@ -1,0 +1,24 @@
+{
+  "ai_used": false,
+  "detail": "one compatible text baseline required",
+  "evidence": null,
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "pocket",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:57",
+      "top": "path:21"
+    }
+  },
+  "input_format": "svg",
+  "method": "declared_family_graphical_dimensions",
+  "original_history_recovered": false,
+  "policy": "visibility_and_section_v1",
+  "reason_code": "dimension_label_ambiguous",
+  "source_sha256": "62a275fa0ab098bb96e4c897d0a04de7a4facd1e046cd6d53e17ab558e68aa69",
+  "status": "withheld"
+}

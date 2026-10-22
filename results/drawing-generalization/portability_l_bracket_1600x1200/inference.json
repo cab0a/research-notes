@@ -1,0 +1,24 @@
+{
+  "detail": "No usable XML dimension text or supported view grouping. Missing annotations cannot be recovered from geometry alone; inspect the source CAD export.",
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "l_bracket",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:39",
+      "top": "path:18"
+    }
+  },
+  "input_format": "svg",
+  "inventory": {
+    "g": 12,
+    "line": 36,
+    "svg": 1
+  },
+  "reason_code": "dimension_text_unavailable",
+  "source_sha256": "db09244237aed968be520bfb89c2cced42e12d7a0568af7980c1e8cb5a66747c",
+  "status": "withheld"
+}

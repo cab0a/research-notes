@@ -1,0 +1,6 @@
+LC_CrashHandler installed; on crash, log -> /home/nakanishi/.local/share/crash-20261022-130820-110835.log
+RS_DEBUG::setLevel(0)
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/share/librecad/qm
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/translations
+/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/usr/share/librecad/qm
+Printing "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/l_bracket_1600x1200/source.dxf" to "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/l_bracket_1600x1200/drawing.svg" Done

@@ -1,0 +1,46 @@
+{
+  "edit_metrics": {
+    "area_error_mm2": 1.837179297581315e-10,
+    "area_mm2": 3425.5926294744945,
+    "bounds_error_mm": 0.0,
+    "passed": true,
+    "same_kernel_iou": 1.0,
+    "step_read_success": true,
+    "symmetric_difference_mm3": 0.0,
+    "valid_solid": true,
+    "volume_error_mm3": 1.2732925824820995e-10,
+    "volume_mm3": 13049.92455559984
+  },
+  "edited_parameters": {
+    "diameter1": 20.0,
+    "diameter2": 9.2,
+    "length1": 39.0,
+    "length2": 12.0
+  },
+  "metrics": {
+    "area_error_mm2": 1.6552803572267294e-10,
+    "area_mm2": 3136.566105344215,
+    "bounds_error_mm": 0.0,
+    "passed": true,
+    "same_kernel_iou": 1.0,
+    "step_read_success": true,
+    "symmetric_difference_mm3": 0.0,
+    "valid_solid": true,
+    "volume_error_mm3": 1.2187229003757238e-10,
+    "volume_mm3": 11629.29635764653
+  },
+  "opening": "top",
+  "parameters": {
+    "diameter1": 20.0,
+    "diameter2": 8.2,
+    "length1": 35.0,
+    "length2": 12.0
+  },
+  "truth_opening": "top",
+  "truth_parameters": {
+    "diameter1": 20,
+    "diameter2": 8.2,
+    "length1": 35,
+    "length2": 12
+  }
+}

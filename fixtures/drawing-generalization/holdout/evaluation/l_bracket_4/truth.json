@@ -1,0 +1,22 @@
+{
+  "edited_parameters": {
+    "base_thickness": 6.2,
+    "height": 43,
+    "length": 35,
+    "wall_thickness": 4.5,
+    "width": 48
+  },
+  "family": "l_bracket",
+  "hashes": {
+    "edited-truth.step": "459291a3297884027c740a64ac99f99939b22191229b499517edb268a03e84f6",
+    "truth.step": "55c4e29bbb5fce80d1d2d4d7d824e23cb02a61dbd772584a63231b74fc3bc1c3"
+  },
+  "opening": "top",
+  "parameters": {
+    "base_thickness": 5.2,
+    "height": 40,
+    "length": 35,
+    "wall_thickness": 4.5,
+    "width": 43
+  }
+}

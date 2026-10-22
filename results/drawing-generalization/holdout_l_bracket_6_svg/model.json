@@ -1,0 +1,32 @@
+{
+  "bindings": {
+    "base_thickness": [
+      "path:58"
+    ],
+    "height": [
+      "path:15",
+      "path:55"
+    ],
+    "length": [
+      "path:36",
+      "path:52"
+    ],
+    "wall_thickness": [
+      "path:61"
+    ],
+    "width": [
+      "path:33",
+      "path:12"
+    ]
+  },
+  "family": "l_bracket",
+  "opening": null,
+  "parameters": {
+    "base_thickness": 6.0,
+    "height": 33.0,
+    "length": 40.0,
+    "wall_thickness": 5.5,
+    "width": 45.0
+  },
+  "source_sha256": "8580e56db37f2bca9869f6be1dc8a0c8646e8112ed8664be2c0a0c19109733ac"
+}

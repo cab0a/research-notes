@@ -1,0 +1,28 @@
+{
+  "edited_parameters": {
+    "length": 51,
+    "pocket_depth": 6.0,
+    "pocket_length": 14,
+    "pocket_width": 22,
+    "pocket_x": 11.0,
+    "pocket_y": 9.0,
+    "thickness": 16,
+    "width": 91
+  },
+  "family": "pocket",
+  "hashes": {
+    "edited-truth.step": "1b003ec18ed8c0cb6ba27edd414fc0b2c38b5b01e28c4c5b9d34c08fbc40960f",
+    "truth.step": "ec250ad7dcee9e439a7d6412f1e847187c7623293bb697d6b96c3d1fd2662f6c"
+  },
+  "opening": "top",
+  "parameters": {
+    "length": 51,
+    "pocket_depth": 5.0,
+    "pocket_length": 14,
+    "pocket_width": 20,
+    "pocket_x": 11.0,
+    "pocket_y": 9.0,
+    "thickness": 16,
+    "width": 86
+  }
+}

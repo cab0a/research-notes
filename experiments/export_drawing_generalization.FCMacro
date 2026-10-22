@@ -1,0 +1,41 @@
+"""Reuse the frozen FreeCAD authoring recipe with predeclared specs and real section contours."""
+from pathlib import Path
+import os,hashlib
+BASE=Path(__file__).with_name('export_drawing_families.FCMacro')
+source=BASE.read_text()
+# This is a versioned extension of our own authoring recipe, not inference.
+first=source.index('SPECS=[');last=source.index('\nrecords=[]',first)
+source=source[:first]+"SPECS=json.loads(Path(os.environ['RESEARCH_DRAWING_SPECS']).read_text())"+source[last:]
+replacements={
+"def shape(f,p):":"def shape(f,p,opening='top'):",
+"p['thickness']-p['pocket_depth']))).removeSplitter()":"(0 if opening=='bottom' else p['thickness']-p['pocket_depth'])))).removeSplitter()",
+"obj.Shape=shape(f,p)":"obj.Shape=shape(f,p,spec.get('opening','top'))",
+"eo.Shape=shape(f,edit)":"eo.Shape=shape(f,edit,spec.get('opening','top'))",
+"x,y,a,b,d=p['pocket_x'],p['pocket_y'],p['pocket_width'],p['pocket_length'],p['pocket_depth']":
+"x,y,a,b,d=p['pocket_x'],p['pocket_y'],p['pocket_width'],p['pocket_length'],p['pocket_depth']\n                        if spec.get('opening')=='bottom':d=t-d",
+"        doc.recompute();Gui.activeDocument().getObject(page.Name).show()":
+"""        secpage=None
+        if spec.get('section'):
+            sx=p['pocket_x']+p['pocket_width']/2
+            so=doc.addObject('Part::Feature','SectionWire')
+            so.Shape=Part.makeCompound(obj.Shape.slice(App.Vector(1,0,0),sx))
+            secpage=doc.addObject('TechDraw::DrawPage','SectionPage')
+            secpage.Template=tpl
+            sv=doc.addObject('TechDraw::DrawViewPart','SectionContour')
+            secpage.addView(sv);sv.Source=[so];sv.Direction=App.Vector(1,0,0);sv.XDirection=App.Vector(0,1,0)
+            sv.X=210;sv.Y=148;sv.HardHidden=False
+            doc.recompute();Gui.activeDocument().getObject(secpage.Name).show()
+        doc.recompute();Gui.activeDocument().getObject(page.Name).show()""",
+"                        Part.export([obj],str(dest/'truth.step'))":
+"""                        if secpage:TechDrawGui.exportPageAsSvg(secpage,str(dest/'section.svg'))
+                        if spec.get('solid_lines'):
+                            import re
+                            raw=(dest/'drawing.svg').read_bytes()
+                            (dest/'native-drawing.svg').write_bytes(raw)
+                            (dest/'drawing.svg').write_bytes(re.sub(rb' stroke-dash(?:array|offset)="[^"]*"',b'',raw))
+                        Part.export([obj],str(dest/'truth.step'))"""
+}
+for old,new in replacements.items():
+    assert source.count(old)==1,old
+    source=source.replace(old,new)
+exec(compile(source,str(BASE),'exec'))

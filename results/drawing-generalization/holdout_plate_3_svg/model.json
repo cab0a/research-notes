@@ -1,0 +1,68 @@
+{
+  "bindings": {
+    "hole_1.diameter": [
+      "path:51"
+    ],
+    "hole_1.x": [
+      "path:45"
+    ],
+    "hole_1.y": [
+      "path:48"
+    ],
+    "hole_2.diameter": [
+      "path:60"
+    ],
+    "hole_2.x": [
+      "path:54"
+    ],
+    "hole_2.y": [
+      "path:57"
+    ],
+    "hole_3.diameter": [
+      "path:69"
+    ],
+    "hole_3.x": [
+      "path:63"
+    ],
+    "hole_3.y": [
+      "path:66"
+    ],
+    "length": [
+      "path:42",
+      "path:87"
+    ],
+    "thickness": [
+      "path:18",
+      "path:90"
+    ],
+    "width": [
+      "path:39",
+      "path:15"
+    ]
+  },
+  "family": "plate",
+  "opening": null,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 20.01,
+        "y": 14.3
+      },
+      {
+        "diameter": 7.8,
+        "x": 58.29,
+        "y": 37.95
+      },
+      {
+        "diameter": 5.0,
+        "x": 62.64,
+        "y": 14.85
+      }
+    ],
+    "length": 55.0,
+    "thickness": 11.0,
+    "width": 87.0
+  },
+  "source_sha256": "d9746e019f405404bc5db17da0caae275a9fdc2d7127967bb179278ed04d32bc"
+}

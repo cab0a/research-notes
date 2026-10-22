@@ -1,0 +1,32 @@
+{
+  "edited_parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 19.63,
+        "y": 14.56
+      }
+    ],
+    "length": 56,
+    "thickness": 11,
+    "width": 86
+  },
+  "family": "plate",
+  "hashes": {
+    "edited-truth.step": "fdc1bb879b627ea08afa456b4db5a40d60eaff94602731730789fcfa92418d32",
+    "truth.step": "af65e51fe71074828fef24c797913736401741ef866d30ee3d69fcaded14c098"
+  },
+  "opening": "top",
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 5.0,
+        "x": 18.63,
+        "y": 14.56
+      }
+    ],
+    "length": 56,
+    "thickness": 9,
+    "width": 81
+  }
+}

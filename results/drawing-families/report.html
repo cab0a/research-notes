@@ -550,14 +550,14 @@ articles.forEach(article=>{
  article.querySelector(".image-plus").onclick=()=>{imageZoom=Math.min(4,imageZoom+.5);showImage();};article.querySelector(".image-minus").onclick=()=>{imageZoom=Math.max(1,imageZoom-.5);showImage();};
  if(!meshes[id])return;
  const pts=Object.values(meshes[id]).flatMap(m=>m.polygons.flat()),lo=[0,1,2].map(i=>Math.min(...pts.map(p=>p[i]))),hi=[0,1,2].map(i=>Math.max(...pts.map(p=>p[i])));
- const state={center:lo.map((v,i)=>(v+hi[i])/2),extent:Math.max(...hi.map((v,i)=>v-lo[i])),yaw:.62,pitch:.75,zoom:1};states.set(id,state);
+ const state={center:lo.map((v,i)=>(v+hi[i])/2),extent:Math.max(...hi.map((v,i)=>v-lo[i])),yaw:.62,pitch:article.dataset.opening==="bottom"?-.75:.75,zoom:1};states.set(id,state);
  const canvas=article.querySelector("canvas");let drag=null;
  canvas.addEventListener("pointerdown",e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);});
- canvas.addEventListener("pointermove",e=>{if(!drag)return;state.yaw+=(e.clientX-drag[0])*.009;state.pitch=Math.max(.08,Math.min(1.49,state.pitch+(e.clientY-drag[1])*.009));drag=[e.clientX,e.clientY];render(article);});
+ canvas.addEventListener("pointermove",e=>{if(!drag)return;state.yaw-=(e.clientX-drag[0])*.009;state.pitch=Math.max(-1.49,Math.min(1.49,state.pitch+(e.clientY-drag[1])*.009));drag=[e.clientX,e.clientY];render(article);});
  ["pointerup","pointercancel","lostpointercapture"].forEach(name=>canvas.addEventListener(name,()=>{drag=null;}));
  canvas.addEventListener("wheel",e=>{e.preventDefault();state.zoom=Math.max(.4,Math.min(3,state.zoom*Math.exp(-e.deltaY*.001)));render(article);},{passive:false});
- canvas.addEventListener("keydown",e=>{if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key))return;e.preventDefault();state.yaw+=e.key==="ArrowLeft"?-.15:e.key==="ArrowRight"?.15:0;state.pitch=Math.max(.08,Math.min(1.49,state.pitch+(e.key==="ArrowUp"?.12:e.key==="ArrowDown"?-.12:0)));render(article);});
- article.querySelector(".reset-camera").onclick=()=>{state.yaw=.62;state.pitch=.75;state.zoom=1;render(article);};
+ canvas.addEventListener("keydown",e=>{if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key))return;e.preventDefault();state.yaw+=e.key==="ArrowLeft"?.15:e.key==="ArrowRight"?-.15:0;state.pitch=Math.max(-1.49,Math.min(1.49,state.pitch+(e.key==="ArrowUp"?.12:e.key==="ArrowDown"?-.12:0)));render(article);});
+ article.querySelector(".reset-camera").onclick=()=>{state.yaw=.62;state.pitch=article.dataset.opening==="bottom"?-.75:.75;state.zoom=1;render(article);};
  article.querySelector(".zoom-in").onclick=()=>{state.zoom=Math.min(3,state.zoom*1.2);render(article);};article.querySelector(".zoom-out").onclick=()=>{state.zoom=Math.max(.4,state.zoom/1.2);render(article);};article.querySelector(".model-select").onchange=()=>render(article);
 });
 function choose(){articles.forEach(a=>{a.hidden=a.dataset.case!==picker.value;});const a=articles.find(a=>a.dataset.case===picker.value);if(a)render(a);}

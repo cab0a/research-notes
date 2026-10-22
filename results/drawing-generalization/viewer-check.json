@@ -1,0 +1,9 @@
+{
+  "runtime": "v24.21.0",
+  "assertions": 5,
+  "passed": true,
+  "front_point_screen_x_before": 300,
+  "front_point_screen_x_after_right_drag": 305.14135991653114,
+  "source_sha256": "ee3d87c4eeea3332bcdf548bdc30b73e955b449c2e79191e7c2aca4752782a89",
+  "scope": "Actual event/projection functions executed in Node; real browser drag is recorded separately."
+}

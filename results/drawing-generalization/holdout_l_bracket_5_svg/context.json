@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "l_bracket",
+  "projection": "third_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:0",
+    "right": "path:39",
+    "top": "path:18"
+  }
+}

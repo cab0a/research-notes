@@ -122,7 +122,7 @@
     "quantity_two_svg/model.json": "fd00620bccfa579cb47254adb037dfdcef5e6920fa83eeb959b366de71b23d81",
     "quantity_two_svg/preview.json": "fe7f64b81611b6f52fc8d5d469af72c15082219c2b16c8f7629c21fb195f4927",
     "report-preview.png": "124b0f36f663ec848fc059f20d3c429b7a39a3a59b87aa283c1d4c546565b8ad",
-    "report.html": "1d92242f3507a8781e81f0841e5fb1147c8552d9be55068e1e8bc8283b45f9f5",
+    "report.html": "1635ebb1c491afdeaa5b4b4ecf651a9c2d36e7c1d358cc8b929f707711d9211d",
     "results.json": "cabfb16934dbc7902819763d3e82f6ba26ff9750308bfc219455d4d6303ed00e",
     "review-correction/context.json": "1d51667b653179a164579b4970edc55f023a39558d90f74027da0cdbf21b180f",
     "review-correction/context.json:Zone.Identifier": "c70a8fc94f0e9429496140287e9896d563b8e1f31abc582b9bcf99805c41f1e9",
@@ -264,6 +264,8 @@
     "unseen_small_svg/input.svg": "d7103189f84e6558d6eb7c348107a6315ce849d5e20d99cb9d726cb4b8974fe9",
     "unseen_small_svg/model.json": "b817576ca3890f1aee49d487cd1d22c10d0d17e295bdc86d85a41274fd54230e",
     "unseen_small_svg/preview.json": "785c99b12ec97815b493e7ab40ec0eb66d4303d0a1521a481916dfcc32ad0bb4",
+    "viewer-drag.png": "3528362c1272574fbd2b85cd1b1ce5d6e5a8963588a1edbc0aa62ad78a2c3c7a",
+    "viewer-update.json": "00ceffe5a6b6f485e40162098dc1944e970720b26140d6bbf4ad544b8bdfcac7",
     "wrong_views_svg/context.json": "552497d59a2ce89997a59cf4a66120ff8c2db6e615b7dcca47df593cef6957eb",
     "wrong_views_svg/inference.json": "6cb7114a663568f2b88dd0a1d274fd1bca931cda3b3117477f59a457c316a282",
     "wrong_views_svg/input.svg": "49fec39a9bc0bf7b60465eaa64f75559dfd099b95dcf0acdd0fcb8098aab1c49"
@@ -408,6 +410,19 @@
   ],
   "pairs": 11,
   "positive_trials": 42,
+  "presentation_update": {
+    "actual_browser_right_drag": true,
+    "change": "Presentation only: correct horizontal pointer/arrow rotation, allow underside viewing, optional bottom-opening initial camera.",
+    "current_report_sha256": "1635ebb1c491afdeaa5b4b4ecf651a9c2d36e7c1d358cc8b929f707711d9211d",
+    "date": "2026-10-22",
+    "historical_geometry_tests": "The original 1528-test/geometry evidence is retained; it is not a new geometry run. Current full-suite evidence is in drawing-generalization/verification.json.",
+    "observed_console_errors": [],
+    "previous_report_sha256": "1d92242f3507a8781e81f0841e5fb1147c8552d9be55068e1e8bc8283b45f9f5",
+    "previous_verification_sha256": "ffddedd05f4d1f655c9653b2f55282024b1139e0c98d9e42ada3cce87c0c10fe",
+    "screenshot": "viewer-drag.png",
+    "unchanged_geometry_results_sha256": "cabfb16934dbc7902819763d3e82f6ba26ff9750308bfc219455d4d6303ed00e",
+    "viewer_tests": "../drawing-generalization/viewer-check.json"
+  },
   "pytest": {
     "errors": 0,
     "failures": 0,

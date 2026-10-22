@@ -1,0 +1,20 @@
+{
+  "edited_parameters": {
+    "diameter1": 19,
+    "diameter2": 8.6,
+    "length1": 37,
+    "length2": 17
+  },
+  "family": "stepped_shaft",
+  "hashes": {
+    "edited-truth.step": "27f4555885b1d9f8a81aac437421900168aa44347e7c2eb04d361bfaefc07173",
+    "truth.step": "480812de661586de56e011cd9a361bd20cbdf0f4f89329031998e730a0e8ba60"
+  },
+  "opening": "top",
+  "parameters": {
+    "diameter1": 19,
+    "diameter2": 7.6,
+    "length1": 33,
+    "length2": 17
+  }
+}

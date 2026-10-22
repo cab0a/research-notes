@@ -14,7 +14,17 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
-For the latest family expansion, see [the drawing families guide](drawing-families.md).
+For the latest exporter/ambiguity/untuned-configuration study, see
+[the frozen generalization guide](drawing-generalization.md). It records 24
+new configurations evaluated without retuning, actual LibreCAD export information
+loss, optional human-confirmed CAD sections, and source/input/truth hashes.
+
+```bash
+python -m experiments.run_drawing_generalization --output-dir output/drawing-generalization-replay --repeats 2
+python -m research_notes.drawing_generalization_report output/drawing-generalization-replay
+```
+
+For the preceding family expansion, see [the drawing families guide](drawing-families.md).
 It preserves new FreeCAD exports, drawing-only worker inputs, an unchanged-code
 baseline, independent authoring truth and expected withholding reasons.
 Twenty-one positive and eleven negative inputs are evaluated twice. The report

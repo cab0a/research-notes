@@ -1,0 +1,47 @@
+{
+  "bindings": {
+    "length": [
+      "A56",
+      "A60"
+    ],
+    "pocket_depth": [
+      "derived: thickness - top_reference_distance"
+    ],
+    "pocket_length": [
+      "A92"
+    ],
+    "pocket_width": [
+      "A88"
+    ],
+    "pocket_x": [
+      "A74"
+    ],
+    "pocket_y": [
+      "A7E"
+    ],
+    "thickness": [
+      "A42",
+      "A6A"
+    ],
+    "top_reference_distance": [
+      "A9C"
+    ],
+    "width": [
+      "A4C",
+      "A38"
+    ]
+  },
+  "family": "pocket",
+  "opening": "bottom",
+  "parameters": {
+    "length": 40.0,
+    "pocket_depth": 8.0,
+    "pocket_length": 14.0,
+    "pocket_width": 20.0,
+    "pocket_x": 12.0,
+    "pocket_y": 10.0,
+    "thickness": 12.0,
+    "width": 60.0
+  },
+  "source_sha256": "8342bac6783261267314866092b9e48773312a17ea97fb37d6ef985fc024060e"
+}

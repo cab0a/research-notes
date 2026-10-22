@@ -1,0 +1,47 @@
+{
+  "bindings": {
+    "length": [
+      "path:37",
+      "path:64"
+    ],
+    "pocket_depth": [
+      "derived: thickness - top_reference_distance"
+    ],
+    "pocket_length": [
+      "path:49"
+    ],
+    "pocket_width": [
+      "path:46"
+    ],
+    "pocket_x": [
+      "path:40"
+    ],
+    "pocket_y": [
+      "path:43"
+    ],
+    "thickness": [
+      "path:15",
+      "path:67"
+    ],
+    "top_reference_distance": [
+      "path:18"
+    ],
+    "width": [
+      "path:34",
+      "path:12"
+    ]
+  },
+  "family": "pocket",
+  "opening": "bottom",
+  "parameters": {
+    "length": 40.0,
+    "pocket_depth": 8.0,
+    "pocket_length": 14.0,
+    "pocket_width": 20.0,
+    "pocket_x": 12.0,
+    "pocket_y": 10.0,
+    "thickness": 12.0,
+    "width": 60.0
+  },
+  "source_sha256": "57b572e241b73bb69201351c6e91e761cdd5f23efc873d6a609d1b746d1827b9"
+}

@@ -1,0 +1,30 @@
+{
+  "bindings": {
+    "diameter1": [
+      "path:16",
+      "path:59"
+    ],
+    "diameter2": [
+      "path:22",
+      "path:62"
+    ],
+    "length1": [
+      "path:19"
+    ],
+    "length2": [
+      "derived: total_length - length1"
+    ],
+    "total_length": [
+      "path:13"
+    ]
+  },
+  "family": "stepped_shaft",
+  "opening": null,
+  "parameters": {
+    "diameter1": 18.0,
+    "diameter2": 7.0,
+    "length1": 43.0,
+    "length2": 18.0
+  },
+  "source_sha256": "1cfcbb67e43ba3e276436ec0423c7182b2ab9af76db498e47d9b31a37463dcb9"
+}

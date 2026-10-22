@@ -25,3 +25,11 @@ fixtures/drawing-families/authoring/*.FCStd binary
 fixtures/drawing-families/licenses/** -text -whitespace
 results/drawing-families/*/input.* -text -whitespace
 results/drawing-families/*.csv -text -whitespace
+
+fixtures/drawing-generalization/**/inputs/** -text -whitespace
+fixtures/drawing-generalization/**/evaluation/**/*.step -text -whitespace
+fixtures/drawing-generalization/**/authoring/*.FCStd binary
+fixtures/drawing-generalization/portability/** -text -whitespace
+results/drawing-generalization/*/input.* -text -whitespace
+results/drawing-generalization/*/section.svg -text -whitespace
+results/drawing-generalization/*.csv -text -whitespace

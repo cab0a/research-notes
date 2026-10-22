@@ -15,6 +15,22 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Exporter boundaries, visibility/sections and frozen configuration holdout
+
+The interpreter was frozen before generating 24 new part configurations in four
+known families. Forty of 48 SVG/DXF inputs reconstruct and edit correctly; eight
+withhold (six DXF opening ambiguities, two SVG dimension-label association failures).
+All observations repeat twice, with no false confirmations observed. Six development
+controls reconstruct and six withhold. LibreCAD 2.2.1.5 actually re-exported four
+existing FreeCAD DXF parts, but the resulting SVGs omitted dimension annotations;
+all withhold. Two export flags produced identical files, not eight independent inputs.
+This is not customer, held-out-family or independent second-3D-CAD accuracy.
+
+- [Research and next experiments](../notes/drawing-generalization.md)
+- [Offline HTML and 3D viewer](../results/drawing-generalization/report.html)
+- [Reproduction](drawing-generalization.md)
+- [Protocol, input provenance and engine freeze](../fixtures/drawing-generalization/README.md)
+
 ### Drawing families and human review (independent, no release number)
 
 New own-authored FreeCAD pages extend the declared-family baseline to multiple

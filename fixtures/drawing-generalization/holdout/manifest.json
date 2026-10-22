@@ -1,0 +1,1476 @@
+{
+  "cases": [
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 5.0,
+              "x": 18.63,
+              "y": 14.56
+            }
+          ],
+          "length": 56.0,
+          "thickness": 9.0,
+          "width": 81.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_1/context-svg.json",
+      "context_sha256": "1d51667b653179a164579b4970edc55f023a39558d90f74027da0cdbf21b180f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_1/drawing.svg",
+      "drawing_sha256": "4f527bce4f3833f5f8dd0004fb2943970469e396c07e8637f637f4baac1f8d2d",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_1_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_1",
+      "truth": "holdout/evaluation/plate_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 5.0,
+              "x": 18.63,
+              "y": 14.56
+            }
+          ],
+          "length": 56.0,
+          "thickness": 9.0,
+          "width": 81.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_1/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_1/drawing.dxf",
+      "drawing_sha256": "7fda60977b180b0e9a1570ed590f7cf1c3bfd7934eea0c85f17407a08b2128a6",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_1_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_1",
+      "truth": "holdout/evaluation/plate_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 5.5,
+              "x": 17.71,
+              "y": 16.9
+            },
+            {
+              "diameter": 7.4,
+              "x": 51.59,
+              "y": 44.85
+            }
+          ],
+          "length": 65.0,
+          "thickness": 10.0,
+          "width": 77.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_2/context-svg.json",
+      "context_sha256": "cc1b451e48ea5a65bc345b358f548092248a1bb38d6867b108345c378b2c4d25",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_2/drawing.svg",
+      "drawing_sha256": "ae607841abbe0f069407fefa75368da6626e58bb7891e0822469f2e26948a094",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_2_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_2",
+      "truth": "holdout/evaluation/plate_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 5.5,
+              "x": 17.71,
+              "y": 16.9
+            },
+            {
+              "diameter": 7.4,
+              "x": 51.59,
+              "y": 44.85
+            }
+          ],
+          "length": 65.0,
+          "thickness": 10.0,
+          "width": 77.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_2/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_2/drawing.dxf",
+      "drawing_sha256": "93237a580196945cf722561b6fdfefc051f10ea0c71a5b78c6de89f98a901590",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_2_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_2",
+      "truth": "holdout/evaluation/plate_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 6.0,
+              "x": 20.01,
+              "y": 14.3
+            },
+            {
+              "diameter": 7.8,
+              "x": 58.29,
+              "y": 37.95
+            },
+            {
+              "diameter": 5.0,
+              "x": 62.64,
+              "y": 14.85
+            }
+          ],
+          "length": 55.0,
+          "thickness": 11.0,
+          "width": 87.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_3/context-svg.json",
+      "context_sha256": "82810029f300d207258659adda4392baac8e3a9776395558decd2e343b2f7c89",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_3/drawing.svg",
+      "drawing_sha256": "d9746e019f405404bc5db17da0caae275a9fdc2d7127967bb179278ed04d32bc",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_3_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_3",
+      "truth": "holdout/evaluation/plate_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 6.0,
+              "x": 20.01,
+              "y": 14.3
+            },
+            {
+              "diameter": 7.8,
+              "x": 58.29,
+              "y": 37.95
+            },
+            {
+              "diameter": 5.0,
+              "x": 62.64,
+              "y": 14.85
+            }
+          ],
+          "length": 55.0,
+          "thickness": 11.0,
+          "width": 87.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_3/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_3/drawing.dxf",
+      "drawing_sha256": "efb67e318f8f239d125b00f57a1b1551b8d733c6c5407576eb2d0b977b421896",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_3_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_3",
+      "truth": "holdout/evaluation/plate_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 6.5,
+              "x": 20.24,
+              "y": 12.48
+            }
+          ],
+          "length": 48.0,
+          "thickness": 12.0,
+          "width": 88.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_4/context-svg.json",
+      "context_sha256": "1d51667b653179a164579b4970edc55f023a39558d90f74027da0cdbf21b180f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_4/drawing.svg",
+      "drawing_sha256": "d7bd82db8eda14ebbeae2a53eb0f6cf6d4b05be5902bee58768ccc9ddd0c61c9",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_4_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_4",
+      "truth": "holdout/evaluation/plate_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 6.5,
+              "x": 20.24,
+              "y": 12.48
+            }
+          ],
+          "length": 48.0,
+          "thickness": 12.0,
+          "width": 88.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_4/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_4/drawing.dxf",
+      "drawing_sha256": "d9d95d7b39ffed03d1546823dab8fdb279204ebae7fb178d6a111c5054dd32e1",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_4_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_4",
+      "truth": "holdout/evaluation/plate_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 7.0,
+              "x": 20.93,
+              "y": 13.0
+            },
+            {
+              "diameter": 8.6,
+              "x": 60.97,
+              "y": 34.5
+            }
+          ],
+          "length": 50.0,
+          "thickness": 13.0,
+          "width": 91.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_5/context-svg.json",
+      "context_sha256": "cc1b451e48ea5a65bc345b358f548092248a1bb38d6867b108345c378b2c4d25",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_5/drawing.svg",
+      "drawing_sha256": "ce9dbf4137d98ff92b1eb23092c215e03b077471e24ddd0608f3fc765c0e4ccc",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_5_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_5",
+      "truth": "holdout/evaluation/plate_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 7.0,
+              "x": 20.93,
+              "y": 13.0
+            },
+            {
+              "diameter": 8.6,
+              "x": 60.97,
+              "y": 34.5
+            }
+          ],
+          "length": 50.0,
+          "thickness": 13.0,
+          "width": 91.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_5/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_5/drawing.dxf",
+      "drawing_sha256": "e42ab77bf2c025bee4ffb470b3e7731cbc422e0382a2df5c7f9dd06842b46b24",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_5_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_5",
+      "truth": "holdout/evaluation/plate_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 7.5,
+              "x": 20.7,
+              "y": 14.04
+            },
+            {
+              "diameter": 9.0,
+              "x": 60.3,
+              "y": 37.26
+            },
+            {
+              "diameter": 5.0,
+              "x": 64.8,
+              "y": 14.58
+            }
+          ],
+          "length": 54.0,
+          "thickness": 14.0,
+          "width": 90.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_6/context-svg.json",
+      "context_sha256": "82810029f300d207258659adda4392baac8e3a9776395558decd2e343b2f7c89",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_6/drawing.svg",
+      "drawing_sha256": "af520fb78ebb932cfa72f3a2af19b3bac9ce2b53d408385b25a137c6b3f5b4fa",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "svg",
+      "id": "holdout_plate_6_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_6",
+      "truth": "holdout/evaluation/plate_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "holes": [
+            {
+              "diameter": 7.5,
+              "x": 20.7,
+              "y": 14.04
+            },
+            {
+              "diameter": 9.0,
+              "x": 60.3,
+              "y": 37.26
+            },
+            {
+              "diameter": 5.0,
+              "x": 64.8,
+              "y": 14.58
+            }
+          ],
+          "length": 54.0,
+          "thickness": 14.0,
+          "width": 90.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/plate_6/context-dxf.json",
+      "context_sha256": "f2931191f9aa5a42042b67cce8dc877338bee423ad0c68035f8d199db1f8b5ef",
+      "derived_style": false,
+      "drawing": "holdout/inputs/plate_6/drawing.dxf",
+      "drawing_sha256": "85325f0568c399d52a0119c0ce8ed266bf680a0c65be07026c12ce9a28ec8478",
+      "expected": "candidate",
+      "family": "plate",
+      "format": "dxf",
+      "id": "holdout_plate_6_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "plate_6",
+      "truth": "holdout/evaluation/plate_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.0,
+          "height": 35.0,
+          "length": 42.0,
+          "wall_thickness": 3.0,
+          "width": 61.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_1/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_1/drawing.svg",
+      "drawing_sha256": "1b63727bd0a66899de2114afdae09ae46067b157cf4032f5cdf465b2a9b74a71",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_1_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_1",
+      "truth": "holdout/evaluation/l_bracket_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.0,
+          "height": 35.0,
+          "length": 42.0,
+          "wall_thickness": 3.0,
+          "width": 61.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_1/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_1/drawing.dxf",
+      "drawing_sha256": "3e35d3262345b7127914e6d1c5f20e50d032bd13b7a5c91a49cfc4a02ac87956",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_1_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_1",
+      "truth": "holdout/evaluation/l_bracket_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.4,
+          "height": 37.0,
+          "length": 49.0,
+          "wall_thickness": 3.5,
+          "width": 58.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_2/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_2/drawing.svg",
+      "drawing_sha256": "ae47ff4935dfc09e93329f3b7bdfb343231b95be5a506188ba60ce91d856d3e9",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_2_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_2",
+      "truth": "holdout/evaluation/l_bracket_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.4,
+          "height": 37.0,
+          "length": 49.0,
+          "wall_thickness": 3.5,
+          "width": 58.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_2/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_2/drawing.dxf",
+      "drawing_sha256": "ae2dba631b796fed41eb42fcfddbaf9a21f19b18c159a91e34f95c6133f0a004",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_2_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_2",
+      "truth": "holdout/evaluation/l_bracket_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.8,
+          "height": 38.0,
+          "length": 49.0,
+          "wall_thickness": 4.0,
+          "width": 44.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_3/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_3/drawing.svg",
+      "drawing_sha256": "f3461c590aea739312ee580dcfc00943f94f0906486142ab2671b0f13c93f63e",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_3_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_3",
+      "truth": "holdout/evaluation/l_bracket_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 4.8,
+          "height": 38.0,
+          "length": 49.0,
+          "wall_thickness": 4.0,
+          "width": 44.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_3/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_3/drawing.dxf",
+      "drawing_sha256": "e0e2a422bb79438e33ea98012f09893954375668677b0569241ecdc68b41c5a3",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_3_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_3",
+      "truth": "holdout/evaluation/l_bracket_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 5.2,
+          "height": 40.0,
+          "length": 35.0,
+          "wall_thickness": 4.5,
+          "width": 43.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_4/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_4/drawing.svg",
+      "drawing_sha256": "4495470bf2f27c5b61bbaa02633902cd71d1f99d4120b3e40b95d29ca390c629",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_4_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_4",
+      "truth": "holdout/evaluation/l_bracket_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 5.2,
+          "height": 40.0,
+          "length": 35.0,
+          "wall_thickness": 4.5,
+          "width": 43.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_4/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_4/drawing.dxf",
+      "drawing_sha256": "f01bbb83f07b2bc00d0b261b629109b5ead5a8f3ce9b0e5885f83b12068928eb",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_4_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_4",
+      "truth": "holdout/evaluation/l_bracket_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 5.6,
+          "height": 35.0,
+          "length": 35.0,
+          "wall_thickness": 5.0,
+          "width": 66.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_5/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_5/drawing.svg",
+      "drawing_sha256": "47f49b3a78795108abb761c4c40349e6a40c34a3c8f9abc56781219ccb111542",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_5_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_5",
+      "truth": "holdout/evaluation/l_bracket_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 5.6,
+          "height": 35.0,
+          "length": 35.0,
+          "wall_thickness": 5.0,
+          "width": 66.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_5/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_5/drawing.dxf",
+      "drawing_sha256": "44306fe6c7c94dfc79e87c231b283211bec663ae73d4dcd9f1f6af3e9035953b",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_5_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_5",
+      "truth": "holdout/evaluation/l_bracket_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 6.0,
+          "height": 33.0,
+          "length": 40.0,
+          "wall_thickness": 5.5,
+          "width": 45.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_6/context-svg.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_6/drawing.svg",
+      "drawing_sha256": "8580e56db37f2bca9869f6be1dc8a0c8646e8112ed8664be2c0a0c19109733ac",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "holdout_l_bracket_6_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_6",
+      "truth": "holdout/evaluation/l_bracket_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "base_thickness": 6.0,
+          "height": 33.0,
+          "length": 40.0,
+          "wall_thickness": 5.5,
+          "width": 45.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/l_bracket_6/context-dxf.json",
+      "context_sha256": "74ef00a607bb512aca79ac6472ed28dff7604f7e90debfe8242ffe0aa325ff82",
+      "derived_style": false,
+      "drawing": "holdout/inputs/l_bracket_6/drawing.dxf",
+      "drawing_sha256": "94af13768606ac6a636ad29e1fdd2f40dd465c3e48f5a37c2f64d0a28ab496c2",
+      "expected": "candidate",
+      "family": "l_bracket",
+      "format": "dxf",
+      "id": "holdout_l_bracket_6_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "l_bracket_6",
+      "truth": "holdout/evaluation/l_bracket_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 18.0,
+          "diameter2": 7.0,
+          "length1": 43.0,
+          "length2": 18.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_1/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_1/drawing.svg",
+      "drawing_sha256": "1cfcbb67e43ba3e276436ec0423c7182b2ab9af76db498e47d9b31a37463dcb9",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_1_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_1",
+      "truth": "holdout/evaluation/stepped_shaft_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 18.0,
+          "diameter2": 7.0,
+          "length1": 43.0,
+          "length2": 18.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_1/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_1/drawing.dxf",
+      "drawing_sha256": "2645d2d2319123b862346c7102d042a7bbc244e1bae1e8f7f5cec5872aa59cc1",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_1_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_1",
+      "truth": "holdout/evaluation/stepped_shaft_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 19.0,
+          "diameter2": 7.6,
+          "length1": 33.0,
+          "length2": 17.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_2/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_2/drawing.svg",
+      "drawing_sha256": "3445ee4763c03271be25812dfa5831f2d3f852232a1a905e1db966b4c94cc9fd",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_2_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_2",
+      "truth": "holdout/evaluation/stepped_shaft_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 19.0,
+          "diameter2": 7.6,
+          "length1": 33.0,
+          "length2": 17.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_2/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_2/drawing.dxf",
+      "drawing_sha256": "ddccb7e04ecb9180973db44c9782c6c710ed219743281de12fc9229d74c4e61b",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_2_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_2",
+      "truth": "holdout/evaluation/stepped_shaft_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 20.0,
+          "diameter2": 8.2,
+          "length1": 35.0,
+          "length2": 12.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_3/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_3/drawing.svg",
+      "drawing_sha256": "6bd12b3f2aeced72d6d73a571a269baa14b1416fb92936ac1d1911c0a22dcb88",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_3_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_3",
+      "truth": "holdout/evaluation/stepped_shaft_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 20.0,
+          "diameter2": 8.2,
+          "length1": 35.0,
+          "length2": 12.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_3/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_3/drawing.dxf",
+      "drawing_sha256": "4ac340e27ac6b894f32df4da991a37b51718bf99320f05699dde6bcd1c3bf644",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_3_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_3",
+      "truth": "holdout/evaluation/stepped_shaft_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 21.0,
+          "diameter2": 8.8,
+          "length1": 43.0,
+          "length2": 12.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_4/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_4/drawing.svg",
+      "drawing_sha256": "278b9ecb5f2c279642cac4e5b071c290d6bfadc0593326715348900e7bb1b6a0",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_4_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_4",
+      "truth": "holdout/evaluation/stepped_shaft_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 21.0,
+          "diameter2": 8.8,
+          "length1": 43.0,
+          "length2": 12.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_4/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_4/drawing.dxf",
+      "drawing_sha256": "0e5d8d1fa91ce723b6a9996c69f11c0e123be605109eda6923a30c49cb859a9c",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_4_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_4",
+      "truth": "holdout/evaluation/stepped_shaft_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 22.0,
+          "diameter2": 9.4,
+          "length1": 33.0,
+          "length2": 16.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_5/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_5/drawing.svg",
+      "drawing_sha256": "be6b0abf25065b681258f37449bb2e3d18519ce870d14c179f5cb526c5a97205",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_5_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_5",
+      "truth": "holdout/evaluation/stepped_shaft_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 22.0,
+          "diameter2": 9.4,
+          "length1": 33.0,
+          "length2": 16.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_5/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_5/drawing.dxf",
+      "drawing_sha256": "c461fb8961f35612bd036625d7f1432e1babad484c7baa40659d2588b5f23c68",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_5_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_5",
+      "truth": "holdout/evaluation/stepped_shaft_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 23.0,
+          "diameter2": 10.0,
+          "length1": 29.0,
+          "length2": 23.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_6/context-svg.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_6/drawing.svg",
+      "drawing_sha256": "6095a9fd20c49e06bfe963cdd095f780bf4e548699ee10011e2a97aa1bd2f3f0",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "holdout_stepped_shaft_6_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_6",
+      "truth": "holdout/evaluation/stepped_shaft_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "diameter1": 23.0,
+          "diameter2": 10.0,
+          "length1": 29.0,
+          "length2": 23.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/stepped_shaft_6/context-dxf.json",
+      "context_sha256": "219aab555c070c503ef52685b7a98d4f56bab2ce388d3458dcea40520c642e2f",
+      "derived_style": false,
+      "drawing": "holdout/inputs/stepped_shaft_6/drawing.dxf",
+      "drawing_sha256": "4f2040b1366f87aed9caf44cd536f7e9b5e864dc164ee06d3ce3b2041dce0442",
+      "expected": "candidate",
+      "family": "stepped_shaft",
+      "format": "dxf",
+      "id": "holdout_stepped_shaft_6_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "stepped_shaft_6",
+      "truth": "holdout/evaluation/stepped_shaft_6"
+    },
+    {
+      "baseline": {
+        "detail": "one compatible text baseline required",
+        "parameters": null,
+        "reason": "dimension_label_ambiguous",
+        "status": "withheld"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_1/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_1/drawing.svg",
+      "drawing_sha256": "62a275fa0ab098bb96e4c897d0a04de7a4facd1e046cd6d53e17ab558e68aa69",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_1_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_1",
+      "truth": "holdout/evaluation/pocket_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 60.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 12.0,
+          "pocket_width": 18.0,
+          "pocket_x": 10.0,
+          "pocket_y": 8.0,
+          "thickness": 14.0,
+          "width": 81.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_1/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_1/drawing.dxf",
+      "drawing_sha256": "7b1e4836743c1f0fcc7641e1cb06180d3adb967494a1e984c4abed30ac7ca2f3",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_1_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_1",
+      "truth": "holdout/evaluation/pocket_1"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 62.0,
+          "pocket_depth": 10.5,
+          "pocket_length": 13.0,
+          "pocket_width": 19.0,
+          "pocket_x": 10.5,
+          "pocket_y": 8.5,
+          "thickness": 15.0,
+          "width": 84.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_2/context-svg.json",
+      "context_sha256": "c862dd4612897e1213fcbefd4fc491a5de60a4e18e6bbdd2d6bc4969f094f859",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_2/drawing.svg",
+      "drawing_sha256": "920408237f8750efcbd594650588d91df330f63be69dec0b9a9c3aee019290cc",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_2_svg",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_2",
+      "truth": "holdout/evaluation/pocket_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 62.0,
+          "pocket_depth": 10.5,
+          "pocket_length": 13.0,
+          "pocket_width": 19.0,
+          "pocket_x": 10.5,
+          "pocket_y": 8.5,
+          "thickness": 15.0,
+          "width": 84.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_2/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_2/drawing.dxf",
+      "drawing_sha256": "c10681165291a2c917930704f76e892c7a4b642ec83afb6a56fa3ae7cb5d6843",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_2_dxf",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_2",
+      "truth": "holdout/evaluation/pocket_2"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 51.0,
+          "pocket_depth": 5.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 11.0,
+          "pocket_y": 9.0,
+          "thickness": 16.0,
+          "width": 86.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_3/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_3/drawing.svg",
+      "drawing_sha256": "2d91390b26c60524e8768b537dc7424936efb3694d8fc5f7f8d3d5efdab0b483",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_3_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_3",
+      "truth": "holdout/evaluation/pocket_3"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 51.0,
+          "pocket_depth": 5.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 11.0,
+          "pocket_y": 9.0,
+          "thickness": 16.0,
+          "width": 86.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_3/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_3/drawing.dxf",
+      "drawing_sha256": "112f92cab6eaf2a79e459485c10b906cf047212179657731d5dac4dad72cd7f5",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_3_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_3",
+      "truth": "holdout/evaluation/pocket_3"
+    },
+    {
+      "baseline": {
+        "detail": "one compatible text baseline required",
+        "parameters": null,
+        "reason": "dimension_label_ambiguous",
+        "status": "withheld"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_4/context-svg.json",
+      "context_sha256": "c862dd4612897e1213fcbefd4fc491a5de60a4e18e6bbdd2d6bc4969f094f859",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_4/drawing.svg",
+      "drawing_sha256": "f9352b56fb9c06d805e05cb6ba2f73f5bd8d399c36b74c8517e8b3a01159bb2b",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_4_svg",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_4",
+      "truth": "holdout/evaluation/pocket_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 60.0,
+          "pocket_depth": 11.5,
+          "pocket_length": 15.0,
+          "pocket_width": 21.0,
+          "pocket_x": 11.5,
+          "pocket_y": 9.5,
+          "thickness": 17.0,
+          "width": 75.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_4/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_4/drawing.dxf",
+      "drawing_sha256": "a5f16a3543853e942d3aaffa8061eb416ca19b6d235b11aeb4c08df8a30adbf9",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_4_dxf",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_4",
+      "truth": "holdout/evaluation/pocket_4"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 53.0,
+          "pocket_depth": 6.0,
+          "pocket_length": 16.0,
+          "pocket_width": 22.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 18.0,
+          "width": 73.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_5/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_5/drawing.svg",
+      "drawing_sha256": "0b157bf7ce04385c31ba6271daf7eca0193304a8093b91320cb406b8816fb790",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_5_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_5",
+      "truth": "holdout/evaluation/pocket_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 53.0,
+          "pocket_depth": 6.0,
+          "pocket_length": 16.0,
+          "pocket_width": 22.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 18.0,
+          "width": 73.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_5/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_5/drawing.dxf",
+      "drawing_sha256": "46528d28db118c0fb6d9e8c12ea82bb40a14ba5efcd974f1d34f67ecd6e36301",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_5_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "pocket_5",
+      "truth": "holdout/evaluation/pocket_5"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 55.0,
+          "pocket_depth": 12.5,
+          "pocket_length": 17.0,
+          "pocket_width": 23.0,
+          "pocket_x": 12.5,
+          "pocket_y": 10.5,
+          "thickness": 19.0,
+          "width": 87.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_6/context-svg.json",
+      "context_sha256": "c862dd4612897e1213fcbefd4fc491a5de60a4e18e6bbdd2d6bc4969f094f859",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_6/drawing.svg",
+      "drawing_sha256": "5f0e16766421643f87ac1f999c3cc083fb0172651cda8359395b9e0fdbfdecdf",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "holdout_pocket_6_svg",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_6",
+      "truth": "holdout/evaluation/pocket_6"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 55.0,
+          "pocket_depth": 12.5,
+          "pocket_length": 17.0,
+          "pocket_width": 23.0,
+          "pocket_x": 12.5,
+          "pocket_y": 10.5,
+          "thickness": 19.0,
+          "width": 87.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "holdout",
+      "context": "holdout/inputs/pocket_6/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "holdout/inputs/pocket_6/drawing.dxf",
+      "drawing_sha256": "cfa12ef7d4b3293d979422592d76df37648817b4a640b50965f32f4798418292",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "holdout_pocket_6_dxf",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "pocket_6",
+      "truth": "holdout/evaluation/pocket_6"
+    }
+  ],
+  "cohort": "holdout",
+  "source_sha256": "a80e89b32fef7d89ec945d7abf2630770fd40bb10ea128fa9652eeea071aea0b"
+}

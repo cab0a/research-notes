@@ -1,0 +1,389 @@
+[
+  {
+    "family": "plate",
+    "font": 2.8,
+    "id": "plate_1",
+    "p": {
+      "holes": [
+        {
+          "diameter": 5.0,
+          "x": 18.63,
+          "y": 14.56
+        }
+      ],
+      "length": 56,
+      "thickness": 9,
+      "width": 81
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "plate",
+    "font": 3.2,
+    "id": "plate_2",
+    "p": {
+      "holes": [
+        {
+          "diameter": 5.5,
+          "x": 17.71,
+          "y": 16.9
+        },
+        {
+          "diameter": 7.4,
+          "x": 51.59,
+          "y": 44.85
+        }
+      ],
+      "length": 65,
+      "thickness": 10,
+      "width": 77
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "plate",
+    "font": 2.8,
+    "id": "plate_3",
+    "p": {
+      "holes": [
+        {
+          "diameter": 6.0,
+          "x": 20.01,
+          "y": 14.3
+        },
+        {
+          "diameter": 7.8,
+          "x": 58.29,
+          "y": 37.95
+        },
+        {
+          "diameter": 5,
+          "x": 62.64,
+          "y": 14.85
+        }
+      ],
+      "length": 55,
+      "thickness": 11,
+      "width": 87
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "plate",
+    "font": 3.2,
+    "id": "plate_4",
+    "p": {
+      "holes": [
+        {
+          "diameter": 6.5,
+          "x": 20.24,
+          "y": 12.48
+        }
+      ],
+      "length": 48,
+      "thickness": 12,
+      "width": 88
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "plate",
+    "font": 2.8,
+    "id": "plate_5",
+    "p": {
+      "holes": [
+        {
+          "diameter": 7.0,
+          "x": 20.93,
+          "y": 13.0
+        },
+        {
+          "diameter": 8.6,
+          "x": 60.97,
+          "y": 34.5
+        }
+      ],
+      "length": 50,
+      "thickness": 13,
+      "width": 91
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "plate",
+    "font": 3.2,
+    "id": "plate_6",
+    "p": {
+      "holes": [
+        {
+          "diameter": 7.5,
+          "x": 20.7,
+          "y": 14.04
+        },
+        {
+          "diameter": 9.0,
+          "x": 60.3,
+          "y": 37.26
+        },
+        {
+          "diameter": 5,
+          "x": 64.8,
+          "y": 14.58
+        }
+      ],
+      "length": 54,
+      "thickness": 14,
+      "width": 90
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "l_bracket",
+    "font": 2.8,
+    "id": "l_bracket_1",
+    "p": {
+      "base_thickness": 4.0,
+      "height": 35,
+      "length": 42,
+      "wall_thickness": 3.0,
+      "width": 61
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "l_bracket",
+    "font": 3.2,
+    "id": "l_bracket_2",
+    "p": {
+      "base_thickness": 4.4,
+      "height": 37,
+      "length": 49,
+      "wall_thickness": 3.5,
+      "width": 58
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "l_bracket",
+    "font": 2.8,
+    "id": "l_bracket_3",
+    "p": {
+      "base_thickness": 4.8,
+      "height": 38,
+      "length": 49,
+      "wall_thickness": 4.0,
+      "width": 44
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "l_bracket",
+    "font": 3.2,
+    "id": "l_bracket_4",
+    "p": {
+      "base_thickness": 5.2,
+      "height": 40,
+      "length": 35,
+      "wall_thickness": 4.5,
+      "width": 43
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "l_bracket",
+    "font": 2.8,
+    "id": "l_bracket_5",
+    "p": {
+      "base_thickness": 5.6,
+      "height": 35,
+      "length": 35,
+      "wall_thickness": 5.0,
+      "width": 66
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "l_bracket",
+    "font": 3.2,
+    "id": "l_bracket_6",
+    "p": {
+      "base_thickness": 6.0,
+      "height": 33,
+      "length": 40,
+      "wall_thickness": 5.5,
+      "width": 45
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 2.8,
+    "id": "stepped_shaft_1",
+    "p": {
+      "diameter1": 18,
+      "diameter2": 7.0,
+      "length1": 43,
+      "length2": 18
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 3.2,
+    "id": "stepped_shaft_2",
+    "p": {
+      "diameter1": 19,
+      "diameter2": 7.6,
+      "length1": 33,
+      "length2": 17
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 2.8,
+    "id": "stepped_shaft_3",
+    "p": {
+      "diameter1": 20,
+      "diameter2": 8.2,
+      "length1": 35,
+      "length2": 12
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 3.2,
+    "id": "stepped_shaft_4",
+    "p": {
+      "diameter1": 21,
+      "diameter2": 8.8,
+      "length1": 43,
+      "length2": 12
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 2.8,
+    "id": "stepped_shaft_5",
+    "p": {
+      "diameter1": 22,
+      "diameter2": 9.4,
+      "length1": 33,
+      "length2": 16
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "stepped_shaft",
+    "font": 3.2,
+    "id": "stepped_shaft_6",
+    "p": {
+      "diameter1": 23,
+      "diameter2": 10.0,
+      "length1": 29,
+      "length2": 23
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "pocket",
+    "font": 2.8,
+    "id": "pocket_1",
+    "p": {
+      "length": 60,
+      "pocket_depth": 4.0,
+      "pocket_length": 12,
+      "pocket_width": 18,
+      "pocket_x": 10.0,
+      "pocket_y": 8.0,
+      "thickness": 14,
+      "width": 81
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "pocket",
+    "font": 3.2,
+    "id": "pocket_2",
+    "opening": "bottom",
+    "p": {
+      "length": 62,
+      "pocket_depth": 4.5,
+      "pocket_length": 13,
+      "pocket_width": 19,
+      "pocket_x": 10.5,
+      "pocket_y": 8.5,
+      "thickness": 15,
+      "width": 84
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "pocket",
+    "font": 2.8,
+    "id": "pocket_3",
+    "p": {
+      "length": 51,
+      "pocket_depth": 5.0,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 11.0,
+      "pocket_y": 9.0,
+      "thickness": 16,
+      "width": 86
+    },
+    "scale": 1.15
+  },
+  {
+    "family": "pocket",
+    "font": 3.2,
+    "id": "pocket_4",
+    "opening": "bottom",
+    "p": {
+      "length": 60,
+      "pocket_depth": 5.5,
+      "pocket_length": 15,
+      "pocket_width": 21,
+      "pocket_x": 11.5,
+      "pocket_y": 9.5,
+      "thickness": 17,
+      "width": 75
+    },
+    "scale": 0.8
+  },
+  {
+    "family": "pocket",
+    "font": 2.8,
+    "id": "pocket_5",
+    "p": {
+      "length": 53,
+      "pocket_depth": 6.0,
+      "pocket_length": 16,
+      "pocket_width": 22,
+      "pocket_x": 12.0,
+      "pocket_y": 10.0,
+      "thickness": 18,
+      "width": 73
+    },
+    "scale": 1.0
+  },
+  {
+    "family": "pocket",
+    "font": 3.2,
+    "id": "pocket_6",
+    "opening": "bottom",
+    "p": {
+      "length": 55,
+      "pocket_depth": 6.5,
+      "pocket_length": 17,
+      "pocket_width": 23,
+      "pocket_x": 12.5,
+      "pocket_y": 10.5,
+      "thickness": 19,
+      "width": 87
+    },
+    "scale": 1.15
+  }
+]

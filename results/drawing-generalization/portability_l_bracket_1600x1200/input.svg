@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:lc="https://librecad.org" xmlns:xlink="http://www.w3.org/1999/xlink" width="195.25mm" height="183.25mm" viewBox="0 0 195.25 183.25">
+    <g lc:layername="0" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D001" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D002" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D003" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D004" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D005" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D006" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="D007" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1"/>
+    <g lc:layername="Front" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1">
+        <line x1="20.25" y1="123" x2="60.25" y2="123"/>
+        <line x1="20.25" y1="147" x2="20.25" y2="123"/>
+        <line x1="20.25" y1="147" x2="60.25" y2="147"/>
+        <line x1="60.25" y1="147" x2="60.25" y2="123"/>
+        <line x1="20.25" y1="123" x2="60.25" y2="123"/>
+        <line x1="60.25" y1="142" x2="20.25" y2="142"/>
+        <line x1="60.25" y1="142" x2="60.25" y2="123"/>
+        <line x1="20.25" y1="142" x2="20.25" y2="123"/>
+        <line x1="20.25" y1="142" x2="60.25" y2="142"/>
+        <line x1="20.25" y1="147" x2="60.25" y2="147"/>
+        <line x1="60.25" y1="147" x2="60.25" y2="142"/>
+        <line x1="20.25" y1="147" x2="20.25" y2="142"/>
+    </g>
+    <g lc:layername="Right" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1">
+        <line x1="165.25" y1="123" x2="170.25" y2="123"/>
+        <line x1="170.25" y1="142" x2="170.25" y2="123"/>
+        <line x1="170.25" y1="142" x2="195.25" y2="142"/>
+        <line x1="195.25" y1="147" x2="195.25" y2="142"/>
+        <line x1="165.25" y1="147" x2="165.25" y2="123"/>
+        <line x1="165.25" y1="147" x2="195.25" y2="147"/>
+        <line x1="165.25" y1="123" x2="170.25" y2="123"/>
+        <line x1="170.25" y1="142" x2="170.25" y2="123"/>
+        <line x1="170.25" y1="142" x2="195.25" y2="142"/>
+        <line x1="195.25" y1="147" x2="195.25" y2="142"/>
+        <line x1="165.25" y1="147" x2="165.25" y2="123"/>
+        <line x1="165.25" y1="147" x2="195.25" y2="147"/>
+    </g>
+    <g lc:layername="Top" lc:is_locked="false" lc:is_construction="false" fill="none" stroke="black" stroke-width="1">
+        <line x1="20.25" y1="30" x2="20.25" y2="25"/>
+        <line x1="20.25" y1="25" x2="60.25" y2="25"/>
+        <line x1="60.25" y1="30" x2="60.25" y2="25"/>
+        <line x1="20.25" y1="30" x2="60.25" y2="30"/>
+        <line x1="20.25" y1="25" x2="20.25" y2="0"/>
+        <line x1="20.25" y1="0" x2="60.25" y2="0"/>
+        <line x1="60.25" y1="25" x2="60.25" y2="0"/>
+        <line x1="60.25" y1="25" x2="20.25" y2="25"/>
+        <line x1="20.25" y1="0" x2="60.25" y2="0"/>
+        <line x1="20.25" y1="30" x2="20.25" y2="0"/>
+        <line x1="20.25" y1="30" x2="60.25" y2="30"/>
+        <line x1="60.25" y1="30" x2="60.25" y2="0"/>
+    </g>
+</svg>

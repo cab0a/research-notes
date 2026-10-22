@@ -1,0 +1,45 @@
+{
+  "base_commit": "a32ed76fe513cbc41d3749f3f59de8c6141a77c2",
+  "baseline_code": {
+    "src/research_notes/drawing_families.py": "7c5118760010610ae3bfaaabef2144b0aa096cf9b3e7f2fa6e2d673d65540b96",
+    "src/research_notes/drawing_family_evidence.py": "ab676fb58f4a631633c5a030ac2f9b975dd471b249ca131e3b33b2a0f2619d4c",
+    "src/research_notes/drawing_svg_extensions.py": "45aa345e5fa084dc36ed719721c4346cf4e8cbeaed01a125cb1e00a4fcf3b21c",
+    "src/research_notes/svg_drawing_graphics.py": "c8abb203849d459104ca9ecd6f0e1869b909925e14aae2bcc2af2d396459c825"
+  },
+  "date": "2026-10-22",
+  "development": "six pocket configurations and previous authored examples only",
+  "expected": {
+    "native_dxf_pocket": "withhold without visibility/section evidence",
+    "native_svg": "candidate when unambiguous and supported; failures retained, not adapted",
+    "other_cad_svg": "measure actual portability, no guaranteed support"
+  },
+  "heldout_scope": "parameter/configuration holdout within known families and same FreeCAD authoring recipe; not independent customer/family benchmark",
+  "holdout": "24 new parameter configurations, 6/family, SVG and DXF. Freeze engine before export/evaluation. Do not tune after observations.",
+  "measures": [
+    "candidate correctness",
+    "false confirmation",
+    "safe withholding",
+    "coverage",
+    "dimensions",
+    "STEP validity",
+    "original/edit IoU",
+    "visibility/section residual"
+  ],
+  "portability": "LibreCAD 2.2.1.5 imports existing FreeCAD DXF and exports SVG; genuine second 2D CAD exporter, not native drafting in CATIA/NX",
+  "research": [
+    "different CAD renderer/exporter",
+    "visible/hidden and section ambiguity",
+    "24 unadjusted part configurations"
+  ],
+  "seed": 20261023,
+  "specs_sha256": {
+    "development-specs.json": "d5a2c5fae20fe7c6ba5e8e9af60e70875095828ab2f06cb5c8988d30bc12843d",
+    "holdout-specs.json": "5ce4df5aec3dd0c54810bbbc70e701c07d18ebe4742dc595d0d82d649fe8661e"
+  },
+  "thresholds": {
+    "dimension_mm": 1e-06,
+    "iou": 0.99999999,
+    "projection_mm": 0.02,
+    "section_mm": 0.02
+  }
+}

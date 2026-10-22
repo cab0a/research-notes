@@ -1,0 +1,13 @@
+{
+  "actual_browser_right_drag": true,
+  "change": "Presentation only: correct horizontal pointer/arrow rotation, allow underside viewing, optional bottom-opening initial camera.",
+  "current_report_sha256": "1635ebb1c491afdeaa5b4b4ecf651a9c2d36e7c1d358cc8b929f707711d9211d",
+  "date": "2026-10-22",
+  "historical_geometry_tests": "The original 1528-test/geometry evidence is retained; it is not a new geometry run. Current full-suite evidence is in drawing-generalization/verification.json.",
+  "observed_console_errors": [],
+  "previous_report_sha256": "1d92242f3507a8781e81f0841e5fb1147c8552d9be55068e1e8bc8283b45f9f5",
+  "previous_verification_sha256": "ffddedd05f4d1f655c9653b2f55282024b1139e0c98d9e42ada3cce87c0c10fe",
+  "screenshot": "viewer-drag.png",
+  "unchanged_geometry_results_sha256": "cabfb16934dbc7902819763d3e82f6ba26ff9750308bfc219455d4d6303ed00e",
+  "viewer_tests": "../drawing-generalization/viewer-check.json"
+}

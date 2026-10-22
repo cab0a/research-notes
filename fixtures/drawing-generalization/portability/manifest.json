@@ -1,0 +1,372 @@
+{
+  "cases": [
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/unseen_small_1024x768/context.json",
+      "context_sha256": "1d51667b653179a164579b4970edc55f023a39558d90f74027da0cdbf21b180f",
+      "drawing": "portability/unseen_small_1024x768/drawing.svg",
+      "drawing_sha256": "b917b9aee1206cfe1c88a130b1f01da7ea50b8db1d9b389022a11d1f8c6b2262",
+      "expected": "measure_portability",
+      "family": "plate",
+      "format": "svg",
+      "id": "portability_unseen_small_1024x768",
+      "inventory": {
+        "root": {
+          "height": "157.675mm",
+          "viewBox": "0 0 206.47971121 157.675",
+          "width": "206.47971121mm"
+        },
+        "tags": {
+          "circle": 2,
+          "g": 13,
+          "line": 28,
+          "path": 4,
+          "svg": 1
+        }
+      },
+      "part": "unseen_small",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1024x768"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/unseen_small_1600x1200/context.json",
+      "context_sha256": "1d51667b653179a164579b4970edc55f023a39558d90f74027da0cdbf21b180f",
+      "drawing": "portability/unseen_small_1600x1200/drawing.svg",
+      "drawing_sha256": "b917b9aee1206cfe1c88a130b1f01da7ea50b8db1d9b389022a11d1f8c6b2262",
+      "expected": "measure_portability",
+      "family": "plate",
+      "format": "svg",
+      "id": "portability_unseen_small_1600x1200",
+      "inventory": {
+        "root": {
+          "height": "157.675mm",
+          "viewBox": "0 0 206.47971121 157.675",
+          "width": "206.47971121mm"
+        },
+        "tags": {
+          "circle": 2,
+          "g": 13,
+          "line": 28,
+          "path": 4,
+          "svg": 1
+        }
+      },
+      "part": "unseen_small",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1600x1200"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/l_bracket_1024x768/context.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "drawing": "portability/l_bracket_1024x768/drawing.svg",
+      "drawing_sha256": "db09244237aed968be520bfb89c2cced42e12d7a0568af7980c1e8cb5a66747c",
+      "expected": "measure_portability",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "portability_l_bracket_1024x768",
+      "inventory": {
+        "root": {
+          "height": "183.25mm",
+          "viewBox": "0 0 195.25 183.25",
+          "width": "195.25mm"
+        },
+        "tags": {
+          "g": 12,
+          "line": 36,
+          "svg": 1
+        }
+      },
+      "part": "l_bracket",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1024x768"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/l_bracket_1600x1200/context.json",
+      "context_sha256": "a2c42f9540655190100d950706ce01dc0141662c8f282f7325030434b244a746",
+      "drawing": "portability/l_bracket_1600x1200/drawing.svg",
+      "drawing_sha256": "db09244237aed968be520bfb89c2cced42e12d7a0568af7980c1e8cb5a66747c",
+      "expected": "measure_portability",
+      "family": "l_bracket",
+      "format": "svg",
+      "id": "portability_l_bracket_1600x1200",
+      "inventory": {
+        "root": {
+          "height": "183.25mm",
+          "viewBox": "0 0 195.25 183.25",
+          "width": "195.25mm"
+        },
+        "tags": {
+          "g": 12,
+          "line": 36,
+          "svg": 1
+        }
+      },
+      "part": "l_bracket",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1600x1200"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/stepped_shaft_1024x768/context.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "drawing": "portability/stepped_shaft_1024x768/drawing.svg",
+      "drawing_sha256": "a9eaddb6c4f572af6c319f52aaf4ef4230a55ebe913072312703b5fa7b7b7c49",
+      "expected": "measure_portability",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "portability_stepped_shaft_1024x768",
+      "inventory": {
+        "root": {
+          "height": "170.25mm",
+          "viewBox": "0 0 202.25 170.25",
+          "width": "202.25mm"
+        },
+        "tags": {
+          "circle": 4,
+          "g": 14,
+          "line": 8,
+          "path": 2,
+          "svg": 1
+        }
+      },
+      "part": "stepped_shaft",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1024x768"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/stepped_shaft_1600x1200/context.json",
+      "context_sha256": "706ce72ecfbb6091d210159698218f2090c1e4f72e14d6ed53ec7391e6fd2716",
+      "drawing": "portability/stepped_shaft_1600x1200/drawing.svg",
+      "drawing_sha256": "a9eaddb6c4f572af6c319f52aaf4ef4230a55ebe913072312703b5fa7b7b7c49",
+      "expected": "measure_portability",
+      "family": "stepped_shaft",
+      "format": "svg",
+      "id": "portability_stepped_shaft_1600x1200",
+      "inventory": {
+        "root": {
+          "height": "170.25mm",
+          "viewBox": "0 0 202.25 170.25",
+          "width": "202.25mm"
+        },
+        "tags": {
+          "circle": 4,
+          "g": 14,
+          "line": 8,
+          "path": 2,
+          "svg": 1
+        }
+      },
+      "part": "stepped_shaft",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1600x1200"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/pocket_1024x768/context.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "drawing": "portability/pocket_1024x768/drawing.svg",
+      "drawing_sha256": "248835356afc6fd979b7349dc4349e0bb9df32afe4b9013bd54e3392b930bc90",
+      "expected": "measure_portability",
+      "family": "pocket",
+      "format": "svg",
+      "id": "portability_pocket_1024x768",
+      "inventory": {
+        "root": {
+          "height": "166.25mm",
+          "viewBox": "0 0 238.25 166.25",
+          "width": "238.25mm"
+        },
+        "tags": {
+          "g": 15,
+          "line": 48,
+          "svg": 1
+        }
+      },
+      "part": "pocket",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1024x768"
+    },
+    {
+      "baseline": {
+        "detail": "no XML dimension text; outline glyphs need human transcription or separately evaluated OCR",
+        "reason_code": "text_unavailable",
+        "status": "withheld"
+      },
+      "cohort": "portability",
+      "context": "portability/pocket_1600x1200/context.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "drawing": "portability/pocket_1600x1200/drawing.svg",
+      "drawing_sha256": "248835356afc6fd979b7349dc4349e0bb9df32afe4b9013bd54e3392b930bc90",
+      "expected": "measure_portability",
+      "family": "pocket",
+      "format": "svg",
+      "id": "portability_pocket_1600x1200",
+      "inventory": {
+        "root": {
+          "height": "166.25mm",
+          "viewBox": "0 0 238.25 166.25",
+          "width": "238.25mm"
+        },
+        "tags": {
+          "g": 15,
+          "line": 48,
+          "svg": 1
+        }
+      },
+      "part": "pocket",
+      "provenance": "Unmodified LibreCAD SVG re-export of existing FreeCAD DXF; no native 3D-CAD drafting claim",
+      "resolution": "1600x1200"
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1024x768",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/unseen_small_1024x768/source.dxf"
+      ],
+      "id": "portability_unseen_small_1024x768",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/unseen_small_1600x1200/source.dxf"
+      ],
+      "id": "portability_unseen_small_1600x1200",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1024x768",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/l_bracket_1024x768/source.dxf"
+      ],
+      "id": "portability_l_bracket_1024x768",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/l_bracket_1600x1200/source.dxf"
+      ],
+      "id": "portability_l_bracket_1600x1200",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1024x768",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/stepped_shaft_1024x768/source.dxf"
+      ],
+      "id": "portability_stepped_shaft_1024x768",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/stepped_shaft_1600x1200/source.dxf"
+      ],
+      "id": "portability_stepped_shaft_1600x1200",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1024x768",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/pocket_1024x768/source.dxf"
+      ],
+      "id": "portability_pocket_1024x768",
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/home/nakanishi/inefficiencylab/research-notes/output/librecad-runtime/squashfs-root/AppRun",
+        "dxf2svg",
+        "-r",
+        "1600x1200",
+        "-o",
+        "drawing.svg",
+        "/home/nakanishi/inefficiencylab/research-notes/fixtures/drawing-generalization/portability/pocket_1600x1200/source.dxf"
+      ],
+      "id": "portability_pocket_1600x1200",
+      "returncode": 0
+    }
+  ],
+  "environment_note": "Offscreen plugin absent in bundle (startup failed); xcb with existing WSLg display succeeded. CLI export, no UI automation.",
+  "qt": "5.15.2",
+  "runtime_distribution": "Downloaded official AppImage, extracted only under ignored output; not redistributed",
+  "runtime_sha256": "0889296c62cd852df5ae6f559b840ec94a10b4e8514f0cbb04115e19fe74561f",
+  "runtime_url": "https://github.com/LibreCAD/LibreCAD/releases/download/v2.2.1.5/LibreCAD-v2.2.1.5-x86_64.AppImage",
+  "version": "2.2.1.5"
+}

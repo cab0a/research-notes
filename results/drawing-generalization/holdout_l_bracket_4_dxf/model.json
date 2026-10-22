@@ -1,0 +1,32 @@
+{
+  "bindings": {
+    "base_thickness": [
+      "A68"
+    ],
+    "height": [
+      "A36",
+      "A5E"
+    ],
+    "length": [
+      "A4A",
+      "A54"
+    ],
+    "wall_thickness": [
+      "A72"
+    ],
+    "width": [
+      "A40",
+      "A2C"
+    ]
+  },
+  "family": "l_bracket",
+  "opening": null,
+  "parameters": {
+    "base_thickness": 5.2,
+    "height": 40.0,
+    "length": 35.0,
+    "wall_thickness": 4.5,
+    "width": 43.0
+  },
+  "source_sha256": "f01bbb83f07b2bc00d0b261b629109b5ead5a8f3ce9b0e5885f83b12068928eb"
+}

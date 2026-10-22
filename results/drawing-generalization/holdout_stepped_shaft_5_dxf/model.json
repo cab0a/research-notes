@@ -1,0 +1,30 @@
+{
+  "bindings": {
+    "diameter1": [
+      "A32",
+      "A78"
+    ],
+    "diameter2": [
+      "A46",
+      "A80"
+    ],
+    "length1": [
+      "A3C"
+    ],
+    "length2": [
+      "derived: total_length - length1"
+    ],
+    "total_length": [
+      "A28"
+    ]
+  },
+  "family": "stepped_shaft",
+  "opening": null,
+  "parameters": {
+    "diameter1": 22.0,
+    "diameter2": 9.4,
+    "length1": 33.0,
+    "length2": 16.0
+  },
+  "source_sha256": "c461fb8961f35612bd036625d7f1432e1babad484c7baa40659d2588b5f23c68"
+}

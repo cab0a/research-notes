@@ -1,0 +1,94 @@
+[
+  {
+    "family": "pocket",
+    "id": "top",
+    "p": {
+      "length": 40,
+      "pocket_depth": 4,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    }
+  },
+  {
+    "family": "pocket",
+    "id": "bottom",
+    "opening": "bottom",
+    "p": {
+      "length": 40,
+      "pocket_depth": 8,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    }
+  },
+  {
+    "family": "pocket",
+    "id": "no_visibility",
+    "p": {
+      "length": 40,
+      "pocket_depth": 4,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    },
+    "solid_lines": true
+  },
+  {
+    "family": "pocket",
+    "id": "section_top",
+    "p": {
+      "length": 40,
+      "pocket_depth": 4,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    },
+    "section": true,
+    "solid_lines": true
+  },
+  {
+    "family": "pocket",
+    "id": "section_bottom",
+    "opening": "bottom",
+    "p": {
+      "length": 40,
+      "pocket_depth": 8,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    },
+    "section": true,
+    "solid_lines": true
+  },
+  {
+    "family": "pocket",
+    "id": "no_depth",
+    "p": {
+      "length": 40,
+      "pocket_depth": 4,
+      "pocket_length": 14,
+      "pocket_width": 20,
+      "pocket_x": 12,
+      "pocket_y": 10,
+      "thickness": 12,
+      "width": 60
+    },
+    "variant": "missing_depth"
+  }
+]

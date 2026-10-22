@@ -1,0 +1,368 @@
+{
+  "cases": [
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/top/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": false,
+      "drawing": "development/inputs/top/drawing.svg",
+      "drawing_sha256": "bd0c9af2e4d5da9bc34e7e5a7b1c9dd38ed3212971ead5f23605d1edd399c37f",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_top_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "top",
+      "truth": "development/evaluation/top"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/top/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/top/drawing.dxf",
+      "drawing_sha256": "591b08e639674fbb00c61b856dedbb6da814abaa2f095eee258b57f688b819b5",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_top_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "top",
+      "truth": "development/evaluation/top"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/bottom/context-svg.json",
+      "context_sha256": "c862dd4612897e1213fcbefd4fc491a5de60a4e18e6bbdd2d6bc4969f094f859",
+      "derived_style": false,
+      "drawing": "development/inputs/bottom/drawing.svg",
+      "drawing_sha256": "0a8d7a93de270b946ef7974437c03aab3b108af0c574f596cb159628b9719504",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_bottom_svg",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "bottom",
+      "truth": "development/evaluation/bottom"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/bottom/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/bottom/drawing.dxf",
+      "drawing_sha256": "8342bac6783261267314866092b9e48773312a17ea97fb37d6ef985fc024060e",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_bottom_dxf",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "bottom",
+      "truth": "development/evaluation/bottom"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/no_visibility/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": true,
+      "drawing": "development/inputs/no_visibility/drawing.svg",
+      "drawing_sha256": "a2a3458761ddb66114ba87f06af0e04dfa36d18133e11f2edc63c0a8d28e2e42",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_no_visibility_svg",
+      "opening": "top",
+      "original_drawing": "development/inputs/no_visibility/native-drawing.svg",
+      "part": "no_visibility",
+      "truth": "development/evaluation/no_visibility"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/no_visibility/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/no_visibility/drawing.dxf",
+      "drawing_sha256": "591b08e639674fbb00c61b856dedbb6da814abaa2f095eee258b57f688b819b5",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_no_visibility_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "no_visibility",
+      "truth": "development/evaluation/no_visibility"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/section_top/context-svg.json",
+      "context_sha256": "490c38f5c658c03f271f9cf4c2f31aa227d31fca469163d61c78f224201de37d",
+      "derived_style": true,
+      "drawing": "development/inputs/section_top/drawing.svg",
+      "drawing_sha256": "afd340ba8e0cc68bc0ae3fa9e3b27514828e147baed9c37427a17f0435c724a6",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_section_top_svg",
+      "opening": "top",
+      "original_drawing": "development/inputs/section_top/native-drawing.svg",
+      "part": "section_top",
+      "section": "development/inputs/section_top/section.svg",
+      "section_sha256": "90fe67f117655482a576224ba9faa576ebe2a15f705f469c2bd0b06801b56530",
+      "truth": "development/evaluation/section_top"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/section_top/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/section_top/drawing.dxf",
+      "drawing_sha256": "591b08e639674fbb00c61b856dedbb6da814abaa2f095eee258b57f688b819b5",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_section_top_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "section_top",
+      "section": "development/inputs/section_top/section.svg",
+      "section_sha256": "90fe67f117655482a576224ba9faa576ebe2a15f705f469c2bd0b06801b56530",
+      "truth": "development/evaluation/section_top"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/section_bottom/context-svg.json",
+      "context_sha256": "c862dd4612897e1213fcbefd4fc491a5de60a4e18e6bbdd2d6bc4969f094f859",
+      "derived_style": true,
+      "drawing": "development/inputs/section_bottom/drawing.svg",
+      "drawing_sha256": "57b572e241b73bb69201351c6e91e761cdd5f23efc873d6a609d1b746d1827b9",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_section_bottom_svg",
+      "opening": "bottom",
+      "original_drawing": "development/inputs/section_bottom/native-drawing.svg",
+      "part": "section_bottom",
+      "section": "development/inputs/section_bottom/section.svg",
+      "section_sha256": "503d5acb65f3fd3b636e9c5b1ec6a7d76d9a61d81b02f048f77ea5bb2b9a789a",
+      "truth": "development/evaluation/section_bottom"
+    },
+    {
+      "baseline": {
+        "detail": null,
+        "parameters": {
+          "length": 40.0,
+          "pocket_depth": 4.0,
+          "pocket_length": 14.0,
+          "pocket_width": 20.0,
+          "pocket_x": 12.0,
+          "pocket_y": 10.0,
+          "thickness": 12.0,
+          "width": 60.0
+        },
+        "reason": null,
+        "status": "candidate"
+      },
+      "cohort": "development",
+      "context": "development/inputs/section_bottom/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/section_bottom/drawing.dxf",
+      "drawing_sha256": "8342bac6783261267314866092b9e48773312a17ea97fb37d6ef985fc024060e",
+      "expected": "candidate",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_section_bottom_dxf",
+      "opening": "bottom",
+      "original_drawing": null,
+      "part": "section_bottom",
+      "section": "development/inputs/section_bottom/section.svg",
+      "section_sha256": "503d5acb65f3fd3b636e9c5b1ec6a7d76d9a61d81b02f048f77ea5bb2b9a789a",
+      "truth": "development/evaluation/section_bottom"
+    },
+    {
+      "baseline": {
+        "detail": "front: pocket_depth needs an explicit dimension",
+        "parameters": null,
+        "reason": "dimension_missing",
+        "status": "withheld"
+      },
+      "cohort": "development",
+      "context": "development/inputs/no_depth/context-svg.json",
+      "context_sha256": "7e550c68c7e3187eaa436cfc53f10114c728b5aa30dfa370446e458d952d816b",
+      "derived_style": false,
+      "drawing": "development/inputs/no_depth/drawing.svg",
+      "drawing_sha256": "b36ebb47bfd88c4e4f111a90c15e335c55c1a3fca3e3014cfb2137f8517eabe5",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "svg",
+      "id": "development_no_depth_svg",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "no_depth",
+      "truth": "development/evaluation/no_depth"
+    },
+    {
+      "baseline": {
+        "detail": "front: pocket_depth needs an explicit dimension",
+        "parameters": null,
+        "reason": "dimension_missing",
+        "status": "withheld"
+      },
+      "cohort": "development",
+      "context": "development/inputs/no_depth/context-dxf.json",
+      "context_sha256": "8bf4751699189bbb7afc2ad75f7e4b4d92fe552a08cf99a3b52bf8494343696b",
+      "derived_style": false,
+      "drawing": "development/inputs/no_depth/drawing.dxf",
+      "drawing_sha256": "e7998cecb283ff192fbe7b7329b65e8cb2c5a16dbc42ce0ab5720acb26d64c3f",
+      "expected": "withheld",
+      "family": "pocket",
+      "format": "dxf",
+      "id": "development_no_depth_dxf",
+      "opening": "top",
+      "original_drawing": null,
+      "part": "no_depth",
+      "truth": "development/evaluation/no_depth"
+    }
+  ],
+  "cohort": "development",
+  "source_sha256": "a80e89b32fef7d89ec945d7abf2630770fd40bb10ea128fa9652eeea071aea0b"
+}

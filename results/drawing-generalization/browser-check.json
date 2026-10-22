@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-22",
+  "browser": "Codex in-app browser on Windows",
+  "right_drag_observed": true,
+  "underside_observed": true,
+  "edited_model_switch_observed": true,
+  "old_family_report_drag_observed": true,
+  "reviewed_cases": [
+    {
+      "caseId": "holdout_pocket_1_svg",
+      "excerpt": "+\t\t\t369 heading CAD生成を保留, Value: 3\n+\t\t\t\t370 text CAD生成を保留\n+\t\t\t371 text 寸法文字と寸法線の対応候補が複数あり、現在の処理では一意に決められません。寸法がないのではなく、対応づけの限界です。 dimension_label_ambiguous one compatible text baseline required 正解値からの補完や、評価後の復元処理の調整はしていません。"
+    },
+    {
+      "caseId": "holdout_pocket_2_dxf",
+      "excerpt": "~\t\t\t371 text 開口が上側か下側かを決める根拠が足りません。線種を保持した図面、または確認済みの断面を追加します。 opening_ambiguous top/bottom candidates remain; hidden-line or section evidence needed 正解値からの補完や、評価後の復元処理の調整はしていません。"
+    },
+    {
+      "caseId": "portability_l_bracket_1024x768",
+      "excerpt": "~\t\t\t371 text このLibreCAD出力には寸法文字がありませんでした。出力元DXFに存在する注記が、このSVGへ渡っていません。図面の出力方法から見直す必要があります。 dimension_text_unavailable No usable XML dimension text or supported view grouping. Missing annotations cannot be recovered from geometry alone; inspect the source CAD export. 正解値からの補完や、評価後の復元処理の調整はしていません。"
+    },
+    {
+      "caseId": "development_section_bottom_dxf",
+      "excerpt": "+\t\t\t382 text 開口方向： 下側 。板厚から上面基準距離を引いて深さを算出。図面の上面基準距離 4.0 mm → 開口側からの深さ 8.0 mm。\n+\t\t533 heading 追加した断面輪郭, Value: 3\n+\t\t\t534 text 追加した断面輪郭"
+    }
+  ],
+  "observed_console_errors": [],
+  "screenshots": [
+    "report-preview.png",
+    "viewer-drag.png"
+  ],
+  "scope": "Actual browser input, canvas change, edited model and displayed reasons checked; no claim of automated CAD recomputation in HTML."
+}
