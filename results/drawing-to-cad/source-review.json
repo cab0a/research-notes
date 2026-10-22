@@ -1,0 +1,406 @@
+{
+  "date": "2026-10-22",
+  "repositories": [
+    {
+      "commit": "546efb1facc4066e7904aacd259c9dd140c1e2ba",
+      "id": "Ortho2CAD",
+      "license_files": [],
+      "reviewed_on": "2026-10-22",
+      "selected_file_sha256": {
+        "README.md": "421ea754bfcb4dd84fa90b238d5b08b66f68e4fe5fc2e8039a8433820063fd1a",
+        "orthographic_drawing_generation/README.md": "a3cd691421d85976e814d4fbc84aeed1ecc9c53a18681a0096458643c4c3cd8b",
+        "orthographic_drawing_generation/pythonocc_for_step_to_ortho.py": "14f249316a5e26d7cdd1c4b94118521859ff86b36e7652074ddf09ef963f8307",
+        "orthographic_drawing_generation/svg_to_png.py": "2b4b7659d186c4592e92604a7b1ab49d504d15ce7dc91f80f0b143278727e41e",
+        "src/conda_init.sh": "83d288207dfdc2eefd0b943e53b8298b3f8de5f4d739dbe732e8e39d609b5d99",
+        "src/qwenvl/data/__init__.py": "1ffda90e265890d4bb793ceee211f2eb7466548af124812338f8d15b0a013bcc",
+        "src/qwenvl/data/data_processor.py": "85df60f4bb770adc22503bc94880e724e64459fa644ab06acb057af8217e74ab",
+        "src/qwenvl/data/rope2d.py": "2c081f4912709a6e4b24949e03ada198ab983cd4c82b528c753004565dfd65dd",
+        "src/qwenvl/eval/model_vqa_loader.py": "9bacd23e757b9ed615c23be6eaa73f47eb6a9ad3d869c0da8fe80036ce7d4f4b",
+        "src/qwenvl/train/argument.py": "f418404526a7781fc55bb678baa8c5187f49db9e202ac4af82f3c65c12f3787a",
+        "src/qwenvl/train/train_grpo_f360.py": "b6286d262dd334495e2ac981bf83e5f7bec981fbdaf66a48578d38d2683bb7d4",
+        "src/qwenvl/train/train_qwen.py": "fdca2463c90a20489fafa071e36f84f4b57279eb632e65d89ba24a711b4633a5",
+        "src/qwenvl/train/trainer.py": "044955631eafb55f5c4e2da38cef51785da242ccab8d5f54df20bcd0e861d30f",
+        "src/requirements.txt": "025427d754db3dd7659c651e2caf66ae9cb9c4ce4204c8405c9e6b4c9f1e7752",
+        "src/requirements_pyocc.txt": "1028ec09f1af4fb05c5df02774c23ed825a4571b1db7afbf475f05dddaa23bad",
+        "src/run.sh": "9c58886ae44ebfcfa0d0091559640319e89128f36a223a44e7385ce69f9b20a4",
+        "src/scripts/compute_iou.py": "998930d7118c8266437aa3a76a78c6fd8f38b9609662824ddf8e0eeed762940b",
+        "src/scripts/generate_model_cad.py": "8ad1c8fb81ab25b2ba5268180e6e60347e7886c48ab5dbdfcb7be466d91b1661",
+        "src/scripts/grpo_qwen3_8b.sh": "42235f6350f706f3a57e9cbd08bc5ae68475f938cf12d3d4d9991ee1a90f25d1",
+        "src/scripts/sft_qwen3_8b.sh": "4c099271def98922642a0f2d9348e3e16980b07a91694ab9f44c9abd7c2c5599",
+        "src/scripts/summary_of_cadquery_logs_loops.py": "5cb76ae7439cee0263cf928acde5978f0efb8f1d2519f2d521b345a4f33b0d9b",
+        "src/scripts/test_api_infscaling_rewrite.py": "0199ab1821c2aac89a727f989d959b9ce59682c6a749fa9261b9134b7d6bc0fd",
+        "src/scripts/test_gencadcode.sh": "99b0d369a3187f095b28dcfa776c36b0f2493f95fb13d60783ce622bc66dd67e",
+        "src/scripts/utils_generate_model.py": "b32c3ac84c9281a15f22fce46066468d0b8c23df30c7dcfc1f41e5d8c1f26353"
+      },
+      "tracked_weight_files": [],
+      "url": "https://github.com/AdityaJoglekar/Ortho2CAD"
+    },
+    {
+      "commit": "073711716abf4a8a9d8eb559acf636dc92aa6b3b",
+      "id": "Drawing2CAD",
+      "license_files": [
+        "LICENSE"
+      ],
+      "reviewed_on": "2026-10-22",
+      "selected_file_sha256": {
+        "LICENSE": "f5dce0b1ceaa6406af5174b90eb969f44d6cc0a39c022ac1dde44e83201a3a5e",
+        "README.md": "5d5def1f09fd7631ec07fa4d4f09624693acbd37f65f112e56ea5312627325f6",
+        "config/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "config/config.py": "8ebf30a5906ba76724995cb6ce77805e9390e1fe89e4666adcc1ef2242ea96ef",
+        "config/file_utils.py": "c5406192b7bceec46d29316a551c261c3233be3ae5f7937e7de0ea15c43c71a4",
+        "config/macro.py": "3d937c5e4a988119c5b3184aa56adc1ec90debc1217fa59c6f9de61d80d4ce2b",
+        "dataset/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dataset/bi_sequence_dataset.py": "f3b0bd5669f1ba1cd34f0f48a684c752a95fd346e97ace7414cb00a19c0b8f9b",
+        "model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "model/layers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "model/layers/attention.py": "850a331663c9c9e3f1a6ef8ec3c3c579629bcd512aba4cf0c886f66d09228d58",
+        "model/layers/functional.py": "1c818c70660e22ff0c45e90b86257d225436cd6b8b49e080771cfc1977f95677",
+        "model/layers/improved_transformer.py": "1f70dc9a2184009a00b9ae76bb788261847c335a258eb60204b2f426055e16e8",
+        "model/layers/positional_encoding.py": "d99ba01843a3c02ed61bf40c2e13b339499830a1311e413982f09e0f152d3a50",
+        "model/layers/transformer.py": "a84852243a771947d4e5a3c4041f1d1256de19872793d9305aa10cc995f3f786",
+        "model/model.py": "7ff413ae475e6ad2233fcc6e058b91a65072c051a56c0c6b8fc067b822e9f6df",
+        "model/model_utils.py": "2c3e0c1a1b0da363ddf0a0aae751b1c923d0222272ad6f4f57276932bfdb217a",
+        "requirements.txt": "11c86a405a8708bc93b46d159dabe6f17d6e86173b1f51ad93d53ab4f54297a7",
+        "test.py": "fa1f562234f32b5701b17b85b38c37330e289a0adc4c90b8b3aaf29641dfd8ad",
+        "train.py": "b9cce7726b5884112c3f80acac25c6eba3bcbee8881fa9e60ad040bcf65ef510",
+        "trainer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "trainer/base.py": "125930297ef49b1c0307679a0ceae419996b2f8a1931dea9055730ef5e2a51f3",
+        "trainer/loss.py": "3f68fe1cabb50dc1b50c03435946b02b158fcb222733a98affb0eae8e68ba459",
+        "trainer/scheduler.py": "0d842271dc93e9b7b34b43beb3f35e9b83a4bac78bce80b0d4ce92661abe8cf6",
+        "trainer/trainer.py": "d85ef19a30e7e9cb99bbbdc6e203eaecb5f46bbdd054755ed6c31b383cba98d9"
+      },
+      "tracked_weight_files": [],
+      "url": "https://github.com/lllssc/Drawing2CAD"
+    },
+    {
+      "commit": "33304cf771fc5639144b1df9611e347251052cf8",
+      "id": "cadgenbench",
+      "license_files": [
+        "LICENSE"
+      ],
+      "reviewed_on": "2026-10-22",
+      "selected_file_sha256": {
+        "LICENSE": "b7c2666a39f34434177de540d73cfaa2968670311a5ad08dd94ee6637709acc9",
+        "README.md": "5ffa64c9ec19be5cb5da4f25771c7fd660358d003cb199075034680930dbd0d9",
+        "docs/benchmark/submission.md": "3305ee12c3c4ba324483942a0c257fda37003b403b2f20cac911893589ec974e",
+        "docs/benchmark/validation.md": "9c9e7a361f1571c13aef8a4d9a07deea12d477af7067787f82f3fb643cc87b34",
+        "docs/metrics.md": "11a8cafd3b6bd37eaa0d465793eb9731b76288f0cd9c81b47214da03f921de2b",
+        "docs/metrics/cad_validity.md": "895213d6e08ae5b33cb7523cadcd47e4d17bdd95f25e2f4fe2bf667cf716e155",
+        "docs/metrics/illustrations/generate.py": "374a84ac704debc38807c655e04fcc6a480bc27042fedad68040ec19e5adfa43",
+        "docs/metrics/interface_match.md": "a3acaa24729f213a8a19bc21c2292c79b344b878eeecc8c6fb494800f4450d05",
+        "docs/metrics/shape_similarity.md": "5d1c5f356378570b0773af76fac99351973f2ff55fbfa669722517b6c05f4891",
+        "docs/metrics/topo_match.md": "55ede2906c61648131545f1662fb6fcd4f0ee8e7fb8b9c390c366733b4dfb8fb",
+        "pyproject.toml": "d29d9cde48548b9236c2740d1dc7d7e8923bd89881692ceb37b5cf77c044f06e",
+        "src/cadgenbench/__init__.py": "2773effbf4149809cdeac785b702eb00b219b5a3a1629a5b34ac474d5be0958a",
+        "src/cadgenbench/baseline/__init__.py": "fa2ae35edf594419c2059a44f1550ea5badf04781d1fe492f36f5174f2992cbb",
+        "src/cadgenbench/baseline/_cli.py": "31779c6f15ebbf1309d4750769977120fac7ccfc359c00d9a59fb65d59d2f5fc",
+        "src/cadgenbench/baseline/agent.py": "2e48944198f2830bb3efad210478242ec5e600dfefa8d5876bb2fa2ccd92aac2",
+        "src/cadgenbench/baseline/build123d_cheat_sheet.md": "f1130ea1286db2c504921fcc36874c213c15d7cb551bd6ff96046fdcae7af8ed",
+        "src/cadgenbench/baseline/cadquery_cheat_sheet.md": "05dbcd991a9e5cfff37c6c38823f9595d8beb6422eba125c7e61a6894154afd6",
+        "src/cadgenbench/baseline/llm.py": "8d187e6750947b3a7f770b3410c7bca1cc2609689d58a047afa4d1cda45fe5a6",
+        "src/cadgenbench/baseline/package.py": "53b74ce214338617ffdac6e4b6ca9e9f55a64f9a46a17b5e3dbc9700884df7a1",
+        "src/cadgenbench/baseline/prompt.py": "b1e4f59e4bed0b53986ebde51d2e70ce1c366d2bed8ca87313ba89e4ee43e0a4",
+        "src/cadgenbench/baseline/types.py": "5df277e6620932f6c214b22d261171e8ddb91601fffb8b79914edc5216aed754",
+        "src/cadgenbench/cli.py": "6b36ff8450ebdaa3810a0030df3a4069fb80fae5b12b080d1af14aaefa4e2cc4",
+        "src/cadgenbench/common/__init__.py": "adee9ebdfdd099157957a7df8fe29f740c09ab083299e1f13dba4b5f29acc9fc",
+        "src/cadgenbench/common/artifacts.py": "0d6dedde5a1038734165b167b3f537a127d2319bdaf55da197b6a8cd61313cba",
+        "src/cadgenbench/common/axes_gizmo.py": "b4b3fff579fe424518e2033d545e7b1eb45e6b50eaa2a405e2e696aedcaba0d5",
+        "src/cadgenbench/common/baseline_models.py": "b6e3ced116bae5fb70a9e9323437f75c452cdcc0fb6775c1575b84c1df05d4e7",
+        "src/cadgenbench/common/camera_presets.py": "66127a6862568365b8e2eedc4f530f4bc5dbbd9ae5a9e9c59e0af9ab3c9772db",
+        "src/cadgenbench/common/edit_diff.py": "3e1e65def3968b04f2b849ca1bbfe47cc341034f20ea7c8d5a8d981c9f67d389",
+        "src/cadgenbench/common/imaging.py": "73709cd4cb8f7fb8e03d2375f90e61e57bc156e3ad8e02447d34a7c8a2ead837",
+        "src/cadgenbench/common/measurements.py": "af1caca06bfcc03eb3beed8499f74e8b4e9e15f98be9a85e876d04d76b71234a",
+        "src/cadgenbench/common/mesh.py": "50b4312cf55bd4d6aaa3475f35f08879fc40f850b6b594f464814508c1df3a28",
+        "src/cadgenbench/common/paths.py": "7b0f897c6a576551aaa604b0a7e375e1c0d3ba123a7196aeb0acc9fe7d64224a",
+        "src/cadgenbench/common/profiling.py": "d6624a63e2cd149d7df4272b2d27878b748e471ec54627610d9f231dd14b7137",
+        "src/cadgenbench/common/validity.py": "981fc7efe8180088c7417ac3bf63854778b69f9b134cccb712e61281279f6bf3",
+        "src/cadgenbench/common/viewer.py": "7849b585083a6c864b030ce910b57850a3f2cd3cb82f3f3a0bb5086cd2b44527",
+        "src/cadgenbench/eval/__init__.py": "d0d37eebc885dbb7f54dfd39e5060c9ddb4f8a54aa804d15c547bbafddceedb8",
+        "src/cadgenbench/eval/_cli.py": "3e894c9271e1ee86e642a6909550f5ad4fb5ce2d7d0f7837018effcc89abc28d",
+        "src/cadgenbench/eval/alignment.py": "b128ebb92bf126b9418bc1661a5fc1e89f51e79bd1ef90c195263ff3036ebe7c",
+        "src/cadgenbench/eval/booleans.py": "1713637c56808130685375eb9f322c849cff428b1f8363c5c47b17bad2ee6000",
+        "src/cadgenbench/eval/edit_baseline.py": "dbd95a77737dec1a287152ea019775cd9987718e0d380a3f708ce5a31addc73b",
+        "src/cadgenbench/eval/evaluate.py": "bfc1a94bc040631c60c76cf684d6e79d3c963da1f3314fcdd56f8977fe15a550",
+        "src/cadgenbench/eval/interface_match.py": "04f44c2250175efd8189abde4956f1a799a6fa85ce5b5a463525cce9beed26ae",
+        "src/cadgenbench/eval/interface_match_viz.py": "4ad54ee5d27d97c4f9b1a3cb50ebf0a4dbf04ffdba00fcfe62688b6da7b82249",
+        "src/cadgenbench/eval/report/__init__.py": "b8d222c700edd15501847fe1edecfb211f0f2b0d96327cf2cf223afe065832bd",
+        "src/cadgenbench/eval/report/single_run.py": "5bf1fe145807f3bf8d7e43a68787563b2e01d4a3a2ddc4694c7d298c05a88f5c",
+        "src/cadgenbench/eval/run_summary.py": "7699b1f01d4feb67be9bff72f0e99a8071ffb6e5acb42cda65d4253a1cfff53b",
+        "src/cadgenbench/eval/sampling.py": "a765e65ab4fd02597bc6b6bdd4b50895e3aac3fb45493814d0d39bd650ea0251",
+        "src/cadgenbench/eval/shape_similarity.py": "71b737e36be53a64356535a79ffa55cc6aecfbc254e84809d1c595ae403179c8",
+        "src/cadgenbench/eval/topo_match.py": "e701330406696d9d55b96463e79510ac26b842173e3577ada04775955a07a043",
+        "tests/baseline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/baseline/test_agent.py": "9afd5644b3c7551b0038eec07bcb84be674ad990862a09de90ef237935db1ca9",
+        "tests/baseline/test_llm.py": "6a87c6bbab4d3af035a85381bf4887635c631b9a385649c21403248719cb3bb5",
+        "tests/baseline/test_package.py": "7fc306d82b68c7a0ddf6ed5885a8a95684041db0b7ade8467e8532bc6cb4946c",
+        "tests/baseline/test_prompt.py": "956bf19218a8a2890583944b369505cc52b362cee4779503e7c94c24f4924771",
+        "tests/baseline/test_prompt_unchanged.py": "34ea4af5d420e39562c5a73317b7e91fd8037dec7362d39266e6f722296ed23d",
+        "tests/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/common/adversarial_meshes.py": "ad084bd24a7621603d1b600e047ee05c9e1db19eb0387dcbd0f548859dd9ac97",
+        "tests/common/test_camera_presets.py": "b2791acade738eb917f53a648e1a5766e26affe1b3cb100fd8653a697158270d",
+        "tests/common/test_edit_diff.py": "dc45dd034e7165a1a0e096d20f490847a0d2b3735f8479814e4b80d7a25b6150",
+        "tests/common/test_imaging.py": "e47e7b8592418ce87b64245580a7f3ebb4eedddc7dac67368caae5ea00ab53d1",
+        "tests/common/test_measurements.py": "bd11a4e0eb1e591a4a3cf0c01335b62ec76b287e09f25cb83fe1ee82ef7d43d5",
+        "tests/common/test_mesh.py": "914807483496390e434a40dcea867230e5298b996bca47987f7339bde908d69e",
+        "tests/common/test_mesh_safeguards.py": "a461ea66ee4a5353a7e12570ec6f6f6dd94b6c7513a8cb15ee4e061432660a9e",
+        "tests/common/test_validity.py": "2832364a35fd429718b6b6b573e2232821ad995bfb74fd4a143bfc5a64cc18e3",
+        "tests/common/test_viewer.py": "cd70a4283f3ebd257c6862f816c428c7512517cf9c44037fb545f4efaa118a72",
+        "tests/conftest.py": "03be5507c24c67b282a059b0f62387412da0351d50f8aeeb976b673318e3e86d",
+        "tests/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/eval/test_alignment.py": "8aff59513e3747350d5996f5fa20c562acf0a71aa2bd728705431ae57d83cf6e",
+        "tests/eval/test_cli_parallelism.py": "512c04573bfc877d1b27b0b0759c4df0bd71495ac4dc9494b1bbc862ab6a0fda",
+        "tests/eval/test_edit_baseline.py": "08eede67fb53fe2459bc3efec19b052db570bc45864b5a4f11865125e6a68837",
+        "tests/eval/test_evaluate_interface.py": "8d80905230eb2f393816600e792487e13f28ce9ee57f6b379d725d4876b52d09",
+        "tests/eval/test_evaluate_invalid_fastpath.py": "cc314ee1ced6940c19d50ad51d11a6356d0b57bbc5360e849d0baea0413cd1b0",
+        "tests/eval/test_interface_match.py": "bdd977568fcc30b87794a27aa9b0d8ec46395875d7c72092527eeb9750f77777",
+        "tests/eval/test_interface_viz_no_occt.py": "b05ec20fc86cfca81c22c41799cc6b4b978eec8bbf9d5e9f72b3bf7b5c09f263",
+        "tests/eval/test_report_input.py": "3b104efb78264593828a82c3e84dd6b75dc7eb9275652c17ac65ab2c15b7bae4",
+        "tests/eval/test_run_summary.py": "557d54a37dae7db907be7f6602af6263de47bac8caf0529a96dc035d26e22b21",
+        "tests/eval/test_sampling.py": "c871c2eee8fd5cbd6d6b9148366853aaa92227eda0184105b2c87b21c096ae4d",
+        "tests/eval/test_shape_similarity.py": "974793d61e7c6e791e8e6bc7a25dc7664bd6750917611ac0924159c0d7b58429",
+        "tests/eval/test_sidecar_alignment.py": "c0ba00c4ca2b6e1b2174f99458636d0f2231041c50223d92a8d2de00245b0409",
+        "tests/eval/test_topo_match.py": "781b31600c5c71bbe5a016000d5baf9894d7072df38f92cdacecf9a26e8ea4c1",
+        "tests/fixtures/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/fixtures/generate_fixtures.py": "6a69b9bb4c8e2eb7bf1a8fe8ab301fead2c43852ec455e3eae8c1973aa30a4df",
+        "tests/fixtures/jig_metric/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "tests/fixtures/jig_metric/generate.py": "4241ca2b66a462f24b01d4b5df44d0a2747670d001e99ca0f04188712ce73164",
+        "tests/snapshots/baseline_system_prompt.txt": "6cb6ba4222d7fdf254286aefa2030e43e753f5e8dcc3f07cc19f08d97259d56c",
+        "tests/test_cli_optional_extras.py": "6b76f52e2d0b2ac70273e9e220cd0ff7e27c11f47467eacdc0de9d0833736b97"
+      },
+      "tracked_weight_files": [],
+      "url": "https://github.com/huggingface/cadgenbench"
+    }
+  ],
+  "scope": "Public source/metadata inspection only. No upstream training/inference or dataset/weight binary download; no API model calls. HTTP metadata access is not proof of runnable data or license compatibility.",
+  "sources": [
+    {
+      "bytes": 201408,
+      "cache_path": "output/drawing-cad-sources/cache/ortho_paper.txt",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "id": "ortho_paper",
+      "resolved_url": "https://arxiv.org/html/2607.08891v2",
+      "retrieved_on": "2026-10-22",
+      "sha256": "38dce05fe2a2f06827a174b634b8cd95c4c3afa809962f4a73997f80b10d21be",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://arxiv.org/html/2607.08891v2"
+    },
+    {
+      "bytes": 230517,
+      "cache_path": "output/drawing-cad-sources/cache/drawing2cad_paper.txt",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "id": "drawing2cad_paper",
+      "resolved_url": "https://arxiv.org/html/2508.18733v5",
+      "retrieved_on": "2026-10-22",
+      "sha256": "c810ea30945aaba6d7f3c5e3f80f26eae16136fe9fa0a16dd8b8c54c80a14079",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://arxiv.org/html/2508.18733v5"
+    },
+    {
+      "bytes": 194392,
+      "cache_path": "output/drawing-cad-sources/cache/drawing_recode_paper.txt",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "id": "drawing_recode_paper",
+      "resolved_url": "https://arxiv.org/html/2607.27558v1",
+      "retrieved_on": "2026-10-22",
+      "sha256": "d85064168470adbe56b9ba344534cbafdf64d89da1815ad56605ec593b4181cc",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://arxiv.org/html/2607.27558v1"
+    },
+    {
+      "bytes": 1407,
+      "cache_path": "output/drawing-cad-sources/cache/ortho_dataset.txt",
+      "content_type": "application/json; charset=utf-8",
+      "http_status": 200,
+      "id": "ortho_dataset",
+      "public_metadata": {
+        "cardData": {
+          "tags": [
+            "cad",
+            "3d-reconstruction"
+          ],
+          "task_categories": [
+            "image-to-text"
+          ]
+        },
+        "description_files": 0,
+        "file_count": 6,
+        "file_suffix_counts": {
+          "": 1,
+          ".md": 1,
+          ".zip": 4
+        },
+        "files_sample": [
+          ".gitattributes",
+          "README.md",
+          "ZeroToCAD1m_Ortho.zip",
+          "f360rec.zip",
+          "inference.zip",
+          "ortho_train_data.zip"
+        ],
+        "gated": false,
+        "id": "AdityaJoglekar/Ortho2CAD_Orthographic_Drawings",
+        "private": false,
+        "sha": "5614e7e792635ab3121bcbb4a0bde0df19fb3b3d"
+      },
+      "resolved_url": "https://huggingface.co/api/datasets/AdityaJoglekar/Ortho2CAD_Orthographic_Drawings",
+      "retrieved_on": "2026-10-22",
+      "sha256": "90de61f1c787dee96ab64cafc17a5c21abd16191744648af9024c62eca41bd13",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://huggingface.co/api/datasets/AdityaJoglekar/Ortho2CAD_Orthographic_Drawings"
+    },
+    {
+      "bytes": 2,
+      "cache_path": "output/drawing-cad-sources/cache/ortho_models_search.txt",
+      "content_type": "application/json; charset=utf-8",
+      "http_status": 200,
+      "id": "ortho_models_search",
+      "model_search_ids": [],
+      "resolved_url": "https://huggingface.co/api/models?author=AdityaJoglekar&search=Ortho2CAD",
+      "retrieved_on": "2026-10-22",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://huggingface.co/api/models?author=AdityaJoglekar&search=Ortho2CAD"
+    },
+    {
+      "bytes": 342914,
+      "cache_path": "output/drawing-cad-sources/cache/drawing2cad_drive.txt",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "id": "drawing2cad_drive",
+      "resolved_url": "https://drive.google.com/drive/folders/1t9uO2iFh1eVDXRCKUEonKPBu8WGYA8wU?usp=sharing",
+      "retrieved_on": "2026-10-22",
+      "sha256": "0ebf7294057817459f938bbdd8c6ec58a61a5a18aa519e7765165c09e7561bdb",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://drive.google.com/drive/folders/1t9uO2iFh1eVDXRCKUEonKPBu8WGYA8wU?usp=sharing"
+    },
+    {
+      "bytes": 14620,
+      "cache_path": "output/drawing-cad-sources/cache/cadgenbench_dataset.txt",
+      "content_type": "application/json; charset=utf-8",
+      "http_status": 200,
+      "id": "cadgenbench_dataset",
+      "public_metadata": {
+        "cardData": {
+          "annotations_creators": [
+            "expert-generated"
+          ],
+          "language": [
+            "en"
+          ],
+          "language_creators": [
+            "expert-generated"
+          ],
+          "license": "odc-by",
+          "multilinguality": [
+            "monolingual"
+          ],
+          "pretty_name": "CADGenBench (Inputs)",
+          "size_categories": [
+            "n<1K"
+          ],
+          "source_datasets": [
+            "original"
+          ],
+          "tags": [
+            "cad",
+            "3d",
+            "step",
+            "mechanical-engineering",
+            "benchmark",
+            "cad-generation",
+            "cad-editing"
+          ],
+          "task_categories": [
+            "image-to-3d",
+            "text-to-3d"
+          ],
+          "viewer": false
+        },
+        "description_files": 81,
+        "file_count": 360,
+        "file_suffix_counts": {
+          "": 1,
+          ".md": 1,
+          ".npz": 32,
+          ".png": 180,
+          ".py": 1,
+          ".step": 32,
+          ".txt": 32,
+          ".yaml": 81
+        },
+        "files_sample": [
+          ".gitattributes",
+          "101/description.yaml",
+          "101/input.png",
+          "102/description.yaml",
+          "102/input.png",
+          "103/description.yaml",
+          "103/input.png",
+          "104/description.yaml",
+          "104/input.png",
+          "105/description.yaml",
+          "105/input.png",
+          "106/description.yaml"
+        ],
+        "gated": false,
+        "id": "HuggingAI4Engineering/cadgenbench-data",
+        "private": false,
+        "sha": "f76f965585817c621d6ea0d150d745adf670e66e"
+      },
+      "resolved_url": "https://huggingface.co/api/datasets/HuggingAI4Engineering/cadgenbench-data",
+      "retrieved_on": "2026-10-22",
+      "sha256": "b453aa8e4b7e5b0f22e3e31180fca77995c257860e195f767eedcd7bae9f723c",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://huggingface.co/api/datasets/HuggingAI4Engineering/cadgenbench-data"
+    },
+    {
+      "detail": "HTTP Error 401: Unauthorized",
+      "error_type": "HTTPError",
+      "id": "cadgenbench_private_gt",
+      "retrieved_on": "2026-10-22",
+      "status": "unavailable",
+      "url": "https://huggingface.co/api/datasets/HuggingAI4Engineering/cadgenbench-data-gt"
+    },
+    {
+      "bytes": 1014625,
+      "cache_path": "output/drawing-cad-sources/cache/solidworks.txt",
+      "content_type": "text/html; charset=utf-8",
+      "http_status": 200,
+      "id": "solidworks",
+      "resolved_url": "https://help.solidworks.com/2026/English/SolidWorks/sldworks/c_2D_to_3D_Conversion_Overview.htm",
+      "retrieved_on": "2026-10-22",
+      "sha256": "d0e3e6dc647557d3bf0a790f99667bfc8d2ad371a475ab722926012821ae8440",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://help.solidworks.com/2026/English/SolidWorks/sldworks/c_2D_to_3D_Conversion_Overview.htm"
+    },
+    {
+      "bytes": 55,
+      "cache_path": "output/drawing-cad-sources/cache/drawing_recode_repo_search.txt",
+      "content_type": "application/json; charset=utf-8",
+      "http_status": 200,
+      "id": "drawing_recode_repo_search",
+      "public_metadata": {
+        "total_count": 0
+      },
+      "resolved_url": "https://api.github.com/search/repositories?q=Drawing-Recode+in:name",
+      "retrieved_on": "2026-10-22",
+      "search_results": [],
+      "sha256": "4af480b8ee5b87b369a76c49bd22c9a783908272ebffbe97898f8ab0f0772a5f",
+      "status": "retrieved",
+      "truncated": false,
+      "url": "https://api.github.com/search/repositories?q=Drawing-Recode+in:name"
+    }
+  ],
+  "study": "2D Engineering Drawing to Parametric 3D CAD Reconstruction"
+}

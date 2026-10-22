@@ -1,0 +1,997 @@
+{
+  "ai_model_calls": 0,
+  "claim_boundary": "Authored development controls under explicit human family/view/unit assumptions, not general drawing reconstruction, recovered original history, AI comparison or real-drawing accuracy.",
+  "date": "2026-10-22",
+  "edit_target_policy": "leftmost",
+  "external_datasets_redistributed": false,
+  "hashes": {
+    "experiments/run_drawing_to_cad.py": "9356736a4a4f2c958e08773527ffa735899c5dd1f46e2d0d1bf7b39c9d56225e",
+    "fixtures/drawing-to-cad/evaluation/truth.json": "49bdb712895cd94cb4575f8d69bf505aca94913843bf00d9e72b58df05d5c23b",
+    "fixtures/drawing-to-cad/manifest.json": "ef3f960b0cd6046574f5bb53e9f560d062ab82d7243d6b3a2095590f9f473b8d",
+    "src/research_notes/drawing_to_cad.py": "7a428b83c7c806eeaf92e1bf6547fb14398177f9328dd33540b76c1c5bb74c25"
+  },
+  "method": "AI-free bounded SVG geometry + explicit annotation grammar",
+  "observations": [
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-0-hole",
+      "id": "plain_third",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 0.0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/plain_third.svg",
+            "inputs/plain_third.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 0.0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/plain_third.svg",
+            "inputs/plain_third.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-0-hole",
+      "id": "plain_first",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 0.0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/plain_first.svg",
+            "inputs/plain_first.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 0.0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/plain_first.svg",
+            "inputs/plain_first.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_third",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/one_third.svg",
+            "inputs/one_third.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/one_third.svg",
+            "inputs/one_third.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_first",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/one_first.svg",
+            "inputs/one_first.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/one_first.svg",
+            "inputs/one_first.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_third",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 7.275957614183426e-12,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 1.5916157281026244e-11,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3689.646003293865,
+            "valid_solid": true,
+            "volume_mm3": 9273.274364026644,
+            "volume_vs_analytic_abs_error_mm3": 1.8189894035458565e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.7042424779849463e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2618536317480102e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/two_third.svg",
+            "inputs/two_third.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 7.275957614183426e-12,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 1.5916157281026244e-11,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3689.646003293865,
+            "valid_solid": true,
+            "volume_mm3": 9273.274364026644,
+            "volume_vs_analytic_abs_error_mm3": 1.8189894035458565e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.7042424779849463e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2618536317480102e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/two_third.svg",
+            "inputs/two_third.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_scaled",
+      "passed": true,
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 7.275957614183426e-12,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 1.5916157281026244e-11,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3689.646003293865,
+            "valid_solid": true,
+            "volume_mm3": 9273.274364026644,
+            "volume_vs_analytic_abs_error_mm3": 1.8189894035458565e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.7042424779849463e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2618536317480102e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/two_scaled.svg",
+            "inputs/two_scaled.context.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit_code_exit": 0,
+          "edit_hole_count_matches_truth": true,
+          "edit_hole_max_abs_error_mm": 0.0,
+          "edit_valid_solid": true,
+          "edit_volume_vs_analytic_abs_error_mm3": 7.275957614183426e-12,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 1.5916157281026244e-11,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3689.646003293865,
+            "valid_solid": true,
+            "volume_mm3": 9273.274364026644,
+            "volume_vs_analytic_abs_error_mm3": 1.8189894035458565e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.7042424779849463e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2618536317480102e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "inputs/two_scaled.svg",
+            "inputs/two_scaled.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_thickness",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_missing",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/missing_thickness.svg",
+            "inputs/missing_thickness.context.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_missing",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/missing_thickness.svg",
+            "inputs/missing_thickness.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "conflicting_width",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_conflict",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/conflicting_width.svg",
+            "inputs/conflicting_width.context.json"
+          ]
+        },
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_conflict",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/conflicting_width.svg",
+            "inputs/conflicting_width.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "wrong_projection",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/wrong_projection.svg",
+            "inputs/wrong_projection.context.json"
+          ]
+        },
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/wrong_projection.svg",
+            "inputs/wrong_projection.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "swapped_views",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_missing",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/swapped_views.svg",
+            "inputs/swapped_views.context.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "dimension_missing",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/swapped_views.svg",
+            "inputs/swapped_views.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "ambiguous_extent",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/ambiguous_extent.svg",
+            "inputs/ambiguous_extent.context.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/ambiguous_extent.svg",
+            "inputs/ambiguous_extent.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_hidden_line",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "hidden_line_conflict",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/missing_hidden_line.svg",
+            "inputs/missing_hidden_line.context.json"
+          ]
+        },
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "hidden_line_conflict",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/missing_hidden_line.svg",
+            "inputs/missing_hidden_line.context.json"
+          ]
+        }
+      ]
+    },
+    {
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "unsupported_profile",
+      "passed": true,
+      "trials": [
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "unsupported_svg",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/unsupported_profile.svg",
+            "inputs/unsupported_profile.context.json"
+          ]
+        },
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "reason_code": "unsupported_svg",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "inputs/unsupported_profile.svg",
+            "inputs/unsupported_profile.context.json"
+          ]
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "repeats": 2,
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "package_version": "1.17.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "schema_version": "1.0.0",
+  "study": "2D Engineering Drawing to Parametric 3D CAD Reconstruction",
+  "summary": {
+    "candidate_inputs": 6,
+    "candidate_successes": 6,
+    "correct_withholds": 7,
+    "false_confirmations_on_withheld_controls": 0,
+    "planned_inputs": 13,
+    "withheld_controls": 7
+  },
+  "thresholds": {
+    "analytic_area_mm2": 1e-05,
+    "analytic_volume_mm3": 1e-05,
+    "dimension_mm": 1e-06,
+    "sampled_projection_mm": 0.02,
+    "volume_iou_min": 0.99999999
+  }
+}

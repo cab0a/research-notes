@@ -14,6 +14,12 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
+For the independent 2D-drawing-to-parametric-CAD experiment, use the
+[dedicated reproduction guide](drawing-to-cad-reproduction.md).
+It reuses the existing geometry dependencies, needs no AI API or GPU, and reads
+only authored SVG/context files during reconstruction. Ground truth is separate.
+It was run on Ubuntu/WSL2; native Windows and upstream model inference are untested.
+
 Python 3.11 or newer is required. Python 3.12 and the exact runtime dependency
 versions in `pyproject.toml` define the reference environment.
 

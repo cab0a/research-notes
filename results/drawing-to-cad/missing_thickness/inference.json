@@ -1,0 +1,21 @@
+{
+  "ai_used": false,
+  "detail": "front needs ['T', 'W']",
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "reason_code": "dimension_missing",
+  "schema_version": "1.0.0",
+  "source_sha256": "402b0835b5e9f65aef1e428583d8e356af705b8eb650ab7151a52fa067495a51",
+  "status": "withheld"
+}

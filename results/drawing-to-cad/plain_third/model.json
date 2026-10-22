@@ -1,0 +1,48 @@
+{
+  "model_id": "svg_plate_candidate",
+  "nodes": [
+    {
+      "dependencies": [],
+      "node_id": "plate",
+      "operation": "plate",
+      "parameters": [
+        [
+          "length",
+          30.0
+        ],
+        [
+          "origin_x",
+          0.0
+        ],
+        [
+          "origin_y",
+          0.0
+        ],
+        [
+          "origin_z",
+          0.0
+        ],
+        [
+          "thickness",
+          8.0
+        ],
+        [
+          "width",
+          40.0
+        ]
+      ]
+    },
+    {
+      "dependencies": [
+        "plate"
+      ],
+      "node_id": "result",
+      "operation": "result",
+      "parameters": []
+    }
+  ],
+  "output_id": "result",
+  "provenance": "unconfirmed_candidate",
+  "revision": 1,
+  "source_sha256": "e7db7f7cf785db0e20ba69eb5af955475d267709781e73d072874eda08522c9f"
+}

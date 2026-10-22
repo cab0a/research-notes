@@ -1,0 +1,229 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Conditional candidate under human-provided family/view/frame assumptions; not unique general drawing interpretation.",
+  "evidence": {
+    "L": [
+      {
+        "element_id": "right_dim_L",
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": "top_dim_L",
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": "front_dim_T",
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": "right_dim_T",
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": "front_dim_W",
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": "top_dim_W",
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ],
+    "holes": [
+      {
+        "circle_id": "top_circle_1",
+        "text_id": "hole_row_0",
+        "visible_text": "X=28 Y=21 DIA=6 THRU"
+      },
+      {
+        "circle_id": "top_circle_0",
+        "text_id": "hole_row_1",
+        "visible_text": "X=10 Y=8 DIA=4 THRU"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 28.0,
+        "y": 21.0
+      },
+      {
+        "diameter": 4.0,
+        "x": 10.0,
+        "y": 8.0
+      }
+    ],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "6b23e74ea3e4e1af05a82ef4803593fbd52901dc4ccf2ba311aa7500f277e25b",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        120.0,
+        340.0,
+        80.0,
+        16.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            8.0,
+            8.0
+          ],
+          [
+            8.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            12.0,
+            8.0
+          ],
+          [
+            12.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            25.0,
+            8.0
+          ],
+          [
+            25.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            31.0,
+            8.0
+          ],
+          [
+            31.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "right": {
+      "box": [
+        580.0,
+        340.0,
+        60.0,
+        16.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            6.0,
+            8.0
+          ],
+          [
+            6.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            10.0,
+            8.0
+          ],
+          [
+            10.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            18.0,
+            8.0
+          ],
+          [
+            18.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            24.0,
+            8.0
+          ],
+          [
+            24.0,
+            0.0
+          ]
+        ]
+      ]
+    },
+    "top": {
+      "box": [
+        120.0,
+        100.0,
+        80.0,
+        60.0
+      ],
+      "circles": [
+        {
+          "center": [
+            10.0,
+            8.0
+          ],
+          "id": "top_circle_0",
+          "radius": 2.0
+        },
+        {
+          "center": [
+            28.0,
+            21.0
+          ],
+          "id": "top_circle_1",
+          "radius": 3.0
+        }
+      ],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

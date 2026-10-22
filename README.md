@@ -2,6 +2,8 @@
 
 ## 日本語概要
 
+独立した探索テーマとして、[2D機械図面から編集可能な3D CADを復元する研究](notes/drawing-to-parametric-cad.md)を追加しました。先行論文・公開実装・配布条件を調べ、既存OCCTと拘束スケッチを再利用した非AI実験を実装しています。人が投影法と部品種別を指定する専用SVGの合成6入力で、STEP生成・再投影・寸法変更まで検証し、不足や矛盾の7入力は保留しました。元形状が一致しても編集対象を取り違える反例も記録しています。任意の実務図面やAI方式の性能は未評価です。[追試手順](docs/drawing-to-cad-reproduction.md)と[固定結果](results/drawing-to-cad/results.json)を参照してください。版数と既存業務計画は変更していません。
+
 v1.17.0では、既存のSTEP読込・丸穴/長孔認識を業務定義の17項目へ接続しました。値・単位・入力条件・元JSONの参照先を保存し、基準記録とは部品ID・入力SHA-256を照合します。既存10入力を各2回確認し、従来7入力の抽出結果も維持しています。値が存在することと、業務に自動採用できることは別で、適用可否・帳票への実転記は未実装です。[研究ノート](notes/cad-workflow-extraction.md)と[操作ガイド](docs/cad-workflow-extraction.md)をご覧ください。
 
 v1.16の工程タイマー・時間/品質の記録も使えます。**利用者と実帳票による現場基準の測定は未完了です。** [基準作業の研究](notes/cad-workflow-baseline.md)と[記録ガイド](docs/cad-workflow-baseline.md)を参照してください。
@@ -35,6 +37,14 @@ Commercial use requires a separate written license. See
 inquiry process.
 
 ## Overview
+
+An independent [drawing-to-parametric-CAD exploration](notes/drawing-to-parametric-cad.md)
+reviews available research and runs an AI-free, bounded three-view SVG baseline.
+Six authored inputs pass CAD, STEP, dimensional, reprojection and edit checks;
+seven controls are withheld. A preserved edit-order counterexample separates
+geometric agreement from edit intent. This is not real-drawing or AI accuracy.
+See the [reproduction guide](docs/drawing-to-cad-reproduction.md).
+The release version and existing SME workflow roadmap are unchanged.
 
 This repository records a sequence of related technical investigations rather
 than a fixed algorithm showcase. Each published study includes a research

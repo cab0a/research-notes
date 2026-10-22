@@ -1,0 +1,12 @@
+{
+  "holes": [
+    {
+      "diameter": 7.0,
+      "x": 13.0,
+      "y": 10.0
+    }
+  ],
+  "length": 30.0,
+  "thickness": 10.0,
+  "width": 45.0
+}

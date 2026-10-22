@@ -13,6 +13,32 @@ finding, committed evidence, reproduction command, and complete note. The
 numbers below describe the declared synthetic controls, pinned public samples and recorded runtime
 profiles; they are not general thresholds or production guarantees.
 
+## Independent Exploration — Drawing to Parametric CAD
+
+**Question:** Under which explicit drawing, projection and part-family assumptions
+can 2D dimensions produce an editable B-Rep/STEP candidate, and when should the
+interpretation be withheld?
+
+**Representative finding:** Six authored SVG inputs, each repeated twice, pass
+generation, dimensional comparison, actual OCCT HLR reprojection and editing.
+Seven missing/conflicting/unsupported controls are withheld with reasons. An
+edit-order counterexample has initial IoU 1.0 but edits a different physical hole.
+This is a development baseline, not general drawing reconstruction or an AI comparison.
+The study reviews Ortho2CAD, Drawing2CAD, Drawing-Recode, CADGenBench and an assisted
+commercial workflow. Their inference and training were not executed.
+
+- [Complete note and source comparison](../notes/drawing-to-parametric-cad.md)
+- [Reproduction guide](drawing-to-cad-reproduction.md)
+- [Fixed inputs and truth separation](../fixtures/drawing-to-cad/README.md)
+- [Measured results](../results/drawing-to-cad/results.json)
+- [Preserved counterexample](../results/drawing-to-cad/order-target-counterexample/results.json)
+
+```bash
+python experiments/run_drawing_to_cad.py --output-dir output/drawing-reproduction --repeats 2
+```
+
+No release number is assigned; the v1.15–v1.24 SME workflow roadmap is unchanged.
+
 ## Blur Measurement and Localization
 
 ### v0.1.0 — Laplacian Variance as a Blur Heuristic

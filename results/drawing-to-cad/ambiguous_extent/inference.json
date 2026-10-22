@@ -1,0 +1,21 @@
+{
+  "ai_used": false,
+  "detail": "diameter alone does not specify through/blind/depth",
+  "failure_stage": "input_ambiguity",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "reason_code": "hole_extent_ambiguous",
+  "schema_version": "1.0.0",
+  "source_sha256": "c51c623c0fc0b8607620bc070c4f978296b2a463f057fd65d70135c1a7f9a5dc",
+  "status": "withheld"
+}

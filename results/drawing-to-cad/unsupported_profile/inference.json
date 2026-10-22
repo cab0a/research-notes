@@ -1,0 +1,21 @@
+{
+  "ai_used": false,
+  "detail": "only flat, visible primitive SVG is implemented",
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "reason_code": "unsupported_svg",
+  "schema_version": "1.0.0",
+  "source_sha256": "af6f755f582beb0ff1bcdde4fbee95e7bbf342aacf2e9b7ae3eac1228a66e39d",
+  "status": "withheld"
+}

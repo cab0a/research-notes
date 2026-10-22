@@ -1,0 +1,21 @@
+{
+  "ai_used": false,
+  "detail": "front",
+  "failure_stage": "drawing_conflict",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "reason_code": "hidden_line_conflict",
+  "schema_version": "1.0.0",
+  "source_sha256": "0ee2927beb1300a25f15e8d1f338fb85f108e2709292309760147fdf6849f033",
+  "status": "withheld"
+}

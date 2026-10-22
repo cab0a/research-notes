@@ -1,0 +1,14 @@
+id,family_id,expected_status,observed_status,reason_code,passed
+plain_third,plate-0-hole,candidate,candidate,,True
+plain_first,plate-0-hole,candidate,candidate,,True
+one_third,plate-1-hole,candidate,candidate,,True
+one_first,plate-1-hole,candidate,candidate,,True
+two_third,plate-2-hole,candidate,candidate,,True
+two_scaled,plate-2-hole,candidate,candidate,,True
+missing_thickness,plate-1-hole,withheld,withheld,dimension_missing,True
+conflicting_width,plate-1-hole,withheld,withheld,dimension_conflict,True
+wrong_projection,plate-1-hole,withheld,withheld,projection_layout_conflict,True
+swapped_views,plate-1-hole,withheld,withheld,dimension_missing,True
+ambiguous_extent,plate-1-hole,withheld,withheld,hole_extent_ambiguous,True
+missing_hidden_line,plate-1-hole,withheld,withheld,hidden_line_conflict,True
+unsupported_profile,plate-1-hole,withheld,withheld,unsupported_svg,True

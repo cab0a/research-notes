@@ -1,0 +1,2 @@
+id,family_id,expected_status,observed_status,reason_code,passed
+two_third,plate-2-hole,candidate,candidate,,False

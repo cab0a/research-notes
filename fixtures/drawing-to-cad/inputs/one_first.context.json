@@ -1,0 +1,10 @@
+{
+  "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+  "projection": "first_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "panel_a",
+    "right": "panel_c",
+    "top": "panel_b"
+  }
+}

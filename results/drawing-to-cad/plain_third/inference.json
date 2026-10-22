@@ -1,0 +1,107 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Conditional candidate under human-provided family/view/frame assumptions; not unique general drawing interpretation.",
+  "evidence": {
+    "L": [
+      {
+        "element_id": "right_dim_L",
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": "top_dim_L",
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": "front_dim_T",
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": "right_dim_T",
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": "front_dim_W",
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": "top_dim_W",
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "panel_a",
+      "right": "panel_c",
+      "top": "panel_b"
+    }
+  },
+  "method": "C_vector_geometry_with_explicit_annotation_grammar",
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "e7db7f7cf785db0e20ba69eb5af955475d267709781e73d072874eda08522c9f",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        120.0,
+        340.0,
+        160.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "right": {
+      "box": [
+        580.0,
+        340.0,
+        120.0,
+        32.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "top": {
+      "box": [
+        120.0,
+        100.0,
+        160.0,
+        120.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

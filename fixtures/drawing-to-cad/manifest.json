@@ -1,0 +1,149 @@
+{
+  "cases": [
+    {
+      "context": "inputs/plain_third.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-0-hole",
+      "id": "plain_third",
+      "svg": "inputs/plain_third.svg",
+      "svg_sha256": "e7db7f7cf785db0e20ba69eb5af955475d267709781e73d072874eda08522c9f",
+      "truth_key": "plain_third"
+    },
+    {
+      "context": "inputs/plain_first.context.json",
+      "context_sha256": "30a4d72993a4fef62380fdefb0a9bb650507b0bd202bfd8daa92b36342bfe015",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-0-hole",
+      "id": "plain_first",
+      "svg": "inputs/plain_first.svg",
+      "svg_sha256": "d79089402bbc75c18429157a92d42274f889509dab534f4c12fabeadbf2dc542",
+      "truth_key": "plain_first"
+    },
+    {
+      "context": "inputs/one_third.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_third",
+      "svg": "inputs/one_third.svg",
+      "svg_sha256": "cbd327a0062f1b781de9bcbd8e8a33626bfb1f183f5d615ce8c96b156e9ffe9f",
+      "truth_key": "one_third"
+    },
+    {
+      "context": "inputs/one_first.context.json",
+      "context_sha256": "30a4d72993a4fef62380fdefb0a9bb650507b0bd202bfd8daa92b36342bfe015",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-1-hole",
+      "id": "one_first",
+      "svg": "inputs/one_first.svg",
+      "svg_sha256": "4eb945bd35fdc5a87d7569dde98088743d7327e17145eecee32ef9eaa1308eae",
+      "truth_key": "one_first"
+    },
+    {
+      "context": "inputs/two_third.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_third",
+      "svg": "inputs/two_third.svg",
+      "svg_sha256": "c3abb5c8f52a888086afcf36e85f421fd2c0e2e1c8afcb8d2ecaf8706fbb3cf0",
+      "truth_key": "two_third"
+    },
+    {
+      "context": "inputs/two_scaled.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "family_id": "plate-2-hole",
+      "id": "two_scaled",
+      "svg": "inputs/two_scaled.svg",
+      "svg_sha256": "6b23e74ea3e4e1af05a82ef4803593fbd52901dc4ccf2ba311aa7500f277e25b",
+      "truth_key": "two_scaled"
+    },
+    {
+      "context": "inputs/missing_thickness.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": "dimension_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_thickness",
+      "svg": "inputs/missing_thickness.svg",
+      "svg_sha256": "402b0835b5e9f65aef1e428583d8e356af705b8eb650ab7151a52fa067495a51",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/conflicting_width.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": "dimension_conflict",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "conflicting_width",
+      "svg": "inputs/conflicting_width.svg",
+      "svg_sha256": "40d03c94adb64e589191c7564532b44a060bc453dffa6e2b0fa2e2409b7deb62",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/wrong_projection.context.json",
+      "context_sha256": "30a4d72993a4fef62380fdefb0a9bb650507b0bd202bfd8daa92b36342bfe015",
+      "expected_reason": "projection_layout_conflict",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "wrong_projection",
+      "svg": "inputs/wrong_projection.svg",
+      "svg_sha256": "cbd327a0062f1b781de9bcbd8e8a33626bfb1f183f5d615ce8c96b156e9ffe9f",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/swapped_views.context.json",
+      "context_sha256": "c263aed147a4d1ab0bed13aa6ba9a5ee7be9bb3df78fde6d8ce6b24605306570",
+      "expected_reason": "dimension_missing",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "swapped_views",
+      "svg": "inputs/swapped_views.svg",
+      "svg_sha256": "cbd327a0062f1b781de9bcbd8e8a33626bfb1f183f5d615ce8c96b156e9ffe9f",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/ambiguous_extent.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": "hole_extent_ambiguous",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "ambiguous_extent",
+      "svg": "inputs/ambiguous_extent.svg",
+      "svg_sha256": "c51c623c0fc0b8607620bc070c4f978296b2a463f057fd65d70135c1a7f9a5dc",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/missing_hidden_line.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": "hidden_line_conflict",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "missing_hidden_line",
+      "svg": "inputs/missing_hidden_line.svg",
+      "svg_sha256": "0ee2927beb1300a25f15e8d1f338fb85f108e2709292309760147fdf6849f033",
+      "truth_key": null
+    },
+    {
+      "context": "inputs/unsupported_profile.context.json",
+      "context_sha256": "13a991b68789866917ebac75d21b6c5bf022af7be53905a014d1e6b967dd9b4b",
+      "expected_reason": "unsupported_svg",
+      "expected_status": "withheld",
+      "family_id": "plate-1-hole",
+      "id": "unsupported_profile",
+      "svg": "inputs/unsupported_profile.svg",
+      "svg_sha256": "af6f755f582beb0ff1bcdde4fbee95e7bbf342aacf2e9b7ae3eac1228a66e39d",
+      "truth_key": null
+    }
+  ],
+  "scope": "Authored development controls, not blinded real-drawing performance; variants share families.",
+  "study_schema": "1.0.0"
+}

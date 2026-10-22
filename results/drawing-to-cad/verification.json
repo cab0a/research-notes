@@ -1,0 +1,117 @@
+{
+  "base_commit": "95e40b0563183f9d3e0de738b8a6409156d55f84",
+  "counterexample": {
+    "command": "output/venv312/bin/python experiments/run_drawing_to_cad.py --output-dir results/drawing-to-cad/order-target-counterexample --case two_third --repeats 1 --edit-target sequence_first",
+    "edited_hole_error_mm": 1.0,
+    "expected_exit_code": 1,
+    "failure_stage": "edit_evaluation",
+    "initial_reconstruction_passed": true,
+    "observed_exit_code": 1,
+    "results_sha256": "85eb850de8e5c65fb45cbb1cafdc056869de2a5cb317174335c2652f22c63ca4"
+  },
+  "date": "2026-10-22",
+  "dependencies": {
+    "cadquery-ocp": "7.9.3.1.1",
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6",
+    "pytest": "9.1.1"
+  },
+  "full_tests": {
+    "command": "output/venv312/bin/python -m pytest -q --junitxml=output/drawing-cad-checks/tests.xml",
+    "errors": 0,
+    "failures": 0,
+    "junit_sha256": "e4fc447118f1d17d469599f6c0a628b923b71dac55ab6353418edee0ca7d869b",
+    "junit_time_seconds": 364.458,
+    "passed": 1331,
+    "skipped": 0,
+    "stdout_final_line": "1331 passed in 364.48s (0:06:04)",
+    "stdout_sha256": "2c3018e7bc2a68ee3626c69e5d0942674d282d69037b17c78787069761c6bd6b",
+    "tests": 1331
+  },
+  "integrity": {
+    "input_and_truth_hashes_match": true,
+    "local_markdown_links_checked": 761,
+    "missing_local_links": [],
+    "preexisting_changed_paths": [
+      "README.md",
+      "docs/reproducibility.md",
+      "docs/studies.md"
+    ],
+    "preexisting_code_tests_fixtures_and_results_unchanged": true,
+    "protected": {
+      "notes/sme-cad-automation-roadmap.md": {
+        "sha256": "fe19b6952a607ccb9923a4e492e1eb6eb9b899448528a71b9773d766fc207c8f",
+        "unchanged_from_base": true
+      },
+      "pyproject.toml": {
+        "sha256": "b690d5e1d31ebe3d3b51eb8eeb54ac3eaeb874ca5025ef1db7758ea5258106b2",
+        "unchanged_from_base": true
+      }
+    },
+    "result_code_hashes_match": true,
+    "source_file_sha256": {
+      "experiments/build_drawing_cad_fixtures.py": "b1a8992a2cbc0dffc474b83951b6cc759154a4d3a6354d7c36d2c52893de883c",
+      "experiments/collect_drawing_cad_sources.py": "e742962776c6728528f92ae919b15515b3d82647c930eed0816eb9b4642d448c",
+      "experiments/run_drawing_to_cad.py": "9356736a4a4f2c958e08773527ffa735899c5dd1f46e2d0d1bf7b39c9d56225e",
+      "src/research_notes/drawing_to_cad.py": "7a428b83c7c806eeaf92e1bf6547fb14398177f9328dd33540b76c1c5bb74c25",
+      "tests/test_drawing_to_cad.py": "5d6aa548b3ad403febd50f9fd9b646aacf2cea46d9cae474fe3422fbc645f8ef"
+    },
+    "source_review_sha256": "7e06f12feead86ad7aa3ed183c27a84114576a305c52ea544c951ece8739a894"
+  },
+  "limits": "Authored development controls, explicit family/view/unit/frame assumptions, same OCCT kernel; not general reconstruction accuracy or recovered authoring history.",
+  "manual_smoke": {
+    "commands": [
+      "output/venv312/bin/python -m research_notes.drawing_to_cad fixtures/drawing-to-cad/inputs/one_third.svg fixtures/drawing-to-cad/inputs/one_third.context.json --output-dir output/drawing-single",
+      "output/venv312/bin/python output/drawing-single/candidate.py output/drawing-single/candidate.step"
+    ],
+    "exit_codes": [
+      0,
+      0
+    ]
+  },
+  "normal_experiment": {
+    "all_workers_exclude_ground_truth_arguments": true,
+    "command": "output/venv312/bin/python experiments/run_drawing_to_cad.py --output-dir results/drawing-to-cad --repeats 2",
+    "edit_trials": 12,
+    "exit_code": 0,
+    "initial_geometry_trials": 12,
+    "results_sha256": "bdf06dea91aee0d9649325300eae0b513a080cb5b810cb1796a58cc292a3671b",
+    "summary": {
+      "candidate_inputs": 6,
+      "candidate_successes": 6,
+      "correct_withholds": 7,
+      "false_confirmations_on_withheld_controls": 0,
+      "planned_inputs": 13,
+      "withheld_controls": 7
+    }
+  },
+  "not_executed": [
+    "upstream AI inference or training",
+    "external model API calls",
+    "external dataset/weight binary download",
+    "native Windows execution",
+    "independent CAD kernel verification",
+    "arbitrary industrial drawings",
+    "OCR",
+    "held-out part-family evaluation",
+    "GPU or API performance/cost comparison"
+  ],
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "package_version": "1.17.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "study": "2D Engineering Drawing to Parametric 3D CAD Reconstruction",
+  "targeted_tests": {
+    "command": "output/venv312/bin/python -m pytest tests/test_drawing_to_cad.py -q",
+    "passed": 28
+  },
+  "visual_inspection": {
+    "files": [
+      "results/drawing-to-cad/one_third/comparison.png",
+      "results/drawing-to-cad/two_third/comparison.png"
+    ],
+    "method": "Rendered PNGs viewed; three panels, units, overlays and captions legible without clipping."
+  }
+}
