@@ -2,7 +2,9 @@
 
 ## 日本語概要
 
-2D→CAD研究の続報では、専用注記を**寸法線・補助線・矢印・数値**へ置き換えました。限定した合成SVGの復元対象8入力でSTEP生成・再投影・寸法変更を検証し、寸法不足・矛盾・未対応表記の12入力は理由付き保留にしています。[HTMLで図面と3D・寸法差・保留理由を確認](results/drawing-dimensions/report.html)できます。[研究ノートと今後の計画](notes/drawing-dimension-lines.md)、[閲覧・再現手順](docs/drawing-dimension-lines.md)も追加しました。実CAD出力・任意の実務図面・OCR・AI比較は未評価です。
+2D→CAD研究を**実CAD出力**へ進めました。FreeCAD 1.1.4のTechDrawからSVG/DXFを実際に保存し、DXFの復元対象5条件でSTEP生成・寸法照合・再投影・編集を各2回検証しました。寸法不足などのDXF4条件は保留、SVG8出力は変換付きパス等が未対応です。自作部品の実CAD出力であり、顧客図面や他CADの精度ではありません。[最新の結果HTML](results/cad-drawing-exports/report.html)、[研究ノート](notes/cad-drawing-exports.md)、[閲覧・再現手順](docs/cad-drawing-exports.md)をご覧ください。
+
+前回の2D→CAD研究では、専用注記を**寸法線・補助線・矢印・数値**へ置き換えました。限定した合成SVGの復元対象8入力でSTEP生成・再投影・寸法変更を検証し、寸法不足・矛盾・未対応表記の12入力は理由付き保留にしています。[当時のHTMLで図面と3D・寸法差・保留理由を確認](results/drawing-dimensions/report.html)できます。[研究ノートと今後の計画](notes/drawing-dimension-lines.md)、[閲覧・再現手順](docs/drawing-dimension-lines.md)も保持しています。この自作SVG実験の時点では、実CAD出力・任意の実務図面・OCR・AI比較は未評価でした。
 
 独立した探索テーマとして、[2D機械図面から編集可能な3D CADを復元する研究](notes/drawing-to-parametric-cad.md)を追加しました。先行論文・公開実装・配布条件を調べ、既存OCCTと拘束スケッチを再利用した非AI実験を実装しています。人が投影法と部品種別を指定する専用SVGの合成6入力で、STEP生成・再投影・寸法変更まで検証し、不足や矛盾の7入力は保留しました。元形状が一致しても編集対象を取り違える反例も記録しています。任意の実務図面やAI方式の性能は未評価です。[追試手順](docs/drawing-to-cad-reproduction.md)と[固定結果](results/drawing-to-cad/results.json)を参照してください。版数と既存業務計画は変更していません。
 
@@ -39,6 +41,14 @@ Commercial use requires a separate written license. See
 inquiry process.
 
 ## Overview
+
+A [native CAD export follow-up](notes/cad-drawing-exports.md) uses unmodified
+FreeCAD 1.1.4 TechDraw SVG/DXF files. Five positive DXF conditions pass CAD,
+STEP, geometric, reprojection and edit checks twice; four DXF controls are
+withheld. Eight SVG exports remain unsupported. These are own authored CAD
+development controls, not customer or held-out drawings. See the
+[latest offline HTML](results/cad-drawing-exports/report.html) and
+[reproduction guide](docs/cad-drawing-exports.md).
 
 An independent [drawing-to-parametric-CAD exploration](notes/drawing-to-parametric-cad.md)
 reviews available research and runs an AI-free, bounded three-view SVG baseline.

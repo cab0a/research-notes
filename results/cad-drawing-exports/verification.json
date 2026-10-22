@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-22",
+  "base_commit": "7d01eeaf4d8e12def0295bcd0fe2489ebf5b9bd8",
+  "full_test": {
+    "command": "python -m pytest -q --junitxml=output/cad-export-tests.xml",
+    "tests": 1401,
+    "passed": 1401,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 357.099,
+    "xml_sha256": "83a1fb8240f9167c6d79aeec137505928b852ed2a52243b4b52a7af56bc30da4"
+  },
+  "experiment": {
+    "command": "python -m experiments.run_cad_drawing_exports --output-dir results/cad-drawing-exports --repeats 2",
+    "summary": {
+      "by_format": {
+        "dxf": {
+          "candidates": 5,
+          "inputs": 9,
+          "positive_successes": 5,
+          "withheld": 4
+        },
+        "svg": {
+          "candidates": 0,
+          "inputs": 8,
+          "positive_successes": 0,
+          "withheld": 8
+        }
+      },
+      "candidate_inputs": 5,
+      "candidate_successes": 5,
+      "correct_withholds": 12,
+      "false_confirmations": 0,
+      "inputs": 17,
+      "legacy_candidates_on_same_positive_inputs": 0,
+      "svg_unimplemented_inputs": 8,
+      "withheld_controls": 12
+    },
+    "results_sha256": "e54dc56a132202272de5621f9e7710cb4aaef490495d38660919b28708cb1f80"
+  },
+  "source_and_code_hashes_verified": true,
+  "input_bytes_unmodified": true,
+  "worker_arguments_exclude_source_cad_and_truth": true,
+  "withheld_has_no_candidate_artifacts": true,
+  "boundary_is_api_and_process_arguments_not_os_sandbox": true,
+  "old_study_code_and_fixed_evidence_unchanged": true,
+  "release_version": "1.17.0",
+  "sme_roadmap_unchanged": true,
+  "html": {
+    "relative_links_checked": 76,
+    "external_resource_links": [],
+    "embedded_drawings": 17,
+    "candidate_canvases": 5,
+    "html_sha256": "4f461f79f76d6da6710331f82fc0f0a98262bd40afc474cbbc48ff8b5fea4a41",
+    "browser_checks": [
+      "17 drawings loaded",
+      "no horizontal page overflow",
+      "DXF vs native SVG selector",
+      "decimal edited model and arrow-key rotation",
+      "SVG no-candidate panel",
+      "missing X reason",
+      "empty failure filter",
+      "reset camera"
+    ],
+    "screenshot": "report-preview.png",
+    "screenshot_sha256": "80338a97c4ae9c296a8dfea6536cffd4a4714d4683e32a640c9352f9ea42a1c1"
+  },
+  "markdown_relative_links_checked": 774,
+  "max_errors": {
+    "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+    "hole_dimension_max_abs_error_mm": 0.0,
+    "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11,
+    "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12
+  },
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "ezdxf": "1.4.4",
+    "package_version": "1.17.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "export_runtime": {
+    "FreeCAD": "1.1.4",
+    "OCCT": "7.8.1",
+    "claim": "different CAD path and OCCT version; same kernel family"
+  },
+  "dependency_versions": {
+    "ezdxf": "1.4.4",
+    "fonttools": "4.66.0",
+    "pyparsing": "3.2.5",
+    "typing_extensions": "4.16.0",
+    "numpy": "2.4.6"
+  },
+  "not_executed": [
+    "native Windows FreeCAD or reconstruction",
+    "other CAD exporters",
+    "real customer drawings",
+    "held-out family benchmark",
+    "SVG path normalization",
+    "OCR/VLM",
+    "independent CAD kernel",
+    "end-user correction time"
+  ]
+}

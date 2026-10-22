@@ -15,6 +15,27 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Native CAD export follow-up (independent, no release number)
+
+FreeCAD 1.1.4/TechDraw exported eight own authored drawing configurations to
+SVG and DXF. Five positive DXF conditions pass generation, STEP reimport,
+dimension/shape/reprojection/edit checks twice. Three negative DXF drawings
+and one incorrect projection context are withheld. All eight SVG inputs are
+unsupported; this is a format boundary, not successful shape recognition.
+Different CAD paths/OCCT versions are used for truth and candidates, with the
+same underlying kernel family. Customer/held-out drawings remain untested.
+
+- [Research note and next experiments](../notes/cad-drawing-exports.md)
+- [Offline result viewer](../results/cad-drawing-exports/report.html)
+- [Reproduction guide](cad-drawing-exports.md)
+- [Unmodified inputs and provenance](../fixtures/cad-drawing-exports/README.md)
+
+```bash
+python -m experiments.run_cad_drawing_exports --output-dir output/cad-export-reproduction --repeats 2
+```
+
+### Initial baseline
+
 **Question:** Under which explicit drawing, projection and part-family assumptions
 can 2D dimensions produce an editable B-Rep/STEP candidate, and when should the
 interpretation be withheld?

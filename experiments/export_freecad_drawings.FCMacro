@@ -1,0 +1,121 @@
+"""Run in FreeCAD GUI/offscreen. CAD authoring only; never imported by inference.
+
+Set RESEARCH_CAD_EXPORT to a NEW output directory. Requires FreeCAD 1.1.4.
+"""
+import os
+import json
+import traceback
+from pathlib import Path
+import FreeCAD as App
+import FreeCADGui as Gui
+import Part
+import TechDraw
+import TechDrawGui
+from PySide import QtCore
+
+OUT = Path(os.environ['RESEARCH_CAD_EXPORT']).resolve()
+OUT.mkdir(parents=True, exist_ok=False)
+SPECS = [
+    ('plain',40,30,8,[],1.,'third_angle',None),
+    ('one',40,30,8,[(12,10,6)],1.,'third_angle',None),
+    ('decimal',52.5,37.25,6.5,[(17.5,13.25,5.5)],1.,'third_angle',None),
+    ('scaled',40,30,8,[(12,10,6)],1.5,'third_angle',None),
+    ('first',40,30,8,[(12,10,6)],1.,'first_angle',None),
+    ('no_x',40,30,8,[(12,10,6)],1.,'third_angle','no_x'),
+    ('no_thru',40,30,8,[(12,10,6)],1.,'third_angle','no_thru'),
+    ('tolerance',40,30,8,[(12,10,6)],1.,'third_angle','tolerance'),
+]
+records = []
+active = None
+
+def vertices(view):
+    result = []
+    for i in range(0,100):
+        try: result.append((i,view.getVertexByIndex(i).Point))
+        except ValueError:
+            if i: break
+    return result
+
+def edges(view):
+    result = []
+    for i in range(1,100):
+        try: result.append((i,view.getEdgeByIndex(i)))
+        except ValueError: break
+    return result
+
+def nearest(view,x,y):
+    i,p=min(vertices(view),key=lambda q:(q[1].x-x)**2+(q[1].y-y)**2)
+    assert abs(p.x-x)<1e-6 and abs(p.y-y)<1e-6,(x,y,p)
+    return 'Vertex'+str(i)
+
+def start(index=0):
+    global active
+    if index == len(SPECS):
+        (OUT/'export-log.json').write_text(json.dumps({'version':App.Version(),'occt':Part.OCC_VERSION,'records':records},indent=2))
+        Gui.getMainWindow().close()
+        return
+    try:
+        identifier,w,l,t,holes,scale,projection,variant=SPECS[index]
+        dest=OUT/identifier;dest.mkdir()
+        doc=App.newDocument('Drawing'+str(index));active=doc
+        # The CAD source is independent of the reconstruction feature graph.
+        obj=doc.addObject('Part::Feature','SourcePart')
+        shape=Part.makeBox(w,l,t)
+        for x,y,d in holes: shape=shape.cut(Part.makeCylinder(d/2,t,App.Vector(x,y,0)))
+        obj.Shape=shape
+        template=OUT/'blank.svg'
+        template.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="297mm" height="210mm" viewBox="0 0 297 210"><rect x="1" y="1" width="295" height="208" fill="none" stroke="black" stroke-width="0.2"/></svg>')
+        page=doc.addObject('TechDraw::DrawPage','Page');page.Scale=scale
+        tpl=doc.addObject('TechDraw::DrawSVGTemplate','Template');tpl.Template=str(template);page.Template=tpl
+        third=projection=='third_angle'
+        placement={'front':(145,85 if third else 145),'top':(145,150 if third else 80),'right':(235 if third else 55,85 if third else 145)}
+        views={}
+        for role,direction,xaxis in [('front',(0,-1,0),(1,0,0)),('top',(0,0,1),(1,0,0)),('right',(1,0,0),(0,1,0))]:
+            view=doc.addObject('TechDraw::DrawViewPart',role.title());page.addView(view);view.Source=[obj]
+            view.Direction=App.Vector(*direction);view.XDirection=App.Vector(*xaxis)
+            view.X,view.Y=placement[role];view.HardHidden=True
+            view.ViewObject.LineWidth=.35;view.ViewObject.HiddenWidth=.18
+            views[role]=view
+        doc.recompute();Gui.activeDocument().getObject(page.Name).show()
+        def annotate():
+            try:
+                dimensions=[]
+                def dim(view,kind,refs,x,y,thru=False):
+                    d=doc.addObject('TechDraw::DrawViewDimension','D');page.addView(d)
+                    d.Type=kind;d.References2D=[(view,tuple(refs))];d.X=x;d.Y=y
+                    d.FormatSpec='%.2w'+(' THRU' if thru else '')
+                    d.ViewObject.Fontsize=3.;dimensions.append(d);return d
+                for role,view in views.items():
+                    u,v={'top':(w,l),'front':(w,t),'right':(l,t)}[role]
+                    lo=nearest(view,-u/2,-v/2);hi=nearest(view,u/2,-v/2);upper=nearest(view,-u/2,v/2)
+                    dw=dim(view,'DistanceX',[lo,hi],0,-v*scale/2-12)
+                    dim(view,'DistanceY',[lo,upper],-u*scale/2-12,0)
+                    if role=='top':
+                        if variant=='tolerance': dw.OverTolerance=.1;dw.UnderTolerance=.1
+                        for x,y,dia in holes:
+                            center=nearest(view,x-w/2,y-l/2)
+                            if variant!='no_x':dim(view,'DistanceX',[lo,center],(x-w)*scale/2,-l*scale/2-24)
+                            dim(view,'DistanceY',[lo,center],-w*scale/2-24,(y-l)*scale/2)
+                            circle=next(i for i,e in edges(view) if isinstance(e.Curve,Part.Circle) and abs(e.Curve.Radius-dia/2)<1e-6)
+                            dim(view,'Diameter',['Edge'+str(circle)],w*scale/2+22,l*scale/2+12,variant!='no_thru')
+                doc.recompute()
+                def export():
+                    try:
+                        TechDrawGui.exportPageAsSvg(page,str(dest/'drawing.svg'))
+                        TechDraw.writeDXFPage(page,str(dest/'drawing.dxf'))
+                        Part.export([obj],str(dest/'truth.step'))
+                        doc.saveAs(str(dest/'source.FCStd'))
+                        records.append({'id':identifier,'parameters':{'width':w,'length':l,'thickness':t,'holes':[dict(x=x,y=y,diameter=d) for x,y,d in holes]},'projection':projection,'authoring_scale':scale,'variant':variant,'dimensions':[dict(name=d.Name,type=d.Type,references=str(d.References2D)) for d in dimensions]})
+                        App.closeDocument(doc.Name);QtCore.QTimer.singleShot(200,lambda:start(index+1))
+                    except Exception:fail()
+                QtCore.QTimer.singleShot(1200,export)
+            except Exception:fail()
+        QtCore.QTimer.singleShot(1500,annotate)
+    except Exception:fail()
+
+def fail():
+    (OUT/'error.txt').write_text(traceback.format_exc())
+    if active:App.closeDocument(active.Name)
+    Gui.getMainWindow().close()
+
+QtCore.QTimer.singleShot(1000,start)

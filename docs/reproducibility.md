@@ -14,6 +14,16 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
+For the real CAD export follow-up, see [the dedicated guide](cad-drawing-exports.md).
+Fixed FreeCAD SVG/DXF inputs are committed; FreeCAD is needed only to regenerate
+them, not to reproduce reconstruction/evaluation. DXF uses the optional `drawing`
+dependency. SVG unsupported cases are recorded separately from reconstruction.
+
+```bash
+python -m pip install -e ".[geometry,drawing,test]"
+python -m experiments.run_cad_drawing_exports --output-dir output/cad-export-reproduction --repeats 2
+```
+
 For the independent 2D-drawing-to-parametric-CAD experiment, use the
 [dedicated reproduction guide](drawing-to-cad-reproduction.md).
 It reuses the existing geometry dependencies, needs no AI API or GPU, and reads

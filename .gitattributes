@@ -11,3 +11,9 @@ results/revision-benchmark/** -text
 
 fixtures/hole-inventory/sources/** -text -whitespace
 results/hole-inventory/** -text
+
+# Native CAD exports are evidence: preserve exporter whitespace and exact bytes.
+fixtures/cad-drawing-exports/inputs/** -text -whitespace
+fixtures/cad-drawing-exports/evaluation/*.step -text -whitespace
+fixtures/cad-drawing-exports/authoring/*.FCStd binary
+results/cad-drawing-exports/*/input.* -text -whitespace

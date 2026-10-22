@@ -1,0 +1,47 @@
+{
+  "ai_used": false,
+  "detail": "Native TechDraw SVG has transformed paths/text; no validated normalizer yet. Paired DXF is not used.",
+  "dimension_evidence": [],
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "Front",
+      "right": "Right",
+      "top": "Top"
+    }
+  },
+  "input_format": "svg",
+  "inventory": {
+    "cubic_paths": 3,
+    "tags": {
+      "defs": 1,
+      "desc": 1,
+      "g": 69,
+      "path": 58,
+      "rect": 1,
+      "svg": 1,
+      "text": 8,
+      "title": 1
+    },
+    "transforms": 67,
+    "visible_text": [
+      "40",
+      "8",
+      "40",
+      "30",
+      "10",
+      "6 THRU",
+      "30",
+      "8"
+    ]
+  },
+  "method": "C_FreeCAD_TechDraw_DXF_dimensions",
+  "original_authoring_history_recovered": false,
+  "reason_code": "svg_export_graphics_unsupported",
+  "schema_version": "1.0.0",
+  "source_sha256": "196975de15481eedc4a109bfbc8702ad64041e6e857671a94a49491a46e87e90",
+  "status": "withheld"
+}

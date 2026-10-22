@@ -1,5 +1,7 @@
 # 寸法線・補助線からの編集可能CAD復元
 
+続報: [実CAD出力のSVG／DXF検証](cad-drawing-exports.md)。以下は自作SVG段階の固定記録。
+
 調査・実験日: 2026-10-22。基点`ccda3bb1199059de29db8d3b313e79a5b5a104a7`。
 版数1.17.0上の独立研究であり、既存の業務自動化ロードマップを変更しない。
 [初回の専用注記実験](drawing-to-parametric-cad.md)の続報。
