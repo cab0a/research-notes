@@ -2,7 +2,9 @@
 
 ## 日本語概要
 
-2D→CAD研究を**実CAD出力**へ進めました。FreeCAD 1.1.4のTechDrawからSVG/DXFを実際に保存し、DXFの復元対象5条件でSTEP生成・寸法照合・再投影・編集を各2回検証しました。寸法不足などのDXF4条件は保留、SVG8出力は変換付きパス等が未対応です。自作部品の実CAD出力であり、顧客図面や他CADの精度ではありません。[最新の結果HTML](results/cad-drawing-exports/report.html)、[研究ノート](notes/cad-drawing-exports.md)、[閲覧・再現手順](docs/cad-drawing-exports.md)をご覧ください。
+実CAD出力SVGの**座標変換・4区間ベジェの円・回転文字**を扱い、同じ図面のDXFと比較しました。復元対象5組で抽出寸法差0 mm、復元／編集後の体積IoU 1.0。寸法不足など4組は両形式で同じ理由の保留でした。人によるビュー指定と矩形板の前提は残り、任意の曲線・実務図面の精度ではありません。[最新の結果HTML](results/cad-svg-dxf/report.html)、[研究ノートと次の実験](notes/cad-svg-dxf.md)、[閲覧・再現手順](docs/cad-svg-dxf.md)をご覧ください。
+
+前回は2D→CAD研究を**実CAD出力**へ進め、FreeCAD 1.1.4のTechDrawからSVG/DXFを実際に保存しました。DXFの復元対象5条件でSTEP生成・寸法照合・再投影・編集を各2回検証し、寸法不足などのDXF4条件は保留。当時はSVG8出力が変換付きパス等で未対応でした。自作部品の実CAD出力であり、顧客図面や他CADの精度ではありません。[当時の結果HTML](results/cad-drawing-exports/report.html)、[研究ノート](notes/cad-drawing-exports.md)、[閲覧・再現手順](docs/cad-drawing-exports.md)も保持しています。
 
 前回の2D→CAD研究では、専用注記を**寸法線・補助線・矢印・数値**へ置き換えました。限定した合成SVGの復元対象8入力でSTEP生成・再投影・寸法変更を検証し、寸法不足・矛盾・未対応表記の12入力は理由付き保留にしています。[当時のHTMLで図面と3D・寸法差・保留理由を確認](results/drawing-dimensions/report.html)できます。[研究ノートと今後の計画](notes/drawing-dimension-lines.md)、[閲覧・再現手順](docs/drawing-dimension-lines.md)も保持しています。この自作SVG実験の時点では、実CAD出力・任意の実務図面・OCR・AI比較は未評価でした。
 

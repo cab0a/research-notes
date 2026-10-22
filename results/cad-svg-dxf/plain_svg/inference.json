@@ -1,0 +1,407 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Conditional plate candidate from frozen FreeCAD SVG; manual group/view/family/projection, no general drawing claim.",
+  "curve_evidence": [],
+  "dimension_evidence": [
+    {
+      "arrow_ids": [
+        "path:10",
+        "path:11"
+      ],
+      "definition_points": [
+        [
+          165.0,
+          129.0
+        ],
+        [
+          125.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:9",
+      "kind": "linear",
+      "parameter": "W",
+      "text_baseline": [
+        143.08800000000002,
+        142.47394000000003
+      ],
+      "text_direction": [
+        1.0,
+        0.0
+      ],
+      "text_id": "text:0",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "arrow_ids": [
+        "path:13",
+        "path:14"
+      ],
+      "definition_points": [
+        [
+          125.0,
+          121.0
+        ],
+        [
+          125.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:12",
+      "kind": "linear",
+      "parameter": "T",
+      "text_baseline": [
+        114.47394000000001,
+        126.005
+      ],
+      "text_direction": [
+        0.0,
+        -1.0
+      ],
+      "text_id": "text:1",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    },
+    {
+      "arrow_ids": [
+        "path:25",
+        "path:26"
+      ],
+      "definition_points": [
+        [
+          165.0,
+          75.0
+        ],
+        [
+          125.0,
+          75.0
+        ]
+      ],
+      "dimension_line_id": "path:24",
+      "kind": "linear",
+      "parameter": "W",
+      "text_baseline": [
+        143.08800000000002,
+        88.47344
+      ],
+      "text_direction": [
+        1.0,
+        0.0
+      ],
+      "text_id": "text:2",
+      "value_mm": 40.0,
+      "view": "top",
+      "visible_text": "40"
+    },
+    {
+      "arrow_ids": [
+        "path:28",
+        "path:29"
+      ],
+      "definition_points": [
+        [
+          125.0,
+          45.0
+        ],
+        [
+          125.0,
+          75.0
+        ]
+      ],
+      "dimension_line_id": "path:27",
+      "kind": "linear",
+      "parameter": "L",
+      "text_baseline": [
+        114.47394000000001,
+        61.848400000000005
+      ],
+      "text_direction": [
+        0.0,
+        -1.0
+      ],
+      "text_id": "text:3",
+      "value_mm": 30.0,
+      "view": "top",
+      "visible_text": "30"
+    },
+    {
+      "arrow_ids": [
+        "path:40",
+        "path:41"
+      ],
+      "definition_points": [
+        [
+          250.0,
+          129.0
+        ],
+        [
+          220.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:39",
+      "kind": "linear",
+      "parameter": "L",
+      "text_baseline": [
+        233.15200000000002,
+        142.47394000000003
+      ],
+      "text_direction": [
+        1.0,
+        0.0
+      ],
+      "text_id": "text:4",
+      "value_mm": 30.0,
+      "view": "right",
+      "visible_text": "30"
+    },
+    {
+      "arrow_ids": [
+        "path:43",
+        "path:44"
+      ],
+      "definition_points": [
+        [
+          220.0,
+          121.0
+        ],
+        [
+          220.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:42",
+      "kind": "linear",
+      "parameter": "T",
+      "text_baseline": [
+        209.47394000000003,
+        126.005
+      ],
+      "text_direction": [
+        0.0,
+        -1.0
+      ],
+      "text_id": "text:5",
+      "value_mm": 8.0,
+      "view": "right",
+      "visible_text": "8"
+    }
+  ],
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:30",
+      "top": "path:15"
+    }
+  },
+  "input_format": "svg",
+  "inventory": {
+    "association_tolerance_sheet_mm": 0.002,
+    "page_size_mm": [
+      297.0,
+      210.0
+    ],
+    "paths": 45,
+    "selection": "DrawingContent",
+    "texts": 6,
+    "transforms": 52
+  },
+  "method": "C_native_SVG_graphic_dimension_association",
+  "normalization": {
+    "association_tolerance_sheet_mm": 0.002,
+    "circle_policy": "four quarter cubic approximation checked against controls; exact CAD radius comes from diameter label",
+    "coordinate_system": "sheet millimetres; model coordinates from displayed dimensions",
+    "duplicates": "coincident outlines/circles deduplicated; filled silhouettes require stroked counterparts",
+    "max_hole_label_geometry_residual_mm": 0,
+    "text_policy": "XML characters with transformed baseline; no OCR or font glyph bounding-box recovery"
+  },
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "raw_drawing_polylines_mm": {
+    "front": [
+      [
+        [
+          0.0,
+          8.0
+        ],
+        [
+          40.0,
+          8.0
+        ]
+      ],
+      [
+        [
+          40.0,
+          8.0
+        ],
+        [
+          40.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          40.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          8.0
+        ]
+      ]
+    ],
+    "right": [
+      [
+        [
+          0.0,
+          8.0
+        ],
+        [
+          30.0,
+          8.0
+        ]
+      ],
+      [
+        [
+          30.0,
+          8.0
+        ],
+        [
+          30.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          30.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          8.0
+        ]
+      ]
+    ],
+    "top": [
+      [
+        [
+          0.0,
+          30.0
+        ],
+        [
+          40.0,
+          30.0
+        ]
+      ],
+      [
+        [
+          40.0,
+          30.0
+        ],
+        [
+          40.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          40.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          30.0
+        ]
+      ]
+    ]
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "7454cbfd50cb49773ce34fc84860cfc8239c6b179dc9374e194777fc9618b450",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        125.0,
+        121.0,
+        40.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "right": {
+      "box": [
+        220.0,
+        121.0,
+        30.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "top": {
+      "box": [
+        125.0,
+        45.0,
+        40.0,
+        30.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

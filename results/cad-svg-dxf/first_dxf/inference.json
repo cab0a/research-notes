@@ -1,0 +1,377 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Conditional candidate from FreeCAD TechDraw DXF development fixtures; no general CAD exporter or held-out accuracy claim.",
+  "dimension_evidence": [
+    {
+      "definition_points": [
+        [
+          125.0,
+          141.0
+        ],
+        [
+          165.0,
+          141.0
+        ]
+      ],
+      "dimension_line_id": "A30",
+      "kind": "linear",
+      "parameter": "W",
+      "text_id": "*D",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          141.0
+        ],
+        [
+          125.0,
+          149.0
+        ]
+      ],
+      "dimension_line_id": "A3A",
+      "kind": "linear",
+      "parameter": "T",
+      "text_id": "*D001",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          65.0
+        ],
+        [
+          165.0,
+          65.0
+        ]
+      ],
+      "dimension_line_id": "A44",
+      "kind": "linear",
+      "parameter": "W",
+      "text_id": "*D002",
+      "value_mm": 40.0,
+      "view": "top",
+      "visible_text": "40"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          65.0
+        ],
+        [
+          125.0,
+          95.0
+        ]
+      ],
+      "dimension_line_id": "A4E",
+      "kind": "linear",
+      "parameter": "L",
+      "text_id": "*D003",
+      "value_mm": 30.0,
+      "view": "top",
+      "visible_text": "30"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          65.0
+        ],
+        [
+          137.0,
+          75.0
+        ]
+      ],
+      "dimension_line_id": "A58",
+      "kind": "linear",
+      "parameter": "A1A:x",
+      "text_id": "*D004",
+      "value_mm": 12.0,
+      "view": "top",
+      "visible_text": "12"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          65.0
+        ],
+        [
+          137.0,
+          75.0
+        ]
+      ],
+      "dimension_line_id": "A62",
+      "kind": "linear",
+      "parameter": "A1A:y",
+      "text_id": "*D005",
+      "value_mm": 10.0,
+      "view": "top",
+      "visible_text": "10"
+    },
+    {
+      "definition_points": [
+        [
+          139.608753601,
+          76.481352305
+        ],
+        [
+          134.391246399,
+          73.518647695
+        ]
+      ],
+      "dimension_line_id": "A6C",
+      "kind": "diameter",
+      "parameter": "A1A",
+      "text_id": "*D006",
+      "value_mm": 6.0,
+      "view": "top",
+      "visible_text": "6 THRU"
+    },
+    {
+      "definition_points": [
+        [
+          40.0,
+          141.0
+        ],
+        [
+          70.0,
+          141.0
+        ]
+      ],
+      "dimension_line_id": "A74",
+      "kind": "linear",
+      "parameter": "L",
+      "text_id": "*D007",
+      "value_mm": 30.0,
+      "view": "right",
+      "visible_text": "30"
+    },
+    {
+      "definition_points": [
+        [
+          40.0,
+          141.0
+        ],
+        [
+          40.0,
+          149.0
+        ]
+      ],
+      "dimension_line_id": "A7E",
+      "kind": "linear",
+      "parameter": "T",
+      "text_id": "*D008",
+      "value_mm": 8.0,
+      "view": "right",
+      "visible_text": "8"
+    }
+  ],
+  "evidence": {
+    "L": [
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ],
+    "holes": [
+      {
+        "circle_id": "A1A",
+        "text_id": null,
+        "visible_text": "X=12 Y=10 DIA=6 THRU"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "first_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "Front",
+      "right": "Right",
+      "top": "Top"
+    }
+  },
+  "input_format": "dxf",
+  "inventory": {
+    "dxf_version_after_read": "AC1015",
+    "encoding_policy": "strict UTF-8; exporter header ANSI_1252 is not trusted",
+    "entities": {
+      "CIRCLE": 2,
+      "DIMENSION": 9,
+      "LINE": 28,
+      "SPLINE": 10
+    },
+    "line_visibility": "exported geometry has no reliable hidden/visible distinction; interpreted under family prior"
+  },
+  "method": "C_FreeCAD_TechDraw_DXF_dimensions",
+  "normalization": {
+    "border_splines": {
+      "front": [
+        "A0E",
+        "A0F",
+        "A12",
+        "A13"
+      ],
+      "right": [
+        "A28",
+        "A29",
+        "A2A",
+        "A2B",
+        "A2C",
+        "A2D"
+      ],
+      "top": []
+    },
+    "duplicates": "coincident geometry deduplicated",
+    "visibility": "interior full-height edges treated as hidden under declared family"
+  },
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [
+      {
+        "diameter": 6.0,
+        "x": 12.0,
+        "y": 10.0
+      }
+    ],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "9bc75af7de4ea6ea8d8777a477114d12df25ede7eb987e12d16c3aac86585636",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        125.0,
+        -149.0,
+        40.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            15.0,
+            0.0
+          ],
+          [
+            15.0,
+            8.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            0.0
+          ],
+          [
+            9.0,
+            8.0
+          ]
+        ]
+      ]
+    },
+    "right": {
+      "box": [
+        40.0,
+        -149.0,
+        30.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": [
+        [
+          [
+            13.0,
+            0.0
+          ],
+          [
+            13.0,
+            8.0
+          ]
+        ],
+        [
+          [
+            7.0,
+            0.0
+          ],
+          [
+            7.0,
+            8.0
+          ]
+        ]
+      ]
+    },
+    "top": {
+      "box": [
+        125.0,
+        -95.0,
+        40.0,
+        30.0
+      ],
+      "circles": [
+        {
+          "center": [
+            12.0,
+            10.0
+          ],
+          "id": "A1A",
+          "radius": 3.0
+        }
+      ],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

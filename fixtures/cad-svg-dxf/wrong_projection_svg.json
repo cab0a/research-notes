@@ -1,0 +1,11 @@
+{
+  "drawing_group": "DrawingContent",
+  "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+  "projection": "first_angle",
+  "unit": "mm",
+  "view_roles": {
+    "front": "path:0",
+    "right": "path:44",
+    "top": "path:17"
+  }
+}

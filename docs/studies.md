@@ -15,6 +15,26 @@ profiles; they are not general thresholds or production guarantees.
 
 ## Independent Exploration — Drawing to Parametric CAD
 
+### Native SVG / DXF equivalence (independent, no release number)
+
+The same frozen FreeCAD exports are interpreted independently. SVG normalization
+handles nested similarity transforms, four-quarter cubic circles and rotated XML
+text. Five positive pairs yield identical design parameters and original/edited
+STEP volume IoU 1.0; four negative pairs withhold with matching reasons. Eighteen
+inputs are repeated twice. Native SVG cubic/HLR sampled residual reaches about
+0.00167841 mm and is reported separately from exact dimension extraction.
+Human group/view/family/projection selections remain. This is not general SVG,
+independent-kernel or customer/held-out drawing performance.
+
+- [Research and next experiments](../notes/cad-svg-dxf.md)
+- [Latest offline HTML](../results/cad-svg-dxf/report.html)
+- [Reproduction](cad-svg-dxf.md)
+- [Input references and human selections](../fixtures/cad-svg-dxf/README.md)
+
+```bash
+python -m experiments.run_cad_svg_pairs --output-dir output/cad-svg-reproduction --repeats 2
+```
+
 ### Native CAD export follow-up (independent, no release number)
 
 FreeCAD 1.1.4/TechDraw exported eight own authored drawing configurations to

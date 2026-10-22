@@ -1,0 +1,73 @@
+{
+  "ai_used": false,
+  "detail": "40 ± 0.1",
+  "dimension_evidence": [
+    {
+      "definition_points": [
+        [
+          125.0,
+          81.0
+        ],
+        [
+          165.0,
+          81.0
+        ]
+      ],
+      "dimension_line_id": "A30",
+      "kind": "linear",
+      "parameter": "W",
+      "text_id": "*D",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          81.0
+        ],
+        [
+          125.0,
+          89.0
+        ]
+      ],
+      "dimension_line_id": "A3A",
+      "kind": "linear",
+      "parameter": "T",
+      "text_id": "*D001",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    }
+  ],
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "Front",
+      "right": "Right",
+      "top": "Top"
+    }
+  },
+  "input_format": "dxf",
+  "inventory": {
+    "dxf_version_after_read": "AC1015",
+    "encoding_policy": "strict UTF-8; exporter header ANSI_1252 is not trusted",
+    "entities": {
+      "CIRCLE": 2,
+      "DIMENSION": 9,
+      "LINE": 28,
+      "SPLINE": 10
+    },
+    "line_visibility": "exported geometry has no reliable hidden/visible distinction; interpreted under family prior"
+  },
+  "method": "C_FreeCAD_TechDraw_DXF_dimensions",
+  "original_authoring_history_recovered": false,
+  "reason_code": "unsupported_annotation",
+  "schema_version": "1.0.0",
+  "source_sha256": "c666302d26629e8842e849cf122aed2cc6e660d228b8fef25f9518ff60a5cf6d",
+  "status": "withheld"
+}

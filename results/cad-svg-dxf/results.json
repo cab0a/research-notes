@@ -1,0 +1,2553 @@
+{
+  "ai_model_calls": 0,
+  "claim_boundary": "Own authored FreeCAD exports, one plate family under human priors; not customer drawings, independent-kernel validation or held-out accuracy.",
+  "date": "2026-10-22",
+  "hashes": {
+    "experiments/prepare_cad_svg_pairs.py": "36ee7f4bdbd7ed2e476c343370934e6a1dc488e7f605b1660ff3bd3ee2a60247",
+    "experiments/run_cad_svg_pairs.py": "c88ff7f3a3f19cfd0f0b0e5619af8f0db7b5635f373976256d98e0e8216f3afe",
+    "experiments/run_drawing_to_cad.py": "9356736a4a4f2c958e08773527ffa735899c5dd1f46e2d0d1bf7b39c9d56225e",
+    "fixtures/cad-drawing-exports/evaluation/truth.json": "1f2ea7fc0415f257da4ec3eec63018d3007e86d16f17f8affac97819347ae841",
+    "fixtures/cad-svg-dxf/manifest.json": "e09a70385d3a69371a09c3220cecba324814e8ff53e0aa2ea6c0331713424feb",
+    "src/research_notes/cad_drawing_import.py": "1f5b7e26990f9c4435914ff4b1275c43025922045d0d86f314ce7d46f7ff489f",
+    "src/research_notes/cad_svg_import.py": "1c6ce92d13c643470ee6886f9056f5e526de889eca4e1bcce25f62885c38b4f2",
+    "src/research_notes/cad_svg_report.py": "f140d4aceaa8ac25b5097ff424938e4490a5a5829e75086a47ae08c8fc5d006a",
+    "src/research_notes/drawing_to_cad.py": "7a428b83c7c806eeaf92e1bf6547fb14398177f9328dd33540b76c1c5bb74c25",
+    "src/research_notes/svg_drawing_graphics.py": "c8abb203849d459104ca9ecd6f0e1869b909925e14aae2bcc2af2d396459c825"
+  },
+  "observations": [
+    {
+      "context": "plain_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/plain/drawing.dxf",
+      "drawing_sha256": "6d37650d3b7a90e5af2e4f748fc83030736e959c0af78f1d7efcaa09581ac2df",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "plain",
+      "format": "dxf",
+      "id": "plain_dxf",
+      "legacy_on_same_input": {
+        "reason_code": null,
+        "status": "candidate"
+      },
+      "pair_id": "plain",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/plain/drawing.svg",
+      "svg_sha256": "7454cbfd50cb49773ce34fc84860cfc8239c6b179dc9374e194777fc9618b450",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/plain/drawing.dxf",
+            "plain_dxf.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/plain/drawing.dxf",
+            "plain_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "plain"
+    },
+    {
+      "context": "plain_svg.json",
+      "context_sha256": "ba6a5e0b41ed5fe2774464ea0f734d8071d74483e0a8ceaf1e5f3e34aa30d2b4",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/plain/drawing.svg",
+      "drawing_sha256": "7454cbfd50cb49773ce34fc84860cfc8239c6b179dc9374e194777fc9618b450",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "plain",
+      "format": "svg",
+      "id": "plain_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "plain",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/plain/drawing.svg",
+      "svg_sha256": "7454cbfd50cb49773ce34fc84860cfc8239c6b179dc9374e194777fc9618b450",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/plain/drawing.svg",
+            "plain_svg.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 0.0,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3520.0,
+            "valid_solid": true,
+            "volume_mm3": 9600.0,
+            "volume_vs_analytic_abs_error_mm3": 0.0
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 8,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/plain/drawing.svg",
+            "plain_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "plain"
+    },
+    {
+      "context": "one_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/one/drawing.dxf",
+      "drawing_sha256": "653754b134a355fd430b59d92c0821c560147449b1d87425c365bb5316357bbb",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "one",
+      "format": "dxf",
+      "id": "one_dxf",
+      "legacy_on_same_input": {
+        "reason_code": null,
+        "status": "candidate"
+      },
+      "pair_id": "one",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "svg_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.dxf",
+            "one_dxf.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.dxf",
+            "one_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "one"
+    },
+    {
+      "context": "one_svg.json",
+      "context_sha256": "9a6bb9517939ebd6b39454140c6e18c9d736081227b46139d0f556f4d50889f1",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "drawing_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "one",
+      "format": "svg",
+      "id": "one_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "one",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "svg_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007618058980519948,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.001676130057578986,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.001676130057578986
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.svg",
+            "one_svg.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007618058980519948,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.001676130057578986,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.001676130057578986
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.svg",
+            "one_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "one"
+    },
+    {
+      "context": "decimal_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/decimal/drawing.dxf",
+      "drawing_sha256": "fa520f613aa4afb5e5834129fb95c44e3bba4b13ab7bdc81ef3535824565dcb3",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "decimal",
+      "format": "dxf",
+      "id": "decimal_dxf",
+      "legacy_on_same_input": {
+        "reason_code": null,
+        "status": "candidate"
+      },
+      "pair_id": "decimal",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/decimal/drawing.svg",
+      "svg_sha256": "95ddf926fc6eef6c225d17cb545155c0ac55caaa36b649d069701ac4d7b73e10",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.546585164964199e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 8.185452315956354e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 5142.795348480297,
+            "valid_solid": true,
+            "volume_mm3": 12557.133586121987,
+            "volume_vs_analytic_abs_error_mm3": 1.0913936421275139e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "cad_to_drawing_rms_mm": 1.7259295960326518e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.3883239973337453e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/decimal/drawing.dxf",
+            "decimal_dxf.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.546585164964199e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 8.185452315956354e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 5142.795348480297,
+            "valid_solid": true,
+            "volume_mm3": 12557.133586121987,
+            "volume_vs_analytic_abs_error_mm3": 1.0913936421275139e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "cad_to_drawing_rms_mm": 1.7259295960326518e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.3883239973337453e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/decimal/drawing.dxf",
+            "decimal_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "decimal"
+    },
+    {
+      "context": "decimal_svg.json",
+      "context_sha256": "9a6bb9517939ebd6b39454140c6e18c9d736081227b46139d0f556f4d50889f1",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/decimal/drawing.svg",
+      "drawing_sha256": "95ddf926fc6eef6c225d17cb545155c0ac55caaa36b649d069701ac4d7b73e10",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "decimal",
+      "format": "svg",
+      "id": "decimal_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "decimal",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/decimal/drawing.svg",
+      "svg_sha256": "95ddf926fc6eef6c225d17cb545155c0ac55caaa36b649d069701ac4d7b73e10",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.546585164964199e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 8.185452315956354e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 5142.795348480297,
+            "valid_solid": true,
+            "volume_mm3": 12557.133586121987,
+            "volume_vs_analytic_abs_error_mm3": 1.0913936421275139e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "cad_to_drawing_rms_mm": 1.7259295960326518e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.3883239973337453e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007012001527491147,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.0015390048616588823,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0015390048616588823
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/decimal/drawing.svg",
+            "decimal_svg.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.546585164964199e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 8.185452315956354e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 5142.795348480297,
+            "valid_solid": true,
+            "volume_mm3": 12557.133586121987,
+            "volume_vs_analytic_abs_error_mm3": 1.0913936421275139e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "cad_to_drawing_rms_mm": 1.7259295960326518e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.3883239973337453e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 7.105427357601002e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 7.105427357601002e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007012001527491147,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.0015390048616588823,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0015390048616588823
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/decimal/drawing.svg",
+            "decimal_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "decimal"
+    },
+    {
+      "context": "scaled_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/scaled/drawing.dxf",
+      "drawing_sha256": "953fea364170bf4a0c35372784251c25f120447fb35043f05efe014cc63f88bd",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "scaled",
+      "format": "dxf",
+      "id": "scaled_dxf",
+      "legacy_on_same_input": {
+        "reason_code": null,
+        "status": "candidate"
+      },
+      "pair_id": "scaled",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/scaled/drawing.svg",
+      "svg_sha256": "8decd41cd1fd7860d28051b9b60eedd2734e7c452e4097b16de6db9fc57bf329",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/scaled/drawing.dxf",
+            "scaled_dxf.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/scaled/drawing.dxf",
+            "scaled_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "scaled"
+    },
+    {
+      "context": "scaled_svg.json",
+      "context_sha256": "9a6bb9517939ebd6b39454140c6e18c9d736081227b46139d0f556f4d50889f1",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/scaled/drawing.svg",
+      "drawing_sha256": "8decd41cd1fd7860d28051b9b60eedd2734e7c452e4097b16de6db9fc57bf329",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "scaled",
+      "format": "svg",
+      "id": "scaled_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "scaled",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/scaled/drawing.svg",
+      "svg_sha256": "8decd41cd1fd7860d28051b9b60eedd2734e7c452e4097b16de6db9fc57bf329",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007643796329753972,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.0016784050813941093,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0016784050813941093
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/scaled/drawing.svg",
+            "scaled_svg.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007643796329753972,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.0016784050813941093,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0016784050813941093
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/scaled/drawing.svg",
+            "scaled_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "scaled"
+    },
+    {
+      "context": "first_dxf.json",
+      "context_sha256": "78e40b9d1390890cc7ffc4f958f776b48a380ed97fe8670ac0002f9b29148354",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/first/drawing.dxf",
+      "drawing_sha256": "9bc75af7de4ea6ea8d8777a477114d12df25ede7eb987e12d16c3aac86585636",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "first",
+      "format": "dxf",
+      "id": "first_dxf",
+      "legacy_on_same_input": {
+        "reason_code": null,
+        "status": "candidate"
+      },
+      "pair_id": "first",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/first/drawing.svg",
+      "svg_sha256": "8d0c86451962a031aa31231216d77cb70a644a7a9ab02f33dee4774ab974b35e",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/first/drawing.dxf",
+            "first_dxf.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "drawing_samples": 137,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "DXF primitives vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/first/drawing.dxf",
+            "first_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "first"
+    },
+    {
+      "context": "first_svg.json",
+      "context_sha256": "338f3ca0dee9c15ab7a9be75c727dc3f8f0ae3cff2a050ec69dfa88282176f78",
+      "control_class": "positive_drawing",
+      "drawing": "../cad-drawing-exports/inputs/first/drawing.svg",
+      "drawing_sha256": "8d0c86451962a031aa31231216d77cb70a644a7a9ab02f33dee4774ab974b35e",
+      "expected_reason": null,
+      "expected_status": "candidate",
+      "export_id": "first",
+      "format": "svg",
+      "id": "first_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "first",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/first/drawing.svg",
+      "svg_sha256": "8d0c86451962a031aa31231216d77cb70a644a7a9ab02f33dee4774ab974b35e",
+      "trials": [
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007618058980440335,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.001676130057574749,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.001676130057574749
+            }
+          },
+          "reason_code": null,
+          "repeat": 0,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/first/drawing.svg",
+            "first_svg.json"
+          ]
+        },
+        {
+          "cad_code_exit": 0,
+          "edit": {
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_max_abs_error_mm": 0.0,
+            "valid_solid": true,
+            "volume_vs_analytic_abs_error_mm3": 2.1827872842550278e-11
+          },
+          "edit_code_exit": 0,
+          "failure_stage": null,
+          "ground_truth_supplied_to_worker": false,
+          "initial_reconstruction_passed": true,
+          "interpretation_exit": 0,
+          "interpretation_status": "candidate",
+          "metrics": {
+            "area_vs_analytic_abs_error_mm2": 9.549694368615746e-12,
+            "bounds_max_abs_error_mm": 2.0000000233721948e-07,
+            "hole_count_matches_truth": true,
+            "hole_dimension_max_abs_error_mm": 0.0,
+            "hole_dimensions_compared": true,
+            "material_symmetric_difference_mm3": 0.0,
+            "same_kernel_volume_iou": 1.0,
+            "step_read_success": true,
+            "surface_area_mm2": 3614.2477796077033,
+            "valid_solid": true,
+            "volume_mm3": 9373.805328941547,
+            "volume_vs_analytic_abs_error_mm3": 1.2732925824820995e-11
+          },
+          "passed": true,
+          "projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.614915045621268e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "cad_to_drawing_rms_mm": 1.2647448032657394e-15,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0,
+              "cad_to_drawing_rms_mm": 0.0,
+              "drawing_to_cad_max_mm": 0.0,
+              "drawing_to_cad_rms_mm": 0.0,
+              "sampled_symmetric_max_mm": 0.0
+            }
+          },
+          "raw_projection": {
+            "front": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "right": {
+              "cad_to_drawing_max_mm": 3.552713678800501e-15,
+              "drawing_samples": 12,
+              "drawing_to_cad_max_mm": 0.0,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 3.552713678800501e-15
+            },
+            "top": {
+              "cad_to_drawing_max_mm": 0.0007618058980440335,
+              "drawing_samples": 524,
+              "drawing_to_cad_max_mm": 0.001676130057574749,
+              "method": "native cubic samples vs HLR polylines",
+              "sampled_symmetric_max_mm": 0.001676130057574749
+            }
+          },
+          "reason_code": null,
+          "repeat": 1,
+          "status": "candidate",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/first/drawing.svg",
+            "first_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "first"
+    },
+    {
+      "context": "no_x_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/no_x/drawing.dxf",
+      "drawing_sha256": "37e0334b7228b537a4ba5d6e7c83d173a8f77464b4ede6ff43b71d5fba38c700",
+      "expected_reason": "hole_position_missing",
+      "expected_status": "withheld",
+      "export_id": "no_x",
+      "format": "dxf",
+      "id": "no_x_dxf",
+      "legacy_on_same_input": {
+        "reason_code": "hole_position_missing",
+        "status": "withheld"
+      },
+      "pair_id": "no_x",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/no_x/drawing.svg",
+      "svg_sha256": "196975de15481eedc4a109bfbc8702ad64041e6e857671a94a49491a46e87e90",
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_position_missing",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_x/drawing.dxf",
+            "no_x_dxf.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_position_missing",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_x/drawing.dxf",
+            "no_x_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "no_x"
+    },
+    {
+      "context": "no_x_svg.json",
+      "context_sha256": "bc1d23b9c31faf83d746d52a471ead99002fd285edbbda9d95c29d8f5b39db88",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/no_x/drawing.svg",
+      "drawing_sha256": "196975de15481eedc4a109bfbc8702ad64041e6e857671a94a49491a46e87e90",
+      "expected_reason": "hole_position_missing",
+      "expected_status": "withheld",
+      "export_id": "no_x",
+      "format": "svg",
+      "id": "no_x_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "no_x",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/no_x/drawing.svg",
+      "svg_sha256": "196975de15481eedc4a109bfbc8702ad64041e6e857671a94a49491a46e87e90",
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_position_missing",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_x/drawing.svg",
+            "no_x_svg.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_position_missing",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_x/drawing.svg",
+            "no_x_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "no_x"
+    },
+    {
+      "context": "no_thru_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/no_thru/drawing.dxf",
+      "drawing_sha256": "997b5dc761f4289c1490b566df1f08c7ec3e0d75f324d6c5beebb0cd53676858",
+      "expected_reason": "hole_extent_ambiguous",
+      "expected_status": "withheld",
+      "export_id": "no_thru",
+      "format": "dxf",
+      "id": "no_thru_dxf",
+      "legacy_on_same_input": {
+        "reason_code": "hole_extent_ambiguous",
+        "status": "withheld"
+      },
+      "pair_id": "no_thru",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/no_thru/drawing.svg",
+      "svg_sha256": "3a4a9d19e92aee595cfbd9b78e7d0462c944cb4e35bd912fe050823ad0487473",
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_thru/drawing.dxf",
+            "no_thru_dxf.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_thru/drawing.dxf",
+            "no_thru_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "no_thru"
+    },
+    {
+      "context": "no_thru_svg.json",
+      "context_sha256": "9a6bb9517939ebd6b39454140c6e18c9d736081227b46139d0f556f4d50889f1",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/no_thru/drawing.svg",
+      "drawing_sha256": "3a4a9d19e92aee595cfbd9b78e7d0462c944cb4e35bd912fe050823ad0487473",
+      "expected_reason": "hole_extent_ambiguous",
+      "expected_status": "withheld",
+      "export_id": "no_thru",
+      "format": "svg",
+      "id": "no_thru_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "no_thru",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/no_thru/drawing.svg",
+      "svg_sha256": "3a4a9d19e92aee595cfbd9b78e7d0462c944cb4e35bd912fe050823ad0487473",
+      "trials": [
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_thru/drawing.svg",
+            "no_thru_svg.json"
+          ]
+        },
+        {
+          "failure_stage": "input_ambiguity",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "hole_extent_ambiguous",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/no_thru/drawing.svg",
+            "no_thru_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "no_thru"
+    },
+    {
+      "context": "tolerance_dxf.json",
+      "context_sha256": "5c442321d2e456cd6f4b81abca00a63641c7334f812506ce852b767b8fa4bb19",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/tolerance/drawing.dxf",
+      "drawing_sha256": "c666302d26629e8842e849cf122aed2cc6e660d228b8fef25f9518ff60a5cf6d",
+      "expected_reason": "unsupported_annotation",
+      "expected_status": "withheld",
+      "export_id": "tolerance",
+      "format": "dxf",
+      "id": "tolerance_dxf",
+      "legacy_on_same_input": {
+        "reason_code": "unsupported_annotation",
+        "status": "withheld"
+      },
+      "pair_id": "tolerance",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/tolerance/drawing.svg",
+      "svg_sha256": "afa9d326da3690ef74e32bbcb15ea2c8717baf67208ca0913927f227b50d9244",
+      "trials": [
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "unsupported_annotation",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/tolerance/drawing.dxf",
+            "tolerance_dxf.json"
+          ]
+        },
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "unsupported_annotation",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/tolerance/drawing.dxf",
+            "tolerance_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "tolerance"
+    },
+    {
+      "context": "tolerance_svg.json",
+      "context_sha256": "9a6bb9517939ebd6b39454140c6e18c9d736081227b46139d0f556f4d50889f1",
+      "control_class": "negative_drawing",
+      "drawing": "../cad-drawing-exports/inputs/tolerance/drawing.svg",
+      "drawing_sha256": "afa9d326da3690ef74e32bbcb15ea2c8717baf67208ca0913927f227b50d9244",
+      "expected_reason": "unsupported_annotation",
+      "expected_status": "withheld",
+      "export_id": "tolerance",
+      "format": "svg",
+      "id": "tolerance_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "tolerance",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/tolerance/drawing.svg",
+      "svg_sha256": "afa9d326da3690ef74e32bbcb15ea2c8717baf67208ca0913927f227b50d9244",
+      "trials": [
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "unsupported_annotation",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/tolerance/drawing.svg",
+            "tolerance_svg.json"
+          ]
+        },
+        {
+          "failure_stage": "unsupported_input",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "unsupported_annotation",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/tolerance/drawing.svg",
+            "tolerance_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "tolerance"
+    },
+    {
+      "context": "wrong_projection_dxf.json",
+      "context_sha256": "78e40b9d1390890cc7ffc4f958f776b48a380ed97fe8670ac0002f9b29148354",
+      "control_class": "negative_context",
+      "drawing": "../cad-drawing-exports/inputs/one/drawing.dxf",
+      "drawing_sha256": "653754b134a355fd430b59d92c0821c560147449b1d87425c365bb5316357bbb",
+      "expected_reason": "projection_layout_conflict",
+      "expected_status": "withheld",
+      "export_id": "one",
+      "format": "dxf",
+      "id": "wrong_projection_dxf",
+      "legacy_on_same_input": {
+        "reason_code": "projection_layout_conflict",
+        "status": "withheld"
+      },
+      "pair_id": "wrong_projection",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "svg_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "trials": [
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.dxf",
+            "wrong_projection_dxf.json"
+          ]
+        },
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.dxf",
+            "wrong_projection_dxf.json"
+          ]
+        }
+      ],
+      "truth_key": "one"
+    },
+    {
+      "context": "wrong_projection_svg.json",
+      "context_sha256": "338f3ca0dee9c15ab7a9be75c727dc3f8f0ae3cff2a050ec69dfa88282176f78",
+      "control_class": "negative_context",
+      "drawing": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "drawing_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "expected_reason": "projection_layout_conflict",
+      "expected_status": "withheld",
+      "export_id": "one",
+      "format": "svg",
+      "id": "wrong_projection_svg",
+      "legacy_on_same_input": {
+        "reason_code": "svg_export_graphics_unsupported",
+        "status": "withheld"
+      },
+      "pair_id": "wrong_projection",
+      "passed": true,
+      "provenance": "Unchanged own-authored FreeCAD 1.1.4 TechDraw export; manually selected SVG outline paths or DXF layers",
+      "svg": "../cad-drawing-exports/inputs/one/drawing.svg",
+      "svg_sha256": "712407c058ea33a26f2f1966fa5885cc732870886aa742bffeac205ee548ec5e",
+      "trials": [
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 0,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.svg",
+            "wrong_projection_svg.json"
+          ]
+        },
+        {
+          "failure_stage": "drawing_conflict",
+          "ground_truth_supplied_to_worker": false,
+          "interpretation_exit": 0,
+          "interpretation_status": "withheld",
+          "passed": true,
+          "reason_code": "projection_layout_conflict",
+          "repeat": 1,
+          "status": "withheld",
+          "worker_inputs": [
+            "../cad-drawing-exports/inputs/one/drawing.svg",
+            "wrong_projection_svg.json"
+          ]
+        }
+      ],
+      "truth_key": "one"
+    }
+  ],
+  "pairs": [
+    {
+      "geometry": {
+        "candidate": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        },
+        "edited": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        }
+      },
+      "pair_id": "plain",
+      "parameter_count_matches": true,
+      "parameter_max_abs_difference_mm": 0.0,
+      "passed": true,
+      "statuses": {
+        "dxf": "candidate",
+        "svg": "candidate"
+      }
+    },
+    {
+      "geometry": {
+        "candidate": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        },
+        "edited": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        }
+      },
+      "pair_id": "one",
+      "parameter_count_matches": true,
+      "parameter_max_abs_difference_mm": 0.0,
+      "passed": true,
+      "statuses": {
+        "dxf": "candidate",
+        "svg": "candidate"
+      }
+    },
+    {
+      "geometry": {
+        "candidate": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        },
+        "edited": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        }
+      },
+      "pair_id": "decimal",
+      "parameter_count_matches": true,
+      "parameter_max_abs_difference_mm": 0.0,
+      "passed": true,
+      "statuses": {
+        "dxf": "candidate",
+        "svg": "candidate"
+      }
+    },
+    {
+      "geometry": {
+        "candidate": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        },
+        "edited": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        }
+      },
+      "pair_id": "scaled",
+      "parameter_count_matches": true,
+      "parameter_max_abs_difference_mm": 0.0,
+      "passed": true,
+      "statuses": {
+        "dxf": "candidate",
+        "svg": "candidate"
+      }
+    },
+    {
+      "geometry": {
+        "candidate": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        },
+        "edited": {
+          "material_symmetric_difference_mm3": 0.0,
+          "same_kernel_volume_iou": 1.0
+        }
+      },
+      "pair_id": "first",
+      "parameter_count_matches": true,
+      "parameter_max_abs_difference_mm": 0.0,
+      "passed": true,
+      "statuses": {
+        "dxf": "candidate",
+        "svg": "candidate"
+      }
+    },
+    {
+      "pair_id": "no_x",
+      "passed": true,
+      "reasons": {
+        "dxf": "hole_position_missing",
+        "svg": "hole_position_missing"
+      },
+      "statuses": {
+        "dxf": "withheld",
+        "svg": "withheld"
+      }
+    },
+    {
+      "pair_id": "no_thru",
+      "passed": true,
+      "reasons": {
+        "dxf": "hole_extent_ambiguous",
+        "svg": "hole_extent_ambiguous"
+      },
+      "statuses": {
+        "dxf": "withheld",
+        "svg": "withheld"
+      }
+    },
+    {
+      "pair_id": "tolerance",
+      "passed": true,
+      "reasons": {
+        "dxf": "unsupported_annotation",
+        "svg": "unsupported_annotation"
+      },
+      "statuses": {
+        "dxf": "withheld",
+        "svg": "withheld"
+      }
+    },
+    {
+      "pair_id": "wrong_projection",
+      "passed": true,
+      "reasons": {
+        "dxf": "projection_layout_conflict",
+        "svg": "projection_layout_conflict"
+      },
+      "statuses": {
+        "dxf": "withheld",
+        "svg": "withheld"
+      }
+    }
+  ],
+  "passed": true,
+  "repeats": 2,
+  "runtime": {
+    "cadquery_ocp": "7.9.3.1.1",
+    "ezdxf": "1.4.4",
+    "package_version": "1.17.0",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14"
+  },
+  "schema_version": "1.0.0",
+  "source_exporter": {
+    "FreeCAD": "1.1.4",
+    "OCCT": "7.8.1",
+    "claim": "different CAD path and OCCT version; same kernel family"
+  },
+  "study": "Native FreeCAD SVG/DXF equivalence",
+  "summary": {
+    "by_format": {
+      "dxf": {
+        "candidates": 5,
+        "inputs": 9,
+        "positive_successes": 5,
+        "withheld": 4
+      },
+      "svg": {
+        "candidates": 5,
+        "inputs": 9,
+        "positive_successes": 5,
+        "withheld": 4
+      }
+    },
+    "candidate_inputs": 10,
+    "candidate_successes": 10,
+    "correct_withholds": 8,
+    "false_confirmations": 0,
+    "inputs": 18,
+    "legacy_candidates_on_same_positive_inputs": 5,
+    "matching_pairs": 9,
+    "pairs": 9,
+    "withheld_controls": 8
+  },
+  "thresholds": {
+    "analytic_area_mm2": 1e-05,
+    "analytic_volume_mm3": 1e-05,
+    "dimension_mm": 1e-06,
+    "same_kernel_iou_min": 0.99999999,
+    "sampled_projection_mm": 0.02
+  }
+}

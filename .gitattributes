@@ -17,3 +17,4 @@ fixtures/cad-drawing-exports/inputs/** -text -whitespace
 fixtures/cad-drawing-exports/evaluation/*.step -text -whitespace
 fixtures/cad-drawing-exports/authoring/*.FCStd binary
 results/cad-drawing-exports/*/input.* -text -whitespace
+results/cad-svg-dxf/*/input.* -text -whitespace

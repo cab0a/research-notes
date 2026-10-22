@@ -1,0 +1,242 @@
+{
+  "ai_used": false,
+  "claim_boundary": "Conditional candidate from FreeCAD TechDraw DXF development fixtures; no general CAD exporter or held-out accuracy claim.",
+  "dimension_evidence": [
+    {
+      "definition_points": [
+        [
+          125.0,
+          81.0
+        ],
+        [
+          165.0,
+          81.0
+        ]
+      ],
+      "dimension_line_id": "A20",
+      "kind": "linear",
+      "parameter": "W",
+      "text_id": "*D",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          81.0
+        ],
+        [
+          125.0,
+          89.0
+        ]
+      ],
+      "dimension_line_id": "A2A",
+      "kind": "linear",
+      "parameter": "T",
+      "text_id": "*D001",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          135.0
+        ],
+        [
+          165.0,
+          135.0
+        ]
+      ],
+      "dimension_line_id": "A34",
+      "kind": "linear",
+      "parameter": "W",
+      "text_id": "*D002",
+      "value_mm": 40.0,
+      "view": "top",
+      "visible_text": "40"
+    },
+    {
+      "definition_points": [
+        [
+          125.0,
+          135.0
+        ],
+        [
+          125.0,
+          165.0
+        ]
+      ],
+      "dimension_line_id": "A3E",
+      "kind": "linear",
+      "parameter": "L",
+      "text_id": "*D003",
+      "value_mm": 30.0,
+      "view": "top",
+      "visible_text": "30"
+    },
+    {
+      "definition_points": [
+        [
+          220.0,
+          81.0
+        ],
+        [
+          250.0,
+          81.0
+        ]
+      ],
+      "dimension_line_id": "A48",
+      "kind": "linear",
+      "parameter": "L",
+      "text_id": "*D004",
+      "value_mm": 30.0,
+      "view": "right",
+      "visible_text": "30"
+    },
+    {
+      "definition_points": [
+        [
+          220.0,
+          81.0
+        ],
+        [
+          220.0,
+          89.0
+        ]
+      ],
+      "dimension_line_id": "A52",
+      "kind": "linear",
+      "parameter": "T",
+      "text_id": "*D005",
+      "value_mm": 8.0,
+      "view": "right",
+      "visible_text": "8"
+    }
+  ],
+  "evidence": {
+    "L": [
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      },
+      {
+        "element_id": null,
+        "value_mm": 30.0,
+        "visible_text": "L=30"
+      }
+    ],
+    "T": [
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      },
+      {
+        "element_id": null,
+        "value_mm": 8.0,
+        "visible_text": "T=8"
+      }
+    ],
+    "W": [
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      },
+      {
+        "element_id": null,
+        "value_mm": 40.0,
+        "visible_text": "W=40"
+      }
+    ]
+  },
+  "human_context": {
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "Front",
+      "right": "Right",
+      "top": "Top"
+    }
+  },
+  "input_format": "dxf",
+  "inventory": {
+    "dxf_version_after_read": "AC1015",
+    "encoding_policy": "strict UTF-8; exporter header ANSI_1252 is not trusted",
+    "entities": {
+      "DIMENSION": 6,
+      "LINE": 24
+    },
+    "line_visibility": "exported geometry has no reliable hidden/visible distinction; interpreted under family prior"
+  },
+  "method": "C_FreeCAD_TechDraw_DXF_dimensions",
+  "normalization": {
+    "border_splines": {
+      "front": [],
+      "right": [],
+      "top": []
+    },
+    "duplicates": "coincident geometry deduplicated",
+    "visibility": "interior full-height edges treated as hidden under declared family"
+  },
+  "original_authoring_history_recovered": false,
+  "parameters": {
+    "holes": [],
+    "length": 30.0,
+    "thickness": 8.0,
+    "width": 40.0
+  },
+  "schema_version": "1.0.0",
+  "source_sha256": "6d37650d3b7a90e5af2e4f748fc83030736e959c0af78f1d7efcaa09581ac2df",
+  "status": "candidate",
+  "views": {
+    "front": {
+      "box": [
+        125.0,
+        -89.0,
+        40.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "right": {
+      "box": [
+        220.0,
+        -89.0,
+        30.0,
+        8.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        30.0,
+        8.0
+      ],
+      "hidden_lines": []
+    },
+    "top": {
+      "box": [
+        125.0,
+        -165.0,
+        40.0,
+        30.0
+      ],
+      "circles": [],
+      "extent_mm": [
+        40.0,
+        30.0
+      ],
+      "hidden_lines": []
+    }
+  }
+}

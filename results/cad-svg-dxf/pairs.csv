@@ -1,0 +1,10 @@
+pair_id,svg_status,dxf_status,parameter_max_abs_difference_mm,original_iou,edited_iou,passed
+plain,candidate,candidate,0.0,1.0,1.0,True
+one,candidate,candidate,0.0,1.0,1.0,True
+decimal,candidate,candidate,0.0,1.0,1.0,True
+scaled,candidate,candidate,0.0,1.0,1.0,True
+first,candidate,candidate,0.0,1.0,1.0,True
+no_x,withheld,withheld,,,,True
+no_thru,withheld,withheld,,,,True
+tolerance,withheld,withheld,,,,True
+wrong_projection,withheld,withheld,,,,True

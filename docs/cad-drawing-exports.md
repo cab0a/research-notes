@@ -1,5 +1,7 @@
 # 実CADのSVG／DXF: 結果を見る・再現する
 
+最新のSVG対応と形式間比較は[こちら](cad-svg-dxf.md)。以下は初回の再現手順。
+
 **[結果HTMLを開く](../results/cad-drawing-exports/report.html)**
 
 ブラウザーで開けば、図面、3D、数値、保留理由をオフラインで閲覧できる。

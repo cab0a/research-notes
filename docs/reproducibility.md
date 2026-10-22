@@ -14,6 +14,16 @@ compatibility boundary for reproducing the committed research evidence.
 
 ## Environment
 
+For the latest paired SVG/DXF experiment, see [the SVG comparison guide](cad-svg-dxf.md).
+It reuses the exact previous CAD exports and adds no dependency. Each format is
+interpreted separately; source CAD and paired DXF are not SVG worker inputs.
+Five positive pairs and four withheld pairs are evaluated twice, including native
+cubic reprojection residuals. Use a new output folder:
+
+```bash
+python -m experiments.run_cad_svg_pairs --output-dir output/cad-svg-reproduction --repeats 2
+```
+
 For the real CAD export follow-up, see [the dedicated guide](cad-drawing-exports.md).
 Fixed FreeCAD SVG/DXF inputs are committed; FreeCAD is needed only to regenerate
 them, not to reproduce reconstruction/evaluation. DXF uses the optional `drawing`

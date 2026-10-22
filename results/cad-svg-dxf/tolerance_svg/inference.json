@@ -1,0 +1,127 @@
+{
+  "ai_used": false,
+  "curve_evidence": [
+    {
+      "center": [
+        137.0,
+        65.0
+      ],
+      "id": "path:18",
+      "radius": 3.0,
+      "sampled_radial_residual_sheet_mm": 0.0008166071971076327
+    },
+    {
+      "center": [
+        137.0,
+        65.0
+      ],
+      "id": "path:23",
+      "radius": 3.0,
+      "sampled_radial_residual_sheet_mm": 0.0008166071971076327
+    },
+    {
+      "center": [
+        137.0,
+        65.0
+      ],
+      "id": "path:28",
+      "radius": 3.0,
+      "sampled_radial_residual_sheet_mm": 0.0008166071971076327
+    }
+  ],
+  "detail": "40 ± 0.1",
+  "dimension_evidence": [
+    {
+      "arrow_ids": [
+        "path:12",
+        "path:13"
+      ],
+      "definition_points": [
+        [
+          165.0,
+          129.0
+        ],
+        [
+          125.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:11",
+      "kind": "linear",
+      "parameter": "W",
+      "text_baseline": [
+        143.08800000000002,
+        142.47394000000003
+      ],
+      "text_direction": [
+        1.0,
+        0.0
+      ],
+      "text_id": "text:0",
+      "value_mm": 40.0,
+      "view": "front",
+      "visible_text": "40"
+    },
+    {
+      "arrow_ids": [
+        "path:15",
+        "path:16"
+      ],
+      "definition_points": [
+        [
+          125.0,
+          121.0
+        ],
+        [
+          125.0,
+          129.0
+        ]
+      ],
+      "dimension_line_id": "path:14",
+      "kind": "linear",
+      "parameter": "T",
+      "text_baseline": [
+        114.47394000000001,
+        126.005
+      ],
+      "text_direction": [
+        0.0,
+        -1.0
+      ],
+      "text_id": "text:1",
+      "value_mm": 8.0,
+      "view": "front",
+      "visible_text": "8"
+    }
+  ],
+  "failure_stage": "unsupported_input",
+  "human_context": {
+    "drawing_group": "DrawingContent",
+    "family_assumption": "rectangular_plate_with_separated_z_through_holes",
+    "projection": "third_angle",
+    "unit": "mm",
+    "view_roles": {
+      "front": "path:0",
+      "right": "path:44",
+      "top": "path:17"
+    }
+  },
+  "input_format": "svg",
+  "inventory": {
+    "association_tolerance_sheet_mm": 0.002,
+    "page_size_mm": [
+      297.0,
+      210.0
+    ],
+    "paths": 61,
+    "selection": "DrawingContent",
+    "texts": 9,
+    "transforms": 71
+  },
+  "method": "C_native_SVG_graphic_dimension_association",
+  "original_authoring_history_recovered": false,
+  "reason_code": "unsupported_annotation",
+  "schema_version": "1.0.0",
+  "source_sha256": "afa9d326da3690ef74e32bbcb15ea2c8717baf67208ca0913927f227b50d9244",
+  "status": "withheld"
+}
